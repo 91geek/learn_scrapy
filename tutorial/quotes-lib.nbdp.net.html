@@ -3,22 +3,20 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
-	<title> 信息学竞赛题库</title>
-	<meta name="keywords" content="题库，信息学，NOIP，试卷下载">
-    <meta name="description" content="">        
+	<title>所有试卷</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
-<link href="/images/hjl.css" rel="stylesheet" type="text/css">
-<link href="/images/format.css" rel="stylesheet" type="text/css">
-<link href="/images/print.css" rel="stylesheet" type="text/css">
+<link href="images/format.css" rel="stylesheet" type="text/css">
+<link href="images/print.css" rel="stylesheet" type="text/css">
 <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>    
-  <body> 
+</head>
+<body>
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
-		<div class="navbar-header">			
+		<div class="navbar-header">
+			<a href="/" class="navbar-brand logo">Lib.nbdp.net</a>
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -28,87 +26,77 @@
 		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-left">
 				<li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
-				<li><a href="papers.php"><span class="glyphicon glyphicon-list"></span> 试卷列表</a></li>
+				<li><a href="/papers.php"><span class="glyphicon glyphicon-list"></span> 试卷列表</a></li>
 				<li><a href="http://oj.nbdp.net"><span class="glyphicon glyphicon-fire"></span> OJ题库</a></li>
-				<li><a href="http://begin.nbdp.net"><span class="glyphicon glyphicon-list-alt"></span> 初学者题库</a></li>
-				<li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+				<li><a href="/about.html"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
 			</ul>
-			
+			<form class="navbar-form navbar-left" role="search" action="/search.php" method="get" >
+			<div class="form-group">
+							<input type="text" name="q" class="form-control" />
+						<button type="submit" class="btn btn-info">搜索</button>
+						</div> 
+			</form>	
 			<ul class="nav navbar-nav navbar-right">				
 				<!---->
 								<li>
-									 <a href="loginpage.php">登录</a>
+									 <a href="/loginpage.php">登录</a>
 								</li>	
 						<!---->	
 			</ul>			
 		</div>
 	</div>
-</nav>
-     <div id="filter" class="" style="margin-top: 60px; height: 0px;"></div>
-          <div class="maintop">
-            <div id="search">
-                <div id="searchform">
-                    <form action="search.php" method="GET" id="form_search" name="form_search">
-                        <div style="width:660px;overflow:hidden;text-align:left;">
-                            <div style="border:1px solid #999;float:left;background-color:ButtonHighlight; position:relative">
-                                <input id="q" placeholder="搜索内容" class="text" name="q" maxlength="100" style="border:0 none;width:435px" value="">
-                            </div>
-                            <div>
-                                <input class="button JYE_QUES" type="submit" value="搜题目" onClick="searchSubmit(0)" style="_margin:0;_height:33px">
-                                <input type="hidden" id="mtype" value="0">
-                                <input type="hidden" name="sid" value="">
-                            </div>
-                        </div>
-                    </form>					
-                </div>                
-                    <img src="images/logo.png" alt="中小学信息学在线题库" style="width:215px;height:96px">               
-            </div>
-            </div>
-<!-- google广告 -->
-<div id="google_liebiao">
-</div>
-<!-- head部分 -->
-<div class="container">
-	<div class="row clearfix">
-<div id="indexArea">
-    <div class="list_right">
-    	
-        <div class="artlist1">
-			<ul class="list-unstyled">
-			<li><a href="papers.php?p=1" title="小学组">小学组</a></li>
-			<li><a href="papers.php?p=2" title="初中组">初中组</a></li>
-			<li><a href="papers.php?p=3" title="高中组">高中组</a></li>
-			<li><a href="papers.php?p=4" title="NOIP普及组">NOIP普及组</a></li>
-			<li><a href="papers.php?pid=5" title="NOIP提高组">NOIP提高组</a></li>
+</nav><div class="container">
+ <ul class="breadcrumb" style="margin-top:50px;">
+				<li>
+					 <a href="/">主页</a>
+				</li>
+				<li>
+					 <a href="/">题库</a>
+				</li>
+				<li class="active">
+					试卷列表
+				</li>
 			</ul>
-        </div>
-    </div>	
-	<div class="list_left">
-    	<div class="title">题库最新试卷<span class="zhushi"> : 中小学信息学及编程 368112645 </span></div>
-        <div class="artlist col-md-13 column">
-			<ul class="list-unstyled">
-<li class="col-md-6 column"><a title="第二十三届青少年信息学奥林匹克竞赛分区联赛初赛试题" href="/paper/98.html" target="_blank"><span>2017-10-14</span>[2017]全国第二十三届青少年信息学奥林匹克竞赛分区联赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第二十三届青少年信息学奥林匹克竞赛分区联赛初赛试题" href="/paper/97.html" target="_blank"><span>2017-10-14</span>[2017]全国第二十三届青少年信息学奥林匹克竞赛分区联赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="中小学生计算机程序设计比赛初赛试题" href="/paper/96.html" target="_blank"><span>2017-09-23</span>[2017]海曙区中小学生计算机程序设计比赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第十五届少儿信息学奥林匹克竞赛初赛试题" href="/paper/95.html" target="_blank"><span>2017-05-18</span>[2017]绍兴市第十五届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第十四届少儿信息学奥林匹克竞赛初赛试题" href="/paper/94.html" target="_blank"><span>2017-05-18</span>[2016]绍兴市第十四届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第十三届少儿信息学奥林匹克竞赛初赛试题" href="/paper/93.html" target="_blank"><span>2017-05-18</span>[2015]绍兴市第十三届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第十二届少儿信息学奥林匹克竞赛初赛试题" href="/paper/92.html" target="_blank"><span>2017-05-18</span>[2014]绍兴市第十二届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第十届少儿信息学奥林匹克竞赛初赛试题" href="/paper/91.html" target="_blank"><span>2017-05-18</span>[2012]绍兴市第十届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第九届少儿信息学奥林匹克竞赛初赛试题" href="/paper/90.html" target="_blank"><span>2017-05-18</span>[2011]绍兴市第九届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第八届少儿信息学奥林匹克竞赛初赛试题" href="/paper/89.html" target="_blank"><span>2017-05-18</span>[2010]绍兴市第八届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第七届少儿信息学奥林匹克竞赛初赛试题" href="/paper/88.html" target="_blank"><span>2017-05-18</span>[2009]绍兴市第七届少儿信息学奥林匹克竞赛初赛试题</a></li>
-<li class="col-md-6 column"><a title="第六届少儿信息学奥林匹克竞赛初赛试题" href="/paper/87.html" target="_blank"><span>2017-05-18</span>[2008]绍兴市第六届少儿信息学奥林匹克竞赛初赛试题</a></li>
-					
-			</ul>
-      </div>
-    </div>
-    
-</div>
 
+<ul class="nav nav-tabs"> 
+<li id="p0"><a href="papers.php?p=0" title="全部">全部</a></li> 
+<li id="p1"><a href="papers.php?p=1" title="小学组">小学组</a></li> 
+<li id="p2"><a href="papers.php?p=2" title="初中组">初中组</a></li> 
+<li id="p3"><a href="papers.php?p=3" title="高中组">高中组</a></li> 
+<li id="p4"><a href="papers.php?p=4" title="NOIP普及组">NOIP普及组</a></li> 
+<li id="p5"><a href="papers.php?p=5" title="NOIP提高组">NOIP提高组</a></li> 
+</ul>	
+	<div class="row clearfix">
+		<div class="col-md-8 column">				
+  <div class="panel panel-primary">     
+  <div class="panel-body">
+  <div class="list-group"> 
+  	
+	<ul class="pagination"> 
+    <li><a href="#">&laquo;</a></li> 
+    <li class="active"><a href="#">1</a></li> 
+    <li class="disabled"><a href="#">2</a></li> 
+    <li><a href="#">3</a></li> 
+    <li><a href="#">4</a></li> 
+    <li><a href="#">5</a></li> 
+    <li><a href="#">&raquo;</a></li> 
+</ul>
+</div>  
+  </div>
+  </div>		
+		</div>
+		
+		<div class="col-md-4 column well">
+		<h2>热门试题</h2>
+			<p>
+			正在建设...
+			</p>
+			<p>
+				 <a class="btn" href="#">详见 »</a>
+			 </p>		
+		</div>
+	</div>
 </div>
-</div>
-<br>
 <footer id="footer">
 	<div class="container">
 		<p>奥赛培训 | 合作事宜 | 版权投诉</p>
@@ -117,6 +105,11 @@
 </footer>
 <script src="/js/jquery.min1.9.js"></script>
 <script src="/js/bootstrap.min.js"></script>
-<script src="/js/tongji.js"></script> 
+<script type="text/javascript">
+$(function() {
+$("#p3").addClass("active");
+});
+</script>
+<script src="/js/tongji.js"></script>
 </body>
 </html>
