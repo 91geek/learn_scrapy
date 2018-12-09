@@ -15,7 +15,6 @@ class NoipSpider(scrapy.Spider):
     def start_requests(self):
         urls = ['http://lib.nbdp.net/papers.php?p=1',
                 'http://lib.nbdp.net/papers.php?p=2',
-                'http://lib.nbdp.net/papers.php?p=3',
                 'http://lib.nbdp.net/papers.php?p=4',
                 'http://lib.nbdp.net/papers.php?p=5'
                 ]
@@ -24,13 +23,15 @@ class NoipSpider(scrapy.Spider):
 
     def parse2(self, response):
         page = response.url.split("/")[-1]
-        filename = 'quotes-%s.html' % page
+        filename = 'result/quotes-%s.html' % page
         with open(filename, 'wb') as f:
             f.write(response.body)
         self.log('Saved file %s' % filename)
 
     def parse(self, response):
-        next_page = response.css(
-            'div.list-group a::attr(href)').extract_first()
-        if next_page is not None:
-            yield response.follow(next_page, callback=self.parse2)
+        print('####', response.url)
+        next_pages = response.css(
+            'div.list-group a::attr(href)').extract()
+        for next_page in next_pages:
+            if next_page is not None:
+                yield response.follow(next_page, callback=self.parse2)
