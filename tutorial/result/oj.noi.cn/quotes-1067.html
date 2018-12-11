@@ -1,0 +1,172 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1067. 最匹配的矩阵 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1067" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">给定一个m*n的矩阵A和r*s的矩阵B,其中0&lt;r&lt;=m,0&lt;s&lt;=n，A、B所有元素值都是小于100的正整数。求A中一个大小为r*s的子矩阵C，使得B和C的对应元素差值的绝对值之和最小，这时称C为最匹配的矩阵。如果有多个子矩阵同时满足条件，选择子矩阵左上角元素行号小者，行号相同时，选择列号小者。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">&nbsp;第一行是m和n，以一个空格分开。<br />
+之后m行每行有n个整数，表示A矩阵中的各行，数与数之间以一个空格分开。<br />
+第m+2行为r和s，以一个空格分开。<br />
+之后r行每行有s个整数，表示B矩阵中的各行，数与数之间以一个空格分开。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出矩阵C，一共r行，每行s个整数，整数之间以一个空格分开。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3 3
+3 4 5
+5 3 4
+8 2 4
+2 2
+7 3
+4 9</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4 5
+3 4</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1&lt;=m&lt;=100,1&lt;=n&lt;=100</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计基础篇例1.7</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1067"><span class="badge badge-info">770</span></a><br />提交: <a class="pull-right" href="#main/statistic/1067"><span class="badge badge-info">1201</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1067"><span class="badge badge-info">69.04</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1067'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1067/%25E6%259C%2580%25E5%258C%25B9%25E9%2585%258D%25E7%259A%2584%25E7%259F%25A9%25E9%2598%25B5.cpp/0/solution_path' data-toggle='tooltip' title='By MaxPigGod：陨化'>最匹配的矩阵.cpp</a><br /><a class='solution' href='index.php/main/download/1067/1067.cpp/0/solution_path' data-toggle='tooltip' title='By DarkLight'>1067.cpp</a><br /><a class='solution' href='index.php/main/download/1067/%25E7%25BB%259D%25E5%25AF%25B9%25E6%25AD%25A3%25E7%25A1%25AE%25EF%25BC%258C%25E9%2594%2599%25E4%25BA%2586%25EF%25BC%258C%25E6%2589%2593%25E6%25AD%25BB%25E6%2588%2591.cpp/0/solution_path' data-toggle='tooltip' title='By chenfeiyang'>绝对正确，错了，打死我.cpp</a><br /><a class='solution' href='index.php/main/download/1067/%25E6%25B3%25A8%25E6%2584%258Fm%25E8%25A1%25A8%25E7%25A4%25BA%25E8%25A1%258C%25E6%2595%25B0%252Cn%25E8%25A1%25A8%25E7%25A4%25BA%25E5%2588%2597%25E6%2595%25B0.txt/0/solution_path' data-toggle='tooltip' title='By imbosslx'>注意m表示行数,n表示列数.txt</a><br /><a class='solution' href='index.php/main/download/1067/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D12.cpp/0/solution_path' data-toggle='tooltip' title='By 车石'>未命名12.cpp</a><br /><a class='solution' href='index.php/main/download/1067/CCF1067.cpp/0/solution_path' data-toggle='tooltip' title='By yzzxliuchao'>CCF1067.cpp</a><br /><a class='solution' href='index.php/main/download/1067/111.cpp/0/solution_path' data-toggle='tooltip' title='By fdszlzl'>111.cpp</a><br /><a class='solution' href='index.php/main/download/1067/%25E5%25A4%258D%25E6%259D%2582%25E4%25BD%2586%25E6%2598%2593%25E6%2587%2582.txt/0/solution_path' data-toggle='tooltip' title='By 小虫'>复杂但易懂.txt</a><br /><a class='solution' href='index.php/main/download/1067/%25E5%2585%25B4%25E4%25B9%2589%25E4%25B8%2580%25E4%25B8%25AD%25E7%259A%2584%25E7%25AD%2594%25E6%25A1%2588.cpp/0/solution_path' data-toggle='tooltip' title='By ATS'>兴义一中的答案.cpp</a><br /><a class='solution' href='index.php/main/download/1067/%25E6%259C%2580%25E5%258C%25B9%25E9%2585%258D%25E7%259A%2584%25E7%259F%25A9%25E9%2598%25B5.c/0/solution_path' data-toggle='tooltip' title='By 2950870451'>最匹配的矩阵.c</a><br /><a class='solution' href='index.php/main/download/1067/1067%2520AC%2520%25E4%25BB%2585%25E6%259C%258928%25E8%25A1%258C%25EF%25BC%2581.cpp/0/solution_path' data-toggle='tooltip' title='By leakey2006'>1067 AC 仅有28行！.cpp</a><br /><a class='solution' href='index.php/main/download/1067/noi1067.cpp/0/solution_path' data-toggle='tooltip' title='By 吴鸿飞'>noi1067.cpp</a><br /><a class='solution' href='index.php/main/download/1067/1.cpp/0/solution_path' data-toggle='tooltip' title='By c2021彭子轩'>1.cpp</a><br /><a class='solution' href='index.php/main/download/1067/2.cpp/0/solution_path' data-toggle='tooltip' title='By c2021彭子轩'>2.cpp</a><br /><a class='solution' href='index.php/main/download/1067/1067.%2520%25E6%259C%2580%25E5%258C%25B9%25E9%2585%258D%25E7%259A%2584%25E7%259F%25A9%25E9%2598%25B5.cpp/0/solution_path' data-toggle='tooltip' title='By int *zym;'>1067. 最匹配的矩阵.cpp</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计基础篇例1.7</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1067" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1067' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1067?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1067. \u6700\u5339\u914d\u7684\u77e9\u9635 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

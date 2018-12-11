@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>字符串 - noipxu - 博客园</title>
+<meta property="og:description" content="为了使程序能处理文本信息，PASCAL引入字符串类型，其值表示一个具有可变长变的字符序列。 字符串类型定义形式为：string[n]或者string其中正整数n(1&lt;=n&lt;=255)表示构" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6164133.html">字符串</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-12 13:33</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6164133" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6164133);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6164133,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/12 13:33:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">为了使程序能处理文本信息，PASCAL引入字符串类型，其值表示一个具有可变长变的字符序列。</span></p>
+<p><span style="font-size: 16px">字符串类型定义形式为：string[n]或者string</span><br><span style="font-size: 16px">其中正整数n(1&lt;=n&lt;=255)表示构成字符串的字符最多个数，即通常所说的字符串最大长度。而字符串的实际长度决定于程序运行时的实际字符个数，可由标准函数length返回。若字符串说明中没有指定长度时，取缺省值255。</span></p>
+<p><span style="font-size: 16px">字符串类型定义字符串连接操作'+'（或concat函数），是将两个字符串连接生成新字符串，连接操作允许字符类型和字符串类型混合运算。</span></p>
+<p><span style="font-size: 16px">字符串常量可以通过常量说明语句</span><br><span style="font-size: 16px">const 字串常量名:string[n]='字串';</span><br><span style="font-size: 16px">规定其常量的串长n，并赋初值。例如：</span><br><span style="font-size: 16px">const heading:string[7]='section';</span></p>
+<p><span style="font-size: 16px">pascal还提供了一些预定义的过程和函数用于对字符串进行操作：</span></p>
+<p><span style="font-size: 16px">1、length函数</span><br><span style="font-size: 16px">格式：length(st)</span><br><span style="font-size: 16px">这个函数返回串表达式st的长度，即串字符的个数，其结果类型为整型。</span><br><span style="font-size: 16px">例如：st的值为'ABCD1234'，则length(st)的值为8。</span></p>
+<p><span style="font-size: 16px">2、copy函数</span><br><span style="font-size: 16px">格式：copy(st,pos,num)</span><br><span style="font-size: 16px">st为串表达式，pos和num为整型表达式。copy返回一个子串，它包含st中pos开始的num个字符。如果pos超出串长，则返回一个空串；如果得到的字符在串尾之外，即pos+num超过了串长，则返回串里的那部分字符。</span><br><span style="font-size: 16px">例如：st的值为'abcdefg'，则</span><br><span style="font-size: 16px">copy(st,4,2)返回值为'de'</span><br><span style="font-size: 16px">copy(st,4,5)返回值为'defg'</span></p>
+<p><span style="font-size: 16px">3、pos函数</span><br><span style="font-size: 16px">格式：pos(substr,st)</span><br><span style="font-size: 16px">substr和st都是串表达式，其结果类型为整型。pos函数搜索st中的第一个出现的substr字符串，返回该位置值；如果没有找到，返回值为0。</span><br><span style="font-size: 16px">例如：st的值为'abcdefg'，则</span><br><span style="font-size: 16px">pos('de',st)，返回值为4</span><br><span style="font-size: 16px">pos('ed',st)，返回值为0</span></p>
+<p><span style="font-size: 16px">4、delete过程</span><br><span style="font-size: 16px">格式：delete(st,pos,num)</span><br><span style="font-size: 16px">st是串变量，pos和num是两个整型表达式。delete删除st中从pos开始的num个字符的子串，如pos大于st的长度，则不删除任何字符；若企图删除多于串长度的子串，即pos+num大于串长，则仅删除串内字符。</span><br><span style="font-size: 16px">例如：st的值为'abcdefg'，则</span><br><span style="font-size: 16px">delete(st,4,2)，结果为'abcfg'</span><br><span style="font-size: 16px">delete(st,4,10)，结果为'abc'</span></p>
+<p><span style="font-size: 16px">5、insert过程</span><br><span style="font-size: 16px">格式：insert(substr,st,pos)</span><br><span style="font-size: 16px">substr是串表达式，st是串变量，pos为整型表达式。insert将substr插入到串st的pos位置上，若pos大于st的长度，那么将substr联接到st上，若大于st的最大长度，那么截去超过部分。</span><br><span style="font-size: 16px">例如：st的值为'abcdefg'，则</span><br><span style="font-size: 16px">insert('123',st,3)，结果为'ab123cdefg'</span></p>
+<p><span style="font-size: 16px">6、str过程</span><br><span style="font-size: 16px">格式：str(value,st)</span><br><span style="font-size: 16px">value为整型或实型书写参量，st是串变量，书写参量是指带场宽的整型或实型数。str将value的数字值按value给出的格式转换成字符串，并把结果存到st中。</span><br><span style="font-size: 16px">例如：i的值为2568，则str(i:6,st)，给st的值为'&nbsp; 2568'。</span></p>
+<p><span style="font-size: 16px">7、val过程</span><br><span style="font-size: 16px">格式：val(st,var,code)</span><br><span style="font-size: 16px">var将串表达式st转换为与var同类型的值，并将这个值赋给var。st必须是一个按照数值常量规则来表示的数值的串，其首尾不允许有空格。var为一个整型或实型变量，code为一个整型变量，如果检测时未出错，变量code置0；否则code置为出错的第一个字符的位置，且var的值无定义。</span><br><span style="font-size: 16px">例如：</span><br><span style="font-size: 16px">st的值为'234'，i为整型变量，则val(st,i,code)，i的值为234，code的值为0。</span><br><span style="font-size: 16px">st的值为'23X56'，i为整型变量，则val(st,i,code)，i的值无定义，code的值为3，表示第三个字符出错。</span></p>
+<p><span style="font-size: 16px">8、concat函数</span><br><span style="font-size: 16px">格式：concat(s,s1,s2,…sn)</span><br><span style="font-size: 16px">concat用于连接两个或两个以上的字符串，超出255个字符的部分将被截掉</span><br><span style="font-size: 16px">例如：concat('AB','CDE','FGHI')的结果为'ABCDEFGHI'</span></p>
+<p><span style="font-size: 16px">例1：输入一串字符，其长度小于200，判断该串字符是否构成回文。</span><br><span style="font-size: 16px">分析：所谓回文是指从左到右和从右到左读一串字符的值是一样的，如abcba、abba就是回文。</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; st:string;</span><br><span style="font-size: 16px">&nbsp; i,j:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('Input a string:');</span><br><span style="font-size: 16px">&nbsp; readln(st);</span><br><span style="font-size: 16px">&nbsp; j:=length(st);</span><br><span style="font-size: 16px">&nbsp; i:=1;</span><br><span style="font-size: 16px">&nbsp; while (j&gt;i) and (st[i]=st[j]) do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; i:=i+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; j:=j-1;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; if j&lt;=i then writeln('Yes')</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else writeln('No');</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">例2：输入一个十进制数，将其化成N进制数并输出（2&lt;=N&lt;=16）。</span><br><span style="font-size: 16px">const</span><br><span style="font-size: 16px">&nbsp; s:string='0123456789ABCDEF';</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; m:longint;</span><br><span style="font-size: 16px">&nbsp; i,j,k,n:byte;</span><br><span style="font-size: 16px">&nbsp; a:array[1..32] of byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('Enter a number:');</span><br><span style="font-size: 16px">&nbsp; readln(m);</span><br><span style="font-size: 16px">&nbsp; write('Enter N=');</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; write(m,'(10)=');</span><br><span style="font-size: 16px">&nbsp; i:=0;</span><br><span style="font-size: 16px">&nbsp; while m&gt;0 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; i:=i+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; a[i]:=m mod n;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; m:=m div n;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for j:=i downto 1 do write(s[a[j]+1]);</span><br><span style="font-size: 16px">&nbsp; writeln('(',n,')');</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">例3：以字符串的形式输入仅有整数和加减号构成的表达式，输出该表达式的值。</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s:string;</span><br><span style="font-size: 16px">&nbsp; l,x:longint;</span><br><span style="font-size: 16px">&nbsp; h:-1..1;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('Input:');</span><br><span style="font-size: 16px">&nbsp; readln(s);</span><br><span style="font-size: 16px">&nbsp; write(s);</span><br><span style="font-size: 16px">&nbsp; while pos(' ',s)&gt;0 do delete(s,pos(' ',s),1);</span><br><span style="font-size: 16px">&nbsp; x:=0;</span><br><span style="font-size: 16px">&nbsp; while length(s)&gt;0 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if s[1]='-' then begin h:=-1;delete(s,1,1);end</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else h:=1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if s[1]='+' then delete(s,1,1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; l:=0;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while (s[1] in ['0'..'9']) and (length(s)&gt;0) do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; l:=l*10+ord(s[1])-48;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; delete(s,1,1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x:=x+h*l;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; writeln('=',x);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">例4：卡布列克常数：卡布列克是一个数学家，他在研究数字时发现：任意一个不是用完全相同的数字组成的四位数，如果对它们的每位数字重新排序，组成一个最大的数和一个最小的数，然后用最大的数减去最小的数，差不够四位数时补零，类推下去，最后将变成为一个固定的常数：6174，这就是卡布列克常数。例如：</span><br><span style="font-size: 16px">6543-3456=3087</span><br><span style="font-size: 16px">8730-378=8325</span><br><span style="font-size: 16px">8532-2358=6174</span><br><span style="font-size: 16px">7641-1467=6174</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s:string;</span><br><span style="font-size: 16px">&nbsp; n,n1,n2,i,j,e:integer;</span><br><span style="font-size: 16px">&nbsp; c:char;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; write('Input a number:');</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; until (n&gt;999) and (n&lt;9999);</span><br><span style="font-size: 16px">&nbsp; while n&lt;&gt;6174 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; str(n,s);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for i:=1 to 3 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for j:=i+1 to 4 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if s[i]&lt;s[j] then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:=s[i];s[i]:=s[j];s[j]:=c;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; val(s,n1,e);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for i:=1 to 2 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:=s[i];s[i]:=s[5-i];s[5-i]:=c;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; val(s,n2,e);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; n:=n1-n2;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; writeln(n1,'-',n2,'=',n);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while n&lt;1000 do n:=n*10</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">作业：</span><br><span style="font-size: 16px">1、zerojudge：a009、a011、a022、a135、a224、a466、a779、b030、c012、d086、d103、d107、d124、d155、d187、d235、d275、d337、d614、d670、d671、d929</span></p>
+<p><span style="font-size: 16px">2、从键盘接收10个字符串，按长度进行降序排序，并显示排序的结果。</span></p>
+<p><span style="font-size: 16px">3、从键盘接收一段英文文本，统计其中的单词数目。文本中包括英文大小写字母、英文标点、数字和空格，并以星号“*”结束。假设每个单词只由英文字母组成，相邻单词之间可由空格、标点或回车等符号分隔，文本的总长度不超过200个字符。</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

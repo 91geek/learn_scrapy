@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="never" />
+<title>数组 - noipxu - 博客园</title>
+<meta property="og:description" content="数组是程序中经常使用的结构数据类型，用来描述由固定数目的同一类型的元素组成的数据结构。数组的每个元素与下标相关联，根据下标指示数组的元素；数组的存贮方式为按行存贮，在编译阶段，计算机根据数组的类型说明" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6169640.html">数组</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-13 13:55</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6169640" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6169640);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6169640,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/13 13:55:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<p><span style="font-size: 16px">数组是程序中经常使用的结构数据类型，用来描述由固定数目的同一类型的元素组成的数据结构。数组的每个元素与下标相关联，根据下标指示数组的元素；数组的存贮方式为按行存贮，在编译阶段，计算机根据数组的类型说明，确定其存贮空间的大小。</span></p>
+<p><span style="font-size: 16px">一、一维数组</span></p>
+<p><span style="font-size: 16px">一维数组是最简单的一类数组，在一维数组中，元素只沿一个方向排列。</span></p>
+<p><span style="font-size: 16px">一维数组的定义格式：</span><br><span style="font-size: 16px">type</span><br><span style="font-size: 16px">&nbsp; 数组类型名=array[常量1..常量2] of 基类型;</span></p>
+<p><span style="font-size: 16px">说明：</span><br><span style="font-size: 16px">1、数组类型名是我们为这个自定义类型所起的名字，它应是一个合法的标识符</span><br><span style="font-size: 16px">2、下标必须是有序数据类型，例如整型、字符型、布尔型、枚举型</span><br><span style="font-size: 16px">3、常量1叫做数据的下标下界，用于规定数组下标的最小值；常量2叫做数组的下标上界，用于规定数组下标的最大值；下界必须小于或等于上界</span><br><span style="font-size: 16px">4、基类型就是数组中每个元素的数据类型，它可以是任何数据类型</span></p>
+<p><span style="font-size: 16px">在type部分定义了数组类型之后，就可以在var部分定义该类型的数组了：</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; 数组变量名:数组类型名;</span></p>
+<p><span style="font-size: 16px">数组变量名是我们为这个数组起的名字，它应该是一个合法的标识符。</span></p>
+<p><span style="font-size: 16px">数组中的每个元素都相当于一个相应类型的普通变量。但是，数组元素没有单独的变量名，必须通过数组变量名和该元素的下标来确定。因此，数组元素也称为下标变量。数组元素的引用格式为：数组变量名[下标]</span></p>
+<p><span style="font-size: 16px">例如：</span><br><span style="font-size: 16px">type</span><br><span style="font-size: 16px">&nbsp; t1=array[1..10] of integer;</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; x:t1;</span><br><span style="font-size: 16px">在type部分，我们定义了一个名为t1的数组类型，它的特征是：数组包含10个元素，元素的下标范围是1到10，每个元素的数据类型都是整型。</span><br><span style="font-size: 16px">在var部分，我们定义了一个名为x的数组，它是t1类型的数组，具有t1类型所定义的特征。因此，数组x包含10个元素，分别是x[1]、x[2]、x[3]、……x[10]，每个元素的数据类型都是整型。</span></p>
+<p><span style="font-size: 16px">定义数组的另一种方式为：不定义数组类型标识符，直接定义数据变量，其格式如下：</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; 变量名:array[下标下界..下标上界] of 基类型;</span></p>
+<p><span style="font-size: 16px">例如：</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; x:array[1..10] of integer;</span></p>
+<p><span style="font-size: 16px">注意：数组的下标可以是任何一种有序类型，例如整型、字符型、布尔型、枚举型等，并且可以从这个类型中的任意一个值开始编排，而不一定从1开始；数组的基类型可以是Pascal语言中的任何数据类型，包括自定义类型。</span></p>
+<p><span style="font-size: 16px">例1：下面数组定义哪些是正确的，有多少个元素；哪些是错误的，错在哪里？</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; count:array[1..31] of real;</span><br><span style="font-size: 16px">&nbsp; a:array[16..12] of integer;</span><br><span style="font-size: 16px">&nbsp; leou:array['a'..'z'] of integer;</span><br><span style="font-size: 16px">&nbsp; b:array[1.1..1.5] of char;</span><br><span style="font-size: 16px">&nbsp; r:array[1991..2000] of boolean;</span><br><span style="font-size: 16px">&nbsp; n:integer;</span><br><span style="font-size: 16px">&nbsp; c:array[1..n] of real;</span></p>
+<p><span style="font-size: 16px">例2：借助一维数组，生成菲波那契数列的前20项：1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765</span></p>
+<p><span style="font-size: 16px">分析：设菲波那契数列的元素为a1、a2、a3、…、an，则有：a1=1；a2=1；a3=a1+a2=2；a4=a2+a3=3……</span><br><span style="font-size: 16px">可分两步实现，先为数组的第一个元素和第二个元素填写1，然后依次计算后续元素。</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; a:array[1..20] of integer;</span><br><span style="font-size: 16px">&nbsp; i:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; a[1]:=1;</span><br><span style="font-size: 16px">&nbsp; a[2]:=2;</span><br><span style="font-size: 16px">&nbsp; for i:=3 to 20 do a[i]:=a[i-1]+a[i-2];</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(a[i],' ');</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">例3：输入一串字符，以“！”作为结束，不分大小写，统计其中每种英文字符出现的次数并输出。</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; ch:array['A'..'Z'] of byte;</span><br><span style="font-size: 16px">&nbsp; c:char;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; for c:='A' to 'Z' do ch[c]:=0;</span><br><span style="font-size: 16px">&nbsp; read(c);</span><br><span style="font-size: 16px">&nbsp; while c&lt;&gt;'!' do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c:=upcase(c);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (c&gt;='A') and (c&lt;='Z') then ch[c]:=ch[c]+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; read(c);</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for c:='A' to 'Z' do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if ch[c]&gt;0 then writeln(c,' ',ch[c]);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">例4：有N盏灯放在一排，从1到N依次顺序编号。有N个人也从1到N依次编号，1号将灯全部关闭，2号将凡是2的倍数的灯打开；3号将凡是3的倍数的灯作相反处理（该灯如为打开的，则将它关闭；如关闭的，则将它打开）。以后的人都和3号一样，将凡是自己编号倍数的灯作相反处理，经过N个人的操作后，输出每盏灯的情况（1表示灯打开，0表示灯关闭）</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; k,n,i,j:byte;</span><br><span style="font-size: 16px">&nbsp; a:array[1..100] of 0..1;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('N=');</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do a[i]:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=2 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; j:=i;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while j&lt;=n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[j]:=1-a[j];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j:=j+i;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do write(a[i],' ');</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">例5：繁殖问题：有一家生化所，一月份引入一对新生的小白鼠，这种小白鼠生长两个月后在第三、第四、第五个月各繁殖一对小白鼠，在第六个月停止繁殖，在第七个月则死亡。新生的小白鼠也如此繁殖，问N个月后（N&lt;50），活的小白鼠有多少对？</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; a:array[1..50] of longint;</span><br><span style="font-size: 16px">&nbsp; n,i,j:shortint;</span><br><span style="font-size: 16px">&nbsp; sum:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; write('Input n: ');</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; until n in [3..50];</span><br><span style="font-size: 16px">&nbsp; for i:=2 to n do a[i]:=0;</span><br><span style="font-size: 16px">&nbsp; a[1]:=1;a[3]:=1;a[4]:=1;</span><br><span style="font-size: 16px">&nbsp; for i:=5 to n do a[i]:=a[i-4]+a[i-3]+a[i-2];</span><br><span style="font-size: 16px">&nbsp; sum:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=n-4 to n do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if i&gt;0 then sum:=sum+a[i];</span><br><span style="font-size: 16px">&nbsp; writeln(sum);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">二、二维数组</span></p>
+<p><span style="font-size: 16px">在现实世界中，有许多数据是按二维关系组织的，例如课程表中的课程</span></p>
+<p align="center"><span style="font-size: 16px"><img style="float: none; margin: 0px 10px" src="http://img1.ph.126.net/8oLX_ccepiGu0WAcfR2MpA==/2406329575916903434.jpg" alt="数组 - 徐老师 - Pascal程序设计"></span></p>
+<p><span style="font-size: 16px">&nbsp;与这种数据结构相对应的数组是二维数组，二维数组由行和列组成，二维数组中的元素沿行和列两个方向排列。要在二维数组中确定一个元素，必须同时指出它所在的行和所在的列，因此二维数组需要使用两个下标，即行下标和列下标。</span></p>
+<p><span style="font-size: 16px">二维数组的类型定义格式：</span><br><span style="font-size: 16px">type</span><br><span style="font-size: 16px">&nbsp; 数组类型名=array[行下标下界..行下标上界，列下标下界..列下标上界] of 基类型;</span></p>
+<p><span style="font-size: 16px">例如：</span><br><span style="font-size: 16px">type</span><br><span style="font-size: 16px">&nbsp; t1=array[1..3,1..4] of real;</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; a:t1;</span></p>
+<p><span style="font-size: 16px">这样定义的变量a就是一个二维数组，它包含3行4列，共12个元素，即：</span><br><span style="font-size: 16px">a[1,1],a[1,2],a[1,3],a[1,4]</span><br><span style="font-size: 16px">a[2,1],a[2,2],a[2,3],a[2,4]</span><br><span style="font-size: 16px">a[3,1],a[3,2],a[3,3],a[3,4]</span><br><span style="line-height: 28px; font-size: 16px">也可以直接定义二维数组变量：</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; 数组变量名:array[行下标下界..行下标上界，列下标下界..列下标上界] of 基类型;</span></p>
+<p><span style="font-size: 16px">二维数组的使用方法与一维数组类似，只是需要指定两个下标。其引用格式为：数组变量名[行下标,列下标]</span><br><span style="font-size: 16px">例如：a[1,1]:=3.5;</span></p>
+<p><span style="font-size: 16px">操作二维数组时，常使用二重循环。例如，可以这样为数组a中的每个元素读入数据：</span><br><span style="font-size: 16px">for i:=1 to 3 do</span><br><span style="font-size: 16px">&nbsp; for j:=1 to 4 do read(a[i,j]);</span></p>
+<p><span style="font-size: 16px">例6：输入正整数N（N&lt;12），打印杨辉三角形的前N行。杨辉三角形如下：</span><br><span style="font-size: 16px">N=5</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; 1</span><br><span style="font-size: 16px">&nbsp;&nbsp; 1 1</span><br><span style="font-size: 16px">&nbsp; 1 2 1</span><br><span style="font-size: 16px">&nbsp;1 3 3 1</span><br><span style="font-size: 16px">1 4 6 4 1</span><br><span style="font-size: 16px">其特点是二个腰上的数都为1，其它位置上的数是它的上一行相邻二个数之和。用二维数组很容易记下三角矩阵，然后再输出。</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; a:array[1..12,1..12] of byte;</span><br><span style="font-size: 16px">&nbsp; i,j,n:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; until n&lt;13;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; a[i,1]:=1;a[i,i]:=1;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=3 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=2 to n-1 do a[i,j]:=a[i-1,j]+a[i-1,j-1];</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; write(a[i,1]:30-2*i);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=2 to i do write(a[i,j]:4);&nbsp;&nbsp;&nbsp; </span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; writeln;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">end.</span></p>
+<p><br><span style="font-size: 16px">作业：</span><br><span style="font-size: 16px">1、zerojudge：</span><br><span style="font-size: 16px">一维数组：b130、a845、b138、b078、b139、b101、b098、a011、d213、d562、d237</span><br><span style="font-size: 16px">二维数组：a015、d671、c012</span></p>
+<p><span style="font-size: 16px">2、从键盘读入10个正整数，将其中的奇数和偶数分别显示出来。例如：</span><br><span style="font-size: 16px">输入：</span><br><span style="font-size: 16px">12 8 19 5 4 6 7 2 11 3</span><br><span style="font-size: 16px">输出：</span><br><span style="font-size: 16px">19 5 7 11 3</span><br><span style="font-size: 16px">12 8 4 6 2</span></p>
+<p><span style="font-size: 16px">3、输入一串字符，最后以“？”结束，分别统计其中的字母q、u、i、s出现的次数并输出。</span></p>
+<p><span style="font-size: 16px">4、输入一串英文，以“！”结束，单词之间用空格分隔，假设英文字符个数在200以内，输出单词的个数。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">C++版：数组</span></p>
+<p><span style="font-size: 16px">一、一维数组</span></p>
+<p><span style="font-size: 16px">1、一维数组的定义</span><br><span style="font-size: 16px">定义格式：</span><br><span style="font-size: 16px">类型标识符 数组名[常量表达式];</span></p>
+<p><span style="font-size: 16px">说明：</span><br><span style="font-size: 16px">A、数组名的命名规则与变量名的命名规则一致。</span><br><span style="font-size: 16px">B、常量表达式表示数组元素的个数，可以是常量和符号常量，但不能是变量。</span></p>
+<p><span style="font-size: 16px">例：int a[10];</span></p>
+<p><span style="font-size: 16px">2、一维数组的引用</span><br><span style="font-size: 16px">通过给出的数组名称和这个元素在数组中的位置编号（即下标），程序可以引用这个数组中的任何一个元素。</span></p>
+<p><span style="font-size: 16px">引用格式：</span><br><span style="font-size: 16px">数组名[下标]</span></p>
+<p><span style="font-size: 16px">说明：</span><br><span style="font-size: 16px">A、下标可以是整型常量或整型表达式，如果使用表达式作为下标，就要计算表达式的值以确定下标。</span><br><span style="font-size: 16px">B、C++语言中，每个数组第一个元素的下标都是0，因此第一个元素为第0个数组元素。</span><br><span style="font-size: 16px">例：int a[10];</span><br><span style="font-size: 16px">该数组有10个元素，依次表示为：a[0],a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9]。</span><br><span style="font-size: 16px">C、C++语言只能逐个引用数组元素，而不能一次引用整个数组。</span><br><span style="font-size: 16px">例：int a[100],b[100];a=b;这样的写法是非法的。</span></p>
+<p><span style="font-size: 16px">3、一维数组的初始化</span><br><span style="font-size: 16px">数组的初始化可以在定义时一并完成。</span></p>
+<p><span style="font-size: 16px">初始化格式：</span><br><span style="font-size: 16px">类型标识符 数组名[常量表达式]={值1,值2,…};</span></p>
+<p><span style="font-size: 16px">例：int a[5]={1,2,3,4,5};</span></p>
+<p><span style="font-size: 16px">说明：</span><br><span style="font-size: 16px">A、在初值列表中可以写出全部数组元素的值，也可以写出部分。</span><br><span style="font-size: 16px">例：int x[10]={0,1,2,3,4};</span><br><span style="font-size: 16px">该方法一次仅对数组的前5个元素依次进行初始化。</span><br><span style="font-size: 16px">B、对数组元素全部初始化为0，可以简写为{0}。</span><br><span style="font-size: 16px">例：int a[5]={0};</span><br><span style="font-size: 16px">该方法将数组a的5个元素都初始化为0。</span></p>
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1066. 素数对 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1066" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">两个相差为2的素数称为素数对，如5和7，17和19等，本题目要求找出所有两个数均不大于n的素数对。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">一个正整数n。1&lt;=n&lt;=10000。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">按照从小到大的顺序输出所有小于等于n的素数对。每对素数对输出一行，中间用单个空格隔开。若没有找到任何素数对，输出empty。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>100</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3 5
+5 7
+11 13
+17 19
+29 31
+41 43
+59 61
+71 73</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1&lt;=n&lt;=10000。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计基础篇例1.6</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1066"><span class="badge badge-info">1615</span></a><br />提交: <a class="pull-right" href="#main/statistic/1066"><span class="badge badge-info">2332</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1066"><span class="badge badge-info">70.74</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1066'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1066/ccf1066.cpp/0/solution_path' data-toggle='tooltip' title='By Meanda'>ccf1066.cpp</a><br /><a class='solution' href='index.php/main/download/1066/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D3.cpp/0/solution_path' data-toggle='tooltip' title='By 王志城'>未命名3.cpp</a><br /><a class='solution' href='index.php/main/download/1066/1066_prime_pair.cpp/0/solution_path' data-toggle='tooltip' title='By 1293883574'>1066_prime_pair.cpp</a><br /><a class='solution' href='index.php/main/download/1066/sushu.cpp/0/solution_path' data-toggle='tooltip' title='By 无言独上机房'>sushu.cpp</a><br /><a class='solution' href='index.php/main/download/1066/1066%25EF%25BC%2588%25E6%259E%2581%25E5%25BF%25AB%25E6%259E%2581%25E7%25AE%2580%25EF%25BC%2589.cpp/0/solution_path' data-toggle='tooltip' title='By Youth丨吹雪'>1066（极快极简）.cpp</a><br /><a class='solution' href='index.php/main/download/1066/1066.cpp/0/solution_path' data-toggle='tooltip' title='By lefan2006'>1066.cpp</a><br /><a class='solution' href='index.php/main/download/1066/sjr66.pas/0/solution_path' data-toggle='tooltip' title='By 1059420075'>sjr66.pas</a><br /><a class='solution' href='index.php/main/download/1066/1066.pas/0/solution_path' data-toggle='tooltip' title='By Rh626'>1066.pas</a><br /><a class='solution' href='index.php/main/download/1066/1066.%25E7%25B4%25A0%25E6%2595%25B0%25E5%25AF%25B9.pascal%25E9%25A2%2598%25E8%25A7%25A3.txt/0/solution_path' data-toggle='tooltip' title='By lin20041213lin'>1066.素数对.pascal题解.txt</a><br /><a class='solution' href='index.php/main/download/1066/%25E7%259F%25B3%25E9%2597%25A8%25E5%25AE%259E%25E9%25AA%258C%25E5%25AD%25A6%25E6%25A0%25A1715%25E5%25AD%25A6%25E7%2594%259F%25E6%258F%2590%25E4%25BE%259B%25E7%259A%2584%25E9%25A2%2598%25E8%25A7%25A3.cpp/0/solution_path' data-toggle='tooltip' title='By 杜智杰'>石门实验学校715学生提供的题解.cpp</a><br /><a class='solution' href='index.php/main/download/1066/%25E7%25BC%2596%25E8%25AF%2591%25E2%2580%2598.cpp/0/solution_path' data-toggle='tooltip' title='By 白小白0818'>编译‘.cpp</a><br /><a class='solution' href='index.php/main/download/1066/%25E8%25BE%2583%25E4%25B8%25BA%25E7%25AE%2580%25E6%2598%2593%25E7%259A%2584%25E2%2591%25A8%25E5%25BC%258F%25E8%25A7%25A3%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By ⑨baga'>较为简易的⑨式解法.cpp</a><br /><a class='solution' href='index.php/main/download/1066/1066%25E7%25B4%25A0%25E6%2595%25B0%25E5%25AF%25B9%25E6%259E%2581%25E7%25AE%2580%25E6%2596%25B9%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By ATS'>1066素数对极简方法.cpp</a><br /><a class='solution' href='index.php/main/download/1066/c%252B%252B/0/solution_path' data-toggle='tooltip' title='By 124567890'>c++</a><br /><a class='solution' href='index.php/main/download/1066/%25E5%2587%25BD%25E6%2595%25B0%25E6%25B3%2595%25E7%25B4%25A0%25E6%2595%25B0%25E5%25AF%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By 陈晓七'>函数法素数对.cpp</a><br /><a class='solution' href='index.php/main/download/1066/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D2.cpp/0/solution_path' data-toggle='tooltip' title='By 唐纳德·特朗普'>未命名2.cpp</a><br /><a class='solution' href='index.php/main/download/1066/%25E6%258D%2595%25E8%258E%25B7.JPG/0/solution_path' data-toggle='tooltip' title='By 贾1贾'>捕获.JPG</a><br /><a class='solution' href='index.php/main/download/1066/11.pas/0/solution_path' data-toggle='tooltip' title='By WilsonX'>11.pas</a><br /><a class='solution' href='index.php/main/download/1066/%25E9%25A2%2598%25E8%25A7%25A3.bat/0/solution_path' data-toggle='tooltip' title='By 阿斯'>题解.bat</a><br /><a class='solution' href='index.php/main/download/1066/MX_noip_1066.c/0/solution_path' data-toggle='tooltip' title='By mixiao'>MX_noip_1066.c</a><br /><a class='solution' href='index.php/main/download/1066/%25E7%25B4%25A0%25E6%2595%25B0%25E5%25AF%25B9%2520%25E8%25B4%25BE1%25E8%25B4%25BE%25E7%2589%25B9%25E5%2588%25B6%25E9%25A2%2598%25E8%25A7%25A3.cpp/0/solution_path' data-toggle='tooltip' title='By 贾1贾'>素数对 贾1贾特制题解.cpp</a><br /><a class='solution' href='index.php/main/download/1066/%25E6%25B3%2589%25E5%2585%25AD.c/0/solution_path' data-toggle='tooltip' title='By riom'>泉六.c</a><br /><a class='solution' href='index.php/main/download/1066/devcpp.exe/0/solution_path' data-toggle='tooltip' title='By 李墨扬'>devcpp.exe</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计基础篇例1.6</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1066" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1066' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1066?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1066. \u7d20\u6570\u5bf9 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

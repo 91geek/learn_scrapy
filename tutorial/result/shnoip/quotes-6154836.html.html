@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>高精度 - noipxu - 博客园</title>
+<meta property="og:description" content="高精度整数加var s1,s2:string; a,b,c:array[1..255] of byte; la,lb,lc,i:integer;begin write(&#39;a=&#39;); r" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6154836.html">高精度</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 09:05</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6154836" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6154836);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6154836,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 9:05:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">高精度整数加</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s1,s2:string;</span><br><span style="font-size: 16px">&nbsp; a,b,c:array[1..255] of byte;</span><br><span style="font-size: 16px">&nbsp; la,lb,lc,i:integer;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('a=');</span><br><span style="font-size: 16px">&nbsp; readln(s1);</span><br><span style="font-size: 16px">&nbsp; write('b=');</span><br><span style="font-size: 16px">&nbsp; readln(s2);</span><br><span style="font-size: 16px">&nbsp; la:=length(s1);</span><br><span style="font-size: 16px">&nbsp; lb:=length(s2);</span><br><span style="font-size: 16px">&nbsp; if la&gt;lb then lc:=la</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else lc:=lb;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to la do a[i]:=ord(s1[la-i+1])-48;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to lb do b[i]:=ord(s2[lb-i+1])-48;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to lc do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i]:=c[i]+a[i]+b[i];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i+1]:=c[i] div 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i]:=c[i] mod 10;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; write('a+b=');</span><br><span style="font-size: 16px">&nbsp; if c[lc+1]&gt;0 then write(1);</span><br><span style="font-size: 16px">&nbsp; for i:=lc downto 1 do write(c[i]);</span><br><span style="font-size: 16px">&nbsp; readln;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">高精度整数减</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s1,s2,st:string;</span><br><span style="font-size: 16px">&nbsp; a,b,c:array[1..255] of shortint;</span><br><span style="font-size: 16px">&nbsp; la,lb,t,i:integer;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('a=');</span><br><span style="font-size: 16px">&nbsp; readln(s1);</span><br><span style="font-size: 16px">&nbsp; write('b=');</span><br><span style="font-size: 16px">&nbsp; readln(s2);</span><br><span style="font-size: 16px">&nbsp; la:=length(s1);</span><br><span style="font-size: 16px">&nbsp; lb:=length(s2);</span><br><span style="font-size: 16px">&nbsp; write('a-b=');</span><br><span style="font-size: 16px">&nbsp; if (lb&gt;la) or ((lb=la) and (s1&lt;s2)) then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; write('-');</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; st:=s1;s1:=s2;s2:=st;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; t:=la;la:=lb;lb:=t;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to la do a[i]:=ord(s1[la-i+1])-48;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to lb do b[i]:=ord(s2[lb-i+1])-48;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to la do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i]:=a[i]-b[i];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if c[i]&lt;0 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i]:=c[i]+10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[i+1]:=a[i+1]-1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; t:=la;</span><br><span style="font-size: 16px">&nbsp; while (c[t]=0) and (t&gt;1) do dec(t);</span><br><span style="font-size: 16px">&nbsp; for i:=t downto 1 do write(c[i]);</span><br><span style="font-size: 16px">&nbsp; readln;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">高精度整数乘</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s1,s2:string;</span><br><span style="font-size: 16px">&nbsp; a,b,c:array[1..255] of byte;</span><br><span style="font-size: 16px">&nbsp; la,lb,i,j,t:integer;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('a=');</span><br><span style="font-size: 16px">&nbsp; readln(s1);</span><br><span style="font-size: 16px">&nbsp; write('b=');</span><br><span style="font-size: 16px">&nbsp; readln(s2);</span><br><span style="font-size: 16px">&nbsp; la:=length(s1);</span><br><span style="font-size: 16px">&nbsp; lb:=length(s2);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to la do a[i]:=ord(s1[la-i+1])-48;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to lb do b[i]:=ord(s2[lb-i+1])-48;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to la do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to lb do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i+j-1]:=c[i+j-1]+a[i]*b[j];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i+j]:=c[i+j]+c[i+j-1] div 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i+j-1]:=c[i+j-1] mod 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; write('a*b=');</span><br><span style="font-size: 16px">&nbsp; t:=la+lb;</span><br><span style="font-size: 16px">&nbsp; while (c[t]=0) and (t&gt;1) do dec(t);</span><br><span style="font-size: 16px">&nbsp; for i:=t downto 1 do write(c[i]);</span><br><span style="font-size: 16px">&nbsp; readln;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">高精度整数乘方</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s:array[1..500] of byte;</span><br><span style="font-size: 16px">&nbsp; x,n,i,j,ls,lx,k1,k2:integer;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; write('x=');</span><br><span style="font-size: 16px">&nbsp; readln(x);</span><br><span style="font-size: 16px">&nbsp; write('n=');</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; s[1]:=1;</span><br><span style="font-size: 16px">&nbsp; ls:=0;</span><br><span style="font-size: 16px">&nbsp; lx:=trunc(ln(x)/ln(10))+1;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; ls:=ls+lx;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; k1:=0;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to ls do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k2:=s[j]*x+k1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k1:=k2 div 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s[j]:=k2 mod 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; write('x^n=');</span><br><span style="font-size: 16px">&nbsp; for i:=trunc(n*ln(x)/ln(10))+1 downto 1 do write(s[i]);</span><br><span style="font-size: 16px">&nbsp; readln;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">高精度实数加</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s1,s2,s3,s:string;</span><br><span style="font-size: 16px">&nbsp; d1,d2,z1,z2,z3,x1,x2,x3,i,len,code:integer;</span><br><span style="font-size: 16px">&nbsp; a,b,c:array[0..255] of byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(s1);</span><br><span style="font-size: 16px">&nbsp; readln(s2);</span></p>
+<p><span style="font-size: 16px">&nbsp; d1:=pos('.',s1);</span><br><span style="font-size: 16px">&nbsp; if d1=0 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z1:=length(s1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x1:=0;</span><br><span style="font-size: 16px">&nbsp; end else begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z1:=d1-1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x1:=length(s1)-d1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; delete(s1,d1,1);</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; d2:=pos('.',s2);</span><br><span style="font-size: 16px">&nbsp; if d2=0 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z2:=length(s2);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x2:=0;</span><br><span style="font-size: 16px">&nbsp; end else begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z2:=d2-1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x2:=length(s2)-d2;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; delete(s2,d2,1);</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; if z1&lt;z2 then for i:=1 to z2-z1 do s1:='0'+s1</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else for i:=1 to z1-z2 do s2:='0'+s2;</span><br><span style="font-size: 16px">&nbsp; if x1&lt;x2 then for i:=1 to x2-x1 do s1:=s1+'0'</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else for i:=1 to x1-x2 do s2:=s2+'0';</span></p>
+<p><span style="font-size: 16px">&nbsp; if z1&gt;z2 then z3:=z1</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else z3:=z2;</span><br><span style="font-size: 16px">&nbsp; if x1&gt;x2 then x3:=x1</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else x3:=x2;</span><br><span style="font-size: 16px">&nbsp; len:=z3+x3;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=1 to len do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; val(copy(s1,i,1),a[i],code);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; val(copy(s2,i,1),b[i],code);</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=len downto 1 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i]:=a[i]+b[i]+c[i];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i-1]:=c[i] div 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i]:=c[i] mod 10;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; s3:='';</span><br><span style="font-size: 16px">&nbsp; for i:=0 to len do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; str(c[i],s);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; s3:=s3+s;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; insert('.',s3,z3+2);</span></p>
+<p><span style="font-size: 16px">&nbsp; len:=len+2;</span><br><span style="font-size: 16px">&nbsp; while s3[len]='0' do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; delete(s3,len,1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; len:=len-1;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; if s3[len]='.' then delete(s3,len,1);</span></p>
+<p><span style="font-size: 16px">&nbsp; if s3[1]='0' then delete(s3,1,1);</span></p>
+<p><span style="font-size: 16px">&nbsp; writeln(s3);</span><br><span style="font-size: 16px">&nbsp; readln;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">高精度实数减</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s1,s2,s3,s:string;</span><br><span style="font-size: 16px">&nbsp; d1,d2,z1,z2,z3,x1,x2,x3,i,len,code:integer;</span><br><span style="font-size: 16px">&nbsp; a,b,c:array[1..255] of shortint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(s1);</span><br><span style="font-size: 16px">&nbsp; readln(s2);</span></p>
+<p><span style="font-size: 16px">&nbsp; d1:=pos('.',s1);</span><br><span style="font-size: 16px">&nbsp; if d1=0 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z1:=length(s1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x1:=0;</span><br><span style="font-size: 16px">&nbsp; end else begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z1:=d1-1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x1:=length(s1)-d1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; delete(s1,d1,1);</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; d2:=pos('.',s2);</span><br><span style="font-size: 16px">&nbsp; if d2=0 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z2:=length(s2);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x2:=0;</span><br><span style="font-size: 16px">&nbsp; end else begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z2:=d2-1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; x2:=length(s2)-d2;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; delete(s2,d2,1);</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; if z1&lt;z2 then for i:=1 to z2-z1 do s1:='0'+s1</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else for i:=1 to z1-z2 do s2:='0'+s2;</span><br><span style="font-size: 16px">&nbsp; if x1&lt;x2 then for i:=1 to x2-x1 do s1:=s1+'0'</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else for i:=1 to x1-x2 do s2:=s2+'0';</span></p>
+<p><span style="font-size: 16px">&nbsp; if z1&gt;z2 then z3:=z1</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else z3:=z2;</span><br><span style="font-size: 16px">&nbsp; if x1&gt;x2 then x3:=x1</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else x3:=x2;</span><br><span style="font-size: 16px">&nbsp; len:=z3+x3;</span></p>
+<p><span style="font-size: 16px">&nbsp; if s2&gt;s1 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; write('-');</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; s3:=s1;s1:=s2;s2:=s3;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=1 to len do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; val(copy(s1,i,1),a[i],code);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; val(copy(s2,i,1),b[i],code);</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=len downto 1 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; c[i]:=a[i]-b[i];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if c[i]&lt;0 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c[i]:=c[i]+10;a[i-1]:=a[i-1]-1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; s3:='';</span><br><span style="font-size: 16px">&nbsp; for i:=1 to len do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; str(c[i],s);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; s3:=s3+s;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; insert('.',s3,z3+1);</span></p>
+<p><span style="font-size: 16px">&nbsp; len:=len+1;</span><br><span style="font-size: 16px">&nbsp; while s3[len]='0' do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; delete(s3,len,1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; len:=len-1;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; if s3[len]='.' then delete(s3,len,1);</span></p>
+<p><span style="font-size: 16px">&nbsp; while (s3[1]='0') and (z3&gt;1) do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; delete(s3,1,1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z3:=z3-1;</span><br><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; writeln(s3);</span><br><span style="font-size: 16px">&nbsp; readln;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">麦森数（2003复赛第4题）</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; p,ls,i,j,k1,k2:longint;</span><br><span style="font-size: 16px">&nbsp; s:array[1..500] of byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(p);</span><br><span style="font-size: 16px">&nbsp; writeln(trunc(p*ln(2)/ln(10))+1);</span><br><span style="font-size: 16px">&nbsp; s[1]:=1;</span><br><span style="font-size: 16px">&nbsp; ls:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to p do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; ls:=ls+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if ls&gt;500 then ls:=500;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; k1:=0;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to ls do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k2:=s[j]*2+k1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k1:=k2 div 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s[j]:=k2 mod 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; s[1]:=s[1]-1;</span><br><span style="font-size: 16px">&nbsp; for i:=500 downto 1 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; write(s[i]);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (i-1) mod 50=0 then writeln;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; readln;</span><br><span style="font-size: 16px">end.</span></p>
+<p>
+<br><span style="font-size: 16px">综合运用：2011年（第十七届）普及组初赛第四大题第2小题 大整数开方</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

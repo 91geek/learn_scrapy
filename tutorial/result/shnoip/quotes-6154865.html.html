@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>解题报告 - noipxu - 博客园</title>
+<meta property="og:description" content="NOIP2004提高组复赛3.合唱队形chorus （感谢1604陈韬宇同学提供） NOIP2004提高组复赛3.合唱队形chorus （感谢1604陈韬宇同学提供） //双向最长上升子序列#incl" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6154865.html">解题报告</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 09:21</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6154865" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6154865);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6154865,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 9:21:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div>
+<div><span style="font-size: 16px"><span style="font-size: 16px">NOIP2004提高组复赛3.合唱队形chorus</span></span></div>
+<div><span style="font-size: 16px"><span style="font-size: 16px">（感谢1604陈韬宇同学提供）</span></span></div>
+</div>
+<div><span style="font-size: 16px"><span style="font-size: 16px">//双向最长上升子序列<br>#include&lt;cstdio&gt;<br>using namespace std;<br>int n,t[100],fl[100],fr[100],ans;&nbsp; //fl为从左往右到当前项的最长上升子序列长度，fr为从右往左到当前项的最长上升子序列长度<br>int main()<br>{<br>&nbsp;&nbsp;&nbsp; scanf("%d",&amp;n);<br>&nbsp;&nbsp;&nbsp; for (int i=0;i&lt;n;i++) scanf("%d",&amp;t[i]);<br>&nbsp;&nbsp;&nbsp; fl[0]=1;<br>&nbsp;&nbsp;&nbsp; for (int j=1;j&lt;n;j++) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=0;i&lt;=j-1;i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (t[i]&lt;t[j] &amp;&amp; fl[i]&gt;fl[j]) fl[j]=fl[i];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fl[j]++;<br>&nbsp;&nbsp;&nbsp; }&nbsp; //从左往右推<br><br>&nbsp;&nbsp;&nbsp; fr[n-1]=1;<br>&nbsp;&nbsp;&nbsp; for (int j=n-2;j&gt;=0;j--) {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i=n-1;i&gt;=j+1;i--)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (t[i]&lt;t[j] &amp;&amp; fr[i]&gt;fr[j]) fr[j]=fr[i];<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fr[j]++;<br>&nbsp;&nbsp;&nbsp; }&nbsp; //从右往左推<br><br>&nbsp;&nbsp;&nbsp; for (int i=0;i&lt;n;i++)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (fl[i]+fr[i]-1&gt;ans) ans=fl[i]+fr[i]-1;<br><br>&nbsp;&nbsp;&nbsp; printf("%d",n-ans);<br>&nbsp; return 0;<br>}</span></span></div>
+<div>&nbsp;</div>
+<div><span style="font-size: 16px"><span style="font-size: 16px">NOIP2006普及组复赛3.Jam的计数法count</span></span></div>
+<div><span style="font-size: 16px"><span style="font-size: 16px">（感谢1604陈韬宇同学提供）</span></span></div>
+<div><span style="font-size: 16px"><span style="font-size: 16px">#include&lt;bits/stdc++.h&gt;<br>using namespace std;<br>short s,t,w,a[25],bz;<br>string st;<br>int main()<br>{<br>&nbsp; cin&gt;&gt;s&gt;&gt;t&gt;&gt;w;<br>&nbsp; cin&gt;&gt;st;<br>&nbsp; for (short i=0;i&lt;w;i++) a[i]=st[i]-96;&nbsp; //将字符串转换为数字<br>&nbsp; for (short i=0;i&lt;5;i++) {&nbsp; //循环5次，输出后续的5个数字<br>&nbsp;&nbsp;&nbsp; bz=w-1;&nbsp; //标志位，因为a和st都是从0位开始，所以倒过来第1个要处理的是w-1位<br>&nbsp;&nbsp;&nbsp; while (a[bz]==t-(w-1)+bz) bz--;&nbsp; //从最后一位开始找，直到找出第一个可操作的字符<br>&nbsp;&nbsp;&nbsp; a[bz]++;&nbsp; //将这一位数加1<br>&nbsp;&nbsp;&nbsp; for (short j=bz+1;j&lt;w;j++)&nbsp; //将其后的每一位都设定为最值<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[j]=a[bz]+j-bz;<br>&nbsp;&nbsp;&nbsp; for (short j=0;j&lt;w;j++)&nbsp; //将数字数组转换为字符形式输出<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;char(a[j]+96);<br>&nbsp;&nbsp;&nbsp; cout&lt;&lt;endl;<br>&nbsp; }<br>&nbsp; return 0;<br>}</span></span></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div><span style="font-size: 16px">NOIP2007普及组复赛3.守望者的逃离escape</span><br><span style="font-size: 16px">（感谢1402周俊豪同学提供）</span><br><span style="font-size: 16px">jl[t]表示在 t 秒守望者只用魔法能移动的距离，mf[t]表示在 t 秒守望者所拥有的魔法值，mjl[t]表示在 t 秒守望者能走的最远距离（跑和使用魔法的最优解）。</span></div>
+<div><span style="font-size: 16px">解法一</span></div>
+<div><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; m:integer;</span><br><span style="font-size: 16px">&nbsp; s,t,i:longint;</span><br><span style="font-size: 16px">&nbsp; mf:array[0..300000] of integer;</span><br><span style="font-size: 16px">&nbsp; jl,mjl:array[0..300000] of longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(m,s,t);</span><br><span style="font-size: 16px">&nbsp; mf[0]:=m;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to t do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if mf[i-1]&gt;9 then begin&nbsp; //魔法够就闪烁</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jl[i]:=jl[i-1]+60;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mf[i]:=mf[i-1]-10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; else begin&nbsp; //魔法不够就恢复</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jl[i]:=jl[i-1];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mf[i]:=mf[i-1]+4;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if mjl[i-1]+17&gt;jl[i] then mjl[i]:=mjl[i-1]+17&nbsp;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else mjl[i]:=jl[i];&nbsp; //找出跑和使用魔法的最优解</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if mjl[i]&gt;=s then begin&nbsp; //顺利逃出</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln('Yes');</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln(i);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; halt;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; writeln('No');&nbsp; //无法逃离</span><br><span style="font-size: 16px">&nbsp; writeln(mjl[i]);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">解法二</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; m:integer;</span><br><span style="font-size: 16px">&nbsp; s,t,i,mjl:longint;</span><br><span style="font-size: 16px">&nbsp; jl:array[0..300000] of longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(m,s,t);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to t do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if m&gt;9 then begin&nbsp; //魔法够就闪烁</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jl[i]:=jl[i-1]+60;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m:=m-10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; else begin&nbsp; //魔法不够就恢复</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jl[i]:=jl[i-1];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m:=m+4;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=0 to t-1 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if jl[i]+17&gt;jl[i+1] then jl[i+1]:=jl[i]+17;</span><br><span style="font-size: 16px">&nbsp; while (jl[t-1]&gt;s) and (t&gt;0) do dec(t);</span><br><span style="font-size: 16px">&nbsp; if jl[t]&gt;=s then begin writeln('Yes');writeln(t);end</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else begin writeln('No');writeln(jl[t]);end;</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2008普及组复赛3.传球游戏ball</span><br><span style="font-size: 16px">（感谢愚一管晏如同学提供）</span><br><span style="font-size: 16px">可以从每一步及每一步的情况数入手，例如：n=3，m=3，给同学们编号后小蛮为 1 号。m=1 时，球在 1 号手里显然不可能（0 种），在 2 号手里有 1 种情况，在 3 号手里有 1 种情况。m=2 来源于前一次的 m=1，1 号可以从 2 号或 3 号手里拿到球，共 2 种情况；3 号是 1 号和 2 号之前的情况数之和，1 种情况；2 号同 3号一样也是 1 种情况。</span><br><span style="font-size: 16px">以此类推，每一次传球的结果都依赖于前一次传球的结果，且每次只需要记录下两组情况数：前一次和当前的一次。并在每一次统计结束后更新前一次，下次备用。最后要求的结果是球还在小蛮手里的情况数，直接取 1 号的情况数即可。</span></div>
+<div><span style="font-size: 16px">C++版</span></div>
+<div><span style="font-size: 16px">#include&lt;cstdio&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">short n,m,i,j;</span><br><span style="font-size: 16px">int s[31],e[31];</span><br><span style="font-size: 16px">int main() {</span><br><span style="font-size: 16px">&nbsp; scanf("%hd %hd",&amp;n,&amp;m);</span><br><span style="font-size: 16px">&nbsp; s[1]=1;</span><br><span style="font-size: 16px">&nbsp; for (i=1;i&lt;=m;i++) {</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for (j=1;j&lt;=n;j++) {</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (j==1) e[j]=s[n]+s[2];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (j==n) e[j]=s[n-1]+s[1];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (j&gt;1 &amp;&amp; j&lt;n) e[j]=s[j-1]+s[j+1];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; }</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for (j=1;j&lt;=n;j++) s[j]=e[j];</span><br><span style="font-size: 16px">&nbsp; }</span><br><span style="font-size: 16px">&nbsp; printf("%d\n",s[1]);</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">Pascal版</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i,k,n,m:byte;</span><br><span style="font-size: 16px">&nbsp; f:array[0..30,0..30] of longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(n,m);</span><br><span style="font-size: 16px">&nbsp; fillchar(f,sizeof(f),0);</span><br><span style="font-size: 16px">&nbsp; f[1,0]:=1;</span><br><span style="font-size: 16px">&nbsp; for k:=1 to m do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; f[1,k]:=f[2,k-1]+f[n,k-1];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for i:=2 to n-1 do f[i,k]:=f[i-1,k-1]+f[i+1,k-1];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; f[n,k]:=f[n-1,k-1]+f[1,k-1];</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; write(f[1,m]);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2009普及组复赛1.多项式输出poly</span></div>
+<div><span style="font-size: 16px">（感谢1402王飞飏同学提供）</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; i,n,x:shortint;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=n downto 0 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; read(x); &nbsp;//读入各项系数</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x=0 then continue; &nbsp;//系数为零跳过本次循环</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (x&gt;0) and (i&lt;&gt;n) then write('+'); &nbsp;//除开头外，其余各项系数若为正数输出+号</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if i=0 then write(x) &nbsp;//最后一项直接输出系数</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else if (abs(x)&lt;&gt;1) then write(x) &nbsp;//其余各项系数不为正负1的输出系数</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else if x=-1 then write('-'); &nbsp;//如果是-1输出-号（+1不用管）</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if i&lt;&gt;0 then if i=1 then write('x') &nbsp;//接下来输出X和指数部分（三种情况：常数项、一次项和其余项）</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else write('x^',i);</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2009普及组复赛3.细胞分裂cell</span><br><span style="font-size: 16px">type arr=array[1..30000,1..2] of longint;</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; ans,g,i,k,n,m1,m2,total:longint;</span><br><span style="font-size: 16px">&nbsp; a:arr;</span><br><span style="font-size: 16px">procedure factorization(k:longint;var a:arr;var link:longint);</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; i:=1;link:=0;</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; inc(i);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if k mod i=0 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inc(link);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[link,1]:=i;&nbsp; //a的第1格存储因子是几，第2格存储这个因子有几个</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[link,2]:=0;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while k mod i=0 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inc(a[link,2]);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k:=k div i;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; until k=1;&nbsp;&nbsp;</span><br><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">procedure check;</span><br><span style="font-size: 16px">var i,z,max:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; max:=-1;</span><br><span style="font-size: 16px">&nbsp; read(k);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to total do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if k mod a[i,1]&lt;&gt;0 then exit;&nbsp; //若k中没有这个质因子，则退出，此种细胞无解</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; z:=0;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while k mod a[i,1]=0 do begin&nbsp; //统计k中这个质因子有多少个，存入z中</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inc(z);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k:=k div a[i,1];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (a[i,2]+z-1) div z&gt;max then max:=(a[i,2]+z-1) div z;&nbsp; //(a[i,2]+z-1) div z中+z-1是为了凑整数；求出每个凑够每个因子所需的时间，并找出其中最大值</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; if max&lt;ans then ans:=max;&nbsp; //用ans记录所有细胞分裂至能开始实验的最小值</span><br><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; ans:=maxlongint;</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; readln(m1,m2);</span><br><span style="font-size: 16px">&nbsp; if m1=1 then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; writeln(0);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; halt;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; factorization(m1,a,total);&nbsp; //对m1分解质因子，将每一个因子及其数量存储到a中，不同质因子总数存储到total中</span><br><span style="font-size: 16px">&nbsp; for i:=1 to total do a[i,2]:=a[i,2]*m2;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do check;&nbsp; //读入并检验每一种细胞</span><br><span style="font-size: 16px">&nbsp; if ans=maxlongint then writeln(-1)</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else writeln(ans);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2010普及组复赛1.数字统计two</span><br><span style="font-size: 16px">解法一：</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; l,r,i,j:integer;</span><br><span style="font-size: 16px">&nbsp; ans:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; read(l,r);</span><br><span style="font-size: 16px">&nbsp; ans:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=l to r do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; j:=i;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while j&gt;0 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if j mod 10=2 then ans:=ans+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j:=j div 10;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; write(ans);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">解法二：字符串</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; l,r,i,j:integer;</span><br><span style="font-size: 16px">&nbsp; ans:longint;</span><br><span style="font-size: 16px">&nbsp; s:string;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; read(l,r);</span><br><span style="font-size: 16px">&nbsp; ans:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=l to r do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; str(i,s);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to length(s) do if s[j]='2' then ans:=ans+1;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; write(ans);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">解法三：递归</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; l,r,i:integer;</span><br><span style="font-size: 16px">&nbsp; ans:longint;</span><br><span style="font-size: 16px">&nbsp; a:array[0..10000] of byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; read(l,r);</span><br><span style="font-size: 16px">&nbsp; ans:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=0 to r do a[i]:=0;</span><br><span style="font-size: 16px">&nbsp; a[2]:=1;</span><br><span style="font-size: 16px">&nbsp; for i:=10 to r do a[i]:=a[i div 10]+a[i mod 10];</span><br><span style="font-size: 16px">&nbsp; for i:=l to r do ans:=ans+a[i];</span><br><span style="font-size: 16px">&nbsp; write(ans);</span><br><span style="font-size: 16px">end.</span></div>
+<div><br><span style="font-size: 16px">NOIP2010普及组复赛2.接水问题water</span><br><span style="font-size: 16px">（感谢1402周俊豪同学提供）</span><br><span style="font-size: 16px">解法一：模拟（减法）</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; a:array[1..10000] of byte;</span><br><span style="font-size: 16px">&nbsp; n,r,i:integer;</span><br><span style="font-size: 16px">&nbsp; m:byte;</span><br><span style="font-size: 16px">&nbsp; time:longint;</span><br><span style="font-size: 16px">&nbsp; f:boolean;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; read(n,m);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do read(a[i]);</span><br><span style="font-size: 16px">&nbsp; time:=0;</span><br><span style="font-size: 16px">&nbsp; r:=m;</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; time:=time+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for i:=1 to m do if a[i]&lt;&gt;0 then a[i]:=a[i]-1&nbsp; //扫描所有水龙头，若当前的人尚未接完，则继续接（减一）</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if r&lt;n then begin&nbsp; //若接完了，则下一个人开始接水</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; r:=r+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[i]:=a[r]-1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; f:=true;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for i:=1 to m do if a[i]&lt;&gt;0 then f:=false;&nbsp; //是否所有人都接完了</span><br><span style="font-size: 16px">&nbsp; until f and (r=n);</span><br><span style="font-size: 16px">&nbsp; writeln(time);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">解法二：模拟（加法）</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; a:array[1..10000] of longint;</span><br><span style="font-size: 16px">&nbsp; n,i:integer;</span><br><span style="font-size: 16px">&nbsp; m,k,j:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; read(n,m);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do read(a[i]);</span><br><span style="font-size: 16px">&nbsp; for i:=m+1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; k:=1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=2 to m do if a[j]&lt;a[k] then k:=j;&nbsp; //扫描所有水龙头，找出最小值，让下一个人接在最小值后面</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; a[k]:=a[k]+a[i]</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; k:=1;</span><br><span style="font-size: 16px">&nbsp; for i:=2 to m do if a[i]&gt;a[k] then k:=i;&nbsp; //找出所以水龙头队列中的最大值</span><br><span style="font-size: 16px">&nbsp; writeln(a[k]);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2010普及组复赛3.导弹拦截missile</span></div>
+<div><span style="font-size: 16px">解法一：贪心（可通过7组测资）</span></div>
+<div><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; x1,y1,x2,y2,n,i,max1,max2,x,y,jl1,jl2:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(x1,y1,x2,y2);</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; max1:=0;max2:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; readln(x,y);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; jl1:=sqr(x-x1)+sqr(y-y1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; jl2:=sqr(x-x2)+sqr(y-y2);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (jl1&gt;max1) and (jl2&gt;max2) then&nbsp; //导弹坐标在已有拦截范围之外</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if jl1&lt;jl2 then max1:=jl1&nbsp; //导弹离哪个拦截系统近，就由哪个拦截系统来拦</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else max2:=jl2;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; writeln(max1+max2);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">解法二：贪心优化</span></div>
+<div><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; x1,y1,x2,y2,n,i,x,y,min,max:longint;</span><br><span style="font-size: 16px">&nbsp; dd:array [1..100000,1..2] of longint;</span></div>
+<div><span style="font-size: 16px">procedure qsort(l,r:longint);</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i,j,x,y:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; i:=l;j:=r;x:=dd[(l+r) div 2,1];</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while dd[i,1]&gt;x do inc(i);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while x&gt;dd[j,1] do dec(j);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if i&lt;=j then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y:=dd[i,1]; dd[i,1]:=dd[j,1]; dd[j,1]:=y;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; y:=dd[i,2]; dd[i,2]:=dd[j,2]; dd[j,2]:=y;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inc(i); dec(j);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; until i&gt;j;</span><br><span style="font-size: 16px">&nbsp; if l&lt;j then qsort(l,j);</span><br><span style="font-size: 16px">&nbsp; if i&lt;r then qsort(i,r);</span><br><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(x1,y1,x2,y2);</span><br><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin&nbsp; //读入每个导弹坐标，存储其与二个拦截系统的距离</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; readln(x,y);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; dd[i,1]:=sqr(x-x1)+sqr(y-y1);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; dd[i,2]:=sqr(x-x2)+sqr(y-y2);</span><br><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; qsort(1,n);&nbsp; //按每个导弹与1号拦截系统距离由大到小排序</span></div>
+<div><span style="font-size: 16px">&nbsp; min:=dd[1,1];&nbsp; //2套拦截系统的最小代价和</span></div>
+<div><span style="font-size: 16px">&nbsp; max:=dd[1,2];&nbsp; //2号拦截系统目前代价</span><br><span style="font-size: 16px">&nbsp; for i:=2 to n do begin&nbsp; //从距1号拦截系统最远的导弹开始一个个的检测，如果该导弹改由2号拦截系统来拦，是否总代价会减少</span></div>
+<div><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if dd[i,1]+max&lt;min then min:=dd[i,1]+max;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if dd[i,2]&gt;max then max:=dd[i,2];</span><br><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(min);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2010普及组复赛4.三国游戏sanguo</span><br><span style="font-size: 16px">（感谢1402周俊豪同学提供）</span></div>
+<div>
+<div><span style="font-size: 16px">1、比胜负靠的是双方武将中默契值最大的那一对，所以除了默契值最大的那一对，其他的武将都可以忽略。</span></div>
+<div><span style="font-size: 16px">2、小涵是不会输的，因为小涵先手，计算机则按固定策略跟着小涵选。如果最终计算机的最大默契值比小涵的小，那么毫无疑问小涵就赢了；而如果计算机的武将搭配默契值比小涵的大，那么小涵完全可以换方法选，从计算机的方案的角度选，得到更优方案。</span></div>
+<div><span style="font-size: 16px">3、在一个武将和其他所有武将的搭配方案中，默契值最大的是拿不到的，因为小涵不能一下选两个武将，计算机又要和小涵抢。但是，在一个武将和其他所有武将的搭配方案中，默契值次大的那对，小涵可以稳拿。</span></div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i,j:integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; mq:array[1..500,1..500] of longint;</span></div>
+<div><span style="font-size: 16px">&nbsp; max1,max2,ans:longint;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n-1 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=i+1 to n do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; read(mq[i,j]);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; mq[j,i]:=mq[i,j] &nbsp;//复制到左下角，形成一个n*n的默契值二维表</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; readln;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; max1:=0;max2:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=1 to n do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if mq[i,j]&gt;max1 then begin max2:=max1;max1:=mq[i,j];end</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else if mq[i,j]&gt;max2 then max2:=mq[i,j]; &nbsp;//找出每个武将的第二大默契值</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if max2&gt;ans then ans:=max2; &nbsp;//找出所有武将中第二大默契值的最大值</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(1);</span></div>
+<div>&nbsp; writeln(ans);</div>
+<div>end.</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div>&nbsp;</div>
+<div><span style="font-size: 16px">NOIP2010提高组复赛2.乌龟棋tortoise</span><br><span style="font-size: 16px">（感谢1604陈韬宇同学提供）</span><br><br><span style="font-size: 16px">#include&lt;cstdio&gt;</span><br><span style="font-size: 16px">#include&lt;algorithm&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">int n,m,t,a,b,c,d,q[351],f[41][41][41][41];&nbsp; //f数组表示用到第i张1号卡，第j张2号卡，第k张3号卡，第l张4号卡时所能得到的最高分数</span><br><span style="font-size: 16px">int main()</span><br><span style="font-size: 16px">{</span><br><span style="font-size: 16px">&nbsp; scanf("%d%d",&amp;n,&amp;m);</span><br><span style="font-size: 16px">&nbsp; for (int i=0;i&lt;n;i++) scanf("%d",&amp;q[i]);</span><br><span style="font-size: 16px">&nbsp; for (int i=0;i&lt;m;i++) {</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; scanf("%d",&amp;t);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (t==1) a++;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (t==2) b++;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (t==3) c++;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (t==4) d++;</span><br><span style="font-size: 16px">&nbsp; }&nbsp; //统计每类卡的数量</span><br><span style="font-size: 16px">&nbsp; f[0][0][0][0]=q[0];&nbsp; //初始化第一格</span><br><span style="font-size: 16px">&nbsp; for (int i=0;i&lt;=a;i++)</span><br><span style="font-size: 16px">&nbsp; for (int j=0;j&lt;=b;j++)</span><br><span style="font-size: 16px">&nbsp; for (int k=0;k&lt;=c;k++)</span><br><span style="font-size: 16px">&nbsp; for (int l=0;l&lt;=d;l++) {</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (i) f[i][j][k][l]=max(f[i][j][k][l],f[i-1][j][k][l]+q[i+2*j+3*k+4*l]);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (j) f[i][j][k][l]=max(f[i][j][k][l],f[i][j-1][k][l]+q[i+2*j+3*k+4*l]);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (k) f[i][j][k][l]=max(f[i][j][k][l],f[i][j][k-1][l]+q[i+2*j+3*k+4*l]);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (l) f[i][j][k][l]=max(f[i][j][k][l],f[i][j][k][l-1]+q[i+2*j+3*k+4*l]);</span><br><span style="font-size: 16px">&nbsp; }&nbsp; //为防止数组越界，进行条件判断，然后四维DP</span><br><span style="font-size: 16px">&nbsp; printf("%d",f[a][b][c][d]);</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></div>
+<div><br><span style="font-size: 16px">NOIP2011提高组复赛day1 1.铺地毯carpet</span><br><span style="font-size: 16px">（感谢1402周俊豪同学提供）</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; n,i:integer;</span><br><span style="font-size: 16px">&nbsp; a,b,g,k:array[1..10000] of longint;</span><br><span style="font-size: 16px">&nbsp; x,y:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do readln(a[i],b[i],g[i],k[i]);</span><br><span style="font-size: 16px">&nbsp; readln(x,y);</span><br><span style="font-size: 16px">&nbsp; for i:=n downto 1 do&nbsp; //从后往前扫，找到第一个覆盖这个点的就输出，否则无解。</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if (x&gt;=a[i]) and (x&lt;=a[i]+g[i]) and (y&gt;=b[i]) and (y&lt;=b[i]+k[i]) then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln(i);exit;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; writeln(-1);</span><br><span style="font-size: 16px">end.</span><br><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2012普及组复赛1.质因数分解prime</span></div>
+<div>
+<div><span style="font-size: 16px">二个素数的积一定是合数，且只有4个因子（1，第1个素数，第2个素数，它们的积）</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i:longint;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=2 to 44721 do &nbsp;//sqrt(2000000000)</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if n mod i=0 then</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; begin writeln(n div i); break; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2012普及组复赛2.寻宝treasure</span></div>
+<div>
+<div><span style="font-size: 16px">直接模拟</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i,be,en,ru,my:integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; m,j,lt:shortint;</span></div>
+<div><span style="font-size: 16px">&nbsp; cbl:array[1..10000,0..99,1..2] of longint;</span></div>
+<div><span style="font-size: 16px">&nbsp; lts:array[1..10000] of byte;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n,m);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin &nbsp;//读入藏宝楼各层各房间信息</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; lt:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=0 to m-1 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; readln(cbl[i,j,1],cbl[i,j,2]);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; lt:=lt+cbl[i,j,1];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; lts[i]:=lt; &nbsp;//存储每一层有楼梯的房间数</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(be); &nbsp;//进入藏宝楼底层的房间号</span></div>
+<div><span style="font-size: 16px">&nbsp; my:=0; &nbsp;//宝箱密钥</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; en:=be;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; my:=(my+cbl[i,be,2]) mod 20123;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; ru:=cbl[i,be,2] mod lts[i]; &nbsp;//对每一层有楼梯的房间数取模，降低时间复杂度</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if ru=0 then ru:=lts[i];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; repeat &nbsp;//开始模拟</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if cbl[i,en,1]=1 then ru:=ru-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if ru=0 then break;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; en:=en+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if en=m then en:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; until false;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; be:=en;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(my);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2014普及组复赛1.珠心算测验count</span></div>
+<div><span style="font-size: 16px">（感谢新世纪庞可同学提供）</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i,j,ans:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; s:array[1..100] of integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; h:array[1..20000] of boolean;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do read(s[i]); &nbsp;//读入n个正整数</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n-1 do &nbsp;//在h数组中标记任意两个正慗数的和的值</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=i+1 to n do h[s[i]+s[j]]:=true;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do &nbsp;//扫描这个n个正整数，检查是否有正整数与h数组中标记的值相等</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if h[s[i]] then ans:=ans+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(ans);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2014普及组复赛2.比例简化ratio</span></div>
+<div><span style="font-size: 16px">（感谢新世纪庞可同学提供）</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; a,b:longint;</span></div>
+<div><span style="font-size: 16px">&nbsp; l,i,j,c,d:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; bz,min,t:real;</span></div>
+<div><span style="font-size: 16px">function gcd(a,b:byte):byte;</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; c:byte;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; while b&gt;0 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; c:=a mod b;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; a:=b;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; b:=c;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; gcd:=a;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(a,b,l);</span></div>
+<div><span style="font-size: 16px">&nbsp; bz:=a/b;</span></div>
+<div><span style="font-size: 16px">&nbsp; min:=1000000;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to l do &nbsp;//在1到L范围内穷举分子和分母</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=1 to l do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if gcd(i,j)=1 then begin &nbsp;//如果互质</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; t:=i/j-bz; &nbsp;//A'/B'-A/B的值</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if (t&gt;=0) and (t&lt;min) then begin c:=i;d:=j;min:=t;end; &nbsp;//找最小值，并用c、d记录分子和分母</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(c,' ',d);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2014普及组复赛3.螺旋矩阵matrix</span></div>
+<div><span style="font-size: 16px">（感谢格致初杭业晟同学提供）</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i,j,ans:longint;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n,i,j);</span></div>
+<div><span style="font-size: 16px">&nbsp; ans:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; while not ((i=1) or (i=n) or (j=1) or (j=n)) do begin &nbsp;//只要i、j还不是矩形的四个角，就一圈圈地剥掉最外层</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; ans:=ans+4*n-4; &nbsp;//计算矩形左上角左边一个格子的值</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; n:=n-2;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; i:=i-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; j:=j-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; if i=1 then writeln(ans+j) &nbsp;//如果在最上面一层</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else if i=n then writeln(ans+3*n-j-1) &nbsp;//如果在最下面一层</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else if j=1 then writeln(ans+4*n-i-2) &nbsp;//如果在第一列</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else writeln(ans+n+i-1); &nbsp;//如果在最后一列</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2014普及组复赛4.子矩阵submatrix</span><br><span style="font-size: 16px">（感谢1402周俊豪同学提供）</span><br><span style="font-size: 16px">暴力搜索，可以拿到50分</span></div>
+<div><span style="font-size: 16px">type</span><br><span style="font-size: 16px">&nbsp; da=array[1..17] of byte;</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; n,m,r,c,i,j:byte;</span><br><span style="font-size: 16px">&nbsp; min:longint;</span><br><span style="font-size: 16px">&nbsp; s:array[1..16,1..16] of integer;</span><br><span style="font-size: 16px">&nbsp; sr,sc:da;</span></div>
+<div><span style="font-size: 16px">function count(sr,sc:da):longint;&nbsp; //计算当前穷举到的子矩阵的分值</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i,j:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; sr[r+1]:=sr[r];</span><br><span style="font-size: 16px">&nbsp; sc[c+1]:=sc[c];</span><br><span style="font-size: 16px">&nbsp; count:=0;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to r do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to c do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; count:=count+abs(s[sr[i],sc[j]]-s[sr[i+1],sc[j]])+abs(s[sr[i],sc[j]]-s[sr[i],sc[j+1]]);</span><br><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">procedure column(cs,p:byte);&nbsp; //穷举列，用变量p保证序列递增</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i:byte;</span><br><span style="font-size: 16px">&nbsp; t:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; if cs=c then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; t:=count(sr,sc);&nbsp; //用sr,sc两个数组存储当前搜索到的子矩阵在原矩阵中的行列编号</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if t&lt;min then min:=t;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; exit;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=p+1 to m do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; sc[cs+1]:=i;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; column(cs+1,i);</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">procedure row(rs,p:byte);&nbsp; //穷举行</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; if rs=r then begin column(0,0);exit;end;</span><br><span style="font-size: 16px">&nbsp; for i:=p+1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; sr[rs+1]:=i;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; row(rs+1,i);</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(n,m,r,c);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to m do read(s[i,j]);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; readln;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; min:=2147483647;</span><br><span style="font-size: 16px">&nbsp; row(0,0);</span><br><span style="font-size: 16px">&nbsp; writeln(min);</span><br><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">NOIP2014提高组复赛day1 1.生活大爆炸版石头剪刀布rps</span></div>
+<div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,na,nb,fa,fb,i,ta,tb:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; a,b:array[1..200] of byte;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n,na,nb);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to na do read(a[i]);</span></div>
+<div><span style="font-size: 16px">&nbsp; readln;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to nb do read(b[i]);</span></div>
+<div><span style="font-size: 16px">&nbsp; readln;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; ta:=i mod na;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if ta=0 then ta:=na;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; tb:=i mod nb;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if tb=0 then tb:=nb;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; case a[ta] of &nbsp;//计算小A得分</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 0: &nbsp;if (b[tb]=2) or (b[tb]=3) then inc(fa);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 1: &nbsp;if (b[tb]=0) or (b[tb]=3) then inc(fa);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 2: &nbsp;if (b[tb]=1) or (b[tb]=4) then inc(fa);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 3: &nbsp;if (b[tb]=2) or (b[tb]=4) then inc(fa);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 4: &nbsp;if (b[tb]=0) or (b[tb]=1) then inc(fa);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; case b[tb] of &nbsp;//计算小B得分</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 0: &nbsp;if (a[ta]=2) or (a[ta]=3) then inc(fb);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 1: &nbsp;if (a[ta]=0) or (a[ta]=3) then inc(fb);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 2: &nbsp;if (a[ta]=1) or (a[ta]=4) then inc(fb);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 3: &nbsp;if (a[ta]=2) or (a[ta]=4) then inc(fb);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; 4: &nbsp;if (a[ta]=0) or (a[ta]=1) then inc(fb);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(fa,' ',fb);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<p>&nbsp;</p>
+<div>
+<div><span style="font-size: 16px">NOIP2015普及组复赛1.金币coin</span></div>
+<div><span style="font-size: 16px">有一个规律：1枚金币发1天，2枚金币连发2天，3枚金币连发3天……金币枚数即连发天数</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; d,t:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i:integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; ans:longint;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; d:=1;t:=1; &nbsp;//t为某天发放的金币数，d为某数量金币发放的天数</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; ans:=ans+t;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; d:=d-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if d=0 then begin t:=t+1;d:=t;end;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(ans);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<p>&nbsp;</p>
+<div>
+<div><span style="font-size: 16px">NOIP2015普及组复赛2.扫雷游戏mine</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,m,i,j,ans:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; s:array[0..101,0..101] of char; &nbsp;//为方便统计非地雷格周围地雷个数，行列范围从1-100扩大到0-101</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n,m);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin &nbsp;//读入雷区</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=1 to m do read(s[i,j]);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; readln;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do begin &nbsp;//扫描雷区每一格</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=1 to m do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if s[i,j]='*' then write('*') &nbsp;//若是地雷输出星号，否则统计周围地雷个数，输出其值</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;ans:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i-1,j-1]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i-1,j]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i-1,j+1]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i,j-1]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i,j+1]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i+1,j-1]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i+1,j]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;if s[i+1,j+1]='*' then inc(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp;write(ans);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; writeln;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><br><span style="font-size: 16px">NOIP2015普及组复赛3.求和sum</span><br><span style="font-size: 16px">暴力法（当n大于3000会超时，可得40分）</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; n,m,i,j,ans:longint;</span><br><span style="font-size: 16px">&nbsp; co,nu:array[1..100000] of longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(n,m);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do read(nu[i]);readln;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do read(co[i]);readln;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n-2 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=i+2 to n do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if ((i+j) mod 2=0) and (co[i]=co[j]) then ans:=(ans+(i+j)*(nu[i]+nu[j])) mod 10007;</span><br><span style="font-size: 16px">&nbsp; writeln(ans);</span><br><span style="font-size: 16px">end.</span></div>
+<div><br><span style="font-size: 16px">NOIP2015普及组复赛4.推销员salesman</span><br><span style="font-size: 16px">（感谢1402周俊豪同学提供）</span><br><span style="font-size: 16px">暴力法（当n大于1000会超时，可得60分）</span><br><span style="font-size: 16px">每一次的最优解必然包含了上一次的最优解，也就是说只要知道这一轮的最大疲劳值就行了，即这一轮能多消耗的疲劳值的最大值。可以分成两种情况：一、距离小于已经到达的最远距离；二、距离大于已经到达的最远距离。</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; n,i,j,dq,p,maxp,t,ans:longint;</span><br><span style="font-size: 16px">&nbsp; s:array[1..100000] of longint;</span><br><span style="font-size: 16px">&nbsp; a:array[1..100000] of integer;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do read(s[i]);readln;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to n do read(a[i]);readln;</span><br><br><span style="font-size: 16px">&nbsp; for i:=1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; maxp:=0;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if s[j]&gt;dq then p:=2*s[j]+a[j]-2*dq</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else p:=a[j];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if p&gt;maxp then begin maxp:=p;t:=j;end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if s[t]&gt;dq then dq:=s[t];</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; s[t]:=0;a[t]:=0;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; ans:=ans+maxp;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; writeln(ans);</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">end.</span><br><br></div>
+
+
+
+
+
+
+
+
+
+
+</div>
+<div><span style="font-size: 16px">NOIP2015提高组复赛day1 1.神奇的幻方magic</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i,j:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; s:integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; m:array[1..39,1..39] of integer;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; s:=1; &nbsp;//准备存入第一个数，i、j为行、列坐标</span></div>
+<div><span style="font-size: 16px">&nbsp; i:=1;j:=(n+1) div 2;</span></div>
+<div><span style="font-size: 16px">&nbsp; m[i,j]:=s;</span></div>
+<div><span style="font-size: 16px">&nbsp; while s&lt;n*n do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; s:=s+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (i=1) and (j&lt;&gt;n) then begin i:=n;j:=j+1;m[i,j]:=s;continue;end; &nbsp;//前一个数在第一行但不在最后一列</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (i&lt;&gt;1) and (j=n) then begin i:=i-1;j:=1;m[i,j]:=s;continue;end; &nbsp;//前一个数不在第一行但在最后一列</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (i=1) and (j=n) then begin i:=i+1;m[i,j]:=s;continue;end; &nbsp;//前一个数在第一行最后一列</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if m[i-1,j+1]=0 then begin i:=i-1;j:=j+1;end</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else i:=i+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; m[i,j]:=s;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do &nbsp;//输出，注意每行最后是数字，不能是空格</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=1 to n do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if j&lt;n then write(m[i,j],' ')</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else writeln(m[i,j]);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">仔细研究题目，你会发现新数只会填在老数的右上方（滚动）或正下方，可简化如下：</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i,j:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; s:integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; m:array[0..38,0..38] of integer; &nbsp;//为了滚动（mod）方便，将数组定义为0至38</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; s:=1;</span></div>
+<div><span style="font-size: 16px">&nbsp; i:=0;j:=n div 2;</span></div>
+<div><span style="font-size: 16px">&nbsp; m[i,j]:=s;</span></div>
+<div><span style="font-size: 16px">&nbsp; while s&lt;n*n do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; s:=s+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if m[(i-1+n) mod n,(j+1) mod n]=0 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; i:=(i-1+n) mod n;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; j:=(j+1) mod n;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end else i:=(i+1) mod n;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; m[i,j]:=s;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=0 to n-1 do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=0 to n-1 do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if j&lt;n-1 then write(m[i,j],' ')</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else writeln(m[i,j]);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+
+
+
+
+
+
+
+
+
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

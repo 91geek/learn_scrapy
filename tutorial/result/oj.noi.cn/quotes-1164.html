@@ -1,0 +1,175 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1164. 牛的零食 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1164" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">FJ经常给产奶量高的奶牛发特殊津贴，于是很快奶牛们拥有了大笔不知该怎么花的钱。为此，FJ购置了N(1&lt;=N&lt;=2000)份美味的零食来卖给奶牛们。每天FJ售出一份零食。当然FJ希望这些零食全部售出后能得到最大的收益。<br />
+&nbsp;&nbsp;&nbsp; 这些零食有以下这些有趣的特性：<br />
+&nbsp; * 零食按照1..N编号，它们被排成一列放在一个很长的盒子里。盒子的两端都有开口，FJ每天可以从盒子的任一端取出最外面的一个。<br />
+&nbsp;&nbsp; * 与美酒和好吃的奶酪相似，这些零食储存得越久就越好吃。当然，这样FJ就可以把它们卖出更高的价钱。<br />
+&nbsp;&nbsp; * 每份零食的初始价值不一定相同。FJ进货时，第i份零食的初始价值为v(i) (1&lt;=v(i)&lt;=1000)。<br />
+&nbsp;&nbsp; * 第i份零食如果在被买进后的第a天出售，则它的售价是v(i)*a。<br />
+&nbsp;&nbsp;&nbsp; v(i)对应的是从盒子顶端往下的第i份零食的初始价值。FJ告诉了你所有零食的初始价值，并希望你能帮他计算一下，在这些零食全被卖出后，他最多能得到多少钱。<br />
+&nbsp;&nbsp;&nbsp; 第一份零食在买进后的第1天售出，也就是说此时a=1。以后每过一天，a的值就增加1。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">第1行: 一个整数N，表示零食的总数<br />
+第2..N+1行: 第i+1行给出了从盒子顶端往下的第i份零食的初始价值v(i)</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">第1行: 输出一个整数，即FJ在卖完所有零食后的最大可能收益</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>5
+1
+3
+1
+5
+2</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>43</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">FJ一共进了5份零食。第1天FJ可以选择出售第1份初始价值为1的零食，或是第5份初始价值为2的零食。FJ按照以下的顺序出售零食：1,5,2,3,4，这样他的总收入就是1*1+2*2+3*3+4*1+5*5=43。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计基础篇补充7.11</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1164"><span class="badge badge-info">226</span></a><br />提交: <a class="pull-right" href="#main/statistic/1164"><span class="badge badge-info">416</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1164"><span class="badge badge-info">66.59</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1164'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1164/main.cpp/0/solution_path' data-toggle='tooltip' title='By BuffRed'>main.cpp</a><br /><a class='solution' href='index.php/main/download/1164/ssj.pas/0/solution_path' data-toggle='tooltip' title='By shenshijun0110'>ssj.pas</a><br /><a class='solution' href='index.php/main/download/1164/1164.cpp/0/solution_path' data-toggle='tooltip' title='By MAKIMM'>1164.cpp</a><br /><a class='solution' href='index.php/main/download/1164/project1.lpi/0/solution_path' data-toggle='tooltip' title='By 燕骏寒'>project1.lpi</a><br /><a class='solution' href='index.php/main/download/1164/1164.%2520%25E7%2589%259B%25E7%259A%2584%25E9%259B%25B6%25E9%25A3%259F.cpp/0/solution_path' data-toggle='tooltip' title='By 吴怡'>1164. 牛的零食.cpp</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计基础篇补充7.11</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1164" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1164' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1164?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1164. \u725b\u7684\u96f6\u98df (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

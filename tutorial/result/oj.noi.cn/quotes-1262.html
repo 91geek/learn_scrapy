@@ -1,0 +1,179 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1262. 汽水 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/1262" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：5秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：512MB<br />
+<br />
+牛牛来到了一个盛产汽水的国度旅行。<br />
+这个国度的地图上有n个城市，这些城市之间用n-1条道路连接，任意两个城市之间，都存在一条路径连接。这些城市生产的汽水有许多不同的风味，在经过道路i时，牛牛会喝掉<img src="http://latex.codecogs.com/gif.latex?w_%7Bi%7D" alt=" " />的汽水。牛牛非常喜欢喝汽水，但过量地引用汽水是有害健康的，因此，他希望再他旅行的这段时间内，平均每天喝到的汽水的量尽可能地接近给定的一个正整数k。<br />
+同时，牛牛希望他的旅行计划尽可能地有趣，牛牛会先选择一个城市作为起点，然后每天通过一条道路，前往一个没有去过的城市，最终选择在某一个城市结束旅行。<br />
+牛牛还要忙着去喝可乐，他希望你帮他设计出一个旅行计划，满足每天丨-k丨的值尽量小，请你告诉他这个最小值。<br />
+n &le; 5&times;<img src="http://latex.codecogs.com/gif.latex?10%5E%7B4%7D" alt=" " />，0 &le; <img src="http://latex.codecogs.com/gif.latex?a_%7Bi%7D" alt=" " />&nbsp;&le; <img src="http://latex.codecogs.com/gif.latex?10%5E%7B13%7D" alt=" " />，0 &le; k &le;&nbsp;<img src="http://latex.codecogs.com/gif.latex?10%5E%7B13%7D" alt=" " /></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">从文件soda.in中读入数据。<br />
+第一行两个正整数n，k。<br />
+接下来n-1行，每行三个正整数<img src="http://latex.codecogs.com/gif.latex?u_%7Bi%7D" alt=" " />，<img src="http://latex.codecogs.com/gif.latex?v_%7Bi%7D" alt=" " />，<img src="http://latex.codecogs.com/gif.latex?w_%7Bi%7D" alt=" " />，表示城市<img src="http://latex.codecogs.com/gif.latex?u_%7Bi%7D" alt=" " />和城市<img src="http://latex.codecogs.com/gif.latex?v_%7Bi%7D" alt=" " />之间有一条长度为<img src="http://latex.codecogs.com/gif.latex?w_%7Bi%7D" alt=" " />的道路连接。<br />
+同一行相邻的两个整数均用一个空格隔开。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出到文件soda.out中。<br />
+一行一个整数，表示丨-k丨最小值的整数部分，即你只要将这个最小值向下取整然后输出即可。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>5&nbsp; 21
+1&nbsp; 2&nbsp; 9
+1&nbsp; 3&nbsp; 27
+1&nbsp; 4&nbsp; 3
+1&nbsp; 5&nbsp; 12</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>1</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于20%的数据，n &le; 1000。<br />
+对于另外20%的数据，保证编号为i（1 &le; i &le; n-1）的节点和编号为i+1的节点之间连接了一条边。<br />
+对于另外20%的数据，保证数据是以1为根的完全二叉树（在完全二叉树中，节点i（2 &le; i &le; n）和节点&lfloor;i&divide;2&rfloor;之间有一条道路）。<br />
+对于另外20%的数据，保证除节点1以外，其他节点和节点1之间都有一条道路。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1262"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/1262"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1262"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1262'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1262" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1262' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1262?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1262. \u6c7d\u6c34 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

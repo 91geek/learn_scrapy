@@ -1,0 +1,182 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1309. 矩阵变换 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/1309" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：512MB<br />
+<br />
+给出一个N行M列的矩阵A，保证满足以下性质：M＞N。矩阵中每个数都是[0，N]中的自然数。每行中，[1，N]中每个自然数都恰好出现一次。这意味着每行中0恰好出现M-N次。每列中，[1，N]中每个自然数至多出现一次。<br />
+现在我们要在每行中选取一个非零数，并把这个数之后的数赋值为这个数。我们希望保持上面的性质（iv），即每行中，[1，N]中每个自然数仍然至多出现一次。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">第一行一个正整数T，表示数据组数。后面包含T组数据量，各组数据之间无空行。每组数据以两个正整数N，M开始。接下来N行，每行M个空格隔开的整数，意义如题所述。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">对于每组数据输出一行。如果有解，则输出N个整数，依次表示每一行取的数是多少。（这应该是一个1到N的排列。）如果无解，则输出任意卖萌表情。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>2
+5 10
+0 1 0 2 3 0 0 4 0 5
+2 0 3 0 0 1 0 5 4 0
+4 2 1 0 0 0 3 0 5 0
+0 3 0 4 0 5 0 1 2 0
+1 0 0 3 2 4 5 0 0 0
+5 10
+0 1 0 2 3 0 0 4 0 5
+2 0 3 0 0 1 0 5 4 0
+4 2 1 0 0 0 3 0 5 0
+0 3 0 4 0 5 0 1 2 0
+1 0 0 3 2 4 5 0 0 0</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4 5 3 1 2
+5 4 3 1 2</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于20%的数据，M＜8，T＜8；对于40%的数据，N＜8，T＜8；对于100%的数据，N＜200，M＜400，T＜50。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+							<div class="well"><fieldset>
+					<legend><h4>提示</h4></legend>
+					<div class="content">两组输入数据是相同的。由于结果不唯一，你可以给出任意一组合法答案。由于输入数据较大，请自行优化输入方法。</div>
+				</fieldset></div>
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1309"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/1309"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1309"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1309'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1309" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1309' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1309?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1309. \u77e9\u9635\u53d8\u6362 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

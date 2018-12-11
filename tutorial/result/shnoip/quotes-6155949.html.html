@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>计算机编码 - noipxu - 博客园</title>
+<meta property="og:description" content="计算机的存储器中只能存储二进制数0、1，无法存储正负号。所以我们将数据用原码、反码、补码系统表示好存储到计算机中，有利于运算。设：x=+0101，y=-1000。 一、原码原码系统就是用0、1表示真值" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6155949.html">计算机编码</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 15:58</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6155949" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6155949);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6155949,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 15:58:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<p><span style="font-size: 16px">计算机的存储器中只能存储二进制数0、1，无法存储正负号。所以我们将数据用原码、反码、补码系统表示好存储到计算机中，有利于运算。</span><br><span style="font-size: 16px">设：x=+0101，y=-1000。</span></p>
+<p><span style="font-size: 16px">一、原码</span><br><span style="font-size: 16px">原码系统就是用0、1表示真值的符号，0表示正号，1表示负号。如：[x]原=00101，[y]原=11000。</span><br><span style="font-size: 16px">注意：0有两种表示法[+0]原=00000，[-0]原=10000。</span><br><span style="font-size: 16px">原码表示简单易懂，真值变换也方便，在进行乘除运算时也方便。符号位作异或运算，数据进行乘除运算。但加减运算比较复杂，如两数相加，如果同号，则数据相加，符号位不变。如果异号，则要判断两个数的大小，用大数减小数，结果符号与大数符号相同。在计算机中乘除运算都是利用加减运算完成的，所以原码系统使用不是很方便。</span></p>
+<p><span style="font-size: 16px">二、反码</span><br><span style="font-size: 16px">反码系统也是用0、1表示真值的符号。真值为真与原码相同，为负则将数据每位求反，如：[x]反=00101，[y]反=10111。</span><br><span style="font-size: 16px">注意：</span><br><span style="font-size: 16px">1、0有两种表示法[+0]反=00000，[-0]反=11111。</span><br><span style="font-size: 16px">2、两个数反码的和等于两数和的反码。当符号位进位时须循环进位。循环进位即将符号位的进位加到和的最低位上。</span><br><span style="font-size: 16px">例1：x=+1001，y=-1011，计算x+y。</span><br><span style="font-size: 16px">[x]反=01001，[y]反=10100，[x]反+[y]反=11101</span><br><span style="font-size: 16px">x+y真值=-0010，[x+y]反=11101</span><br><span style="font-size: 16px">例2：x=+1001，y=-0101，计算x+y。</span><br><span style="font-size: 16px">[x]反=01001，[y]反=11010，[x]反+[y]反=100011，将首位的1取出与00011相加得到00100</span><br><span style="font-size: 16px">x+y真值=+0100，[x+y]反=00100。</span><br><span style="font-size: 16px">反码加减运算不必判断两数大小，还要有个循环进位。</span></p>
+<p><span style="font-size: 16px">三、补码</span><br><span style="font-size: 16px">先介绍模和同余概念。对于两个整数a、b，同除一个数M，所得余数相等，则称a、b对模数M同余。记为a=b(Mod M)。</span><br><span style="font-size: 16px">例如模为10，8+(-2)=8+8=16(Mod 10)=6，其中8就是(-2)的补码（模为10）。</span><br><span style="font-size: 16px">注意：</span><br><span style="font-size: 16px">1、0表示法惟一。</span><br><span style="font-size: 16px">2、两个数补码的和等于两数和的补码。</span><br><span style="font-size: 16px">3、负数的补码就是符号位不变，数据每位取反再加1。</span><br><span style="font-size: 16px">例1：x=+1001，y=-1011，计算x+y。</span><br><span style="font-size: 16px">[x]补=01001，[y]补=10101，[x]补+[y]补=11110</span><br><span style="font-size: 16px">x+y真值=-0010，[x+y]补=11110。</span><br><span style="font-size: 16px">例2：x=+1001，y=-0101，计算x+y模为2的五次方=100000。</span><br><span style="font-size: 16px">[x]补=01001，[y]补=11011，[x]补+[y]补=100100=00100</span><br><span style="font-size: 16px">x+y真值=+0100，[x+y]补=00100。</span></p>
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

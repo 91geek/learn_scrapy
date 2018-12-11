@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>for语句 - noipxu - 博客园</title>
+<meta property="og:description" content="一、for语句的格式格式1：for (控制变量初始化表达式;条件表达式;增量表达式) 语句1; 格式2：for (控制变量初始化表达式;条件表达式;增量表达式){ 语句1; 语句2; …} 注意：1、" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6155323.html">for语句</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 11:58</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6155323" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6155323);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6155323,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 11:58:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">一、for语句的格式</span><br><span style="font-size: 16px">格式1：</span><br><span style="font-size: 16px">for (控制变量初始化表达式;条件表达式;增量表达式)</span><br><span style="font-size: 16px">&nbsp; 语句1;</span></p>
+<p><span style="font-size: 16px">格式2：</span><br><span style="font-size: 16px">for (控制变量初始化表达式;条件表达式;增量表达式)</span><br><span style="font-size: 16px">{ 语句1;</span><br><span style="font-size: 16px">&nbsp; 语句2;</span><br><span style="font-size: 16px">&nbsp; …</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">注意：</span><br><span style="font-size: 16px">1、当条件表达式的值为真时重复循环体，否则结束循环；这一点和pascal语言的while语句一致。</span><br><span style="font-size: 16px">2、for语句中的“控制变量初始化表达式”、“条件表达式”、“增量表达式”都是选择项，即可以省略，但分号不能省略。省略了“控制变量初始化表达式”，表示不对循环控制变量赋初值；省略了“条件表达式”，如果不做其他处理时，会成为死循环；省略了“增量表达式”，则不对循环控制变量进行操作，这时可在循环体中加入修改循环控制变量的语句。</span><br><span style="font-size: 16px">3、可以在“控制变量初始化表达式”、“增量表达式”部分放一条以上的语句，中间用逗号分隔。</span></p>
+<p><span style="font-size: 16px">for语句的执行过程：</span><br><span style="font-size: 16px">1、执行“控制变量初始化表达式”，使控制变量获得一个初值。</span><br><span style="font-size: 16px">2、判断控制变量是否满足“条件表达式”，若满足条件则执行一遍循环体，否则结束整个for语句，继续执行for语句下面的句子。</span><br><span style="font-size: 16px">3、根据“增量表达式”，计算出控制变量所得到的新值。</span><br><span style="font-size: 16px">4、自动转到第2步。</span></p>
+<p><span style="font-size: 16px">格式举例：</span><br><span style="font-size: 16px">1、将控制变量从1变到100，增量为1</span><br><span style="font-size: 16px">for (i=1;i&lt;=100;++i)</span></p>
+<p><span style="font-size: 16px">2、将控制变量从7变到77，增量为7</span><br><span style="font-size: 16px">for (i=7;i&lt;=77,i+=7)</span></p>
+<p><span style="font-size: 16px">3、控制变量i和j共同进行循环控制，i从1变到99，j从2变到100，增量均为2</span><br><span style="font-size: 16px">for (int i=1,j=2;i&lt;=99 &amp;&amp; j&lt;=100;i+=2,j+=2)</span><br><span style="font-size: 16px">注意：可以在for循环“控制变量初始化语句”中声明变量，这些变量只在for循环结构中有效，离开了该for结构，变量就无效了。</span></p>
+<p><span style="font-size: 16px">例1：计算并输出1+2+…+100的和。</span><br><span style="font-size: 16px">#include&lt;iostream&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">int main()</span><br><span style="font-size: 16px">{ int sum=0;</span><br><span style="font-size: 16px">&nbsp; for (int i=1;i&lt;101;i++)</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; sum+=i;</span><br><span style="font-size: 16px">&nbsp; cout&lt;&lt;sum&lt;&lt;endl;</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">二、循环的嵌套</span><br><span style="font-size: 16px">一个循环体内可以包含另一个完整的循环结构，这就构成了循环语句的嵌套。嵌套着的每一个循环语句称为一层，处于较外层的叫做外循环，处于较内层的叫做内循环；有两层嵌套的称为双重循环，有三层嵌套的叫三重循环，以此类推。</span></p>
+<p><span style="font-size: 16px">例2：水仙花数是指一个三位数，其各位数的立方和等于该数，如153=1*1*1+5*5*5+3*3*3，编程输出所有的水仙花数。</span><br><span style="font-size: 16px">#include&lt;iostream&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">int main()</span><br><span style="font-size: 16px">{ int m,n,k;</span><br><span style="font-size: 16px">&nbsp; for (m=1;m&lt;10;m++)</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for (n=0;n&lt;10;n++)</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (k=0;k&lt;10;k++)</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (m*m*m+n*n*n+k*k*k==m*100+n*10+k)</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;m&lt;&lt;n&lt;&lt;k&lt;&lt;endl;</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">例3：利用for循环输出下图的三角形。</span><br><span style="font-size: 16px">&nbsp;*</span><br><span style="font-size: 16px">&nbsp;*&nbsp; *</span><br><span style="font-size: 16px">&nbsp;*&nbsp; *&nbsp; *</span><br><span style="font-size: 16px">&nbsp;*&nbsp; *&nbsp; *&nbsp; *</span><br><span style="font-size: 16px">&nbsp;*&nbsp; *&nbsp; *&nbsp; *&nbsp; *</span><br><span style="font-size: 16px">#include&lt;iostream&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">int main()</span><br><span style="font-size: 16px">{ for (int i=1;i&lt;6;i++)</span><br><span style="font-size: 16px">&nbsp; { for (int j=1;j&lt;=i;j++)</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cout&lt;&lt;" * ";</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; cout&lt;&lt;endl;</span><br><span style="font-size: 16px">&nbsp; }</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">三、作业</span><br><span style="font-size: 16px">1、zerojudge：</span><br><span style="font-size: 16px">基础题：a059、a244、a621、b146、b202、b209、d010、d069、d072、d074、d490、d491、d498、d532、d587</span><br><span style="font-size: 16px">for循环的嵌套：a111、b205、c005、d236</span><br><span style="font-size: 16px">思考题：a040、a042、a148、a240、b097、c004、d881</span></p>
+<p><span style="font-size: 16px">2、求100+97+……+10+7+4+1之和。</span><br><span style="font-size: 16px">3、在8*8的国际象棋棋盘上，第一格放一粒米，第二格放两粒米，第三格放四粒米，第四格放八粒米，以此类推，后一格是前一格的两倍，输出一共需要多少粒米。</span><br><span style="font-size: 16px">4、鸡兔同笼49只，100条腿地上走，输出鸡和兔的数量。</span><br><span style="font-size: 16px">5、某人想将一张面值为100元的人民币兑换成5元、1元和0.5元面值的纸币，但要求零钱总数为100张，且每种面值的纸币至少有一张，输出所有兑换方法。</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

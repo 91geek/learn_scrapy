@@ -1,0 +1,167 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1351. 接水问题 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/1351" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：128MB<br />
+<br />
+学校里有一个水房，水房里一共装有 m 个龙头可供同学们打开水，每个龙头每秒钟的供水量相等，均为 1。<br />
+现在有 n 名同学准备接水，他们的初始接水顺序已经确定。将这些同学按接水顺序从 1到 n 编号，i号同学的接水量为 <img src="http://latex.codecogs.com/gif.latex?w_%7Bi%7D" alt=" " />。接水开始时，1 到 m号同学各占一个水龙头，并同时打开水龙头接水。当其中某名同学 j 完成其接水量要求&nbsp;<img src="http://latex.codecogs.com/gif.latex?w_%7Bj%7D" alt=" " /> 后，下一名排队等候接水的同学 k马上接替 j 同学的位置开始接水。这个换人的过程是瞬间完成的，且没有任何水的浪费。即j 同学第x 秒结束时完成接水， 则 k 同学第 x+1 秒立刻开始接水。 若当前接水人数 n&rsquo;不足 m，则只有 n&rsquo;个龙头供水，其它 m&minus;n&rsquo;个龙头关闭。<br />
+现在给出 n名同学的接水量，按照上述接水规则，问所有同学都接完水需要多少秒。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件名为 water.in。第 1 行2 个整数 n 和 m，用一个空格隔开，分别表示接水人数和龙头个数。第 2 行 n 个整数 <img src="http://latex.codecogs.com/gif.latex?w_%7B1%7D" alt=" " />、<img src="http://latex.codecogs.com/gif.latex?w_%7B2%7D" alt=" " />、&hellip;&hellip;、<img src="http://latex.codecogs.com/gif.latex?w_%7Bn%7D" alt=" " />，每两个整数之间用一个空格隔开，<img src="http://latex.codecogs.com/gif.latex?w_%7Bi%7D" alt=" " />表示 i 号同学的接水量。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件名为 water.out。输出只有一行，1 个整数，表示接水所需的总时间。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>5 3
+4 4 1 2 1</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1 &le; n &le; 10000，1 &le;m&le; 100 且 m&le; n；1 &le;<img src="http://latex.codecogs.com/gif.latex?w_%7Bi%7D" alt=" " /> &le; 100。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1351"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/1351"><span class="badge badge-info">7</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1351"><span class="badge badge-info">0.00</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1351'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1351" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1351' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1351?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1351. \u63a5\u6c34\u95ee\u9898 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

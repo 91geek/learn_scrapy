@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>while语句 - noipxu - 博客园</title>
+<meta property="og:description" content="一、while语句的格式 使用for语句编写程序时一般需要事先知道循环次数，如果遇到不能确定循环次数的问题时可以使用while语句。while语句用于“当满足某一条件时进行循环”的情况。 while语" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6169450.html">while语句</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-13 13:03</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6169450" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6169450);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6169450,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/13 13:03:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<div><span style="font-size: 16px">一、while语句的格式</span></div>
+<div><span style="font-size: 16px">使用for语句编写程序时一般需要事先知道循环次数，如果遇到不能确定循环次数的问题时可以使用while语句。while语句用于“当满足某一条件时进行循环”的情况<span style="line-height: 28px">。</span></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">while语句的格式：while 布尔表达式 do 语句;</span></div>
+<div><span style="font-size: 16px">while语句的执行过程是：先求布尔表达式的值，当其值是真时，进入循环执行do后面的语句；然后返回再求布尔表达式的值，若布尔表达式的值是真，再次执行do后<span style="line-height: 28px">面的语句；如果布尔表达式的值是假就退出循环，执行while下面的语句。</span></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">注意事项：</span></div>
+<div><span style="font-size: 16px">1、为了使while循环正常终止，在循环体内一定要有改变布尔表达式值的语句，以使布尔值有可能为假，从而结束循环；否则将会导致循环无法结束的“死循环”状态<span style="line-height: 28px">。</span></span></div>
+<div><span style="font-size: 16px">2、循环体是多个语句时，需用begin和end将它们括起来形成一条复合语句。</span></div>
+<div><span style="font-size: 16px">3、如果循环开始时，布尔表达式就为假，则不执行循环体，直接退出while语句。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例1：有一张纸，其厚度为0.1毫米，将它对折多少次，其厚度将超过珠穆朗玛峰的高度。</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; i:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; r:real;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; i:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; r:=0.0001;</span></div>
+<div><span style="font-size: 16px">&nbsp; while r&lt;8848 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; r:=r*2;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; i:=i+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(i);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例2：输入一个正整数，求这个正整数的各位数字之和。</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,ans:integer;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; ans:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; while n&gt;0 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; ans:=ans+n mod 10;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; n:=n div 10;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(ans);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例3：输入一个正整数，将这个正整数的各位数字逆序输出。</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n:integer;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; while n&gt;0 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(n mod 10);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; n:=n div 10;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">思考：如何优化，使得输入120，输出21。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例4：输入两个正整数，求这两个正整数的最大公约数。</span></div>
+<div><span style="font-size: 16px">分析：采用辗转相除法求m和n的最大公约数，即：设m=n+r（0&lt;=r&lt;n），则m和n的最大公约数与n和r的最大公约数相同，当r等于0，这时的n就是m和n的最大公约数。若<span style="line-height: 28px">r不等于0，再对n和r重复上面过程，直到r=0为止。</span></span></div>
+<div><span style="font-size: 16px">例如：求231和63的最大公约数</span></div>
+<div><span style="font-size: 16px">231 mod 63=42</span></div>
+<div><span style="font-size: 16px">63 mod 42=21</span></div>
+<div><span style="font-size: 16px">42 mod 21=0</span></div>
+<div><span style="font-size: 16px">所以42和21的最大公约数为21，由此得出231和63的最大公约数也为21。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; a,b,c:integer;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(a,b);</span></div>
+<div><span style="font-size: 16px">&nbsp; while b&gt;0 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; c:=a mod b;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; a:=b;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; b:=c;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln(a);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">思考：你会求两个数的最小公倍数吗？</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例5：输入一个大于1的自然数N，将N分解成质因数的乘积。</span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">N=120</span></div>
+<div><span style="font-size: 16px">120=2*2*2*3*5</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; n,i:integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; f:boolean;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; write(n,'=');</span></div>
+<div><span style="font-size: 16px">&nbsp; f:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; i:=2;</span></div>
+<div><span style="font-size: 16px">&nbsp; while n&gt;=i do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; while n mod i=0 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if f then write('*') else f:=true;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(i);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; n:=n div i;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; i:=i+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例6：求2到1000之间的素数，一行打印十个素数。</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; i,k:integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; prime:boolean;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=2 to 1000 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; prime:=true;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; k:=2;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; while (k&lt;=trunc(sqrt(i))) and prime do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if i mod k=0 then prime:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; k:=k+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if prime then write(i:8);</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">二、作业</span></div>
+<div><span style="font-size: 16px">1、zerojudge：</span></div>
+<div><span style="font-size: 16px">基础题：a024、a038、a121、a147、a149、a738、d070、d356、d693、d899</span></div>
+<div><span style="font-size: 16px">思考题：a215、a307、b330、c079、d255、d593</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">2、利用公式π/4=1-1/3+1/5-1/7+……，求π的值，要求精确到最后一项小于0.0001为止。</span></div>
+<div><span style="font-size: 16px">3、打印输出一百到一亿之间的，既是完全平方数又是回文数的所有正整数（完全平方数是一个正整数的平方数，回文数即为左右对称的正整数）。例如：121，它是11<span style="line-height: 28px">的平方，也是左右对称的自然数。</span></span></div>
+<div><span style="font-size: 16px">4、输入两个正整数，求这两个正整数的最小公倍数。（设这两个数分别是m和n，另设一个整型变量i，则m*i就是m的i倍。令i向n变化，每次增加1，在此过程中，当<span style="line-height: 28px">m*i能被n整除时，m*i即为所求。）</span></span></div>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

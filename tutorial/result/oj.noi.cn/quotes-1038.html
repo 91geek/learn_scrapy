@@ -1,0 +1,165 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1038. 玩扑克 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1038" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">又到休息时间了。两个小伙伴要玩扑克牌比大小的游戏：每人分到一种花色的扑克牌，然后每人随机出一张牌，大者胜，最后获胜次数多的人，赢一轮。<br />
+不开心的事发生了，玩了一轮后，发现扑克牌竟然少了一张。到底少了几呢？<br />
+你能写个程序，快速找到扑克x吗？<br />
+&nbsp;</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入一行，包括25个用空格分隔的数字（A表示为1，J、Q、K表示为11、12、13）。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出数字x，表示缺少的扑克牌数字。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>9 1 13 2 6 10 7 8 3 11 4 1 5 9 10 2 4 3 12 13 11 5 8 6 7</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>12</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content"></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习4.5.4</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1038"><span class="badge badge-info">3665</span></a><br />提交: <a class="pull-right" href="#main/statistic/1038"><span class="badge badge-info">5159</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1038"><span class="badge badge-info">72.68</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1038'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1038/%25E6%2589%2591%25E5%2585%258B%25E7%2589%258C.cpp/0/solution_path' data-toggle='tooltip' title='By 殷绍杰'>扑克牌.cpp</a><br /><a class='solution' href='index.php/main/download/1038/fd.cpp/0/solution_path' data-toggle='tooltip' title='By 牛的传说'>fd.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D7.o/0/solution_path' data-toggle='tooltip' title='By 吕泓磊'>未命名7.o</a><br /><a class='solution' href='index.php/main/download/1038/%25E6%2597%25A0%25E4%25B8%25BA%25E4%25B8%2589%25E4%25B8%25AD%25E6%259C%25B1%25E5%2585%258B%25E6%2596%2587%25E7%258E%25A9%25E6%2589%2591%25E5%2585%258B.c/0/solution_path' data-toggle='tooltip' title='By zhukewen123'>无为三中朱克文玩扑克.c</a><br /><a class='solution' href='index.php/main/download/1038/by%25E3%2580%258E%25E6%25B0%25B8%25E6%2581%2592%25E4%25B9%258B%25E8%2593%259D%25E3%2580%258F.cpp/0/solution_path' data-toggle='tooltip' title='By fzsxlzc'>by『永恒之蓝』.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By 我跟你编程序'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1038/1004.cpp/0/solution_path' data-toggle='tooltip' title='By 9327847'>1004.cpp</a><br /><a class='solution' href='index.php/main/download/1038/s1038.cpp/0/solution_path' data-toggle='tooltip' title='By samuv'>s1038.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E6%2589%2591%25E5%2585%258B.cpp/0/solution_path' data-toggle='tooltip' title='By 我在野区'>扑克.cpp</a><br /><a class='solution' href='index.php/main/download/1038/t1038.pas/0/solution_path' data-toggle='tooltip' title='By Rh626'>t1038.pas</a><br /><a class='solution' href='index.php/main/download/1038/noi.cpp/0/solution_path' data-toggle='tooltip' title='By 天马行空'>noi.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E8%25AF%2595%25E9%25A2%259839.cpp/0/solution_path' data-toggle='tooltip' title='By 黄星皓'>试题39.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E7%25A7%2580%25E6%2589%258D%2520%2520%25E7%258E%25A9%25E6%2589%2591%25E5%2585%258B.cpp/0/solution_path' data-toggle='tooltip' title='By 秀才'>秀才  玩扑克.cpp</a><br /><a class='solution' href='index.php/main/download/1038/1038.pas/0/solution_path' data-toggle='tooltip' title='By 世界无敌'>1038.pas</a><br /><a class='solution' href='index.php/main/download/1038/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1038/%25281038c%2529%25E5%25B0%258F%25E5%25AD%25A6%25E7%2594%259FAC.c/0/solution_path' data-toggle='tooltip' title='By hjdmmm'>(1038c)小学生AC.c</a><br /><a class='solution' href='index.php/main/download/1038/nblk.dat/0/solution_path' data-toggle='tooltip' title='By 陈圳锴'>nblk.dat</a><br /><a class='solution' href='index.php/main/download/1038/1038.txt/0/solution_path' data-toggle='tooltip' title='By WD_hz'>1038.txt</a><br /><a class='solution' href='index.php/main/download/1038/%25E5%25B0%258F%25E5%25AD%25A6%25E7%2594%259F%25E5%2581%259A%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By Octopus136'>小学生做法.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E7%25BC%2596%25E8%25AF%2591.cpp/0/solution_path' data-toggle='tooltip' title='By 白小白0818'>编译.cpp</a><br /><a class='solution' href='index.php/main/download/1038/1038.cpp/0/solution_path' data-toggle='tooltip' title='By liuyujie'>1038.cpp</a><br /><a class='solution' href='index.php/main/download/1038/haha1.cpp/0/solution_path' data-toggle='tooltip' title='By 蔡荣旭'>haha1.cpp</a><br /><a class='solution' href='index.php/main/download/1038/ice1038.cpp/0/solution_path' data-toggle='tooltip' title='By 冰帝小黑'>ice1038.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E7%258E%25A9%25E6%2589%2591%25E5%2585%258B_MKY.cpp/0/solution_path' data-toggle='tooltip' title='By 2351631040'>玩扑克_MKY.cpp</a><br /><a class='solution' href='index.php/main/download/1038/1038%2528c%252B%252B%2529.cpp/0/solution_path' data-toggle='tooltip' title='By chester'>1038(c++).cpp</a><br /><a class='solution' href='index.php/main/download/1038/by%25E9%2599%2588%25E4%25BF%258A%25E5%25AE%2587.cpp/0/solution_path' data-toggle='tooltip' title='By 走在冷风中'>by陈俊宇.cpp</a><br /><a class='solution' href='index.php/main/download/1038/t01c76ebf006f552b14.jpg/0/solution_path' data-toggle='tooltip' title='By black snake'>t01c76ebf006f552b14.jpg</a><br /><a class='solution' href='index.php/main/download/1038/IMG_20180315_195354_BURST1.jpg/0/solution_path' data-toggle='tooltip' title='By 2162783338'>IMG_20180315_195354_BURST1.jpg</a><br /><a class='solution' href='index.php/main/download/1038/%25E4%25BB%258510%25E8%25A1%258C%25E7%259A%2584%25E6%25A0%2587%25E5%2587%2586%25E6%2596%25B9%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By 41074067'>仅10行的标准方法.cpp</a><br /><a class='solution' href='index.php/main/download/1038/sf.cpp/0/solution_path' data-toggle='tooltip' title='By 小周2004'>sf.cpp</a><br /><a class='solution' href='index.php/main/download/1038/%25E9%25A2%2598%25E7%259B%25AE1038%25E7%258E%25A9%25E6%2589%2591%25E5%2585%258B.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1038玩扑克.cpp</a><br /><a class='solution' href='index.php/main/download/1038/166%25204.cpp/0/solution_path' data-toggle='tooltip' title='By 小不丁'>166 4.cpp</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习4.5.4</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1038" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1038' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1038?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1038. \u73a9\u6251\u514b (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

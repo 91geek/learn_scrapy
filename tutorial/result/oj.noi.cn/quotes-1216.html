@@ -1,0 +1,183 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1216. 社交网络 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/1216" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1S &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：128MB<br />
+<br />
+在社交网络（social network）的研究中，我们常常使用图论概念去解释一些社会现象。<br />
+不妨看这样的一个问题。在一个社交圈子里有n个人，人与人之间有不同程度的关系。我们将这个关系网络对应到一个n个结点的无向图上，两个不同的人若互相认识，则在他们对应的结点之间连接一条无向边，并附上一个正数权值c，c越小，表示两个人之间的关系越密切。<br />
+我们可以用对应结点之间的最短路长度来衡量两个人s和t之间的关系密切程度，注意到最短径上的其他结点为s和t的联系提供了某种方面上的便利，即这些结点对于s和t之间的联系有一定的重要程度。那么我们通过统计通过一个结点v的最短路径的数目来衡量该结点在社交网络中的重要程度，是有一定道理的。<br />
+考虑到两个结点A和B之间可能会有多条最短路径。我们修改重要程度的定义如下：<br />
+令<img src="http://latex.codecogs.com/gif.latex?C_%7Bs%2Ct%7D" alt=" " />表示从s到t的不同的最短路的数目，<img src="http://latex.codecogs.com/gif.latex?C_%7Bs%2Ct%7D" alt=" " />(v)表示经过v的从s到t的最短路的数目；则定义<br />
+<img src="http://latex.codecogs.com/gif.latex?I%28v%29%3D" alt=" " /><img src="http://latex.codecogs.com/gif.latex?%5Csum_%7B%7D%5E%7Bs%5Cneq%20v%2Ct%5Cneq%20v%7D" alt=" " /><img src="http://latex.codecogs.com/gif.latex?%5Cfrac%7BC_%7Bs%2Ct%7D%28v%29%7D%7BC_%7Bs%2Ct%7D%7D" alt=" " /><br />
+为结点v在社交网络中的重要程度。<br />
+为了使I(v)和<img src="http://latex.codecogs.com/gif.latex?C_%7Bs%2Ct%7D%28v%29" alt=" " />有意义，我们规定需要处理的社交网络都是连通的无向图，即任意两个结点之间都有一条有限长度的最短路径。<br />
+&nbsp;<br />
+现在给出这样一幅描述社交网络的加权无向图，请你求出每一个结点的重要程度。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件中第一行有两个整数，n和m，表示社交网络中结点和无向边的数目。在无向图中，我们将所有结点从1到n进行编号。<br />
+接下来m行，每行用三个整数a, b, c描述一条连接结点a和b，权值为c的无向边。注意任意两个结点之间最多有一条无向边相连，无向图中也不会出现自环（即不存在一条无向边的两个端点是相同的结点）。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件包括n行，每行一个实数，精确到小数点后3位。第i行的实数表示结点i在社交网络中的重要程度。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4 4
+1 2 1
+2 3 1
+3 4 1
+4 1 1</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>1.000
+1.000
+1.000
+1.000</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">50%的数据中：n &le; 10，m &le; 45<br />
+100%的数据中：n &le; 100，m &le; 4500，任意一条边的权值c是正整数，满足：1 &le; c &le; 1000。<br />
+所有数据中保证给出的无向图连通，且任意两个结点之间的最短路径数目不超过<img src="http://latex.codecogs.com/gif.latex?10%5E%7B10%7D" alt=" " />。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1216"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/1216"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1216"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1216'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1216" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1216' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1216?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1216. \u793e\u4ea4\u7f51\u7edc (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

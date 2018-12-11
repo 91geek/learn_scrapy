@@ -1,0 +1,176 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1236. 推销员 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/1236" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：128MB<br />
+<br />
+阿明是一名推销员，他奉命到螺丝街推销他们公司的产品。螺丝街是一条死胡同，出口与入口是同一个，街道的一侧是围墙，另一侧是住户。螺丝街一共有N家住户，第i家住户到入口的距离为<img src="http://latex.codecogs.com/gif.latex?S_%7Bi%7D" alt=" " />米。由于同一栋房子里可以有多家住户，所以可能有多家住户与入口的距离相等。阿明会从入口进入，依次向螺丝街的X家住户推销产品，然后再原路走出去。<br />
+阿明每走1米就会积累1点疲劳值，向第i家住户推销产品会积累<img src="http://latex.codecogs.com/gif.latex?A_%7Bi%7D" alt=" " />点疲劳值。阿明是工作狂，他想知道，对于不同的X，在不走多余的路的前提下，他最多可以积累多少点疲劳值。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件名为 salesman.in。<br />
+第一行有一个正整数N，表示螺丝街住户的数量。<br />
+接下来的一行有N个正整数，其中第i个整数<img src="http://latex.codecogs.com/gif.latex?S_%7Bi%7D" alt=" " />表示第i家住户到入口的距离。数据保证<img src="http://latex.codecogs.com/gif.latex?S_%7B1%7D" alt=" " />&le;<img src="http://latex.codecogs.com/gif.latex?S_%7B2%7D" alt=" " />&le;&hellip;&le;<img src="http://latex.codecogs.com/gif.latex?S_%7Bn%7D" alt=" " />&lt;<img src="http://latex.codecogs.com/gif.latex?10%5E%7B8%7D" alt=" " />。<br />
+接下来的一行有N个正整数，其中第i个整数<img src="http://latex.codecogs.com/gif.latex?A_%7Bi%7D" alt=" " />表示向第i户住户推销产品会积累的疲劳值。数据保证<img src="http://latex.codecogs.com/gif.latex?A_%7Bi%7D" alt=" " />&lt;<img src="http://latex.codecogs.com/gif.latex?10%5E%7B3%7D" alt=" " />。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件名为salesman.out。<br />
+输出N行，每行一个正整数，第i行整数表示当X=i时，阿明最多积累的疲劳值。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'><img src="data:image/png;base64,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" alt=" " /></pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>X=1: 向住户5推销，往返走路的疲劳值为5+5，推销的疲劳值为5，总疲劳值为15。
+X=2: 向住户4、5推销，往返走路的疲劳值为5+5，推销的疲劳值为4+5，总疲劳值为5+5+4+5=19。
+X=3: 向住户 3、4、5推销，往返走路的疲劳值为5+5，推销的疲劳值3+4+5，总疲劳值为5+5+3+4+5=22。
+X=4: 向住户2、3、4、5推销，往返走路的疲劳值为5+5，推销的疲劳值2+3+4+5， 总疲劳值5+5+2+3+4+5=24。
+X=5: 向住户1、2、3、4、5推销，往返走路的疲劳值为5+5，推销的疲劳值1+2+3+4+5，总疲劳值5+5+1+2+3+4+5=25。</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于20%的数据，1&le;N&le;20；<br />
+对于40%的数据，1&le;N&le;100；<br />
+对于60%的数据，1&le;N&le;1000；<br />
+对于100%的数据，1&le;N&le;100000。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1236"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/1236"><span class="badge badge-info">1</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1236"><span class="badge badge-info">0.00</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1236'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1236" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1236' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1236?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1236. \u63a8\u9500\u5458 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

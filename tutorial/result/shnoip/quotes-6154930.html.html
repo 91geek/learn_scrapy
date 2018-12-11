@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>信息加密原理 - noipxu - 博客园</title>
+<meta property="og:description" content="如果你通过信息高速公路发出一条信息，你的计算机或其他的信息装置就可以用只有你才能使用的数字签字“签名”，信息将被加密，因此只有其特定的接收者方可破译。使这种现象成为可能的机械装置根据的是数学原理，其中" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6154930.html">信息加密原理</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 09:49</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6154930" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6154930);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6154930,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 9:49:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div><span style="font-size: 16px">如果你通过信息高速公路发出一条信息，你的计算机或其他的信息装置就可以用只有你才能使用的数字签字“签名”，信息将被加密，因此只有其特定的接收者方可破译。使这种现象成为可能的机械装置根据的是数学原理，其中包括“单向功能”和“公共密钥加密”原理。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">“单向功能”是一种操作要比解开容易的功能。打碎一片玻璃是单向功能，但这对编码来说毫无用处。密码术所需的单向功能是：知道一条特殊信息，解码就会异常简单，而不知这条信息，解码就会十分困难。数学中有很多单向功能，其中之一与质数有关。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">将两个质数11927和20903相乘，可以很容易地得出249310081。但是将它们的积249310081分解因子得出上述两个质数却要困难得多。这种单向功能，也就是分解因子的困难，预示了一种巧妙的密码：目前使用的一种最复杂的加密系统。即使最大的计算机将一个大的乘积数分解还原为组成此数的两个质数也要很长时间。建立在分解因子上的密码系统有两个不同的译码钥，一个用来给信息加密，另一个不同但却相关的是用来解密的。有了加密钥，把信息译成密码就相当简单，但只用它在可行时间内解密却不太可能。解密需要一个单独的密钥，只有信息的特定接收者或不如说接收者的计算机方可拥有。加密钥是基础是两个巨大的质数的乘积，而解密钥的基础则是质数本身。一台计算机可在瞬间内造出一对新的独特的密钥，因为对于计算机来说，选出两个大的质数并把它们相乘非常容易。加密钥造出后可公之于众而不会冒任何危险，因为即使另一台计算机将其分解因子后来取得解密钥也是非常困难的。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">每一用户的计算机或其他的信息装置会使用质数来创造一个公开的加密钥和一个相应的只有用户本人知道的解密钥。在应用中它是这样工作的：我有信息要发给你，我的信息装置或计算机系统查找你的加密钥并在发出之前将信息加密。虽然你的密钥是公开的，但没有人能读懂加密的信息，因为公开密钥中不包含解密所需的信息。你收到信息后，你的计算机会用与你的公开密钥相对应的私人密钥将信息解密。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">质数和它们的乘积要多大才能保证有效的单向功能呢？</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">公开密钥加密概念是威特菲尔德.迪菲和马丁.海尔曼于1977年首次提出的。另一组计算机科学家隆.里维斯特、阿迪.沙米尔和雷奥纳德.阿德尔曼，不久就提出了使用质数分解因子的想法，这也是以他们名字的首字母命名的RSA密码系统的一部分。他们提出，分解一个130位的两个质数和乘积数需要几百万年的时间，不管使用的计算机能力多大。为了证明这一点，他们找到下面这个129位数，并向世界挑战要他们找出它的两个因子。这个数就是圈内人熟悉的RAS 129：</span></div>
+<div><span style="font-size: 16px">114 381 625 757 888 867 669 235 779 976 146 612 010 218 296 721 242 362 562 561 842 935 706 935 245 733 897 830 597 123 563&nbsp;958 705 058 989 075 147 599 290 026 879 543 541</span></div>
+<div><span style="font-size: 16px">他们坚信用这个数做的公开密钥加密的信息将会永远安全。但是他们既没有预料到摩尔定律的全面效应，也没有预料到个人计算机的成功。前者大大提高了计算机的能力，而后者则使全世界的计算机和用户数目得到了显著提高。1993年，世界各地600多个研究人员和爱好者通过使用Internet协调各自计算机的工作向这个129位数发动了进攻。不到一年，他们就分解出了这个数的两个质数，其中一个长64位，另一个长65位，这两个质数分别为：</span></div>
+<div><span style="font-size: 16px">3 490 529 510 847 650 949 147 849 619 903 898 133 417 764 638 493 387 843 990 820 577</span></div>
+<div><span style="font-size: 16px">和</span></div>
+<div><span style="font-size: 16px">32 769 132 993 266 709 549 961 988 190 834 461 413 177 642 967 992 942 539 798 288 533</span></div>
+<div><span style="font-size: 16px">加密的信息是：“吹毛求疵和鱼鹰是两个有魔力的单词”。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">从这次挑战中得出的一个教训是：如果加密的信息确实重要并且高度机密的话，公开密钥的长度为129位仍不够长。另一个教训是：任何人对加密的安全性都不应过份肯定。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">将密钥只增加几位数字分解起来就会困难得多。今天的数学家相信用可预测的未来计算能力分解两个250位长的质数的乘积要用数百万年。可是谁知道呢？这种不确定性，也就是有人会用简单方法将大数字分解因子的可能性，表明信息高速公路的软件平台将会设计成这样一种形式，那就是它的加密系统将会随时更换。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">有一件事我们大可不必担心，即质数会用尽或两台计算机偶然会用同样的数字作为密钥。适当长度的质数数量比宇宙中原子的数量还要大得多，因此两个密钥偶然相同的机会微乎其微。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">密钥加密的方法不仅仅可以保密，它还可以保证文件的真实性，因为用私人密钥编码的信息只能用公开密钥才能译码。它的工作方式如下：如果我有信息在发出之前需要签字，我的计算机会用我的私人密钥将其加密。现在这条信息只有用我的公开密钥，也就是你和所有其他人都知道的密钥方可解密。这条信息确实系我发出，因为没有其他人有用这种方法加密的私人密钥。我的计算机接收这条加密信息，再用你的公开密钥将此信息重新加密，然后通过信息高速公路把这条双重加密的信息传送给你。你的计算机收到信息后用你的私人密钥对其解密，这解除了第二层编码，但用我的私人密钥编的第一层密码仍然存在。然后你的计算机用我的公开密钥再次对其解密。因为它确实是由我发出的，如果这则信息解密正确，你也就知道它是真实的了。即使信息有些微小改动，信息就不能正确译码，而窜改或通信错误也就会很明显。这种特殊的安全性可使你同陌生人甚或不信息的人进行交易，因为你能确认数字货币的有效性以及签名的文件的真实性。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">把时间特征加入到加密信息中可以进一步提高安全性。如果有人企图窜改文件书写或发出的时间，窜改很容易被察觉。这使得照片和图像的可信度得到恢复，过去因为对它们进行窜改是轻而易举的事，所以它们易受攻击。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">摘自《未来之路》 比尔.盖茨 北京大学出版社 1996</span></div>
+<div><span style="font-size: 16px">相关知识：<a href="http://baike.baidu.com/link?url=Vma0drexT46GUW7_y0eVR5j0DP0SrB401e0AZ37gyr1IbF_prFegjnnbvANO5kTCORV925lLDEkgoGtYr6TYWK" rel="nofollow" target="_blank">RSA算法</a></span></div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

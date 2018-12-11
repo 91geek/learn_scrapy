@@ -1,0 +1,178 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1222. 巴邻旁之桥 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/1222" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：64MB<br />
+<br />
+一条东西走向的穆西河将巴邻旁市一分为二，分割成了区域A和区域B。<br />
+每一块区域沿着河岸都建了恰好1,000,000,001栋的建筑，每边的建筑都从0编号到了1,000,000,000。相邻的每对建筑相隔1单位距离，河的宽度也是1个单位长度。区域A中的i号建筑物恰好与区域B中的i号建筑物隔河相对。<br />
+城市中有N个居民。第i个居民的房子在区域<img src="http://latex.codecogs.com/gif.latex?P_%7Bi%7D" alt=" " />的<img src="http://latex.codecogs.com/gif.latex?S_%7Bi%7D" alt=" " />号建筑上，同时他的办公室坐落在<img src="http://latex.codecogs.com/gif.latex?Q_%7Bi%7D" alt=" " />区域的<img src="http://latex.codecogs.com/gif.latex?T_%7Bi%7D" alt=" " />号建筑上。一个居民的房子和办公室可能分布在河的两岸，这样他就必须要搭乘船只才能从家中去往办公室，这种情况让很多人都觉得不方便。为了使居民们可以开车去工作，政府决定建造不超过K座横跨河流的大桥。由于技术上的原因，每一座桥必须刚好连接河的两岸，桥梁必须严格垂直于河流，并且桥与桥之间不能相交。<br />
+当政府建造最多K座桥之后，设<img src="http://latex.codecogs.com/gif.latex?D_%7Bi%7D" alt=" " />表示第i个居民此时开车从家里到办公室的最短距离。请帮助政府建造桥梁，使得<img src="http://latex.codecogs.com/gif.latex?D_%7B1%7D" alt=" " />+<img src="http://latex.codecogs.com/gif.latex?D_%7B2%7D" alt=" " />+&hellip;+<img src="http://latex.codecogs.com/gif.latex?D_%7BN%7D" alt=" " />最小。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入的第一行包含两个正整数K和N，分别表示桥的上限数量和居民的数量。<br />
+接下来N行，每一行包含四个整数：<img src="http://latex.codecogs.com/gif.latex?P_%7Bi%7D" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?S_%7Bi%7D" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?Q_%7Bi%7D" alt=" " />和<img src="http://latex.codecogs.com/gif.latex?T_%7Bi%7D" alt=" " />，表示第i个居民的房子在区域<img src="http://latex.codecogs.com/gif.latex?P_%7Bi%7D" alt=" " />的<img src="http://latex.codecogs.com/gif.latex?S_%7Bi%7D" alt=" " />号建筑上，且他的办公室位于<img src="http://latex.codecogs.com/gif.latex?Q_%7Bi%7D" alt=" " />区域的<img src="http://latex.codecogs.com/gif.latex?T_%7Bi%7D" alt=" " />号建筑上。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出仅为一行，包含一个整数，表示<img src="http://latex.codecogs.com/gif.latex?D_%7B1%7D" alt=" " />+<img src="http://latex.codecogs.com/gif.latex?D_%7B2%7D" alt=" " />+&hellip;+<img src="http://latex.codecogs.com/gif.latex?D_%7BN%7D" alt=" " />的最小值。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>1 5
+B 0 A 4
+B 1 B 3
+A 5 B 7
+B 2 A 6
+B 1 A 7</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>24</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">共有五部分数据。所有数据都保证：0&le;，&le;1,000,000,000，和为字符A和B中的一个，同一栋建筑内的可能有超过1间房子或办公室（或同时大于等于1）。<br />
+第1部分数据占8分，数据范围满足：K=1，1&le;N&le;1000；<br />
+第2部分数据占14分，数据范围满足：K=1，1&le;N&le;100000；<br />
+第3部分数据占9分，数据范围满足：K=2，1&le;N&le;100；<br />
+第4部分数据占32分，数据范围满足：K=2，1&le;N&le;1000；<br />
+第5部分数据占37分，数据范围满足：K=2，1&le;N&le;100000。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1222"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/1222"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1222"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1222'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1222" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1222' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1222?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1222. \u5df4\u90bb\u65c1\u4e4b\u6865 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

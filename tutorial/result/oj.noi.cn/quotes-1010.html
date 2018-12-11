@@ -1,0 +1,168 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1010. 邮寄包裹 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1010" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">某邮局对邮寄包裹有如下规定：若包裹的重量超过30千克,不予邮寄，对可以邮寄的包裹每件收手续费0.2元，再加上根据下表按重量wei计算的结果：<br />
+&nbsp; &nbsp;<br />
+重量(千克)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 收费标准(元/公斤)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+wei&lt;=10 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;0.80&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+10&lt;wei&lt;=20 &nbsp; &nbsp; &nbsp; &nbsp;0.75&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+20&lt;wei&lt;=30 &nbsp; &nbsp; &nbsp; &nbsp;0.70&nbsp;<br />
+请你编写一个程序，输入包裹重量，输出所需费用或&rdquo;Fail&rdquo;表示无法邮寄。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入一个正整数，表示邮寄包裹的重量。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出对应的费用(答案保留2位小数)或&ldquo;Fail&rdquo;表示无法邮寄。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>7</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>5.80</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content"></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习3.2.2</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1010"><span class="badge badge-info">7650</span></a><br />提交: <a class="pull-right" href="#main/statistic/1010"><span class="badge badge-info">25352</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1010"><span class="badge badge-info">53.65</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1010'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1010/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D10.cpp/0/solution_path' data-toggle='tooltip' title='By 颜宇翮'>未命名10.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010_%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By zcsor'>1010_邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/test.pas/0/solution_path' data-toggle='tooltip' title='By ycxj001'>test.pas</a><br /><a class='solution' href='index.php/main/download/1010/pascal%25E9%25A2%2598%25E8%25A7%25A3%25EF%25BC%2588ac%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 403584200@qq.com'>pascal题解（ac）.txt</a><br /><a class='solution' href='index.php/main/download/1010/11.cpp/0/solution_path' data-toggle='tooltip' title='By 1206614133'>11.cpp</a><br /><a class='solution' href='index.php/main/download/1010/jack%25E5%258C%2585%25E8%25A3%25B9%25E9%2582%25AE%25E5%25AF%2584.cpp/0/solution_path' data-toggle='tooltip' title='By jack_魏'>jack包裹邮寄.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010.%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By 朕'>1010.邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E7%2588%25AC%25E6%25A5%25BC%25E6%25A2%25AF1.cpp/0/solution_path' data-toggle='tooltip' title='By king~'>爬楼梯1.cpp</a><br /><a class='solution' href='index.php/main/download/1010/c%252B%252B%25E5%25AE%2598%25E6%2596%25B9%25E9%25A2%2598%25E8%25A7%25A3.cpp/0/solution_path' data-toggle='tooltip' title='By 熟悉的背景'>c++官方题解.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010-SR.cpp/0/solution_path' data-toggle='tooltip' title='By 宋锐'>1010-SR.cpp</a><br /><a class='solution' href='index.php/main/download/1010/mod.cpp/0/solution_path' data-toggle='tooltip' title='By 五水硫酸铜'>mod.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By shidaichaoren'>邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/main.cpp/0/solution_path' data-toggle='tooltip' title='By GUN丶ThePower'>main.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By b98'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1010/p1010%2520%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9-JXOI.cpp/0/solution_path' data-toggle='tooltip' title='By jxoi'>p1010 邮寄包裹-JXOI.cpp</a><br /><a class='solution' href='index.php/main/download/1010/PASCAL%2520%25E9%2593%2581%25E5%25A1%2594%25E5%259B%259E%25E5%25BD%2592%25EF%25BC%2588%25E6%2594%25B9%25E5%2590%258D%25E4%25B8%25BA%25E7%25BA%25A2%25E9%25BE%2599%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 红龙'>PASCAL 铁塔回归（改名为红龙）.txt</a><br /><a class='solution' href='index.php/main/download/1010/1010%2520%25E5%2588%2586%25E6%25AE%25B5%25E8%25AE%25A1%25E7%25AE%2597%25E5%258C%2585%25E8%25A3%25B9%25E9%2597%25AE%25E9%25A2%2598.c/0/solution_path' data-toggle='tooltip' title='By 张峰'>1010 分段计算包裹问题.c</a><br /><a class='solution' href='index.php/main/download/1010/1010%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By qqqqq'>1010邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/Pass.cpp/0/solution_path' data-toggle='tooltip' title='By Mr.zhou'>Pass.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010%25E2%2580%2594%25E3%2580%2582%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By weizi'>1010—。邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010%25E5%25AE%258C%25E7%25BE%258E%25E7%25AD%2594%25E6%25A1%2588pyf.cpp/0/solution_path' data-toggle='tooltip' title='By 蒲妍菲'>1010完美答案pyf.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.txt/0/solution_path' data-toggle='tooltip' title='By 陌上花开'>邮寄包裹.txt</a><br /><a class='solution' href='index.php/main/download/1010/%25E7%25A7%2580%25E6%2589%258D%2520%2520%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By 秀才'>秀才  邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.pas/0/solution_path' data-toggle='tooltip' title='By 3347801406'>邮寄包裹.pas</a><br /><a class='solution' href='index.php/main/download/1010/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1010/%25281010c%2529%25E5%25B0%258F%25E5%25AD%25A6%25E7%2594%259FAC.c/0/solution_path' data-toggle='tooltip' title='By hjdmmm'>(1010c)小学生AC.c</a><br /><a class='solution' href='index.php/main/download/1010/ZZY.txt/0/solution_path' data-toggle='tooltip' title='By 2658417'>ZZY.txt</a><br /><a class='solution' href='index.php/main/download/1010/JSOCR.exe/0/solution_path' data-toggle='tooltip' title='By hubohan'>JSOCR.exe</a><br /><a class='solution' href='index.php/main/download/1010/devcpp.exe/0/solution_path' data-toggle='tooltip' title='By hubohan'>devcpp.exe</a><br /><a class='solution' href='index.php/main/download/1010/webwxgetmsgimg.jpg/0/solution_path' data-toggle='tooltip' title='By hubohan'>webwxgetmsgimg.jpg</a><br /><a class='solution' href='index.php/main/download/1010/1010.txt/0/solution_path' data-toggle='tooltip' title='By hamilton'>1010.txt</a><br /><a class='solution' href='index.php/main/download/1010/1010.c/0/solution_path' data-toggle='tooltip' title='By linchengyin'>1010.c</a><br /><a class='solution' href='index.php/main/download/1010/Photoshop.exe/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>Photoshop.exe</a><br /><a class='solution' href='index.php/main/download/1010/1010%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9%25E8%25BF%2590%25E7%2594%25A8SWITCH.cpp/0/solution_path' data-toggle='tooltip' title='By williamwang'>1010邮寄包裹运用SWITCH.cpp</a><br /><a class='solution' href='index.php/main/download/1010/179B%2528fire%2529.cpp/0/solution_path' data-toggle='tooltip' title='By 152024wu'>179B(fire).cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010.html/0/solution_path' data-toggle='tooltip' title='By xiapangpang'>1010.html</a><br /><a class='solution' href='index.php/main/download/1010/Parcel%2520Post.cpp/0/solution_path' data-toggle='tooltip' title='By 2636099143'>Parcel Post.cpp</a><br /><a class='solution' href='index.php/main/download/1010/ACDSee5.exe/0/solution_path' data-toggle='tooltip' title='By 张伟杰'>ACDSee5.exe</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%25BD%2590%25E5%25A4%25A9%25E5%25A4%25A7%25E5%259C%25A3%25E4%25BD%259B%25E7%259A%25841010.cpp/0/solution_path' data-toggle='tooltip' title='By 齐天大圣佛'>齐天大圣佛的1010.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%25A2%2598%25E8%25A7%25A3%2528c%252B%252B%2529.doc/0/solution_path' data-toggle='tooltip' title='By 1450'>题解(c++).doc</a><br /><a class='solution' href='index.php/main/download/1010/10011.c/0/solution_path' data-toggle='tooltip' title='By zmx9202'>10011.c</a><br /><a class='solution' href='index.php/main/download/1010/%25E5%258C%2585%25E8%25A3%25B9%25E9%2597%25AE%25E9%25A2%2598.cpp/0/solution_path' data-toggle='tooltip' title='By gaxx2018hjc'>包裹问题.cpp</a><br /><a class='solution' href='index.php/main/download/1010/Foxit%2520Reader.exe/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>Foxit Reader.exe</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%25851%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By assiuqe'>邮寄包1裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E6%258D%2595%25E8%258E%25B7.PNG/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>捕获.PNG</a><br /><a class='solution' href='index.php/main/download/1010/1010.cpp/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>1010.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010.exe/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>1010.exe</a><br /><a class='solution' href='index.php/main/download/1010/zz.cpp/0/solution_path' data-toggle='tooltip' title='By 1355379751'>zz.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E8%2580%2581%25E5%25BB%25BA%25E6%2596%2587%25E6%259C%25AC%25E6%2596%2587%25E6%25A1%25A3.txt/0/solution_path' data-toggle='tooltip' title='By Xiaxuan_MAS'>老建文本文档.txt</a><br /><a class='solution' href='index.php/main/download/1010/%25E6%25AD%25A3%25E6%2596%25B9%25E5%25BD%25A2%25E5%2586%2585%25E6%2598%25AF%25E5%2590%25A6%25E6%259C%2589%25E6%258C%2587%25E5%25AE%259A%25E7%2582%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By Xiaxuan_MAS'>正方形内是否有指定点.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1142.cpp/0/solution_path' data-toggle='tooltip' title='By hepeiheng'>1142.cpp</a><br /><a class='solution' href='index.php/main/download/1010/20180330001.cpp/0/solution_path' data-toggle='tooltip' title='By 茶叶蛋蛋灬'>20180330001.cpp</a><br /><a class='solution' href='index.php/main/download/1010/666.cpp/0/solution_path' data-toggle='tooltip' title='By 1561446328'>666.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D2.cpp/0/solution_path' data-toggle='tooltip' title='By yag'>未命名2.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E5%2596%25B5%25E5%2588%25B7%25E9%25A2%2598C%25E7%25B3%25BB.cpp/0/solution_path' data-toggle='tooltip' title='By ALINGCAT'>喵刷题C系.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E6%2594%25B6%25E5%2589%25B2%25E8%2580%2585%25E5%2580%2592%25E6%2595%25B0.exe/0/solution_path' data-toggle='tooltip' title='By rezerotime'>收割者倒数.exe</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%25A2%2598%25E8%25A7%25A3.exe/0/solution_path' data-toggle='tooltip' title='By rezerotime'>题解.exe</a><br /><a class='solution' href='index.php/main/download/1010/1006.%25E6%258D%25A1%25E7%259F%25B3%25E5%25A4%25B4.cpp/0/solution_path' data-toggle='tooltip' title='By 暴力小王子'>1006.捡石头.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%25A2%2598%25E7%259B%25AE1010%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1010邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/1010-%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By 荣耀行刑官'>1010-邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1010/T1.c/0/solution_path' data-toggle='tooltip' title='By Vfj465'>T1.c</a><br /><a class='solution' href='index.php/main/download/1010/%25E6%25B5%258B%25E8%25AF%2595%25E8%25AF%25AD%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By 刘景'>测试语法.cpp</a><br /><a class='solution' href='index.php/main/download/1010/%25E9%2598%25B3%25E5%2585%2589%25E6%25B5%258B%25E8%25AF%2584%25E7%25BD%2591%25E5%259D%2580.txt/0/solution_path' data-toggle='tooltip' title='By 牛逼牛逼'>阳光测评网址.txt</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习3.2.2</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1010" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1010' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1010?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1010. \u90ae\u5bc4\u5305\u88f9 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

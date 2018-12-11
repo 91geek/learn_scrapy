@@ -1,0 +1,180 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1041. 志愿者选拔 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1041" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">世博会志愿者的选拔工作正在 A 市如火如荼的进行。为了选拔最合适的人才，A市对所有报名的选手进行了笔试，笔试分数达到面试分数线的选手方可进入面试。面试分数线根据计划录取人数的150%划定，即如果计划录取m名志愿者，则面试分数线为排名第m*150%（向下取整）名的选手的分数，而最终进入面试的选手为笔试成绩不低于面试分数线的所有选手。<br />
+现在就请你编写程序划定面试分数线，并输出所有进入面试的选手的报名号和笔试成绩。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">第一行，两个整数n，m（5 &le; n &le; 5000，3 &le; m &le; n），中间用一个空格隔开，其中n 表示报名参加笔试的选手总数，m 表示计划录取的志愿者人数。输入数据保证m*150%向下取整后小于等于n。<br />
+第二行到第 n+1 行，每行包括两个整数，中间用一个空格隔开，分别是选手的报名号k（1000 &le; k &le; 9999）和该选手的笔试成绩s（1 &le; s &le; 100）。数据保证选手的报名号各不相同。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">第一行，有两个整数，用一个空格隔开，第一个整数表示面试分数线；第二个整数为进入面试的选手的实际人数。<br />
+从第二行开始，每行包含两个整数，中间用一个空格隔开，分别表示进入面试的选手的报名号和笔试成绩，按照笔试成绩从高到低输出，如果成绩相同，则按报名号由小到大的顺序输出。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>6 3
+1000 90
+3239 88
+2390 95
+7231 84
+1005 95
+1001 88</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>88 5
+1005 95
+2390 95
+1000 90
+1001 88
+3239 88</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content"></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+							<div class="well"><fieldset>
+					<legend><h4>提示</h4></legend>
+					<div class="content">m*150% = 3*150% = 4.5，向下取整后为4。保证4个人进入面试的分数线为88，但因为88有重分，所以所有成绩大于等于88的选手都可以进入面试，故最终有5个人进入面试。</div>
+				</fieldset></div>
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习5.36</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1041"><span class="badge badge-info">2558</span></a><br />提交: <a class="pull-right" href="#main/statistic/1041"><span class="badge badge-info">6887</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1041"><span class="badge badge-info">48.43</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1041'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1041/noi%25201041.exe/0/solution_path' data-toggle='tooltip' title='By yuanyuan'>noi 1041.exe</a><br /><a class='solution' href='index.php/main/download/1041/ccf1041_1.cpp/0/solution_path' data-toggle='tooltip' title='By Meanda'>ccf1041_1.cpp</a><br /><a class='solution' href='index.php/main/download/1041/1002.cpp/0/solution_path' data-toggle='tooltip' title='By 我很帅'>1002.cpp</a><br /><a class='solution' href='index.php/main/download/1041/1041%2520AC%2520YF.cpp/0/solution_path' data-toggle='tooltip' title='By yyfsds'>1041 AC YF.cpp</a><br /><a class='solution' href='index.php/main/download/1041/1041.cpp/0/solution_path' data-toggle='tooltip' title='By zheng_lw'>1041.cpp</a><br /><a class='solution' href='index.php/main/download/1041/e.exe/0/solution_path' data-toggle='tooltip' title='By AH'>e.exe</a><br /><a class='solution' href='index.php/main/download/1041/1041%2520swap.cpp/0/solution_path' data-toggle='tooltip' title='By ycwei982'>1041 swap.cpp</a><br /><a class='solution' href='index.php/main/download/1041/CCl%25E7%259A%2584%25E8%25B6%2585%25E7%25BA%25A7%25E6%2597%25A0%25E6%2595%258C%25E5%258F%2598%25E6%2580%2581%25E5%25A5%25BD%25E7%2594%25A8%25E6%2598%2593%25E6%2587%2582%25E7%259A%2584pascal%25E8%25A7%25A3%25E6%25B3%2595%25E5%25A6%2582%25E6%259C%2589%25E9%259B%25B7%25E5%2590%258C%25E4%25BD%25A0%25E6%258A%2584%25E6%2588%2591%25E7%259A%2584.txt/0/solution_path' data-toggle='tooltip' title='By LoveAurora'>CCl的超级无敌变态好用易懂的pascal解法如有雷同你抄我的.txt</a><br /><a class='solution' href='index.php/main/download/1041/1041.%2520%25E5%25BF%2597%25E6%2584%25BF%25E8%2580%2585%25E9%2580%2589%25E6%258B%2594.cpp/0/solution_path' data-toggle='tooltip' title='By 王绎澎'>1041. 志愿者选拔.cpp</a><br /><a class='solution' href='index.php/main/download/1041/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1041/CCF_1041.txt/0/solution_path' data-toggle='tooltip' title='By 嘲讽之神'>CCF_1041.txt</a><br /><a class='solution' href='index.php/main/download/1041/%25E5%25BF%2597%25E6%2584%25BF%25E8%2580%2585%25E9%2580%2589%25E6%258B%2594.cpp/0/solution_path' data-toggle='tooltip' title='By LveYYn'>志愿者选拔.cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E5%25BF%2597%25E6%2584%25BF%25E8%2580%2585%25E9%2580%2589%25E6%258B%2594%2520%25E9%2580%2589%25E6%258B%25A9%25E6%258E%2592%25E5%25BA%258F%25E9%25A2%2598%25E8%25A7%25A3%2520%25E6%2598%2593%25E6%2587%2582%25EF%25BC%258C%25E4%25BB%25A3%25E7%25A0%2581%25E8%25BE%2583%25E9%2595%25BF.cpp/0/solution_path' data-toggle='tooltip' title='By 阿诚'>志愿者选拔 选择排序题解 易懂，代码较长.cpp</a><br /><a class='solution' href='index.php/main/download/1041/xy1041.cpp/0/solution_path' data-toggle='tooltip' title='By xuyao26'>xy1041.cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D2.cpp/0/solution_path' data-toggle='tooltip' title='By 黄丹宁'>未命名2.cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By 20050928'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1041/MX_noip1041.c/0/solution_path' data-toggle='tooltip' title='By mixiao'>MX_noip1041.c</a><br /><a class='solution' href='index.php/main/download/1041/%25E6%2596%25B0%25E5%25BB%25BA%25E6%2596%2587%25E6%259C%25AC%25E6%2596%2587%25E6%25A1%25A3.txt/0/solution_path' data-toggle='tooltip' title='By Laehcim'>新建文本文档.txt</a><br /><a class='solution' href='index.php/main/download/1041/%25E6%2595%2599%25E4%25BD%25A0%25E5%25A6%2582%25E4%25BD%2595%25E7%2594%25A8C%25E8%25AF%25AD%25E8%25A8%2580%25E8%25A3%2585B.c/0/solution_path' data-toggle='tooltip' title='By zhenghong'>教你如何用C语言装B.c</a><br /><a class='solution' href='index.php/main/download/1041/1041%25E9%25A2%2598%25E8%25A7%25A3A.cpp/0/solution_path' data-toggle='tooltip' title='By wl123'>1041题解A.cpp</a><br /><a class='solution' href='index.php/main/download/1041/1041%25E9%25A2%2598%25E8%25A7%25A3A.exe/0/solution_path' data-toggle='tooltip' title='By wl123'>1041题解A.exe</a><br /><a class='solution' href='index.php/main/download/1041/%25E5%25A4%25A7%25E5%25B8%2585%25E6%25AF%2594%25E6%25AD%25A3%25E7%25A1%25AE%25E9%25A2%2598%25E8%25A7%25A3%2528%25E7%259B%2597%25E7%2589%2588%25E5%25BF%2585%25E7%25A9%25B6%2529.cpp/0/solution_path' data-toggle='tooltip' title='By 1335574070'>大帅比正确题解(盗版必究).cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E6%25B5%25B7%25E7%25BB%25B5%25E5%25AE%259D%25E5%25AE%259D.jpg/0/solution_path' data-toggle='tooltip' title='By hepeiheng'>海绵宝宝.jpg</a><br /><a class='solution' href='index.php/main/download/1041/fqy1051.cpp/0/solution_path' data-toggle='tooltip' title='By 枫轻云'>fqy1051.cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E6%25AD%25A3%25E8%25A7%25A3.vbs/0/solution_path' data-toggle='tooltip' title='By xiaoleiTL'>正解.vbs</a><br /><a class='solution' href='index.php/main/download/1041/nacl64.exe/0/solution_path' data-toggle='tooltip' title='By blame'>nacl64.exe</a><br /><a class='solution' href='index.php/main/download/1041/387bytes.cpp/0/solution_path' data-toggle='tooltip' title='By NeverPossible'>387bytes.cpp</a><br /><a class='solution' href='index.php/main/download/1041/QQ%25E5%259B%25BE%25E7%2589%258720180125210003.gif/0/solution_path' data-toggle='tooltip' title='By 刘若洋'>QQ图片20180125210003.gif</a><br /><a class='solution' href='index.php/main/download/1041/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D5.cpp/0/solution_path' data-toggle='tooltip' title='By 2964755273'>未命名5.cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E9%2599%2588%25E7%258F%2582%25E5%25A4%25A7%25E5%2582%25BB%25E9%2580%25BC.cpp/0/solution_path' data-toggle='tooltip' title='By blame'>陈珂大傻逼.cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E9%2599%2588%25E7%258F%2582%25E4%25B8%258D%25E5%2587%2586%25E7%259C%258B.exe/0/solution_path' data-toggle='tooltip' title='By blame'>陈珂不准看.exe</a><br /><a class='solution' href='index.php/main/download/1041/1041%25E5%25BF%2597%25E6%2584%25BF%25E8%2580%2585%25E9%2580%2589%25E6%258B%2594.cpp/0/solution_path' data-toggle='tooltip' title='By 路曼曼其修远兮'>1041志愿者选拔.cpp</a><br /><a class='solution' href='index.php/main/download/1041/666.cpp/0/solution_path' data-toggle='tooltip' title='By 孔印ky'>666.cpp</a><br /><a class='solution' href='index.php/main/download/1041/%25E7%2582%25B9%25E6%2588%2591%25E7%2582%25B9%25E6%2588%2591.exe/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>点我点我.exe</a><br /><a class='solution' href='index.php/main/download/1041/game.pas/0/solution_path' data-toggle='tooltip' title='By 路人乙'>game.pas</a><br /><a class='solution' href='index.php/main/download/1041/1.%25E6%259A%25B4%25E8%25B5%25B0%25E9%259A%258F%25E6%259C%25BA%25E8%25BF%25B7%25E5%25AE%25AB.exe/0/solution_path' data-toggle='tooltip' title='By qiqi'>1.暴走随机迷宫.exe</a><br /><a class='solution' href='index.php/main/download/1041/781a6bf7-3039-4249-a50c-6b868e046c9a.jpg/0/solution_path' data-toggle='tooltip' title='By xydxh许剑华'>781a6bf7-3039-4249-a50c-6b868e046c9a.jpg</a><br /><a class='solution' href='index.php/main/download/1041/%25E7%2594%25A8%25E5%258F%258C%25E5%2590%2591%25E9%2593%25BE%25E8%25A1%25A8%25E5%25AE%259E%25E7%258E%25B0%2528C%2529.c/0/solution_path' data-toggle='tooltip' title='By one2free'>用双向链表实现(C).c</a><br /><a class='solution' href='index.php/main/download/1041/%25E9%25A2%2598%25E7%259B%25AE1041%25E5%25BF%2597%25E6%2584%25BF%25E8%2580%2585%25E9%2580%2589%25E6%258B%2594.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1041志愿者选拔.cpp</a><br /><a class='solution' href='index.php/main/download/1041/n1041.pas/0/solution_path' data-toggle='tooltip' title='By 天才中的天才'>n1041.pas</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习5.36</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1041" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1041' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1041?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1041. \u5fd7\u613f\u8005\u9009\u62d4 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

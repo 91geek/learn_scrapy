@@ -1,0 +1,162 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1013. 识别三角形 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1013" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">输入三个正整数，判断能否构成三角形的三边，如果不能，输出&ldquo;NO&rdquo;。如果能构成三角形，判断构成什么三角形？按等边、直角、一般三角形分类，依次输出对应的三角形类型&ldquo;Equilateral&rdquo;、&ldquo;Right&rdquo;、&ldquo;General&rdquo;。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入一行三个用空格隔开的正整数a,b,c，表示三角形的三条边长。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出对应三角形的类型，如果不能构成三角形，输出&ldquo;NO&rdquo;，如果是等边三角形输出&ldquo;Equilateral&rdquo;，如果是直角三角形输出&ldquo;Right&rdquo;，其他三角形则输出&ldquo;General&rdquo;。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3 4 5</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>Right</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1&lt;=a,b,c&lt;=1000</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习3.3.2</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1013"><span class="badge badge-info">7084</span></a><br />提交: <a class="pull-right" href="#main/statistic/1013"><span class="badge badge-info">15912</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1013"><span class="badge badge-info">70.51</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1013'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1013/1013.cpp/0/solution_path' data-toggle='tooltip' title='By tszx2016'>1013.cpp</a><br /><a class='solution' href='index.php/main/download/1013/King%25E3%2580%2581.cpp/0/solution_path' data-toggle='tooltip' title='By King、'>King、.cpp</a><br /><a class='solution' href='index.php/main/download/1013/pascal%25E9%25A2%2598%25E8%25A7%25A3%25EF%25BC%2588ac%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 403584200@qq.com'>pascal题解（ac）.txt</a><br /><a class='solution' href='index.php/main/download/1013/1013.%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2%25E3%2580%2582.cpp/0/solution_path' data-toggle='tooltip' title='By 颜宇翮'>1013.识别三角形。.cpp</a><br /><a class='solution' href='index.php/main/download/1013/34.cpp/0/solution_path' data-toggle='tooltip' title='By 郭子敬'>34.cpp</a><br /><a class='solution' href='index.php/main/download/1013/noi1013.cpp/0/solution_path' data-toggle='tooltip' title='By lxy'>noi1013.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E6%259D%259C%25E8%258A%25AE%25E8%258E%25B9%25E7%25BB%2599%25E4%25BD%25A0%25E7%259A%2584pascal%25E8%25A7%25A3%25E7%25AD%2594.txt/0/solution_path' data-toggle='tooltip' title='By 3204653771'>杜芮莹给你的pascal解答.txt</a><br /><a class='solution' href='index.php/main/download/1013/noi.cpp/0/solution_path' data-toggle='tooltip' title='By 天马行空'>noi.cpp</a><br /><a class='solution' href='index.php/main/download/1013/jack%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By jack_魏'>jack识别三角形.cpp</a><br /><a class='solution' href='index.php/main/download/1013/main.cpp/0/solution_path' data-toggle='tooltip' title='By 逆光看最远'>main.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By 657018295'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1013/14.cpp/0/solution_path' data-toggle='tooltip' title='By 1206614133'>14.cpp</a><br /><a class='solution' href='index.php/main/download/1013/keshang.exe/0/solution_path' data-toggle='tooltip' title='By jixiaoyan'>keshang.exe</a><br /><a class='solution' href='index.php/main/download/1013/%25E6%2596%25B0%25E5%25BB%25BA%25E6%2596%2587%25E6%259C%25AC%25E6%2596%2587%25E6%25A1%25A3.txt/0/solution_path' data-toggle='tooltip' title='By 贾剑阳'>新建文本文档.txt</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By shidaichaoren'>识别三角形.cpp</a><br /><a class='solution' href='index.php/main/download/1013/p1013%2520%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2-JXOI.cpp/0/solution_path' data-toggle='tooltip' title='By jxoi'>p1013 识别三角形-JXOI.cpp</a><br /><a class='solution' href='index.php/main/download/1013/1013%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By qqqqq'>1013识别三角形.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2%25E7%25B1%25BB%25E5%259E%258B%25E5%2588%25A4%25E6%2596%25AD.cpp/0/solution_path' data-toggle='tooltip' title='By 谢雨衡'>三角形类型判断.cpp</a><br /><a class='solution' href='index.php/main/download/1013/1013%25E7%25BB%2599%25E4%25BD%25A0%25E7%259A%2584%25E6%25AD%25A3%25E7%25A1%25AE%25E7%25AD%2594%25E6%25A1%2588%25EF%25BC%2588%25E8%2592%25B2%25E5%25A6%258D%25E8%258F%25B2%25EF%25BC%2589.cpp/0/solution_path' data-toggle='tooltip' title='By 蒲妍菲'>1013给你的正确答案（蒲妍菲）.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E7%25A7%2580%25E6%2589%258D%2520%2520%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By 秀才'>秀才  识别三角形.cpp</a><br /><a class='solution' href='index.php/main/download/1013/Chrysanthemum.jpg/0/solution_path' data-toggle='tooltip' title='By 叶昊哲'>Chrysanthemum.jpg</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2.pas/0/solution_path' data-toggle='tooltip' title='By 3347801406'>识别三角形.pas</a><br /><a class='solution' href='index.php/main/download/1013/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1013/%25281013c%2529%25E5%25B0%258F%25E5%25AD%25A6%25E7%2594%259FAC.c/0/solution_path' data-toggle='tooltip' title='By hjdmmm'>(1013c)小学生AC.c</a><br /><a class='solution' href='index.php/main/download/1013/ZZY.txt/0/solution_path' data-toggle='tooltip' title='By 2658417'>ZZY.txt</a><br /><a class='solution' href='index.php/main/download/1013/360base.dll/0/solution_path' data-toggle='tooltip' title='By qwertyuiopasdfghjkl'>360base.dll</a><br /><a class='solution' href='index.php/main/download/1013/360%25E6%2588%25AA%25E5%259B%25BE20170924110528174.jpg/0/solution_path' data-toggle='tooltip' title='By qwertyuiopasdfghjkl'>360截图20170924110528174.jpg</a><br /><a class='solution' href='index.php/main/download/1013/a.cpp/0/solution_path' data-toggle='tooltip' title='By 15968738729'>a.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E4%25BD%25BF%25E7%2594%25A8class%25E7%259A%2584%25E9%25A2%2598%25E8%25A7%25A3.cpp/0/solution_path' data-toggle='tooltip' title='By xieyi1393'>使用class的题解.cpp</a><br /><a class='solution' href='index.php/main/download/1013/MX_Noip1013.c/0/solution_path' data-toggle='tooltip' title='By mixiao'>MX_Noip1013.c</a><br /><a class='solution' href='index.php/main/download/1013/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D2.cpp/0/solution_path' data-toggle='tooltip' title='By wubaiting'>未命名2.cpp</a><br /><a class='solution' href='index.php/main/download/1013/1013.%2520%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2%2528%25E7%25BB%2583%25E4%25B9%25A03.3.2%2529.cpp/0/solution_path' data-toggle='tooltip' title='By 陈远升'>1013. 识别三角形(练习3.3.2).cpp</a><br /><a class='solution' href='index.php/main/download/1013/C%252B%252B%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By fortran'>C++识别三角形.cpp</a><br /><a class='solution' href='index.php/main/download/1013/Tao.exe/0/solution_path' data-toggle='tooltip' title='By 13505778850'>Tao.exe</a><br /><a class='solution' href='index.php/main/download/1013/Identification.cpp/0/solution_path' data-toggle='tooltip' title='By 2636099143'>Identification.cpp</a><br /><a class='solution' href='index.php/main/download/1013/zzzzz.cpp/0/solution_path' data-toggle='tooltip' title='By 18857773787'>zzzzz.cpp</a><br /><a class='solution' href='index.php/main/download/1013/credits.html/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>credits.html</a><br /><a class='solution' href='index.php/main/download/1013/StartScratchPi.exe/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>StartScratchPi.exe</a><br /><a class='solution' href='index.php/main/download/1013/%25E7%25BB%2583%25E4%25B9%25A01013.cpp/0/solution_path' data-toggle='tooltip' title='By XUHAOCHEN'>练习1013.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E6%25A0%25BC%25E5%25BC%258F.cpp/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>格式.cpp</a><br /><a class='solution' href='index.php/main/download/1013/1013%2520.txt/0/solution_path' data-toggle='tooltip' title='By 周子懿Anna'>1013 .txt</a><br /><a class='solution' href='index.php/main/download/1013/1013pascal%25E9%25A2%2598%25E8%25A7%25A3.pas/0/solution_path' data-toggle='tooltip' title='By 98z'>1013pascal题解.pas</a><br /><a class='solution' href='index.php/main/download/1013/%25E5%2596%25B5%25E5%2588%25B7%25E9%25A2%2598C%25E7%25B3%25BB.cpp/0/solution_path' data-toggle='tooltip' title='By ALINGCAT'>喵刷题C系.cpp</a><br /><a class='solution' href='index.php/main/download/1013/abc.cpp/0/solution_path' data-toggle='tooltip' title='By 无符号整型'>abc.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E4%25B8%25A7%25E5%25BF%2583%25E7%2597%2585%25E7%258B%2582%25E7%259A%2584%25E8%25A7%25A3%25E6%25B3%2595.c/0/solution_path' data-toggle='tooltip' title='By 无符号整型'>丧心病狂的解法.c</a><br /><a class='solution' href='index.php/main/download/1013/%25E6%259B%25B4%25E5%258A%25A0%25E4%25B8%25A7%25E5%25BF%2583%25E7%2597%2585%25E7%258B%2582%25E7%259A%2584%25E8%25A7%25A3%25E6%25B3%2595.c/0/solution_path' data-toggle='tooltip' title='By 无符号整型'>更加丧心病狂的解法.c</a><br /><a class='solution' href='index.php/main/download/1013/1013-%25E4%25B8%2589%25E8%25A7%2592%25E5%2587%25BD%25E6%2595%25B0.cpp/0/solution_path' data-toggle='tooltip' title='By XJ_wz'>1013-三角函数.cpp</a><br /><a class='solution' href='index.php/main/download/1013/1013.%2520%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2%2520%2528Standard%2520IO%2529.cpp/0/solution_path' data-toggle='tooltip' title='By lijizhong'>1013. 识别三角形 (Standard IO).cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2%2520%2528Standard%2520IO%2529.cpp/0/solution_path' data-toggle='tooltip' title='By dyf丁雨飞'>识别三角形 (Standard IO).cpp</a><br /><a class='solution' href='index.php/main/download/1013/main.c/0/solution_path' data-toggle='tooltip' title='By Kesoft'>main.c</a><br /><a class='solution' href='index.php/main/download/1013/%25E9%25A2%2598%25E7%259B%25AE1013%25E8%25AF%2586%25E5%2588%25AB%25E4%25B8%2589%25E8%25A7%2592%25E5%25BD%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1013识别三角形.cpp</a><br /><a class='solution' href='index.php/main/download/1013/1010_%25E9%2582%25AE%25E5%25AF%2584%25E5%258C%2585%25E8%25A3%25B9.cpp/0/solution_path' data-toggle='tooltip' title='By 廖晨旭'>1010_邮寄包裹.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E5%25B0%258F%25E4%25BA%25BA.sb2/0/solution_path' data-toggle='tooltip' title='By xuning9490'>小人.sb2</a><br /><a class='solution' href='index.php/main/download/1013/G.E.M.%2520%25E9%2582%2593%25E7%25B4%25AB%25E6%25A3%258B%2520-%2520%25E5%2585%2589%25E5%25B9%25B4%25E4%25B9%258B%25E5%25A4%2596%2520%2528%25E3%2580%258A%25E5%25A4%25AA%25E7%25A9%25BA%25E6%2597%2585%25E5%25AE%25A2%25EF%25BC%2588Passengers%25EF%25BC%2589%25E3%2580%258B%25E7%2594%25B5%25E5%25BD%25B1%25E4%25B8%25AD%25E5%259B%25BD%25E5%258C%25BA%25E4%25B8%25BB%25E9%25A2%2598%25E6%259B%25B2%2529.mp3/0/solution_path' data-toggle='tooltip' title='By xuning9490'>G.E.M. 邓紫棋 - 光年之外 (《太空旅客（Passengers）》电影中国区主题曲).mp3</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%25AF%25BE1.cpp/0/solution_path' data-toggle='tooltip' title='By xuning9490'>课1.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%25AF%25BE2.cpp/0/solution_path' data-toggle='tooltip' title='By xuning9490'>课2.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E4%25BD%259C%25E4%25B8%259A4.cpp/0/solution_path' data-toggle='tooltip' title='By xuning9490'>作业4.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%25AF%25BE3.cpp/0/solution_path' data-toggle='tooltip' title='By xuning9490'>课3.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%25AF%25BE4.cpp/0/solution_path' data-toggle='tooltip' title='By xuning9490'>课4.cpp</a><br /><a class='solution' href='index.php/main/download/1013/%25E8%2596%259B%25E4%25B9%258B%25E8%25B0%25A6%2520-%2520%25E4%25B8%2591%25E5%2585%25AB%25E6%2580%25AA%2520%2528%25E3%2580%258A%25E5%25A6%2582%25E6%259E%259C%25E6%2588%2591%25E7%2588%25B1%25E4%25BD%25A0%25E3%2580%258B%25E7%2594%25B5%25E8%25A7%2586%25E5%2589%25A7%25E6%258F%2592%25E6%259B%25B2%2529.mp3/0/solution_path' data-toggle='tooltip' title='By xuning9490'>薛之谦 - 丑八怪 (《如果我爱你》电视剧插曲).mp3</a><br /><a class='solution' href='index.php/main/download/1013/lll.cmd/0/solution_path' data-toggle='tooltip' title='By 最帅魏子力'>lll.cmd</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习3.3.2</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1013" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1013' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1013?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1013. \u8bc6\u522b\u4e09\u89d2\u5f62 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

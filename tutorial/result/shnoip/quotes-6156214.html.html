@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>输入语句 - noipxu - 博客园</title>
+<meta property="og:description" content="实际操作中，如果变量的值事先不知道，并且需经常发生改变，使用赋值语句显然不再适宜。此时，需要一个灵活的提供数据的语句，能在程序运行时，从键盘输入变量的值，输入语句就是在程序运行时由用户给变量提供数据的" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6156214.html">输入语句</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 17:03</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6156214" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6156214);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6156214,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 17:03:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<p><span style="font-size: 16px">实际操作中，如果变量的值事先不知道，并且需经常发生改变，使用赋值语句显然不再适宜。此时，需要一个灵活的提供数据的语句，能在程序运行时，从键盘输入变量的值，输入语句就是在程序运行时由用户给变量提供数据的一种输入动作，它有两种格式：</span><br><span style="font-size: 16px">格式1 read(变量名表);</span><br><span style="font-size: 16px">格式2 readln(&lt;变量名表&gt;);</span></p>
+<p><span style="font-size: 16px">执行该语句时，程序进入等待状态，等待用户从键盘输入数据，输入的数据将依次赋给变量名表中的变量，而后程序继续执行其他语句。</span></p>
+<p><span style="font-size: 16px">说明：</span><br><span style="font-size: 16px">1、变量名表中的变量可以是一个，也可以是多个，多个时要以逗号分隔</span><br><span style="font-size: 16px">2、从键盘输入数据时，数据个数不能少于变量个数，否则系统仍处于等待状态。当数据多于变量个数时，对于readln语句便将其忽略；对于read语句，要么将其忽略（后面没有输入语句时），要么被下一个输入语句读入（后面有输入语句时）</span><br><span style="font-size: 16px">3、输入数值型数据时，数据间用空格或回车键分隔，最后一定要按回车键；输入字符型数据时，数据间不能用空格或回车分隔，必须连续输入4、从键盘输入的数据必须是常量，且与变量名表中的变量类型要一致</span><br><span style="font-size: 16px">5、readln后可以没有变量名表，( )中内容是可选项，此时该语句只相当于读入了“回车”符</span></p>
+<p><span style="font-size: 16px">read与readln的关系可以表示为：</span><br><span style="font-size: 16px">readln(x);等价于read(x);readln;</span></p>
+<p><span style="font-size: 16px">例1：将1、2、3分别赋给3个整型变量i、j、k，若使用read(i,j,k);语句，给出可能的输入数据格式。</span></p>
+<p><span style="font-size: 16px">根据前面说明可知，正确的输入格式有以下几种：（其中↙表示回车）</span><br><span style="font-size: 16px">（1）</span><br><span style="font-size: 16px">1 2 3↙</span></p>
+<p><span style="font-size: 16px">（2）</span><br><span style="font-size: 16px">1 2↙</span><br><span style="font-size: 16px">3↙</span></p>
+<p><span style="font-size: 16px">（3）</span><br><span style="font-size: 16px">1↙</span><br><span style="font-size: 16px">2 3↙</span></p>
+<p><span style="font-size: 16px">（4）</span><br><span style="font-size: 16px">1↙</span><br><span style="font-size: 16px">2↙</span><br><span style="font-size: 16px">3↙</span></p>
+<p><span style="font-size: 16px">例2：使用read(ch1,ch2,ch3);将'd','o','s'三个字符分别赋给ch1、ch2、ch3三个字符变量，如何输入数据？</span><br><span style="font-size: 16px">方法只有一种：连续输入dos↙</span><br><span style="font-size: 16px">其它输入形式都是错误的，如：d o s↙</span></p>
+<p><span style="font-size: 16px">注意：整形和实型变量可以共用一个输入语句，而字符型变量不能与它们共用一个输入句。</span></p>
+<p><span style="font-size: 16px">例3：观察read语句的使用。</span><br><span style="font-size: 16px">read(a,b,c);</span><br><span style="font-size: 16px">read(i,j,k);</span></p>
+<p><span style="font-size: 16px">输入数据：</span><br><span style="font-size: 16px">1 2 3 4 5↙</span><br><span style="font-size: 16px">6 7 8 9 0↙</span></p>
+<p><span style="font-size: 16px">读入结果为：</span><br><span style="font-size: 16px">1 2 3 4 5</span><br><span style="font-size: 16px">a b c&nbsp; i &nbsp;j</span><br><span style="font-size: 16px">6 7 8 9 0</span><br><span style="font-size: 16px">k&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （多余数被忽略）</span></p>
+<p><span style="font-size: 16px">例4：观察readln语句的使用。</span><br><span style="font-size: 16px">readln(a,b,c);</span><br><span style="font-size: 16px">readln(i,j,k);</span></p>
+<p><span style="font-size: 16px">输入数据：</span><br><span style="font-size: 16px">1 2 3 4 5↙</span><br><span style="font-size: 16px">6 7 8 9 0↙</span></p>
+<p><span style="font-size: 16px">读入结果为：</span><br><span style="font-size: 16px">1 2 3 4 5</span><br><span style="font-size: 16px">a b c&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; （多余数被忽略）</span><br><span style="font-size: 16px">6 7 8 9 0</span><br><span style="font-size: 16px">i&nbsp;&nbsp; j&nbsp;&nbsp;k&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; （多余数被忽略）</span></p>
+<div><span style="font-size: 16px">例5：设有下列语句：</span></div>
+<div><span style="font-size: 16px">read(a,b,c);</span></div>
+<div><span style="font-size: 16px">readln(d,e);</span></div>
+<div><span style="font-size: 16px">readln;</span></div>
+<div><span style="font-size: 16px">readln(f,g);</span></div>
+<div><span style="font-size: 16px">其中，所有变量均为整型，再设输入的数据如下：</span></div>
+<div><span style="font-size: 16px">1 2↙</span></div>
+<div><span style="font-size: 16px">3 4 5 6 7 8↙</span></div>
+<div><span style="font-size: 16px">9 10↙</span></div>
+<div><span style="font-size: 16px">11↙</span></div>
+<div><span style="font-size: 16px">12 13↙</span></div>
+<div><span style="font-size: 16px">请问每个变量的值是多少？</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<span style="line-height: 28px; font-family: &quot;Hiragino Sans GB W3&quot;, &quot;Hiragino Sans GB&quot;, Arial, Helvetica, simsun, u5b8bu4f53; color: #5f656c; font-size: 16px">
+<span style="line-height: 28px; font-family: &quot;Hiragino Sans GB W3&quot;, &quot;Hiragino Sans GB&quot;, Arial, Helvetica, simsun, u5b8bu4f53; color: #5f656c">zerojudge：</span></span>
+<div><span style="line-height: 28px; font-family: &quot;Hiragino Sans GB W3&quot;, &quot;Hiragino Sans GB&quot;, Arial, Helvetica, simsun, u5b8bu4f53; color: #5f656c; font-size: 16px">d583</span></div>
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

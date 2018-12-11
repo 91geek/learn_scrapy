@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="never" />
+<title>集合 - noipxu - 博客园</title>
+<meta property="og:description" content="集合是具有共同性质的一组数据构成的整体，集合中的数据叫做集合元素，简称元素。例如，10以内的所有质数构成一个集合，它包括2、3、5、7共4个元素，其共同性质是：是质数并且不大于10。不包括任何元素的集" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6169645.html">集合</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-13 13:56</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6169645" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6169645);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6169645,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/13 13:56:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<div>
+<div><span style="font-size: 16px">集合是具有共同性质的一组数据构成的整体，集合中的数据叫做集合元素，简称元素。例如，10以内的所有质数构成一个集合，它包括2、3、5、7共4个元素，其共同<span style="line-height: 28px">性质是：是质数并且不大于10。不包括任何元素的集合叫做空集。</span></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">集合有以下基本性质：</span></div>
+<div><span style="font-size: 16px">1、元素唯一性：集合中不存在重复的元素，即每个元素都是唯一的。</span></div>
+<div><span style="font-size: 16px">2、元素无序性：集合中的元素是没有排列顺序的。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">Pascal语言的集合类型有以下限制：</span></div>
+<div><span style="font-size: 16px">1、集合的元素必须是有序类型的数据。</span></div>
+<div><span style="font-size: 16px">2、集合的元素数目不能超过256个。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">一、集合的定义</span></div>
+<div><span style="font-size: 16px">type</span></div>
+<div><span style="font-size: 16px">&nbsp; 集合类型名=set of 基类型;</span></div>
+<div><span style="font-size: 16px">其中，集合类型名是一个合法的标识符，基类型是集合中的元素的类型，它必须是有序类型或有序类型的子界类型，元素的序号范围必须在0至255之间，因此基类型<span style="line-height: 28px">不能是短整型、整型或长整型。</span></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">type</span></div>
+<div><span style="font-size: 16px">&nbsp; t1=set of 1..5; &nbsp; &nbsp;{基类型是子界类型，元素范围是1到5的整数}</span></div>
+<div><span style="font-size: 16px">&nbsp; t2=set of char; &nbsp; &nbsp;{基类型是字符型，元素范围是全体字符}</span></div>
+<div><span style="font-size: 16px">&nbsp; t3=set of (white,red,blue,black); &nbsp; &nbsp;{基类型是枚举类型}</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">定义了集合类型之后，就可以用类型标识符来定义变量了，定义集合变量的格式为：</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; 集合变量名:集合类型名;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; a:t1;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">Pascal语言允许将集合类型描述和变量定义合并在一起，其格式为：</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; 集合变量名:set of 基类型;</span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; a:set of 1..5;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">以下集合类型的定义是错误的：</span></div>
+<div><span style="font-size: 16px">type</span></div>
+<div><span style="font-size: 16px">&nbsp; t1=set of integer; &nbsp; &nbsp;{整型的元素超过了256个}</span></div>
+<div><span style="font-size: 16px">&nbsp; t2=set of -30..-20; &nbsp; {元素序号超出了0到255范围}</span></div>
+<div><span style="font-size: 16px">&nbsp; t3=set of real; &nbsp; &nbsp;{实型不是有序类型}</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">二、集合的操作</span></div>
+<div><span style="font-size: 16px">1、集合类型的数据可以进行赋值</span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; a:set of 0..255;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; a:=[2,3,5,7];</span></div>
+<div><span style="font-size: 16px">2、集合类型的数据不能用read和write语句直接输入输出，如果需要输入或输出集合的元素，必须借助集合的运算来实现。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例1：从键盘上输入10个数，添加到集合中，然后输出集合的全部元素。</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; s:set of 0..255;</span></div>
+<div><span style="font-size: 16px">&nbsp; i,n:byte;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; s:=[];</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to 10 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; read(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; s:=s+[n];</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=0 to 255 do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if i in s then write(i,' ');</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">3、元素与集合之间可以进行“属于”运算，运算符为in，运算结果为布尔值。对于一个元素x和集合A，若x是A的元素，则称“x属于A”，表达式x in A的值为真；若<span style="line-height: 28px">x不是A的元素，则称“x不属于A”，表达式x in A的值为假。</span></span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">1 in [1,2,3] 的值为真</span></div>
+<div><span style="font-size: 16px">1 in [2,3,4] 的值为假</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">4、集合之间可以进行并、差、交三种集合运算：</span></div>
+<div><span style="font-size: 16px">+（集合并）——产生一个包含两个集合元素的集合；</span></div>
+<div><span style="font-size: 16px">-（集合差）——产生一个包含所有属于第一个集合，但不属于第二个集合的元素的集合；</span></div>
+<div><span style="font-size: 16px">*（集合交）——产生一个只包含两个集合的公共元素的集合；</span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">[1,2]+[5,6,7]=[1,2,5,6,7]</span></div>
+<div><span style="font-size: 16px">[1,2]+[1,2,3,4]=[1,2,3,4]</span></div>
+<div><span style="font-size: 16px">[1,2,3]-[2]=[1,3]</span></div>
+<div><span style="font-size: 16px">[1,2,3]-[4]=[1,2,3]</span></div>
+<div><span style="font-size: 16px">[1,2,3]-[]=[1,2,3]</span></div>
+<div><span style="font-size: 16px">[1,2,3]*[2,3,4]=[2,3]</span></div>
+<div><span style="font-size: 16px">[1,2,3]*[4,5]=[]</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">5、集合之间可以进行“相等”和“包含”两种关系运算，运算结果为布尔值。</span></div>
+<div><span style="font-size: 16px">若两个集合的所有元素都相同，则这两个集合是相等的。</span></div>
+<div><span style="font-size: 16px">若集合B的所有元素都是集合A中的元素，则有A&gt;=B，即B&lt;=A。</span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">[1,2]=[1,2] 的值为真</span></div>
+<div><span style="font-size: 16px">[1,2]=[1,3] 的值为假</span></div>
+<div><span style="font-size: 16px">[1,2,3]&gt;=[1,2] 的值为真</span></div>
+<div><span style="font-size: 16px">[1,2]&gt;=[1,2,3] 的值为假</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例2：编写一个加密程序将一个英文句子加密后输出。加密译码规则为：</span></div>
+<div><span style="font-size: 16px">A、由键盘输入英文句子和密钥M(20&lt;=M&lt;=50)</span></div>
+<div><span style="font-size: 16px">B、将其中的英文字符都变为大写，用数字1..26分别代表'A'..'Z'并加上密钥M后输出</span></div>
+<div><span style="font-size: 16px">C、将其中的空格用数字'0'输出</span></div>
+<div><span style="font-size: 16px">D、其它符号则变成ASCII序号加上100输出</span></div>
+<div><span style="font-size: 16px">E、输出数字之间用空格分隔</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; st:string;</span></div>
+<div><span style="font-size: 16px">&nbsp; m,i:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; c:char;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; write('Input a sentence: ');</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(st);</span></div>
+<div><span style="font-size: 16px">&nbsp; repeat</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('Input M: ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; readln(m);</span></div>
+<div><span style="font-size: 16px">&nbsp; until m in [20..50];</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to length(st) do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if st[i] in ['a'..'z','A'..'Z'] then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; c:=upcase(st[i]);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(ord(c)-64+m,' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end else if st[i]=' ' then write(0,' ')</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else write(ord(st[i]+100,' '));</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例3：用筛选法求2至100中的所有质数。</span></div>
+<div><span style="font-size: 16px">分析：筛选法是比较常用的求质数的算法之一，适用于求2到一个给定的上限n之间的全体质数，基本思想是：</span></div>
+<div><span style="font-size: 16px">1、设立一个2到n之间的全体整数的集合sieve，作为筛选的“原材料”</span></div>
+<div><span style="font-size: 16px">2、设立一个集合primes，用于存放筛选出来的质数，其初始状态为空</span></div>
+<div><span style="font-size: 16px">3、i从集合sieve中最小的质数2开始</span></div>
+<div><span style="font-size: 16px">4、先将i添加到primes中，然后将i的所有整倍数（包括i本身）从sieve中删除，此时sieve中剩下的最小元素x一定是与i紧邻的质数</span></div>
+<div><span style="font-size: 16px">5、将i更新为x</span></div>
+<div><span style="font-size: 16px">6、重复执行第4、5步，直到sieve中没有元素为止，此时primes中存放的就是筛选出来的2到n之间的全体质数</span></div>
+<div>
+<div>
+<div><span style="font-size: 16px"><img style="margin: 0px 10px 0px 0px" src="http://img.bimg.126.net/photo/vzBQPeI_aSFD7ea78StOUw==/3722788041992230112.jpg" alt="集合 - 徐老师 - Pascal程序设计"></span></div>
+</div>
+</div>
+<div><span style="font-size: 16px">const</span></div>
+<div><span style="font-size: 16px">&nbsp; n=100;</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; sieve,primes:set of 2..n;</span></div>
+<div><span style="font-size: 16px">&nbsp; p,d:byte;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; sieve:=[2..n];</span></div>
+<div><span style="font-size: 16px">&nbsp; primes:=[];</span></div>
+<div><span style="font-size: 16px">&nbsp; p:=1;</span></div>
+<div><span style="font-size: 16px">&nbsp; repeat</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; repeat</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; p:=p+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; until p in sieve;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; primes:=primes+[p];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; d:=p;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; repeat</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; sieve:=sieve-[d];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; d:=d+p;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; until d&gt;n;</span></div>
+<div><span style="font-size: 16px">&nbsp; until sieve=[];</span></div>
+<div><span style="font-size: 16px">&nbsp; for d:=2 to n do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if d in primes then write(d:4);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例4：将十进制整数k转换成二进制数。以集合类型表示一个32位二进制数，如18的二进制数为10010，则集合中记为[2,5]， 即表示第2位、第5位是1，其余都是0。最<span style="line-height: 28px">后再以标准的二进制数输出<span style="line-height: 28px">。</span></span></span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; buf:set of 1..32;</span></div>
+<div><span style="font-size: 16px">&nbsp; i,k:longint;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; write('Input N= ');</span></div>
+<div><span style="font-size: 16px">&nbsp; readln(k);</span></div>
+<div><span style="font-size: 16px">&nbsp; buf:=[];</span></div>
+<div><span style="font-size: 16px">&nbsp; i:=1;</span></div>
+<div><span style="font-size: 16px">&nbsp; while k&gt;0 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if k mod 2=1 then buf:=buf+[i];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; i:=i+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; k:=k div 2;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; k:=32;</span></div>
+<div><span style="font-size: 16px">&nbsp; while not (k in buf) do k:=k-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=k downto 1 do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if i in buf then write(1)</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else write(0);</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例5：将1，2，……9这9个数分成三组，分别组成三个三位数，且使这三个三位数构成1：2：3的比例，例如：三个三位数192，384，576满足以上条件，试求出所有满<span style="line-height: 28px">足条件的三个三位数。</span></span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; a,b,c,d,e,f,g,h,n:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; i,j,k:integer;</span></div>
+<div><span style="font-size: 16px">procedure num(x:integer;var u,v,w:byte);</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; u:=x div 100;</span></div>
+<div><span style="font-size: 16px">&nbsp; v:=x mod 100 div 10;</span></div>
+<div><span style="font-size: 16px">&nbsp; w:=x mod 10;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=123 to 329 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; j:=2*i;k:=3*i;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; num(i,a,b,c);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; num(j,d,e,f);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; num(k,g,h,n);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if [a,b,c,d,e,f,g,h,n]=[1..9] then writeln(i:5,j:5,k:5);</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+</div>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

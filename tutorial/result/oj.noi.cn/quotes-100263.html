@@ -1,0 +1,183 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100263. 航空管制 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/100263" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：512M<br />
+<br />
+世博期间，上海的航空客运量大大超过了平时，随之而来的航空管制也频频发生。最近，小X 就因为航空管制，连续两次在机场被延误超过了两小时。对此，小X 表示很不满意。<br />
+在这次来烟台的路上，小X 不幸又一次碰上了航空管制。于是小X 开始思考关于航空管制的问题。<br />
+假设目前被延误航班共有n 个，编号为1 至n。机场只有一条起飞跑道，所有的航班需按某个顺序依次起飞（称这个顺序为起飞序列）。定义一个航班的起飞序号为该航班在起飞序列中的位置，即是第几个起飞的航班。<br />
+起飞序列还存在两类限制条件：<br />
+第一类（最晚起飞时间限制）：编号为i 的航班起飞序号不得超过<img src="http://latex.codecogs.com/gif.latex?k_%7Bi%7D" alt=" " />;<br />
+第二类（相对起飞顺序限制）：存在一些相对起飞顺序限制(a, b)，表示航班a 的起飞时间必须早于航班b，即航班a 的起飞序号必须小于航班b 的起飞序号。<br />
+小X 思考的第一个问题是，若给定以上两类限制条件，是否可以计算出一个可行的起飞序列。第二个问题则是，在考虑两类限制条件的情况下，如何求出每个航班在所有可行的起飞序列中的最小起飞序号</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件plane.in 第一行包含两个正整数n 和m，n 表示航班数目，m 表示第二类限制条件（相对起飞顺序限制）的数目。<br />
+第二行包含n 个正整数<img src="http://latex.codecogs.com/gif.latex?k_%7B1%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?k_%7B2%7D" alt=" " />, &hellip;, <img src="http://latex.codecogs.com/gif.latex?k_%7Bn%7D" alt=" " />。<br />
+接下来m 行，每行两个正整数a 和b，表示一对相对起飞顺序限制(a, b)，其中1&le;a,b&le;n, 表示航班a 必须先于航班b 起飞。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件plane.out 由两行组成。<br />
+第一行包含n 个整数，表示一个可行的起飞序列，相邻两个整数用空格分隔。输入数据保证至少存在一个可行的起飞序列。如果存在多个可行的方案，输出任意一个即可。<br />
+第二行包含n 个整数<img src="http://latex.codecogs.com/gif.latex?t_%7B1%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?t_%7B2%7D" alt=" " />, &hellip;, <img src="http://latex.codecogs.com/gif.latex?t_%7Bn%7D" alt=" " />，其中<img src="http://latex.codecogs.com/gif.latex?t_%7Bi%7D" alt=" " />表示航班i 可能的最小起飞序号，相邻两个整数用空格分隔。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>5 5
+4 5 2 5 4
+1 2
+3 2
+5 1
+3 4
+3 1</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3 5 1 4 2
+3 4 1 2 1</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于30%数据：n&le;10；<br />
+对于60%数据：n&le;500；<br />
+对于100%数据：n&le;2,000，m&le;10,000。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100263"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/100263"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100263"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100263'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100263" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100263' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100263?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100263. \u822a\u7a7a\u7ba1\u5236 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

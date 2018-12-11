@@ -1,0 +1,197 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1268. 多边形下海 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/1268" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：256M<br />
+<br />
+在一个二维空间中，给定一个凸多边形，假设该凸多边形的面密度为 , 放入一个水平面为y=0的无穷大的水池当中，水的密度为1，求该凸多边形在静止并且势能到达最低点的情况下， 该凸多边形逆时针旋转了多少？<br />
+势能包括凸多边形本身的重力势能和浮力对其做功产生的浮力势能。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">第一行一个数N，表示数据组数。对于每组数据：第一行两个数，整数n和浮点数&rho;,表示多边形点的个数和多边形的密度。接下来n行，每行两个浮点数x,y逆时针表示凸包上的所有点。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">对于每一组数据输出一行，&theta; ，表示凸多边形达到势能的最低点的时候，其逆时针旋转的弧度是多少，0&le;&theta;&lt;2&pi; 。<br />
+本题包含Special Judge，对于你的输出允许<img src="http://latex.codecogs.com/gif.latex?10%5E%7B-6%7D" alt=" " />的误差，请输出小数部分位数尽量多的数（但小数位数不要超15）</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3
+3 0.3
+0.23272177 0.50274749
+0.69314977 0.57621227
+0.63404493 0.80356643
+7 0.7
+0.97651045&nbsp; 0.03790015
+0.9919297&nbsp;&nbsp; 0.75416081
+0.76345204&nbsp; 0.83482219
+0.17087067&nbsp; 0.83086959
+0.19621027&nbsp; 0.49532965
+0.24676201&nbsp; 0.45389929
+0.67563998&nbsp; 0.14424922
+8 0.6
+0.03726264&nbsp; 0.10180906
+0.50450581&nbsp; 0.13303585
+0.81055071&nbsp; 0.29025366
+0.99405094&nbsp; 0.68868719
+0.77510244&nbsp; 0.87181985
+0.40531889&nbsp; 0.91965237
+0.27990499&nbsp; 0.84662178
+0.07581749&nbsp; 0.30329282</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>2.60634462
+3.83816499
+2.50530629</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">凸多边形由逆时针给出。<br />
+数据组数 N&le;10。<br />
+0.1&lt;&rho;&lt;0.9。<br />
+0&le;x,y&le;1。<br />
+对于30%的数据，n=3 ；<br />
+对于60%的数据，n&le;100 ；<br />
+对于100%的数据，n&le;100000 ,&sum;n&le;100000 。<br />
+数据保证能构成凸多边形，且多边形上相邻两点之间的距离不小于<img src="http://latex.codecogs.com/gif.latex?10%5E%7B-10%7D" alt=" " />，且多边形的面积不小于<img src="http://latex.codecogs.com/gif.latex?10%5E%7B-4%7D" alt=" " />。<br />
+数据保证唯一解。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1268"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/1268"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1268"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1268'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1268" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1268' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1268?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1268. \u591a\u8fb9\u5f62\u4e0b\u6d77 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

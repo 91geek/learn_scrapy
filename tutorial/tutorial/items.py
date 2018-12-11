@@ -8,8 +8,6 @@
 import scrapy
 
 
-class TutorialItem(scrapy.Item):
+class NoiNewsItem(scrapy.Item):
+    id = scrapy.Field()
     title = scrapy.Field()
-    link = scrapy.Field()
-    desc = scrapy.Field()
-    pass

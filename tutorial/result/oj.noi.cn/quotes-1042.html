@@ -1,0 +1,181 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1042. 发奖学金 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1042" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">某小学最近得到了一笔赞助，打算拿出其中一部分为学习成绩优秀的前5名学生发奖学金。期末，每个学生都有3门课的成绩:语文、数学、英语。先按总分从高到低排序，如果两个同学总分相同，再按语文成绩从高到低排序，如果两个同学总分和语文成绩都相同，那么规定学号小的同学排在前面，这样，每个学生的排序是唯一确定的。<br />
+任务：先根据输入的3门课的成绩计算总分，然后按上述规则排序，最后按排名顺序输出前五名名学生的学号和总分。注意，在前5名同学中，每个人的奖学金都不相同，因此，你必须严格按上述规则排序。例如，在某个正确答案中，如果前两行的输出数据(每行输出两个数:学号、总分) 是:<br />
+7 279<br />
+5 279<br />
+这两行数据的含义是:总分最高的两个同学的学号依次是7号、5号。这两名同学的总分都是 279 (总分等于输入的语文、数学、英语三科成绩之和) ，但学号为7的学生语文成绩更高一些。如果你的前两名的输出数据是:<br />
+5 279<br />
+7 279<br />
+则按输出错误处理，不能得分。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">包含n+1行: 第1行为一个正整数n，表示该校参加评选的学生人数。<br />
+第2到n+1行，每行有3个用空格隔开的数字，每个数字都在0到100之间。第j行的3个数字依次表示学号为 j-1 的学生的语文、数学、英语的成绩。每个学生的学号按照输入顺序编号为1~n (恰好是输入数据的行号减1)。所给的数据都是正确的，不必检验。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">共有5行，每行是两个用空格隔开的正整数，依次表示前5名学生的学号和总分。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>6
+90 67 80
+87 66 91
+78 89 91
+88 99 77
+67 89 64
+78 89 98</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>6 265
+4 264
+3 258
+2 244
+1 237</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">50%的数据满足:各学生的总成绩各不相同；<br />
+100%的数据满足: 6&lt;=n&lt;=300。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习5.3.7</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1042"><span class="badge badge-info">2151</span></a><br />提交: <a class="pull-right" href="#main/statistic/1042"><span class="badge badge-info">4887</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1042"><span class="badge badge-info">62.33</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1042'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1042/c%252B%252B%2528%25E6%25B3%2597%25E6%25B0%25B4%25E4%25B8%2580%25E4%25B8%25AD01%25E7%25A4%25BE%25E5%259B%25A2%25EF%25BC%2589.cpp/0/solution_path' data-toggle='tooltip' title='By 孙文烁'>c++(泗水一中01社团）.cpp</a><br /><a class='solution' href='index.php/main/download/1042/test.cpp/0/solution_path' data-toggle='tooltip' title='By zhengqiu'>test.cpp</a><br /><a class='solution' href='index.php/main/download/1042/%25E4%25B8%258D%25E8%25B0%2583%25E7%2594%25A8sort%25E4%25BA%258C%25E7%25BA%25A7%25E6%25B0%25B4%25E5%25B9%25B3.cpp/0/solution_path' data-toggle='tooltip' title='By 1597770807'>不调用sort二级水平.cpp</a><br /><a class='solution' href='index.php/main/download/1042/noi%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D52.cpp/0/solution_path' data-toggle='tooltip' title='By liuziyuan'>noi未命名52.cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042AC%2520YF.cpp/0/solution_path' data-toggle='tooltip' title='By yyfsds'>1042AC YF.cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042.cpp/0/solution_path' data-toggle='tooltip' title='By 魏子博'>1042.cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042%2520%25E5%258F%2591%25E5%25A5%2596%25E5%25AD%25A6%25E9%2587%2591%2528%25E5%25BF%25AB%25E6%258E%2592%2529.cpp/0/solution_path' data-toggle='tooltip' title='By 李昕'>1042 发奖学金(快排).cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042---%25E8%25B7%259F%25E4%25B8%258A%25E9%25A2%2598pascal%25E8%25A7%25A3%25E6%25B3%2595%25E5%2590%258C%25E4%25B8%2580%25E4%25B8%25AA%25E4%25BD%259C%25E8%2580%2585%25E7%259A%2584%25E8%25B6%2585%25E7%25BA%25A7%25E6%2597%25A0%25E6%2595%258C%25E5%258F%2598%25E6%2580%2581%25E7%25AE%2580%25E5%258D%2595%25E6%2598%2593%25E6%2587%2582%25E5%25B1%2585%25E7%2584%25B6%25E6%25B2%25A1%25E8%25B6%2585%25E6%2597%25B6%25E7%259A%2584%25E6%258E%2592%25E5%25BA%258F%25E8%25A7%25A3%25E6%25B3%2595%25E5%2591%2583%25E8%25BF%2599%25E6%25A0%25B7%25E6%2598%25AF%25E4%25B8%258D%25E6%2598%25AF%25E6%259C%2589%25E4%25BA%259B%25E5%25BC%25B1%25E6%2599%25BA%25E5%258F%258D%25E6%25AD%25A3%25E9%25A2%2598%25E8%25A7%25A3%25E4%25B8%258B%25E9%259D%25A2%25E4%25B8%2580%25E5%25A4%25A7%25E7%2589%2587%25E5%25BA%2594%25E8%25AF%25A5%25E9%2583%25BD%25E6%2598%25AF%25E6%2588%2591%25E6%2589%2593%25E7%259A%2584%25E5%25AD%2597%25E4%25BA%2586%25E5%2593%2588%25E5%2593%2588%25E5%2593%2588%25E5%2593%2588%25E5%2593%2588%25E5%2593%2588.txt/0/solution_path' data-toggle='tooltip' title='By LoveAurora'>1042---跟上题pascal解法同一个作者的超级无敌变态简单易懂居然没超时的排序解法呃这样是不是有些弱智反正题解下面一大片应该都是我打的字了哈哈哈哈哈哈.txt</a><br /><a class='solution' href='index.php/main/download/1042/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1042/1042.txt/0/solution_path' data-toggle='tooltip' title='By hamilton'>1042.txt</a><br /><a class='solution' href='index.php/main/download/1042/%25E5%25BC%25A0%25E8%25A1%258C%25E5%2581%25A5%25E4%25B8%2593%25E4%25B8%259A%25E7%25A5%259E%25E7%25BB%258F%25E7%2597%2585%25E4%25BB%25BB%25E8%2581%258C%25E8%25B5%2584%25E6%25A0%25BC%25E8%25AF%2584%25E5%25AE%25A1%25E6%259D%2590%25E6%2596%2599.doc/0/solution_path' data-toggle='tooltip' title='By 徐乐岩xuleyan'>张行健专业神经病任职资格评审材料.doc</a><br /><a class='solution' href='index.php/main/download/1042/mwxq2modi_pc6game.zip/0/solution_path' data-toggle='tooltip' title='By 1335574070'>mwxq2modi_pc6game.zip</a><br /><a class='solution' href='index.php/main/download/1042/%25E7%25BC%2596%25E8%25AF%2591%25E2%2580%2598.cpp/0/solution_path' data-toggle='tooltip' title='By 白小白0818'>编译‘.cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042hxy.cpp/0/solution_path' data-toggle='tooltip' title='By old dog wang'>1042hxy.cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042.%25E5%258F%2591%25E5%25A5%2596%25E5%25AD%25A6%25E9%2587%2591.cpp/0/solution_path' data-toggle='tooltip' title='By lgh'>1042.发奖学金.cpp</a><br /><a class='solution' href='index.php/main/download/1042/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By fwt0430'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1042/%25E7%25AE%2580%25E5%258D%2595%25E6%2593%258D%25E4%25BD%259C.docx/0/solution_path' data-toggle='tooltip' title='By 甘晋丞'>简单操作.docx</a><br /><a class='solution' href='index.php/main/download/1042/%25E4%25BB%2598%25E5%25AD%259C%25E9%25A2%2596xx%25E5%25BD%25AD%25E5%25BD%25A6%25E5%258D%259A.txt/0/solution_path' data-toggle='tooltip' title='By GAOYUAN111'>付孜颖xx彭彦博.txt</a><br /><a class='solution' href='index.php/main/download/1042/%25E7%2594%25A8%25E6%2596%2587%25E4%25BB%25B6%25E6%258F%2590%25E4%25BA%25A4%25EF%25BC%258C%25E4%25B8%258D%25E7%2594%25A8%25E8%25B0%25A2%2520%25E5%258F%25AF%25E4%25BB%25A5%25E6%2589%2593%25E5%25BC%2580%25E7%259C%258B%25E7%259C%258B%2520%2520.exe/0/solution_path' data-toggle='tooltip' title='By 3540425149'>用文件提交，不用谢 可以打开看看  .exe</a><br /><a class='solution' href='index.php/main/download/1042/1042.%2520%25E5%258F%2591%25E5%25A5%2596%25E5%25AD%25A6%25E9%2587%2591.cpp/0/solution_path' data-toggle='tooltip' title='By gaxx2018hjc'>1042. 发奖学金.cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042_awards.cpp/0/solution_path' data-toggle='tooltip' title='By VictorX'>1042_awards.cpp</a><br /><a class='solution' href='index.php/main/download/1042/1042%25E5%2593%2588%25E5%2593%2588.cpp/0/solution_path' data-toggle='tooltip' title='By skxss'>1042哈哈.cpp</a><br /><a class='solution' href='index.php/main/download/1042/%25E8%25BF%2598%25E6%25B2%25A1%25E6%258E%2592%25E5%25BA%258Fby479863733.txt/0/solution_path' data-toggle='tooltip' title='By 479863733'>还没排序by479863733.txt</a><br /><a class='solution' href='index.php/main/download/1042/1042%25E5%258F%2591%25E6%2594%25BE%25E5%25A5%2596%25E9%2587%2591%25E4%25B9%258B%25E8%25B6%2585%25E7%25BA%25A7%25E6%2597%25A0%25E6%2595%258C%25E6%259A%25B4%25E5%258A%259B%25E8%25A7%25A3%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By 707fyc'>1042发放奖金之超级无敌暴力解法.cpp</a><br /><a class='solution' href='index.php/main/download/1042/C%252B%252B%25E8%25A7%25A3.txt/0/solution_path' data-toggle='tooltip' title='By Happynewyear'>C++解.txt</a><br /><a class='solution' href='index.php/main/download/1042/1042%25E5%2586%2592%25E6%25B3%25A1%25E6%258E%2592%25E5%25BA%258F.txt/0/solution_path' data-toggle='tooltip' title='By 孔印ky'>1042冒泡排序.txt</a><br /><a class='solution' href='index.php/main/download/1042/1042%2520%25E5%258F%2591%25E5%25A5%2596%25E5%25AD%25A6%25E9%2587%2591.txt/0/solution_path' data-toggle='tooltip' title='By omemi'>1042 发奖学金.txt</a><br /><a class='solution' href='index.php/main/download/1042/1042%2520sort%25E5%2587%25BD%25E6%2595%25B0%25E6%258E%2592%25E5%25BA%258F.txt/0/solution_path' data-toggle='tooltip' title='By omemi'>1042 sort函数排序.txt</a><br /><a class='solution' href='index.php/main/download/1042/%25E9%25A2%2598%25E8%25A7%25A3.exe/0/solution_path' data-toggle='tooltip' title='By 绝影·天冥'>题解.exe</a><br /><a class='solution' href='index.php/main/download/1042/%25E5%2591%25B5%25E5%2591%25B5.exe/0/solution_path' data-toggle='tooltip' title='By 梅DD'>呵呵.exe</a><br /><a class='solution' href='index.php/main/download/1042/%25E5%259C%25AD%25E5%259C%259F%25E5%259C%25B0.cpp/0/solution_path' data-toggle='tooltip' title='By lxd2006'>圭土地.cpp</a><br /><a class='solution' href='index.php/main/download/1042/%25E5%25A5%2596%25E5%25AD%25A6%25E9%2587%2591%25E7%259C%259F%25E6%259A%25B4%25E5%258A%259B.cpp/0/solution_path' data-toggle='tooltip' title='By Odysseus'>奖学金真暴力.cpp</a><br /><a class='solution' href='index.php/main/download/1042/%25E9%25A2%2598%25E7%259B%25AE1042%25E5%258F%2591%25E5%25A5%2596%25E5%25AD%25A6%25E9%2587%2591.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1042发奖学金.cpp</a><br /><a class='solution' href='index.php/main/download/1042/%25E8%25B4%25A4%25E5%2593%25A5%25E7%258C%25AE%25E7%25BB%2599%25E5%25A4%25A7%25E7%25B1%25BB%25E5%25A5%25B3%25E9%2583%258E%25E7%259A%2584%25E5%25B0%258F%25E8%25BD%25A9%25E8%25BD%25A9%25E7%259A%2584%25E4%25BB%25A3%25E7%25A0%2581%25EF%25BC%2588%25E4%25BC%2598%25E7%25A7%2580%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 白灬茶丷'>贤哥献给大类女郎的小轩轩的代码（优秀）.txt</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习5.3.7</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1042" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1042' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1042?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1042. \u53d1\u5956\u5b66\u91d1 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

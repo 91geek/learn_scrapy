@@ -1,0 +1,163 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1023. 最大跨度 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1023" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">给定一个长度为n的非负整数序列，请计算序列的最大跨度值（最大跨度值 = 最大值减去最小值）。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入一共两行，第1行为序列的个数n（1&le;n&le;1000)，第2行为序列的n个不超过1000的非负整数，整数之间以一个空格分隔。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出最大跨度值。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>6
+3 0 8 7 5 9</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>9</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1&le;n&le;1000</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习4.1.4</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1023"><span class="badge badge-info">6310</span></a><br />提交: <a class="pull-right" href="#main/statistic/1023"><span class="badge badge-info">10073</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1023"><span class="badge badge-info">72.03</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1023'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1023/1023%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By tszx2016'>1023最大跨度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/pascal%25E9%25A2%2598%25E8%25A7%25A3%25EF%25BC%2588ac%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 403584200@qq.com'>pascal题解（ac）.txt</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259D%259C%25E8%258A%25AE%25E8%258E%25B9%25E7%25BB%2599%25E4%25BD%25A0%25E7%259A%2584pascal%25E8%25A7%25A3%25E7%25AD%2594.txt/0/solution_path' data-toggle='tooltip' title='By 3204653771'>杜芮莹给你的pascal解答.txt</a><br /><a class='solution' href='index.php/main/download/1023/jack%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By jack_魏'>jack最大跨度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E5%2586%2592%25E6%25B3%25A1%25E6%258E%2592%25E5%25BA%258F1023.cpp/0/solution_path' data-toggle='tooltip' title='By 1206614133'>冒泡排序1023.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E4%25B8%258D%25E7%2594%25A8%25E6%258E%2592%25E5%25BA%258F.cpp/0/solution_path' data-toggle='tooltip' title='By Endless_Errors'>不用排序.cpp</a><br /><a class='solution' href='index.php/main/download/1023/c1023.pas/0/solution_path' data-toggle='tooltip' title='By CXJ'>c1023.pas</a><br /><a class='solution' href='index.php/main/download/1023/Pascal%2520Answer.pas/0/solution_path' data-toggle='tooltip' title='By cheng08032005'>Pascal Answer.pas</a><br /><a class='solution' href='index.php/main/download/1023/%25E4%25BD%259C%25E8%2580%2585%25E6%25B3%25A8%25EF%25BC%259A%25E9%25A2%2598%25E8%25A7%25A3%25E9%2587%258C%25E7%259A%2584Pascal%2520Answer%25E6%2598%25AF%25E5%258F%25A6%25E4%25B8%2580%25E9%25A2%2598%25E7%259A%2584%25E8%25A7%25A3%25E7%25AD%2594%25EF%25BC%258C%25E6%25AD%25A4%25E4%25B8%25BA%25E6%25AD%25A3%25E8%25A7%25A3%25EF%25BC%258C%25E6%2595%25AC%25E8%25AF%25B7%25E8%25B0%2585%25E8%25A7%25A3%25EF%25BC%2581.pas/0/solution_path' data-toggle='tooltip' title='By cheng08032005'>作者注：题解里的Pascal Answer是另一题的解答，此为正解，敬请谅解！.pas</a><br /><a class='solution' href='index.php/main/download/1023/c%252B%252B%25E6%25A0%2587%25E5%2587%2586%25E7%25AD%2594%25E6%25A1%2588.cpp/0/solution_path' data-toggle='tooltip' title='By 熟悉的背景'>c++标准答案.cpp</a><br /><a class='solution' href='index.php/main/download/1023/Billy.pas/0/solution_path' data-toggle='tooltip' title='By sxlch'>Billy.pas</a><br /><a class='solution' href='index.php/main/download/1023/1023.cpp/0/solution_path' data-toggle='tooltip' title='By michaelwrl'>1023.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E7%25A7%2580%25E6%2589%258D%2520%2520%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By 秀才'>秀才  最大跨度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E8%25AF%2595%25E9%25A2%259824.cpp/0/solution_path' data-toggle='tooltip' title='By 黄星皓'>试题24.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By wuyiheng'>最大跨度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E8%25B6%258A%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By wangshengjun33'>最大跨越度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8%2528%25E8%25BF%2599%25E9%25A2%2598%25E6%2589%258D%25E6%25AD%25A3%25E7%25A1%25AE%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 1059420075'>sjr编（Pascal）专用(这题才正确）.txt</a><br /><a class='solution' href='index.php/main/download/1023/a1_5.pas/0/solution_path' data-toggle='tooltip' title='By xc200599'>a1_5.pas</a><br /><a class='solution' href='index.php/main/download/1023/pascal%25E9%25A2%2598%25E8%25A7%25A3%25EF%25BC%2588%25E5%2588%25ABuses%2520math%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By lzc林某'>pascal题解（别uses math）.txt</a><br /><a class='solution' href='index.php/main/download/1023/zdkd.txt/0/solution_path' data-toggle='tooltip' title='By bdgxwxh'>zdkd.txt</a><br /><a class='solution' href='index.php/main/download/1023/xxc.pas/0/solution_path' data-toggle='tooltip' title='By xxc2006xxc'>xxc.pas</a><br /><a class='solution' href='index.php/main/download/1023/1023.%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By hamilton'>1023.最大跨度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/NOI1023.c/0/solution_path' data-toggle='tooltip' title='By dstephen'>NOI1023.c</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259D%25A5%25E8%2587%25AA%25E6%259D%25AD%25E5%25B7%259E%25E5%259B%259B%25E7%259B%2591%25E7%259A%2584%25E5%25BF%25AB%25E6%258E%2592%25E8%25A7%25A3%25E6%25B3%2595%25EF%25BC%2588%25E8%2599%25BD%25E7%2584%25B6%25E4%25BB%25A5%25E8%25AF%25A5%25E9%25A2%2598%25E7%259A%2584%25E6%2595%25B0%25E6%258D%25AE%25E6%2597%25A0%25E9%25A1%25BB%25E4%25BD%25BF%25E7%2594%25A8qsort%25EF%25BC%2589.cpp/0/solution_path' data-toggle='tooltip' title='By Never_Be_Accepted'>来自杭州四监的快排解法（虽然以该题的数据无须使用qsort）.cpp</a><br /><a class='solution' href='index.php/main/download/1023/XYJ%25E5%2588%25B7%25E5%2588%2586%25E7%25A5%259E%25E5%2599%25A8.exe/0/solution_path' data-toggle='tooltip' title='By XiaoYangJun'>XYJ刷分神器.exe</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%2596%25B0%25E5%25BB%25BA%2520Microsoft%2520Word%2520%25E6%2596%2587%25E6%25A1%25A3.docx/0/solution_path' data-toggle='tooltip' title='By WD_702高兴'>新建 Microsoft Word 文档.docx</a><br /><a class='solution' href='index.php/main/download/1023/01.cpp/0/solution_path' data-toggle='tooltip' title='By 符仁庆'>01.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E8%25B7%25A8%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By zry2004'>跨度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/C.txt/0/solution_path' data-toggle='tooltip' title='By yuqiang156'>C.txt</a><br /><a class='solution' href='index.php/main/download/1023/sort%25E6%258E%2592%25E5%25BA%258F.cpp/0/solution_path' data-toggle='tooltip' title='By 湿梦'>sort排序.cpp</a><br /><a class='solution' href='index.php/main/download/1023/20139926260901592772.png/0/solution_path' data-toggle='tooltip' title='By 13505778850'>20139926260901592772.png</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6.pas/0/solution_path' data-toggle='tooltip' title='By rick233'>最大跨度.pas</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%2595%25B4%25E6%2595%25B0%25E5%25BA%258F%25E5%2588%2597%25E7%259A%2584%25E5%2585%2583%25E7%25B4%25A0%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6%25E5%2580%25BC.cpp/0/solution_path' data-toggle='tooltip' title='By 2636099143'>整数序列的元素最大跨度值.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%2589%2593%25E6%2593%2582%25E5%258F%25B0.txt/0/solution_path' data-toggle='tooltip' title='By 13867708175'>打擂台.txt</a><br /><a class='solution' href='index.php/main/download/1023/%25E5%25BA%258F%25E5%2588%2597%25E6%2595%25B0%25E5%25AF%25BB%25E6%259C%2580%25E5%25A4%25A7%25E6%259C%2580%25E5%25B0%258F%25E4%25B9%258B%25E5%25B7%25AE/0/solution_path' data-toggle='tooltip' title='By 鹏'>序列数寻最大最小之差</a><br /><a class='solution' href='index.php/main/download/1023/by%25E9%2599%2588%25E4%25BF%258A%25E5%25AE%2587.cpp/0/solution_path' data-toggle='tooltip' title='By 走在冷风中'>by陈俊宇.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D4.cpp/0/solution_path' data-toggle='tooltip' title='By chenhaoxuan2018'>未命名4.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By lujunhong'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%25BA%2590.cpp/0/solution_path' data-toggle='tooltip' title='By moonfish'>源.cpp</a><br /><a class='solution' href='index.php/main/download/1023/1023%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6%2528%25E4%25B8%2580%25E7%25BA%25A7%2529.cpp/0/solution_path' data-toggle='tooltip' title='By zhl2006'>1023最大跨度(一级).cpp</a><br /><a class='solution' href='index.php/main/download/1023/zudakuadu.cpp/0/solution_path' data-toggle='tooltip' title='By xydxh许剑华'>zudakuadu.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D.cpp/0/solution_path' data-toggle='tooltip' title='By yyfish'>未命名.cpp</a><br /><a class='solution' href='index.php/main/download/1023/cf9a1bffae174d2d98257928c739fa48.jpeg/0/solution_path' data-toggle='tooltip' title='By xb1552'>cf9a1bffae174d2d98257928c739fa48.jpeg</a><br /><a class='solution' href='index.php/main/download/1023/%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6%2520%2528Standard%2520IO%2529.cpp/0/solution_path' data-toggle='tooltip' title='By dyf丁雨飞'>最大跨度 (Standard IO).cpp</a><br /><a class='solution' href='index.php/main/download/1023/data.zip/0/solution_path' data-toggle='tooltip' title='By Zense'>data.zip</a><br /><a class='solution' href='index.php/main/download/1023/%25E9%25A2%2598%25E7%259B%25AE1023%25E6%259C%2580%25E5%25A4%25A7%25E8%25B7%25A8%25E5%25BA%25A6.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1023最大跨度.cpp</a><br /><a class='solution' href='index.php/main/download/1023/%25E7%25BA%25BF%25E6%25AE%25B5%25E6%25A0%2591.cpp/0/solution_path' data-toggle='tooltip' title='By recwwk'>线段树.cpp</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习4.1.4</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1023" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1023' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1023?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1023. \u6700\u5927\u8de8\u5ea6 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

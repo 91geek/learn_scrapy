@@ -1,0 +1,171 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100009. [Usaco2009 Feb]Bullcow <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">131072 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/100009" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">一年一度的展会要来临了，农民约翰想要把N(1 &lt;= N &lt;= 100,000)只奶牛和公牛安排在单独的一行中。 约翰发现最近公牛们非常好斗；假如两只公牛在这一行中靠的太近，他们就会吵架，以至于斗殴，破坏这和谐的环境。约翰非常的足智多谋，他计算出任何两只公牛之间至少要有K (0 &lt;= K &lt; N)只奶牛，这样才能避免斗殴。 约翰希望你帮助他计算一下有多少种安排方法，可避免任何斗殴的的发生。约翰认为每头公牛都是一样的，每头奶牛都是一样的。因而，只要在一些相同的位置上有不同种类的牛，那这就算两种不同的方法。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">第一行:两个用空格隔开的数：N和K</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">第一行：一个单独的数，即约翰可以安排的方法数。考虑到这个数可能很大，你只要输出mod 5,000,011之后的结果就可以了。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4 2
+输入注释
+约翰想要一排4头牛，但是任何两只公牛之间至少有两头奶牛</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>6
+下面的就是约翰思考出可行的6种方案(C代表奶牛,B代表公牛)
+CCCC
+BCCC
+CBCC
+CCBC
+CCCB
+BCCB</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content"></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: hysbz上传</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/user/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?user_only=1" style="text-decoration:underline">
+							所有普通用户添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100009"><span class="badge badge-info">108</span></a><br />提交: <a class="pull-right" href="#main/statistic/100009"><span class="badge badge-info">241</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100009"><span class="badge badge-info">54.81</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100009'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/100009/1073.pas/0/solution_path' data-toggle='tooltip' title='By 2457348329139'>1073.pas</a><br /><a class='solution' href='index.php/main/download/100009/AC%25E6%2588%2590%25E5%258A%259F.jpg/0/solution_path' data-toggle='tooltip' title='By xiaojunhaoxy'>AC成功.jpg</a><br /><a class='solution' href='index.php/main/download/100009/%25E6%25AD%25A3%25E7%25A1%25AE%25E7%25AD%2594%25E6%25A1%2588%2520%25281%2529.exe/0/solution_path' data-toggle='tooltip' title='By 我很6'>正确答案 (1).exe</a><br /><a class='solution' href='index.php/main/download/100009/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D4.cpp/0/solution_path' data-toggle='tooltip' title='By 智障de陈民轩'>未命名4.cpp</a><br /><a class='solution' href='index.php/main/download/100009/main.cpp/0/solution_path' data-toggle='tooltip' title='By Hide_on_bush'>main.cpp</a><br /><a class='solution' href='index.php/main/download/100009/%25E6%2589%2593%25E6%2580%25AA.cpp/0/solution_path' data-toggle='tooltip' title='By root3'>打怪.cpp</a><br /><a class='solution' href='index.php/main/download/100009/%25E5%2591%25B5%25E5%2591%25B5.exe/0/solution_path' data-toggle='tooltip' title='By 梅DD'>呵呵.exe</a><br /><a class='solution' href='index.php/main/download/100009/100009.exe/0/solution_path' data-toggle='tooltip' title='By NOI官网管理员'>100009.exe</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">hysbz上传</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100009" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100009' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100009?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100009. [Usaco2009 Feb]Bullcow (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

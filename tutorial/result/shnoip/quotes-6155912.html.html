@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>数据类型 - noipxu - 博客园</title>
+<meta property="og:description" content="数据是指计算机能够识别和处理的数字、字符及符号。在Pascal语言中，无论常量还是变量都必须属于一个确定的数据类型，数据类型不仅确定数据的形式和取值范围，而且还确定了它所能参加的各种运算。 Pasca" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6155912.html">数据类型</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 15:49</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6155912" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6155912);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6155912,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 15:49:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">数据是指计算机能够识别和处理的数字、字符及符号。在Pascal语言中，无论常量还是变量都必须属于一个确定的数据类型，数据类型不仅确定数据的形式和取值范围，而且还确定了它所能参加的各种运算。</span></p>
+<p><span style="font-size: 16px">Pascal语言提供了丰富的数据类型，这些数据类型可以分为三大类：</span><br><span style="font-size: 16px">1、简单类型：分为标准类型（整型、实型、字符型和布尔型）和用户自定义类型（枚举型和子界型）</span><br><span style="font-size: 16px">2、构造类型：包括数组类型、记录类型、集合类型和文件类型</span><br><span style="font-size: 16px">3、指针类型：简单类型和构造类型都称为静态类型，它们在程序运行之前已经定义好了；指针类型是一种动态数据类型，它在程序运行时根据需要动态地产生。</span></p>
+<p><span style="font-size: 16px">整型、字符型、布尔型、枚举型和子界型称为顺序类型，所谓顺序类型是指在该类型的任意两个相邻常量中不可能插入第三个量介于这两个量之间，顺序类型的数据是用序的。</span></p>
+<p><span style="font-size: 16px">标准数据类型：</span><br><span style="font-size: 16px">1、整数类型</span><br><span style="font-size: 16px">整数类型包括正整数、负整数和零。</span><br><span style="font-size: 16px">整数由正负号和数字组成，“+”号可以省略。例如：25，0，-38，+100都是合法的整数，而8.7（含小数点）、5a（含字母a）都是非法的整数。</span></p>
+<p><span style="font-size: 16px">FreePascal支持以下7种整数类型</span></p>
+<p><span style="font-size: 16px">名　称　　　占字节数　类型标识符　数据范围</span><br><span style="font-size: 16px">短整型　　　1　　　　 shortint　　　-128..127</span><br><span style="font-size: 16px">整　型　　　2　　　　 integer　　　-32768..32767</span><br><span style="font-size: 16px">长整型　　　4　　　　 longint　　　-2147483648..2147483647</span><br><span style="font-size: 16px">字节型　　　1　　　　 byte　　　&nbsp;&nbsp;　0..255</span><br><span style="font-size: 16px">字　型　　　2　　　 　word　　　　0..65535</span><br><span style="font-size: 16px">整数类型　　8　　　　 int64　　　　-9 223 372 036 854 775 808..9 223 372 036 854 775 807</span><br><span style="font-size: 16px">无符号整数　8　　　　 qword　　 　0..18 446 744 073 709 551 615</span></p>
+<p><span style="font-size: 16px">注意：int64/qword不是顺序类型，不能用于for循环的循环变量。</span></p>
+<p><span style="font-size: 16px">2、实数类型</span><br><span style="font-size: 16px">实数类型包括正实数、负实数和实数零。</span></p>
+<p><span style="font-size: 16px">实数的表示方法有两种：</span><br><span style="font-size: 16px">（1）、日常表示法：就是我们平常使用的带小数点的表示方法。例如：2.5，-1.6，0.0都是合法的。必须注意小数点前后都应该有数字，例如：7.，.8都是非法的。一个整数可以当做实数使用，但反过来不行。</span><br><span style="font-size: 16px">（2）、科学表示法：就是采用指数形式的表示方法。例如：6.1E3表示6.1*1000，即6100；-6.1E-3表示-6.1*0.001<span style="line-height: 28px">，即-0.0061。称6.1E3中的E3为指数部分，6.1为尾数部分。注意指数部分不能为小数，尾数部分不能省略，例如：1.8E1.1，E+7都是非法的。</span></span></p>
+<p><span style="font-size: 16px">我们需要了解以下3种实数类型：</span><br><span style="font-size: 16px">single类型，数据范围是3.4E38，占4个字节，8位有效数字</span><br><span style="font-size: 16px">real类型，数据范围是1.7E308，占8个字节，16位有效数字</span><br><span style="font-size: 16px">double类型，数据范围是1.7E308，占8个字节，16位有效数字</span><br><span style="font-size: 16px">extended类型，数据范围是1.1E4932,占10个字节，20位有效数字</span></p>
+<p><span style="font-size: 16px">3、字符类型</span><br><span style="font-size: 16px">字符类型是指用单引号括起来的Pascal字符集中的任意一个字符。如：'A'，'6'，'：'分别表示字符A，字符6，冒号。</span></p>
+<p><span style="font-size: 16px">需注意，'7'与7是不同的，'7'为数字字符，而7为整数，它们属于不同的数据类型。对于单引号字符，因为已作为定界符号，所以它的表示规定为''''，而不是'''。</span></p>
+<p><span style="font-size: 16px">一个字符在内存中占一个字节，字符类型的标识符为char，而由多个字符组成的字符串（例如：'abcd'）的类型标识符为string。</span></p>
+<p><span style="font-size: 16px">人们操作计算机时，经常会接触到字符，比如：英文字符、数字运算符号等。为了对大量的字符进行管理，不同的计算机系统采用不同的编码方法。ASCII码是一种常用的字符编码。ASCII码是美国标准信息交换代码，每一个编码对应一个字符。ASCII码由8个二进制位组成，通常用右边7位表示字符，第8位用于检验错误或空闲不用。在ASCII码表中，按每个字符在码表中的位置，将其编为0-127，称为对应字符的序号。在ASCII码表中，数字0的ASCII码是48，数字1的ASCII码是49，依此顺序类推，数字9的ASCII码是57。英文大写字母A-Z的码分布在65-90，英文小写字母a-z的ASCII码分布在97-122。例如：数字5的ASCII码是53，字符C的ASCII码是67，ASCII码是84代表字符T，ASCII码107代表字符K。</span></p>
+<p><span style="font-size: 16px">在Pascal字符集中，用字符序号（ASCII码）的大小来定义相应字符之间的大小关系。因此所有的字符都可以进行比较。常用的是数字字符之间或字母之间的比较，比较结果是布尔类型。例如：'2'&lt;'6'结果为true，'a'&gt;'b'结果为false。</span></p>
+<p><span style="font-size: 16px">4、布尔类型</span><br><span style="font-size: 16px">布尔类型数据只有两个：真和假，分别用标准常量true（真）和false（假）来表示，false的序号为0,true的序号为1；布尔类型的类型标识符为boolean。</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

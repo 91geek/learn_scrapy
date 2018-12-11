@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>回溯 - noipxu - 博客园</title>
+<meta property="og:description" content="回溯算法也叫试探法，在搜索尝试过程中寻找问题的解，当发现已不满足求解条件时，就“回溯”返回，尝试别的路径。回溯算法是一种系统地搜索问题的解的方法。 回溯算法的基本思想是：在包含问题的所有解的解空间树中" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6155930.html">回溯</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 15:53</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6155930" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6155930);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6155930,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 15:53:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">回溯算法也叫试探法，在搜索尝试过程中寻找问题的解，当发现已不满足求解条件时，就“回溯”返回，尝试别的路径。回溯算法是一种系统地搜索问题的解的方法。</span></p>
+<p><span style="font-size: 16px">回溯算法的基本思想是：在包含问题的所有解的解空间树中，按照深度优先搜索的策略，从根结点出发深度探索解空间树。当探索到某一结点时，要先判断该结点是否包含问题的解，如果包含，就从该结点出发继续探索下去，如果该结点不包含问题的解，则逐层向其祖先结点回溯。若用回溯法求问题的所有解时，要回溯到根，且根结点的所有可行的子树都要已被搜索遍才结束。而若使用回溯法求任一个解时，只要搜索到问题的一个解就可以结束。</span></p>
+<p><span style="font-size: 16px">问题的解空间通常是在搜索问题的解的过程中动态产生的，这是回溯算法的一个重要特性。</span><br><span style="font-size: 16px">&nbsp;</span><br><span style="font-size: 16px">例1：从1到X这X个数字中选出N个排成一列，相邻两数不能相同，求所有可能的排法。每个数可以选用零次、一次或多次，例如：当N=3、X=3时，排法有12种：121、123、131、132、212、213、231、232、312、313、321、323。</span></p>
+<p><span style="font-size: 16px">分析：以N=3、X=3为例，这个问题的每个解可分为三个部分：第一位，第二位，第三位。先写第一位，第一位可选1、2或3，根据从小到大的顺序，我们选1；为了保证相邻两个数不同，第二位就只能选2或3，我们选2；第三位可以选1或3，我们选1；这样就得到了第一个解121。然后，将第三位变为3，就得了第二个解123。此时，第三位已经不能再取其他值了，于是返回第二位，看第二位还能变为什么值，第二位可以变为3，于是可以在13的基础上再给第三位赋予不同的值1和2，得到解131和132。此是第二位也已经不能再取其他值了，于是返回第一位，将它变为下一个可取的值2，然后按顺序变换第二位和第三位，得到212、213、231、232。这样，直到第一位已经取过了所有可能的值，并且将每种情况下的第二位和第三位都按上述思路取过一遍，此时就已经得到了该问题的全部解。</span></p>
+<p><span style="font-size: 16px">由以上过程可以看出，回溯法的思路是：问题的每个解都包含N部分，先给出第一部分，再给出第二部分，……直到给出第N部分，这样就得到了一个解。若尝试到某一步时发现已经无法继续，就返回到前一步，修改已经求出的上一部分，然后再继续向后求解。这样，直到回溯到第一步，并且已经将第一步的所有可能情况都尝试过之后，即可得出问题的全部解。</span></p>
+<p><span style="font-size: 16px">const</span><br><span style="font-size: 16px">&nbsp; n=3;</span><br><span style="font-size: 16px">&nbsp; x=3;</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; a:array[1..n] of 1..x;</span><br><span style="font-size: 16px">&nbsp; p,c,i:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; p:=1;&nbsp; {从第一位开始}</span><br><span style="font-size: 16px">&nbsp; c:=1;&nbsp; {从1开始选数字}</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (p=1) or (c&lt;&gt;a[p-1]) then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[p]:=c;&nbsp; {将数字c填到第p位上}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if p=n then begin&nbsp; {若已填到最后一位，表明已求出了一个解}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for i:=1 to n do write(a[i]);&nbsp; {输出这个解}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; writeln;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p:=p+1;&nbsp; {继续下一位}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:=1;&nbsp; {下一位从1开始}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end else c:=c+1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; until (p&gt;n) or (c&gt;x);&nbsp; {直到已填完最末位或本位再无数字可选}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p:=p-1;&nbsp; {向前回溯}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; until (p=0) or (a[p]&lt;x);&nbsp; {回溯到尚有选择余地的一位或到首位}</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if p&gt;0 then c:=a[p]+1;&nbsp; {若非首位，则将该位变为下一个可取的数字}</span><br><span style="font-size: 16px">&nbsp; until p=0;&nbsp; {将第一位回溯完毕后，程序结束}</span><br><span style="font-size: 16px">end.</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

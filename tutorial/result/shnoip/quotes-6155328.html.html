@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>while语句 - noipxu - 博客园</title>
+<meta property="og:description" content="一、语句格式格式1：while (条件表达式) 语句1; 格式2：while (条件表达式) { 语句1; 语句2; …} 注意：当条件表达式的值为真时重复循环体，否则结束循环；这一点和pascal语" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6155328.html">while语句</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 11:59</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6155328" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6155328);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6155328,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 11:59:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">一、语句格式</span><br><span style="font-size: 16px">格式1：</span><br><span style="font-size: 16px">while (条件表达式)</span><br><span style="font-size: 16px">&nbsp; 语句1;</span></p>
+<p><span style="font-size: 16px">格式2：</span><br><span style="font-size: 16px">while (条件表达式) {</span><br><span style="font-size: 16px">&nbsp; 语句1;</span><br><span style="font-size: 16px">&nbsp; 语句2;</span><br><span style="font-size: 16px">&nbsp; …</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">注意：当条件表达式的值为真时重复循环体，否则结束循环；这一点和pascal语言的while语句一致。</span></p>
+<p><span style="font-size: 16px">格式举例：</span><br><span style="font-size: 16px">while(cin&gt;&gt;x,x&lt;0)</span><br><span style="font-size: 16px">功能：当输入的数据小于0时，重复读入数据。</span><br><span style="font-size: 16px">注意：while的括号中可以包含多个语句（中间用逗号分隔），但是只判断最后一个语句是否为真，如：while(x&gt;10,x==10,x&lt;10)如果x&lt;10，则继续执行循环，否则退出循环。</span></p>
+<p><span style="font-size: 16px">语句执行过程：</span><br><span style="font-size: 16px">1、计算作为循环控制条件表达式的值，得到逻辑真或假，假定用M表示。</span><br><span style="font-size: 16px">2、若M为真，则执行一遍循环体，否则离开循环，结束整个while语句的调用。</span><br><span style="font-size: 16px">3、循环体的所有语句执行结束后，自动转向第1步执行。</span></p>
+<p><span style="font-size: 16px">说明：</span><br><span style="font-size: 16px">1、为了循环不至于变成无限循环（死循环），在循环体中一定要使循环条件表达式中的变量值有所变化。</span><br><span style="font-size: 16px">2、如果循环开始，表尔表达式的值为假，则不执行循环体，直接退出while语句，继续执行后面的语句。</span><br><span style="font-size: 16px">3、循环条件所用的表达式，可以是算术表达式、关系表达式、逻辑表达式等。</span></p>
+<p><span style="font-size: 16px">例1、求s=1+2+3+…+n，当加到第几项时，s的值会超过1000？</span><br><span style="font-size: 16px">#include&lt;iostream&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">int main()</span><br><span style="font-size: 16px">{</span><br><span style="font-size: 16px">&nbsp; int n=0,s=0;</span><br><span style="font-size: 16px">&nbsp; while (s&lt;=1000) {++n;s+=n;}</span><br><span style="font-size: 16px">&nbsp; cout&lt;&lt;n;</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">例2、求两个正整数m、n的最大公约数。</span><br><span style="font-size: 16px">#include&lt;iostream&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">int main()</span><br><span style="font-size: 16px">{</span><br><span style="font-size: 16px">&nbsp; int m,n,r;</span><br><span style="font-size: 16px">&nbsp; cin&gt;&gt;m&gt;&gt;n;</span><br><span style="font-size: 16px">&nbsp; r=m%n;</span><br><span style="font-size: 16px">&nbsp; while (r!=0) {m=n;n=r;r=m%n;}</span><br><span style="font-size: 16px">&nbsp; cout&lt;&lt;n;</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">例3、求满足不等式1+1/2+1/3+…+1/n&gt;=5的最小值。</span><br><span style="font-size: 16px">#include&lt;iostream&gt;</span><br><span style="font-size: 16px">using namespace std;</span><br><span style="font-size: 16px">int main()</span><br><span style="font-size: 16px">{</span><br><span style="font-size: 16px">&nbsp; int i=0;</span><br><span style="font-size: 16px">&nbsp; float s=0;</span><br><span style="font-size: 16px">&nbsp; while (s&lt;5) {i++;s+-1.0/i}</span><br><span style="font-size: 16px">&nbsp; cout&lt;&lt;i;</span><br><span style="font-size: 16px">&nbsp; return 0;</span><br><span style="font-size: 16px">}</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">二、作业</span><br><span style="font-size: 16px">1、zerojudge：</span><br><span style="font-size: 16px">基础题：a024、a038、a121、a147、a149、a738、d070、d356、d693、d899</span><br><span style="font-size: 16px">思考题：a215、a307、b330、c079、d255、d593</span></p>
+<p><span style="font-size: 16px">2、利用公式π/4=1-1/3+1/5-1/7+……，求π的值，要求精确到最后一项小于0.0001为止。</span><br><span style="font-size: 16px">3、打印输出一百到一亿之间的，既是完全平方数又是回文数的所有正整数（完全平方数是一个正整数的平方数，回文数即为左右对称的正整数）。例如：121，它是11的平方，也是左右对称的自然数。</span><br><span style="font-size: 16px">4、输入两个正整数，求这两个正整数的最小公倍数。（设这两个数分别是m和n，另设一个整型变量i，则m*i就是m的i倍。令i向n变化，每次增加1，在此过程中，当m*i能被n整除时，m*i即为所求。）</span></p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

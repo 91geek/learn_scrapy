@@ -1,0 +1,169 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1017. 价格查询 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1017" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">编程实现以下功能：查询水果的单价。有4种水果，苹果(apples)、梨(pears)、桔子(oranges)和葡萄(grapes)，单价分别是3.00元/公斤，2.50元/公斤，4.10元/公斤和10.20元/公斤。<br />
+运行程序后，首先在屏幕上显示以下菜单(编号和选项)（见样例）。<br />
+当用户输入编号1～4，显示相应水果的单价(保留1位小数)；输入0，退出查询；输入其他编号，显示价格为0。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入一个整数。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出对应的结果。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>[1] apples
+[2] pears
+[3] oranges
+[4] grapes
+[0] Exit
+price=4.1</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content"></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习3.4.4</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1017"><span class="badge badge-info">6056</span></a><br />提交: <a class="pull-right" href="#main/statistic/1017"><span class="badge badge-info">18199</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1017"><span class="badge badge-info">56.63</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1017'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1017/1017.cpp/0/solution_path' data-toggle='tooltip' title='By wwl'>1017.cpp</a><br /><a class='solution' href='index.php/main/download/1017/pascal%25E9%25A2%2598%25E8%25A7%25A3%25EF%25BC%2588ac%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 403584200@qq.com'>pascal题解（ac）.txt</a><br /><a class='solution' href='index.php/main/download/1017/noi1017.cpp/0/solution_path' data-toggle='tooltip' title='By lxy'>noi1017.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E8%25AF%25B7%25E7%259C%258B%25E8%25BF%2599%25E9%2587%258C%25EF%25BC%258C%25E9%25A2%2598%25E7%259B%25AE%25E8%25A6%2581%25E6%25B1%2582%25E8%25BE%2593%25E5%2587%25BA%25E7%259A%2584price%25E4%25B8%258E%25E7%25AD%2589%25E5%258F%25B7%25E4%25B9%258B%25E9%2597%25B4%25E6%2598%25AF%25E6%25B2%25A1%25E6%259C%2589%25E7%25A9%25BA%25E6%25A0%25BC%25E7%259A%2584.cpp/0/solution_path' data-toggle='tooltip' title='By 执笔丶绘繁华'>请看这里，题目要求输出的price与等号之间是没有空格的.cpp</a><br /><a class='solution' href='index.php/main/download/1017/1017.c/0/solution_path' data-toggle='tooltip' title='By 17MOL'>1017.c</a><br /><a class='solution' href='index.php/main/download/1017/jack%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By jack_魏'>jack价格查询.cpp</a><br /><a class='solution' href='index.php/main/download/1017/18.cpp/0/solution_path' data-toggle='tooltip' title='By 1206614133'>18.cpp</a><br /><a class='solution' href='index.php/main/download/1017/1017-SR.cpp/0/solution_path' data-toggle='tooltip' title='By 宋锐'>1017-SR.cpp</a><br /><a class='solution' href='index.php/main/download/1017/111111.txt/0/solution_path' data-toggle='tooltip' title='By 罗祖文'>111111.txt</a><br /><a class='solution' href='index.php/main/download/1017/shidaichaoren%2520.txt/0/solution_path' data-toggle='tooltip' title='By shidaichaoren'>shidaichaoren .txt</a><br /><a class='solution' href='index.php/main/download/1017/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By 孤者为王'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1017/switch%25E8%25AF%25AD%25E5%258F%25A5.cpp/0/solution_path' data-toggle='tooltip' title='By 陈嘉靖'>switch语句.cpp</a><br /><a class='solution' href='index.php/main/download/1017/StudentMain.exe/0/solution_path' data-toggle='tooltip' title='By dingyixiao'>StudentMain.exe</a><br /><a class='solution' href='index.php/main/download/1017/search.cpp/0/solution_path' data-toggle='tooltip' title='By ID'>search.cpp</a><br /><a class='solution' href='index.php/main/download/1017/asdke.pas/0/solution_path' data-toggle='tooltip' title='By sxlch'>asdke.pas</a><br /><a class='solution' href='index.php/main/download/1017/%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By Bruce1888888'>价格查询.cpp</a><br /><a class='solution' href='index.php/main/download/1017/1017.%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By 陈梓诺'>1017.价格查询.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E6%259D%258E%25E7%2595%2585%25E8%25BF%2599%25E6%2598%25AF%25E7%25AD%2594%25E6%25A1%2588.docx/0/solution_path' data-toggle='tooltip' title='By 亚索此剑之势越战越烈'>李畅这是答案.docx</a><br /><a class='solution' href='index.php/main/download/1017/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D7.cpp/0/solution_path' data-toggle='tooltip' title='By liyicheng'>未命名7.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E7%25A7%2580%25E6%2589%258D%2520%2520%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By 秀才'>秀才  价格查询.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2.pas/0/solution_path' data-toggle='tooltip' title='By 3347801406'>价格查询.pas</a><br /><a class='solution' href='index.php/main/download/1017/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1017/%25E6%25B0%25B4%25E6%259E%259C.cpp/0/solution_path' data-toggle='tooltip' title='By ax_44'>水果.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25281017c%2529%25E5%25B0%258F%25E5%25AD%25A6%25E7%2594%259FAC.c/0/solution_path' data-toggle='tooltip' title='By hjdmmm'>(1017c)小学生AC.c</a><br /><a class='solution' href='index.php/main/download/1017/ZZY.txt/0/solution_path' data-toggle='tooltip' title='By 2658417'>ZZY.txt</a><br /><a class='solution' href='index.php/main/download/1017/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D3.cpp/0/solution_path' data-toggle='tooltip' title='By liborui'>未命名3.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2.txt/0/solution_path' data-toggle='tooltip' title='By 吴兴宇'>价格查询.txt</a><br /><a class='solution' href='index.php/main/download/1017/%25E6%2596%25B0%25E5%25BB%25BA%2520Microsoft%2520Word%2520%25E6%2596%2587%25E6%25A1%25A3.docx/0/solution_path' data-toggle='tooltip' title='By 张昊'>新建 Microsoft Word 文档.docx</a><br /><a class='solution' href='index.php/main/download/1017/238B.cpp/0/solution_path' data-toggle='tooltip' title='By 152024wu'>238B.cpp</a><br /><a class='solution' href='index.php/main/download/1017/3rrr.cpp/0/solution_path' data-toggle='tooltip' title='By 缘分天空'>3rrr.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E5%25A8%2583%25E5%2593%2588%25E5%2593%2588%25E5%2581%25A5%25E5%25BA%25B7%25E4%25BD%25A0%25E6%2588%2591%25E4%25BB%2596%25E6%25AC%25A2%25E4%25B9%2590%25E5%258D%2583%25E4%25B8%2587%25E5%25AE%25B6.cpp/0/solution_path' data-toggle='tooltip' title='By zjh123'>娃哈哈健康你我他欢乐千万家.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E5%258E%258B%25E5%25B1%258E%25E5%2598%259E%25EF%25BC%258C%25E6%25A2%2581%25E9%259D%259E%25E5%2587%25A1.doc/0/solution_path' data-toggle='tooltip' title='By yasileiliangfeifan'>压屎嘞，梁非凡.doc</a><br /><a class='solution' href='index.php/main/download/1017/Flash.exe/0/solution_path' data-toggle='tooltip' title='By zhouruyi'>Flash.exe</a><br /><a class='solution' href='index.php/main/download/1017/Query.cpp/0/solution_path' data-toggle='tooltip' title='By 2636099143'>Query.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E5%25B0%258F%25E5%25A5%2595-1017.cpp/0/solution_path' data-toggle='tooltip' title='By test01'>小奕-1017.cpp</a><br /><a class='solution' href='index.php/main/download/1017/goC_01.cpp/0/solution_path' data-toggle='tooltip' title='By 波波哥'>goC_01.cpp</a><br /><a class='solution' href='index.php/main/download/1017/by%25E9%2599%2588%25E4%25BF%258A%25E5%25AE%2587.cpp/0/solution_path' data-toggle='tooltip' title='By 走在冷风中'>by陈俊宇.cpp</a><br /><a class='solution' href='index.php/main/download/1017/1017%25E9%25A2%2598%25E8%25A7%25A3A.cpp/0/solution_path' data-toggle='tooltip' title='By wl123'>1017题解A.cpp</a><br /><a class='solution' href='index.php/main/download/1017/1017%25E9%25A2%2598%25E8%25A7%25A3A.exe/0/solution_path' data-toggle='tooltip' title='By wl123'>1017题解A.exe</a><br /><a class='solution' href='index.php/main/download/1017/%25E5%2596%25B5%25E5%2588%25B7%25E9%25A2%2598C%25E7%25B3%25BB.cpp/0/solution_path' data-toggle='tooltip' title='By ALINGCAT'>喵刷题C系.cpp</a><br /><a class='solution' href='index.php/main/download/1017/1.c/0/solution_path' data-toggle='tooltip' title='By erdaye'>1.c</a><br /><a class='solution' href='index.php/main/download/1017/CCF%25E8%25A7%25A3%25E9%25A2%2598%25E6%258A%25A5%25E5%2591%258A.doc.doc/0/solution_path' data-toggle='tooltip' title='By 1656001930'>CCF解题报告.doc.doc</a><br /><a class='solution' href='index.php/main/download/1017/zhsh2002.txt/0/solution_path' data-toggle='tooltip' title='By zhsh2002'>zhsh2002.txt</a><br /><a class='solution' href='index.php/main/download/1017/%25E5%25A4%25A9%25E6%2589%258D%25E9%2592%25B1%25E6%259B%25A6%25E6%25B3%25BD%25E7%259A%2584%25E6%2597%25A0%25E6%2595%258C%25E4%25BB%25A3%25E7%25A0%2581.doc/0/solution_path' data-toggle='tooltip' title='By 1875041541'>天才钱曦泽的无敌代码.doc</a><br /><a class='solution' href='index.php/main/download/1017/%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2%2520%2528Standard%2520IO%2529.cpp/0/solution_path' data-toggle='tooltip' title='By dyf丁雨飞'>价格查询 (Standard IO).cpp</a><br /><a class='solution' href='index.php/main/download/1017/ex05.cpp/0/solution_path' data-toggle='tooltip' title='By 魅'>ex05.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E8%25A6%2581%25E7%2594%25A8switch%25E8%25AF%25AD%25E8%25A8%2580.cpp/0/solution_path' data-toggle='tooltip' title='By STAY纸兔'>要用switch语言.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E9%25A2%2598%25E7%259B%25AE1017%25E4%25BB%25B7%25E6%25A0%25BC%25E6%259F%25A5%25E8%25AF%25A2.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1017价格查询.cpp</a><br /><a class='solution' href='index.php/main/download/1017/%25E8%2580%2581%25E5%25AD%2590%25E6%2583%25B3%25E9%2594%25A4%25E7%259A%2584%25E7%25A8%258B%25E5%25BA%258F.cpp/0/solution_path' data-toggle='tooltip' title='By 一寸长一寸强'>老子想锤的程序.cpp</a><br /><a class='solution' href='index.php/main/download/1017/1017%25E6%259F%25A5%25E8%25AF%25A2%25E4%25BB%25B7%25E6%25A0%25BC%25EF%25BC%2588%25E5%25A4%258D%25E5%2588%25B6%25E7%2589%2588%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 王江睿'>1017查询价格（复制版）.txt</a><br /><a class='solution' href='index.php/main/download/1017/1017%25E6%259F%25A5%25E8%25AF%25A2%25E4%25BB%25B7%25E6%25A0%25BC.docx/0/solution_path' data-toggle='tooltip' title='By 王江睿'>1017查询价格.docx</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习3.4.4</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1017" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1017' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1017?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1017. \u4ef7\u683c\u67e5\u8be2 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

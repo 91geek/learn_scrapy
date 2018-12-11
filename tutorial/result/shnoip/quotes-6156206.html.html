@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>记录 - noipxu - 博客园</title>
+<meta property="og:description" content="为反映现实世界对象的数据信息，将反映该对象各方面属性的数据值列表是最通用的方法。 例如：一个简化了的学生信息可能包括以下项目： 姓名（name）： 学号（number）： 性别（sex）： 年级（cl" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6156206.html">记录</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 17:00</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6156206" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6156206);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6156206,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 17:00:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<div><span style="font-size: 16px">为反映现实世界对象的数据信息，将反映该对象各方面属性的数据值列表是最通用的方法。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例如：一个简化了的学生信息可能包括以下项目：</span></div>
+<div><span style="font-size: 16px">姓名（name）：</span></div>
+<div><span style="font-size: 16px">学号（number）：</span></div>
+<div><span style="font-size: 16px">性别（sex）：</span></div>
+<div><span style="font-size: 16px">年级（class）：</span></div>
+<div><span style="font-size: 16px">地址（address）：</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">描述学生各项信息的数据结构显然是不完全相同的，不能用数组来描述一个学生的全部信息，但可用记录类型描述如下：</span></div>
+<div><span style="font-size: 16px">type</span></div>
+<div><span style="font-size: 16px">&nbsp; stype=record</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; name : string[20];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; number : integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; sex : (name,female);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; class : integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; address : string[30];</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">由上看出，定义记录类型的一般形式为：</span></div>
+<div><span style="font-size: 16px">记录类型名=record</span></div>
+<div><span style="font-size: 16px">&nbsp; 域名1 : 类型1;</span></div>
+<div><span style="font-size: 16px">&nbsp; 域名2 : 类型2;</span></div>
+<div><span style="font-size: 16px">&nbsp; ……</span></div>
+<div><span style="font-size: 16px">&nbsp; 域名n : 类型n;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">域为记录类型的元素，记录的每个域都有名称，不同域的数据类型可以不相同，这一点是数组所不能及的，因为数组的元素不单<span style="line-height: 28px">独命名，所有元素的数据类型都相同。</span></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">引用记录变量的元素采用以下标记法：</span></div>
+<div><span style="font-size: 16px">1、直接引用</span></div>
+<div><span style="font-size: 16px">形式为：记录变量名.域名</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例如：var str1,str2:stype; {stype前面已定义}</span></div>
+<div><span style="font-size: 16px">则str1.name表示学生str1的名字，str2.sex表示学生str2的性别</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">2、开域语句</span></div>
+<div><span style="font-size: 16px">形式为：with 记录变量名 do 语句;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">在with语句中，引用记录变量的各个域不再冠以记录变量名，以简化引用时的写法。例如为描述100个学生的数据信息，引入元<span style="line-height: 28px">素类型为stype的数组students，下面是一段统计一年级男生人数和女生人数的程序。</span></span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; students:array[1..100] fo stype;</span></div>
+<div><span style="font-size: 16px">&nbsp; mc,fc,k:integer; &nbsp;{mc：男生人数，fc：女生人数}</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; mc:=0;fc:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; for k:=1 to 100 do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; with students[k] do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if class="1" then</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; if sex=male then mc:=mc+1</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; else fc:=fc+1;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">由此可见，记录可以方便地用来描述复杂个体的数据特性，当处理同一类这样的个体时，常用记录数组。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">由于可以引用记录变量的某个域，所以可以对记录变量赋值，例如：</span></div>
+<div><span style="font-size: 16px">with str1 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; name:='wang';</span></div>
+<div><span style="font-size: 16px">&nbsp; number:=100;</span></div>
+<div><span style="font-size: 16px">&nbsp; sex:=male;</span></div>
+<div><span style="font-size: 16px">&nbsp; address:='Peking';</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">两个类型相同的记录变量之间也可以赋值。例如：</span></div>
+<div><span style="font-size: 16px">str2:=str1;</span></div>
+<div><span style="font-size: 16px">将记录变量str1的每个域值赋给同类型记录变量str2的相应域，即等价于下面的语句：</span></div>
+<div><span style="font-size: 16px">str2.name:=str1.name;</span></div>
+<div><span style="font-size: 16px">str2.number:=str1.number;</span></div>
+<div><span style="font-size: 16px">str2.sex:=str1.sex;</span></div>
+<div><span style="font-size: 16px">str2.address:=str1.address;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">记录常量可以通过常量说明语句</span></div>
+<div><span style="font-size: 16px">const</span></div>
+<div><span style="font-size: 16px">&nbsp; 记录常量名:类型名=（域名1:域值1;……域名m:域值m;）;来指定每一个域的标识符和值，这些标识符和值用括号括起来，并<span style="line-height: 28px">用分号分开。</span></span></div>
+<div><span style="font-size: 16px">例如：</span></div>
+<div><span style="font-size: 16px">type</span></div>
+<div><span style="font-size: 16px">&nbsp; point=record</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; x,y:real;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">const</span></div>
+<div><span style="font-size: 16px">&nbsp; origin:point=(x:0.0;y:0.0);</span></div>
+<div><span style="font-size: 16px">上例有两个部分组成：type用来定义point是一个记录类型（record），它包含两个域x、y，且x、y是实数类型。第二部分由<span style="line-height: 28px">const定义一个名叫origin的记录常量，它具有point类型的结构，且域x、y分别被赋初值0.0。</span></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例1：输入N个学生的记录（N由键盘读入），每项记录包含编号、姓名、性别、年龄和成绩五项，按成绩排序后从高到低地个输<span style="line-height: 28px">出。</span></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">type</span></div>
+<div><span style="font-size: 16px">&nbsp; stype=record</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; num : integer;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; name : string[10];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; sex : char;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; age : 5..30;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; score : byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; students:array[1..50] of stype;</span></div>
+<div><span style="font-size: 16px">&nbsp; temp:stype;</span></div>
+<div><span style="font-size: 16px">&nbsp; i,j,n:byte;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; write('Input N=');readln(n);</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('Input records:');</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; with student[i] do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; writeln('No.',i,':');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('Number: ');readln(num);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('Name: ');readln(name);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('Sex(m/f): ');readln(sex);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('Age: ');readln(age);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('Score: ');readln(score);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n-1 do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=i+1 to n do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if students[i].score&lt;students[j].score then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; temp:=students[i];students[i]=students[j];students[j]:=temp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('No.':10,'Name':10,'Sex':10,'Age':10,'Score':10,);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to n do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; with students[i] do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(num:10,name:10);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if sex='m' then write('Male':10)</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else write('Female':10);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; writeln(age:10,score:10);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">例2：编制一个模拟发扑克牌的程序，将一付去掉大、小怪的扑克牌随机排列后，分发给四个人。（用C表示梅花、用D表示方块、用H表示红桃、用S表示黑桃，红桃K用H13表示，梅花5用C5表示，其余类推）</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">const</span></div>
+<div><span style="font-size: 16px">&nbsp; d:string[4]='CDHS';</span></div>
+<div><span style="font-size: 16px">type</span></div>
+<div><span style="font-size: 16px">&nbsp; atype=record</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; style:char;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; pip:byte;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; a:array[1..52] of atype;</span></div>
+<div><span style="font-size: 16px">&nbsp; b:array[1..4,1..13] of boolean;</span></div>
+<div><span style="font-size: 16px">&nbsp; i,j,x,y:byte;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; randomize;</span></div>
+<div><span style="font-size: 16px">&nbsp; fillchar(b,sizeof(b),true);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to 52 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; repeat</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; x:=random(4)+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; y:=random(13)+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; until b[x,y];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; b[x,y]:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; a[i].style:=d[x];</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; a[i].pip:=y;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to 4 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('No',i,' : ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; j:=i;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; repeat</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(a[j].style,a[j].pip,' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; j:=j+4;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; until j&gt;52;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; writeln;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">作业：</span></div>
+<div><span style="font-size: 16px">1、改进例题2，牌到手以后理一下牌。</span></div>
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

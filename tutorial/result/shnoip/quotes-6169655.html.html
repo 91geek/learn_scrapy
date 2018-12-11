@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="never" />
+<title>排序 - noipxu - 博客园</title>
+<meta property="og:description" content="排序是使一串记录，按照其中的某个或某些关键字的大小，递增或递减的排列起来的操作；排序算法，就是如何使得记录按照要求排列的方法。排序算法在很多领域得到相当地重视，尤其是在大量数据的处理方面，一个优秀的算" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6169655.html">排序</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-13 13:57</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6169655" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6169655);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6169655,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/13 13:57:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">排序是使一串记录，按照其中的某个或某些关键字的大小，递增或递减的排列起来的操作；排序算法，就是如何使得记录按照要求排列的方法。排序算法在很多领域得到相当地重视，尤其是在大量数据的处理方面，一个优秀的算法可以节省大量的资源。</span></p>
+<p><span style="font-size: 16px">一、选择排序</span><br><span style="font-size: 16px">选择排序算法的基本思想是：每一趟从待排序的数据元素中选出最小（或最大）的一个元素，顺序放在已排好序的数列的最后，直到全部待排序的数据元素排完。 选择排序是不稳定的排序方法。</span></p>
+<p align="center"><span style="font-size: 16px"><img style="margin: 0px 10px; float: none" src="http://img0.ph.126.net/U070hY1FP6FYLNfHSXR6kw==/6619294195189157112.jpg" alt="排序 - 徐老师 - Pascal程序设计"></span></p>
+<p><span style="font-size: 16px">例1、生成20个0到100之间的随机数，输出；用选择排序法从小到大排序后再次输出。</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s:array[1..20] of byte;</span><br><span style="font-size: 16px">&nbsp; i,j,t:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; randomize;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do s[i]:=random(101);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">&nbsp; writeln;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 19 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=i+1 to 20 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if s[i]&gt;s[j] then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t:=s[i];s[i]:=s[j];s[j]:=t;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">算法优化：</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s:array[1..20] of byte;</span><br><span style="font-size: 16px">&nbsp; i,j,t,k:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; randomize;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do s[i]:=random(101);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">&nbsp; writeln;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 19 do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; k:=i;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=i+1 to 20 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if s[k]&gt;s[j] then k:=j;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if k&lt;&gt;i then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t:=s[i];s[i]:=s[k];s[k]:=t;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">二、冒泡排序</span><br><span style="font-size: 16px">冒泡排序算法的基本思想是：将待排序的数据序列看作竖直排列的一串“气泡”，值较小的数据比较轻，因此要往上浮。在冒泡排序算法中，我们要对这个“气泡”序列处理若干遍。所谓处理，就是自底向上检查一遍这个序列，并时刻注意两个相邻的记录的顺序是否正确。如果发现两个相邻记录的顺序不对，即“轻”的记录在下面，就交换他们的位置。显然，处理一遍之后，“最轻”的记录就浮到了最高位置。处理两遍之后，“次轻”的记录就浮到了次高位置。在作第二遍处理时，由于最高位置上的记录是“最轻”记录，所以不必检查。一般地，第i遍处理时，不必检查第i-1高位置的记录，因为经过前面i-1遍的处理，它们已经正确地排好序了。冒泡排序是一种稳定的排序方法。</span></p>
+<p align="center"><span style="font-size: 16px"><img style="margin: 0px 10px; float: none" src="http://img0.ph.126.net/i-UMhfMYDYrRNKA2lgtI5Q==/6630441044070634788.gif" alt="排序 - 徐老师 - Pascal程序设计"></span></p>
+<p><span style="font-size: 16px">例2、生成20个0到100之间的随机数，输出；用冒泡排序法从小到大排序后再次输出。</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s:array[1..20] of byte;</span><br><span style="font-size: 16px">&nbsp; i,j,t:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; randomize;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do s[i]:=random(101);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">&nbsp; writeln;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 19 do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for j:=1 to 20-i do</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if s[j]&gt;s[j+1] then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t:=s[j];s[j]:=s[j+1];s[j+1]:=t;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">三、快速排序</span><br><span style="font-size: 16px">快速排序是对冒泡排序的一种改进，几乎是目前所有排序法中速度最快的方法。它的基本思想是：通过一趟排序将要排序的数据分割成独立的两部分，其中一部分的所有数据都比另外一部分的所有数据都要小，然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</span></p>
+<p align="center"><span style="font-size: 16px"><img style="margin: 0px 10px; float: none" src="http://img0.ph.126.net/n3UEgLv594YeJRPr3E7xzw==/1051590513008623767.jpg" alt="排序 - 徐老师 - Pascal程序设计">&nbsp;</span></p>
+<p><span style="font-size: 16px">例3、生成20个0到100之间的随机数，输出；用快速排序法从小到大排序后再次输出。</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; s:array[1..20] of byte;</span><br><span style="font-size: 16px">&nbsp; i,j,t:byte;</span></p>
+<p><span style="font-size: 16px">procedure qs(l,r:byte);</span><br><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i,j,m,t:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; i:=l;j:=r;</span><br><span style="font-size: 16px">&nbsp; m:=s[(i+j) div 2];</span><br><span style="font-size: 16px">&nbsp; repeat</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while s[i]&lt;m do inc(i);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; while s[j]&gt;m do dec(j);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; if i&lt;=j then begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t:=s[i];s[i]:=s[j];s[j]:=t;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; inc(i);dec(j);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; until i&gt;j;</span><br><span style="font-size: 16px">&nbsp; if l&lt;j then qs(l,j);</span><br><span style="font-size: 16px">&nbsp; if i&lt;r then qs(i,r);</span><br><span style="font-size: 16px">end;</span></p>
+<p><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; randomize;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do s[i]:=random(101);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">&nbsp; writeln;</span><br><span style="font-size: 16px">&nbsp; qs(1,20);</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">四、插入排序</span></p>
+<p><span style="font-size: 16px">有一个已经有序的数据序列，要求在这个已经排好的数据序列中插入一个数，但要求插入后此数据序列仍然有序，这个时候就要用到一种新的排序方法——插入排序法。插入排序的基本操作就是将一个数据插入到已经排好序的有序数据中，从而得到一个新的、个数加一的有序数据，算法适用于少量数据的排序，是稳定的排序方法。插入算法把要排序的数组分成两部分：第一部分包含了这个数组的所有元素，但将最后一个元素除外（让数组多一个空间才有插入的位置），而第二部分就只包含这一个元素（即待插入元素）。在第一部分排序完成后，再将这个最后元素插入到已排好序的第一部分中。</span></p>
+<p><span style="font-size: 16px">插入排序的基本思想是：每步将一个待排序的纪录，按其关键码值的大小插入前面已经排序的文件中适当位置上，直到全部插入完为止。</span></p>
+<div style="text-align: center"><span style="font-size: 16px"><img style="margin: 0px 10px; float: none" src="http://img1.ph.126.net/zg5yRUHpK6jR79zJ4wFR1A==/6630173862745122052.jpg" alt="排序 - 徐老师 - Pascal程序设计"></span></div>
+<p><span style="line-height: 28px; font-size: 16px">例4、生成20个0到100之间的随机数，输出；用插入排序法从小到大排序后再次输出。</span></p>
+<p><span style="font-size: 16px">var</span></p>
+<p><span style="font-size: 16px">&nbsp; s:array[0..20] of byte;</span></p>
+<p><span style="font-size: 16px">&nbsp; i,j,t:byte;</span></p>
+<p><span style="font-size: 16px">begin</span></p>
+<p><span style="font-size: 16px">&nbsp; randomize;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=1 to 20 do s[i]:=random(101);</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span></p>
+<p><span style="font-size: 16px">&nbsp; writeln;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=2 to 20 do begin</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; s[0]:=s[i];j:=i-1;</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; while s[0]&lt;s[j] do begin</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; s[j+1]:=s[j];</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; j:=j-1;</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; s[j+1]:=s[0];</span></p>
+<p><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">&nbsp; for i:=1 to 20 do write(s[i]:8);</span></p>
+<p><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">
+作业：</span></p>
+<div><span style="font-size: 16px">1、<span style="color: #5f656c; font-family: &quot;Hiragino Sans GB W3&quot;, &quot;Hiragino Sans GB&quot;, Arial, Helvetica, simsun, u5b8bu4f53; line-height: 28px">zerojudge：</span></span></div>
+<div><span style="color: #5f656c; font-family: Hiragino Sans GB W3, Hiragino Sans GB, Arial, Helvetica, simsun, u5b8bu4f53; font-size: 16px">选择排序 a104、a225、c012</span></div>
+<div><span style="color: #5f656c; font-family: &quot;Hiragino Sans GB W3&quot;, &quot;Hiragino Sans GB&quot;, Arial, Helvetica, simsun, u5b8bu4f53; line-height: 28px; font-size: 16px">快速排序 d190</span></div>
+<div><span style="color: #5f656c; font-family: Hiragino Sans GB W3, Hiragino Sans GB, Arial, Helvetica, simsun, u5b8bu4f53; font-size: 16px">插入排序 c010</span></div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

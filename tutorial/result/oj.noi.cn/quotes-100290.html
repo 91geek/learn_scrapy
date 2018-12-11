@@ -1,0 +1,176 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100290. 极点统计 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/100290" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：3s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：256MB<br />
+<br />
+对于一个由平面上点组成的集合S，以及一个平面上的点p，函数<img src="http://latex.codecogs.com/gif.latex?f%5Cleft%20%28%20p%2CS%20%5Cright%20%29" alt=" " />当且仅当p在S的凸包内部（包括S的凸包的边界）时值为1，其余情况下其值为0。<br />
+现给定两个平面上的点集P={<img src="http://latex.codecogs.com/gif.latex?p_%7B1%7D" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?p_%7B2%7D" alt=" " />,&hellip;,<img src="http://latex.codecogs.com/gif.latex?p_%7BN%7D" alt=" " />}&nbsp;和A={<img src="http://latex.codecogs.com/gif.latex?a_%7B1%7D" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?a_%7B2%7D" alt=" " />,&hellip;,<img src="http://latex.codecogs.com/gif.latex?a_%7BN%7D" alt=" " />}，我们称A中的一个点<img src="http://latex.codecogs.com/gif.latex?a_%7Bi%7D" alt=" " />为极点，当且仅当其满足<br />
+<img src="data:image/png;base64,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" alt=" " /><br />
+也就是说， <img src="http://latex.codecogs.com/gif.latex?a_%7Bi%7D" alt=" " />不在任意A集合中非<img src="http://latex.codecogs.com/gif.latex?a_%7Bi%7D" alt=" " />的点与P组成的凸包内部。<br />
+请统计出集合A中极点的个数。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件extreme.in的第一行包含两个用空格隔开的正整数N和M；<br />
+第二行包含N个用空格隔开的整数对，第i个数对(<img src="http://latex.codecogs.com/gif.latex?x%5E%7Bp%7D_%7Bi%7D" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?y%5E%7Bp%7D_%7Bi%7D" alt=" " />)表示点<img src="http://latex.codecogs.com/gif.latex?p_%7Bi%7D" alt=" " />的坐标；<br />
+第二行包含M个用空格隔开的整数对，第j个数对(<img src="http://latex.codecogs.com/gif.latex?x%5E%7Ba%7D_%7Bj%7D" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?y%5E%7Ba%7D_%7Bj%7D" alt=" " />)表示点<img src="http://latex.codecogs.com/gif.latex?a_%7Bj%7D" alt=" " />的坐标。<br />
+对于同一个集合，输入数据保证不会出现坐标相同的两个点。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件extreme.out仅包含一行一个整数，表示集合A中极点的个数。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4 5
+6 3 7 -1 -6 -5 1 5
+-5 -5 7 -5 9 -9 -10 11 -5 -6</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于10%的数据满足M=1；<br />
+对于30%的数据满足N,M<img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " />50；<br />
+对于另外30%的数据满足N<img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " />10，M<img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " />20000；<br />
+对于100%的数据满足3<img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " />N<img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " /><img src="http://latex.codecogs.com/gif.latex?10%5E%7B5%7D" alt=" " />，1<img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " />M<img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " /><img src="http://latex.codecogs.com/gif.latex?10%5E%7B5%7D" alt=" " />，<img src="http://latex.codecogs.com/gif.latex?%5Cleft%20%7C%20x_%7Bi%7D%20%5Cright%20%7C" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?%5Cleft%20%7C%20y_%7Bi%7D%20%5Cright%20%7C" alt=" " /><img src="http://latex.codecogs.com/gif.latex?%5Cleq" alt=" " /><img src="http://latex.codecogs.com/gif.latex?10%5E%7B6%7D" alt=" " />且点集P的凸包面积不为0。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100290"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/100290"><span class="badge badge-info">61</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100290"><span class="badge badge-info">0.00</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100290'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/100290/%25E5%258D%2595%25E5%2587%25BB%25E5%258D%25B3%25E5%258F%25AFAC.bat/0/solution_path' data-toggle='tooltip' title='By sc84bbs'>单击即可AC.bat</a><br /><a class='solution' href='index.php/main/download/100290/%25E6%258F%2590%25E7%25A4%25BA.txt/0/solution_path' data-toggle='tooltip' title='By 空投'>提示.txt</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100290" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100290' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100290?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100290. \u6781\u70b9\u7edf\u8ba1 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

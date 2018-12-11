@@ -1,0 +1,178 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100273. 幸福路径 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/100273" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：256M<br />
+<br />
+有向图G有n个顶点1, 2, &hellip;, n，点i的权值为w(i)。现在有一只蚂蚁，从给定的起点<img src="http://latex.codecogs.com/gif.latex?v_%7B0%7D" alt=" " />出发，沿着图G的边爬行。开始时，它的体力为1。每爬过一条边，它的体力都会下降为原来的&rho;倍，其中&rho;是一个给定的小于1的正常数。而蚂蚁爬到某个顶点时的幸福度，是它当时的体力与该点权值的乘积。 我们把蚂蚁在爬行路径上幸福度的总和记为H。很显然，对于不同的爬行路径，H的值也可能不同。小Z对H值的最大可能值很感兴趣，你能帮助他计算吗？注意，蚂蚁爬行的路径长度可能是无穷的。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件为path.in。文件的每一行中两个数之间用一个空格隔开。 输入文件第一行包含两个正整数n, m，分别表示G中顶点的个数和边的条数。<br />
+第二行包含n个非负实数，依次表示n个顶点权值w(1), w(2), &hellip;, w(n)。<br />
+第三行包含一个正整数<img src="http://latex.codecogs.com/gif.latex?v_%7B0%7D" alt=" " />，表示给定的起点。<br />
+第四行包含一个实数&rho;，表示给定的小于1的正常数。<br />
+接下来m行，每行两个正整数x, y，表示&lt;x, y&gt;是G的一条有向边。可能有自环，但不会有重边。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件path.out仅包含一个实数，即H值的最大可能值，四舍五入到小数点后一位。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>5 5
+10.0 8.0 8.0 8.0 15.0
+1
+0.5
+1 2
+2 3
+3 4
+4 2
+4 5</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>18.0</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于20%的数据，&rho; &le;0.5；<br />
+另有20%的数据，保证H的最大值在有限路径上取到；<br />
+对于100%的数据，n &le; 100，m &le; 1000，&rho; &le; 1 &ndash; <img src="http://latex.codecogs.com/gif.latex?10%5E%7B-6%7D" alt=" " />，w(i) &le; 100 (i = 1, 2, &hellip;, n)。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100273"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/100273"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100273"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100273'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100273" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100273' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100273?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100273. \u5e78\u798f\u8def\u5f84 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

@@ -1,0 +1,171 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1108. 生日游戏 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1108" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">明天是lzz的生日，他想设计一个游戏。他家有一个房间，房间是一个n*m的矩形，里面铺满了1*1的地砖，每个地砖上都有一个数字。<br />
+他知道hxy很喜欢螺旋形，他想：假如我们按照顺时针螺旋形依次走过每一块地砖，那一定很有趣，但是lzz讨厌重复，所以他不愿意经过同一块砖块第二次。注意，砖块上的数字可能会重复，但是数字相同但是他家这个矩形房间很大，他忘了这个房间的长和宽n与m到底是多少，他只记得地砖的总数量不超过1000000，等他回到家之后会将地砖的照片发给你。现在请你写一个程序，帮他解决这个问题。&nbsp;<br />
+注：lzz总是会从第一行第一块砖出发，他初始的朝向是向右。当他走到一块砖上，使得他下一步不能向前走（也就是当他继续向前走会走到某一块已经走过的地砖上或者是继续向前走会撞到墙）时，他就会向右转向。注意，当他面朝右边时，他右转之后会面朝下方，以此类推。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">第一行两个整数n，m，分别表示房间的长和宽。<br />
+下面有n行，每行m个整数，表示房间的照片。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出共n行，每行m个整数。<br />
+你需要依次输出lzz从第一行第一块砖开始走，他所遍历的地砖上的数字。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3 4
+1 2 3 4
+5 6 7 8
+9 10 11 12</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>1 2 3 4
+8 12 11 10
+9 5 6 7</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content"></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计基础篇补充4.10</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1108"><span class="badge badge-info">329</span></a><br />提交: <a class="pull-right" href="#main/statistic/1108"><span class="badge badge-info">711</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1108"><span class="badge badge-info">49.73</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1108'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1108/1108.txt/0/solution_path' data-toggle='tooltip' title='By 12345678910'>1108.txt</a><br /><a class='solution' href='index.php/main/download/1108/1108.cpp/0/solution_path' data-toggle='tooltip' title='By gzw高祖伟'>1108.cpp</a><br /><a class='solution' href='index.php/main/download/1108/oj.cpp/0/solution_path' data-toggle='tooltip' title='By 152024'>oj.cpp</a><br /><a class='solution' href='index.php/main/download/1108/1108.pas/0/solution_path' data-toggle='tooltip' title='By wfl00001'>1108.pas</a><br /><a class='solution' href='index.php/main/download/1108/%25E3%2580%2590%25E7%259C%259F%25E3%2580%2591%25E7%25A6%2581%25E6%25AD%25A2%25E6%2589%2593%25E5%25BC%2580.exe/0/solution_path' data-toggle='tooltip' title='By 过胡超'>【真】禁止打开.exe</a><br /><a class='solution' href='index.php/main/download/1108/%25E5%259D%2591%25E7%2588%25B9%25E6%25B8%25B8%25E6%2588%258F.exe/0/solution_path' data-toggle='tooltip' title='By wangjiheng'>坑爹游戏.exe</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计基础篇补充4.10</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1108" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1108' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1108?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1108. \u751f\u65e5\u6e38\u620f (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

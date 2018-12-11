@@ -1,0 +1,183 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100241. 产品销售 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/100241" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：2秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：256M<br />
+<br />
+A公司正在热销某计算机产品，作为A公司CEO的小A打算为接下来连续的N个销售季度制定一份具体的生产和销售方案。已知第i个销售季度该产品的订购量为<img src="http://latex.codecogs.com/gif.latex?D_%7Bi%7D" alt=" " />，在第i个季度，A公司会通过如下几种方式来解决用户的订购需求：<br />
+1. 在第i个季度生产新的产品来销售。<br />
+2. 若在第i个季度以前库存还有多余的产品，则可以直接在第i个季度销售(注意第一个季度之前没有任何库存产品)。<br />
+3. 在第i个季度可以不完成全部的订购需求，而将未完成的订购需求推迟，归入到下一个季度(i + 1)的产品订购需求中。<br />
+A公司需要考虑以下几种耗费：生产新产品的成本耗费、库存产品的额外储存耗费以及推迟订购需求而需要赔偿给用户的损失费。另外由于劳力和资源的限制，每个销售季度能够生产新产品的数量是有限的，各季度的耗费和可以生产的产品上限数也不尽相同，具体如下：<br />
+1. 在第i个季度最多可以生产<img src="http://latex.codecogs.com/gif.latex?U_%7Bi%7D" alt=" " />件新的产品，每一件的成本为<img src="http://latex.codecogs.com/gif.latex?P_%7Bi%7D" alt=" " />。<br />
+2. 第i个季度保存下来的产品，可以用于以后季度的销售。对于每一件产品，若从第i季度保存到第i + 1季度，需要额外支付<img src="http://latex.codecogs.com/gif.latex?M_%7Bi%7D" alt=" " />的存储费用(注意产品保存到下个季度后可能再次库存)。<br />
+3. 对于第i个季度需要推迟而归入到下一个季度订购需求的每一件产品，A公司需要赔偿给用户损失费<img src="http://latex.codecogs.com/gif.latex?C_%7Bi%7D" alt=" " />(注意延迟到下个季度可能再次被延迟, 费用按后面季度的延迟费用计)。<br />
+在第N个季度结束后，A公司必须解决之前所有的用户订单。可以保证，A公司能够生产的产品总数不会低于总订购量，也就是说一定存在一组生产和销售方案使得满足所有的用户订购需求。小A想知道如何来安排产品的生产和销售，使得在满足所有订购需求的前提下公司总的耗费最小。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件product.in第一行是一个正整数N，表示有N个销售季度。<br />
+第二行有N个非负整数<img src="http://latex.codecogs.com/gif.latex?D_%7B1%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?D_%7B2%7D" alt=" " />, .., <img src="http://latex.codecogs.com/gif.latex?D_%7BN%7D" alt=" " />，表示第i个季度的订购量。<br />
+第三行有N个非负整数<img src="http://latex.codecogs.com/gif.latex?U_%7B1%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?U_%7B2%7D" alt=" " />, .., <img src="http://latex.codecogs.com/gif.latex?U_%7BN%7D" alt=" " />，表示第i个季度最多可以生产的新的产品数。<br />
+第四行有N个非负整数<img src="http://latex.codecogs.com/gif.latex?P_%7B1%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?P_%7B2%7D" alt=" " />, .., <img src="http://latex.codecogs.com/gif.latex?P_%7BN%7D" alt=" " />，表示第i个季度生产一件新产品的成本。<br />
+第五行有N &ndash; 1个非负整数<img src="http://latex.codecogs.com/gif.latex?M_%7B1%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?M_%7B2%7D" alt=" " />, ..,<img src="http://latex.codecogs.com/gif.latex?M_%7BN-1%7D" alt=" " />，表示将一件产品从第i个季度保存到第i +1个季度所需要的额外的耗费。<br />
+第六行有N-1个非负整数<img src="http://latex.codecogs.com/gif.latex?C_%7B1%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?C_%7B2%7D" alt=" " />, .., <img src="http://latex.codecogs.com/gif.latex?C_%7BN-1%7D" alt=" " />，表示一件产品的订购需求在第i个季度没有完成而归入到第i +1个季度的订购量中，需要赔偿给用户的损失费。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件product.out仅包含一个非负整数，表示公司的最小总耗费。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4
+3 2 1 2
+2 5 2 2
+5 1 5 5
+1 2 1
+5 3 3</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>30</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于30%的数据，N&le; 1,000。<br />
+对于100%的数据，1 &le;N&le; 100,000，1&le;<img src="http://latex.codecogs.com/gif.latex?D_%7Bi%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?U_%7Bi%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?P_%7Bi%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?M_%7Bi%7D" alt=" " />,<img src="http://latex.codecogs.com/gif.latex?C_%7Bi%7D" alt=" " />&le; 10,000。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100241"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/100241"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100241"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100241'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100241" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100241' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100241?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100241. \u4ea7\u54c1\u9500\u552e (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

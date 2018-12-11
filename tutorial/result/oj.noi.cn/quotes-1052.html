@@ -1,0 +1,164 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1052. Self-Numbers <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1052" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">在1949年印度数学家D. R. Daprekar发现了一类称作Self-Numbers的数。对于每一个正整数n，我们定义d(n)为n加上它每一位数字的和。例如，d(75)=75+7+5=87。给定任意正整数n作为一个起点，都能构造出一个无限递增的序列：n, d(n), d(d(n)), d(d(d(n))), . . . 例如，如果你从33开始，下一个数是33+3+3=39，再下一个为39+3+9=51，再再下一个为51+5+1=57，因此你所产生的序列就像这样：33, 39, 51, 57, 69, 84, 96, 111, 114, 120, 123, 129, 141, . . . 数字n被称作d(n)的发生器。在上面的这个序列中，33是39的发生器，39是51的发生器，51是57的发生器等等。有一些数有超过一个发生器，如101的发生器可以使91和100。一个没有发生器的数被称作Self-Number。如前13个Self-Number为1, 3, 5, 7, 9, 20, 31, 42, 53, 64, 75, 86, 97。我们将第i个Self-Number表示为a[i]，所以a[1]=1, a[2]=3, a[3]=5. . .&nbsp;</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入包含整数N、K、s1. . . sk，其中1&lt;=N&lt;=10^7，1&lt;=K&lt;=5000，以空格和换行分割。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">在第一行你需要输出一个数，这个数表示在闭区间[1, N]中Self-Number的数量。第二行必须包含以空格划分的K个数，表示a[s1]. . a[sk]，这里保证所有的a[s1]. . a[sk]都小于N。（例如，如果N=100，sk可以为1-13，但不能为14，因为a[14]=108&gt;100）&nbsp;</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>100 10
+1 2 3 4 5 6 7 11 12 13&nbsp;</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>13
+1 3 5 7 9 20 31 75 86 97</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1&lt;=N&lt;=10^7，1&lt;=K&lt;=5000</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习5.6.2</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1052"><span class="badge badge-info">973</span></a><br />提交: <a class="pull-right" href="#main/statistic/1052"><span class="badge badge-info">2494</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1052"><span class="badge badge-info">56.10</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1052'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1052/1052.cpp/0/solution_path' data-toggle='tooltip' title='By Billy'>1052.cpp</a><br /><a class='solution' href='index.php/main/download/1052/%25E7%25A6%258F%25E5%2588%25A9.exe/0/solution_path' data-toggle='tooltip' title='By houou'>福利.exe</a><br /><a class='solution' href='index.php/main/download/1052/1052Self-Number.c/0/solution_path' data-toggle='tooltip' title='By 缪慎浩'>1052Self-Number.c</a><br /><a class='solution' href='index.php/main/download/1052/%25E7%25A6%258F%25E5%2588%25A9-%25E7%25A5%259E%25E7%25BA%25A7%25E4%25B8%258D%25E8%25A6%2581%25E8%25BF%259B%2528%25E4%25BB%2585%25E7%2594%25B5%25E8%2584%2591%25E6%259F%25A5%25E7%259C%258B%25EF%25BC%2589.exe/0/solution_path' data-toggle='tooltip' title='By houou'>福利-神级不要进(仅电脑查看）.exe</a><br /><a class='solution' href='index.php/main/download/1052/Self-Numbers.cpp/0/solution_path' data-toggle='tooltip' title='By 牛的传说'>Self-Numbers.cpp</a><br /><a class='solution' href='index.php/main/download/1052/%25E6%2588%2591%25E7%259A%2584%25E6%2589%258B%25E9%2580%259F%25E7%259C%259F%25E5%25BF%25AB.PNG/0/solution_path' data-toggle='tooltip' title='By dgklr'>我的手速真快.PNG</a><br /><a class='solution' href='index.php/main/download/1052/%25E8%25B5%25B5%25E4%25BA%2591%25C2%25B7%25E5%25BC%2595%25E6%2593%258E%25E4%25B9%258B%25E5%25BF%2583.gif/0/solution_path' data-toggle='tooltip' title='By 一个智障的账户'>赵云·引擎之心.gif</a><br /><a class='solution' href='index.php/main/download/1052/%25E6%2596%25B0%25E5%25BB%25BA%2520%25E6%2596%2587%25E6%259C%25AC%25E6%2596%2587%25E6%25A1%25A3.exe/0/solution_path' data-toggle='tooltip' title='By old dog wang'>新建 文本文档.exe</a><br /><a class='solution' href='index.php/main/download/1052/%25E9%2598%25B2%25E5%2585%25B3%25E6%259C%25BA%25E6%25A8%25A1%25E5%25BC%258F.exe/0/solution_path' data-toggle='tooltip' title='By 潘俊达'>防关机模式.exe</a><br /><a class='solution' href='index.php/main/download/1052/%25E9%2598%25B2%25E5%2585%25B3%25E6%259C%25BA%25E6%25A8%25A1%25E5%25BC%258F..exe/0/solution_path' data-toggle='tooltip' title='By 645474892'>防关机模式..exe</a><br /><a class='solution' href='index.php/main/download/1052/%25E9%2598%25B2%25E5%2585%25B3%25E6%259C%25BA%25E6%25A8%25A1%25E5%25BC%258F2.0.exe/0/solution_path' data-toggle='tooltip' title='By 1335574070'>防关机模式2.0.exe</a><br /><a class='solution' href='index.php/main/download/1052/%25E9%2598%25B2%25E5%2585%25B3%25E6%259C%25BA%25E6%25A8%25A1%25E5%25BC%258F3.0.exe/0/solution_path' data-toggle='tooltip' title='By 1335574070'>防关机模式3.0.exe</a><br /><a class='solution' href='index.php/main/download/1052/1.exe/0/solution_path' data-toggle='tooltip' title='By 潘俊达'>1.exe</a><br /><a class='solution' href='index.php/main/download/1052/%25E9%2598%25B2%25E5%2585%25B3%25E6%259C%25BA%25E6%25A8%25A1%25E5%25BC%258F4.0.exe/0/solution_path' data-toggle='tooltip' title='By 1335574070'>防关机模式4.0.exe</a><br /><a class='solution' href='index.php/main/download/1052/%25E9%2598%25B2%25E5%2585%25B3%25E6%259C%25BA%25E6%25A8%25A1%25E5%25BC%258F5.0.DAT/0/solution_path' data-toggle='tooltip' title='By 1335574070'>防关机模式5.0.DAT</a><br /><a class='solution' href='index.php/main/download/1052/v2-b687bedb7ad55f7ca70383e4466b57d2_r.jpg/0/solution_path' data-toggle='tooltip' title='By ATS'>v2-b687bedb7ad55f7ca70383e4466b57d2_r.jpg</a><br /><a class='solution' href='index.php/main/download/1052/CCF1052.cpp/0/solution_path' data-toggle='tooltip' title='By 小学生'>CCF1052.cpp</a><br /><a class='solution' href='index.php/main/download/1052/%25E5%2588%2587%25EF%25BC%258C%25E5%2585%25A8%25E8%25A7%25A3%25E4%25BA%2586.cpp/0/solution_path' data-toggle='tooltip' title='By 徐望洲'>切，全解了.cpp</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习5.6.2</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1052" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1052' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1052?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1052. Self-Numbers (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

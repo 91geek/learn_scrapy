@@ -1,0 +1,435 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>初等数论 - noipxu - 博客园</title>
+<meta property="og:description" content="一、整除 设 a、b 都是非 0 整数，如果存在一个整数 q，使得 b=a*q，那么就说 b 可被 a 整除，记作 a | b，且称 b 是 a 的倍数，a 是 b 的约数（因子）。例如：3 | 12" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6169523.html">初等数论</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-13 13:25</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6169523" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6169523);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6169523,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/13 13:25:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><p><span style="font-size: 16px">一、整除</span></p>
+<div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<div><span style="font-size: 16px">设 a、b 都是非 0 整数，如果存在一个整数 q，使得 b=a*q，那么就说 b 可被 a 整除，记作 a | b，且称 b 是 a 的倍数，a 是 b 的约数（因子）。例如：3 | 12，21 | 63。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">整除的性质：</span></div>
+<div><span style="font-size: 16px">1、如果a | b 且 b | c，那么a | c</span></div>
+<div><span style="font-size: 16px">2、a | b 且&nbsp;a | c 等价于对任意的整数 x、y，有 a | (b*x+c*y)</span></div>
+<div><span style="font-size: 16px">3、设 m&lt;&gt;0，那么 a | b 等价于 (m*a) | (m*b)</span></div>
+<div><span style="font-size: 16px">4、设整数 x、y 满足：a*x+b*y=1，且 a | n、b | n，那么 (a*b) | n</span></div>
+<div><span style="font-size: 16px">证明：因为a | n 且 b | n，由性质 3 可得(a*b) | (b*n)且(a*b) | (a*n)</span></div>
+<div><span style="font-size: 16px">再由性质 2 得(a*b) | (a*n*x+b*n*y)</span></div>
+<div><span style="font-size: 16px">而a*n*x+b*n*y=n*(a*x+b*y)=n*1=n</span></div>
+<div><span style="font-size: 16px">所以&nbsp;(a*b) | n</span></div>
+<div><span style="font-size: 16px">5、若 b=q*d+c，那么 d | b 的充要条件是 d | c</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">一些有用的例子：</span></div>
+<div><span style="font-size: 16px">若 2 能整除 a 的最末位（约定 0 可以被任何数整除），则 2 | a；</span></div>
+<div><span style="font-size: 16px">若 4 能整除 a 的最后两位，则 4 | a；</span></div>
+<div><span style="font-size: 16px">若 8 能整除 a 的最后三位，则 8 | a；</span></div>
+<div><span style="font-size: 16px"><strong>……</strong></span></div>
+<div><span style="font-size: 16px">若 3 能整除 a 的各位数字之和，则 3 | a；</span></div>
+<div><span style="font-size: 16px">若 9 能整除 a 的各位数字之和，则 9 | a；</span></div>
+<div><span style="font-size: 16px">若 11 能整除 a 的偶数位数字之和与奇数位数字之和的差，则 11 | a；</span></div>
+<div><span style="font-size: 16px">能被 7、11、13 整除的数的特征是：这个数的末三位数与末三位数以前的数字所组成的数之差能被&nbsp;7、11、13 整除。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">说明：将一个多于4位的整数在百位与千位之间分为两截，形成两个数，左边的是原来的千位、万位成为个位、十位（依此类推）。将这两个新数相减（较大的数减较小的数），所得的差不改变原来数能被7、11、13整除的特性。这个方法可以连续使用，直到所得的差小于1000为止。</span></div>
+<div>
+<div><span style="font-size: 16px">例如：判断71858332能否被7、11、13整除？</span></div>
+<div><span style="font-size: 16px">这个数比较大，将它分成71858、332两个数（右边是三位数），71858-332=71526</span></div>
+<div><span style="font-size: 16px">再将71526分成71、526两个数（右边是三位数），526-71=455</span></div>
+<div><span style="font-size: 16px">由于455数比原数小得多，相对来说容易判断455能被7和13整除，不能被11整除，</span></div>
+<div><span style="font-size: 16px">所以原来的71858332能被7和13整除，不能被11整除</span></div>
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">二、最大公约数与最小公倍数</span></div>
+<p><span style="font-size: 16px">一般地，设 a1、a2、a3、…、ak 是 k 个非 0 整数，如果存在一个非 0 整数 d，使得d | a1、d | a2、…、d | ak，那么 d 就称为a1、a2、a3、…、ak 的公约数。公约数中最大的一个称为最大公约数，记为GCD（a1、a2、a3、…、ak），显然它是存在的，至少为1。当GCD=1时，称这n个数是互质的或既约的。公约数一定是最大公约数的约数。</span></p>
+<p><span style="font-size: 16px">一般地，设 a1、a2、a3、…、ak 是 k 个非 0 整数，如果存在一个非 0 整数 d，使得a1 | d、a2 | d、…、ak | d，那么 d 就称为a1、a2、a3、…、ak 的公倍数。公倍数中最小的一个称为最小公倍数，记为LCM（a1、a2、a3、…、ak），显然它是存在的。公倍数一定是最小公倍数的倍数。</span></p>
+<p><span style="font-size: 16px">数学上，求两个数的最大公约数常用辗转相除法（或辗转相减法）；而求两个数的最小公倍数的方法可以用穷举法或逐步倍增法，如求 3 和 8 的最小公倍数，可以让 n 从 1 开始逐步加 1，不断检查 8*n 是不是 3 的倍数。</span></p>
+<p><span style="font-size: 16px">定理：a、b 两个数的最大公约数乘以它们的最小公倍数等于 a 和 b 本身的乘积。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">三、勾股数</span></p>
+<p><span style="font-size: 16px">对于正整数X、Y、Z，如果满足下列不定方程：X*X+Y*Y=Z*Z，则称这组正整数（X、Y、Z）为勾股数，它们有着不同的几何含义，如作为一个三角形的三条边。一般限定 X 和 Y 互质，且 X 为偶数。认为（4、3、5）和（6、8、10）为本质相同的勾股数，（X、Y、Z），（X、Z、Y），（Y、X、Z），（Y、Z、X），（Z、X、Y），（Z、Y、X）是一组相同的勾股数。</span></p>
+<p><span style="font-size: 16px">勾股数有如下性质：</span></p>
+<p><span style="font-size: 16px">1、X、Y、Z 一定两两互质</span></p>
+<p><span style="font-size: 16px">2、X、Y 一定一奇一偶</span></p>
+<p><span style="font-size: 16px">3、X+Z 一定是一个完全平方数</span></p>
+<p><span style="font-size: 16px">4、(Y+Z)/2 一定是一个完全平方数</span></p>
+<p><span style="font-size: 16px">5、X*Y*Z 一定能被60整除</span></p>
+<br>
+<div><span style="font-size: 16px">四、完全数</span></div>
+<div><span style="font-size: 16px">把全部因数之和（除其本身以外）等于本身的数称为完全数（perfect number，又称完美数）。</span></div>
+<div><span style="font-size: 16px">将本身大于其因数之和的数称为盈数；将本身小于其因数之和的数称为亏数。</span></div>
+<div><span style="font-size: 16px">6 是一个完全数，因为6=1+2+3；</span></div>
+<div><span style="font-size: 16px">直到1952年，人类才知道 12 个完全数，它们都是偶数，其中前三个是6、28和496。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">五、亲和数</span></div>
+<span style="font-size: 16px">
+两个数是亲和的，即一个数的真因子的和等于另一个数。例如 284 和 220 就是亲和的，因为284的真因子是 1、2、4、71、142，其和为220；而220的真因子有 1、2、4、5、10、11、20、22、44、55、110，其和为284。</span><br>
+<div><span style="font-size: 16px">其余的亲和数有：1184 和 1210、17296 和 18416。</span></div>
+<div><span style="font-size: 16px">瑞士数学家欧拉着手于系统地寻找亲和数，1747 年他给出了一个 30 对亲和数的表，后来又扩展到超过 60 对。</span></div>
+<p><br><span style="font-size: 16px">六、同余</span></p>
+<p><span style="font-size: 16px">若 a、b 为两个整数，且它们的差 a-b 能被某个自然数 m 所整除，则称 a 就模 m 来说同余于 b ，或者说 a 和 b 关于模 m 同余，记为：a≡b（mod m）。它意味着：a-b=m*k（k 为某一个整数）。</span></p>
+<p><span style="font-size: 16px">例如：32≡2（mod 5），此时 k 为 6。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">同余的性质：</span></p>
+<p><span style="font-size: 16px">对于整数 a、b、c 和自然数m、n，则对模 m 同余满足：</span></p>
+<p><span style="font-size: 16px">1、自反性：a≡a（mod m）</span></p>
+<p><span style="font-size: 16px">2、对称性：若 a≡b（mod m），则 b≡a（mod m）</span></p>
+<p><span style="font-size: 16px">3、传递性：若 a≡b（mod m），b≡c（mod m），则 a≡c（mod m）</span></p>
+<p><span style="font-size: 16px">4、同加性：若 a≡b（mod m），则 a+c≡b+c（mod m）</span></p>
+<p><span style="font-size: 16px">5、同乘性：若 a≡b（mod m），则 a*c≡b*c（mod m）</span></p>
+<p><span style="font-size: 16px">一般情况，若 a≡b（mod m），c≡d（mod m），则有 a*c≡b*d（mod m）</span></p>
+<p><span style="font-size: 16px">6、同幂性：若 a≡b（mod m），则（a 的 n 次方）≡ b 的 n 次方（mod m）</span></p>
+<p><span style="font-size: 16px">7、若 a mod p=x，a mod q=x，p、q 互质，则 a mod （p*q）=x。</span></p>
+<p><span style="font-size: 16px">证明：因为 a mod p=x，a mod q=x，p、q 互质</span></p>
+<p><span style="font-size: 16px">则一定存在整数 s，t，使 a=s*p+x，a=t*q+x</span></p>
+<p><span style="font-size: 16px">所以 s*p=t*q</span></p>
+<p><span style="font-size: 16px">则一定存在整数 r，使s=r*q</span></p>
+<p><span style="font-size: 16px">所以：a=r*p*q+x，得出：a mod（p*q）=x</span></p>
+<p><span style="font-size: 16px">但是，同余不满足同除性，即不满足：a/n≡b/n（mod m）</span></p>
+<p><br><span style="font-size: 16px">七、素质</span></p>
+<p><span style="font-size: 16px">素数又称质数，是指除了 1 和它本身以外，没有其他的约数的大于 1 的正整数，例如 2、3、5、7 等等，反之就是合数。1 既不是素数也不是合数。</span></p>
+<p><span style="font-size: 16px">素数就像整数世界里的原子，整个整数世界都是由这些素数原子组成的，比如 15=3*5，121=11*11等。</span></p>
+<p><span style="font-size: 16px">2000年古希腊数学家欧几里德用反证法证明了：素数有无穷多个。他是这样证明的：设 a，b，c 
+是给定的素数，构造一个新的数：t=a*b*c+1，则已有的素数 a，b，c 均不能整除 t ，所以要么&nbsp;t&nbsp;本身就是素数，此时&nbsp;t 不等于 
+a，b，c 中任意一个数；要么 t 能被不同于 a，b，c 的某一个素数整除，因此必然存在一个素数 p 不同于已有的素数 a，b，c 
+。例如：2*3*5+1=31，3*5*7+1=106=2*53。也就是说，有了 n 个素数，就可以构造出第 n+1 个素数，因此素数有无穷多个。</span></p>
+<p><br><span style="font-size: 16px">拓展：</span></p>
+<p><span style="font-size: 16px">数学家们一直在寻找大质数，大质数在密码通信方面非常有用，他们设计了一种数论密码，编制方法如下：选定正整数 S 与某两个质数之积 R（一般R为100位以上的大数），对于明码数字 X，0&lt;=X&lt;R，取 Y 为密码数字：Y≡X*S（mod R），0&lt;=Y&lt;R。</span></p>
+<p><span style="font-size: 16px">R 和 S 可以公开，但需要保密的是 R=P*Q 的两个质因数 P 和 Q，P、Q均被取成 40 位以上的数，且 S 的选择使得 S 和 P-1及&nbsp;S 和 Q-1 均互质。</span></p>
+<p><span style="font-size: 16px">要破这样的密文，需要从100 位以上的数 R，计算出它的两个 50 位左右的质因数 P 和 Q，即使使用最快的计算机也很难在短时间内破掉。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">素数的几个定理：</span></p>
+<p><span style="font-size: 16px">1、惟一分解定理</span></p>
+<p><span style="font-size: 16px">若整数 a&gt;=2，那么 a 一定可以表示为若干个素数的乘积（惟一形式），即：</span></p>
+<p><span style="font-size: 16px">a=p1*p2*p3*<strong>…</strong>*ps（其中 pj 为素数，称为 a 的质因子，1&lt;=j&lt;=s）</span></p>
+<p><span style="font-size: 16px">如：1260=2*2*3*3*5*7</span></p>
+<p><span style="font-size: 16px">2、威尔逊（Wilson）定理</span></p>
+<p><span style="font-size: 16px">若 P 为素数，则（P-1）! ≡ -1（mod P），注：n ! 表示1*2*3*……*n。</span></p>
+<p><span style="font-size: 16px">威尔逊定理的逆定理也成立。即：若对某一正整数 P，有（P-1）! ≡ -1（mod P），则 P 一定为素数。</span></p>
+<p><span style="font-size: 16px">既然如此，则有（P-1）!+1 一定是&nbsp;P的倍数。</span></p>
+<p><span style="font-size: 16px">3、<strong>费马（Fermat）定理</strong></span></p>
+<p><span style="font-size: 16px">若 P 为素数，a 为正整数，且 a 和 P 互质，则：<span style="font-family: Times New Roman">a<sup>p-1</sup> </span>≡ 1（mod P）。</span></p>
+<p><span style="font-size: 16px">证明：</span></p>
+<p><span style="font-size: 16px">首先，P-1 个整数 a，2a，3a，…，（P-1）a 中没有一个是 P 的倍数。</span></p>
+<p><span style="font-size: 16px">其次，a，2a，3a，…，（P-1）a 中没有任何两个同余于模 P 的。</span></p>
+<p><span style="font-size: 16px">于是：a，2a，3a，…，（P-1）a 对模 P 的同余既不为 0，也没有两个同余相同，因此，这 P-1 个数对模 P 的同余一定是1，2，3，…，P-1 某一种排列，即：<br></span></p>
+<p><span style="font-size: 16px"><span style="font-family: 宋体">a*2a*3a*…*（P-1）a </span><span style="font-family: Arial">≡ 1<span style="font-family: 宋体">*</span>2<span style="font-family: 宋体">*</span>3</span><span style="font-family: 宋体">*…*（P-1）(mod P)</span></span></p>
+<p><span style="font-family: 宋体; font-size: 16px">化简为：</span></p>
+<p><span style="font-family: 宋体; font-size: 16px"><span style="font-family: Times New Roman">a<sup>p-1 </sup>*</span><span style="font-family: Arial">（P-1）! </span>≡ （<span style="font-family: 宋体"><span style="font-family: Arial">P-1）!&nbsp; </span>(mod P)</span></span></p>
+<p><span style="font-size: 16px"><span style="font-family: 宋体">又由于&nbsp;P 是素数，根据威尔逊定理得出</span><span style="font-family: Arial">（P-1）!&nbsp;和 P 互质。所以约去（<span style="font-family: 宋体"><span style="font-family: Arial">P-1）!</span></span></span></span></p>
+<p><span style="font-size: 16px">得到：<span style="font-family: Times New Roman">a<sup>p-1</sup> </span>≡ 1（mod P）</span></p>
+<p><span style="font-size: 16px">其实这是一种特殊情形，一般情况下，若 P 为素数，则：<span style="font-family: Times New Roman">a<sup>p</sup> </span>≡ a（mod P），这就是著名的<strong>费马小定理</strong>。</span></p>
+<p><span style="font-size: 16px">4、欧拉定理</span></p>
+<p><span style="font-size: 16px">费马定理是用来阐述在素数模下，指数的同余性质。当模是合数的时候，就要应用范围更广的欧拉定理了。</span></p>
+<p><span style="font-size: 16px">（1）欧拉函数</span></p>
+<p><span style="font-size: 16px">设 n 为正整数，欧拉函数 φ（n）定义为不超过 n，且与 n 互质的正整数的个数。下表为 1&lt;=n&lt;=15 的 φ（n）值。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<table border="1" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">&nbsp;n</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">1</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">2</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">3</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">4</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">5</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">6</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">7</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">8</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">9</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">10</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">11</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">12</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">13</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">14</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">15</span></p>
+
+</td>
+
+</tr>
+<tr>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Arial; font-size: 16px">φ(n)</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">1</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">1</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">2</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">2</span></p>
+
+</td>
+<td valign="top" width="35">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">4</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">2</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">6</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">4</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">6</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">4</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">10</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">4</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">12</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">6</span></p>
+
+</td>
+<td valign="top" width="36">
+<p align="center"><span style="font-family: Times New Roman; font-size: 16px">8</span></p>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+<p><span style="font-size: 16px">（2）引理1</span></p>
+<p><span style="font-size: 16px">A、如果 n 为某一个素数 p，则：φ（p）=p-1；</span></p>
+<p><span style="font-size: 16px">B、如果 n 为某一个素数 p 的幂次 p<sup><span style="font-family: Times New Roman">a</span></sup>，则：φ（p<sup><span style="font-family: Times New Roman">a</span></sup>）=（p-1）*p<sup><span style="font-family: Times New Roman">a-1</span></sup>；</span></p>
+<p><span style="font-size: 16px">C、如果 n 为任意两个素质的数 a，b 的积，则：φ（a*b）=φ（a）*φ（b）；</span></p>
+<p><br><span style="font-size: 16px">八、Catalan 数</span></p>
+<p><span style="font-size: 16px">卡特兰数又称卡塔兰数，英文名Catalan 
+number，是组合数学中一个常出现在各种计数问题中出现的数列。以比利时的数学家欧仁·查理·卡塔兰(1814–1894)的名字来命名，其前几项为：1,
+ 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 
+2674440, 9694845, 35357670, 129644790, 477638700, 1767263190, 
+6564120420, 24466267020, 91482563640, 343059613650, 1289904147324, 
+4861946401452, ...</span></p>
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

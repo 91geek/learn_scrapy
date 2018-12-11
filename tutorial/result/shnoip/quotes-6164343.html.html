@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>Fighting Game - noipxu - 博客园</title>
+<meta property="og:description" content="感谢上外静中任淳同学提供 uses crt; label h; //h是重新开始游戏 const y1=18; y2=18; //p1,p2的纵坐标 var x1,x2:byte; //p1,p2的横" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6164343.html">Fighting Game</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-12 14:20</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6164343" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6164343);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6164343,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/12 14:20:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div><span style="font-size: 16px">感谢上外静中任淳同学提供</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">uses crt;</span></div>
+<div><span style="font-size: 16px">label</span></div>
+<div><span style="font-size: 16px">&nbsp; h; &nbsp; &nbsp; &nbsp; &nbsp; //h是重新开始游戏</span></div>
+<div><span style="font-size: 16px">const</span></div>
+<div><span style="font-size: 16px">&nbsp; y1=18;</span></div>
+<div><span style="font-size: 16px">&nbsp; y2=18; &nbsp; &nbsp; &nbsp; //p1,p2的纵坐标</span></div>
+<div><span style="font-size: 16px">var</span></div>
+<div><span style="font-size: 16px">&nbsp; x1,x2:byte; &nbsp;//p1,p2的横坐标</span></div>
+<div><span style="font-size: 16px">&nbsp; act:byte; &nbsp; &nbsp;//p2动作</span></div>
+<div><span style="font-size: 16px">&nbsp; sec,sec1:integer; &nbsp;//时间间隔</span></div>
+<div><span style="font-size: 16px">&nbsp; p,q:byte; &nbsp;//p1,p2的生命值</span></div>
+<div><span style="font-size: 16px">&nbsp; ek:byte; &nbsp; //用于增强p2防御力</span></div>
+<div><span style="font-size: 16px">&nbsp; c:char; &nbsp; &nbsp;//用于读取键盘敲击的键</span></div>
+<div><span style="font-size: 16px">&nbsp; m,e:char; &nbsp;//p1,p2的朝向（判断往哪里攻击）</span></div>
+<div><span style="font-size: 16px">&nbsp; i,j:byte; &nbsp;//循环变量</span></div>
+<div><span style="font-size: 16px">&nbsp; ys1,ys2:byte; //p1,p2的颜色</span></div>
+<div><span style="font-size: 16px">&nbsp; l,r:boolean; &nbsp;//l:p1是否胜利 &nbsp;r:p2是否胜利</span></div>
+<div><span style="font-size: 16px">&nbsp; f:boolean; &nbsp; &nbsp;//游戏是否结束</span></div>
+<div><span style="font-size: 16px">&nbsp; y,n:boolean; &nbsp;//判断玩家是否继续</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure start;</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(lightmagenta);</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('Fighting Game');</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(magenta);</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('a: left');</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('d: right');</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('j: attack');</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('space: pause');</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(yellow);</span></div>
+<div><span style="font-size: 16px">&nbsp; writeln('You are p1.');</span></div>
+<div><span style="font-size: 16px">&nbsp; while not keypressed do x1:=10;</span></div>
+<div><span style="font-size: 16px">&nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(lightgreen);</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(34,10);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('ARE YOU READY? '); &nbsp;//倒计时</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(lightred);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=3 downto 1 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(i);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; sound(100);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(1000);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(#8);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; nosound;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(lightblue);</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(40,10);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('GO!');</span></div>
+<div><span style="font-size: 16px">&nbsp; sound(1000);</span></div>
+<div><span style="font-size: 16px">&nbsp; delay(1000);</span></div>
+<div><span style="font-size: 16px">&nbsp; nosound;</span></div>
+<div><span style="font-size: 16px">&nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure life; &nbsp;//打印生命值</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; p:=10;</span></div>
+<div><span style="font-size: 16px">&nbsp; q:=10;</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(11,1);</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(ys1);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to p do write('+');</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(33,1);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('p1');</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(lightred);</span></div>
+<div><span style="font-size: 16px">&nbsp; write(' &nbsp; &nbsp;VS &nbsp; &nbsp;');</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(ys2);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('p2');</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(61,1);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=1 to q do write('+');</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure me; &nbsp;//打印p1</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(ys1);</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(x1,y1-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('*');</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(x1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('|');</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(x1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('^');</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure enemy; &nbsp;//打印p2</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(ys2);</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(x2,y2-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('*');</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(x2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('|');</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(x2,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('^');</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure floor; &nbsp;//地板</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; textbackground(green);</span></div>
+<div><span style="font-size: 16px">&nbsp; for i:=20 to 25 do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; for j:=1 to 80 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(j,i);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; textbackground(black);</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure a; &nbsp;//p1向左</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; if x1&gt;1 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; x1:=x1-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; m:='a';</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; me;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; enemy;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure d; &nbsp;//p1向右</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; if x1&lt;80 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; x1:=x1+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; m:='d';</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; me;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; enemy;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure s; &nbsp;//p1攻击</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(ys1);</span></div>
+<div><span style="font-size: 16px">&nbsp; if (m='a') and (x1&gt;1) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1-1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('-');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x1&gt;=3 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x1-2,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('(');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (x1-1=x2) or (x1-2=x2) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; ek:=ek+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if (q&gt;0) and (ek=10) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; q:=q-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; ek:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(70-q,1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; textcolor(lightred);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x2,y2-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('*');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x2,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('^');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1-1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x1&gt;=3 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x1-2,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; end</span></div>
+<div><span style="font-size: 16px">&nbsp; else if (x1&lt;80) and (m='d') then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1+1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('-');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x1&lt;=78 then write(')');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (x1+1=x2) or (x1+2=x2) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; ek:=ek+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if (q&gt;0) and (ek=10) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; q:=q-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; ek:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(70-q,1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; textcolor(lightred);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x2,y2-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('*');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x2,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('^');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1+1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x1&lt;=78 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x1+2,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; if q=0 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; f:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; r:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; me;</span></div>
+<div><span style="font-size: 16px">&nbsp; enemy;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure je; &nbsp;//p2向左</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; if x2&gt;1 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; x2:=x2-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; e:='j';</span></div>
+<div><span style="font-size: 16px">&nbsp; me;</span></div>
+<div><span style="font-size: 16px">&nbsp; enemy;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure le; &nbsp;//p2向右</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; if x2&lt;80 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; x2:=x2+1;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; e:='l';</span></div>
+<div><span style="font-size: 16px">&nbsp; me;</span></div>
+<div><span style="font-size: 16px">&nbsp; enemy;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">procedure k; &nbsp;//p2攻击</span></div>
+<div><span style="font-size: 16px">begin</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(ys2);</span></div>
+<div><span style="font-size: 16px">&nbsp; if (e='j') and (x2&gt;1) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2-1,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('-');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x2&gt;=3 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x2-2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('(');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (x2-2=x1) or (x2-1=x1) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if p&gt;0 then p:=p-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(11+p,1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; textcolor(lightred);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x1,y1-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('*');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('^');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2-1,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x2&gt;=3 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x2-2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; end</span></div>
+<div><span style="font-size: 16px">&nbsp; else if (e='l') and (x2&lt;80) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2+1,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('-');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x2&lt;=78 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x2+2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(')');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if (x2+1=x1) or (x2+2=x1) then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if p&gt;0 then p:=p-1;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(11+p,1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; textcolor(lightred);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x1,y1-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('*');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; gotoxy(x1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; write('^');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(50);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2+1,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if x2&lt;=78 then write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; if p=0 then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; f:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; l:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; me;</span></div>
+<div><span style="font-size: 16px">&nbsp; enemy;</span></div>
+<div><span style="font-size: 16px">end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">begin &nbsp;//主程序</span></div>
+<div><span style="font-size: 16px">&nbsp; cursoroff;</span></div>
+<div><span style="font-size: 16px">&nbsp; randomize;</span></div>
+<div><span style="font-size: 16px">h:l:=true; &nbsp;//判断p1胜利</span></div>
+<div><span style="font-size: 16px">&nbsp; r:=true; &nbsp;//判断p2胜利</span></div>
+<div><span style="font-size: 16px">&nbsp; f:=true; &nbsp;//判断游戏是否结束</span></div>
+<div><span style="font-size: 16px">&nbsp; sec:=(random(2)+1)*50; &nbsp;//p2动作时间间隔</span></div>
+<div><span style="font-size: 16px">&nbsp; sec1:=0; &nbsp;//时间间隔</span></div>
+<div><span style="font-size: 16px">&nbsp; x1:=10; &nbsp; //p1横坐标位置</span></div>
+<div><span style="font-size: 16px">&nbsp; m:='d'; &nbsp; //p1面向的方向（d右，a左）</span></div>
+<div><span style="font-size: 16px">&nbsp; ys1:=14; &nbsp;//定义p1的颜色（黄色）</span></div>
+<div><span style="font-size: 16px">&nbsp; x2:=71; &nbsp; //p2横坐标位置</span></div>
+<div><span style="font-size: 16px">&nbsp; e:='j'; &nbsp; //p2面向的方向（l右，j左）</span></div>
+<div><span style="font-size: 16px">&nbsp; ys2:=8; &nbsp; //定义p2的颜色（暗灰色）</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; start; &nbsp;//操作说明</span></div>
+<div><span style="font-size: 16px">&nbsp; life; &nbsp; //显示生命值</span></div>
+<div><span style="font-size: 16px">&nbsp; me; &nbsp; &nbsp; //显示p1</span></div>
+<div><span style="font-size: 16px">&nbsp; enemy; &nbsp;//显示p2</span></div>
+<div><span style="font-size: 16px">&nbsp; floor; &nbsp;//显示地板</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; while f do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if keypressed then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; c:=readkey;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if c=' ' then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; gotoxy(38,12);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; textcolor(lightmagenta);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; write('PAUSE');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; c:='p';</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; while c&lt;&gt;' ' do</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if keypressed then c:=readkey;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; gotoxy(38,12);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; write(' &nbsp; &nbsp; '); &nbsp; &nbsp; &nbsp;//擦除'pause'</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //暂停</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if c='a' then a;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if c='d' then d;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if c='j' then s; &nbsp; &nbsp; &nbsp; //左右和攻击</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(5);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; sec1:=sec1+5; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//时间暂停</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if sec1&gt;=sec then begin &nbsp;//随机时间间隔到达后</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; sec1:=0;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; sec:=(random(2)+1)*50;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; act:=random(2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if abs(x1-x2)&gt;=3 then</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; if x2&lt;x1 then le else je;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;//判断p1朝哪个方向走</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; else &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //当p1,p2间距小于3，即x1,x2在攻击范围内时</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; begin</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; if x1&lt;x2 then &nbsp; &nbsp; &nbsp; &nbsp;//p1在p2左面</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if e='l' then le &nbsp; &nbsp; //p2背对p1时</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else k &nbsp; &nbsp; &nbsp;//p2正对p1时</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; else if x2&lt;x1 then &nbsp; //p1在p2右面</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if e='j' then je &nbsp; &nbsp; //p2背对p1时</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else k &nbsp; &nbsp; &nbsp;//p2正对p1时</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; else if x2=x1 then &nbsp; //p1,p2重叠时</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; case act of</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 0: je;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1: le;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; end; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //在p1,p2在同一位置时控制p2离开</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; delay(500);</span></div>
+<div><span style="font-size: 16px">&nbsp; sound(100); &nbsp; &nbsp; &nbsp; //以下是判断p1,p2哪方胜利还是平手</span></div>
+<div><span style="font-size: 16px">&nbsp; if l then begin &nbsp; //如果p1胜利</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(ys2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2-1,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('&gt;-*');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(2000);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; nosound;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; sound(1000);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(yellow);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(37,10);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('YOU WIN!');</span></div>
+<div><span style="font-size: 16px">&nbsp; end</span></div>
+<div><span style="font-size: 16px">&nbsp; else if r then begin &nbsp;//如果p2胜利</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(ys1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1-1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('*-&lt;');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(2000);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; nosound;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; sound(1000);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(lightred);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(37,10);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('YOU LOSE');</span></div>
+<div><span style="font-size: 16px">&nbsp; end</span></div>
+<div><span style="font-size: 16px">&nbsp; else begin &nbsp; //平手</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2-1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(ys1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x1-1,y1+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('*-&lt;');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(ys2);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(x2-1,y2+1);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('&gt;-*');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; delay(2000);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; nosound;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; sound(1000);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(lightgreen);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(36,10);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('nobody wins');</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; delay(5000);</span></div>
+<div><span style="font-size: 16px">&nbsp; nosound; //以下为判断是否继续</span></div>
+<div><span style="font-size: 16px">&nbsp; clrscr;</span></div>
+<div><span style="font-size: 16px">&nbsp; y:=true;</span></div>
+<div><span style="font-size: 16px">&nbsp; n:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; textcolor(7);</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(38,11);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('REPLAY?');</span></div>
+<div><span style="font-size: 16px">&nbsp; gotoxy(24,12);</span></div>
+<div><span style="font-size: 16px">&nbsp; write('(A: right D: left Enter: dicide)');</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">&nbsp; while c&lt;&gt;#13 do begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; gotoxy(36,13);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if y then textcolor(blink) else textcolor(7);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('yes');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; textcolor(7);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write(' &nbsp; &nbsp; ');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if n then textcolor(blink) else textcolor(7);</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; write('no');</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; if keypressed then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; c:=readkey;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; if c='a' then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; y:=true;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; n:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; else if c='d' then begin</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; y:=false;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; n:=true;</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; end</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; else if c=#13 then</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; if y then goto h; &nbsp;//重新开始</span></div>
+<div><span style="font-size: 16px">&nbsp; &nbsp; end;</span></div>
+<div><span style="font-size: 16px">&nbsp; end;</span></div>
+<div><span style="font-size: 16px">end.</span></div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

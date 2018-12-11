@@ -1,0 +1,176 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100232. 会议中心 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/100232" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">时间限制：1.5秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：64M<br />
+<br />
+Siruseri政府建造了一座新的会议中心。许多公司对租借会议中心的会堂很感兴趣，他们希望能够在里面举行会议。<br />
+对于一个客户而言，仅当在开会时能够独自占用整个会堂，他才会租借会堂。会议中心的销售主管认为：最好的策略应该是将会堂租借给尽可能多的客户。显然，有可能存在不止一种满足要求的策略。<br />
+例如下面的例子。总共有4个公司。他们对租借会堂发出了请求，并提出了他们所需占用会堂的起止日期（如下表所示）。<br />
+<img src="data:image/png;base64,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" alt=" " /><br />
+上例中，最多将会堂租借给两家公司。租借策略分别是租给公司1和公司3，或是公司2和公司3，也可以是公司1和公司4。注意会议中心一天最多租借给一个公司，所以公司1和公司2不能同时租借会议中心，因为他们在第九天重合了。<br />
+销售主管为了公平起见，决定按照如下的程序来确定选择何种租借策略：首先，将租借给客户数量最多的策略作为候选，将所有的公司按照他们发出请求的顺序编号。对于候选策略，将策略中的每家公司的编号按升序排列。最后，选出其中字典序最小（字典序指在字典中排列的顺序，如果序列l1是序列l2的前缀，或者对于<img src="http://latex.codecogs.com/gif.latex?l_%7B1%7D" alt=" " />和<img src="http://latex.codecogs.com/gif.latex?l_%7B2%7D" alt=" " />的第一个不同位置j，<img src="http://latex.codecogs.com/gif.latex?l_%7B1%7D" alt=" " />[j]&lt;<img src="http://latex.codecogs.com/gif.latex?l_%7B2%7D" alt=" " />[j]，则<img src="http://latex.codecogs.com/gif.latex?l_%7B1%7D" alt=" " />比<img src="http://latex.codecogs.com/gif.latex?l_%7B2%7D" alt=" " />小。）的候选策略作为最终的策略。<br />
+例中，会堂最终将被租借给公司1和公司3：3个候选策略是{(1,3),(2,3),(1,4)}。而在字典序中(1,3)&lt;(1,4)&lt;(2,3)。<br />
+你的任务是帮助销售主管确定应该将会堂租借给哪些公司。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入的第一行有一个整数N，表示发出租借会堂申请的公司的个数。第2到第N+1行每行有2个整数。第i+1行的整数表示第i家公司申请租借的起始和终止日期。对于每个公司的申请，起始日期为不小于1的整数，终止日期为不大于<img src="http://latex.codecogs.com/gif.latex?10%5E%7B9%7D" alt=" " />的整数。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出的第一行应有一个整数M，表示最多可以租借给多少家公司。第二行应列出M个数，表示最终将会堂租借给哪些公司，按公司的编号从小到大的顺序输出。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4
+4 9
+9 11
+13 19
+10 17</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>2
+1 3</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于50%的输入，N&le;3000。在所有输入中，N&le;200000。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100232"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/100232"><span class="badge badge-info">0</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100232"><span class="badge badge-info">0</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100232'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100232" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100232' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100232?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100232. \u4f1a\u8bae\u4e2d\u5fc3 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

@@ -1,0 +1,166 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1055. 走廊 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1055" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">有一个M行N列的教室座位中，有D对同学总爱凑在一起讲话。现老师要用走廊隔开他们。但只能在行之间加入K条走廊，在列中加入L条走廊，问加在哪里能使效果最佳。（一对爱讲话的同学只有左右相邻或上下相邻）。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">第一行，有5各用空格隔开的整数，分别是M，N，K，L，D（2&lt;=N，M&lt;=1000，0&lt;=K&lt;M，0&lt;=L&lt;N，D&lt;=2000）。接下来D行，每行有4个用空格隔开的整数，第i行的4个整数Xi，Yi，Pi，Qi，表示坐在位置(Xi,Yi)与(Pi,Qi)的两个同学会交头接耳（输入保证他们前后相邻或者左右相邻）。输入数据保证最优方案的唯一性。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">共两行。第一行包含K个整数，a1a2&hellip;&hellip;aK，表示第a1行和a1+1行之间、第a2行和第a2+1行之间、&hellip;、第aK行和第aK+1行之间要开辟通道，其中ai&lt; ai+1，每两个整数之间用空格隔开（行尾没有空格）。第二行包含L个整数，b1b2&hellip;&hellip;bk，表示第b1列和b1+1列之间、第b2列和第b2+1列之间、&hellip;、第bL列和第bL+1列之间要开辟通道，其中bi&lt; bi+1，每两个整数之间用空格隔开（行尾没有空格）。若有多组答案，输出字典序最小的一组。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4 5 1 2 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+4 2 4 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 3 3 3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 5 2 4</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 4</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content"></div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习5.6.5</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1055"><span class="badge badge-info">673</span></a><br />提交: <a class="pull-right" href="#main/statistic/1055"><span class="badge badge-info">1716</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1055"><span class="badge badge-info">48.37</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1055'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1055/SRC.c/0/solution_path' data-toggle='tooltip' title='By ejfbdn'>SRC.c</a><br /><a class='solution' href='index.php/main/download/1055/QQ%25E7%25BE%25A4%2520366577294.txt/0/solution_path' data-toggle='tooltip' title='By puol''>QQ群 366577294.txt</a><br /><a class='solution' href='index.php/main/download/1055/%25E2%2588%259AY.pas/0/solution_path' data-toggle='tooltip' title='By √Y'>√Y.pas</a><br /><a class='solution' href='index.php/main/download/1055/1055.cpp/0/solution_path' data-toggle='tooltip' title='By wd050602'>1055.cpp</a><br /><a class='solution' href='index.php/main/download/1055/1055%25E8%25B5%25B0%25E5%25BB%258A.cpp/0/solution_path' data-toggle='tooltip' title='By 三号血神'>1055走廊.cpp</a><br /><a class='solution' href='index.php/main/download/1055/pascal%25E9%25A2%2598%25E8%25A7%25A3%25EF%25BC%2588100%25E5%2588%2586%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 张祥庭'>pascal题解（100分）.txt</a><br /><a class='solution' href='index.php/main/download/1055/1.bat/0/solution_path' data-toggle='tooltip' title='By lhc'>1.bat</a><br /><a class='solution' href='index.php/main/download/1055/%25E6%25A0%2587%25E7%25A8%258B.exe/0/solution_path' data-toggle='tooltip' title='By lhc'>标程.exe</a><br /><a class='solution' href='index.php/main/download/1055/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D111111321123.cpp/0/solution_path' data-toggle='tooltip' title='By fdszlzl'>未命名111111321123.cpp</a><br /><a class='solution' href='index.php/main/download/1055/%25E4%25BD%25A0%25E4%25BB%25AC%25E7%259A%2584%25E5%2585%25B3%25E6%259C%25BA%25E7%25A8%258B%25E5%25BA%258F%25E5%25A5%25BD%25E5%259E%2583%25E5%259C%25BE.bat/0/solution_path' data-toggle='tooltip' title='By 绝影·天冥'>你们的关机程序好垃圾.bat</a><br /><a class='solution' href='index.php/main/download/1055/%25E9%25A2%2598%25E8%25A7%25A3.exe/0/solution_path' data-toggle='tooltip' title='By rezerotime'>题解.exe</a><br /><a class='solution' href='index.php/main/download/1055/%25E9%25A2%2598%25E8%25A7%25A3.exe/0/solution_path' data-toggle='tooltip' title='By rezerotime'>题解.exe</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习5.6.5</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1055" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1055' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1055?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1055. \u8d70\u5eca (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

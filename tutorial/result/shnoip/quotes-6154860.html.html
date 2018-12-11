@@ -1,0 +1,321 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="origin" />
+<title>POJ解题经验交流 - noipxu - 博客园</title>
+<meta property="og:description" content="感谢范意凯、陈申奥、庞可、杭业晟、王飞飏、周俊豪、沈逸轩等同学的收集整理。 题号：1003&#160;Hangover求1/2+1/3+...1/n的和，问需多少项的和能超过给定的值 类似于Zeroj" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6154860.html">POJ解题经验交流</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-10 09:17</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6154860" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6154860);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6154860,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/10 9:17:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div><span style="font-size: 16px">感谢范意凯、陈申奥、庞可、杭业晟、王飞飏、周俊豪、沈逸轩等同学的收集整理。</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：1003&nbsp;Hangover</span><br><span style="font-size: 16px">求1/2+1/3+...1/n的和，问需多少项的和能超过给定的值</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=a625" rel="nofollow" target="_blank">a625</a></span></div>
+<div><br>
+<div><span style="font-size: 16px">题号：1004 Financial Management</span></div>
+<div><span style="font-size: 16px">求12个实数的平均值</span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：1008&nbsp;Maya Calendar 玛雅历</span></div>
+<div><span style="font-size: 16px">此题语言可选中文</span></div>
+<div><span style="font-size: 16px">PS：注意Haab历的日期是从0开始，而Tzolkin历的日期是从1开始</span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：1067&nbsp;取石子游戏</span></div>
+<div><span style="font-size: 16px">此题语言为中文</span></div>
+
+</div>
+<div><span style="font-size: 16px">PS：请百度&nbsp;取石子游戏</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：1207&nbsp;The 3n + 1 problem</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=c039" rel="nofollow" target="_blank">c039</a></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：1218 THE DRUNK JAILER</span></div>
+<div><span style="font-size: 16px">类似于<a href="http://shnoip.blog.163.com/blog/static/208414028201411221100875/" target="_blank">数组</a>中的例题4</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：1298&nbsp;The Hardest Problem Ever 史上最难的问题</span></div>
+<div><span style="font-size: 16px">此题语言可选中文</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：1504&nbsp;Adding Reversed Numbers</span><br><span style="font-size: 16px">求二个数反转之后的和，再反转这个和之后输出</span></div>
+<div><span style="font-size: 16px">PS：此题变量需定义为longint</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：1528&nbsp;Perfection</span><br><span style="font-size: 16px">求一个数所有因子之和（这个数本身不算），比较这个数与它的因子和的大小关系</span></div>
+<div><span style="font-size: 16px">PS：1的因子和为0</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：1658&nbsp;Eva's Problem</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=a005" rel="nofollow" target="_blank">a005</a></span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：1547&nbsp;Clay Bully</span></div>
+<div><span style="font-size: 16px">Terry老师分给每个学生的粘土是一样多的，但是有学生会去抢别人的粘土，给你每位学生粘土的长宽高和他的名字，请你找出谁是那个欺侮人的同学，谁是受害者</span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：1552&nbsp;Doubles</span></div>
+<div><span style="font-size: 16px">求一串数字序列中，有多少项是其它项的二倍</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：2000&nbsp;Gold Coins</span></div>
+<div><span style="font-size: 16px">国王第一天给骑士一个金币，第二、三天各给两个金币，第四、五、六各给三个金币……以此类推，求n天后骑士一共获得多少金币。可先定义10000个格子的一维数组，存储骑士每天可获得的金币数，然后读入n，用for循环求和。</span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：2017&nbsp;Speed Limit</span></div>
+<div><span style="font-size: 16px">根据速度和时间记录求总的里程数</span></div>
+<div><span style="font-size: 16px">PS：n、s、t需用integer类型接收</span></div>
+<p>&nbsp;</p>
+<div><span style="font-size: 16px">题号：2027&nbsp;No Brainer</span></div>
+<div><span style="font-size: 16px">比较两个整数大小</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：2140&nbsp;Herd Sums</span></div>
+<div><span style="font-size: 16px">求连续之和为N的方法有多少种</span></div>
+
+</div>
+<div><span style="font-size: 16px">PS：假设a,a+1,a+2...a+k，为一组符合的答案，则有(k+1)a+0.5*k*(k+1)=n成立，可划成(a+0.5*k)(k+1)=n，观察等式发现必须满足：1、0.5*k为整数，所以k是偶数；2、(k+1)为n的因数，并且 (k+1) 为奇数；所以综上所述n有多少个奇因数，就是本题的答案</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：2209&nbsp;The King</span></div>
+<div><span style="font-size: 16px">给定幂指数，求国王所有儿子精神潜力的幂之和的最大值，即每个儿子精神潜力的幂为正则累加，为负则舍去</span></div>
+<p>&nbsp;</p>
+<div><span style="font-size: 16px">题号：2262&nbsp;Goldbach's Conjecture</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=c050" rel="nofollow" target="_blank">c050</a></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：2301&nbsp;Beat the Spread!</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=c004" rel="nofollow" target="_blank">c004</a></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：2388&nbsp;Who's in the Middle</span></div>
+<div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=d153" rel="nofollow" target="_blank">d153</a></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：2390&nbsp;Bank Interest</span></div>
+<div><span style="font-size: 16px">读入利率、本金和存款年数，输出Y年后的可以拿到多少钱（答案为整数，并且不做四舍五入）</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+
+</div>
+<div>
+<div><span style="font-size: 16px">题号：2509&nbsp;Peter's smokes</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=c079" rel="nofollow" target="_blank">c079</a></span></div>
+
+</div>
+<div><span style="font-size: 16px">PS：接收n、k需用longint类型</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：2521&nbsp;How much did the businessman lose</span></div>
+<div><span style="font-size: 16px">给你商品的成本价、售价、收入的假币数和找出钱数，求商人的损失数</span></div>
+<div><span style="font-size: 16px">PS：商人的损失数=收入的假币数-商品的利润</span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：2636&nbsp;Electrical Outlets</span></div>
+<div><span style="font-size: 16px">给你拖线板的数量和每个拖线板提供的插孔数，输出可以给多少设备供电</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：2656&nbsp;Unhappy Jinjin</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=b146" rel="nofollow" target="_blank">b146</a></span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：2665&nbsp;Trees</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=b139" rel="nofollow" target="_blank">b139</a></span></div>
+
+</div>
+<div><span style="font-size: 16px">PS：这句话最关键It is confirmed that these sections do not overlap with each other.</span></div>
+<p>&nbsp;</p>
+<div><span style="font-size: 16px">题号：3030&nbsp;Nasty Hacks</span></div>
+<div><span style="font-size: 16px">通过比较不做广告的收益、做广告后的收益以及广告成本三个值来决定做广告、不做广告或者无所谓</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：3062&nbsp;Celebrity jeopardy</span></div>
+<div><span style="font-size: 16px">读取字符串，并原样输出</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：3210&nbsp;Coins</span></div>
+<div><span style="font-size: 16px">给定n个硬币，进行x次翻转，每次只能翻转一个硬币，且每个硬币可被翻转多次。问：对于所有初始情况下的硬币（即正反面的硬币数不一样），至少需要翻转几次才能达到所有硬币均处于同一面的状态。</span></div>
+<div><span style="font-size: 16px">PS：分n为奇数和偶数二种情况来考虑</span></div>
+<p>&nbsp;</p>
+<div>
+<div><span style="font-size: 16px">题号：3589&nbsp;Number-guessing Game</span></div>
+<div><span style="font-size: 16px">类似于Zerojudge&nbsp;<a href="http://zerojudge.tw/ShowProblem?problemid=a291" rel="nofollow" target="_blank">a291</a></span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：3673&nbsp;Cow Multiplication</span></div>
+<div><span style="font-size: 16px">请你按下面的公式计算二个数的积：123*45=1*4+1*5+2*4+2*5+3*4+3*5=54</span></div>
+<div><span style="font-size: 16px">PS：123*45=1*4+1*5+2*4+2*5+3*4+3*5=(1+2+3)*4+(1+2+3)*5=(1+2+3)*(4+5)</span></div>
+<div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">题号：3913&nbsp;Gnome Sequencing</span></div>
+<div><span style="font-size: 16px">给你三个小矮人的胡须长度，判断这三个数是否是有序的（升序或降序）</span></div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div>
+<div><span style="font-size: 16px">题号：3980&nbsp;取模运算</span></div>
+<div><span style="font-size: 16px">此题语言为中文</span></div>
+<div><span style="font-size: 16px">PS：不能用mod噢</span></div>
+
+</div>
+<div><span style="font-size: 16px">&nbsp;</span></div>
+<div><span style="font-size: 16px">常用英语：</span></div>
+<div><span style="font-size: 16px">positive integer——正整数</span></div>
+<div><span style="font-size: 16px">negative integer——负整数</span></div>
+<div><span style="font-size: 16px">odd number——奇数</span></div>
+<div><span style="font-size: 16px">even number——偶数</span></div>
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

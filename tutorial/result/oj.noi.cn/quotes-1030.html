@@ -1,0 +1,173 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1030. 角谷猜想 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1030" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">角谷猜想又称冰雹猜想。它首先流传于美国，不久传到欧洲，后来由一位叫角谷的日本人带到亚洲。因为被称为角谷猜想。<br />
+通俗地讲，角谷猜想的内容是这样的：任意给定一个自然数n，当n是偶数时，将它除以2，即将它变成n/2；当n是奇数时，就将它变成3n+1，&hellip;&hellip;，若干步后，总会得到1。<br />
+在上述演变过程中，将每一次出现的数字排列起来，就会出现一个数字序列。<br />
+我们现在要解决的问题是：对于给定的n，求出数字序列中第一次出现1的位置。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入一个自然数n。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出序列中第一次出现1的位置。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>6</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>9</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1&lt;=n&lt;2^31</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+							<div class="well"><fieldset>
+					<legend><h4>提示</h4></legend>
+					<div class="content">数字的变化过程如下：<br />
+6&rarr;6&divide;2&rarr;3&rarr;3&times;3+1&rarr;10&rarr;10&divide;2&rarr;5&rarr;5&times;3+1&rarr;16&rarr;16&divide;2&rarr;8&rarr;8&divide;2&rarr;4&rarr;4&divide;2&rarr;2&rarr;2&divide;2&rarr;1<br />
+所形成的数字序列为：<br />
+6 3 10 5 16 8 4 2 1<br />
+1位于数字数列的第9个位置。</div>
+				</fieldset></div>
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习4.3.6</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1030"><span class="badge badge-info">4809</span></a><br />提交: <a class="pull-right" href="#main/statistic/1030"><span class="badge badge-info">12188</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1030"><span class="badge badge-info">69.60</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1030'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1030/noi1030.cpp/0/solution_path' data-toggle='tooltip' title='By lxy'>noi1030.cpp</a><br /><a class='solution' href='index.php/main/download/1030/jack%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3.cpp/0/solution_path' data-toggle='tooltip' title='By jack_魏'>jack角谷猜想.cpp</a><br /><a class='solution' href='index.php/main/download/1030/fsafasd.cpp/0/solution_path' data-toggle='tooltip' title='By 郭子敬'>fsafasd.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D3.cpp/0/solution_path' data-toggle='tooltip' title='By wzc'>未命名3.cpp</a><br /><a class='solution' href='index.php/main/download/1030/1038%25E6%259C%25B4%25EF%25BC%2588sha%25EF%25BC%2589%25E7%25B4%25A0%25EF%25BC%2588gua%25EF%25BC%2589%25E8%25A7%25A3%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By Mr_Li'>1038朴（sha）素（gua）解法.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E6%2596%25B0%25E5%25BB%25BA%2520Microsoft%2520Word%252097%2520-%25202003%2520%25E6%2596%2587%25E6%25A1%25A3.doc/0/solution_path' data-toggle='tooltip' title='By 甘晋丞'>新建 Microsoft Word 97 - 2003 文档.doc</a><br /><a class='solution' href='index.php/main/download/1030/%25E7%25A5%259E%25E9%259D%259E%25E8%2584%259A%25E9%25AA%25A8%25E4%25B9%259F.cpp/0/solution_path' data-toggle='tooltip' title='By mahan'>神非脚骨也.cpp</a><br /><a class='solution' href='index.php/main/download/1030/Billy.pas/0/solution_path' data-toggle='tooltip' title='By sxlch'>Billy.pas</a><br /><a class='solution' href='index.php/main/download/1030/1030Pascal.txt/0/solution_path' data-toggle='tooltip' title='By 2685860046'>1030Pascal.txt</a><br /><a class='solution' href='index.php/main/download/1030/ssj.pas/0/solution_path' data-toggle='tooltip' title='By shenshijun0110'>ssj.pas</a><br /><a class='solution' href='index.php/main/download/1030/t1030.pas/0/solution_path' data-toggle='tooltip' title='By Rh626'>t1030.pas</a><br /><a class='solution' href='index.php/main/download/1030/%25281030c%2529%25E5%25B0%258F%25E5%25AD%25A6%25E7%2594%259FAC.c/0/solution_path' data-toggle='tooltip' title='By hjdmmm'>(1030c)小学生AC.c</a><br /><a class='solution' href='index.php/main/download/1030/%25E7%25A7%2580%25E6%2589%258D%2520%2520%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3.cpp/0/solution_path' data-toggle='tooltip' title='By 秀才'>秀才  角谷猜想.cpp</a><br /><a class='solution' href='index.php/main/download/1030/ex501b.cpp/0/solution_path' data-toggle='tooltip' title='By 独自守候ゞ '>ex501b.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%2584%259A%25E9%25AA%25A8%25E7%258C%259C%25E6%2583%25B3.cpp/0/solution_path' data-toggle='tooltip' title='By wuyiheng'>脚骨猜想.cpp</a><br /><a class='solution' href='index.php/main/download/1030/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1030/lhy%2520and%2520sjr.pas/0/solution_path' data-toggle='tooltip' title='By LHYlhy'>lhy and sjr.pas</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3.c/0/solution_path' data-toggle='tooltip' title='By 缪慎浩'>角谷猜想.c</a><br /><a class='solution' href='index.php/main/download/1030/1030.cpp/0/solution_path' data-toggle='tooltip' title='By hamilton'>1030.cpp</a><br /><a class='solution' href='index.php/main/download/1030/Untitled1.cpp/0/solution_path' data-toggle='tooltip' title='By 韦恒宇'>Untitled1.cpp</a><br /><a class='solution' href='index.php/main/download/1030/1030%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3.pas/0/solution_path' data-toggle='tooltip' title='By tyrain'>1030角谷猜想.pas</a><br /><a class='solution' href='index.php/main/download/1030/1030hehe.cpp/0/solution_path' data-toggle='tooltip' title='By 陈航'>1030hehe.cpp</a><br /><a class='solution' href='index.php/main/download/1030/1030.txt/0/solution_path' data-toggle='tooltip' title='By wd_zhuhaoran'>1030.txt</a><br /><a class='solution' href='index.php/main/download/1030/MX_Noip1030.c/0/solution_path' data-toggle='tooltip' title='By mixiao'>MX_Noip1030.c</a><br /><a class='solution' href='index.php/main/download/1030/.txt/0/solution_path' data-toggle='tooltip' title='By lsmishenyi'>.txt</a><br /><a class='solution' href='index.php/main/download/1030/1030%2528lcy%2529.cpp/0/solution_path' data-toggle='tooltip' title='By 秦琼'>1030(lcy).cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3%25E9%2580%2592%25E5%25BD%2592%25E5%259F%25BA%25E7%25A1%2580%25E9%25A2%2598.cpp/0/solution_path' data-toggle='tooltip' title='By incotnigo'>角谷猜想递归基础题.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E4%25BD%258D%25E8%25BF%2590%25E7%25AE%2597%25E4%25BC%2598%25E5%258C%2596.txt/0/solution_path' data-toggle='tooltip' title='By hiahiahia'>位运算优化.txt</a><br /><a class='solution' href='index.php/main/download/1030/regedit.exe/0/solution_path' data-toggle='tooltip' title='By Mizzle_Flash'>regedit.exe</a><br /><a class='solution' href='index.php/main/download/1030/1030.exe/0/solution_path' data-toggle='tooltip' title='By ordinary'>1030.exe</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3.cpp/0/solution_path' data-toggle='tooltip' title='By zhanglu'>角谷猜想.cpp</a><br /><a class='solution' href='index.php/main/download/1030/appmgr_webui.zip/0/solution_path' data-toggle='tooltip' title='By 20050201'>appmgr_webui.zip</a><br /><a class='solution' href='index.php/main/download/1030/SCHEDLGU.TXT/0/solution_path' data-toggle='tooltip' title='By 20050201'>SCHEDLGU.TXT</a><br /><a class='solution' href='index.php/main/download/1030/1030%25E9%25A2%2598%25E8%25A7%25A3A.cpp/0/solution_path' data-toggle='tooltip' title='By wl123'>1030题解A.cpp</a><br /><a class='solution' href='index.php/main/download/1030/1030%25E9%25A2%2598%25E8%25A7%25A3A.exe/0/solution_path' data-toggle='tooltip' title='By wl123'>1030题解A.exe</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3%25E9%2580%2592%25E5%25BD%2592%25E5%25AE%259E%25E7%258E%25B0.c/0/solution_path' data-toggle='tooltip' title='By 2950870451'>角谷猜想递归实现.c</a><br /><a class='solution' href='index.php/main/download/1030/Europe.cpp/0/solution_path' data-toggle='tooltip' title='By 陈弘毅'>Europe.cpp</a><br /><a class='solution' href='index.php/main/download/1030/1030.%2520%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3.cpp/0/solution_path' data-toggle='tooltip' title='By 210179'>1030. 角谷猜想.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3%2520.cpp/0/solution_path' data-toggle='tooltip' title='By 贾1贾'>角谷猜想 .cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E6%2596%25B0%25E5%25BB%25BA%25E6%2596%2587%25E6%259C%25AC%25E6%2596%2587%25E6%25A1%25A3.txt/0/solution_path' data-toggle='tooltip' title='By 洪七公和风清扬的化身'>新建文本文档.txt</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3%25EF%25BC%2588%25E5%25A7%259A%25E6%25A1%25A2%25E6%25B6%25B5%25E5%2592%258C%25E5%25BA%2594%25E6%2595%258F%25E8%2593%259D%25E6%25B3%25A1%25E6%25BE%25A1%25EF%25BC%2588dick%25EF%25BC%2589%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 洪七公和风清扬的化身'>角谷猜想（姚桢涵和应敏蓝泡澡（dick））.txt</a><br /><a class='solution' href='index.php/main/download/1030/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By 快乐1571'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3%2528%25E7%25AC%25AC%25E4%25BA%258C%25E7%2589%2588%2529.cpp/0/solution_path' data-toggle='tooltip' title='By ycm'>角谷猜想(第二版).cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3%2520%2528Standard%2520IO%2529%2528%25E9%2580%2592%25E5%25BD%2592%2529.cpp/0/solution_path' data-toggle='tooltip' title='By dyf丁雨飞'>角谷猜想 (Standard IO)(递归).cpp</a><br /><a class='solution' href='index.php/main/download/1030/148bytes.cpp/0/solution_path' data-toggle='tooltip' title='By NeverPossible'>148bytes.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E9%25A2%2598%25E7%259B%25AE1030%25E8%25A7%2592%25E8%25B0%25B7%25E7%258C%259C%25E6%2583%25B3.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1030角谷猜想.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E8%25A7%2592.cpp/0/solution_path' data-toggle='tooltip' title='By 剑轩辕'>角.cpp</a><br /><a class='solution' href='index.php/main/download/1030/%25E5%258F%258C%25E5%2587%25BB%25E5%258D%25B3%25E5%258F%25AFac.exe/0/solution_path' data-toggle='tooltip' title='By sc84bbs'>双击即可ac.exe</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习4.3.6</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1030" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1030' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1030?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1030. \u89d2\u8c37\u731c\u60f3 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

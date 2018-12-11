@@ -1,0 +1,185 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100289. 熟悉的文章 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/100289" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1s &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：256MB<br />
+<br />
+阿米巴是小强的好朋友。<br />
+在小强眼中，阿米巴是一个作文成绩很高的文艺青年。为了获取考试作文的真谛，小强向阿米巴求教。阿米巴给小强展示了几篇作文，小强觉得这些文章怎么看怎么觉得熟悉，仿佛是某些范文拼拼凑凑而成的。小强不禁向阿米巴投去了疑惑的眼光，却发现阿米巴露出了一个狡黠的微笑。<br />
+为了有说服力地向阿米巴展示阿米巴的作文是多么让人觉得&ldquo;眼熟&rdquo;，小强想出了一个评定作文 &ldquo;熟悉程度&rdquo;的量化指标：<img src="http://latex.codecogs.com/gif.latex?L_%7B0%7D" alt=" " />.<br />
+小强首先将作文转化成一个01串。<br />
+之后，小强搜集了各路名家的文章，同样分别转化成01串后，整理出一个包含了M个01串的&ldquo;标准作文库&rdquo;。<br />
+小强认为：如果一个01串长度不少于L且在标准作文库中的某个串里出现过（即，它是标准作文库的某个串的一个连续子串），那么它是&ldquo;熟悉&rdquo;的。对于一篇作文（一个01串）A，如果能够把A分割成若干段子串，其中&ldquo;熟悉&rdquo;的子串的长度总和不少于A总长度的90%，那么称A是&ldquo;熟悉的文章&rdquo;。 <img src="http://latex.codecogs.com/gif.latex?L_%7B0%7D" alt=" " />是能够让A成为&ldquo;熟悉的文章&rdquo;的所有L的最大值（如果不存在这样的L，那么规定<img src="http://latex.codecogs.com/gif.latex?L_%7B0%7D" alt=" " /> = 0）。<br />
+举个例子：<br />
+小强的作文库里包含了如下2个字符串：<br />
+10110<br />
+000001110<br />
+有一篇待考察的作文是：<br />
+1011001100<br />
+小强计算出这篇作文L的最大值是4，因为待考察的作文可以视作'10110'+'0110'+'0'，其中'10110'和'0110'被判定为&ldquo;熟悉&rdquo;的。而当L = 5或是更大的时候，不存在符合题意的分割方法。所以，这篇作文的<img src="http://latex.codecogs.com/gif.latex?L_%7B0%7D" alt=" " /> = 4。<br />
+小强认为阿米巴作文的<img src="http://latex.codecogs.com/gif.latex?L_%7B0%7D" alt=" " />值比其他同学的明显要大。请你帮他验证一下。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入文件cheat.in第一行是两个整数 N, M，表示待检查的作文数量，和小强的标准作文库的行数。<br />
+接下来是M行的01串，表示标准作文库。<br />
+接下来是N行的01串，表示N篇作文。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出文件cheat.out包含N行，每一行包含一个整数，表示该篇作文的<img src="http://latex.codecogs.com/gif.latex?L_%7B0%7D" alt=" " />值。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>1 2
+10110
+000001110
+1011001100&nbsp;</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>4</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">对于30%的测试数据，输入文件的长度不超过1000字节。<br />
+对于50%的测试数据，输入文件的长度不超过61000字节。<br />
+对于80%的测试数据，输入文件的长度不超过250000字节。<br />
+对于100%的测试数据，输入文件的长度不超过1100000字节。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100289"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/100289"><span class="badge badge-info">5</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100289"><span class="badge badge-info">0.00</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100289'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100289" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100289' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100289?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100289. \u719f\u6089\u7684\u6587\u7ae0 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

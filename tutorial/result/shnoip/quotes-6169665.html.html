@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="referrer" content="never" />
+<title>递推与递归 - noipxu - 博客园</title>
+<meta property="og:description" content="一、递推 递推算法是一种用若干步可重复的简运算（规律）来描述复杂问题的方法。 递推是序列计算机中的一种常用算法。它是按照一定的规律来计算序列中的每个项，通常是通过计算机前面的一些项来得出序列中的指定项" />
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=-duj5vpGTntb85GJoM3iRI972XwWcI-j8zmqDzyfu2w1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba.css?v=UPtVEp5c5COz7ailJedUlYBaufBzZ-ATkRtra5Su1jc1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/HabaHaba/bundle-HabaHaba-mobile.css?v=d9LctKHRIQp9rreugMcQ1-UJuq_j1fo0GZXTXj8Bqrk1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shnoip/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shnoip/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shnoip/wlwmanifest.xml"/>
+<script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+<script type="text/javascript">var currentBlogApp = 'shnoip', cb_enable_mathjax=false;var isLogined=false;</script>
+<script src="/bundles/blog-common.js?v=oVrWjmbP-rXxVp7O71kev8vWEZCetdwYaIziKHJCYc41" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<table width="100%" class="Framework" cellspacing="0" cellpadding="0">
+	<tr>
+		<td colspan="2">
+			
+<div id="top">
+<table width="100%" cellpadding="8" cellspacing="0">
+	<tr>
+		<td nowrap>
+			<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/shnoip/">NOIP程序设计</a></h1>
+			积跬步,至千里……
+		</td>
+	</tr>
+</table>
+</div>
+<div id="sub"></div>
+
+
+</td>
+	</tr>
+	<tr>
+		<td class="LeftCell">
+			<div id="leftmenu">
+                
+                    
+<h3>导航</h3>
+<ul>
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		
+	<li>
+		<a id="blog_nav_admin" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+                    
+                    <div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+                    <div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+                	        
+			</div>
+		</td>
+		<td class="MainCell" width="100%">
+			<div id="main">
+				
+<div id="post_detail">
+	<div class="post">
+		<div class="posthead">
+			<h2>
+				<a id="cb_post_title_url" class="singleposttitle" href="https://www.cnblogs.com/shnoip/p/6169665.html">递推与递归</a>
+			</h2>
+ 			Posted on <span id="post-date">2016-12-13 13:59</span> <a href='https://www.cnblogs.com/shnoip/'>noipxu</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=6169665" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(6169665);return false;">收藏</a>
+			<script type="text/javascript">var allowComments=true,cb_blogId=319781,cb_entryId=6169665,cb_blogApp=currentBlogApp,cb_blogUserGuid='62f2a97c-b1b6-e611-845c-ac853d9f53ac',cb_entryCreatedDate='2016/12/13 13:59:00';loadViewCount(cb_entryId);var cb_postType=1;</script>
+			
+		</div>
+		<div class="postbody"><div id="cnblogs_post_body" class="blogpost-body"><div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<p><span style="font-size: 16px">一、递推</span></p>
+<p><span style="font-size: 16px">递推算法是一种用若干步可重复的简运算（规律）来描述复杂问题的方法。</span></p>
+<p><span style="font-size: 16px">递推是序列计算机中的一种常用算法。它是按照一定的规律来计算序列中的每个项，通常是通过计算机前面的一些项来得出序列中的指定项的值。其思想是把一个复杂的庞大的计算过程转化为简单过程的多次重复，该算法利用了计算机速度快和不知疲倦的机器特点。</span></p>
+<p><span style="font-size: 16px">例1：植树节那天，有五位同学参加了植树活动，他们完成植树的棵树都不相同。问第一位同学植了多少棵时，他指着旁边的第二位同学说比他多植了两棵；追问第二位同学，他又说比第三位同学多植了两棵；... 如此，都说比另一位同学多植两棵。最后问到第五位同学时，他说自己植了10棵。到底第一位同学植了多少棵树？</span></p>
+<p><span style="font-size: 16px">分析：设第一位同学植树的棵树为a1,欲求a1，需从第五位同学植树的棵数a5入手，根据“多两棵”这个规律，按照一定顺序逐步进行推算：</span><br><span style="font-size: 16px">(1) a5=10;</span><br><span style="font-size: 16px">(2) a4=a5+2=12;</span><br><span style="font-size: 16px">(3) a3=a4+2=14;</span><br><span style="font-size: 16px">(4) a2=a3+2=16;</span><br><span style="font-size: 16px">(5) a1=a2+2=18;</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; i,a:byte;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; a:=10;</span><br><span style="font-size: 16px">&nbsp; for i:=1 to 4 do a:=a+2;</span><br><span style="font-size: 16px">&nbsp; writeln('The Num is',a);</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">本程序的递推运算可用下图示表示：</span><br><span style="font-size: 16px">初始值a:=10-----i=1,a=a+2(12)-----i=2,a=a+2(14)------i=3,a=a+2(16)-----i=4,a=a+2(18)----输出a值</span></p>
+<p><span style="font-size: 16px">例2：十本不同的书放在书架上，现重新摆放，使每本书都不在原来放的位置，有几种摆法？</span></p>
+<p><span style="font-size: 16px">分析：当n个元素放在n个编号位置，元素编号与位置编号各不对应的方法数用M(n)表示，那么M(n-1)就表示n-1个编号元素放在n-1个编号位置且各不对应的方法数，其它类推。</span></p>
+<p><span style="font-size: 16px">第一步，把第n个元素放在除n以外的某一个位置，比如位置k，一共有n-1种方法</span><br><span style="font-size: 16px">第二步，放编号为k的元素，这时有两种情况：</span><br><span style="font-size: 16px">1、把它放到位置n，那么对于剩下的n-2个元素，就有M(n-2)种方法</span><br><span style="font-size: 16px">2、不把它放到位置n，这时对于这n-1个元素有M(n-1)种方法</span></p>
+<p><span style="font-size: 16px">综上得到：</span><br><span style="font-size: 16px">M(n)=(n-1)*[M(n-2)+M(n-1)] (n&gt;=3)</span></p>
+<p><span style="font-size: 16px">var</span><br><span style="font-size: 16px">&nbsp; n,i:byte;</span><br><span style="font-size: 16px">&nbsp; a,b,c:longint;</span><br><span style="font-size: 16px">begin</span><br><span style="font-size: 16px">&nbsp; readln(n);</span><br><span style="font-size: 16px">&nbsp; case n of</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; 1: writeln(0);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; 2: writeln(1);</span><br><span style="font-size: 16px">&nbsp; else begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; a:=0;b:=1;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; for i:=3 to n do begin</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:=(i-1)*(a+b);</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a:=b;b:=c;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; end;</span><br><span style="font-size: 16px">&nbsp;&nbsp;&nbsp; writeln(c);</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">&nbsp; end;</span><br><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">递推算法以初始（起点）值为基础，用相同的运算规律，逐次重复运算，直至运算结束。这种从“起点”重复相同的方法直至到达一定“边界”，犹如单向运动，用循环可以实现。递推的本质是按规律逐次推出（计算）先一步的结果。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">二、递归</span></p>
+<p><span style="line-height: 28px; font-size: 16px">如果函数体或过程体中出现调用其自身的语句，称为递归调用。这样的函数或过程称为递归函数或递归过程。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">例3：设计一个计算n!的递归程序</span></p>
+<p><span style="line-height: 28px; font-size: 16px">根据数学含义，n!可由下面的公式表示：</span></p>
+<p><span style="font-size: 16px">n!=1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;当n=0时</span></p>
+<p><span style="font-size: 16px">n!=n*(n-1)! &nbsp;当n&gt;0时</span></p>
+<p><span style="line-height: 28px; font-size: 16px">根据以上公式推理，为了求n!可以先求出(n-1)!，为了求(n-1)!又可以先求出(n-2)!……，如此递推，直到n=0。由于n=0时已定<span style="line-height: 28px">义为1，再由0!=1又一步步反向推回，求出1!、2!……最终得到n!</span></span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">var</span></p>
+<p><span style="font-size: 16px">&nbsp; n:integer;</span></p>
+<p><span style="font-size: 16px">function fct(t:integer):integer;</span></p>
+<p><span style="font-size: 16px">begin</span></p>
+<p><span style="font-size: 16px">&nbsp; if t=0 then fct:=1</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else fct:=t*fct(t-1);</span></p>
+<p><span style="font-size: 16px">end;</span></p>
+<p><span style="font-size: 16px">begin</span></p>
+<p><span style="font-size: 16px">&nbsp; readln(n);</span></p>
+<p><span style="font-size: 16px">&nbsp; writeln(n,'!=',fct(n));</span></p>
+<p><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">例4：汉诺（hanoi）塔问题。给定三根杆A、B、C和大小不同的几个盘子，这些盘子按尺寸递减顺序套在A杆上，如图。我们的任<span style="line-height: 28px">务是把这些盘子从A杆移到C杆且保持原来堆放顺序；在实现任务时，规定每次只能移动一个盘子，不允许大的盘子放在小的盘子<span style="line-height: 28px">上面，B杆可以作为辅助存放杆，求出每一步应该如何移动。</span></span></span></p>
+<div style="text-align: center"><span style="font-size: 16px"><img style="margin: 0px 10px; float: none" src="http://img2.ph.126.net/-Wb59o__o2ji4TOMsrzzMQ==/983473568644265756.png" alt="递推与递归 - 徐老师 - Pascal程序设计"></span></div>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">题目要求将n个盘子由A杆移到C杆可用同样的方法：</span></p>
+<p><span style="font-size: 16px">1、先（递归地）将A杆上面的n-1个盘子移到B杆（借助C杆）</span></p>
+<p><span style="font-size: 16px">2、然后把A杆上唯一的一个盘子移到C杆</span></p>
+<p><span style="font-size: 16px">3、再把B杆上的n-1个盘子（递归地）移到C杆（借助A杆）</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">var</span></p>
+<p><span style="font-size: 16px">&nbsp; n:integer;</span></p>
+<p><span style="font-size: 16px">procedure move(n:integer;a,b,c:char);</span></p>
+<p><span style="font-size: 16px">begin</span></p>
+<p><span style="font-size: 16px">&nbsp; if n=1 then writeln(a,'---&gt;',c)</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else begin</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; move(n-1,a,c,b);</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; writeln(a,'---&gt;',c);</span></p>
+<p><span style="font-size: 16px">&nbsp; &nbsp; move(n-1,b,a,c);</span></p>
+<p><span style="font-size: 16px">&nbsp; end;</span></p>
+<p><span style="font-size: 16px">end;</span></p>
+<p><span style="font-size: 16px">begin</span></p>
+<p><span style="font-size: 16px">&nbsp; readln(n);</span></p>
+<p><span style="font-size: 16px">&nbsp; move(n,'A','B','C');</span></p>
+<p><span style="font-size: 16px">end.</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">递归结构的程序具有结构清晰，容易阅读和理解的优点，写出的程序较简短，但在处理递归问题中，需要保留每次递归调用时的参数和局部变量，这样就占用大量的存储空间和花费较多的机器时间，效率较低。</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">用递归过程或函数解决问题时应注意：</span></p>
+<p><span style="font-size: 16px">1、求解的问题是否符合递归的描述，要解决的问题是否可以化为与原问题相同的子问题</span></p>
+<p><span style="font-size: 16px">2、过程体或函数体中必须有递归结束的条件，这个条件就是递归边界</span></p>
+<p><span style="font-size: 16px">&nbsp;</span></p>
+<p><span style="font-size: 16px">三、作业</span></p>
+<p><span style="font-size: 16px">1、zerojudge：a216、a042、b127、a519、d580、d212、d810</span></p>
+<p><span style="font-size: 16px">2、用递归方法求两个正整数的最大公约数</span></p>
+<p><span style="font-size: 16px">3、<span style="line-height: 28px">读入一个任意位数的正整数，按颠倒过来的顺序将其输出（利用递归过程）</span></span></p>
+<p><span style="line-height: 28px; font-size: 16px">4、从键盘输入任意长度的一串字符，其中包括数字和字母，并以星号“*”结束。利用递归的方法将这串字符中的数字字符按相反的次序个输出。例如：输入Delphi6TP70Ada586*，输出为685076。</span></p>
+
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+</div>
+	</div></div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<div id='cnblogs_c1' class='c_ad_block'></div>
+<div id='under_post_news'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+
+<script>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'>
+    <script>
+    if (new Date() >= new Date(2018, 9, 13)) {
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1539008685004-0'); });
+    }
+    </script>
+    </div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverAdT2();
+    deliverAdC1();
+    deliverAdC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);   
+</script>
+</div>
+
+
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" class="FooterCell">
+			
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="https://www.cnblogs.com/"><font face="Verdana">博客园</font></a>
+	<br />
+	Copyright &copy; noipxu
+</p>
+		</td>
+	</tr>
+</table>
+
+
+</body>
+</html>

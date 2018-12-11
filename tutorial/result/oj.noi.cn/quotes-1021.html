@@ -1,0 +1,162 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>1021. 发放奖金 <sub>(Standard IO)</sub></h2><div>时间限制: <span class="badge badge-info">1000 ms</span> &nbsp;空间限制: <span class="badge badge-info">262144 KB</span> &nbsp;具体限制&nbsp; <a href="#main/limits/1021" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">企业发放的奖金根据利润分段计算提成。当利润I低于或等于10万元的，奖金可提10%；利润高于10万元，低于20万元，低于10万元的部分按10%提成，高于10万元的部分，可提成7.5%；20万到40万的，低于20万的部分仍按上述办法提成（下同）。高于20万元的部分按5%提成；40万到60万时，高于40万的部分按3%提成；60万到100万时，高于60万的部分按1.5%提成；I&gt;=100万元时，超过100万元的部分按1%提成。输入当月利润I，求应发奖金总数(单位为元)？（输出保留小数点后三位）</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">输入实数I，表示利润。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出奖金数，答案保留三位小数。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>100000</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>10000.000</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">0&lt;I&lt;=1,000,000</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF中学生计算机程序设计入门篇练习3.5.4</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/1021"><span class="badge badge-info">5049</span></a><br />提交: <a class="pull-right" href="#main/statistic/1021"><span class="badge badge-info">12368</span></a><br />平均分: <a class="pull-right" href="#main/statistic/1021"><span class="badge badge-info">63.06</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/1021'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div><a class='solution' href='index.php/main/download/1021/pascal%25E9%25A2%2598%25E8%25A7%25A3%25EF%25BC%2588ac%25EF%25BC%2589.txt/0/solution_path' data-toggle='tooltip' title='By 403584200@qq.com'>pascal题解（ac）.txt</a><br /><a class='solution' href='index.php/main/download/1021/c%252B%252B%2528%25E6%25B3%2597%25E6%25B0%25B4%25E4%25B8%2580%25E4%25B8%25AD01%25E7%25A4%25BE%25E5%259B%25A2%25EF%25BC%2589.cpp/0/solution_path' data-toggle='tooltip' title='By 孙文烁'>c++(泗水一中01社团）.cpp</a><br /><a class='solution' href='index.php/main/download/1021/Chrysanthemum.jpg/0/solution_path' data-toggle='tooltip' title='By include'>Chrysanthemum.jpg</a><br /><a class='solution' href='index.php/main/download/1021/in.txt/0/solution_path' data-toggle='tooltip' title='By 祝怀冰'>in.txt</a><br /><a class='solution' href='index.php/main/download/1021/%25E6%259D%259C%25E8%258A%25AE%25E8%258E%25B9%25E7%25BB%2599%25E4%25BD%25A0%25E7%259A%2584pascal%25E8%25A7%25A3%25E7%25AD%2594.txt/0/solution_path' data-toggle='tooltip' title='By 3204653771'>杜芮莹给你的pascal解答.txt</a><br /><a class='solution' href='index.php/main/download/1021/jack%25E5%258F%2591%25E6%2594%25BE%25E5%25A5%2596%25E9%2587%2591.cpp/0/solution_path' data-toggle='tooltip' title='By jack_魏'>jack发放奖金.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E6%25A2%25A6.C%252B%252B%25E9%25A2%2598%25E8%25A7%25A3.doc/0/solution_path' data-toggle='tooltip' title='By 梦'>梦.C++题解.doc</a><br /><a class='solution' href='index.php/main/download/1021/1430463496-0.jpg/0/solution_path' data-toggle='tooltip' title='By Barry Shih'>1430463496-0.jpg</a><br /><a class='solution' href='index.php/main/download/1021/%25E6%259A%25B4%25E5%258A%259B%25E7%2589%2588%25EF%25BC%258C%25E5%25B0%258F%25E7%2599%25BD1021.cpp/0/solution_path' data-toggle='tooltip' title='By 1206614133'>暴力版，小白1021.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E8%2583%25A1%25E5%25A4%25A7%25E7%25A5%259E%25E5%2587%25BA%25E5%2593%2581.txt/0/solution_path' data-toggle='tooltip' title='By 胡博竣'>胡大神出品.txt</a><br /><a class='solution' href='index.php/main/download/1021/%25E5%25B0%258F%25E7%2599%25BD%25E7%2589%2588%25E4%25BB%25A3%25E7%25A0%2581%25E2%2580%2594%25E2%2580%2594%25E5%2586%25B2%25E5%25B0%2591.txt/0/solution_path' data-toggle='tooltip' title='By 张浩'>小白版代码——冲少.txt</a><br /><a class='solution' href='index.php/main/download/1021/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D1.cpp/0/solution_path' data-toggle='tooltip' title='By 我太帅了'>未命名1.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E5%258F%2591%25E6%2594%25BE%25E5%25A5%2596%25E9%2587%2591.cpp/0/solution_path' data-toggle='tooltip' title='By 13600366241'>发放奖金.cpp</a><br /><a class='solution' href='index.php/main/download/1021/2004.cpp/0/solution_path' data-toggle='tooltip' title='By 2980576180@qq.com'>2004.cpp</a><br /><a class='solution' href='index.php/main/download/1021/1021%25E6%259C%2580%25E7%25AE%2580.cpp/0/solution_path' data-toggle='tooltip' title='By 陈奕明'>1021最简.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E9%258E%25B5%25E6%2592%25B6%25E6%2595%25B8%25E7%2592%2587_cpp/0/solution_path' data-toggle='tooltip' title='By 邓添今'>鎵撶數璇_cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E7%25A7%2580%25E6%2589%258D%2520%2520%25E5%258F%2591%25E6%2594%25BE%25E5%25A5%2596%25E9%2587%2591.cpp/0/solution_path' data-toggle='tooltip' title='By 秀才'>秀才  发放奖金.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E8%25AF%2595%25E9%25A2%259822.cpp/0/solution_path' data-toggle='tooltip' title='By 黄星皓'>试题22.cpp</a><br /><a class='solution' href='index.php/main/download/1021/sjr%25E7%25BC%2596%25EF%25BC%2588Pascal%25EF%25BC%2589%25E4%25B8%2593%25E7%2594%25A8.txt/0/solution_path' data-toggle='tooltip' title='By 2055186079'>sjr编（Pascal）专用.txt</a><br /><a class='solution' href='index.php/main/download/1021/%25281021c%2529%25E5%25B0%258F%25E5%25AD%25A6%25E7%2594%259FAC.c/0/solution_path' data-toggle='tooltip' title='By hjdmmm'>(1021c)小学生AC.c</a><br /><a class='solution' href='index.php/main/download/1021/%25E7%25BC%2596%25E8%25AF%2591.cpp/0/solution_path' data-toggle='tooltip' title='By 白小白0818'>编译.cpp</a><br /><a class='solution' href='index.php/main/download/1021/1021c%252B%252B%25E9%25A2%2598%25E8%25A7%25A3.cpp/0/solution_path' data-toggle='tooltip' title='By 何予涵'>1021c++题解.cpp</a><br /><a class='solution' href='index.php/main/download/1021/Grant%2520bonuses.cpp/0/solution_path' data-toggle='tooltip' title='By 2636099143'>Grant bonuses.cpp</a><br /><a class='solution' href='index.php/main/download/1021/1.cpp/0/solution_path' data-toggle='tooltip' title='By fdszlzl'>1.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E6%259C%25AA%25E5%2591%25BD%25E5%2590%258D2.cpp/0/solution_path' data-toggle='tooltip' title='By lujunhong'>未命名2.cpp</a><br /><a class='solution' href='index.php/main/download/1021/2af1250cfe5405d4-ec01e1cf6a4db881-c8dc2b975cb609b0920c3b2528f65407.jpg/0/solution_path' data-toggle='tooltip' title='By 1825062090'>2af1250cfe5405d4-ec01e1cf6a4db881-c8dc2b975cb609b0920c3b2528f65407.jpg</a><br /><a class='solution' href='index.php/main/download/1021/%25E6%25BA%2590.cpp/0/solution_path' data-toggle='tooltip' title='By moonfish'>源.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E4%25BD%25A0%25E4%25BB%25AC%25E9%2583%25BD%25E4%25B8%258D%25E7%259F%25A5%25E9%2581%2593%25E8%2583%25BD%25E5%2586%2599%25E6%2588%25901E5%25E5%2590%2597.cpp/0/solution_path' data-toggle='tooltip' title='By NeverPossible'>你们都不知道能写成1E5吗.cpp</a><br /><a class='solution' href='index.php/main/download/1021/4.cpp/0/solution_path' data-toggle='tooltip' title='By HKFC'>4.cpp</a><br /><a class='solution' href='index.php/main/download/1021/%25E9%25A2%2598%25E7%259B%25AE1021%25E5%258F%2591%25E6%2594%25BE%25E5%25A5%2596%25E9%2587%2591.cpp/0/solution_path' data-toggle='tooltip' title='By 陈睿羽'>题目1021发放奖金.cpp</a><br /><a class='solution' href='index.php/main/download/1021/1021%25E6%259A%25B4%25E5%258A%259B%25E7%25AE%2597%25E6%25B3%2595.cpp/0/solution_path' data-toggle='tooltip' title='By 特立不独行'>1021暴力算法.cpp</a><br /><a class='solution' href='index.php/main/download/1021/1023.c/0/solution_path' data-toggle='tooltip' title='By Geek_liu'>1023.c</a><br /></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF中学生计算机程序设计入门篇练习3.5.4</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/1021" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/1021' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/1021?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "1021. \u53d1\u653e\u5956\u91d1 (Standard IO)";
+</script>
+
+<!-- End of file show.php -->

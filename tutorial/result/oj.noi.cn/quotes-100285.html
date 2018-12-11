@@ -1,0 +1,179 @@
+<div class="row-fluid">
+	<div id="header"><div style="text-align:center"><h2>100285. 守卫 <sub>(Standard IO)</sub></h2><div>具体限制&nbsp; <a href="#main/limits/100285" style="text-align:left"><span id="trigger"><i class="icon-chevron-down"></i></span></a></div></div></div>
+</div>
+
+<div class="row-fluid" style="margin-top:7px">
+	<div id="mainbar" class="span10">
+		<div class="problem">
+			<div class="span12 well"><fieldset>
+				<legend><h4>题目描述</h4></legend>
+				<div class="content">每个测试点时限：1秒 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;内存限制：256MB<br />
+<br />
+APIO王国正被忍者攻击！忍者非常厉害，因为他们在进攻的时候可以躲在阴影里面使得其他人看不到他们。整个王国除了国王居住的APIO城堡以外都已经被占领了。在城堡前，有N个灌木丛，从1到N编号，有K个忍者躲在恰好K个灌木丛后面。APIO城堡里有M个守卫。守卫i监视着编号从<img src="http://latex.codecogs.com/gif.latex?A_%7Bi%7D" alt=" " />到<img src="http://latex.codecogs.com/gif.latex?B_%7Bi%7D" alt=" " />的连续的一段灌木丛。每个守卫都向国王报告在他所监视范围内是否有忍者出现。作为国王的仆人，你需要告诉国王，基于守卫的报告，哪些灌木丛后面一定躲着一个忍者，即对于任何和守卫报告不矛盾的忍者排列方式，在这个灌木丛后面都躲着一个忍者。<br />
+你需要写一个程序来输出所有的这些灌木丛的编号。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>输入</h4></legend>
+					<div class="content">从标准输入读入数据。<br />
+第一行包含三个用空格分隔的整数N, K, M，N是灌木丛的个数，K是忍者的个数，M是守卫的个数。<br />
+接下来M行，每行描述一个守卫的信息。其中的第i行包含三个整数<img src="http://latex.codecogs.com/gif.latex?A_%7Bi%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?B_%7Bi%7D" alt=" " />, <img src="http://latex.codecogs.com/gif.latex?C_%7Bi%7D" alt=" " />，表示第i个守卫的监视范围是从<img src="http://latex.codecogs.com/gif.latex?A_%7Bi%7D" alt=" " />到<img src="http://latex.codecogs.com/gif.latex?B_%7Bi%7D" alt=" " />（<img src="http://latex.codecogs.com/gif.latex?A_%7Bi%7D" alt=" " /> &le; <img src="http://latex.codecogs.com/gif.latex?B_%7Bi%7D" alt=" " />）。<img src="http://latex.codecogs.com/gif.latex?C_%7Bi%7D" alt=" " />是0或者1，若是0表示范围内没有看到忍者，1表示范围内有至少一个忍者。<br />
+输入数据保证至少存在一种忍者排列方式满足所有条件。</div>
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>输出</h4></legend>
+					<div class="content">输出到标准输出。<br />
+若存在灌木丛，在其后面一定躲着忍者，则将这些一定躲着忍者的灌木丛按照编号从小到大的顺序依次输出，每个一行。即若有X个这样的灌木丛，则需要输出X行。若不存在，则输出一行一个&ldquo;-1&rdquo;，不包含引号。</div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+			
+			<div>
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输入</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>5 3 4
+1 2 1
+3 4 1
+4 4 0
+4 5 1</pre></div> <!-- no br needed in pre -->
+				</fieldset></div>
+			
+				<div class="span6 well"><fieldset>
+					<legend><h4>样例输出</h4></legend>
+					<div class="content"><pre style='border:none;font-size:110%'>3
+5</pre></div>
+				</fieldset></div>
+			</div>
+			<div class="clearfix"></div>
+		
+			<div class="well"><fieldset>
+				<legend><h4>数据范围限制</h4></legend>
+				<div class="content">1 &le; N &le; 100,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 灌木的数量；<br />
+1 &le; K &le; N&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 忍者数；<br />
+1 &le; M &le; 100,000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 守卫数。<br />
+&nbsp;<br />
+对于10%的数据，N &le; 20， M &le; 100；<br />
+对于50%的数据，N &le; 1000， M &le; 1000。</div>
+			</fieldset></div>
+			<div class="clearfix"></div>
+			
+			
+			<div style="text-align:center">
+									<p>来源/作者: CCF NOI</p>
+													<p id="problem-copyright"></p>
+					<script> $("#problem-copyright").load("static/copyright/admin/footnote.html"); </script>
+					<p>
+						<a href="#main/problemset?admin_only=1" style="text-decoration:underline">
+							所有管理员添加的题目
+						</a>使用此版权/授权形式
+					</p>
+							</div>
+		</div>
+	</div>
+	
+	<div id="sidebar" class="span2">
+		<div class="well" id="div_statistics"><fieldset><legend><h5><em>统计</em></h5></legend>通过: <a class="pull-right" href="#main/statistic/100285"><span class="badge badge-info">0</span></a><br />提交: <a class="pull-right" href="#main/statistic/100285"><span class="badge badge-info">1</span></a><br />平均分: <a class="pull-right" href="#main/statistic/100285"><span class="badge badge-info">0.00</span></a><br /><div style="text-align:center"><button class=" btn btn-primary" onclick="window.location.href='#main/submit/100285'">提交</button></div></section></fieldset></div>
+		
+					<div class="well" id="div_tags"><fieldset id="tags">
+				<legend><h5>
+					<em>标签</em>
+									</h5></legend>
+				<div id="tags_ajax"></div>
+			</fieldset></div>
+				<div class="well" id="div_solutions">
+			<fieldset id="solutions">
+				<legend><h5><em>题解</em>
+					<button id="add_solution_btn" class="btn btn-mini pull-right" onclick="add_solution()">添加</button>
+				</h5></legend>
+				
+				<div></div>
+			</fieldset>
+		</div>
+		
+					<div class="well"><fieldset>
+				<legend><h5><em>来源/作者</em></h5></legend>
+				<div class="content">CCF NOI</div>
+			</fieldset></div>
+		
+					</div>
+</div>
+
+<form action="index.php/main/addsolution/100285" class="form-horizontal" enctype="multipart/form-data" id="form_solution_upload">
+	<div class="modal hide fade" id="modal_upload">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			<h3>Upload Solution</h3>
+		</div>
+		
+		<div class="modal-body">
+			<span></span>
+			<input type="file" name="solution" />
+		</div>
+		
+		<div class="modal-footer">
+			<a class="btn" data-dismiss="modal">Close</a>
+			<a class="btn btn-success" id="btn_upload">Upload</a>
+		</div>
+	</div>
+</form>
+
+
+<script type="text/javascript">
+	function add_solution(){
+		$('#modal_upload').modal({backdrop: 'static'});
+	}
+	
+	function delete_solution(idSolution) {
+		access_page('main/deletesolution/' + idSolution);
+	}
+
+	function load_tags(readonly) {
+		$.get('index.php/main/tags/100285' + (readonly ? '?readonly=true' : ''), function(data) {
+			$("#tags_ajax").html(data);
+		});
+	}
+	var editing_tags; // global variables. because 'tags' will refresh the entire page
+	load_tags(! editing_tags);
+	if (editing_tags) $("#add_tag_btn").hide(); else $("#cancel_add").hide();
+
+	$.get('index.php/main/limits/100285?simple', function(data) {
+		data = '<pre>'+data+'</pre>';
+		$('#trigger').popover({html: true, content: data, trigger: 'hover', placement: 'bottom'});
+	});
+	
+	$(document).ready(function(){
+		$('.solution').tooltip();
+		$('#modal_upload #btn_upload').click(function(){
+			$('#modal_upload').modal('hide');
+			$('#form_solution_upload').ajaxSubmit({
+				type: 'post',
+				success: function(responseText, stautsText){
+					if (responseText == 'success') refresh_page();
+					else alert("Failed to upload!");
+				}
+			});
+		});
+		$('#trigger').click(function(){
+			$('#trigger').popover('hide')
+		});
+		$('#add_tag_btn').click(function(){
+			load_tags(false);
+			$("#add_tag_btn").hide();
+			$("#cancel_add").show();
+			editing_tags = true;
+		});
+		$('#cancel_add').click(function(){
+			load_tags(true);
+			$("#cancel_add").hide();
+			$("#add_tag_btn").show();
+			editing_tags = false;
+		});
+	});
+
+	document.title = "100285. \u5b88\u536b (Standard IO)";
+</script>
+
+<!-- End of file show.php -->
