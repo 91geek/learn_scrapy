@@ -26,7 +26,7 @@ class NoipSpider(scrapy.Spider):
         filename = 'result/quotes-%s.html' % page
         with open(filename, 'wb') as f:
             f.write(response.body)
-        self.log('Saved file %s' % filename)
+#        self.log('Saved file %s' % filename)
 
     def parse(self, response):
         print('####', response.url)
