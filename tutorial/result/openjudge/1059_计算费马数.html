@@ -1,0 +1,335 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1059:计算费马数提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://itclub.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/141/logo_small.jpg" alt="山东农大IT俱乐部" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://itclub.openjudge.cn/" title="首页" rel="home">山东农大IT俱乐部</a></h2>
+		 <span>/</span>
+		 <h2>通知</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/chusai/" class="first">题目</a></li>
+            <li ><a href="/chusai/ranking/">排名</a></li>
+                    <li ><a href="/chusai/status/">状态</a></li>
+	     
+        <li ><a href="/chusai/statistics/">统计</a></li>
+				        <li class="last"><a href="/chusai/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>1059:计算费马数</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/chusai/1059/">查看</a></li>
+		<li ><a href="/chusai/1059/submit/">提交</a></li>
+				<li class="current-show"><a href="/chusai/1059/statistics/">统计</a></li>
+			
+		<li ><a href="/chusai/clarify/1059/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+									<td class="result">结果</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/42384/in/group-141/">20114954 苏峰</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1694448/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">90ms</td>
+				<td class="code-length">252 B</td>
+				<td class="language"><a href="/chusai/solution/1694448/">Java</a></td>
+				<td class="date"><abbr title="2012-05-07 10:28:50">12.5.7</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/38355/in/group-141/">20114973卜祥兴(20114973)</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1693124/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">70ms</td>
+				<td class="code-length">291 B</td>
+				<td class="language"><a href="/chusai/solution/1693124/">Java</a></td>
+				<td class="date"><abbr title="2012-05-06 18:21:25">12.5.6</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37758/in/group-141/">20115219</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1691965/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">217 B</td>
+				<td class="language"><a href="/chusai/solution/1691965/">G++</a></td>
+				<td class="date"><abbr title="2012-05-05 22:54:59">12.5.5</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/43021/in/group-141/">20106418杨清</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1690192/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">110ms</td>
+				<td class="code-length">464 B</td>
+				<td class="language"><a href="/chusai/solution/1690192/">Java</a></td>
+				<td class="date"><abbr title="2012-05-04 23:14:38">12.5.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/44346/in/group-141/">20104921岳彩</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1688146/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">110ms</td>
+				<td class="code-length">330 B</td>
+				<td class="language"><a href="/chusai/solution/1688146/">Java</a></td>
+				<td class="date"><abbr title="2012-05-04 00:43:26">12.5.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/34668/in/group-141/">20104956_侯文明</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1685915/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">110ms</td>
+				<td class="code-length">319 B</td>
+				<td class="language"><a href="/chusai/solution/1685915/">Java</a></td>
+				<td class="date"><abbr title="2012-05-03 10:16:53">12.5.3</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/38802/in/group-141/">20114968</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1685880/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">100ms</td>
+				<td class="code-length">570 B</td>
+				<td class="language"><a href="/chusai/solution/1685880/">Java</a></td>
+				<td class="date"><abbr title="2012-05-03 10:11:06">12.5.3</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/42818/in/group-141/">20104943</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1685840/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">80ms</td>
+				<td class="code-length">697 B</td>
+				<td class="language"><a href="/chusai/solution/1685840/">Java</a></td>
+				<td class="date"><abbr title="2012-05-03 10:01:42">12.5.3</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/42816/in/group-141/">tt(阿槑)</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1685770/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">80ms</td>
+				<td class="code-length">265 B</td>
+				<td class="language"><a href="/chusai/solution/1685770/">Java</a></td>
+				<td class="date"><abbr title="2012-05-03 07:26:23">12.5.3</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/38052/in/group-141/">20115202</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1684409/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">174 B</td>
+				<td class="language"><a href="/chusai/solution/1684409/">G++</a></td>
+				<td class="date"><abbr title="2012-05-02 17:15:17">12.5.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37669/in/group-141/">20115142</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1684399/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">323 B</td>
+				<td class="language"><a href="/chusai/solution/1684399/">G++</a></td>
+				<td class="date"><abbr title="2012-05-02 17:13:21">12.5.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/42853/in/group-141/">20106419李想(20106419)</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1682469/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">110ms</td>
+				<td class="code-length">445 B</td>
+				<td class="language"><a href="/chusai/solution/1682469/">Java</a></td>
+				<td class="date"><abbr title="2012-05-01 11:29:03">12.5.1</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/42998/in/group-141/">20104922李菲菲(20104922)</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1682387/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">70ms</td>
+				<td class="code-length">344 B</td>
+				<td class="language"><a href="/chusai/solution/1682387/">Java</a></td>
+				<td class="date"><abbr title="2012-05-01 10:27:49">12.5.1</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/43035/in/group-141/">20104954_刘忠泰</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1682369/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">70ms</td>
+				<td class="code-length">619 B</td>
+				<td class="language"><a href="/chusai/solution/1682369/">Java</a></td>
+				<td class="date"><abbr title="2012-05-01 10:13:28">12.5.1</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/43014/in/group-141/">1635566780</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1682346/" class="result-right">Accepted</a></td>
+								<td class="memory">626kB</td>
+				<td class="spending-time">80ms</td>
+				<td class="code-length">343 B</td>
+				<td class="language"><a href="/chusai/solution/1682346/">Java</a></td>
+				<td class="date"><abbr title="2012-05-01 09:52:06">12.5.1</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37769/in/group-141/">20115173</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1682189/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">250 B</td>
+				<td class="language"><a href="/chusai/solution/1682189/">G++</a></td>
+				<td class="date"><abbr title="2012-04-30 23:37:58">12.4.30</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37769/in/group-141/">20115173</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1682187/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">249 B</td>
+				<td class="language"><a href="/chusai/solution/1682187/">G++</a></td>
+				<td class="date"><abbr title="2012-04-30 23:36:18">12.4.30</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37735/in/group-141/">20115146</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1681816/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">196 B</td>
+				<td class="language"><a href="/chusai/solution/1681816/">G++</a></td>
+				<td class="date"><abbr title="2012-04-30 21:18:51">12.4.30</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37662/in/group-141/">20115213_范朔朔(20115213)</a></td>
+					
+				<td class="result"><a href="/chusai/solution/1681723/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">210 B</td>
+				<td class="language"><a href="/chusai/solution/1681723/">G++</a></td>
+				<td class="date"><abbr title="2012-04-30 20:57:36">12.4.30</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+			</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">18</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">1</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

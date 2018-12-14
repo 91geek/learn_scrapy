@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 201603:NOIP2016T Day1 T3:换教室</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bdfz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="北大附中信息竞赛" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bdfz.openjudge.cn/" title="首页" rel="home">北大附中信息竞赛</a></h2>
+		 <span>/</span>
+		 <h2>NOIP提高组真题练习</h2>
+		<span style="font-size:14px;">正在进行中</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noiptigao/" class="first">题目</a></li>
+            <li ><a href="/noiptigao/ranking/">排名</a></li>
+                    <li ><a href="/noiptigao/status/">状态</a></li>
+	    			        <li class="last"><a href="/noiptigao/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>201603:NOIP2016T Day1 T3:换教室</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noiptigao/201603/">查看</a></li>
+		<li ><a href="/noiptigao/201603/submit/">提交</a></li>
+				<li ><a href="/noiptigao/201603/statistics/">统计</a></li>
+			
+		<li ><a href="/noiptigao/clarify/201603/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>25000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoBodyText" style="margin-top:1.9pt;margin-right:6.4pt;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt"><span style="letter-spacing:.1pt">对于刚上大学的牛牛来说，他面临的第一个问题是如何根据实际情况申请合适的</span><span style="letter-spacing:.1pt">课程。</span></p><p class="MsoBodyText" style="margin-left:0cm"><span style="letter-spacing:.1pt">在可以选择的课程中，有</span><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">2<em>n</em></span><span style="letter-spacing:.1pt">节课程安排在</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">n</span></em><span style="letter-spacing:.1pt">个时间段上。在第</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">( </span><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">1≤<em>i</em>≤<em>n</em></span><span style="letter-spacing:.1pt">)</span><span style="letter-spacing:.1pt">个时间段上，两节内容相同的课程同时在不同的地点进行，其中，牛牛预先被安排在教室</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">c<sub>i</sub></span></em><span style="letter-spacing:.1pt">上课，而另一节课程在教室</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">d<sub>i</sub></span></em><span style="letter-spacing:.1pt">进行。</span></p><p class="MsoBodyText" style="margin-top:0cm;margin-right:6.4pt;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt"><span style="letter-spacing:.1pt">在不提交任何申请的情况下，学生们需要按时间段的顺序依次完成所有的</span><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;"> </span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">n</span></em><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;"> </span></em>节<span style="letter-spacing:.1pt">安排好的课程。如果学生想更换第</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><span style="letter-spacing:.1pt">节课程的教室，则需要提出申请。若申请通过，学生就可以在第</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;"> </span></em><span style="letter-spacing:.1pt">个时间段去教室</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">d<sub>i</sub></span></em><span style="letter-spacing:.1pt">上课，否则仍然在教室<span style="font-family:Times New Roman, serif">c</span></span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;"><sub>i</sub></span></em><span style="letter-spacing:.1pt">上课。</span></p><p class="MsoBodyText" style="margin-top:0cm;margin-right:6.4pt;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt"><span style="letter-spacing:.1pt">由于更换教</span><span style="letter-spacing:.1pt">室的需求太多，申请不一定能获得通过。通过计算，牛牛发现申请更换第</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><span style="letter-spacing:.05pt">节课程</span><span style="letter-spacing:.1pt">的教室时，申请被通过的概率是一个己知的实数</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">k<sub>i</sub></span></em><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;"> </span></em><span style="letter-spacing:.1pt">，并且对于不同课程</span><span style="letter-spacing:.05pt">的申请，被</span><span style="letter-spacing:.1pt">通过的概率是互相独立的。</span></p><p class="MsoBodyText" style="margin-top:.1pt;margin-right:6.4pt;margin-bottom:0cm;margin-left:1.0pt;margin-bottom:.0001pt"><span style="letter-spacing:.1pt">学校规定，所有的申请只能在学期开始前一次性提交，并且每个人只能选择至多</span><span>m</span><span style="letter-spacing:.1pt">节课程进行申请。这意味着牛牛必须一次性决定是否申请更换每节课的教室，而</span><span style="letter-spacing:.1pt">不能根据某些课程的申请结果来决定其他课程是否申请；牛牛可以申请自己最希望更</span>换教室的<em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">m</span></em><span style="letter-spacing:-.1pt">门课程，也可以</span><span style="text-decoration:underline"><span style="font-family:黑体">不用完</span></span><span style="letter-spacing:-.1pt">这</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">m</span></em><span style="letter-spacing:-.15pt">个申请的机会，甚至可以一门课程都不申请。</span></p><p class="MsoBodyText" style="margin-top:.45pt;margin-right:6.4pt;margin-bottom:0cm;margin-left:1.0pt;margin-bottom:.0001pt"><span style="letter-spacing:.1pt">因为不同的课程可能会被安排在不同的教室进行，所以牛牛需要利用课间时间从</span><span style="letter-spacing:-.15pt">一间教室赶到另一间教室。</span></p><p class="MsoBodyText" style="margin-left:1.0pt"><span style="letter-spacing:.6pt">牛牛所在的大学有</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">v</span></em><span style="letter-spacing:.35pt">个教室，有</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">e</span></em><span style="letter-spacing:.7pt">条</span><span style="letter-spacing:.75pt">道</span><span style="letter-spacing:-1.15pt">路</span>。<span style="letter-spacing:.55pt">每条道路连接两间教室，并且是可</span><span style="letter-spacing: -0.25pt;">以</span><span style="text-decoration: underline"><span style="font-family:黑体">双向通行</span></span><span style="letter-spacing: -0.25pt;">的。</span></p><p class="MsoBodyText" style="margin-top:2.8pt;margin-right:8.15pt;margin-bottom:0cm;margin-left:1.0pt;margin-bottom:.0001pt;;;;;;;text-justify:inter-ideograph"><span style="letter-spacing:.1pt">由于道路的长度和拥堵程度不同，通过不同的道路耗费的体力可能会有所不同。</span><span style="letter-spacing:.15pt">当第</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em>（<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">1</span><span style="font-family:&#39;Arial Unicode MS&#39;,&#39;serif&#39;">≤</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><span style="font-family:&#39;Arial Unicode MS&#39;,&#39;serif&#39;">≤</span><em><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">n</span></em><span style="font-family:&#39;Arial Unicode MS&#39;,&#39;serif&#39;">−</span><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">1</span><span style="letter-spacing:.1pt">）节课结束后，牛牛就会从这节课的教室出发，选择一条耗费体力最少的</span><span style="text-decoration:underline"><span style="font-family:黑体">路径</span></span><span style="letter-spacing:.1pt">前往下一节课的教室。现在牛牛想知道，申请哪几门课程可以使他因在教室间移动耗费的体力值的总和的期望值最小，请你帮他求出这个最小值。</span></p><p><br /></p><p><span style="font-size: 14pt">【样例</span><span style="font-size:14.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">1 </span><span style="font-size: 14pt">说明】</span><br /></p><p><span style="font-size: 14pt"><img src="http://media.openjudge.cn/images/upload/1500345348.PNG" width="600" height="500" /><br /></span></p><p><span style="font-size: 14pt"><br /></span></p><p><span style="font-size: 18.6667px">数据范围：</span></p><p><span style="font-size: 18.6667px"><img src="http://media.openjudge.cn/images/upload/1500345371.PNG" width="500" height="600" /><br /></span></p><p></p><p class="MsoNormal" style="margin-top:11.5pt;margin-right:14.75pt;margin-bottom:0cm;margin-left:0cm;margin-bottom:.0001pt"><span style="font-size: 12pt">特殊性质</span><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">1</span><span style="font-size: 12pt">：图上任意两点</span><span style="font-size: 12pt"> </span><em><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">a</span></em><em><span style="font-size:8.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><span style="font-size: 12pt">,</span><em><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">b</span></em><em><span style="font-size:8.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i<span style="letter-spacing:.45pt"> </span></span></em><span style="font-size: 12pt">，</span><em><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">a</span></em><em><span style="font-size:8.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><em><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">≠b</span></em><em><span style="font-size:8.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i<span style="letter-spacing:.7pt"> </span></span></em><span style="font-size: 12pt">间，存在一条耗费体力最少的路径只</span><span style="font-size: 12pt">包含一条道路。</span></p><p><span style="font-size: 12pt">特殊性质</span><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">2</span><span style="font-size: 12pt">：对于所有的<span style="letter-spacing:-3.15pt"> </span></span><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">1</span><span style="font-size:12.0pt;font-family:&#39;Arial Unicode MS&#39;,&#39;serif&#39;">≤</span><em><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><span style="font-size:12.0pt;font-family:&#39;Arial Unicode MS&#39;,&#39;serif&#39;">≤</span><em><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">n</span></em><span style="font-size: 12pt">，</span><em><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">k</span><span style="font-size:8.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">i</span></em><span style="font-size:12.0pt;font-family:&#39;Arial&#39;,&#39;sans-serif&#39;">=</span><span style="font-size:12.0pt;font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">1<span style="letter-spacing:-1.15pt"> </span></span><span style="font-size: 12pt">。</span></p><p><br /></p><p><span style="font-size: 14pt"><br /></span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行四个整数 n, m, v, e。 n 表示这个学期内的时间段的数量； m 表示牛牛最多可以申请更换多少节课程的教室； v 表示牛牛学校里教室的数量； e 表示牛牛的学校里道路的数量。<br />第二行 n 个正整数，第 i（ 1 ≤ i ≤ n ）个正整数表示ci，即第 i 个时间段牛牛被安 排上课的教室；保证 1 ≤ ci ≤ v 。<br />第三行 n 个正整数，第 i（ 1 ≤ i ≤ n ）个正整数表示di ，即第 i 个时间段另一间上同样课程的教室；保证 1 ≤ di ≤ v 。<br /> <br />第四行 n 个实数，第 i（ 1 ≤ i ≤ n ）个实数表示 ki ，即牛牛申请在第 i 个时间段更 换教室获得通过的概率。保证 0 ≤ ki ≤ 1 。<br />接下来 e 行，每行三个正整数 aj ， bj ， wj ，表示有一条双向道路连接教室 aj , bj ，通过这条道路需要耗费的体力值是 wj ；保证 1 ≤ aj, bj ≤ v ， 1 ≤ wj ≤ 100 。<br /><br />保证 1 ≤ n ≤ 2000 ， 0 ≤ m ≤ 2000 ， 1 ≤ v ≤ 300 ， 0 ≤ e ≤ 90000 。<br />保证通过学校里的道路，从任何一间教室出发，都能到达其他所有的教室。<br />保证 输入的实数最多包含 3 位小数。</dd>
+		<dt>输出</dt>
+		<dd>输出一行，包含一个实数，四舍五入精确到小数点后恰好 2 位，表示答案。你的输出必须和标准输出完全一样才算正确。<br />测试数据保证四舍五入后的答案和准确答案的差的绝对值不大于 4×10^-3 。（如果你不知道什么是浮点误差，这段话可以理解为：对于大多数的算法，你可以正常地使用浮点数类型而不用对它进行特殊的处理）</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 2 3 3
+2 1 2
+1 2 1
+0.8 0.2 0.5
+1 2 5
+1 3 3
+2 3 1
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>2.80</pre></dd>
+				<dt>提示</dt>
+		<dd>1. 道路中可能会有多条双向道路连接相同的两间教室。也有可能有道路两端连接的是同一间教室。<br />2. 请注意区分 n, m, v, e 的意义， n 不是教室的数量， m 不是道路的数量。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noiptigao/201603/">查看</a></li>
+		<li ><a href="/noiptigao/201603/submit/">提交</a></li>
+				<li ><a href="/noiptigao/201603/statistics/">统计</a></li>
+			
+		<li ><a href="/noiptigao/clarify/201603/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>15617</dd>
+				<dt>提交次数</dt>
+		<dd>8</dd>
+		<dt>尝试人数</dt>
+	    <dd>3</dd>
+	    <dt>通过人数</dt>
+	    <dd>2</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 19JC:高精度加法</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://helloc.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="软件小分队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://helloc.openjudge.cn/" title="首页" rel="home">软件小分队</a></h2>
+		 <span>/</span>
+		 <h2>蓝桥vip题库</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/blue/" class="first">题目</a></li>
+            <li ><a href="/blue/ranking/">排名</a></li>
+                    <li ><a href="/blue/status/">状态</a></li>
+	    			        <li class="last"><a href="/blue/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>19JC:高精度加法</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/blue/19JC/">查看</a></li>
+		<li ><a href="/blue/19JC/submit/">提交</a></li>
+				<li ><a href="/blue/19JC/statistics/">统计</a></li>
+			
+		<li ><a href="/blue/clarify/19JC/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>512000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><span style="color: rgb(51, 51, 51); font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; background-color: rgb(228, 241, 255);">　输入两个整数</span><em style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; font-weight: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; widows: 2; background-color: rgb(228, 241, 255); font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">a</em><span style="color: rgb(51, 51, 51); font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; background-color: rgb(228, 241, 255);">和</span><em style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; font-weight: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; widows: 2; background-color: rgb(228, 241, 255); font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">b</em><span style="color: rgb(51, 51, 51); font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; background-color: rgb(228, 241, 255);">，输出这两个整数的和。</span><em style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; font-weight: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; widows: 2; background-color: rgb(228, 241, 255); font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">a</em><span style="color: rgb(51, 51, 51); font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; background-color: rgb(228, 241, 255);">和</span><em style="margin: 0px; padding: 0px; color: rgb(51, 51, 51); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; font-weight: normal; word-spacing: 0px; white-space: normal; box-sizing: border-box; orphans: 2; widows: 2; background-color: rgb(228, 241, 255); font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">b</em><span style="color: rgb(51, 51, 51); font-family: 宋体, &quot;Times New Roman&quot;; font-size: 14px; background-color: rgb(228, 241, 255);">都不超过100位。</span><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入包括两行，第一行为一个非负整数a，第二行为一个非负整数b。两个整数都不超过100位，两数的最高位都不是0。</dd>
+		<dt>输出</dt>
+		<dd>输出一行，表示a + b的值。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>20100122201001221234567890
+2010012220100122</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>20100122203011233454668012</pre></dd>
+				<dt>提示</dt>
+		<dd>由于a和b都比较大，所以不能直接使用语言中的标准数据类型来存储。对于这种问题，一般使用数组来处理。<br />　　定义一个数组A，A[0]用于存储a的个位，A[1]用于存储a的十位，依此类推。同样可以用一个数组B来存储b。<br />计算c = a + b的时候，首先将A[0]与B[0]相加，如果有进位产生，则把进位（即和的十位数）存入r，把和的个位数存入C[0]，即C[0]等于(A[0]+B[0])%10。然后计算A[1]与B[1]相加，这时还应将低位进上来的值r也加起来，即C[1]应该是A[1]、B[1]和r三个数的和．如果又有进位产生，则仍可将新的进位存入到r中，和的个位存到C[1]中。依此类推，即可求出C的所有位。<br />最后将C输出即可。</dd>
+						<dt>来源</dt>
+		<dd>http://lx.lanqiao.cn/problem.page?gpid=T70</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/blue/19JC/">查看</a></li>
+		<li ><a href="/blue/19JC/submit/">提交</a></li>
+				<li ><a href="/blue/19JC/statistics/">统计</a></li>
+			
+		<li ><a href="/blue/clarify/19JC/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">务必在4月1日前将里面的题目都做过一遍。<br />
+JC是基础训练系列。<br />
+SFX是算法训练系列。<br />
+SFT是算法提高系列。</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>16719</dd>
+					<dt>添加于</dt>
+			<dd>2018-02-08</dd>
+				<dt>提交次数</dt>
+		<dd>4</dd>
+		<dt>尝试人数</dt>
+	    <dd>3</dd>
+	    <dt>通过人数</dt>
+	    <dd>3</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1098:Cw的弹珠</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bjutacm.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="北京工业大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bjutacm.openjudge.cn/" title="首页" rel="home">北京工业大学</a></h2>
+		 <span>/</span>
+		 <h2>我们的源代码</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/lianxi/" class="first">题目</a></li>
+            <li ><a href="/lianxi/ranking/">排名</a></li>
+                    <li ><a href="/lianxi/status/">状态</a></li>
+	    			        <li class="last"><a href="/lianxi/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1098:Cw的弹珠</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/lianxi/1098/">查看</a></li>
+		<li ><a href="/lianxi/1098/submit/">提交</a></li>
+				<li ><a href="/lianxi/1098/statistics/">统计</a></li>
+			
+		<li ><a href="/lianxi/clarify/1098/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="white-space: normal">Cw和ACSync都非常爱收集弹珠，他们平时也会彼此分享自己收集的弹珠。但是，一旦有人收集到了特别稀有的弹珠，他们是绝对不会分享给对方的！这天，Cw费尽千辛万苦，好不容易淘到了一袋珍贵的弹珠，但是不巧的是正好被ACSync看到了。ACSync就向Cw索要弹珠，Cw为了尽可能少的给ACSync弹珠，于是他想出了这样一套规则，让ACSync自己挑选弹珠，规则如下：</p><ol style="white-space: normal"><li><p>Cw先把弹珠排成一行，然后给每一个弹珠随机赋一个价值。</p></li><li><p>ACSync必须从第一颗弹珠开始按顺序选择（可以选择自己拿走，还是留给Cw）。</p></li><li><p>但是ACSync在后面选择抢走的弹珠价值<strong>严格小于</strong>前面选择抢走的任意一个弹珠的价值。</p></li></ol><p style="white-space: normal">当ACSync听到这个规则的时候一下子就懵了，于是他向你求助，他应该如何选择才能使得他能够获得的弹珠最多呢？</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行包含一个整数T，表示共有几组数据，范围（1<=T<=100）<br />接下来2*T行，每两行表示一组测试用例，对于每组测试用例：<br />第一行包含一个整数n，表示弹珠的数量，范围（1<=n<=100000）<br />第二行包含n个整数，第i个整数表示第i个弹珠的价值，弹珠价值范围（0<=ni<10^9）</dd>
+		<dt>输出</dt>
+		<dd>输出T行，每行包含一个整数，表示最多能抢走的弹珠数量。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+5
+1 10 3 15 2
+3
+1 2 3
+4
+4 3 2 1
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>3
+1
+4
+</pre></dd>
+				<dt>提示</dt>
+		<dd>对第一组数据，抢夺价值为10和3和2的弹珠。<br />对第二组数据，抢夺价值为1或2或3的弹珠<br />对第三组数据，抢夺全部的弹珠。</dd>
+						<dt>来源</dt>
+		<dd>BJUT Programming Contest 2017, FanZzz</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/lianxi/1098/">查看</a></li>
+		<li ><a href="/lianxi/1098/submit/">提交</a></li>
+				<li ><a href="/lianxi/1098/statistics/">统计</a></li>
+			
+		<li ><a href="/lianxi/clarify/1098/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>14396</dd>
+					<dt>添加于</dt>
+			<dd>2017-04-19</dd>
+				<dt>提交次数</dt>
+		<dd>115</dd>
+		<dt>尝试人数</dt>
+	    <dd>24</dd>
+	    <dt>通过人数</dt>
+	    <dd>14</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

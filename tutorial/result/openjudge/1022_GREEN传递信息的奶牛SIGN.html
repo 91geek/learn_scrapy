@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1022:GREEN传递信息的奶牛SIGN</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://sdsy.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="9号超级计算机研究所" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://sdsy.openjudge.cn/" title="首页" rel="home">9号超级计算机研究所</a></h2>
+		 <span>/</span>
+		 <h2>USACO月赛</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/training/" class="first">题目</a></li>
+            <li ><a href="/training/ranking/">排名</a></li>
+                    <li ><a href="/training/status/">状态</a></li>
+	    			        <li class="last"><a href="/training/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1022:GREEN传递信息的奶牛SIGN</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/training/1022/">查看</a></li>
+		<li ><a href="/training/1022/submit/">提交</a></li>
+				<li ><a href="/training/1022/statistics/">统计</a></li>
+			
+		<li ><a href="/training/clarify/1022/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>100000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="">农夫约翰有一块位于高速公路一侧的农场，他想在奶牛身上打上广告语给自己生产的奶制品作些宣传，这样当奶牛们排成一排吃草时，开车的人就能看到广告。于是约翰依次在<span>C(2 &lt;= C &lt;= 20)</span>头奶牛的身上刷上了<span>K (2 &lt;= K&lt;= 4)</span>个字母组成了一句广告语，广告语中是没有空格。</p><p class="MsoNormal" style="">在第二天早上出奶之后，农夫约翰注意到他刷在奶牛身上的广告语显示出错了，原因是奶牛们排错了次序，更糟糕的是农夫约翰也忘了最初的广告语，因为约翰十分的健忘，好在约翰文化程度很低，他认识的单词并不多，他所用的广告语使用的单词都是他所认识的，约翰认识的单词不超过的<span>D</span>个<span>(1&lt;=d&lt;=150)&lt; span=&quot;&quot;&gt;，一个单词可以不止一次地用于广告语中。<!--=d<=150)<--></span></p><p class="MsoNormal" style="">现在给出所有奶牛身上的信息，以及约翰认识的所有单词，请你编一个程序，帮助农夫约翰重建最初的信息。</p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行为3个用空格隔开的整数，表示K，C，D。<br />第2到C+1行每行均为K个字母，表示一头奶牛身上的信息。<br />从C+2行到C+D+1行每行为一个约翰认识的单词，单词的长度不超过10。</dd>
+		<dt>输出</dt>
+		<dd>第1行为在字典序列中最小的可能的句子。第2行一个整数，表示有多少句可能的句子。如果不存在符合要求的句子，输出“NOSOLUTIONS”。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 5 7
+TEN
+ATT
+NAT
+BAR
+ACK 
+AT
+ATTACK
+BARN
+CHICKENS
+CHOPPERS
+COWS
+TEN
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>6</pre></dd>
+				<dt>提示</dt>
+		<dd>[在本例中六种可能的广告语是：<br />TEN ATTACK BARN AT<br />TEN BARN AT ATTACK <br />ATTACK TEN BARN AT <br />ATTACK BARN AT TEN <br />BARN AT TEN ATTACK <br />BARN AT ATTACK TEN]</dd>
+						<dt>来源</dt>
+		<dd>USACO_2001_open_GREEN</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/training/1022/">查看</a></li>
+		<li ><a href="/training/1022/submit/">提交</a></li>
+				<li ><a href="/training/1022/statistics/">统计</a></li>
+			
+		<li ><a href="/training/clarify/1022/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>12631</dd>
+					<dt>添加于</dt>
+			<dd>2016-12-30</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 076:〖NOIP2016T〗 玩具谜题</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://jshzoi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="江苏省泗洪中学信息学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://jshzoi.openjudge.cn/" title="首页" rel="home">江苏省泗洪中学信息学</a></h2>
+		 <span>/</span>
+		 <h2>NOIP原题(提高组)</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noipt/" class="first">题目</a></li>
+            <li ><a href="/noipt/ranking/">排名</a></li>
+                    <li ><a href="/noipt/status/">状态</a></li>
+	    			        <li class="last"><a href="/noipt/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>076:〖NOIP2016T〗 玩具谜题</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noipt/076/">查看</a></li>
+		<li ><a href="/noipt/076/submit/">提交</a></li>
+				<li ><a href="/noipt/076/statistics/">统计</a></li>
+			
+		<li ><a href="/noipt/clarify/076/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>20000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>524288kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>小南有一套可爱的玩具小人，它们各有不同的职业。 <br /><br />有一天，这些玩具小人把小南的眼镜藏了起来。小南发现玩具小人们围成了一个圈，<br /><br /></p><p>它们有的面朝圈内，有的面朝圈外。如下图：</p><p><img src="http://media.openjudge.cn/images/upload/1504229095.png" width="714" height="565" /></p><p>&nbsp;&nbsp; 这时 singer 告诉小南一个谜题：“眼镜藏在我左数第 3 个玩具小人的右数第 1 个玩具小人的左数第 2 个玩具小人那里。”<br /> <br /> 小南发现，这个谜题中玩具小人的朝向非常关键，因为朝内和朝外的玩具小人的左右方向是相反的：面朝圈内的玩具小人，它的左边是顺时针方向，右边是逆时针方向；而面向圈外的玩具小人，它的左边是逆时针方向，右边是顺时针方向。<br />&nbsp;&nbsp; 小南一边艰难地辨认着玩具小人，一边数着：<br />&nbsp;&nbsp; “singer 朝内，左数第 3 个是 archer。<br />&nbsp;&nbsp; “archer 朝外，右数第 1 个是 thinker。<br />&nbsp;&nbsp; “thinker 朝外，左数第 2 个是 writer。<br />&nbsp;&nbsp; “所以眼镜藏在 writer 这里！”<br /> <br />&nbsp;&nbsp;虽然成功找回了眼镜，但小南并没有放心。如果下次有更多的玩具小人藏他的眼镜，或是谜题的长度更长，他可能就无法找到眼镜了。所以小南希望你写程序帮他解决类似的谜题。这样的谜题具体可以描述为：<br />&nbsp;&nbsp; 有 n 个玩具小人围成一圈，己知它们的职业和朝向。现在第 1 个玩具小人告诉小南一个包含 m 条指令的谜题，其中第 i 条指令形如“左数/右数第 si 个玩具小人”。你需要输出依次数完这些指令后，到达的玩具小人的职业。<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入的第一行包含两个正整数n,m ，表示玩具小人的个数和指令的条数。 <br /><br />接下来n 行，每行包含一个整数和一个字符串，以逆时针为顺序给出每个玩具小人的朝向和职业。其中0 表示朝向圈内，1表示朝向圈外。保证不会出现其他的数。字符串长度不超过10 且仅由小写字母构成，字符串不为空，并且字符串两两不同。整数和字符串之间用一个空格隔开。 <br /><br />接下来m行，其中第i行包含两个整数ai, si ，表示第i 条指令。若ai = 0 ，表示向左数si 个人；若ai = 1 ，表示向右数si 个人。保证ai 不会出现其他的数，1 ≤si < n。</dd>
+		<dt>输出</dt>
+		<dd>输出一个字符串，表示从第一个读入的小人开始，依次数完 m条指令后到达的小人的职业。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>【样例 1 输入】
+ 
+7 3
+ 0 singer
+ 0 reader
+ 0 mengbier
+ 1 thinker
+ 1 archer
+ 0 writer
+ 1 mogician
+ 0 3
+ 1 1
+ 0 2
+【样例 2 输入】
+10 10
+1 c
+0 r
+0 p
+1 d
+1 e
+1 m
+1 t
+1 y
+1 u
+0 v
+1 7
+1 1
+1 4
+0 5
+0 3
+0 1
+1 6
+1 2
+0 8
+0 4</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>【样例 1 输出】
+ 
+writer 
+【样例 2 输出】 
+y </pre></dd>
+				<dt>提示</dt>
+		<dd>【子任务】<br />子任务会给出部分测试数据的特点。如果你在解决题目中遇到了困难，可以尝试只解决一部分测试数据。<br />每个测试点的数据规模及特点如下表：<br /><p style="text-align: center;"><br />  <img src="http://media.openjudge.cn/images/upload/1504248499.png" width="703" height="621" /><br /><br /></p><br />其中一些简写的列意义如下：<br /> <br /> 全朝内：若为“√”， 表示该测试点保证所有的玩具小人都朝向圈内；<br /> <br /> 全左数：若为“√”，表示该测试点保证所有的指令都向左数，即对任意的1 ≤ i ≤ m， <br />ai = 0 ；<br /> <br /> si = 1 ：若为“√”，表示该测试点保证所有的指令都只数1个，即对任意的1 ≤ i ≤ m， <br />si = 1 ；<br /> <br /> 职业长度为1：若为“√”，表示该测试点保证所有玩具小人的职业一定是一个长度<br />为 1 的字符串。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noipt/076/">查看</a></li>
+		<li ><a href="/noipt/076/submit/">提交</a></li>
+				<li ><a href="/noipt/076/statistics/">统计</a></li>
+			
+		<li ><a href="/noipt/clarify/076/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>15940</dd>
+					<dt>添加于</dt>
+			<dd>2017-09-01</dd>
+				<dt>提交次数</dt>
+		<dd>7</dd>
+		<dt>尝试人数</dt>
+	    <dd>5</dd>
+	    <dt>通过人数</dt>
+	    <dd>5</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

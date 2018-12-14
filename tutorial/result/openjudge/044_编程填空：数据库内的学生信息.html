@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 044:编程填空：数据库内的学生信息</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cxsjsxmooc.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="程序设计实习MOOC" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cxsjsxmooc.openjudge.cn/" title="首页" rel="home">程序设计实习MOOC</a></h2>
+		 <span>/</span>
+		 <h2>程序设计与算法（三）测验题汇总(2018秋季)</h2>
+		<span style="font-size:14px;">正在进行中</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2018t3fallall/" class="first">题目</a></li>
+            <li ><a href="/2018t3fallall/ranking/">排名</a></li>
+                    <li ><a href="/2018t3fallall/status/">状态</a></li>
+	     
+        <li ><a href="/2018t3fallall/statistics/">统计</a></li>
+				        <li class="last"><a href="/2018t3fallall/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>044:编程填空：数据库内的学生信息</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2018t3fallall/044/">查看</a></li>
+		<li ><a href="/2018t3fallall/044/submit/">提交</a></li>
+				<li ><a href="/2018t3fallall/044/statistics/">统计</a></li>
+			
+		<li ><a href="/2018t3fallall/clarify/044/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>20480kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>程序填空，使得下面的程序,先输出<br /></p><p>(Tom,80),(Tom,70),(Jone,90),(Jack,70),(Alice,100),<br /></p><p>(Tom,78),(Tom,78),(Jone,90),(Jack,70),(Alice,100),<br /></p><p>(70,Jack),(70,Tom),(80,Tom),(90,Jone),(100,Alice),<br /></p><p>(70,Error),(70,Error),(80,Tom),(90,Jone),(100,Alice),<br /></p><p>******<br /></p><p>然后，再根据输入数据按要求产生输出数据<br /></p></dd>
+				<dd><pre class="sh_cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;map&gt;
+#include &lt;iterator&gt;
+#include &lt;algorithm&gt;
+using namespace std;</pre></dd>		
+		<pre>// 在此处补充你的代码</pre>		
+				<dd><pre class="sh_cpp">struct Student 
+{
+	string name;
+	int score;
+};
+template &lt;class T&gt;
+void Print(T first,T last) {
+	for(;first!= last; ++ first)
+		cout &lt;&lt; * first &lt;&lt; &quot;,&quot;;
+	cout &lt;&lt; endl;
+}
+int main()
+{
+	
+	Student s[] = { {&quot;Tom&quot;,80},{&quot;Jack&quot;,70},
+					{&quot;Jone&quot;,90},{&quot;Tom&quot;,70},{&quot;Alice&quot;,100} };
+	
+	MyMultimap&lt;string,int&gt; mp;
+	for(int i = 0; i&lt;5; ++ i)
+		mp.insert(make_pair(s[i].name,s[i].score));
+	Print(mp.begin(),mp.end()); //按姓名从大到小输出
+
+	mp.Set(&quot;Tom&quot;,78); //把所有名为&quot;Tom&quot;的学生的成绩都设置为78
+	Print(mp.begin(),mp.end());
+	
+	
+	
+	MyMultimap&lt;int,string,less&lt;int&gt; &gt; mp2;
+	for(int i = 0; i&lt;5; ++ i) 
+		mp2.insert(make_pair(s[i].score,s[i].name));
+	
+	Print(mp2.begin(),mp2.end()); //按成绩从小到大输出
+	mp2.Set(70,&quot;Error&quot;);          //把所有成绩为70的学生，名字都改为&quot;Error&quot;
+	Print(mp2.begin(),mp2.end());
+	cout &lt;&lt; &quot;******&quot; &lt;&lt; endl;
+	
+	mp.clear();
+	
+	string name;
+	string cmd;
+	int score;		
+	while(cin &gt;&gt; cmd ) {
+		if( cmd == &quot;A&quot;) {
+			cin &gt;&gt; name &gt;&gt; score;
+			if(mp.find(name) != mp.end() ) {
+				cout &lt;&lt; &quot;erroe&quot; &lt;&lt; endl;
+			}
+			mp.insert(make_pair(name,score));
+		}
+		else if(cmd == &quot;Q&quot;) {
+			cin &gt;&gt; name;
+			MyMultimap&lt;string,int&gt;::iterator p = mp.find(name);
+			if( p!= mp.end()) {
+				cout &lt;&lt; p-&gt;second &lt;&lt; endl;
+			}
+			else {
+				cout &lt;&lt; &quot;Not Found&quot; &lt;&lt; endl; 
+			}		
+		}
+	}
+	return 0;
+}</pre></dd>		<dt>输入</dt>
+		<dd>输入数据的每一行，格式为以下之一：<br /><br />A name score<br />Q name score<br /><br />name是个不带个空格的字符串，长度小于 20<br />score是个整数，能用int表示<br /><br />A name score 表示往数据库中新增一个姓名为name的学生，其分数为score。开始时数据库中一个学生也没有。<br />Q name 表示在数据库中查询姓名为name的学生的分数<br /><br /><br />数据保证学生不重名。<br />输入数据少于200,000行。</dd>
+		<dt>输出</dt>
+		<dd>对于每个查询，输出学生的分数。如果查不到，则输出 "Not Found"</dd>
+		<dt>样例输入</dt>
+		<dd><pre>A Tom1 30
+A Tom2 40
+Q Tom3 
+A Tom4 89
+Q Tom1
+Q Tom2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>(Tom,80),(Tom,70),(Jone,90),(Jack,70),(Alice,100),
+(Tom,78),(Tom,78),(Jone,90),(Jack,70),(Alice,100),
+(70,Jack),(70,Tom),(80,Tom),(90,Jone),(100,Alice),
+(70,Error),(70,Error),(80,Tom),(90,Jone),(100,Alice),
+******
+Not Found
+30
+40</pre></dd>
+				<dt>提示</dt>
+		<dd>1) 编写模板的时候，连续的两个 “>”最好要用空格分开，以免被编译器看作是 ">>"运算符。VS可能无此问题，但是Dev C++和服务器上的编译环境会有这个问题。<br />比如 vector&lt;vector&lt;int>>   有可能出错，要改成 vector&lt;vector&lt;int>   ><br /><br />2) 在模板中写迭代器时，最好在前面加上 typename关键字，否则可能会编译错。VS可能无此问题，但是Dev C++和服务器上的编译环境会有这个问题。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2018t3fallall/044/">查看</a></li>
+		<li ><a href="/2018t3fallall/044/submit/">提交</a></li>
+				<li ><a href="/2018t3fallall/044/statistics/">统计</a></li>
+			
+		<li ><a href="/2018t3fallall/clarify/044/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>8270</dd>
+				<dt>提交次数</dt>
+		<dd>15</dd>
+		<dt>尝试人数</dt>
+	    <dd>6</dd>
+	    <dt>通过人数</dt>
+	    <dd>6</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

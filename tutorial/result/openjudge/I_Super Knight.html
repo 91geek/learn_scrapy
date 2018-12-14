@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - I:Super Knight</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bigbang.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="大本钟编程小组" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bigbang.openjudge.cn/" title="首页" rel="home">大本钟编程小组</a></h2>
+		 <span>/</span>
+		 <h2>pku训练赛四</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/pkucontestd/" class="first">题目</a></li>
+            <li ><a href="/pkucontestd/ranking/">排名</a></li>
+                    <li ><a href="/pkucontestd/status/">状态</a></li>
+	     
+        <li ><a href="/pkucontestd/statistics/">统计</a></li>
+		 
+        <li ><a href="/pkucontestd/print/">打印</a></li>
+			        <li class="last"><a href="/pkucontestd/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>I:Super Knight</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/pkucontestd/I/">查看</a></li>
+		<li ><a href="/pkucontestd/I/submit/">提交</a></li>
+				<li ><a href="/pkucontestd/I/statistics/">统计</a></li>
+			
+		<li ><a href="/pkucontestd/clarify/I/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131072kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><span lang="en-us"><p>A super knight moves in the infinite <i>n</i>-dimensional space. Each move it can perform is described by a vector – a vector (<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, …, <i>a<sub>n</sub></i>) indicates that a move from the square (with coordinates) (<i>x</i><sub>1</sub>, <i>x</i><sub>2</sub>, …, <i>x<sub>n</sub></i>) to the square (<i>x</i><sub>1</sub> + <i>a</i><sub>1</sub>, <i>x</i><sub>2</sub> + <i>a</i><sub>2</sub>, …, <i>x<sub>n</sub></i> + <i>a<sub>n</sub></i>) or (<i>x</i><sub>1</sub> &minus; <i>a</i><sub>1</sub>, <i>x</i><sub>2</sub> &minus; <i>a</i><sub>2</sub>, …, <i>x<sub>n</sub></i> &minus; <i>a<sub>n</sub></i>) is possible. Each knight has a prescribed set of such vectors, describing the moves this knight can make. For each knight we assume that this knight can reach anywhere in the space if it is allowed (but actually disallowed) to move along a fractional part of a vector.</p><p>We say two knights are equivalent, if they can reach exactly the same squares starting from the square (0, 0, …, 0) (by making many moves, perhaps). (Let us point out that equivalent knights may reach these squares in different number of moves). It can be shown that for every knight there exists an equivalent one whose moves are described by only <i>n</i> vectors.</p><p>Given a set of&nbsp; <i>m</i> (<i>m</i> &gt; <i>n</i>) vectors describing the moves of a super knight, determine an equivalent knight as mentioned above.</p></span></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><span lang="en-us"><p>The input contains exactly one test case. The first line of input contains two integers <i>m</i> and <i>n</i> (2 &le; <i>n</i> &lt; <i>m</i> &le; 100, <i>n</i> &le; 10, <i>n</i> &middot; <i>m</i> &le; 200). The next <i>m</i> lines each contains an integral <i>n</i>-dimensional vector (<i>a</i><sub>1</sub>, <i>a</i><sub>2</sub>, &hellip;, <i>a<sub>n</sub></i>). It is guaranteed that for all <i>i</i> (1 &le; <i>i</i> &le; n) if <i>n</i> = 2, |<i>a<sub>i</sub></i>| &le; 10<sup>3</sup>, otherwise |<i>a<sub>i</sub></i>| &le; 10<sup>2</sup>.</p></span></dd>
+		<dt>输出</dt>
+		<dd><p>Output <i>n</i> <i>n</i>-dimensional vectors describing the moves of an equivalent knight, each on a separate line.</p></dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 2
+1 0
+0 5
+0 7</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1 0
+0 1</pre></dd>
+				<dt>提示</dt>
+		<dd><p>Do not output any number longer than 50 digits. The test cases are designed that to each one there is a solution not involving any number exceeding 10<sup>20</sup> by magnitude.</p></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/pkucontestd/I/">查看</a></li>
+		<li ><a href="/pkucontestd/I/submit/">提交</a></li>
+				<li ><a href="/pkucontestd/I/statistics/">统计</a></li>
+			
+		<li ><a href="/pkucontestd/clarify/I/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>2857</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

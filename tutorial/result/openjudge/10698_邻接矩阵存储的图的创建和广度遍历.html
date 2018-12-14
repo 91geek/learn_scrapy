@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 10698:邻接矩阵存储的图的创建和广度遍历</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://xajdfz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="西安交大附中OJ" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://xajdfz.openjudge.cn/" title="首页" rel="home">西安交大附中OJ</a></h2>
+		 <span>/</span>
+		 <h2>图论基础</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/graph/" class="first">题目</a></li>
+            <li ><a href="/graph/ranking/">排名</a></li>
+                    <li ><a href="/graph/status/">状态</a></li>
+	    			        <li class="last"><a href="/graph/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>10698:邻接矩阵存储的图的创建和广度遍历</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/graph/10698/">查看</a></li>
+		<li ><a href="/graph/10698/submit/">提交</a></li>
+				<li ><a href="/graph/10698/statistics/">统计</a></li>
+			
+		<li ><a href="/graph/clarify/10698/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>2000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>5000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><span style="color: rgb(35, 31, 23);font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif;font-size: 12pt">根据输入的邻接矩阵的图的信息，生成邻接矩阵表示的图作为图存储结构，完成图的创建</span><span style="color: rgb(35, 31, 23);font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif;font-size: 12pt">；给出图的BFS广度优先遍历结果。其中32767表示无穷大。</span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行是样例矩阵个数<br />第二行是第一组样例的矩阵的行数 列数 是否有向图 是否加权图<br />接下来几行是第一组矩阵的具体数据<br />然后是第二组<br />第三组<br />......</dd>
+		<dt>输出</dt>
+		<dd>第一个图的从0号顶点BFS广度优先遍历结果<br />第二个图的从0号顶点BFS广度优先遍历结果<br />第三个图的从0号顶点BFS广度优先遍历结果<br />......</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+5 5 0 0
+0 1 0 1 1
+1 0 1 1 0
+0 1 0 1 1
+1 1 1 0 1
+1 0 1 1 0
+5 5 1 0
+0 1 0 1 0
+0 0 1 1 0
+0 0 0 1 1
+0 0 0 0 0
+1 0 0 1 0
+6 6 1 1
+0 5 32767 7 32767 32767
+32767 0 4 32767 32767 32767
+8 32767 0 32767 32767 9
+32767 32767 5 0 32767 6
+32767 32767 32767 5 0 32767
+3 32767 32767 32767 1 0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>0 1 3 4 2
+0 1 3 2 4
+0 1 3 2 5 4</pre></dd>
+				<dt>提示</dt>
+		<dd>typedef struct <br />{<br />	ElemType data[MaxSize];<br />	int front,rear;		//队首和队尾指针<br />} SqQueue;<br />void InitQueue(SqQueue *&q)	//初始化队列<br />{	q=(SqQueue *)malloc (sizeof(SqQueue));<br />	q->front=q->rear=0;<br />}<br />void DestroyQueue(SqQueue *&q)	//销毁队列<br />{<br />	free(q);<br />}<br />bool QueueEmpty(SqQueue *q)	//判断队列空<br />{<br />	return(q->front==q->rear);<br />}<br />bool enQueue(SqQueue *&q,ElemType e)	//进队<br />{<br />	if ((q->rear+1)%MaxSize==q->front)	//队满上溢出<br />		return false;<br />	q->rear=(q->rear+1)%MaxSize;<br />	q->data[q->rear]=e;<br />	return true;<br />}<br />bool deQueue(SqQueue *&q,ElemType &e)	//出队<br />{<br />	if (q->front==q->rear)		//队空下溢出<br />		return false;<br />	q->front=(q->front+1)%MaxSize;<br />	e=q->data[q->front];<br />	return true;<br />}</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/graph/10698/">查看</a></li>
+		<li ><a href="/graph/10698/submit/">提交</a></li>
+				<li ><a href="/graph/10698/statistics/">统计</a></li>
+			
+		<li ><a href="/graph/clarify/10698/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>10698</dd>
+					<dt>添加于</dt>
+			<dd>2016-06-22</dd>
+				<dt>提交次数</dt>
+		<dd>6</dd>
+		<dt>尝试人数</dt>
+	    <dd>4</dd>
+	    <dt>通过人数</dt>
+	    <dd>4</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

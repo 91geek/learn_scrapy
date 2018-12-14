@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 074:〖NOIP2015T〗运输计划</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://jshzoi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="江苏省泗洪中学信息学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://jshzoi.openjudge.cn/" title="首页" rel="home">江苏省泗洪中学信息学</a></h2>
+		 <span>/</span>
+		 <h2>NOIP原题(提高组)</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noipt/" class="first">题目</a></li>
+            <li ><a href="/noipt/ranking/">排名</a></li>
+                    <li ><a href="/noipt/status/">状态</a></li>
+	    			        <li class="last"><a href="/noipt/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>074:〖NOIP2015T〗运输计划</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noipt/074/">查看</a></li>
+		<li ><a href="/noipt/074/submit/">提交</a></li>
+				<li ><a href="/noipt/074/statistics/">统计</a></li>
+			
+		<li ><a href="/noipt/clarify/074/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>20000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style=";;;text-autospace:none"><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">&nbsp;&nbsp;公元</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">2044</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">年</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">人类进入了宇宙纪元。</span></p><p class="MsoNormal" style=";;;text-autospace:none"><span style="font-family:宋体;font-size:12.0000pt">&nbsp;&nbsp;L </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">国有</span><span style="font-family:宋体;font-size:12.0000pt"> n </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">个星球</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">还有</span><span style="font-family:宋体;font-size:12.0000pt"> n-1 </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">条</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">双向</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">航道</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">每条航道建立在两个星球之间</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">这</span><span style="font-family:宋体;font-size:12.0000pt"> n-1 </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">条航道</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">连通</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">了</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">L</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">国的所有星球。</span></p><p class="MsoNormal" style=";;;text-autospace:none"><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">&nbsp;&nbsp;小</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">P</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">掌管一家物流公司</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">该公司有很多个运输计划</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">每个运输计划形如</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">：</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">有一艘物流飞船需要从</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">u</span><span style="font-family:宋体;font-size:12.0000pt">i</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">号星球沿</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">最快</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">的宇航路径飞行到</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">vi</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">号星球去。显然</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">飞船驶过一条航道是需要时间的</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">对于航道</span><span style="font-family:宋体;font-size:12.0000pt">j</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">任意飞船驶过它所花费的时间为</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">tj</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">并且任意两艘飞船之间</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">不会</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">产生任何干扰。</span></p><p class="MsoNormal" style=";;;text-autospace:none"><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">&nbsp;&nbsp;为了鼓励科技创新</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt">L</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">国国王同意小</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">P</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">的物流公司参与</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">L</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">国的航道建设</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">即允许小</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">P </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">把某一条航道改造成虫洞</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">飞船驶过虫洞</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">不消耗</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">时间。</span></p><p class="MsoNormal" style=";;;text-autospace:none"><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">&nbsp;&nbsp;在虫洞的建设完成前小</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">P</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">的物流公司就预接了</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">m</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">个运输计划。在虫洞建设完成后</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">这</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">m</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">个运输计划会</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">同时</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">开始</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">所有飞船</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">一起</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">出发。当这</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">m</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">个运输计划</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">都完成</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">时</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">小</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">P</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">的</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">物流公司的阶段性工作就完成了。</span></p><p class="MsoNormal"><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">&nbsp;&nbsp;如果小</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">P</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">可以</span><strong><em><span style="text-decoration:underline;font-family:宋体;font-size:12.0000pt;font-family:宋体">自由选择</span></em></strong><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">将哪一条航道改造成虫洞</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">，</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">试求出小</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt">P</span><span style="font-family:宋体;font-size:12.0000pt"> </span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">的物流公司完成阶段性工作所需要的最短时间是多少</span><span style="font-family:宋体;font-size:12.0000pt;font-family:宋体">？</span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行包括两个正整数 n、m，表示 L 国中星球的数量及小 P 公司预接的运输计划的数量，星球从 1 到 n 编号。<br />  接下来 n-1 行描述航道的建设情况，其中第 i 行包含三个整数 ai, bi 和 ti，表示第 i 条双向航道修建在 ai 与 bi 两个星球之间，任意飞船驶过它所花费的时间为 ti。<br />  接下来 m 行描述运输计划的情况，其中第 j 行包含两个正整数 uj 和 vj，表示第 j 个 运输计划是从 uj 号星球飞往 vj 号星球。</dd>
+		<dt>输出</dt>
+		<dd>共 1 行，包含 1 个整数，表示小 P 的物流公司完成阶段性工作所需要的最短时间。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>6 3
+1 2 3
+1 6 4
+3 1 7
+4 3 6
+3 5 5
+3 6
+2 5
+4 5
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>11
+</pre></dd>
+				<dt>提示</dt>
+		<dd>【样例说明】<br />  将第 1 条航道改造成虫洞：则三个计划耗时分别为：11、12、11，故需要花费的时间为 12。<br />  将第 2 条航道改造成虫洞：则三个计划耗时分别为：7、15、11，故需要花费的时间为 15。<br />  将第 3 条航道改造成虫洞：则三个计划耗时分别为：4、8、11，故需要花费的时间为 11。<br />  将第 4 条航道改造成虫洞：则三个计划耗时分别为：11、15、5，故需要花费的时间为 15。<br />  将第 5 条航道改造成虫洞：则三个计划耗时分别为：11、10、6，故需要花费的时间为 11。<br />  故将第 3 条或第 5 条航道改造成虫洞均可使得完成阶段性工作的耗时最短，需要花费的时间为 11。<br /><br />【数据规模与约定】<br />  所有测试数据的范围和特点如下表所示<br /><p><br />  <img src="http://media.openjudge.cn/images/upload/1475809654.JPG" height="493" width="580" /><br /><br /></p><br />  请注意常数因子带来的程序效率上的影响。</dd>
+						<dt>来源</dt>
+		<dd>NOIP原题</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noipt/074/">查看</a></li>
+		<li ><a href="/noipt/074/submit/">提交</a></li>
+				<li ><a href="/noipt/074/statistics/">统计</a></li>
+			
+		<li ><a href="/noipt/clarify/074/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11860</dd>
+					<dt>添加于</dt>
+			<dd>2016-10-07</dd>
+				<dt>提交次数</dt>
+		<dd>1</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

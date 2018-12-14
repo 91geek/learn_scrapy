@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 0819R5:Computer Virus on Planet Pandora</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://yangli89.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/83/logo_small.jpg" alt="异域世界OJ" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://yangli89.openjudge.cn/" title="首页" rel="home">异域世界OJ</a></h2>
+		 <span>/</span>
+		 <h2>OJ赛题回顾</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/problemsreview/" class="first">题目</a></li>
+            <li ><a href="/problemsreview/ranking/">排名</a></li>
+                    <li ><a href="/problemsreview/status/">状态</a></li>
+	    			        <li class="last"><a href="/problemsreview/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>0819R5:Computer Virus on Planet Pandora</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/problemsreview/0819R5/">查看</a></li>
+		<li ><a href="/problemsreview/0819R5/submit/">提交</a></li>
+				<li ><a href="/problemsreview/0819R5/statistics/">统计</a></li>
+			
+		<li ><a href="/problemsreview/clarify/0819R5/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>2000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>Aliens on planet Pandora also write computer programs like us. Their programs only consist of capital letters (‘A’ to ‘Z’) which they learned from the Earth. On planet Pandora, hackers make computer virus, so they also have anti-virus software. Of course they learned virus scanning algorithm from the Earth. Every virus has a pattern string which consists of only capital letters. If a virus’s pattern string is a substring of a program, or the pattern string is a substring of the reverse of that program, they can say the program is infected by that virus. Give you a program and a list of virus pattern strings, please write a program to figure out how many viruses the program is infected by.</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>There are multiple test cases. The first line in the input is an integer T ( T <= 10) indicating the number of test cases.<br /><br />For each test case:<br /><br />The first line is a integer n( 0 < n <= 250) indicating the number of virus pattern strings.<br /><br />Then n lines follows, each represents a virus pattern string. Every pattern string stands for a virus. It’s guaranteed that those n pattern strings are all different so there are n different viruses. The length of pattern string is no more than 1,000 and a pattern string at least consists of one letter.<br /><br />The last line of a test case is the program. The program may be described in a compressed format. A compressed program consists of capital letters and “compressors”. A “compressor” is in the following format:<br /><br />[qx]<br /><br />q is a number( 0 < q <= 5,000,000)and x is a capital letter. It means q consecutive letter xs in the original uncompressed program. For example, [6K] means ‘KKKKKK’ in the original program. So, if a compressed program is like:<br /><br />AB[2D]E[7K]G<br /><br />It actually is ABDDEKKKKKKKG after decompressed to original format.<br />The length of the program is at least 1 and at most 5,100,000, no matter in the compressed format or after it is decompressed to original format.</dd>
+		<dt>输出</dt>
+		<dd>For each test case, print an integer K in a line meaning that the program is infected by K viruses.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+2
+AB
+DCB
+DACB
+3
+ABC
+CDE
+GHI
+ABCCDEFIHG
+4
+ABB
+ACDEE
+BBB
+FEEE
+A[2B]CD[4E]F
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>0
+3
+2
+</pre></dd>
+				<dt>提示</dt>
+		<dd>In the second case in the sample input, the reverse of the program is ‘GHIFEDCCBA’, and ‘GHI’ is a substring of the reverse, so the program is infected by virus ‘GHI’.</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/problemsreview/0819R5/">查看</a></li>
+		<li ><a href="/problemsreview/0819R5/submit/">提交</a></li>
+				<li ><a href="/problemsreview/0819R5/statistics/">统计</a></li>
+			
+		<li ><a href="/problemsreview/clarify/0819R5/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">此处乃历次赛事的经典赛题、难题回顾题库，欢迎大家继续讨论AC<br />
+注：各题按测试点给分</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>3604</dd>
+					<dt>添加于</dt>
+			<dd>2011-08-21</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

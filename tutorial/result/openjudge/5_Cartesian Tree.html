@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 5:Cartesian Tree</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://dsa.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/89/logo_small.jpg" alt="数据结构与算法A" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://dsa.openjudge.cn/" title="首页" rel="home">数据结构与算法A</a></h2>
+		 <span>/</span>
+		 <h2>2017年《数据结构与算法A》期末考试</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/final2017/" class="first">题目</a></li>
+            <li ><a href="/final2017/ranking/">排名</a></li>
+                    <li ><a href="/final2017/status/">状态</a></li>
+	    			        <li class="last"><a href="/final2017/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>5:Cartesian Tree</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/final2017/5/">查看</a></li>
+		<li ><a href="/final2017/5/submit/">提交</a></li>
+				<li ><a href="/final2017/5/statistics/">统计</a></li>
+			
+		<li ><a href="/final2017/clarify/5/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>2000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><span style="color: rgb(35, 31, 23);font-family: " lucida="" bitstream="" vera="" font-size:="">Let us consider a special type of a binary search tree, called a cartesian tree. Recall that a binary search tree is a rooted ordered binary tree, such that for its every node x the following condition is satisfied: each node in its left subtree has the key less then the key of x, and each node in its right subtree has the key greater then the key of x.</span><br style="color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:="" /><span style="color: rgb(35, 31, 23);font-family: " lucida="" bitstream="" vera="" font-size:="">That is, if we denote left subtree of the node x by L(x), its right subtree by R(x) and its key by kx then for each node x we have</span><br style="color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:="" /></p><ul style="margin: 0px; padding: 0px; color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:=""><li style="margin: 0px; padding: 0px; list-style: none;"><p>if y ∈ L(x) then ky &lt; kx<br /></p></li><li style="margin: 0px; padding: 0px; list-style: none;"><p>if z ∈ R(x) then kz &gt; kx</p></li></ul><p><br style="color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:="" /><span style="color: rgb(35, 31, 23);font-family: " lucida="" bitstream="" vera="" font-size:="">The binary search tree is called cartesian if its every node x in addition to the main key kx also has an auxiliary key that we will denote by ax, and for these keys the heap condition is satisfied, that is</span><br style="color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:="" /></p><ul style="margin: 0px; padding: 0px; color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:=""><li style="margin: 0px; padding: 0px; list-style: none;"><p>if y is the parent of x then ay &lt; ax</p></li></ul><p><br style="color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:="" /><span style="color: rgb(35, 31, 23);font-family: " lucida="" bitstream="" vera="" font-size:="">Thus a cartesian tree is a binary rooted ordered tree, such that each of its nodes has a pair of two keys (k, a) and three conditions described are satisfied.</span><br style="color: rgb(35, 31, 23); font-family: " lucida="" bitstream="" vera="" font-size:="" white-space:="" /><span style="color: rgb(35, 31, 23);font-family: " lucida="" bitstream="" vera="" font-size:="">Given a set of pairs, construct a cartesian tree out of them, or detect that it is not possible.</span></p><p>代码填空</p><p><span style="white-space: nowrap;"><span style="white-space: nowrap;">}</span></span><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line of the input file contains an integer number N -- the number of pairs you should build cartesian tree out of (1 <= N <= 50 000). The following N lines contain two numbers each -- given pairs (ki, ai). For each pair |ki|, |ai| <= 30 000. All main keys and all auxiliary keys are different, i.e. ki != kj and ai != aj for each i != j.</dd>
+		<dt>输出</dt>
+		<dd>On the first line of the output file print YES if it is possible to build a cartesian tree out of given pairs or NO if it is not. If the answer is positive, on the following N lines output the tree. Let nodes be numbered from 1 to N corresponding to pairs they contain as they are given in the input file. For each node output three numbers -- its parent, its left child and its right child. If the node has no parent or no corresponding child, output 0 instead.<br />The input ensure these is only one possible tree.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>7
+5 4
+2 2
+3 9
+0 5
+1 3
+6 6
+4 11
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>YES
+2 3 6
+0 5 1
+1 0 7
+5 0 0
+2 4 0
+1 0 0
+3 0 0
+</pre></dd>
+				<dt>提示</dt>
+		<dd><pre><br />#include < cstdio ><br />#include < cstdlib ><br />#include < cstring ><br />#include < algorithm ><br />using namespace std;<br /><br />const int maxn = 50005;<br />//Tkey为输入主键与辅键的结构体<br />//key表示主键，aux表示辅键，index表示是输入的第几个结点<br />struct Tkey {<br />    int key, aux, index;<br />} keys[maxn];<br />//Tnode是BST结点的结构体，key表示主键，aux表示辅键<br />//father表示父结点的编号，leftChild和rightChild表示左右儿子结点<br />struct Tnode {<br />    int key, aux, father, leftChild, rightChild;<br />} node[maxn];<br />int n;<br /><br />//排序的比较函数<br />bool cmp(const Tkey &a, const Tkey &b) {<br />    return a.key < b.key;<br />}<br /><br />int main() {<br />    //读入数据<br />    int i;<br />    scanf("%d", &n);<br />    for (i = 1; i <= n; ++i) {<br />        scanf("%d%d", &keys[i].key, &keys[i].aux);<br />        keys[i].index = i;<br />    }<br /><br />    //按key对结点排序<br />    sort(keys + 1, keys + n + 1, cmp);<br /><br />    //按key从小到大将结点插入BST<br />    //father表示当前插入结点的父节点，leftChild表示当前插入结点的左儿子节点<br />    //rightMost表示每次插入前BST最右的结点<br />    int p, father, leftChild, rightMost = 0;<br />    for (i = 1; i <= n; ++i) {<br />        //寻找插入结点的父亲与左儿子<br />        leftChild = 0; father = rightMost;<br />        while (father != 0 && _____(1)_____) {<br />            leftChild = father;<br />            _____(2)_____<br />        }<br />        //将结点插入BST<br />        p = keys[i].index;<br />        node[p].key = keys[i].key;<br />        node[p].aux = keys[i].aux;<br />        node[p].father = father;<br />        node[p].leftChild = _____(3)_____;<br />        node[p].rightChild = _____(4)_____;<br />        if (father != 0)<br />            node[father].rightChild = p;<br />        if (leftChild != 0)<br />            node[leftChild].father = p;<br />        _____(5)_____<br />    }<br /><br />    //输出答案<br />    printf("YES\n");<br />    for (i = 1; i <= n; ++i)<br />        printf("%d %d %d\n", node[i].father, node[i].leftChild, node[i].rightChild);<br />    return 0;<br />}<br /></pre></dd>
+						<dt>来源</dt>
+		<dd>Northeastern Europe 2002, Northern Subregion</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/final2017/5/">查看</a></li>
+		<li ><a href="/final2017/5/submit/">提交</a></li>
+				<li ><a href="/final2017/5/statistics/">统计</a></li>
+			
+		<li ><a href="/final2017/clarify/5/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>16511</dd>
+				<dt>提交次数</dt>
+		<dd>608</dd>
+		<dt>尝试人数</dt>
+	    <dd>304</dd>
+	    <dt>通过人数</dt>
+	    <dd>206</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

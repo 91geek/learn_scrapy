@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1041:随机种子</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.theme.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.dialog.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.resizable.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.core.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-ui-1.8.11.custom.min.js?1467854438.js"></script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://qwsfsx.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/130/logo_small.jpg" alt="趣味算法实习" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://qwsfsx.openjudge.cn/" title="首页" rel="home">趣味算法实习</a></h2>
+		 <span>/</span>
+		 <h2>期末测试</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/final2012/" class="first">题目</a></li>
+            <li ><a href="/final2012/ranking/">排名</a></li>
+                    <li ><a href="/final2012/status/">状态</a></li>
+	     
+        <li ><a href="/final2012/statistics/">统计</a></li>
+				        <li class="last"><a href="/final2012/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1041:随机种子</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/final2012/1041/">查看</a></li>
+		<li ><a href="/final2012/1041/submit/">提交</a></li>
+				<li ><a href="/final2012/1041/statistics/">统计</a></li>
+			
+		<li ><a href="/final2012/clarify/1041/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><div><p>1tthinking除了随机算法，其他什么都不会。但是他还是可以ac很多题目，他用的是什么呢？他会选择一个好的随机种子，然后输出答案。往往他选择的一个好的种子可以有99%的概率ac题目。</p><p>他会按照下面的规则选择一个种子。首先1tthinking有自己喜欢的一个幸运数字 <em>x</em>。然后他会找一个数字 <em>a</em> 使得 (1)<em>a</em> is a 是 <em>x</em> 的倍数 (2) <em>a</em> 的十进制表示包含0到9。</p><p>举个例子, 如果 <em>x</em> = 1, 那么 9182736450 就是一个1tthinking需要的随机种子。</p><p>然而1tthinking有的时候花了很久也找不到这个数，他感到很失望。现在他把问题留给了你。</p><p><img src="http://media.openjudge.cn/images/g3206_1.jpg"></p></div></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><div><p>第1行，一个整数 <em>T</em> (0 ≤ <em>T</em> ≤ 100), 幸运数字的数量。</p><p>第2到 <em>T</em> + 1行: <em>X<sub>i</sub></em> (0 ≤ <em>X<sub>i</sub></em> ≤ 10<sup>6</sup>), 1tthinking的幸运数字。</p></div></dd>
+		<dt>输出</dt>
+		<dd><p>第1到 <em>T</em>: 一个整数 <em>Y<sub>i</sub></em> (0 ≤ <em>Y<sub>i</sub></em> ≤ 10<sup>16</sup>), 满足条件的随机种子. 如果不存在，输出-1。</p></dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+1
+2
+10</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>9876543210
+9876543210
+9876543210</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/final2012/1041/">查看</a></li>
+		<li ><a href="/final2012/1041/submit/">提交</a></li>
+				<li ><a href="/final2012/1041/statistics/">统计</a></li>
+			
+		<li ><a href="/final2012/clarify/1041/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3206</dd>
+				<dt>提交次数</dt>
+		<dd>12</dd>
+		<dt>尝试人数</dt>
+	    <dd>3</dd>
+	    <dt>通过人数</dt>
+	    <dd>2</dd>
+	</dl>
+		
+		<h4>Other language verions</h4>
+	<ul>
+				<li><a href="?lang=en_US">English</a></li>
+			</ul>
+		
+					
+	<script type="text/javascript">
+
+$(function(){
+    var e={},c={};//e为选中的标签
+    var b=function(h){
+        if(e[h]){
+            c[h]=true;
+            $.each(e[h],function(k,j){
+                $(j).removeClass("gract").addClass("rdact")
+                })
+        }
+    };//打标签css
+    var d=function(h){
+        if(e[h]){
+            delete c[h];
+            $.each(e[h],function(k,j){
+                $(j).removeClass("rdact").addClass("gract")
+                })
+        }
+    };//取消打上的标签css
+
+    var g=function(){
+        var h=$.trim($("#tags_title").attr("value").toLowerCase()).split(" "),i={};
+        $.each(h,function(k,j){
+            if(j!=""){
+                b(j);
+                i[j]=true
+            }
+        });
+        for(t in c){
+            if(!i[t]){
+                d(t);
+            }
+        }
+    };
+
+    $('.tagbtn').each(function(j){
+        var h=$(this).text().toLowerCase();
+        if(e[h]){
+            e[h].push(this);
+        }
+        else{
+            e[h]=[this];
+        }
+    }).click(function(){
+        var h=$(this).text();
+        var k=$.trim($("#tags_title").attr("value")).split(" "),o=false,j=h.toLowerCase(),l;
+        k=$.grep(k,function(value){
+            if(value.toLowerCase()==j){
+                d(j);
+                o=true;
+                return false;
+            }
+            else{
+                return true;
+            }
+        });//遍历k检查k中是否存在所点击的标签如果有则去除
+        if(!o){
+            k.push(h);
+            b(j);
+        }//如果不存在则添加到最后
+        var n=k.join(" ");//用空格连接数组中的标签
+        $("#tags_title").attr("value",(n.length>1)?$.trim(n)+" ":n);
+        $("#tags_title").focus(); //如果数量多于1个标签
+    });
+    $("#tags_title").keyup(g);
+
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	$( "#dialog-form" ).dialog({
+		autoOpen: false,
+		height: 420,
+		width: 550,
+		modal: true,
+		buttons: {
+			"保存": function() {
+				$('#rating_form').submit();
+			},
+			"取消": function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		close: function() {
+		}
+	});
+
+	$( "#create-rating" )
+		.button()
+		.click(function() {
+			$( "#dialog-form" ).dialog( "open" );
+			g();
+		});
+	
+	 var x={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+     i=$("#rate"),
+     y=$("#stars img"),
+     z=function(f){
+       var h=0||i.val();
+       y.each(function(k){
+         var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+         this.src=i;
+       });
+       if(f)
+         $("#rate_description").text(x[f]);
+       else
+         $("#rate_description").text(h!=0?x[h]:"");
+     };
+     y.hover(function(){d(this.id.charAt(4));},function(){z();});
+     if(i.attr("value")){
+       y.click(function(){
+         var f=this.id.charAt(4);
+         i.val(f);
+         z(f);
+         //$('#form_diffculity_rating').submit();
+         //$( "#dialog-form" ).dialog( "open" );
+		//	g();
+       });
+     }
+     z();
+});
+</script>
+
+<div id="dialog-form" title="评价">
+	<form id="rating_form" class="j a_interest_form" method="POST" action="/api/problem/rating" onsubmit="$(this).ajaxSubmit({dataType:'json',success:function(){$('#dialog-form').dialog( 'close' );}});return false;">
+       			<input type="hidden" value="2732" name="app_id">
+   				<input type="hidden" value="1041" name="problem_number">
+   				<input type="hidden" value="3206" name="problem_id">
+       		<div class="rating">
+	  您的评价
+   		<span style="margin-left: 10px;" id="stars">
+			<img alt="很水" src="http://static.openjudge.cn/images/nst.gif" id="star1">
+			<img alt="简单" src="http://static.openjudge.cn/images/nst.gif" id="star2">
+			<img alt="一般" src="http://static.openjudge.cn/images/nst.gif" id="star3">
+			<img alt="较难" src="http://static.openjudge.cn/images/nst.gif" id="star4">
+			<img alt="变态" src="http://static.openjudge.cn/images/nst.gif" id="star5">
+		</span>
+		<span class="pl" id="rate_description"></span>
+   		
+	    	<input type="hidden" value="" name="diffculity_rate" id="rate">         
+		
+    </div>
+   				<ul class="interest_form " id="advtags">
+    
+        			<li>标签(多个标签用空格分隔): </li>
+      				<li><input type="text" style="width: 250px;" name="tags" id="tags_title" value=""></li>
+       				       				       				<li class="clearfix" id="populartags">
+       					<dl>
+       						<dt>常用标签:</dt>
+       						<dd>
+       						       							<span class="tagbtn gract">递归</span> &nbsp;
+       						       							<span class="tagbtn gract">动态规划</span> &nbsp;
+       						       							<span class="tagbtn gract">贪心</span> &nbsp;
+       						       							<span class="tagbtn gract">搜索</span> &nbsp;
+       						       							<span class="tagbtn gract">枚举</span> &nbsp;
+       						       							<span class="tagbtn gract">模拟</span> &nbsp;
+       						       							<span class="tagbtn gract">数学</span> &nbsp;
+       						       							<span class="tagbtn gract">字符串处理</span> &nbsp;
+       						       							<span class="tagbtn gract">几何</span> &nbsp;
+       						       							<span class="tagbtn gract">高精度计算</span> &nbsp;
+       						       							<span class="tagbtn gract">图论</span> &nbsp;
+       						       						</dd>
+       					</dl>
+       				</li>
+   				</ul>
+	</form>
+</div>
+	
+	<div>
+						<h4>尚无评分</h4>
+			</div>
+	
+		
+				
+						
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

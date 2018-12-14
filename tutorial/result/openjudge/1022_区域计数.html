@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1022:区域计数</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2017届练习区</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2017/" class="first">题目</a></li>
+            <li ><a href="/2017/ranking/">排名</a></li>
+                    <li ><a href="/2017/status/">状态</a></li>
+	    			        <li class="last"><a href="/2017/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1022:区域计数</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2017/1022/">查看</a></li>
+		<li ><a href="/2017/1022/submit/">提交</a></li>
+				<li ><a href="/2017/1022/statistics/">统计</a></li>
+			
+		<li ><a href="/2017/clarify/1022/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131072kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>x-y平面上有一些矩形。这些矩形的四条边都是与x轴或y轴平行的。</p><p>平面被分成由一个或多个矩形的边围成的区域。例如下图中，三个矩形相互交叉，平面被分成了8个区域。</p><p><img src="data:image/png;base64,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" alt="" /><br /></p><p>矩形完全可能以更复杂的方式相交。你要做的就是写个能够计算区域数目的程序。<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入包含多组独立的数据。每组的格式如下：<br />n<br />l1 t1 r1 b2<br />l2 t2 r2 b2<br />.<br />.<br />.<br />ln tn rn bn<br /><br />n(1 <= n <= 50)为平面上的矩形数量。接下来的n行每行描述一个矩形。(li, ti)为矩形的左上角，(ri, bi)为矩形的右下角(0 <= li < ri <= 10^6, 0 <= bi < ti <= 10^6)。<br /><br />n=0为输入结束的标志。</dd>
+		<dt>输出</dt>
+		<dd>对每组数据输出一行一个整数表示答案。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+4 28 27 11
+15 20 42 5
+11 24 33 14
+5
+4 28 27 11
+12 11 34 2
+7 26 14 16
+14 16 19 12
+17 28 27 21
+2
+300000 1000000 600000 0
+0 600000 1000000 300000
+0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>8
+6
+6</pre></dd>
+						<dt>来源</dt>
+		<dd>jason_yu</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2017/1022/">查看</a></li>
+		<li ><a href="/2017/1022/submit/">提交</a></li>
+				<li ><a href="/2017/1022/statistics/">统计</a></li>
+			
+		<li ><a href="/2017/clarify/1022/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">yjq naive</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>7446</dd>
+					<dt>添加于</dt>
+			<dd>2014-10-12</dd>
+				<dt>提交次数</dt>
+		<dd>4</dd>
+		<dt>尝试人数</dt>
+	    <dd>3</dd>
+	    <dt>通过人数</dt>
+	    <dd>3</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

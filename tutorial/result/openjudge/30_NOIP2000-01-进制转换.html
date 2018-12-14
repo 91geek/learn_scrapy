@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 30:NOIP2000-01-进制转换</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ymoi.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/205/logo_small.jpg" alt="大连育明高级中学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ymoi.openjudge.cn/" title="首页" rel="home">大连育明高级中学</a></h2>
+		 <span>/</span>
+		 <h2>noip提高组试题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/tigaozu/" class="first">题目</a></li>
+            <li ><a href="/tigaozu/ranking/">排名</a></li>
+                    <li ><a href="/tigaozu/status/">状态</a></li>
+	    			        <li class="last"><a href="/tigaozu/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>30:NOIP2000-01-进制转换</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/tigaozu/30/">查看</a></li>
+		<li ><a href="/tigaozu/30/submit/">提交</a></li>
+				<li ><a href="/tigaozu/30/statistics/">统计</a></li>
+			
+		<li ><a href="/tigaozu/clarify/30/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>我们可以用这样的方式来表示一个十进制数：&nbsp;将每个阿拉伯数字乘以一个以该数字所处位置的（值减１）为指数，以１０为底数的幂之和的形式。例如：１２３可表示为&nbsp;１＊１０２＋２＊１０１＋３＊１００这样的形式。<br />&nbsp;&nbsp;&nbsp;&nbsp;与之相似的，对二进制数来说，也可表示成每个二进制数码乘以一个以该数字所处位置的（值－１）为指数，以２为底数的幂之和的形式。一般说来，任何一个正整数Ｒ或一个负整数－Ｒ都可以被选来作为一个数制系统的基数。如果是以Ｒ或－Ｒ为基数，则需要用到的数码为&nbsp;０，１，．．．．Ｒ－１。例如，当Ｒ＝７时，所需用到的数码是０，１，２，３，４，５和６，这与其是Ｒ或－Ｒ无关。如果作为基数的数绝对值超过１０，则为了表示这些数码，通常使用英文字母来表示那些大于９的数码。例如对１６进制数来说，用Ａ表示１０，用Ｂ表示１１，用Ｃ表示１２，用Ｄ表示１３，用Ｅ表示１４，用Ｆ表示１５。<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在负进制数中是用－Ｒ&nbsp;作为基数，例如－１５（十进制）相当于１１０００１（－２进制），并且它可以被表示为２的幂级数的和数：<br />&nbsp;&nbsp;&nbsp;１１０００１＝１＊（－２）５＋１＊（－２）４＋０＊（－２）３＋０＊（－２）２＋&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;０＊（－２）１&nbsp;＋１＊（－２）０<br /><br />设计一个程序，读入一个十进制数和一个负进制数的基数,&nbsp;并将此十进制数转换为此负进制下的数：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;－Ｒ∈｛－２，－３，－４，．．．，－２０｝</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入的每行有两个输入数据。<br />第一个是十进制数Ｎ（－32768＜＝Ｎ＜＝32767）；  第二个是负进制数的基数－Ｒ。</dd>
+		<dt>输出</dt>
+		<dd>结果显示在屏幕上，相对于输入，应输出此负进制数及其基数，若此基数超过１０，则参照１６进制的方式处理。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>３００００　－２
+－２００００　－２
+２８８００　－１６
+－２５０００　－１６
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>３００００＝１１０１１０１０１０１１１００００（ｂａｓｅ　－２）
+－２００００＝１１１１０１１０００１０００００　（ｂａｓｅ　－２）
+２８０００＝１９１８０　　　（ｂａｓｅ　－１６）
+－２５０００＝７ＦＢ８　　　（ｂａｓｅ　－１６）
+</pre></dd>
+				<dt>提示</dt>
+		<dd>共有5个测试点<br />测试数据下载：http://115.com/file/e6k5r1xb#NOIP2000测试数据.zip</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/tigaozu/30/">查看</a></li>
+		<li ><a href="/tigaozu/30/submit/">提交</a></li>
+				<li ><a href="/tigaozu/30/statistics/">统计</a></li>
+			
+		<li ><a href="/tigaozu/clarify/30/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3722</dd>
+					<dt>添加于</dt>
+			<dd>2015-08-14</dd>
+				<dt>提交次数</dt>
+		<dd>3</dd>
+		<dt>尝试人数</dt>
+	    <dd>2</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

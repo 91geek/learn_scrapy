@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - pigs:网络流dinic模板</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://algorithm.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/237/logo_small.jpg" alt="算法分析和复杂性理论" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://algorithm.openjudge.cn/" title="首页" rel="home">算法分析和复杂性理论</a></h2>
+		 <span>/</span>
+		 <h2>2017年模拟考试-2018练习</h2>
+		<span style="font-size:14px;">正在进行中</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2017mock/" class="first">题目</a></li>
+            <li ><a href="/2017mock/ranking/">排名</a></li>
+                    <li ><a href="/2017mock/status/">状态</a></li>
+	     
+        <li ><a href="/2017mock/statistics/">统计</a></li>
+				        <li class="last"><a href="/2017mock/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>pigs:网络流dinic模板</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2017mock/pigs/">查看</a></li>
+		<li ><a href="/2017mock/pigs/submit/">提交</a></li>
+				<li ><a href="/2017mock/pigs/statistics/">统计</a></li>
+			
+		<li ><a href="/2017mock/clarify/pigs/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>100kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><pre class="aLF-aPX-K0-aPE" style="user-select: text; font-family: &quot;Courier New&quot;, Courier, monospace, arial, sans-serif; font-size: 14px; margin: 0px; white-space: pre-wrap; word-wrap: break-word; background-color: rgb(255, 255, 255);">/*
+ * Dinic algo for max flow
+ *
+ * This implementation assumes that #nodes, #edges, and capacity on each edge &lt;= INT_MAX,
+ * which means INT_MAX is the best approximation of INF on edge capacity.
+ * The total amount of max flow computed can be up to LLONG_MAX (not defined in this file),
+ * but each &#39;dfs&#39; call in &#39;dinic&#39; can return &lt;= INT_MAX flow value.
+ */
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;limits.h&gt;
+#include &lt;string.h&gt;
+#include &lt;assert.h&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+#define N (100+2)
+#define M (N*N+4*N)
+
+typedef long long LL;
+
+using namespace std;
+
+struct edge {
+&nbsp;&nbsp;int v, cap, next;
+};
+edge e[M];
+
+int head[N], level[N], cur[N];
+int num_of_edges;
+
+/*
+ * When there are multiple test sets, you need to re-initialize before each
+ */
+void dinic_init(void) {
+&nbsp;&nbsp;num_of_edges = 0;
+&nbsp;&nbsp;memset(head, -1, sizeof(head));
+&nbsp;&nbsp;return;
+}
+
+int add_edge(int u, int v, int c1, int c2) {
+&nbsp;&nbsp;int&amp; i=num_of_edges;
+
+&nbsp;&nbsp;assert(c1&gt;=0 &amp;&amp; c2&gt;=0 &amp;&amp; c1+c2&gt;=0); // check for possibility of overflow
+&nbsp;&nbsp;e[i].v = v;
+&nbsp;&nbsp;e[i].cap = c1;
+&nbsp;&nbsp;e[i].next = head[u];
+&nbsp;&nbsp;head[u] = i++;
+
+&nbsp;&nbsp;e[i].v = u;
+&nbsp;&nbsp;e[i].cap = c2;
+&nbsp;&nbsp;e[i].next = head[v];
+&nbsp;&nbsp;head[v] = i++;
+&nbsp;&nbsp;return i;
+}
+
+void print_graph(int n) {
+&nbsp;&nbsp;for (int u=0; u&lt;n; u++) {
+&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%d: &quot;, u);
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i=head[u]; i&gt;=0; i=e[i].next) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;%d(%d)&quot;, e[i].v, e[i].cap);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;\n&quot;);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;return;
+}
+
+/*
+ * Find all augmentation paths in the current level graph
+ * This is the recursive version
+ */
+int dfs(int u, int t, int bn) {
+&nbsp;&nbsp;if (u == t) return bn;
+&nbsp;&nbsp;int left = bn;
+&nbsp;&nbsp;for (int &amp;i=cur[u]; i&gt;=0; i=e[i].next) {
+&nbsp;&nbsp;&nbsp;&nbsp;int v = e[i].v;
+&nbsp;&nbsp;&nbsp;&nbsp;int c = e[i].cap;
+&nbsp;&nbsp;&nbsp;&nbsp;if (c &gt; 0 &amp;&amp; level[u]+1 == level[v]) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int flow = dfs(v, t, min(left, c));
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (flow &gt; 0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e[i].cap -= flow;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e[i^1].cap += flow;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cur[u] = i;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;left -= flow;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!left) break;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;if (left &gt; 0) level[u] = 0;
+&nbsp;&nbsp;return bn - left;
+}
+
+bool bfs(int s, int t) {
+&nbsp;&nbsp;memset(level, 0, sizeof(level));
+&nbsp;&nbsp;level[s] = 1;
+&nbsp;&nbsp;queue&lt;int&gt; q;
+&nbsp;&nbsp;q.push(s);
+&nbsp;&nbsp;while (!q.empty()) {
+&nbsp;&nbsp;&nbsp;&nbsp;int u = q.front();
+&nbsp;&nbsp;&nbsp;&nbsp;q.pop();
+&nbsp;&nbsp;&nbsp;&nbsp;if (u == t) return true;
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i=head[u]; i&gt;=0; i=e[i].next) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int v = e[i].v;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (!level[v] &amp;&amp; e[i].cap &gt; 0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level[v] = level[u]+1;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q.push(v);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;return false;
+}
+
+LL dinic(int s, int t) {
+&nbsp;&nbsp;LL max_flow = 0;
+
+&nbsp;&nbsp;while (bfs(s, t)) {
+&nbsp;&nbsp;&nbsp;&nbsp;memcpy(cur, head, sizeof(head));
+&nbsp;&nbsp;&nbsp;&nbsp;max_flow += dfs(s, t, INT_MAX);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;return max_flow;
+}
+
+int upstream(int s, int n) {
+&nbsp;&nbsp;int cnt = 0;
+&nbsp;&nbsp;vector&lt;bool&gt; visited(n);
+&nbsp;&nbsp;queue&lt;int&gt; q;
+&nbsp;&nbsp;visited[s] = true;
+&nbsp;&nbsp;q.push(s);
+&nbsp;&nbsp;while (!q.empty()) {
+&nbsp;&nbsp;&nbsp;&nbsp;int u = q.front();
+&nbsp;&nbsp;&nbsp;&nbsp;q.pop();
+&nbsp;&nbsp;&nbsp;&nbsp;for (int i=head[u]; i&gt;=0; i=e[i].next) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int v = e[i].v;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (e[i].cap &gt; 0 &amp;&amp; !visited[v]) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;visited[v] = true;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;q.push(v);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cnt++;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;return cnt; // excluding s
+}
+
+int main() {
+&nbsp;&nbsp;int m, n, s, t;
+&nbsp;&nbsp;int pig[M+1], pre[M+1];
+&nbsp;&nbsp;bool con[N+1];
+&nbsp;&nbsp;FILE *fin;
+
+&nbsp;&nbsp;/*fin = fopen(&quot;pigs.dat&quot;, &quot;r&quot;);
+&nbsp;&nbsp;assert(fin);*/
+&nbsp;&nbsp;fin = stdin;
+
+&nbsp;&nbsp;fscanf(fin, &quot;%d %d&quot;, &amp;m, &amp;n);
+&nbsp;&nbsp;dinic_init();
+&nbsp;&nbsp;s = 0, t = n+1;
+&nbsp;&nbsp;for (int i=1; i&lt;=m; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;fscanf(fin, &quot;%d&quot;, &amp;pig[i]);
+&nbsp;&nbsp;}
+&nbsp;&nbsp;memset(pre, -1, sizeof(pre));
+&nbsp;&nbsp;for (int i=1; i&lt;=n; i++) {
+&nbsp;&nbsp;&nbsp;&nbsp;int nkeys;
+&nbsp;&nbsp;&nbsp;&nbsp;fscanf(fin, &quot;%d&quot;, &amp;nkeys);
+&nbsp;&nbsp;&nbsp;&nbsp;memset(con, 0, sizeof(con));
+&nbsp;&nbsp;&nbsp;&nbsp;int cap = 0;
+&nbsp;&nbsp;&nbsp;&nbsp;for (int j=1; j&lt;=nkeys; j++) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int ph;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fscanf(fin, &quot;%d&quot;, &amp;ph);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int cust = pre[ph];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (cust &lt; 0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cap += pig[ph];
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} else if (!con[cust]) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add_edge(cust, i, INT_MAX, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pre[ph] = i;
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;if (cap &gt; 0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add_edge(s, i, cap, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;int npigs;
+&nbsp;&nbsp;&nbsp;&nbsp;fscanf(fin, &quot;%d&quot;, &amp;npigs);
+&nbsp;&nbsp;&nbsp;&nbsp;if (npigs &gt; 0) {
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add_edge(i, t, npigs, 0);
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;}
+&nbsp;&nbsp;//print_graph(n+2);
+&nbsp;&nbsp;int flow = dinic(s, t);
+&nbsp;&nbsp;printf(&quot;%d\n&quot;, flow);
+
+&nbsp;&nbsp;return 0;
+}</pre><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>无</dd>
+		<dt>输出</dt>
+		<dd>无</dd>
+		<dt>样例输入</dt>
+		<dd><pre>无</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>无</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2017mock/pigs/">查看</a></li>
+		<li ><a href="/2017mock/pigs/submit/">提交</a></li>
+				<li ><a href="/2017mock/pigs/statistics/">统计</a></li>
+			
+		<li ><a href="/2017mock/clarify/pigs/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">D. 请注意内存限制，如果评测系统返回错误而且你的内存占用是65536kB，有可能实际上是爆内存了。提示：一个int占4字节，一个short占2字节。<br />
+H. 请忽略标题中“难度3”的表述，并且不一定要用最大流完成。</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>16446</dd>
+				<dt>提交次数</dt>
+		<dd>117</dd>
+		<dt>尝试人数</dt>
+	    <dd>99</dd>
+	    <dt>通过人数</dt>
+	    <dd>85</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

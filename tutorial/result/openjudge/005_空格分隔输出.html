@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 005:空格分隔输出提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cqyz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="ITer openjudge" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cqyz.openjudge.cn/" title="首页" rel="home">ITer openjudge</a></h2>
+		 <span>/</span>
+		 <h2>【语言学习】</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/yuyan/" class="first">题目</a></li>
+            <li ><a href="/yuyan/ranking/">排名</a></li>
+                    <li ><a href="/yuyan/status/">状态</a></li>
+	    			        <li class="last"><a href="/yuyan/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>005:空格分隔输出</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/yuyan/005/">查看</a></li>
+		<li ><a href="/yuyan/005/submit/">提交</a></li>
+				<li class="current-show"><a href="/yuyan/005/statistics/">统计</a></li>
+			
+		<li ><a href="/yuyan/clarify/005/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+									<td class="result">结果</td>
+					<td>分数</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/829410/">C2021徐浩然</a></td>
+					
+				<td class="result"><a href="/yuyan/solution/15446937/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">2ms</td>
+				<td class="code-length">179 B</td>
+				<td class="language"><a href="/yuyan/solution/15446937/">G++</a></td>
+				<td class="date"><abbr title="2018-09-27 13:10:56">18.9.27</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/830651/">C2021lzh</a></td>
+					
+				<td class="result"><a href="/yuyan/solution/14422016/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">153 B</td>
+				<td class="language"><a href="/yuyan/solution/14422016/">G++</a></td>
+				<td class="date"><abbr title="2018-07-19 12:03:35">18.7.19</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/828465/">(C2021姜予卓)</a></td>
+					
+				<td class="result"><a href="/yuyan/solution/14419701/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">195 B</td>
+				<td class="language"><a href="/yuyan/solution/14419701/">G++</a></td>
+				<td class="date"><abbr title="2018-07-19 10:47:38">18.7.19</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/852987/">nihao</a></td>
+					
+				<td class="result"><a href="/yuyan/solution/13782475/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">5ms</td>
+				<td class="code-length">262 B</td>
+				<td class="language"><a href="/yuyan/solution/13782475/">G++</a></td>
+				<td class="date"><abbr title="2018-05-31 14:08:51">18.5.31</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/843362/">びゃくやこう</a></td>
+					
+				<td class="result"><a href="/yuyan/solution/13353178/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">13ms</td>
+				<td class="code-length">192 B</td>
+				<td class="language"><a href="/yuyan/solution/13353178/">G++</a></td>
+				<td class="date"><abbr title="2018-04-25 21:55:26">18.4.25</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/787415/">张益逍</a></td>
+					
+				<td class="result"><a href="/yuyan/solution/10430321/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">233 B</td>
+				<td class="language"><a href="/yuyan/solution/10430321/">G++</a></td>
+				<td class="date"><abbr title="2017-08-20 17:14:36">17.8.20</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+			</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">6</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

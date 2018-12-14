@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - E:Safety Precautions</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://zjut.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/45/logo_small.jpg" alt="浙江工业大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://zjut.openjudge.cn/" title="首页" rel="home">浙江工业大学</a></h2>
+		 <span>/</span>
+		 <h2>2011暑期训练赛第二场</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/20110707/" class="first">题目</a></li>
+            <li ><a href="/20110707/ranking/">排名</a></li>
+                    <li ><a href="/20110707/status/">状态</a></li>
+	     
+        <li ><a href="/20110707/statistics/">统计</a></li>
+				        <li class="last"><a href="/20110707/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>E:Safety Precautions</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/20110707/E/">查看</a></li>
+		<li ><a href="/20110707/E/submit/">提交</a></li>
+				<li ><a href="/20110707/E/statistics/">统计</a></li>
+			
+		<li ><a href="/20110707/clarify/E/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65535kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>Explosions of oil rigs (and — for that matter — other factories and production systems) are supposed to be prevented by multi-level security systems. For instance, a pipe leak may not be a problem if you have another pipe around it to catch the<br />oil. High pressure will not cause a major damage if you have relief valves, etc. A large share of good engineering is building safety into systems naturally. To “encourage” such good engineering, the government tends to prescribe safety regulations to be followed for building deep-water oil rigs. Unfortunately, to work, such regulations also need to be enforced which hasn’t really been the case so much the last few years.<br />A simplified way to model safety issues in a system such as an oil well is the following: Components may depend on other components for their operation, and they can malfunction. Some may malfunction on their own; others malfunction only if some of the others they depend on already malfunctioned. For simplicity, in this problem, we will ensure that there will never be cycles in the component dependencies. Each component i has a threshold ti >= 0, meaning that it can only malfunction if at least ti of the components it depends on malfunctioned before. Thus, components with ti = 0 can malfunction on their own.<br />Now, we can equip components with safety technology. For a component i, the price for this technology will be a real number pi >= 0. If we pay the price and add the technology to component i, it will never malfunction, even if all the other components it depends on do. Our goal is to protect a particular designated component from malfunctioning: imagine that this component corresponds to the oil rig exploding. Of course, we want to do so at the lowest total cost.</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line contains the number K of data sets. This is followed by K data sets, each of the following form:<br />The first line of each data set contains an integer 1 <= n <= 20, the number of components in the system. The component<br />we want to protect will always be component n.<br />This is followed by n lines, each describing one component. The first number in line i is the threshold of component i.<br />The second number (a floating point number) is the price for protecting the component. The remaining numbers in line i are the indices of the (0 or more) other components that component i depends on. All of them will be strictly less than i (which also ensures that there will be no cycles in the dependencies).</dd>
+		<dt>输出</dt>
+		<dd>For each data set, output “Data Set x:” on a line by itself, where x is its number. On the next line, output the minimum<br />cost at which component n can be completely protected from malfunction, rounded to two decimals. Each data set should<br />be followed by a blank line.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>1
+7
+0 1754.0
+1 200.5 1
+1 313.1
+1 4817.2 2 3
+4 3122 1 2 3 4
+0 512.3 1 3 5
+1 71582 2 5 6</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Data Set 1:
+712.80
+</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/20110707/E/">查看</a></li>
+		<li ><a href="/20110707/E/submit/">提交</a></li>
+				<li ><a href="/20110707/E/statistics/">统计</a></li>
+			
+		<li ><a href="/20110707/clarify/E/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3557</dd>
+				<dt>提交次数</dt>
+		<dd>28</dd>
+		<dt>尝试人数</dt>
+	    <dd>4</dd>
+	    <dt>通过人数</dt>
+	    <dd>2</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

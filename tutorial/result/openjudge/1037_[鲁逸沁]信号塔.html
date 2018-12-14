@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1037:[鲁逸沁]信号塔</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2011集训队互测</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2011nt/" class="first">题目</a></li>
+            <li ><a href="/2011nt/ranking/">排名</a></li>
+                    <li ><a href="/2011nt/status/">状态</a></li>
+	    			        <li class="last"><a href="/2011nt/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1037:[鲁逸沁]信号塔</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2011nt/1037/">查看</a></li>
+		<li ><a href="/2011nt/1037/submit/">提交</a></li>
+				<li ><a href="/2011nt/1037/statistics/">统计</a></li>
+			
+		<li ><a href="/2011nt/clarify/1037/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>20000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="p18" style="margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;lanwuni<span style="font-family:宋体">接到一个任务，在</span><span style="font-family:Times New Roman">C</span><span style="font-family:宋体">市建立</span></span><span style="font-size: 12pt">N</span><span style="font-size: 12pt">个信号塔来完成城市中的通讯任务。</span><span style="font-size: 12pt"><o:p></o:p></span></p><p class="p18" style="margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;假设<span style="font-family:Times New Roman">C</span><span style="font-family:宋体">市是一个坐标范围</span><span style="font-family:Times New Roman">[-2000000,2000000]</span><span style="font-family:宋体">的网格，一些整点上有用户，你也可以在整点上建立信号塔。一个点上可以建立多座。</span></span><span style="font-size: 12pt"><o:p></o:p></span></p><p class="p18" style="margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;在<span style="font-family:Times New Roman">C</span><span style="font-family:宋体">市，两点之间的距离是曼哈顿距离，也就是横纵坐标差值之和。每个信号塔都有一个半径</span></span><span style="font-size: 12pt">D</span><span style="font-size: 12pt">i</span><span style="font-size: 12pt">，表示与</span><span style="font-size: 12pt">i</span><span style="font-size: 12pt">曼哈顿距离不超过</span><span style="font-size: 12pt">D</span><span style="font-size: 12pt">i</span><span style="font-size: 12pt">的地方都能被这个信号塔的信号覆盖到。</span><span style="font-size: 12pt"><o:p></o:p></span></p><p class="p18" style="margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;建立信号塔要满足一些性质：</span><span style="font-size: 12pt"><o:p></o:p></span></p><p class="p18" style="margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;1.</span><span style="font-size: 12pt">每个信号塔有一定的用户，<span style="font-family:Times New Roman">lanwuni</span><span style="font-family:宋体">要把信号塔建立在某个地方，使得属于该塔的用户都能被信号覆盖到；</span></span><span style="font-size: 12pt"><o:p></o:p></span></p><p class="p18" style="margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;2.</span><span style="font-size: 12pt">信号塔有一定等级和安装限制，所以，第</span><span style="font-size: 12pt">i</span><span style="font-size: 12pt">号信号塔能覆盖的所有整点，必须也被第</span><span style="font-size: 12pt">i</span><span style="font-size: 12pt">+1<span style="font-family:宋体">号信号塔覆盖到。即使这个整点上没有用户。</span></span><span style="font-size: 12pt"><o:p></o:p></span></p><p class="p18" style="margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 12pt">&nbsp;&nbsp;&nbsp;&nbsp;现在告诉你每个信号塔的半径，以及每个信号塔的用户，请你帮<span style="font-family:Times New Roman">lanwuni</span><span style="font-family:宋体">谋划一下应该把这</span></span><span style="font-size: 12pt">N</span><span style="font-size: 12pt">个信号塔建立在什么地方。</span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行2个整数N、M，分别表示信号塔个数、用户总个数。<br />第二行N个整数，第i个数Di表示第i号信号塔的半径。<br />第3到第M+2行，每行3个整数Ui、Xi、Yi，表示第Ui号信号塔有一个用户在坐标[Xi,Yi]的地方。<br />数据保证Di<=Di+1（i<N）。</dd>
+		<dt>输出</dt>
+		<dd>输出包括N行，每行2个整数，表示第i个信号塔的坐标。<br />数据保证有解。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>6 6
+1 3 5 6 6 7
+1 21 27
+2 23 27
+3 19 27
+4 21 33
+5 23 29
+6 26 30</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>20 27
+20 27
+19 28
+19 29
+19 29
+19 30</pre></dd>
+				<dt>提示</dt>
+		<dd>30%的数据中，1<=N,M<=10，|Xi|,|Yi|,|Di|<=50。<br />50%的数据中，1<=N,M<=11。<br />65%的数据中，1<=N,M<=5000。<br />100%的数据中，1<=N,M<=100000，|Xi|,|Yi|,|Di|<=1000000。<br />题目附有Special Judge，对于每个测试点：<br />如果你输出中坐标绝对值大于2000000，你将得到0分；<br />如果你输出不满足题中所述的性质，你将得到0分；<br />否则你将得到5分。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2011nt/1037/">查看</a></li>
+		<li ><a href="/2011nt/1037/submit/">提交</a></li>
+				<li ><a href="/2011nt/1037/statistics/">统计</a></li>
+			
+		<li ><a href="/2011nt/clarify/1037/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>4799</dd>
+					<dt>添加于</dt>
+			<dd>2012-05-20</dd>
+				<dt>提交次数</dt>
+		<dd>2</dd>
+		<dt>尝试人数</dt>
+	    <dd>2</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

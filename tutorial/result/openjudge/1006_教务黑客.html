@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1006:教务黑客</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://swjtu.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/127/logo_small.jpg" alt="西南交大ACM-ICPC小组" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://swjtu.openjudge.cn/" title="首页" rel="home">西南交大ACM-ICPC小组</a></h2>
+		 <span>/</span>
+		 <h2>SWJTU 1110111 Anniversary Hacker Marathon</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/1110111/" class="first">题目</a></li>
+            <li ><a href="/1110111/ranking/">排名</a></li>
+                    <li ><a href="/1110111/status/">状态</a></li>
+	    			        <li class="last"><a href="/1110111/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1006:教务黑客</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/1110111/1006/">查看</a></li>
+		<li ><a href="/1110111/1006/submit/">提交</a></li>
+				<li ><a href="/1110111/1006/statistics/">统计</a></li>
+			
+		<li ><a href="/1110111/clarify/1006/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>当我们登录交大教务系统时，除了要输入用户名，还要有密码，那么在教务数据库系统里，会存储我们的用户名和密码吗？<br /></p><p>显然，肯定要，不然什么人都可以登录教务系统。但是还是存在一个问题：如果某黑客盗取了数据库里的数据，那么我们的用户名和密码岂不是都被盗了？</p><p>所以，可以想象，教务系统肯定会尽量避免这个问题，一个常用的方法是，对用户的密码进行Hash运算（可以简单理解为加密），当用户输入用户名和密码，只需要验证对应用户名的密码的Hash值即可，举例说明如下：</p><p>某同学的学号是：20150001，密码是：888888，那么在数据库系统中并不是直接存储20150001和888888。</p><p>而是：一方面直接存储20150001，另一方面对密码888888进行某种运算，得到一个映射值（即Hash值），假设对888888运算后的值是12345678，即：Hash（888888）=12345678。</p><p>然后，接着将12345678存入数据库中。这样一来，即使有黑客攻击，也不会出现密码泄露，因为没有直接存储密码。</p><p>好了，如果该同学要登录系统，该怎么办呢？方法很简单：</p><p>该同学依次输入<span style="white-space: normal;">学号20150001和</span><span style="white-space: normal;">密码888888，然后，当服务器端收到密码888888，它会对888888进行Hash运算，得到12345678，然后发现与数据库里面存储的Hash值相同，验证通过。</span></p><p>可是有时候，这样也有潜在的危险哦，假设某黑客从教务之星实验室盗取了一部分教务系统开发的源代码，并<strong>攻击数据库得到了Hash值数据</strong>，其中源代码的内容如下：</p><p><br /></p><p><img src="http://media.openjudge.cn/images/upload/1430436648.png" width="601" height="321" /><br /></p><p><br /></p><p>这段代码居然，居然是生成Hash值的函数，有没有搞错？开什么玩笑？呃，等等，好像不要紧，因为ind这个值黑客不知道，所以他还是没辙的？</p><p>现实总是悲催的，仅凭上述代码，黑客已经完全有能力破解教务密码了！可是开发这个系统的同学不相信，命题君很忙，抽不出时间解释，需要你来帮助他！</p><p>基于上述代码，假设密码都是6位，每一位都是数字，如000079等，<strong>现在告诉你密码的Hash值，试计算可能的原密码！</strong></p><p>如果我说我真的攻破了交大的教务系统，你相信我吗？</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入第一行包含一个整数T，表示测试数据的组数；接下来的每一行包含一个整数H，表示密码的Hash值。数据范围：1 <= T <= 10^4。输入保证Hash值合法，有至少1个原始密码与之对应。</dd>
+		<dt>输出</dt>
+		<dd>对于每一组测试数据，输出测试序号（从1开始），以及对应的答案，如果有多个原始密码对应相同的Hash值，则按【从小到大】依次输出，相邻两个密码间用1个空格隔开即可。注意，每个密码输出占6位，如果你算出一个密码少于6位，则需要补足前导0到6位，如1对应的是000001；另外，密码001023对应整数1023，因此，在调用get_hash(pas,ind)函数时，参数pas的值就是001023对应的整数值，即1023。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2
+0
+2146174820</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Case #1: 000000
+Case #2: 185783 989703</pre></dd>
+				<dt>提示</dt>
+		<dd>假设我们使用的计算机都是32位的操作系统和程序编译环境。<br /><br />对于第一组测试数据，当pas取000000，ind取0、1、2、3、4、5、6、7时，可得到hash值为0，所以只需要输出000000即可；<br /><br />对于第二组测试数据，当pas取185783，ind取7时，可得到hash值2146174820，或者当pas取989703时，ind取2时，也可以得到hash值2146174820，所以输出185783和989703。<br /><br />1个测试点，50分。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/1110111/1006/">查看</a></li>
+		<li ><a href="/1110111/1006/submit/">提交</a></li>
+				<li ><a href="/1110111/1006/statistics/">统计</a></li>
+			
+		<li ><a href="/1110111/clarify/1006/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>8152</dd>
+				<dt>提交次数</dt>
+		<dd>17</dd>
+		<dt>尝试人数</dt>
+	    <dd>4</dd>
+	    <dt>通过人数</dt>
+	    <dd>4</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

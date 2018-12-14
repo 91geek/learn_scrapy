@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1807:Mayan Dates</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.theme.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.dialog.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.resizable.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.core.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-ui-1.8.11.custom.min.js?1467854438.js"></script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://qwsfsx.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/130/logo_small.jpg" alt="趣味算法实习" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://qwsfsx.openjudge.cn/" title="首页" rel="home">趣味算法实习</a></h2>
+		 <span>/</span>
+		 <h2>Do not recommend</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/dontrecommand/" class="first">题目</a></li>
+            <li ><a href="/dontrecommand/ranking/">排名</a></li>
+                    <li ><a href="/dontrecommand/status/">状态</a></li>
+	    			        <li class="last"><a href="/dontrecommand/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1807:Mayan Dates</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/dontrecommand/1807/">查看</a></li>
+		<li ><a href="/dontrecommand/1807/submit/">提交</a></li>
+				<li ><a href="/dontrecommand/1807/statistics/">统计</a></li>
+			
+		<li ><a href="/dontrecommand/clarify/1807/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>Background<br />The NASA has secretly built a Time machine which allows them to travel into the past. Its first application is to explore the Mayan culture. They have been able to gather some important dates from Maya monuments which are suitable for further investigation. They are now faced with a problem - they need to convert those Mayan dates to the Gregorian format, which is the only kind of input their time machine understands.<br />Problem<br />Write a conversion program to calculate the Gregorian date, the Mayan longcount and the Mayan ritual date for a given Gregorian date or Mayan longcount.<br /><br />Mayan Longcount<br />The starting date, day zero, for the Mayan calendar is the 13th of August 3114 BC (before Christ). From this day zero onwards the days to a certain date are counted. One day is called K'in, 20 K'in are a Winal.18 Winal are a Tun, 20 Tun make a K'atun and 20 K'atun will form a Bak'tun. Example: 12.4.9.13.3 tells us that 12 Bak'tun, 4 K'atun, 9 Tun, 13 Winal and 3 K'in (days) have passed since August 13th 3114 BC.<br /><br />Mayan Ritual Dates<br />The Mayans had the solar year with 365 days, there were no leap days to correct the calendar. The year was split in 18 month with 20 days and one month with 5 days. The names of the months are the following:Pob,Wo, Sip, Sotz', Tzek, Xul, Yaxk'in, Mol, Ch'en, Yax, Sak, Keh, Mak, K'ank'in, Muwan, Pax, K'ayab,Kumk'u, Wayeb. The days of the month were numbered 1 to 19 (or 1 to 4), the last day of the month was noted as day zero of the following month (i.e. you would not write 20 Pop, but 0 Wo to note the last day of the first month, the same applies to the five day month called Wayeb, its last day 5 Wayeb is written 0 Pop).Additionally to the months and days notation there is a notation which could be compared to our weeks and weekdays. Every day is labelled by both a number in the range from 1 to 13 and one of the following 20 names: Imix, Ik', Ak'bal, K'an, Chikchan, Kimi, Manik', Lamat, Muluk, Ok, Chuwen, Eb, Ben, Ix, Men,Kib, Kaban, Etz'nab, Kawak, Ahaw. Both the numbers and the names are running in cycles, so the count will go: 1 Imix, 2 Ik', 3 Ak'bal, ... 13 Ben, 1 Ix, 2 Men. It will thus take a 260 day cycle (called the ritual year) until 1 Imix is counted again (compare Figure 1 on next page).<br />The weekday and month notation are used together as in the following example: 2 Kimi (weekday) 10 Yax (day and month). The 13th of August 3114 BC has the ritual date 4 Ahaw 8 Kumk'u.<br /><br />Gregorian Dates<br />In our calendar we use leap days. A leap day is inserted every 4 years, except every 100 years. Overruling this a leap day will be inserted every 400 years.<br />It is also important to know that there is no year 0. Accordingly, 31th of December 1 BC is followed by 1st of January AD 1. The last leap year before Christ is 1 BC (the 400 year rule applies here), the next leap year after that is AD 4.</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line contains the number of scenarios.<br />For each scenario, there is one line containing either a Mayan longcount or a Gregorian date in the following formats:<br /><ul><li>A Mayan longcount consists of 5 non-negative integers separated by dots.<br /><li>A Gregorian date consists first of three integers d, m, and y, separated by slashes, and satisfying 1 <= d <= 31, 1 <= m <= 12, and 0 < y. The values may or may not be zero padded, but will never exceed two characters for d and m, and four for y. This representation is always followed by a single blank and either "BC" or "AD".</ul><br />We will neither ask for dates preceding August 13th 3114 BC, nor for dates after 13.0.0.0.0 which is the last day in the Mayan longcount calendar. Also, you will never be given invalid dates in either calendar.</dd>
+		<dt>输出</dt>
+		<dd>The output for every scenario begins with a line containing "Scenario #i:", where i is the number of the scenario starting at 1. Then, regardless of the format given in the input, three lines have to be printed representing the given date in the following order:<br />1. the Gregorian date in the same format as specified in the input description, but without any padding zeros;<br />2. the Mayan longcount representation of the date, also as described before;<br />3. the Mayan ritual date consisting of four parts separated by single blanks: the weekday notation with its number and name, then the day of the month followed by the name of the month.<br />After these three lines, always a blank line must be printed.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2
+13/08/3114 BC
+12.19.10.6.14
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Scenario #1:
+13/8/3114 BC
+0.0.0.0.0
+4 Ahaw 8 Kumk'u
+
+Scenario #2:
+28/6/2003 AD
+12.19.10.6.14
+9 Ix 2 Tzek
+</pre></dd>
+				<dt>提示</dt>
+		<dd><img src=/images/1807_1.jpg></dd>
+						<dt>来源</dt>
+		<dd>TUD Programming Contest 2003, Darmstadt, Germany</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/dontrecommand/1807/">查看</a></li>
+		<li ><a href="/dontrecommand/1807/submit/">提交</a></li>
+				<li ><a href="/dontrecommand/1807/statistics/">统计</a></li>
+			
+		<li ><a href="/dontrecommand/clarify/1807/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>809</dd>
+					<dt>添加于</dt>
+			<dd>2012-03-07</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	<script type="text/javascript">
+
+$(function(){
+    var e={},c={};//e为选中的标签
+    var b=function(h){
+        if(e[h]){
+            c[h]=true;
+            $.each(e[h],function(k,j){
+                $(j).removeClass("gract").addClass("rdact")
+                })
+        }
+    };//打标签css
+    var d=function(h){
+        if(e[h]){
+            delete c[h];
+            $.each(e[h],function(k,j){
+                $(j).removeClass("rdact").addClass("gract")
+                })
+        }
+    };//取消打上的标签css
+
+    var g=function(){
+        var h=$.trim($("#tags_title").attr("value").toLowerCase()).split(" "),i={};
+        $.each(h,function(k,j){
+            if(j!=""){
+                b(j);
+                i[j]=true
+            }
+        });
+        for(t in c){
+            if(!i[t]){
+                d(t);
+            }
+        }
+    };
+
+    $('.tagbtn').each(function(j){
+        var h=$(this).text().toLowerCase();
+        if(e[h]){
+            e[h].push(this);
+        }
+        else{
+            e[h]=[this];
+        }
+    }).click(function(){
+        var h=$(this).text();
+        var k=$.trim($("#tags_title").attr("value")).split(" "),o=false,j=h.toLowerCase(),l;
+        k=$.grep(k,function(value){
+            if(value.toLowerCase()==j){
+                d(j);
+                o=true;
+                return false;
+            }
+            else{
+                return true;
+            }
+        });//遍历k检查k中是否存在所点击的标签如果有则去除
+        if(!o){
+            k.push(h);
+            b(j);
+        }//如果不存在则添加到最后
+        var n=k.join(" ");//用空格连接数组中的标签
+        $("#tags_title").attr("value",(n.length>1)?$.trim(n)+" ":n);
+        $("#tags_title").focus(); //如果数量多于1个标签
+    });
+    $("#tags_title").keyup(g);
+
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	$( "#dialog-form" ).dialog({
+		autoOpen: false,
+		height: 420,
+		width: 550,
+		modal: true,
+		buttons: {
+			"保存": function() {
+				$('#rating_form').submit();
+			},
+			"取消": function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		close: function() {
+		}
+	});
+
+	$( "#create-rating" )
+		.button()
+		.click(function() {
+			$( "#dialog-form" ).dialog( "open" );
+			g();
+		});
+	
+	 var x={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+     i=$("#rate"),
+     y=$("#stars img"),
+     z=function(f){
+       var h=0||i.val();
+       y.each(function(k){
+         var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+         this.src=i;
+       });
+       if(f)
+         $("#rate_description").text(x[f]);
+       else
+         $("#rate_description").text(h!=0?x[h]:"");
+     };
+     y.hover(function(){d(this.id.charAt(4));},function(){z();});
+     if(i.attr("value")){
+       y.click(function(){
+         var f=this.id.charAt(4);
+         i.val(f);
+         z(f);
+         //$('#form_diffculity_rating').submit();
+         //$( "#dialog-form" ).dialog( "open" );
+		//	g();
+       });
+     }
+     z();
+});
+</script>
+
+<div id="dialog-form" title="评价">
+	<form id="rating_form" class="j a_interest_form" method="POST" action="/api/problem/rating" onsubmit="$(this).ajaxSubmit({dataType:'json',success:function(){$('#dialog-form').dialog( 'close' );}});return false;">
+       			<input type="hidden" value="2533" name="app_id">
+   				<input type="hidden" value="1807" name="problem_number">
+   				<input type="hidden" value="809" name="problem_id">
+       		<div class="rating">
+	  您的评价
+   		<span style="margin-left: 10px;" id="stars">
+			<img alt="很水" src="http://static.openjudge.cn/images/nst.gif" id="star1">
+			<img alt="简单" src="http://static.openjudge.cn/images/nst.gif" id="star2">
+			<img alt="一般" src="http://static.openjudge.cn/images/nst.gif" id="star3">
+			<img alt="较难" src="http://static.openjudge.cn/images/nst.gif" id="star4">
+			<img alt="变态" src="http://static.openjudge.cn/images/nst.gif" id="star5">
+		</span>
+		<span class="pl" id="rate_description"></span>
+   		
+	    	<input type="hidden" value="" name="diffculity_rate" id="rate">         
+		
+    </div>
+   				<ul class="interest_form " id="advtags">
+    
+        			<li>标签(多个标签用空格分隔): </li>
+      				<li><input type="text" style="width: 250px;" name="tags" id="tags_title" value=""></li>
+       				       				       				<li class="clearfix" id="populartags">
+       					<dl>
+       						<dt>常用标签:</dt>
+       						<dd>
+       						       							<span class="tagbtn gract">递归</span> &nbsp;
+       						       							<span class="tagbtn gract">动态规划</span> &nbsp;
+       						       							<span class="tagbtn gract">贪心</span> &nbsp;
+       						       							<span class="tagbtn gract">搜索</span> &nbsp;
+       						       							<span class="tagbtn gract">枚举</span> &nbsp;
+       						       							<span class="tagbtn gract">模拟</span> &nbsp;
+       						       							<span class="tagbtn gract">数学</span> &nbsp;
+       						       							<span class="tagbtn gract">字符串处理</span> &nbsp;
+       						       							<span class="tagbtn gract">几何</span> &nbsp;
+       						       							<span class="tagbtn gract">高精度计算</span> &nbsp;
+       						       							<span class="tagbtn gract">图论</span> &nbsp;
+       						       						</dd>
+       					</dl>
+       				</li>
+   				</ul>
+	</form>
+</div>
+	
+	<div>
+						<h4>尚无评分</h4>
+			</div>
+	
+		
+				
+						
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

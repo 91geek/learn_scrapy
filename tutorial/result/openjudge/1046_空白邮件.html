@@ -1,0 +1,382 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1046:空白邮件</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.theme.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.dialog.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.resizable.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.core.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-ui-1.8.11.custom.min.js?1467854438.js"></script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://qwsfsx.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/130/logo_small.jpg" alt="趣味算法实习" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://qwsfsx.openjudge.cn/" title="首页" rel="home">趣味算法实习</a></h2>
+		 <span>/</span>
+		 <h2>期末测试</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/final2012/" class="first">题目</a></li>
+            <li ><a href="/final2012/ranking/">排名</a></li>
+                    <li ><a href="/final2012/status/">状态</a></li>
+	     
+        <li ><a href="/final2012/statistics/">统计</a></li>
+				        <li class="last"><a href="/final2012/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1046:空白邮件</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/final2012/1046/">查看</a></li>
+		<li ><a href="/final2012/1046/submit/">提交</a></li>
+				<li ><a href="/final2012/1046/statistics/">统计</a></li>
+			
+		<li ><a href="/final2012/clarify/1046/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>一天，Facer收到了来自Zero的一封e-mail，但是他在上面什么都没有看到。因为这是一封用Whitespace语言写信，whitespace语言只包含空格制表符和换行符。具体如下：</p><br /><p>whitespace语言唯一识别的有效字符就是空格（ASC码为32）、Tab制表符（ASC码为9）和换行符（ASC码为10）。之所以只使用LF换行符，是为了避免DOS/UNIX文件转换时发生CR/LF问题。（注：CR/LF问题是指在DOS系统下以CR+LF表示一行结尾的换行符，而UNIX系统下只使用LF，这样在两种系统下交叉处理文件就会出现一些兼容问题）<br />这种whitespace语言是一种基于栈的命令解释语言。每个命令由一系列上面提到的那三种字符组成。</p><br /><p>命令关键字说明： <br /><br /><ol><br />    <li>[Space]:表示栈操作 （具体使用需要配合参数）</li><br />    <li>[Tab][Space]:表示算术操作 </li><br />    <li>[Tab][Tab]:堆操作</li><br />    <li>[LF]:表示流控制</li><br />    <li>[Tab][LF]:输入输出操作</li><br /></ol><br /></p><br /><p>支持whitespace程序运行的虚拟机提供堆栈支持。开发人员可以自由地将整数（目前不支持浮点数和实数支持）压栈，也可以将变量和数据结构存储在堆中。</p><br /><p>如上举例的许多命令都需要数字或标号（标号将在后面解释）作为参数。数字可以是任意bit宽的，用一串[Space]和[Tab]来表示，并以[LF]结尾。[Space]表示二进制0，[Tab]表示二进制1。数字的正负号由第一个字符表示，[Space]表示正，而[Tab]表示负。注意没有其他语言那种补码设计（负数取反加1），它就是简单的表示正负号。</p><br /><p>标号就是简单的以[LF]结尾的[Space]和[Tab]串（就是一个数字）。</p><br /><p>这里没有名字空间（namespace,ANSI标准C＋＋有使用）一说，所有的标号都必须是全局独立唯一的。</p><br /><p><br />栈操作([Space]):<br />栈操作是最常用的操作命令之一，因此设计为使用非常短的[Space]作为命令关键字。有以下集中栈操作指令：<br /><br /><ol><br />    <li>[Space][数字]:这个表示将数字压栈。</li><br />    <li>[LF][Space]:表示复制栈顶的元素</li><br />    <li>[Tab][Space][数字]:表示拷贝栈中的第n个元素到栈顶</li><br />    <li>[LF][Tab]:表示交换栈顶的两个元素</li><br />    <li>[LF][LF]:表示丢弃栈顶元素</li><br />    <li>[Tab][LF][数字]:表示栈顶n个元素顺移</li><br /></ol><br />拷贝和slide命令是whitespace3.0的扩展实现，用来辅助实现递归循环功能。 <br /><br /></p><br /><p><br />算术指令([Tab][Space]):算术指令用来对栈顶的两个元素做数学计算操作，然后用计算结果替换这两个元素。先入栈的那个元素是计算的左值。<br /><br /><ol><br />    <li>[Space][Space]:加</li><br />    <li>[Space][Tab]:减</li><br />    <li>[Space][LF]:乘</li><br />    <li>[Tab][Space]:除（整除）</li><br />    <li>[Tab][Tab]:取模</li><br /></ol><br /><p><br />堆操作命令([Tab][Tab]):<br />堆操作命令根据栈上的地址来存储或读取元素。要存储一个元素入堆，先要把元素地址压栈，然后运行存储命令。要读取一个元素入栈，先要把元素地址压栈，然后运行读取命令，这样就把那个元素读出并放到了栈顶。<br /><ol><br /><li>[Space]:存储命令</li><br /><li>[Tab]:读取命令</li><br /></ol><br /></p><br /><p><br />流控操作([LF]):<br />流控操作（程序流控制，类似if eles， while等功能）。子程序用标号标识，这些标号就是一些条件成立或不成立后跳转的目标，这样，就可以实现循环功能。程序必须使用[LF][LF][LF]来结尾，这样程序解释器就能完整地退出程序。<br /><ol><br /><li>[Space][Space][标号]:在程序某处标记一个标号</li><br /><li>[Space][Tab][标号]:调用标号指示的程序</li><br /><li>[Space][LF][标号]:跳向标号指示的程序</li><br /><li>[Tab][Space][标号]:如果栈顶为空，则跳向标号指示的程序</li><br /><li>[Tab][Tab][标号]:如果栈顶为负，则跳向标号指示的程序</li><br /><li>[Tab][LF]:结束子程序，回到调用者调用子程序处</li><br /><li>[LF][LF]:结束程序</li><br /></ol><br /></p><br /><p><br />输入输出操作([Tab][LF]):<br />最后，我们要想能够与用户操作就需要输入和输出来读写数字和字符。<br /><ol><br /><li>[Space][Space]:输出栈顶的字符</li><br /><li>[Space][Tab]:输出栈顶的数字</li><br /><li>[Tab][Space]:读入一个字符并把它放进栈顶元素指定的地址</li><br /><li>[Tab][Tab]:读入一个数字并把它放进栈顶元素指定的地址</li><br /></ol><br /></p><br /><p><br />	幸运的是，这封E-mail，只使用了栈操作（只包含入栈，交换栈顶俩元素和删除栈顶）、算数指令和输入输出操作（只有输出）。然而Facer依然没有懂这封E-mail的意思，所以请你告诉他这段程序的运行结果。<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入包含至多10个程序，以EOF结束。为了简化问题我们用[Space]、[Tab]和[LF]代替空格、制表符和换行符。我们保证每个程序至多100条语句，运算过程中32位带符号整形足够。每个以程序以[LF][LF][LF]结尾。</dd>
+		<dt>输出</dt>
+		<dd>对于每个程序，输出程序运行的结果。每个程序的结尾以换行结束。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>[Space][Space][Space][Tab][LF][Tab][LF][Space][Tab][LF][LF][LF][LF][LF][LF]
+[Space][Space][Space][Tab][LF][Space][Space][Space][Tab][LF][Tab][Space][Space][Space][Tab][LF][Space][Tab][LF][LF][LF]
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1
+
+2
+</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/final2012/1046/">查看</a></li>
+		<li ><a href="/final2012/1046/submit/">提交</a></li>
+				<li ><a href="/final2012/1046/statistics/">统计</a></li>
+			
+		<li ><a href="/final2012/clarify/1046/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3065</dd>
+				<dt>提交次数</dt>
+		<dd>4</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		<h4>Other language verions</h4>
+	<ul>
+				<li><a href="?lang=en_US">English</a></li>
+			</ul>
+		
+					
+	<script type="text/javascript">
+
+$(function(){
+    var e={},c={};//e为选中的标签
+    var b=function(h){
+        if(e[h]){
+            c[h]=true;
+            $.each(e[h],function(k,j){
+                $(j).removeClass("gract").addClass("rdact")
+                })
+        }
+    };//打标签css
+    var d=function(h){
+        if(e[h]){
+            delete c[h];
+            $.each(e[h],function(k,j){
+                $(j).removeClass("rdact").addClass("gract")
+                })
+        }
+    };//取消打上的标签css
+
+    var g=function(){
+        var h=$.trim($("#tags_title").attr("value").toLowerCase()).split(" "),i={};
+        $.each(h,function(k,j){
+            if(j!=""){
+                b(j);
+                i[j]=true
+            }
+        });
+        for(t in c){
+            if(!i[t]){
+                d(t);
+            }
+        }
+    };
+
+    $('.tagbtn').each(function(j){
+        var h=$(this).text().toLowerCase();
+        if(e[h]){
+            e[h].push(this);
+        }
+        else{
+            e[h]=[this];
+        }
+    }).click(function(){
+        var h=$(this).text();
+        var k=$.trim($("#tags_title").attr("value")).split(" "),o=false,j=h.toLowerCase(),l;
+        k=$.grep(k,function(value){
+            if(value.toLowerCase()==j){
+                d(j);
+                o=true;
+                return false;
+            }
+            else{
+                return true;
+            }
+        });//遍历k检查k中是否存在所点击的标签如果有则去除
+        if(!o){
+            k.push(h);
+            b(j);
+        }//如果不存在则添加到最后
+        var n=k.join(" ");//用空格连接数组中的标签
+        $("#tags_title").attr("value",(n.length>1)?$.trim(n)+" ":n);
+        $("#tags_title").focus(); //如果数量多于1个标签
+    });
+    $("#tags_title").keyup(g);
+
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	$( "#dialog-form" ).dialog({
+		autoOpen: false,
+		height: 420,
+		width: 550,
+		modal: true,
+		buttons: {
+			"保存": function() {
+				$('#rating_form').submit();
+			},
+			"取消": function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		close: function() {
+		}
+	});
+
+	$( "#create-rating" )
+		.button()
+		.click(function() {
+			$( "#dialog-form" ).dialog( "open" );
+			g();
+		});
+	
+	 var x={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+     i=$("#rate"),
+     y=$("#stars img"),
+     z=function(f){
+       var h=0||i.val();
+       y.each(function(k){
+         var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+         this.src=i;
+       });
+       if(f)
+         $("#rate_description").text(x[f]);
+       else
+         $("#rate_description").text(h!=0?x[h]:"");
+     };
+     y.hover(function(){d(this.id.charAt(4));},function(){z();});
+     if(i.attr("value")){
+       y.click(function(){
+         var f=this.id.charAt(4);
+         i.val(f);
+         z(f);
+         //$('#form_diffculity_rating').submit();
+         //$( "#dialog-form" ).dialog( "open" );
+		//	g();
+       });
+     }
+     z();
+});
+</script>
+
+<div id="dialog-form" title="评价">
+	<form id="rating_form" class="j a_interest_form" method="POST" action="/api/problem/rating" onsubmit="$(this).ajaxSubmit({dataType:'json',success:function(){$('#dialog-form').dialog( 'close' );}});return false;">
+       			<input type="hidden" value="2732" name="app_id">
+   				<input type="hidden" value="1046" name="problem_number">
+   				<input type="hidden" value="3065" name="problem_id">
+       		<div class="rating">
+	  您的评价
+   		<span style="margin-left: 10px;" id="stars">
+			<img alt="很水" src="http://static.openjudge.cn/images/nst.gif" id="star1">
+			<img alt="简单" src="http://static.openjudge.cn/images/nst.gif" id="star2">
+			<img alt="一般" src="http://static.openjudge.cn/images/nst.gif" id="star3">
+			<img alt="较难" src="http://static.openjudge.cn/images/nst.gif" id="star4">
+			<img alt="变态" src="http://static.openjudge.cn/images/nst.gif" id="star5">
+		</span>
+		<span class="pl" id="rate_description"></span>
+   		
+	    	<input type="hidden" value="" name="diffculity_rate" id="rate">         
+		
+    </div>
+   				<ul class="interest_form " id="advtags">
+    
+        			<li>标签(多个标签用空格分隔): </li>
+      				<li><input type="text" style="width: 250px;" name="tags" id="tags_title" value=""></li>
+       				       				       				<li class="clearfix" id="populartags">
+       					<dl>
+       						<dt>常用标签:</dt>
+       						<dd>
+       						       							<span class="tagbtn gract">递归</span> &nbsp;
+       						       							<span class="tagbtn gract">动态规划</span> &nbsp;
+       						       							<span class="tagbtn gract">贪心</span> &nbsp;
+       						       							<span class="tagbtn gract">搜索</span> &nbsp;
+       						       							<span class="tagbtn gract">枚举</span> &nbsp;
+       						       							<span class="tagbtn gract">模拟</span> &nbsp;
+       						       							<span class="tagbtn gract">数学</span> &nbsp;
+       						       							<span class="tagbtn gract">字符串处理</span> &nbsp;
+       						       							<span class="tagbtn gract">几何</span> &nbsp;
+       						       							<span class="tagbtn gract">高精度计算</span> &nbsp;
+       						       							<span class="tagbtn gract">图论</span> &nbsp;
+       						       						</dd>
+       					</dl>
+       				</li>
+   				</ul>
+	</form>
+</div>
+	
+	<div>
+						<h4>尚无评分</h4>
+			</div>
+	
+		
+				
+						
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

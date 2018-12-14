@@ -1,0 +1,413 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1003:爬楼梯提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hljssyzx.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="黑龙江省实验中学NOI小组" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hljssyzx.openjudge.cn/" title="首页" rel="home">黑龙江省实验中学NOI小组</a></h2>
+		 <span>/</span>
+		 <h2>递归、递推专项训练</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/recursion/" class="first">题目</a></li>
+            <li ><a href="/recursion/ranking/">排名</a></li>
+                    <li ><a href="/recursion/status/">状态</a></li>
+	    			        <li class="last"><a href="/recursion/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>1003:爬楼梯</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/recursion/1003/">查看</a></li>
+		<li ><a href="/recursion/1003/submit/">提交</a></li>
+				<li class="current-show"><a href="/recursion/1003/statistics/">统计</a></li>
+			
+		<li ><a href="/recursion/clarify/1003/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td>分数</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/885075/in/group-369/">03孙岳恒(孙岳恒)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16838340/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">340 B</td>
+				<td class="language"><a href="/recursion/solution/16838340/">G++</a></td>
+				<td class="date"><abbr title="2018-12-07 15:17:38">6天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/885075/in/group-369/">03孙岳恒(孙岳恒)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16838339/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">10ms</td>
+				<td class="code-length">253 B</td>
+				<td class="language"><a href="/recursion/solution/16838339/">G++</a></td>
+				<td class="date"><abbr title="2018-12-07 15:17:37">6天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/910191/in/group-369/">啊生</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16727921/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">206 B</td>
+				<td class="language"><a href="/recursion/solution/16727921/">G++</a></td>
+				<td class="date"><abbr title="2018-12-01 16:50:17">12天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/910191/in/group-369/">啊生</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16727764/" class="result-wrong">Output Limit Exceeded</a></td>
+								<td>0</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">104ms</td>
+				<td class="code-length">203 B</td>
+				<td class="language"><a href="/recursion/solution/16727764/">G++</a></td>
+				<td class="date"><abbr title="2018-12-01 16:47:01">12天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/885957/in/group-369/">李翔(翔)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16724120/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">302 B</td>
+				<td class="language"><a href="/recursion/solution/16724120/">G++</a></td>
+				<td class="date"><abbr title="2018-12-01 15:32:01">12天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/885852/in/group-369/">03班刘宏博(K)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573315/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">6ms</td>
+				<td class="code-length">195 B</td>
+				<td class="language"><a href="/recursion/solution/16573315/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:20:24">19天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/886772/in/group-369/">项浩天</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573304/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">176 B</td>
+				<td class="language"><a href="/recursion/solution/16573304/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:20:11">19天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/885852/in/group-369/">03班刘宏博(K)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573257/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">7ms</td>
+				<td class="code-length">197 B</td>
+				<td class="language"><a href="/recursion/solution/16573257/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:18:57">19天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/884938/in/group-369/">1808武宜申(查理九世)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573148/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">300 B</td>
+				<td class="language"><a href="/recursion/solution/16573148/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:15:24">19天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/885845/in/group-369/">史东泽.(交题狂魔？？？）</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573129/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">9ms</td>
+				<td class="code-length">281 B</td>
+				<td class="language"><a href="/recursion/solution/16573129/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:15:00">19天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/884938/in/group-369/">1808武宜申(查理九世)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573127/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">298 B</td>
+				<td class="language"><a href="/recursion/solution/16573127/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:14:56">19天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/886659/in/group-369/">1804 孙猛(UNSC  forever)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573123/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">299 B</td>
+				<td class="language"><a href="/recursion/solution/16573123/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:14:50">19天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/885845/in/group-369/">史东泽.(交题狂魔？？？）</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573029/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">277 B</td>
+				<td class="language"><a href="/recursion/solution/16573029/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:12:41">19天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/886658/in/group-369/">1804王梓炎(章鱼小丸子)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16573025/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">311 B</td>
+				<td class="language"><a href="/recursion/solution/16573025/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 20:12:21">19天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/884474/in/group-369/">九支(1811刘宇航)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16572495/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">6ms</td>
+				<td class="code-length">243 B</td>
+				<td class="language"><a href="/recursion/solution/16572495/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 19:57:32">19天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/886772/in/group-369/">项浩天</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16572452/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">7ms</td>
+				<td class="code-length">194 B</td>
+				<td class="language"><a href="/recursion/solution/16572452/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 19:55:54">19天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/886773/in/group-369/">03刘凯鹏(北冥有鱼，其名为鲲)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16572448/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">301 B</td>
+				<td class="language"><a href="/recursion/solution/16572448/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 19:55:47">19天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/884160/in/group-369/">1803邓楷霖(wozuishuai)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16572445/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">6ms</td>
+				<td class="code-length">217 B</td>
+				<td class="language"><a href="/recursion/solution/16572445/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 19:55:43">19天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/884463/in/group-369/">磁单极子{1816柏一航}(SCP079)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16572420/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">128kB</td>
+				<td class="spending-time">10ms</td>
+				<td class="code-length">268 B</td>
+				<td class="language"><a href="/recursion/solution/16572420/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 19:54:41">19天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/886522/in/group-369/">1804张滕飞（省实验第一卑微弟弟）</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/recursion/solution/16570205/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">209 B</td>
+				<td class="language"><a href="/recursion/solution/16570205/">G++</a></td>
+				<td class="date"><abbr title="2018-11-23 18:35:24">20天前</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+					<a href="?page=4">4</a>
+		
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">35</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">25</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">8</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Output Limit Exceeded</em></td>
+				<td class="count">3</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Time Limit Exceeded</em></td>
+				<td class="count">1</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Presentation Error</em></td>
+				<td class="count">1</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

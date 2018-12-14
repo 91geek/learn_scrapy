@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1007:小熊Mecho</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://tadyz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="泰安一中oi" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://tadyz.openjudge.cn/" title="首页" rel="home">泰安一中oi</a></h2>
+		 <span>/</span>
+		 <h2>分治/二分</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/fz/" class="first">题目</a></li>
+            <li ><a href="/fz/ranking/">排名</a></li>
+                    <li ><a href="/fz/status/">状态</a></li>
+	    			        <li class="last"><a href="/fz/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1007:小熊Mecho</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/fz/1007/">查看</a></li>
+		<li ><a href="/fz/1007/submit/">提交</a></li>
+				<li ><a href="/fz/1007/statistics/">统计</a></li>
+			
+		<li ><a href="/fz/clarify/1007/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>128000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small">小熊<span style="font-family:Calibri">Mecho</span>发现了一笔小财富——装满蜂蜜的罐子。它正高高兴兴地吃着蜂蜜，突然发现一只蜜蜂看见了自己，并拉响了警报。<span style="font-family:Calibri">Mecho</span>知道此刻一群蜜蜂正在从蜂房涌出，并四处涌动试图抓到自己。<span style="font-family:Calibri">Mecho</span>知道自己必须赶快离开罐子回到家里，但是蜂蜜实在太好吃了，它不想太早逃离。请你帮助<span style="font-family:Calibri">Mecho</span>计算最迟何时离开才能安全地回到家里。</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>小熊<span style="font-family:Calibri">Mecho</span>所居住的森林可以用正方形网格表示，该正方形网格由<span style="font-family:Calibri">N*N</span>个单元格组成，它的边分别平行于南北方向和东西方向。每个单元格被一棵树、一块草地、一个蜂房或者<span style="font-family:Calibri">Mecho</span>的家所占据。两个单元格相邻是指它们在南北方向或者东西方向有一条公共边<span style="font-family:Calibri">(</span>即对角线上的单元格不是相邻的<span style="font-family:Calibri">)</span>。<span style="font-family:Calibri">Mecho</span>是一只笨拙的小熊，每步只能从当前单元格走到相邻的单元格，并且它只能走向草地或者家里，不能通过树木或蜂房，它每分钟最多能走<span style="font-family:Calibri">s</span>步。</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>警报响起的那一刻，<span style="font-family:Calibri">Mecho</span>正位于蜂蜜罐所在的单元格，而蜜蜂则分布于各个蜂房所在的单元格内<span style="font-family:Calibri">(</span>森林里可能有不止一个蜂房<span style="font-family:Calibri">)</span>。这一刻之后，。<span style="font-family:Calibri">Mecho</span>按如下规则移动：</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>如果<span style="font-family:Calibri">Mecho</span>仍在吃蜂蜜，它会决定是继续享用蜂蜜还是开始逃离。如果它决定继续吃蜂蜜，那么在一分钟之内它不会移动。否则，它立刻离开并按照上述要求最多走<span style="font-family:Calibri">S</span>步。</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">Mecho</span>不能带走任何蜂蜜，所以它一旦离开就不能再吃蜂蜜而只能移动了。</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>蜜蜂按照如下规则扩散：</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>警报响起时，蜜蜂仅仅占据有蜂房的单元格。第一分钟之后，它们占据所有与蜂房所在单元格相邻的草地单元格<span style="font-family:Calibri">(</span>包括蜂房所在单元格<span style="font-family:Calibri">)</span>。在第二分钟之后，它们多占据了一些草地单元格，即与蜂房相邻的草地单元格的相邻草地单元格，依此类推。只要有充足的时间，蜜蜂可以同时占据它们所能到达的所有草地单元格。</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>可以理解为在每一分钟<span style="font-family:Calibri">Mecho</span>先移动，蜜蜂后扩散，即<span style="font-family:Calibri">Mecho</span>在每一分钟内停留或者移动，而蜜蜂在每分钟结束时瞬间扩散。</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>注意：<span style="font-family:Calibri">Mecho</span>和蜜蜂都不能走到森林之外。另外，根据上述规则，<span style="font-family:Calibri">Mecho</span>吃蜂蜜的时间是一个整数。</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>在任何时刻，如果<span style="font-family:Calibri">Mecho</span>和蜜蜂处于同一个单元格，即认为蜜蜂抓住了<span style="font-family:Calibri">Mecho o</span>．</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>任务</span></p><p class="MsoNormal" style="font-family: Simsun;font-size: medium;white-space: normal;margin: 0cm 0cm 0pt;text-align:left;"><span style="font-size: small"><span style="font-family:Calibri">&nbsp;&nbsp;&nbsp;&nbsp;</span>写一个程序，根据给定的森林地图，计算在<span style="font-family:Calibri">Mecho</span>安全回到家里而不被蜜蜂抓到的前提下，它可以停留在初始位置吃蜂蜜的最长时间。</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>你的程序必须从标准输入读人下列数据：<br />    第一行包含整数N和S，以一个空格隔开。<br />    接下来N行表示森林的地图，其中每行包N个字符，每个字符代表一个单元格。可能出现的字符和它们的相应意义如下：<br />  T表示一棵树木<br />  G表示草地单元格<br />  M表示Mecho的初始位置，即蜂蜜罐所在的位置，该位置是草地单元格<br />  D表示Mecho的家，这一位置Mecho可以进人，而蜜蜂不能进入<br />  H表示蜂房的位置<br />  注意：数据保证地图中只存在一个字符M，一个字符D，至少存在一个字符H。数据保证M可通过一串相邻的字符G到达D，也保证至少存在一个日可以通过一串相邻的G到达M。这串相邻的字符G的长度可以是0，例如，Mecho家D或者蜂房H与Mecho的起始位置M相邻。另外，蜜蜂不能进人或者跳过Mecho家所在的单元格，对它们来说，Mecho的家就像一棵树一样。</dd>
+		<dt>输出</dt>
+		<dd>你的程序必须向标准输出写入一行，该行包含一个整数，表示在安全回家的前提下Mecho可以停留在初始位置吃蜂蜜的最长时间(单位：分钟)。<br />如果Mecho不能安全回到家里，输出-1。<br />评分说明<br />有40分的评测数据，N不大于60。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>7 3
+TTTTTTT
+TGGGGGT
+TGGGGGT
+MGGGGGD
+TGGGGGT
+TGGGGGT
+THHHHHT</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1</pre></dd>
+				<dt>提示</dt>
+		<dd>继续吃蜂蜜1分钟后，Mecho可以用2分钟的时间向右走最短路回到家里，而不被蜜蜂抓到。<br /><br />数据规模<br />l≤N≤800    地图的大小(即正方形的边长)<br />l≤S≤l，000    Mecho每分钟可以行走的最大步数。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/fz/1007/">查看</a></li>
+		<li ><a href="/fz/1007/submit/">提交</a></li>
+				<li ><a href="/fz/1007/statistics/">统计</a></li>
+			
+		<li ><a href="/fz/clarify/1007/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11685</dd>
+					<dt>添加于</dt>
+			<dd>2016-09-26</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

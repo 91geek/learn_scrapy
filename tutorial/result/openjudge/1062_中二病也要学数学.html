@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1062:中二病也要学数学</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bjutacm.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="北京工业大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bjutacm.openjudge.cn/" title="首页" rel="home">北京工业大学</a></h2>
+		 <span>/</span>
+		 <h2>我们的源代码</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/lianxi/" class="first">题目</a></li>
+            <li ><a href="/lianxi/ranking/">排名</a></li>
+                    <li ><a href="/lianxi/status/">状态</a></li>
+	    			        <li class="last"><a href="/lianxi/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1062:中二病也要学数学</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/lianxi/1062/">查看</a></li>
+		<li ><a href="/lianxi/1062/submit/">提交</a></li>
+				<li ><a href="/lianxi/1062/statistics/">统计</a></li>
+			
+		<li ><a href="/lianxi/clarify/1062/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>longo大一的时候十分讨厌写高数课的作业，尤其是导数那个章节，题目数量太多了而且题型又都是一样的。于是longo想到了一个偷懒的办法，他希望能够写一个程序，自动帮他计算多项式求导类型的题目。</p><p>由于字符串处理实在是太麻烦了，而且他又注意到一般题目中多项式的次数不会超过9次，因此他决定直接按照9次项，8次项，...，1次项，常数项的顺序输入各项系数就好了，没有的项系数就写0.000。</p><p>不过因为他在抄答案的时候并不想动脑子，所以他想要让自己输出的<strong>求导结果</strong>直接是一个多项式字符串，形如a1x^c1+a2x^c2....anx^cn+b，这样他就可以直接把答案往作业本上抄了。</p><p>特别的，如果某次项的系数是0，则不写这一项；如果某次项的系数是1.000，则这一项应该直接写成x^k的形式（常数项除外）；一次项要写成ax而不是ax^1的形式；如果导数是0则直接输出0.000，换言之，你可以理解为输出多项式是一个符合正常书写习惯的字符串。</p><p>现在，longo空有一个偷懒的主意而没有实现的技术，可以请你帮帮他吗？<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行一个整数T，代表数据组数。<br />对于每组数据，一行给出10个数，分别代表9次项，8次项，...，常数项的系数，且保证系数ai有三位小数，并满足0.000<=ai<=9.999。</dd>
+		<dt>输出</dt>
+		<dd>对于每组数据，输出一个多项式字符串，代表这组数据求导后的结果，且输出要满足高次项在前，系数保留3位小数的条件，并且符合题目中描述的形式。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+0.000 0.000 0.000 0.000 0.000 1.000 0.000 0.000 0.000 0.300
+0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 1.000 0.300
+0.000 0.000 0.000 0.000 0.000 0.250 0.000 1.000 6.000 0.300
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>4.000x^3
+1.000
+x^3+2.000x+6.000
+</pre></dd>
+						<dt>来源</dt>
+		<dd>BJUT Programming Contest 2016, t3cmax</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/lianxi/1062/">查看</a></li>
+		<li ><a href="/lianxi/1062/submit/">提交</a></li>
+				<li ><a href="/lianxi/1062/statistics/">统计</a></li>
+			
+		<li ><a href="/lianxi/clarify/1062/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>9935</dd>
+					<dt>添加于</dt>
+			<dd>2016-04-20</dd>
+				<dt>提交次数</dt>
+		<dd>81</dd>
+		<dt>尝试人数</dt>
+	    <dd>19</dd>
+	    <dt>通过人数</dt>
+	    <dd>11</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

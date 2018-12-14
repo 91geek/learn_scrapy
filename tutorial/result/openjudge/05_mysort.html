@@ -1,0 +1,254 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 05:mysort</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdsdzx.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="成都树德中学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdsdzx.openjudge.cn/" title="首页" rel="home">成都树德中学</a></h2>
+		 <span>/</span>
+		 <h2>C语言基础10</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noi01ch10/" class="first">题目</a></li>
+            <li ><a href="/noi01ch10/ranking/">排名</a></li>
+                    <li ><a href="/noi01ch10/status/">状态</a></li>
+	    			        <li class="last"><a href="/noi01ch10/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>05:mysort</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noi01ch10/05/">查看</a></li>
+		<li ><a href="/noi01ch10/05/submit/">提交</a></li>
+				<li ><a href="/noi01ch10/05/statistics/">统计</a></li>
+			
+		<li ><a href="/noi01ch10/clarify/05/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>程序填空题，自己编写排序函数 mysort，使得其能够对任意类型的数组排序</p></dd>
+				<dd><pre class="sh_cpp">#include &lt;iostream&gt;
+using namespace std;
+struct A {
+	int nouse1;
+	int nouse2;
+	int n;
+};</pre></dd>		
+		<pre>// 在此处补充你的代码</pre>		
+				<dd><pre class="sh_cpp">int MyCompare1( const void * e1,const void * e2) 
+{
+	int * p1 = (int * ) e1;
+	int * p2 = (int * ) e2;
+	return * p1 - * p2;
+}
+int MyCompare2( const void * e1,const void * e2) 
+{
+	int * p1 = (int * ) e1;
+	int * p2 = (int * ) e2;
+	if( (* p1 %10) - (* p2 % 10))
+		return (* p1 %10) - (* p2 % 10);
+	else
+		return * p1 - * p2;
+}
+int MyCompare3( const void * e1,const void * e2) 
+{
+	A * p1 = (A*) e1;
+	A * p2 = (A*) e2;
+	return p1-&gt;n - p2-&gt;n;
+}
+int a[20];
+A b[20];
+int main ()
+{	
+	int n;
+	while(cin &gt;&gt; n) {
+		for(int i = 0;i &lt; n; ++i) {
+			cin &gt;&gt; a[i];
+			b[i].n = a[i];
+		}
+		mysort(a,n,sizeof(int),MyCompare1);
+		for(int i = 0;i &lt; n; ++i) 
+			cout &lt;&lt; a[i] &lt;&lt; &quot;,&quot; ;
+		cout &lt;&lt; endl;
+		mysort(a,n,sizeof(int),MyCompare2);
+		for(int i = 0;i &lt; n; ++i) 
+			cout &lt;&lt; a[i] &lt;&lt; &quot;,&quot; ;
+		cout &lt;&lt; endl;
+		mysort(b,n,sizeof(A),MyCompare3);
+		for(int i = 0;i &lt; n; ++i) 
+			cout &lt;&lt; b[i].n &lt;&lt; &quot;,&quot; ;
+		cout &lt;&lt; endl;
+	}
+	return 0;
+}</pre></dd>		<dt>输入</dt>
+		<dd>多组数据。每组数据以整数 n开头(n<10)，然后是n个整数</dd>
+		<dt>输出</dt>
+		<dd>对每组数据，输出三行。<br />第一行是整数从小倒大排序的结果<br />第二行是按个位数从小到大排序的结果(如果个位数相同，小的排在前面)<br />第三行还是整数从小倒大排序的结果</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 21 3 76 48 445
+6 73 29 45 8737 2 1
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>3,21,48,76,445,
+21,3,445,76,48,
+3,21,48,76,445,
+1,2,29,45,73,8737,
+1,2,73,45,8737,29,
+1,2,29,45,73,8737,
+</pre></dd>
+						<dt>来源</dt>
+		<dd>Guo Wei</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noi01ch10/05/">查看</a></li>
+		<li ><a href="/noi01ch10/05/submit/">提交</a></li>
+				<li ><a href="/noi01ch10/05/statistics/">统计</a></li>
+			
+		<li ><a href="/noi01ch10/clarify/05/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>10420</dd>
+					<dt>添加于</dt>
+			<dd>2016-10-21</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

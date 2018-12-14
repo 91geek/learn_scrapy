@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - T070:环城旅行</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hzoi.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/88/logo_small.jpg" alt="河北省衡水中学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hzoi.openjudge.cn/" title="首页" rel="home">河北省衡水中学</a></h2>
+		 <span>/</span>
+		 <h2>平时测验</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/ceyan/" class="first">题目</a></li>
+            <li ><a href="/ceyan/ranking/">排名</a></li>
+                    <li ><a href="/ceyan/status/">状态</a></li>
+	    			        <li class="last"><a href="/ceyan/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>T070:环城旅行</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/ceyan/T070/">查看</a></li>
+		<li ><a href="/ceyan/T070/submit/">提交</a></li>
+				<li ><a href="/ceyan/T070/statistics/">统计</a></li>
+			
+		<li ><a href="/ceyan/clarify/T070/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131072kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin: 0cm 0cm 0pt; text-align: left; text-indent: 2em;"><span style="font-family: Times New Roman; font-size: 12pt;">Matrix67</span><span style="font-family:;" new="" times="">要带他的女友进行一次环城旅行。他选择了一条总长度为</span><span style="font-family: Times New Roman; font-size: 12pt;">L</span><span style="font-family:;" new="" times="">的封闭路线。他所选择的路线上有</span><span style="font-family: Times New Roman; font-size: 12pt;">n</span><span style="font-family:;" new="" times="">个景点。他将从某个景点出发，顺时针开车绕城市一周，再回到出发点。出发前，油箱为空。每个景点内都有一个加油站，第</span><span style="font-family: Times New Roman; font-size: 12pt;">i</span><span style="font-family:;" new="" times="">个景点的加油站提供的油可供车行驶</span><span style="font-family: Times New Roman; font-size: 12pt;">Si</span><span style="font-family:;" new="" times="">的路程。所有加油站可提供的油的总和恰好够汽车行驶一周（即</span><span style="font-family: Times New Roman; font-size: 12pt;">S1+S2+…+Sn=L</span><span style="font-family:;" new="" times="">）。汽车的油箱总能够容下所得到的汽油。</span></p><p style="margin: 0cm 0cm 0pt; text-align: left; text-indent: 2em;"><span style="font-family:;" new="" times="">临行前的那一天，</span><span style="font-family: Times New Roman; font-size: 12pt;">Matrix67</span><span style="font-family:;" new="" times="">突然意识到，虽然所有加油站的油的总和等于汽车环城一周要消耗的油，但汽车不一定能环城一周，因为有可能还没有到下一个景点，汽油就用光了。显然，是否会发生半路上没油的情况取决于</span><span style="font-family: Times New Roman; font-size: 12pt;">Matrix67</span><span style="font-family:;" new="" times="">选择的出发点。他可不希望和</span><span style="font-family: Times New Roman; font-size: 12pt;">MM</span><span style="font-family:;" new="" times="">的这次浪漫的旅行就这样泡汤了。他知道每个景点离它前一个景点有多远，也知道每个景点的加油站提供的油量。他希望你能帮助他找出，从哪些景点出发可以顺利绕城一周。</span><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行为两个正整数，分别代表n和L。输入数据保证n<=500 000，L<=100 000 000，并且n<=L。<br />第二行到第n+1行这n行数据将按环行道路上顺时针的顺序依次描述各个景点。每行有两个正整数。第i+1行为Di和Si，分别表示第i个景点离其前一个景点（即第i-1个景点）的距离和这个景点的加油站所提供的油可供汽车行驶的距离。其中，D1=0。最后一个（第n个）景点与第一个景点之间的距离没有直接给出，但可以根据输入数据计算出来。<br />输入数据保证，所有的Si之和等于L，所有的Di之和小于L。</dd>
+		<dt>输出</dt>
+		<dd>一行正整数。输出时，每两个正整数之间都有一个空格，行末无空格。它们表示所有能够作为出发点顺利完成环城旅行的景点。<br />当存在多个这样的景点时，请按照升序排列输出他们的序号。<br />当不存在这样的景点时，输出-1。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 10
+0 1
+2 2
+3 2
+2 2
+2 3
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>3 4 5</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/ceyan/T070/">查看</a></li>
+		<li ><a href="/ceyan/T070/submit/">提交</a></li>
+				<li ><a href="/ceyan/T070/statistics/">统计</a></li>
+			
+		<li ><a href="/ceyan/clarify/T070/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11391</dd>
+					<dt>添加于</dt>
+			<dd>2016-09-11</dd>
+				<dt>提交次数</dt>
+		<dd>66</dd>
+		<dt>尝试人数</dt>
+	    <dd>27</dd>
+	    <dt>通过人数</dt>
+	    <dd>27</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

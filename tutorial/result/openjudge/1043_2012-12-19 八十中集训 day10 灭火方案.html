@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1043:2012-12-19 八十中集训 day10 灭火方案</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2014级各种训练题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2014/" class="first">题目</a></li>
+            <li ><a href="/2014/ranking/">排名</a></li>
+                    <li ><a href="/2014/status/">状态</a></li>
+	    			        <li class="last"><a href="/2014/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1043:2012-12-19 八十中集训 day10 灭火方案</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2014/1043/">查看</a></li>
+		<li ><a href="/2014/1043/submit/">提交</a></li>
+				<li ><a href="/2014/1043/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1043/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>30000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>2560000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>由于某些意外，金库发生了一场火灾。虽然大火并不可能烧坏金子，但是<br />还是会给金库造成了很大的损失：比如人员伤亡，或者设备损毁。因此，需要<br />尽快灭火。<br />金库可以抽象为一个二维平面，其中有些地方是有火苗；为了安全，任何<br />有明火的地方都必须使用灭火器灭火。金库里配备有一台高级的灭火器，它的<br />每次使用需要提供两个参数：一个是灭火区域大小（边长）r，一个是灭火次数<br />s。接下来的s次，每次可以指定任意一个边长为r的正方形区域（即面积为r*r），<br />一次扑灭里面所有的火苗。注意，一个火苗的坐标如果在正方形边界上也被认<br />为是扑灭了，因此当r=4的时候可以同时扑灭(0,0)和（4,0）的火焰。<br />这样使用灭火器的代价为s*r*r。管理人员显然希望在完成灭火的情况下，<br />代价尽可能小。 代价尽可能小。<br />就在准备使用灭火器的同时，他们发现了一个严重的问题：灭火器的参数<br />设置系统出现了问题，无法更改参数s了——上次使用时s=3，因此这次s也只<br />能为3。好在r仍然可以调整；因此火仍然可以被扑灭，并且可以最小化当前情<br />况（s=3）下的代价。<br />显然，r越小，代价越小。因此设置参数的人需要知道，r应该取多少？</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行N（<=10^5）,有N处有火苗。<br />接下来N行，每行两个正整数x,y（0<=x,y<=10^9）,表示每个火苗的位置。</dd>
+		<dt>输出</dt>
+		<dd>一行一个正整数，r的最小值。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>10
+3 5
+9 7
+10 3
+2 2
+3 4
+1 10
+1 8
+2 8
+10 10
+11 3</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>7</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2014/1043/">查看</a></li>
+		<li ><a href="/2014/1043/submit/">提交</a></li>
+				<li ><a href="/2014/1043/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1043/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">crf is sb<br />
+crf is sd<br />
+crf gg<br />
+crf zb<br />
+crf hsg<br />
+crf 刷霸<br />
+有问题找zhx</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>5539</dd>
+					<dt>添加于</dt>
+			<dd>2012-12-19</dd>
+				<dt>提交次数</dt>
+		<dd>2</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

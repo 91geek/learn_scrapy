@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1009:教主的魔法</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2016级假期训练题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2016winter2/" class="first">题目</a></li>
+            <li ><a href="/2016winter2/ranking/">排名</a></li>
+                    <li ><a href="/2016winter2/status/">状态</a></li>
+	    			        <li class="last"><a href="/2016winter2/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1009:教主的魔法</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2016winter2/1009/">查看</a></li>
+		<li ><a href="/2016winter2/1009/submit/">提交</a></li>
+				<li ><a href="/2016winter2/1009/statistics/">统计</a></li>
+			
+		<li ><a href="/2016winter2/clarify/1009/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><div style="font-family: arial, verdana, helvetica, sans-serif; font-size: 14px; white-space: normal; text-indent: 21.75pt;"><span style="font-family: arial, verdana, helvetica, sans-serif;font-size: medium">教主最近学会了一种神奇的魔法，能够使人长高。于是他准备演示给XMYZ信息组每个英雄看。于是<em style="font-family: arial, verdana, helvetica, sans-serif;">N</em>个英雄们又一次聚集在了一起，这次他们排成了一列，被编号为1、2、……、<em style="font-family: arial, verdana, helvetica, sans-serif;">N</em>。</span></div><div style="font-family: arial, verdana, helvetica, sans-serif; font-size: 14px; white-space: normal; text-indent: 21.75pt;"><span style="font-family: arial, verdana, helvetica, sans-serif;font-size: medium">每个人的身高一开始都是不超过1000的正整数。教主的魔法每次可以把闭区间[<em style="font-family: arial, verdana, helvetica, sans-serif;">L</em>, <em style="font-family: arial, verdana, helvetica, sans-serif;">R</em>]（1≤<em style="font-family: arial, verdana, helvetica, sans-serif;">L</em>≤<em style="font-family: arial, verdana, helvetica, sans-serif;">R</em>≤<em style="font-family: arial, verdana, helvetica, sans-serif;">N</em>）内的英雄的身高全部加上一个整数<em style="font-family: arial, verdana, helvetica, sans-serif;">W</em>。（虽然<em style="font-family: arial, verdana, helvetica, sans-serif;">L</em>=<em style="font-family: arial, verdana, helvetica, sans-serif;">R</em>时并不符合区间的书写规范，但我们可以认为是单独增加第<em style="font-family: arial, verdana, helvetica, sans-serif;">L</em>（<em style="font-family: arial, verdana, helvetica, sans-serif;">R</em>）个英雄的身高）</span></div><div style="font-family: arial, verdana, helvetica, sans-serif; font-size: 14px; white-space: normal; text-indent: 21.75pt;"><span style="font-family: arial, verdana, helvetica, sans-serif;font-size: medium">CYZ、光哥和ZJQ等人不信教主的邪，于是他们有时候会问WD闭区间 [<em style="font-family: arial, verdana, helvetica, sans-serif;">L</em>, <em style="font-family: arial, verdana, helvetica, sans-serif;">R</em>] 内有多少英雄身高大于等于<em style="font-family: arial, verdana, helvetica, sans-serif;">C</em>，以验证教主的魔法是否真的有效。</span></div><div style="font-family: arial, verdana, helvetica, sans-serif; font-size: 14px; white-space: normal; text-indent: 21.75pt;"><span style="font-family: arial, verdana, helvetica, sans-serif;font-size: medium">WD巨懒，于是他把这个回答的任务交给了你。</span></div><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第1行为两个整数N、Q。Q为问题数与教主的施法数总和。<br />       第2行有N个正整数，第i个数代表第i个英雄的身高。<br />       第3到第Q+2行每行有一个操作：<br />（1）       若第一个字母为“M”，则紧接着有三个数字L、R、W。表示对闭区间 [L, R] 内所有英雄的身高加上W。<br />（2）       若第一个字母为“A”，则紧接着有三个数字L、R、C。询问闭区间 [L, R] 内有多少英雄的身高大于等于C。</dd>
+		<dt>输出</dt>
+		<dd>对每个“A”询问输出一行，仅含一个整数，表示闭区间 [L, R] 内身高大于等于C的英雄数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 3
+1 2 3 4 5
+A 1 5 4
+M 3 5 1
+A 1 5 4</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>2
+3</pre></dd>
+				<dt>提示</dt>
+		<dd>【输入输出样例说明】<br /><br />原先5个英雄身高为1、2、3、4、5，此时[1, 5]间有2个英雄的身高大于等于4。教主施法后变为1、2、4、5、6，此时[1, 5]间有3个英雄的身高大于等于4。<br /><br /> <br /><br />【数据范围】<br /><br />对30%的数据，N≤1000，Q≤1000。<br /><br />对100%的数据，N≤1000000，Q≤3000，1≤W≤1000，1≤C≤1,000,000,000。</dd>
+						<dt>来源</dt>
+		<dd>BZOJ 3343</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2016winter2/1009/">查看</a></li>
+		<li ><a href="/2016winter2/1009/submit/">提交</a></li>
+				<li ><a href="/2016winter2/1009/statistics/">统计</a></li>
+			
+		<li ><a href="/2016winter2/clarify/1009/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>6796</dd>
+					<dt>添加于</dt>
+			<dd>2014-01-23</dd>
+				<dt>提交次数</dt>
+		<dd>35</dd>
+		<dt>尝试人数</dt>
+	    <dd>9</dd>
+	    <dt>通过人数</dt>
+	    <dd>9</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

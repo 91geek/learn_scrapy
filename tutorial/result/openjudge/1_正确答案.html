@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1:正确答案</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://tadyz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="泰安一中oi" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://tadyz.openjudge.cn/" title="首页" rel="home">泰安一中oi</a></h2>
+		 <span>/</span>
+		 <h2>NOIP_text_003</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noiptest003/" class="first">题目</a></li>
+            <li ><a href="/noiptest003/ranking/">排名</a></li>
+                    <li ><a href="/noiptest003/status/">状态</a></li>
+	    			        <li class="last"><a href="/noiptest003/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1:正确答案</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noiptest003/1/">查看</a></li>
+		<li ><a href="/noiptest003/1/submit/">提交</a></li>
+				<li ><a href="/noiptest003/1/statistics/">统计</a></li>
+			
+		<li ><a href="/noiptest003/clarify/1/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin: 0pt"><span style="font-family:宋体;font-size:10.5000pt"><span style="font-family:宋体">小</span>H<span style="font-family:宋体">与小</span><span style="font-family:Times New Roman">Y</span><span style="font-family:宋体">刚刚参加完</span><span style="font-family:Times New Roman">UOIP</span><span style="font-family:宋体">外卡组的初赛，就迫不及待的跑出考场对答案。</span></span></p><p style="margin: 0pt"><span style="font-family:&#39;Times New Roman&#39;;font-size:10.5000pt">“</span><span style="font-family:宋体;font-size:10.5000pt;font-family:宋体">吔，我的答案和你都不一样！</span><span style="font-family:&#39;Times New Roman&#39;;font-size:10.5000pt">”</span><span style="font-family:宋体;font-size:10.5000pt"><span style="font-family:宋体">，小</span>Y<span style="font-family:宋体">说道，</span></span><span style="font-family:&#39;Times New Roman&#39;;font-size:10.5000pt">”</span><span style="font-family:宋体;font-size:10.5000pt;font-family:宋体">我们去找神犇们问答案吧</span><span style="font-family:&#39;Times New Roman&#39;;font-size:10.5000pt">”</span><span style="font-family:宋体;font-size:10.5000pt;font-family:宋体">。</span></p><p style="margin: 0pt"><span style="font-family:宋体;font-size:10.5000pt"><span style="font-family:宋体">外卡组试卷中共有</span>m<span style="font-family:宋体">道判断题，小</span><span style="font-family:Times New Roman">H</span><span style="font-family:宋体">与小</span><span style="font-family:Times New Roman">Y</span><span style="font-family:宋体">一共从其他</span><span style="font-family:Times New Roman">n</span><span style="font-family:宋体">个神犇那问了答案。之后又从小</span><span style="font-family:Times New Roman">G</span><span style="font-family:宋体">那里得知，这</span><span style="font-family:Times New Roman">n</span><span style="font-family:宋体">个神犇中有</span><span style="font-family:Times New Roman">p</span><span style="font-family:宋体">个考了满分，</span><span style="font-family:Times New Roman">q</span><span style="font-family:宋体">个考了零分，其他神犇不为满分或零分。这可让小</span><span style="font-family:Times New Roman">Y</span><span style="font-family:宋体">与小</span><span style="font-family:Times New Roman">H</span><span style="font-family:宋体">犯了难。你能帮助他们还原出标准答案吗？如有多解则输出字典序最小的那个。无解输出</span><span style="font-family:Times New Roman">-1</span><span style="font-family:宋体">。</span></span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行四个整数n, m, p, q，意义如上描述。<br />接下来n行，每一行m个字符’N’或’Y’，表示这题这个神犇的答案。</dd>
+		<dt>输出</dt>
+		<dd>仅一行，一个长度为m的字符串或是-1。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2 2 2 0
+YY
+YY</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>YY</pre></dd>
+				<dt>提示</dt>
+		<dd>30% : n <= 100.<br />60% : n <= 5000 , m <= 100.<br />100% : 1 <= n <= 30000 , 1 <= m <= 500.  0 <= p , q 且 p + q <= n.</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noiptest003/1/">查看</a></li>
+		<li ><a href="/noiptest003/1/submit/">提交</a></li>
+				<li ><a href="/noiptest003/1/statistics/">统计</a></li>
+			
+		<li ><a href="/noiptest003/clarify/1/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11255</dd>
+				<dt>提交次数</dt>
+		<dd>4</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

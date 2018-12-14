@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1006:2012-12-07 Escape From Punishment</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2014级各种训练题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2014/" class="first">题目</a></li>
+            <li ><a href="/2014/ranking/">排名</a></li>
+                    <li ><a href="/2014/status/">状态</a></li>
+	    			        <li class="last"><a href="/2014/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1006:2012-12-07 Escape From Punishment</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2014/1006/">查看</a></li>
+		<li ><a href="/2014/1006/submit/">提交</a></li>
+				<li ><a href="/2014/1006/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1006/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>20000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>2000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>2560000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal"><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">是一只非常猥琐的未知生物。</span><span style="font-size:12.0pt">TA</span><span style="font-size: 12pt">的猥琐行径很多，例如：</span><span style="font-size:12.0pt">TA</span><span style="font-size: 12pt">前期在各大</span><span style="font-size:12.0pt">OJ</span><span style="font-size: 12pt">上的</span><span style="font-size:12.0pt">ID</span><span style="font-size: 12pt">均为一个非常霸气的名字——</span><span style="font-size:12.0pt">nobel_fly</span><span style="font-size: 12pt">，后期在各大</span><span style="font-size:12.0pt">OJ</span><span style="font-size: 12pt">上的</span><span style="font-size:12.0pt">ID</span><span style="font-size: 12pt">均成了</span><span style="font-size:12.0pt">snow_lotus</span><span style="font-size: 12pt">。众所周知，把自己妹子的名字译成英文后作为</span><span style="font-size:12.0pt">ID</span><span style="font-size: 12pt">是一件很掉节操的事，但是</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">对此却乐此不疲。又如在日常生活中，</span><span style="font-size:12.0pt">TA</span><span style="font-size: 12pt">经常把</span><span style="font-size:12.0pt">TA</span><span style="font-size: 12pt">邪恶的爪子伸向</span><span style="font-size:12.0pt">innocent</span><span style="font-size: 12pt">的人们，在人们毫无防备的情况下撸他们一把。诸如此类天理难容的恶事最多有</span><span style="font-size:12.0pt">26</span><span style="font-size: 12pt">种，我们将其从</span><span style="font-size:12.0pt">A</span><span style="font-size: 12pt">到</span><span style="font-size:12.0pt">Z</span><span style="font-size: 12pt">分别标号。</span></p><p class="MsoNormal" style=""><span style="font-size: 12pt">多行不义必自毙，像</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">此等不思悔改的顽劣之徒，人若不除，天必诛之。终于某一天，天威降临了，天朝的警察们某天在酒足饭饱玩够英雄杀后突然发现在我国境内居然存在这样一个不法分子。他们还是具有一定正义感的，于是上报给上级，希望对</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">进行惩戒。但是，由于天朝的政府官员比较喜欢秀他们</span><span style="font-size:12.0pt">-</span><span style="font-size:12.0pt;font-family:&#39;Cambria Math&#39;,&#39;serif&#39;">∞</span><span style="font-size: 12pt">的下限，所以下达指示给地方公安，制定了</span><span style="font-size:12.0pt">c</span><span style="font-size: 12pt">条规则，根据</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">犯下的罪行决定</span><span style="font-size:12.0pt">TA</span><span style="font-size: 12pt">是否需要受到惩罚。</span></p><p class="MsoNormal" style=""><span style="font-size: 12pt">具体的惩罚规则是这样的：假设</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">按次序做了</span><span style="font-size:12.0pt">n</span><span style="font-size: 12pt">件坏事，</span><span style="font-size:12.0pt">n</span><span style="font-size: 12pt">件坏事中类型为</span><span style="font-size:12.0pt">ch</span><span style="font-size: 12pt">的罪行有</span><span style="font-size:12.0pt">num_ch</span><span style="font-size: 12pt">件，现共有</span><span style="font-size:12.0pt">c</span><span style="font-size: 12pt">条规则，若其中某一条规则</span><span style="font-size:12.0pt">(chi,xi)</span><span style="font-size: 12pt">满足</span><span style="font-size:12.0pt">chi=ch</span><span style="font-size: 12pt">并且</span><span style="font-size:12.0pt">num_ch</span><span style="font-size: 12pt">是</span><span style="font-size:12.0pt">xi</span><span style="font-size: 12pt">的倍数，那么</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">就不必因犯这类罪行而受到惩罚。如果</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">犯下的每类罪行都可以找到至少一条满足上述条件的规则，那么</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">就可以完全逃脱法律的制裁。你可以认为</span><span style="font-size:12.0pt">HYC</span><span style="font-size: 12pt">做的</span><span style="font-size:12.0pt">n</span><span style="font-size: 12pt">件坏事的类型都是在规则中出现过的那些类型。</span></p><p><span style="font-size: 12pt">很不幸，天朝官员低估了</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">HYC</span><span style="font-size: 12pt">的下限。他们不明白</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">HYC</span><span style="font-size: 12pt">算不上人类，所以</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">TA</span><span style="font-size: 12pt">的智商和</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">TA</span><span style="font-size: 12pt">愚蠢的外表是不相配的。</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">HYC</span><span style="font-size: 12pt">对天朝官员表现出的愚昧表示喜闻乐见，同时为了展现自己下限</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">-</span><span style="font-size:12.0pt;font-family:&#39;Cambria Math&#39;,&#39;serif&#39;">∞</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">+100</span><span style="font-size: 12pt">的优越性，</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">TA</span><span style="font-size: 12pt">决定计算一下自己完全逃脱惩罚的方案总数对</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">12345</span><span style="font-size: 12pt">取模的余数，借以讽刺天朝官员</span><span style="font-size:12.0pt;font-family:&#39;Calibri&#39;,&#39;sans-serif&#39;">-</span><span style="font-size:12.0pt;font-family:&#39;Cambria Math&#39;,&#39;serif&#39;">∞</span><span style="font-size: 12pt">的智商。</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入文件第一行包含两个整数n和c，分别表示HYC按次序做的坏事数量和惩罚规则总数。<br />接下来c行，第i行包含一个字符chi和一个数字xi，表示种类为chi的坏事数量必须是xi的倍数，否则HYC就将受到惩罚。两条规则中chi可能相同。</dd>
+		<dt>输出</dt>
+		<dd>输出文件包含一行仅一个整数表示HYC完全逃脱惩罚的犯罪方法总数对12345取模的余数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 2
+A 1
+B 2
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>16</pre></dd>
+				<dt>提示</dt>
+		<dd>第一个样例中，完全逃脱惩罚的方案有：AAAAA，AAABB，AABAB，AABBA，ABAAB，ABABA，ABBAA，BAAAB，BAABA，BABAA，BBAAA，ABBBB，BABBB，BBABB，BBBAB，BBBBA。<br />对于20%的数据，0≤n≤25，c=3，且规则中罪行类型不重复。<br />另有30%的数据，0≤n≤500，0≤c≤10，所有的xi均小于等于3。<br />对于100%的数据，0≤n≤10^18，0≤c≤1000，Π xi≤123。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2014/1006/">查看</a></li>
+		<li ><a href="/2014/1006/submit/">提交</a></li>
+				<li ><a href="/2014/1006/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1006/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">crf is sb<br />
+crf is sd<br />
+crf gg<br />
+crf zb<br />
+crf hsg<br />
+crf 刷霸<br />
+有问题找zhx</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>5483</dd>
+					<dt>添加于</dt>
+			<dd>2012-12-10</dd>
+				<dt>提交次数</dt>
+		<dd>2</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 03:胜利的标识提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://stjzoi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="广东省汕头市金山中学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://stjzoi.openjudge.cn/" title="首页" rel="home">广东省汕头市金山中学</a></h2>
+		 <span>/</span>
+		 <h2>夏令营选拔赛</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/test20170804/" class="first">题目</a></li>
+            <li ><a href="/test20170804/ranking/">排名</a></li>
+                    <li ><a href="/test20170804/status/">状态</a></li>
+	    			        <li class="last"><a href="/test20170804/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>03:胜利的标识</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/test20170804/03/">查看</a></li>
+		<li ><a href="/test20170804/03/submit/">提交</a></li>
+				<li class="current-show"><a href="/test20170804/03/statistics/">统计</a></li>
+			
+		<li ><a href="/test20170804/clarify/03/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td>分数</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/779193/in/group-247/">李越(锂钺)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188799/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">267 B</td>
+				<td class="language"><a href="/test20170804/solution/10188799/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:26:13">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/777418/in/group-247/">陈业和</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188766/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">185 B</td>
+				<td class="language"><a href="/test20170804/solution/10188766/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:23:43">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776757/in/group-247/">唐金玉(帝莘)</a></td>
+								<td class="className">金中南校2017级竞赛班</td>
+					
+				<td class="result"><a href="/test20170804/solution/10188747/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">300 B</td>
+				<td class="language"><a href="/test20170804/solution/10188747/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:22:11">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/779193/in/group-247/">李越(锂钺)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188666/" class="result-wrong">Presentation Error</a></td>
+								<td>0</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">267 B</td>
+				<td class="language"><a href="/test20170804/solution/10188666/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:16:59">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/779680/in/group-247/">王加根</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188527/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">268 B</td>
+				<td class="language"><a href="/test20170804/solution/10188527/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:08:19">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776798/in/group-247/">朱丹仪(zdy)</a></td>
+								<td class="className">金中南校2017级竞赛班</td>
+					
+				<td class="result"><a href="/test20170804/solution/10188479/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">292 B</td>
+				<td class="language"><a href="/test20170804/solution/10188479/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:05:54">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/779739/in/group-247/">黄译瑶</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188409/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">315 B</td>
+				<td class="language"><a href="/test20170804/solution/10188409/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:02:58">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776773/in/group-247/">沈一达(铪鉿)</a></td>
+								<td class="className">金中南校2017级竞赛班</td>
+					
+				<td class="result"><a href="/test20170804/solution/10188405/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">286 B</td>
+				<td class="language"><a href="/test20170804/solution/10188405/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 11:02:53">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776957/in/group-247/">陈星宇(空城旧梦)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188342/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">408 B</td>
+				<td class="language"><a href="/test20170804/solution/10188342/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:59:32">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776957/in/group-247/">陈星宇(空城旧梦)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188159/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">420 B</td>
+				<td class="language"><a href="/test20170804/solution/10188159/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:50:37">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776957/in/group-247/">陈星宇(空城旧梦)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10188108/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">575 B</td>
+				<td class="language"><a href="/test20170804/solution/10188108/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:47:54">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/779997/in/group-247/">李健扬(Makise Kurisu)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10187779/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">333 B</td>
+				<td class="language"><a href="/test20170804/solution/10187779/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:32:57">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776776/in/group-247/">吴宜(火乍)</a></td>
+								<td class="className">金中南校2017级竞赛班</td>
+					
+				<td class="result"><a href="/test20170804/solution/10187752/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">290 B</td>
+				<td class="language"><a href="/test20170804/solution/10187752/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:31:59">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/781117/in/group-247/">婷婷</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10187739/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">330 B</td>
+				<td class="language"><a href="/test20170804/solution/10187739/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:31:23">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/779722/in/group-247/">陈培鑫(1362423437)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10187698/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">304 B</td>
+				<td class="language"><a href="/test20170804/solution/10187698/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:29:44">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/781117/in/group-247/">婷婷</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10187681/" class="result-wrong">Presentation Error</a></td>
+								<td>0</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">328 B</td>
+				<td class="language"><a href="/test20170804/solution/10187681/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:29:18">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776804/in/group-247/">李木莉</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10187646/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">287 B</td>
+				<td class="language"><a href="/test20170804/solution/10187646/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:27:37">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/768502/in/group-247/">李根(1353055672)</a></td>
+								<td class="className">2018级1班</td>
+					
+				<td class="result"><a href="/test20170804/solution/10187642/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">204 B</td>
+				<td class="language"><a href="/test20170804/solution/10187642/">Pascal</a></td>
+				<td class="date"><abbr title="2017-08-04 10:27:31">17.8.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776804/in/group-247/">李木莉</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/test20170804/solution/10187592/" class="result-wrong">Presentation Error</a></td>
+								<td>0</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">287 B</td>
+				<td class="language"><a href="/test20170804/solution/10187592/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:25:14">17.8.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/776739/in/group-247/">王志钢</a></td>
+								<td class="className">金中南校2017级竞赛班</td>
+					
+				<td class="result"><a href="/test20170804/solution/10187569/" class="result-right">Accepted</a></td>
+								<td>25</td>
+								<td class="memory">160kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">246 B</td>
+				<td class="language"><a href="/test20170804/solution/10187569/">G++</a></td>
+				<td class="date"><abbr title="2017-08-04 10:24:21">17.8.4</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+		
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">24</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Presentation Error</em></td>
+				<td class="count">4</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">2</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">1</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

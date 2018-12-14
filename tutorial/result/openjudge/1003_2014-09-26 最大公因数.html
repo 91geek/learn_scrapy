@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1003:2014-09-26 最大公因数</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2017届练习区</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2017/" class="first">题目</a></li>
+            <li ><a href="/2017/ranking/">排名</a></li>
+                    <li ><a href="/2017/status/">状态</a></li>
+	    			        <li class="last"><a href="/2017/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1003:2014-09-26 最大公因数</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2017/1003/">查看</a></li>
+		<li ><a href="/2017/1003/submit/">提交</a></li>
+				<li ><a href="/2017/1003/statistics/">统计</a></li>
+			
+		<li ><a href="/2017/clarify/1003/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><img src="data:image/png;base64,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" alt="" /><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>一行四个正整数l1, r1, l2, r2</dd>
+		<dt>输出</dt>
+		<dd>输出一行一个整数表示答案。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>1 5 7 9</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>24</pre></dd>
+				<dt>提示</dt>
+		<dd>数据约束<br />对于 20%的数据，l1, r1, l2, r2 <= 15<br />对于 50%的数据，l1, r1, l2, r2 <= 2000<br />对于 100%的数据，1 <= l1, r1, l2, r2 <= 100000</dd>
+						<dt>来源</dt>
+		<dd>jason_yu</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2017/1003/">查看</a></li>
+		<li ><a href="/2017/1003/submit/">提交</a></li>
+				<li ><a href="/2017/1003/statistics/">统计</a></li>
+			
+		<li ><a href="/2017/clarify/1003/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">yjq naive</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>7400</dd>
+					<dt>添加于</dt>
+			<dd>2014-10-01</dd>
+				<dt>提交次数</dt>
+		<dd>23</dd>
+		<dt>尝试人数</dt>
+	    <dd>11</dd>
+	    <dt>通过人数</dt>
+	    <dd>10</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

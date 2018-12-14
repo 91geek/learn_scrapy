@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - H:Chemistry 101</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bailian.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/3/logo_small.jpg" alt="百练" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bailian.openjudge.cn/" title="首页" rel="home">百练</a></h2>
+		 <span>/</span>
+		 <h2>2018年中学生暑期课堂计算机上机考核</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/sqkt2018/" class="first">题目</a></li>
+            <li ><a href="/sqkt2018/ranking/">排名</a></li>
+                    <li ><a href="/sqkt2018/status/">状态</a></li>
+	     
+        <li ><a href="/sqkt2018/statistics/">统计</a></li>
+				        <li class="last"><a href="/sqkt2018/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>H:Chemistry 101</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/sqkt2018/H/">查看</a></li>
+		<li ><a href="/sqkt2018/H/submit/">提交</a></li>
+				<li ><a href="/sqkt2018/H/statistics/">统计</a></li>
+			
+		<li ><a href="/sqkt2018/clarify/H/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131072kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(85, 85, 85); font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" white-space:="" background-color:="" border-radius:="" 0px="">Chemistry is all about reactions—you throw a bunch of stuff into a test-tube, heat it up, hoping that it will neither explode or poison you, then cool it down and try to work out whether what you have is what you expected. That’s the easy (and fun) bit—much harder is recording it all. As is usual with skills of this type, chemistry instructors the world over rely on drill—a seemingly endless set of reactions that the students have to complete. The trick is that everything that appears on the left side (the reagents, or ‘input’) must appear on the right side (the products, or ‘output’). This ought to be simple, but generations of chemistry students have demonstrated otherwise.</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(85, 85, 85); font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" white-space:="" background-color:="" border-radius:="" 0px="">Professor Plumbius is getting tired of writing the same comments on his student’s worksheets over and over and he wants to automate the process. He wants to be able to enter the equations as written by the students and have the computer produce the comments automatically, thus giving him more time to dream up more equations to give his students to practise on. This is where you come in.</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(85, 85, 85); font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" white-space:="" background-color:="" border-radius:="" 0px="">Write a program that will read in a chemistry equation and determine whether it is balanced. If it isn’t, your program must tell the student what elements are out of balance and by how much.</p><p><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:="">Normally a chemistry equation is written like this:</span><br /></p><p><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:=""><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:="">2H</span><span style="font-size: 12px;color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" background-color:="">2</span><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:="">O + SO</span><span style="font-size: 12px;color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" background-color:="">2</span><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:=""> ←→ H</span><span style="font-size: 12px;color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" background-color:="">2</span><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:=""> + H</span><span style="font-size: 12px;color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" background-color:="">2</span><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:="">SO</span><span style="font-size: 12px;color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" background-color:="">4</span><br /></span></p><p></p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(85, 85, 85); font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" white-space:="" background-color:="" border-radius:="" 0px="">but due to the limitations of computer input we will present it like this:</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(85, 85, 85); font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" white-space:="" background-color:="" border-radius:="" 0px="">2H2O + SO2 = H2 + H2SO4</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(85, 85, 85); font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" white-space:="" background-color:="" border-radius:="" 0px="">This example shows the essentials of an equation: each side consists of one or more molecules, separated by ‘+’ signs (the spaces are optional). Each molecule may have a multiplier before it which specifies how many instances of that molecule take part in the reaction. A molecule consists of one or more elements. Each element has a symbol, which is either an uppercase letter, e.g., ‘H’, or an uppercase letter followed by a lowercase letter, e.g., ‘Br’. A symbol may be followed by a multiplier specifying how many atoms of that element are present in that part of the molecule. Thus the first term says that there are two instances of a molecule consisting of two atoms of H and one atom of O. (This happens to be water, but you do not need to know that.)</p><p style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px; color: rgb(85, 85, 85); font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" white-space:="" background-color:="" border-radius:="" 0px="">Given that these are exercises handed out to the students, the left hand sides are, by definition, correct. Thus your job is to determine whether all the atoms that appear on the left also appear on the right. If they do, then the equation is balanced. If not, you must report which elements have been created or lost and how much of each.</p><p><span style="color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" font-size:="" background-color:=""><span style="font-size: 12px;color: rgb(85, 85, 85);font-family: " open="" helvetica="" apple="" sd="" gothic="" noto="" sans="" cjk="" malgun="" nanum="" background-color:=""><br /></span></span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>Input will consist of a number of equations, each on a line by itself. Each line will contain no more than 250 characters. Each equation represents a set of reagents and a set of products, separated by an ‘=’ sign. Each set will consist of one or more molecules, possibly with multipliers, separated by ‘+’ signs. There may be zero or more spaces on either side of the ‘+’ and ‘=’ signs.<br /><br />The last line of input will be a ‘#’ on a line by itself. This line should not be processed.</dd>
+		<dt>输出</dt>
+		<dd>There will be at least one line of output for each equation in the input. If the equation is balanced this line will say ‘Equation n is balanced.’, where n is the equation number (starting from 1). If the equation does not balance, then the output line will say ‘Equation n is unbalanced.’ and will be followed by a series of lines of the form<br /><br />You have &lt;created or destroyed&gt; m &lt;atom or atoms&gt; of element.<br /><br />where element is the symbol of the element concerned, m is the number of extra or missing atoms of that element, and ‘atom(s)’ is singular or plural as appropriate. For each unbalanced equation, these lines should be ordered alphabetically by element symbol and terminated by a blank line. (Note that this means that the final line of your output may be a blank line.)</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2HBr + H2O+SO2=H2+H2SO3+He
+2H2O + SO2 = H2 + H2SO4
+2H2O+SO2=H2+H2SO4
+#</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Equation 1 is unbalanced.
+You have destroyed 2 atoms of Br.
+You have created 1 atom of He.
+
+Equation 2 is balanced.
+Equation 3 is balanced.</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/sqkt2018/H/">查看</a></li>
+		<li ><a href="/sqkt2018/H/submit/">提交</a></li>
+				<li ><a href="/sqkt2018/H/statistics/">统计</a></li>
+			
+		<li ><a href="/sqkt2018/clarify/H/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">1.C语言提交可以选择GCC或者G++<br />
+2.C++语言提交选择G++<br />
+3.C#是一种语言，不是C或者C++的编译器<br />
+4.H题样例输入已更新</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>17551</dd>
+				<dt>提交次数</dt>
+		<dd>56</dd>
+		<dt>尝试人数</dt>
+	    <dd>25</dd>
+	    <dt>通过人数</dt>
+	    <dd>6</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

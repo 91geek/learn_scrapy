@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 13648:Hanoi 双塔问题</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hz2hs.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="杭州四中/养正/江南/滨和 信奥平台" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hz2hs.openjudge.cn/" title="首页" rel="home">杭州四中/养正/江南/滨和 信奥平台</a></h2>
+		 <span>/</span>
+		 <h2>经典算法典例(二分，排序，高精度等)</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/basic/" class="first">题目</a></li>
+            <li ><a href="/basic/ranking/">排名</a></li>
+                    <li ><a href="/basic/status/">状态</a></li>
+	    			        <li class="last"><a href="/basic/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>13648:Hanoi 双塔问题</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/basic/13648/">查看</a></li>
+		<li ><a href="/basic/13648/submit/">提交</a></li>
+				<li ><a href="/basic/13648/statistics/">统计</a></li>
+			
+		<li ><a href="/basic/clarify/13648/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><span class="fontstyle0">给定 A、B、C 三根足够长的细柱，在 A 柱上放有 2</span><span class="fontstyle0" style="font-size:10pt">n </span><span class="fontstyle0">个中间有孔的圆盘，共有 </span><span class="fontstyle0" style="font-size:10pt">n </span><span class="fontstyle0">个不同的尺寸，每个尺<br />寸都有两个相同的圆盘，注意这两个圆盘是不加区分的（下图为 </span><span class="fontstyle0" style="font-size:10pt">n</span><span class="fontstyle0">=3 的情形）。现要将这些圆盘移到 C 柱上，<br />在移动过程中可放在 B 柱上暂存。要求：<br />（1）每次只能移动一个圆盘；<br />（2）A、B、C 三根细柱上的圆盘都要保持上小下大的顺序；<br />任务：设</span><span class="fontstyle0" style="font-size:10pt">A</span><span class="fontstyle0" style="font-size:5pt">n</span><span class="fontstyle0">为 2</span><span class="fontstyle0" style="font-size:10pt">n</span><span class="fontstyle0">个圆盘完成上述任务所需的最少移动次数，对于输入的</span><span class="fontstyle0" style="font-size:10pt">n</span><span class="fontstyle0">，输出</span><span class="fontstyle0" style="font-size:10pt">A</span><span class="fontstyle0" style="font-size:5pt">n</span><span class="fontstyle0">。</span><br /></p><p><span class="fontstyle0"><img src="http://media.openjudge.cn/images/upload/1489457276.png" width="484" height="313" /><br /></span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>一个正整数 n，表示在 A 柱上放有 2n 个圆盘</dd>
+		<dt>输出</dt>
+		<dd>包含一个正整数, 为完成上述任务所需的最少移动次数</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>6</pre></dd>
+				<dt>提示</dt>
+		<dd>对于 50%的数据，1<=n<=25<br />对于 100%的数据，1<=n<=200</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/basic/13648/">查看</a></li>
+		<li ><a href="/basic/13648/submit/">提交</a></li>
+				<li ><a href="/basic/13648/statistics/">统计</a></li>
+			
+		<li ><a href="/basic/clarify/13648/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>13648</dd>
+					<dt>添加于</dt>
+			<dd>2017-03-14</dd>
+				<dt>提交次数</dt>
+		<dd>5</dd>
+		<dt>尝试人数</dt>
+	    <dd>5</dd>
+	    <dt>通过人数</dt>
+	    <dd>5</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

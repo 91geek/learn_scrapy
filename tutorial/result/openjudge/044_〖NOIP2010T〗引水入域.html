@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 044:〖NOIP2010T〗引水入域</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://jshzoi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="江苏省泗洪中学信息学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://jshzoi.openjudge.cn/" title="首页" rel="home">江苏省泗洪中学信息学</a></h2>
+		 <span>/</span>
+		 <h2>NOIP原题(提高组)</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noipt/" class="first">题目</a></li>
+            <li ><a href="/noipt/ranking/">排名</a></li>
+                    <li ><a href="/noipt/status/">状态</a></li>
+	    			        <li class="last"><a href="/noipt/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>044:〖NOIP2010T〗引水入域</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noipt/044/">查看</a></li>
+		<li ><a href="/noipt/044/submit/">提交</a></li>
+				<li ><a href="/noipt/044/statistics/">统计</a></li>
+			
+		<li ><a href="/noipt/clarify/044/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131072kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><img src="http://media.openjudge.cn/images/upload/1465701050.jpg" width="638" height="401" /><br /><br /><br />在一个遥远的国度，一侧是风景秀美的湖泊，另一侧则是漫无边际的沙漠。该国的行政区划十分特殊，刚好构成一个N&nbsp;&nbsp;行M&nbsp;&nbsp;列的矩形，如上图所示，其中每个格子都代表一座城市，每座城市都有一个海拔高度。<br /> 为了使居民们都尽可能饮用到清澈的湖水，现在要在某些城市建造水利设施。水利设施有两种，分别为蓄水厂和输水站。蓄水厂的功能是利用水泵将湖泊中的水抽
+取到所在城市的蓄水池中。因此，只有与湖泊毗邻的第1&nbsp;&nbsp;
+行的城市可以建造蓄水厂。而输水站的功能则是通过输水管线利用高度落差，将湖水从高处向低处输送。故一座城市能建造输水站的前提，是存在比它海拔更高且拥
+有公共边的相邻城市，已经建有水利设施。<br /> 由于第N&nbsp;&nbsp;行的城市靠近沙漠，是该国的干旱区，所以要求其中的每座城市都建有水利设施。那么，这个要求能否满足呢？如果能，请计算最少建造几个蓄水厂；如果不能，求干旱区中不可能建有水利设施的城市数目</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入文件的每行中两个数之间用一个空格隔开。<br />输入的第一行是两个正整数N 和M，表示矩形的规模。<br />接下来N 行，每行M 个正整数，依次代表每座城市的海拔高度。</dd>
+		<dt>输出</dt>
+		<dd>输出有两行。如果能满足要求，输出的第一行是整数1，第二行是一个整数，代表最少建造几个蓄水厂；如果不能满足要求，输出的第一行是整数0，第二行是一个整数，代表有几座干旱区中的城市不可能建有水利设施。</dd>
+		<dt>样例输入</dt>
+		<dd><pre><sample1>
+2 5
+9 1 5 4 3
+8 7 6 1 2
+<sample2>
+3 6
+8 4 5 6 4 4
+7 3 4 3 3 3
+3 2 2 1 1 2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre><sample1>
+1
+1
+<sample2>
+1
+3</pre></dd>
+				<dt>提示</dt>
+		<dd>【样例1 说明】<br /><br />只需要在海拔为9 的那座城市中建造蓄水厂，即可满足要求。<br /><br />【样例2 说明】<br /><br /><img src="http://media.openjudge.cn/images/upload/1465701085.jpg" height="316" width="429" /><br /><br />上图中，在3 个粗线框出的城市中建造蓄水厂，可以满足要求。以这3 个蓄水厂为源头<br /><br />在干旱区中建造的输水站分别用3 种颜色标出。当然，建造方法可能不唯一。</dd>
+						<dt>来源</dt>
+		<dd>NOIP原题</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noipt/044/">查看</a></li>
+		<li ><a href="/noipt/044/submit/">提交</a></li>
+				<li ><a href="/noipt/044/statistics/">统计</a></li>
+			
+		<li ><a href="/noipt/clarify/044/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>10655</dd>
+					<dt>添加于</dt>
+			<dd>2016-06-12</dd>
+				<dt>提交次数</dt>
+		<dd>29</dd>
+		<dt>尝试人数</dt>
+	    <dd>8</dd>
+	    <dt>通过人数</dt>
+	    <dd>7</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 28:机器翻译提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://qdacm.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/119/logo_small.jpg" alt="齐大ACM竞赛队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://qdacm.openjudge.cn/" title="首页" rel="home">齐大ACM竞赛队</a></h2>
+		 <span>/</span>
+		 <h2>程序设计基础实验</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/shiyan/" class="first">题目</a></li>
+            <li ><a href="/shiyan/ranking/">排名</a></li>
+                    <li ><a href="/shiyan/status/">状态</a></li>
+	    			        <li class="last"><a href="/shiyan/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>28:机器翻译</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/shiyan/28/">查看</a></li>
+		<li ><a href="/shiyan/28/submit/">提交</a></li>
+				<li class="current-show"><a href="/shiyan/28/statistics/">统计</a></li>
+			
+		<li ><a href="/shiyan/clarify/28/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/790035/in/group-119/">sponge FX</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/11861075/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">292 B</td>
+				<td class="language"><a href="/shiyan/solution/11861075/">G++</a></td>
+				<td class="date"><abbr title="2017-12-18 13:57:37">17.12.18</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/105703/in/group-119/">2015021024</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4552432/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">427 B</td>
+				<td class="language"><a href="/shiyan/solution/4552432/">G++</a></td>
+				<td class="date"><abbr title="2016-01-04 21:21:19">16.1.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/116184/in/group-119/">计本155 2015021128 王利莹</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4550099/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">462 B</td>
+				<td class="language"><a href="/shiyan/solution/4550099/">G++</a></td>
+				<td class="date"><abbr title="2016-01-04 17:41:32">16.1.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/116370/in/group-119/">陈雪二2015021013</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4541738/" class="result-right">Accepted</a></td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">414 B</td>
+				<td class="language"><a href="/shiyan/solution/4541738/">G++</a></td>
+				<td class="date"><abbr title="2016-01-03 14:34:16">16.1.3</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/107075/in/group-119/">计本152 018</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4531761/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">461 B</td>
+				<td class="language"><a href="/shiyan/solution/4531761/">G++</a></td>
+				<td class="date"><abbr title="2016-01-01 22:19:34">16.1.1</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/107718/in/group-119/">2015021047</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4530811/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">784 B</td>
+				<td class="language"><a href="/shiyan/solution/4530811/">G++</a></td>
+				<td class="date"><abbr title="2016-01-01 19:37:26">16.1.1</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/107718/in/group-119/">2015021047</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4529542/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">803 B</td>
+				<td class="language"><a href="/shiyan/solution/4529542/">G++</a></td>
+				<td class="date"><abbr title="2016-01-01 17:13:50">16.1.1</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/107718/in/group-119/">2015021047</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4529521/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">803 B</td>
+				<td class="language"><a href="/shiyan/solution/4529521/">G++</a></td>
+				<td class="date"><abbr title="2016-01-01 17:10:27">16.1.1</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/109958/in/group-119/">计本154 122 王国辉</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4506476/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">782 B</td>
+				<td class="language"><a href="/shiyan/solution/4506476/">G++</a></td>
+				<td class="date"><abbr title="2015-12-28 13:54:09">15.12.28</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/106729/in/group-119/">2015021058</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4418403/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">450 B</td>
+				<td class="language"><a href="/shiyan/solution/4418403/">G++</a></td>
+				<td class="date"><abbr title="2015-12-18 22:48:25">15.12.18</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/106735/in/group-119/">计本152 付善斌 2015021028</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4415302/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">441 B</td>
+				<td class="language"><a href="/shiyan/solution/4415302/">G++</a></td>
+				<td class="date"><abbr title="2015-12-18 18:35:16">15.12.18</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/105730/in/group-119/">计本151  198</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4385209/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">430 B</td>
+				<td class="language"><a href="/shiyan/solution/4385209/">G++</a></td>
+				<td class="date"><abbr title="2015-12-15 11:19:26">15.12.15</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/106582/in/group-119/">计本151 108(2015021108)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4385183/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">435 B</td>
+				<td class="language"><a href="/shiyan/solution/4385183/">G++</a></td>
+				<td class="date"><abbr title="2015-12-15 11:15:08">15.12.15</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/106582/in/group-119/">计本151 108(2015021108)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4339942/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">455 B</td>
+				<td class="language"><a href="/shiyan/solution/4339942/">G++</a></td>
+				<td class="date"><abbr title="2015-12-10 15:35:37">15.12.10</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/108892/in/group-119/">计本153 086刘世杰</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4324298/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">782 B</td>
+				<td class="language"><a href="/shiyan/solution/4324298/">G++</a></td>
+				<td class="date"><abbr title="2015-12-09 12:35:58">15.12.9</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/116242/in/group-119/">张露（2015021185）</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4313547/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">524 B</td>
+				<td class="language"><a href="/shiyan/solution/4313547/">G++</a></td>
+				<td class="date"><abbr title="2015-12-08 14:52:36">15.12.8</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/106604/in/group-119/">计本152023</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4310587/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">429 B</td>
+				<td class="language"><a href="/shiyan/solution/4310587/">G++</a></td>
+				<td class="date"><abbr title="2015-12-07 23:14:46">15.12.7</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/106895/in/group-119/">计本151 095</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4302906/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">441 B</td>
+				<td class="language"><a href="/shiyan/solution/4302906/">G++</a></td>
+				<td class="date"><abbr title="2015-12-06 21:43:04">15.12.6</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/105507/in/group-119/">计本152 048</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4279618/" class="result-right">Accepted</a></td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">460 B</td>
+				<td class="language"><a href="/shiyan/solution/4279618/">G++</a></td>
+				<td class="date"><abbr title="2015-12-05 09:22:05">15.12.5</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/105507/in/group-119/">计本152 048</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/shiyan/solution/4279603/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">441 B</td>
+				<td class="language"><a href="/shiyan/solution/4279603/">G++</a></td>
+				<td class="date"><abbr title="2015-12-05 09:20:14">15.12.5</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+					<a href="?page=4">4</a>
+					<a href="?page=5">5</a>
+		
+					<a href="?page=6">6</a>
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">85</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">14</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">9</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Runtime Error</em></td>
+				<td class="count">1</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 26:浩神的电脑</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://scpc.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/84/logo_small.jpg" alt="SCPC" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://scpc.openjudge.cn/" title="首页" rel="home">SCPC</a></h2>
+		 <span>/</span>
+		 <h2>2018国庆培训训练用题</h2>
+		<span style="font-size:14px;">正在进行中</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2018train/" class="first">题目</a></li>
+            <li ><a href="/2018train/ranking/">排名</a></li>
+                    <li ><a href="/2018train/status/">状态</a></li>
+	     
+        <li ><a href="/2018train/statistics/">统计</a></li>
+				        <li class="last"><a href="/2018train/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>26:浩神的电脑</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2018train/26/">查看</a></li>
+		<li ><a href="/2018train/26/submit/">提交</a></li>
+				<li ><a href="/2018train/26/statistics/">统计</a></li>
+			
+		<li ><a href="/2018train/clarify/26/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65535kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>&nbsp;&nbsp;&nbsp;&nbsp;相信大家都对曾经的腾讯与360大战记忆犹新，他们相互指责对方窃取用户的隐私，到底谁说的是真的我们没法判断，不过相信空穴不会来风，在此先呵呵一下，但是浩神却是360的忠实用户，他始终坚信360的安全防护很给力，所以为了证明他是对的，他对他的电脑做了一系列的测试。<br /></p><p>&nbsp;&nbsp;&nbsp;&nbsp;首先他先安装了一系列的程序，但是在安装的时候他不知道怎么想不通了又卸载了一些程序，弄了半天之后他才开始测试，通过各种百度和google，他了解到了，只有电脑里安装了下面列表里的所有的8个程序那么他的电脑才会是安全的。<br /></p><p><span style="white-space: nowrap;">1.360SAFE</span></p><p><span style="white-space: nowrap;">2.360BROWSER<br /></span></p><p><span style="white-space: nowrap;">3.QQGUARD<br /></span></p><p><span style="white-space: nowrap;">4.360SD<br /></span></p><p><span style="white-space: nowrap;">5.360DESKTOP<br /></span></p><p><span style="white-space: nowrap;">6.360YASUO<br /></span></p><p><span style="white-space: nowrap;">7.360WD<br /></span></p><p><span style="white-space: nowrap;"><span style="white-space: nowrap;">8.360SAFEBOX</span><br /></span></p><p><span style="white-space: nowrap;">对于每一次操作电脑都会给出相应的反应。<br /></span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入包括多组测试数据。<br />首先输入一个n，表示接下来有n个操作(1<=n<=100)<br />每个操作一共有下面三种形式：<br />1.Install Software_name<br />Install是前缀，Software_name是软件的名称，这种命令表示安装这个软件。<br />如果他本次安装的程序电脑里面没有，那么就安装并输出“The software has been installed!” ，如果电脑里已经安装了那么就不做任何反应，就是不输出任何东西。<br />2.Uninstall Software_name<br />同理，Uninstall是前缀，Software_name是软件的名称，这种命令表示卸载这个软件<br />如果他卸载的软件电脑里面有，那么就卸载并输出“The software has been uninstalled!”，如果电脑里面没有这个软件那么就输出“The software is not found!”。<br />3.Query<br />询问当前浩神的电脑状况<br />如果当前的电脑是安全的话输出“Your computer is secure!”，否则就输出“Your computer is not secure!”。</dd>
+		<dt>输出</dt>
+		<dd>按照题目的意思输出</dd>
+		<dt>样例输入</dt>
+		<dd><pre>16
+Install 360SAFE
+Install 360SAFE
+Install 360BROWSER
+Install QQGUARD
+Install 360SD
+Install 360DESKTOP
+Install 360YASUO
+Install 360WD
+Install 360SAFEBOX
+Query
+Uninstall 360SAFEBOX
+Query
+Install QQQQQQQQ
+Query
+Install 360SAFEBOX
+Query</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>The software has been installed!
+The software has been installed!
+The software has been installed!
+The software has been installed!
+The software has been installed!
+The software has been installed!
+The software has been installed!
+The software has been installed!
+Your computer is secure!
+The software has been uninstalled!
+Your computer is not secure!
+The software has been installed!
+Your computer is not secure!
+The software has been installed!
+Your computer is secure!</pre></dd>
+				<dt>提示</dt>
+		<dd>多组输入可以用while(scanf()!=EOF)的格式</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2018train/26/">查看</a></li>
+		<li ><a href="/2018train/26/submit/">提交</a></li>
+				<li ><a href="/2018train/26/statistics/">统计</a></li>
+			
+		<li ><a href="/2018train/clarify/26/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>6400</dd>
+				<dt>提交次数</dt>
+		<dd>76</dd>
+		<dt>尝试人数</dt>
+	    <dd>18</dd>
+	    <dt>通过人数</dt>
+	    <dd>13</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - F:Barber Shop</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://poj.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/2/logo_small.jpg" alt="PKU Online Judge" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://poj.openjudge.cn/" title="首页" rel="home">PKU Online Judge</a></h2>
+		 <span>/</span>
+		 <h2>PKU Campus 2018</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/campus2018/" class="first">题目</a></li>
+            <li ><a href="/campus2018/ranking/">排名</a></li>
+                    <li ><a href="/campus2018/status/">状态</a></li>
+	     
+        <li ><a href="/campus2018/statistics/">统计</a></li>
+		 
+        <li ><a href="/campus2018/print/">打印</a></li>
+			        <li class="last"><a href="/campus2018/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>F:Barber Shop</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/campus2018/F/">查看</a></li>
+		<li ><a href="/campus2018/F/submit/">提交</a></li>
+				<li ><a href="/campus2018/F/statistics/">统计</a></li>
+			
+		<li ><a href="/campus2018/clarify/F/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"><path id="MJMATHI-4E" stroke-width="1" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path><path id="MJMATHI-69" stroke-width="1" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJMATHI-66" stroke-width="1" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path><path id="MJMAIN-5B" stroke-width="1" d="M118 -250V750H255V710H158V-210H255V-250H118Z"></path><path id="MJMAIN-5D" stroke-width="1" d="M22 710V750H159V-250H22V-210H119V710H22Z"></path><path id="MJMAIN-3E" stroke-width="1" d="M84 520Q84 528 88 533T96 539L99 540Q106 540 253 471T544 334L687 265Q694 260 694 250T687 235Q685 233 395 96L107 -40H101Q83 -38 83 -20Q83 -19 83 -17Q82 -10 98 -1Q117 9 248 71Q326 108 378 132L626 250L378 368Q90 504 86 509Q84 513 84 520Z"></path><path id="MJMATHI-61" stroke-width="1" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJMAIN-28" stroke-width="1" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJMAIN-31" stroke-width="1" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJMAIN-2264" stroke-width="1" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJMAIN-29" stroke-width="1" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJMAIN-2C" stroke-width="1" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJMAIN-32" stroke-width="1" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJMAIN-2026" stroke-width="1" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60ZM525 60Q525 84 542 102T585 120Q609 120 627 104T646 61Q646 36 629 18T586 0T543 17T525 60ZM972 60Q972 84 989 102T1032 120Q1056 120 1074 104T1093 61Q1093 36 1076 18T1033 0T990 17T972 60Z"></path><path id="MJMAIN-3D" stroke-width="1" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJMAIN-33" stroke-width="1" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path id="MJMAIN-34" stroke-width="1" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path id="MJMAIN-30" stroke-width="1" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJMAIN-39" stroke-width="1" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path><path id="MJMAIN-2B" stroke-width="1" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJMAIN-37" stroke-width="1" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"></path><path id="MJMATHI-6A" stroke-width="1" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path><path id="MJMAIN-20" stroke-width="1"></path></defs></svg></div><div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><p data-anchor-id="tkpd">There is a large local barber shop with <span class="MathJax_SVG" id="MathJax-Element-114-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 888.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use></g></svg></span> barbers. <span class="MathJax_SVG" id="MathJax-Element-115-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 888.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use></g></svg></span> customers are going to the barber shop one by one. When a customer arrives, he chooses a barber randomly and looks to see what the barber is doing. If the <span class="MathJax_SVG" id="MathJax-Element-116-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span>-th barber is idle when the customer visits him, the <span class="MathJax_SVG" id="MathJax-Element-117-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span>-th barber sits down and starts cutting hair for the customer. If the <span class="MathJax_SVG" id="MathJax-Element-118-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span>-th barber is already cutting hair when the customer visits him, the barber will refer the customer to the <span class="MathJax_SVG" id="MathJax-Element-119-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 1453 1042.103370696049" style="width: 3.359ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMATHI-69" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1174" y="0"></use></g></svg></span>-th barber. If the <span class="MathJax_SVG" id="MathJax-Element-120-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 1453 1042.103370696049" style="width: 3.359ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMATHI-69" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1174" y="0"></use></g></svg></span>-th barber is also cutting hair, the <span class="MathJax_SVG" id="MathJax-Element-121-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 1453 1042.103370696049" style="width: 3.359ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMATHI-69" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1174" y="0"></use></g></svg></span>-th barber will refer the customer to the <span class="MathJax_SVG" id="MathJax-Element-122-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 2560.5 1042.103370696049" style="width: 5.907ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMATHI-66" x="829" y="0"></use><use xlink:href="#MJMAIN-5B" x="1379" y="0"></use><use xlink:href="#MJMATHI-69" x="1658" y="0"></use><use xlink:href="#MJMAIN-5D" x="2003" y="0"></use><use xlink:href="#MJMAIN-5D" x="2282" y="0"></use></g></svg></span>-th barber, and so on. If <span class="MathJax_SVG" id="MathJax-Element-123-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 3675.5555555555557 1042.103370696049" style="width: 8.571ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMATHI-69" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1174" y="0"></use><use xlink:href="#MJMAIN-3E" x="1730" y="0"></use><use xlink:href="#MJMATHI-4E" x="2787" y="0"></use></g></svg></span>, the barber <span class="MathJax_SVG" id="MathJax-Element-124-Frame" role="textbox" aria-readonly="true" style="font-size: 100%;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span> won&#39;t refer the customer to any other barber, indicating that this unfortunate customer can&#39;t find a barber finally.<br /></p><p data-anchor-id="i9rf">It&#39;s guaranteed that: <br />1. <span class="MathJax_SVG" id="MathJax-Element-65-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 3132.5555555555557 1042.103370696049" style="width: 7.297ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMATHI-69" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1174" y="0"></use><use xlink:href="#MJMAIN-3E" x="1730" y="0"></use><use xlink:href="#MJMATHI-69" x="2787" y="0"></use></g></svg></span>. <span class="MathJax_SVG" id="MathJax-Element-66-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 5181.611111111111 1042.103370696049" style="width: 12.046ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-31" x="389" y="0"></use><use xlink:href="#MJMAIN-2264" x="1167" y="0"></use><use xlink:href="#MJMATHI-69" x="2224" y="0"></use><use xlink:href="#MJMAIN-2264" x="2847" y="0"></use><use xlink:href="#MJMATHI-4E" x="3903" y="0"></use><use xlink:href="#MJMAIN-29" x="4792" y="0"></use></g></svg></span><br />2. if <span class="MathJax_SVG" id="MathJax-Element-67-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 6529.61111111111 1042.103370696049" style="width: 15.174ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMATHI-69" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1174" y="0"></use><use xlink:href="#MJMAIN-3D" x="1730" y="0"></use><use xlink:href="#MJMATHI-66" x="2787" y="0"></use><use xlink:href="#MJMAIN-5B" x="3337" y="0"></use><use xlink:href="#MJMATHI-6A" x="3616" y="0"></use><use xlink:href="#MJMAIN-5D" x="4028" y="0"></use><use xlink:href="#MJMAIN-2264" x="4584" y="0"></use><use xlink:href="#MJMATHI-4E" x="5641" y="0"></use></g></svg></span>, then <span class="MathJax_SVG" id="MathJax-Element-68-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 2092.0555555555557 907.103370696049" style="width: 4.865ex; height: 2.085ex; vertical-align: -0.579ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use><use xlink:href="#MJMAIN-3D" x="623" y="0"></use><use xlink:href="#MJMATHI-6A" x="1679" y="0"></use></g></svg></span>. <span class="MathJax_SVG" id="MathJax-Element-69-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 6039.277777777777 1042.103370696049" style="width: 14.015ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-31" x="389" y="0"></use><use xlink:href="#MJMAIN-2264" x="1167" y="0"></use><use xlink:href="#MJMATHI-69" x="2224" y="0"></use><use xlink:href="#MJMAIN-2C" x="2569" y="0"></use><use xlink:href="#MJMATHI-6A" x="3014" y="0"></use><use xlink:href="#MJMAIN-2264" x="3705" y="0"></use><use xlink:href="#MJMATHI-4E" x="4761" y="0"></use><use xlink:href="#MJMAIN-29" x="5649" y="0"></use></g></svg></span></p><p data-anchor-id="2zp7">Suppose that customer <span class="MathJax_SVG" id="MathJax-Element-129-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span> choose barber <span class="MathJax_SVG" id="MathJax-Element-130-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 1432 1042.103370696049" style="width: 3.359ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-61"></use><use xlink:href="#MJMAIN-5B" x="529" y="0"></use><use xlink:href="#MJMATHI-69" x="808" y="0"></use><use xlink:href="#MJMAIN-5D" x="1153" y="0"></use></g></svg></span> at first <span class="MathJax_SVG" id="MathJax-Element-131-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 5181.611111111111 1042.103370696049" style="width: 12.046ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-31" x="389" y="0"></use><use xlink:href="#MJMAIN-2264" x="1167" y="0"></use><use xlink:href="#MJMATHI-69" x="2224" y="0"></use><use xlink:href="#MJMAIN-2264" x="2847" y="0"></use><use xlink:href="#MJMATHI-4E" x="3903" y="0"></use><use xlink:href="#MJMAIN-29" x="4792" y="0"></use></g></svg></span>. Each scenario could be represented by a vector <span class="MathJax_SVG" id="MathJax-Element-132-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 8602.666666666668 1042.103370696049" style="width: 19.923ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMATHI-61" x="389" y="0"></use><use xlink:href="#MJMAIN-5B" x="919" y="0"></use><use xlink:href="#MJMAIN-31" x="1197" y="0"></use><use xlink:href="#MJMAIN-5D" x="1698" y="0"></use><use xlink:href="#MJMAIN-2C" x="1976" y="0"></use><use xlink:href="#MJMATHI-61" x="2421" y="0"></use><use xlink:href="#MJMAIN-5B" x="2951" y="0"></use><use xlink:href="#MJMAIN-32" x="3229" y="0"></use><use xlink:href="#MJMAIN-5D" x="3730" y="0"></use><use xlink:href="#MJMAIN-2C" x="4008" y="0"></use><use xlink:href="#MJMAIN-2026" x="4453" y="0"></use><use xlink:href="#MJMAIN-2C" x="5793" y="0"></use><use xlink:href="#MJMATHI-61" x="6238" y="0"></use><use xlink:href="#MJMAIN-5B" x="6767" y="0"></use><use xlink:href="#MJMATHI-4E" x="7046" y="0"></use><use xlink:href="#MJMAIN-5D" x="7934" y="0"></use><use xlink:href="#MJMAIN-29" x="8213" y="0"></use></g></svg></span>. Two scenarios are different if and only if the vectors of them are different.</p><p data-anchor-id="plrd">Can you figure out how many scenarios are such that every customer can find a barber finally?</p><p data-anchor-id="abqn">For instance, <span class="MathJax_SVG" id="MathJax-Element-249-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 2723.0555555555557 725.103370696049" style="width: 6.371ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use><use xlink:href="#MJMAIN-3D" x="1166" y="0"></use><use xlink:href="#MJMAIN-32" x="2222" y="0"></use></g></svg></span>, <span class="MathJax_SVG" id="MathJax-Element-250-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 3442.5555555555557 1042.103370696049" style="width: 7.992ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMAIN-31" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1329" y="0"></use><use xlink:href="#MJMAIN-3D" x="1885" y="0"></use><use xlink:href="#MJMAIN-32" x="2942" y="0"></use></g></svg></span>, <span class="MathJax_SVG" id="MathJax-Element-251-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 3442.5555555555557 1042.103370696049" style="width: 7.992ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMAIN-32" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1329" y="0"></use><use xlink:href="#MJMAIN-3D" x="1885" y="0"></use><use xlink:href="#MJMAIN-33" x="2942" y="0"></use></g></svg></span>. There are <span class="MathJax_SVG" id="MathJax-Element-252-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -698.0516853480245 500.5 719.103370696049" style="width: 1.158ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-34"></use></g></svg></span> different scenarios: <span class="MathJax_SVG" id="MathJax-Element-253-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 2225.166666666667 1042.103370696049" style="width: 5.212ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-31" x="389" y="0"></use><use xlink:href="#MJMAIN-2C" x="890" y="0"></use><use xlink:href="#MJMAIN-31" x="1335" y="0"></use><use xlink:href="#MJMAIN-29" x="1835" y="0"></use></g></svg></span>, <span class="MathJax_SVG" id="MathJax-Element-254-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 2225.166666666667 1042.103370696049" style="width: 5.212ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-31" x="389" y="0"></use><use xlink:href="#MJMAIN-2C" x="890" y="0"></use><use xlink:href="#MJMAIN-32" x="1335" y="0"></use><use xlink:href="#MJMAIN-29" x="1835" y="0"></use></g></svg></span>, <span class="MathJax_SVG" id="MathJax-Element-255-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 2225.166666666667 1042.103370696049" style="width: 5.212ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-32" x="389" y="0"></use><use xlink:href="#MJMAIN-2C" x="890" y="0"></use><use xlink:href="#MJMAIN-31" x="1335" y="0"></use><use xlink:href="#MJMAIN-29" x="1835" y="0"></use></g></svg></span> and <span class="MathJax_SVG" id="MathJax-Element-256-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 2225.166666666667 1042.103370696049" style="width: 5.212ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-32" x="389" y="0"></use><use xlink:href="#MJMAIN-2C" x="890" y="0"></use><use xlink:href="#MJMAIN-32" x="1335" y="0"></use><use xlink:href="#MJMAIN-29" x="1835" y="0"></use></g></svg></span>. But in scenario <span class="MathJax_SVG" id="MathJax-Element-257-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -771.0516853480245 2225.166666666667 1042.103370696049" style="width: 5.212ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><use xlink:href="#MJMAIN-32" x="389" y="0"></use><use xlink:href="#MJMAIN-2C" x="890" y="0"></use><use xlink:href="#MJMAIN-32" x="1335" y="0"></use><use xlink:href="#MJMAIN-29" x="1835" y="0"></use></g></svg></span>, the second customer can&#39;t find a barber finally. So the answer of this instance is <span class="MathJax_SVG" id="MathJax-Element-258-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -686.0516853480245 500.5 729.103370696049" style="width: 1.158ex; height: 1.737ex; vertical-align: -0.232ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-33"></use></g></svg></span>.</p><div class="md-section-divider"></div></div></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><p data-anchor-id="hkt3">The first line contains an integer, indicating the number of test cases, which is no more than <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-213-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -687.0516853480245 1001 730.103370696049" style="width: 2.317ex; height: 1.737ex; vertical-align: -0.232ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-33"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-213">30</script>.</p><p data-anchor-id="pnpo">Each test case contains two lines. The first line contains one integer <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-225-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -771.0516853480245 9423.277777777777 1042.103370696049" style="width: 21.892ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use><use xlink:href="#MJMAIN-20" x="888" y="0"></use><use xlink:href="#MJMAIN-28" x="1139" y="0"></use><use xlink:href="#MJMAIN-31" x="1528" y="0"></use><use xlink:href="#MJMAIN-2264" x="2306" y="0"></use><use xlink:href="#MJMATHI-4E" x="3363" y="0"></use><use xlink:href="#MJMAIN-2264" x="4529" y="0"></use><g transform="translate(5585,0)"><use xlink:href="#MJMAIN-32"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use><use xlink:href="#MJMAIN-30" x="1001" y="0"></use></g><use xlink:href="#MJMAIN-2C" x="7087" y="0"></use><g transform="translate(7532,0)"><use xlink:href="#MJMAIN-30"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use><use xlink:href="#MJMAIN-30" x="1001" y="0"></use></g><use xlink:href="#MJMAIN-29" x="9033" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-225">N\ (1 \leq N \leq 200,000)</script>. The second line contains <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-226-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -704.0516853480245 888.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use></g></svg></span><script type="math/tex" id="MathJax-Element-226">N</script> integers <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-227-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -771.0516853480245 5833.5 1042.103370696049" style="width: 13.552ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-66"></use><use xlink:href="#MJMAIN-5B" x="550" y="0"></use><use xlink:href="#MJMAIN-31" x="829" y="0"></use><use xlink:href="#MJMAIN-5D" x="1329" y="0"></use><use xlink:href="#MJMAIN-2C" x="1608" y="0"></use><use xlink:href="#MJMAIN-2026" x="2053" y="0"></use><use xlink:href="#MJMAIN-2C" x="3392" y="0"></use><use xlink:href="#MJMATHI-66" x="3837" y="0"></use><use xlink:href="#MJMAIN-5B" x="4388" y="0"></use><use xlink:href="#MJMATHI-4E" x="4666" y="0"></use><use xlink:href="#MJMAIN-5D" x="5555" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-227">f[1], \dots, f[N]</script> (<span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-228-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -771.0516853480245 8459.277777777777 1042.103370696049" style="width: 19.691ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-31"></use><use xlink:href="#MJMAIN-2264" x="778" y="0"></use><use xlink:href="#MJMATHI-66" x="1834" y="0"></use><use xlink:href="#MJMAIN-5B" x="2385" y="0"></use><use xlink:href="#MJMATHI-69" x="2663" y="0"></use><use xlink:href="#MJMAIN-5D" x="3009" y="0"></use><use xlink:href="#MJMAIN-2264" x="3565" y="0"></use><g transform="translate(4621,0)"><use xlink:href="#MJMAIN-32"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use><use xlink:href="#MJMAIN-30" x="1001" y="0"></use></g><use xlink:href="#MJMAIN-2C" x="6123" y="0"></use><g transform="translate(6568,0)"><use xlink:href="#MJMAIN-30"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use><use xlink:href="#MJMAIN-31" x="1001" y="0"></use></g><use xlink:href="#MJMAIN-29" x="8069" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-228">1 \leq f[i] \leq 200,001)</script>.</p><div class="md-section-divider"></div></dd>
+		<dt>输出</dt>
+		<dd><p data-anchor-id="10zw">For each test case, output your answer in a single line. <br><br />Since the number can be extremely large, please output the answer modulo <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-32-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -885.6723233290762 3957.3513884283116 1156.7240086771008" style="width: 9.151ex; height: 2.664ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-28"></use><g transform="translate(389,0)"><use xlink:href="#MJMAIN-31"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use><use transform="scale(0.7071067811865476)" xlink:href="#MJMAIN-39" x="1415" y="557"></use></g><use xlink:href="#MJMAIN-2B" x="2066" y="0"></use><use xlink:href="#MJMAIN-37" x="3067" y="0"></use><use xlink:href="#MJMAIN-29" x="3567" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-32">(10^9+7)</script>.</p><div class="md-section-divider"></div></dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+1
+2
+2
+2 3
+3
+3 4 4</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1
+3
+9</pre></dd>
+						<dt>来源</dt>
+		<dd>PKU Campus 2018</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/campus2018/F/">查看</a></li>
+		<li ><a href="/campus2018/F/submit/">提交</a></li>
+				<li ><a href="/campus2018/F/statistics/">统计</a></li>
+			
+		<li ><a href="/campus2018/clarify/F/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">1.I题数据已更新，已重测@10：26<br />
+2.北大赛区14:00结束，北航赛区14:15结束<br />
+<br />
+北大区气球颜色：<br />
+A 红色<br />
+B 粉色<br />
+C 深绿色<br />
+D 黄色<br />
+E 鹅黄绿色<br />
+F 紫色<br />
+G 罗兰紫色<br />
+H 白色<br />
+I 橙色<br />
+J 浅蓝色<br />
+K 深蓝色</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>17164</dd>
+				<dt>提交次数</dt>
+		<dd>360</dd>
+		<dt>尝试人数</dt>
+	    <dd>141</dd>
+	    <dt>通过人数</dt>
+	    <dd>81</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li><a href="http://poj.openjudge.cn//history.html" rel="nofollow">历届出题人名单</a></li>
+						<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

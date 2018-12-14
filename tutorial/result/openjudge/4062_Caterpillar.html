@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 4062:Caterpillar</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://pkuteam.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/7/logo_small.jpg" alt="北京大学ACM-ICPC竞赛队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://pkuteam.openjudge.cn/" title="首页" rel="home">北京大学ACM-ICPC竞赛队</a></h2>
+		 <span>/</span>
+		 <h2>ICPC竞技编程练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/icpc/" class="first">题目</a></li>
+            <li ><a href="/icpc/ranking/">排名</a></li>
+                    <li ><a href="/icpc/status/">状态</a></li>
+	    			        <li class="last"><a href="/icpc/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>4062:Caterpillar</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/icpc/4062/">查看</a></li>
+		<li ><a href="/icpc/4062/submit/">提交</a></li>
+				<li ><a href="/icpc/4062/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4062/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>92000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>2000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>256000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="text-align: justify;">An undirected graph is called a caterpillar if it is a connected graph without cycles and it has such a path p that any vertex is located at a distance of at most 1 from the path p. The caterpillar can contain loops (edges from a vertex to itself) but cannot contain multiple (parallel) edges.
+</p><p style="text-align: justify;"><br /></p><p style="text-align: justify;">The picture contains an example of a caterpillar:
+</p><p style="text-align: justify;"><br /></p><p style="text-align: center;"><img src="http://media.openjudge.cn/images/upload/1373390143.png" height="108" width="324" /><br /></p><p style="text-align: justify;"><br /></p><p style="text-align: justify;">You are given an undirected graph G. You are allowed to do a merging operations, each such operation merges two vertices into one vertex. For that two any vertices a and b (a ≠ b) are chosen. These verteces are deleted together with their edges (which are incident to at least one of the vertices a or b) but a new vertex w is added together with edges (x, w) for each edge (a, w) and/or (b, w). If there was the edge (a, b) it transforms to the loop (w, w). The resulting graph (after the merging operation) may contain multiple (parallel) edges between pairs of vertices and loops. Let us note that this operation decreases the number of vertices of graph by 1 but leaves the number of edges in the graph unchanged.
+</p><p style="text-align: justify;"><br /></p><p style="text-align: justify;">The merging operation can be informally described as a unity of two vertices of the graph into one with the natural transformation of the graph edges.
+</p><p style="text-align: justify;"><br /></p><p style="text-align: justify;">You may apply this operation consecutively and make the given graph to be a caterpillar. Write a program that will print the minimal number of merging operations required to make the given graph a caterpillar.
+</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line contains a pair of integers n, m (1 ≤ n ≤ 2000; 0 ≤ m ≤ 10<sup>5</sup>), where n represents the number of vertices in the graph and m is the number of edges in it. Then the following m lines contain edge descriptions, one edge description per line. Every line contains a pair of integers a<sub>i</sub>, b<sub>i</sub> (1 ≤ a<sub>i</sub>, b<sub>i</sub> ≤ n; a<sub>i</sub> ≠ b<sub>i</sub>), a<sub>i</sub>, b<sub>i</sub> which represent the indices of the vertices connected by the edge. The vertices are numbered from 1 to n. In the given graph it will be no more than one edge between any pair of vertices. The given graph is not necessarily connected.</dd>
+		<dt>输出</dt>
+		<dd>Print the minimal required number of operations.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>4 4
+1 2
+2 3
+3 4
+4 2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>2</pre></dd>
+				<dt>提示</dt>
+		<dd><b>Sample Input (2)</b><br /><pre>6 3<br />1 2<br />3 4<br />5 6</pre><br /><b>Sample Output (2)</b><br /><pre>2</pre><br /><br /><b>Sample Input (3)</b><br /><pre>7 6<br />1 2<br />2 3<br />1 4<br />4 5<br />1 6<br />6 7</pre><br /><b>Sample Output (3)</b><br /><pre>1</pre><br /><br /><span style="color:red">WARNING: this problem from <a href="http://codeforces.com">codeforces.com</a> is for Summer 2013 Practice Sessions at PKU only.</span><br />Codeforces materials usage license (v. 0.1)<br /><ol><br /><li>You may publish the texts of Codeforces problems in any open sources, but you must preserve a direct link to the site <a href="http://codeforces.ru">http://codeforces.ru</a> (<a href="http://codeforces.com">http://codeforces.com</a> for English statements) and indicate Codeforces as the problem source. These data should be located in the close proximity to the statement, be easily noticeable and readable. It is forbidden to publish Codeforces problems in open sources supporting automatic testing (such as online judges or similar resources).<br /><li>You must not use tests and other materials of the problems (generators, checkers, validators) to publish tasks in open sources supporting automatic testing (such as online judges or similar resources) even provided the original problem conditions has been changed.<br /><li>You may use the provided material: tests, generators, checkers, validators and others for individual training or to organize short-term teaching and training activities with the participants present on-site. Task conditions should contain the data from paragraph 1 of this license. The secondary (subsequent) distribution of the tasks should contain this license and comply fully with the license’s rules.<br /></ol></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/icpc/4062/">查看</a></li>
+		<li ><a href="/icpc/4062/submit/">提交</a></li>
+				<li ><a href="/icpc/4062/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4062/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>6070</dd>
+					<dt>添加于</dt>
+			<dd>2017-07-26</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

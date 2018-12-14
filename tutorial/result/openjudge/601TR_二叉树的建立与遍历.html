@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 601TR:二叉树的建立与遍历</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://helloc.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="软件小分队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://helloc.openjudge.cn/" title="首页" rel="home">软件小分队</a></h2>
+		 <span>/</span>
+		 <h2>入门题目</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/new/" class="first">题目</a></li>
+            <li ><a href="/new/ranking/">排名</a></li>
+                    <li ><a href="/new/status/">状态</a></li>
+	    			        <li class="last"><a href="/new/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>601TR:二叉树的建立与遍历</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/new/601TR/">查看</a></li>
+		<li ><a href="/new/601TR/submit/">提交</a></li>
+				<li ><a href="/new/601TR/statistics/">统计</a></li>
+			
+		<li ><a href="/new/clarify/601TR/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65534kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><span style="color: rgb(35, 31, 23);font-family: &#39;Helvetica Neue&#39;, Helvetica, &#39;Lucida Grande&#39;, Arial, &#39;Hiragino Sans GB&#39;, 微软雅黑, &#39;WenQuanYi Micro Hei&#39;, STHeiti, SimSun, sans-serif;font-size: 14px;background-color: rgb(255, 255, 255)">给出一颗二叉树根节点到各叶子节点的路径，建立这颗二叉树，输出中序遍历的结果。</span><br /></p><p><span style="color: rgb(35, 31, 23);font-family: &#39;Helvetica Neue&#39;, Helvetica, &#39;Lucida Grande&#39;, Arial, &#39;Hiragino Sans GB&#39;, 微软雅黑, &#39;WenQuanYi Micro Hei&#39;, STHeiti, SimSun, sans-serif;font-size: 14px;background-color: rgb(255, 255, 255)"><img src="http://media.openjudge.cn/images/upload/1421853661.png" width="556" height="383" /><br /></span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行输入一个整数t，代表测试数据的组数。<br /><br />对于每组测试数据，第一行输入一个整数n，代表二叉树根节点到各叶子节点的路径数目。<br /><br />随后输入n行，每行包含一个字符串S, 代表从根节点走向对应叶子节点的路径。<br /><br />路径中每个节点用两个字符表达：第一个字符要么为 ‘+’ 要么为 ‘-‘， ‘+’代表网左孩子方向走，’-’代表往右孩子方向走。第二个字符是一个大写的英文字母，表示对应节点编号。<br /><br />比如 +B-C 代表 从根结点向左走到B节点，再向右走到C节点。<br /><br />根节点编号始终是字符‘A’，不会有重复编号的节点。<br /><br />字符串S长度不超过20 , n <= 26</dd>
+		<dt>输出</dt>
+		<dd>每组测试数据，输出一行，对应二叉树的中序遍历结果。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+3
++B-D
+-C+E
+-C-F
+2
++B
+-C
+1
++B+C+D+E</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>BDAECF
+BAC
+EDCBA</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/new/601TR/">查看</a></li>
+		<li ><a href="/new/601TR/submit/">提交</a></li>
+				<li ><a href="/new/601TR/statistics/">统计</a></li>
+			
+		<li ><a href="/new/clarify/601TR/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">专题系列题标含义：<br />
+目前已推出的题目：<br />
+DG：递归，LB：链表，DZ ：队列和栈，TR：二叉树<br />
+下面的题目将在集训后再推出：<br />
+DF：深搜，BF：广搜<br />
+DI：单源最短路径，FL：多源最短路径<br />
+DP：动态规划</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>7857</dd>
+					<dt>添加于</dt>
+			<dd>2016-11-12</dd>
+				<dt>提交次数</dt>
+		<dd>13</dd>
+		<dt>尝试人数</dt>
+	    <dd>5</dd>
+	    <dt>通过人数</dt>
+	    <dd>5</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

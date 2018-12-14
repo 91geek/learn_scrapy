@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 0305:利用队列进行数字排序</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://dsa.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/89/logo_small.jpg" alt="数据结构与算法A" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://dsa.openjudge.cn/" title="首页" rel="home">数据结构与算法A</a></h2>
+		 <span>/</span>
+		 <h2>第三章 栈与队列 练习题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/stack/" class="first">题目</a></li>
+            <li ><a href="/stack/ranking/">排名</a></li>
+                    <li ><a href="/stack/status/">状态</a></li>
+	    			        <li class="last"><a href="/stack/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>0305:利用队列进行数字排序</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/stack/0305/">查看</a></li>
+		<li ><a href="/stack/0305/submit/">提交</a></li>
+				<li ><a href="/stack/0305/statistics/">统计</a></li>
+			
+		<li ><a href="/stack/clarify/0305/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>100ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65535kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>对于N个数字，有人提出了如下的排序策略：</p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal">例如，对于数字53、47、85、38、64、23</p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"> </p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">先建立10</span><span style="FONT-FAMILY: 宋体">个队列(0到9），用于存放数字的大小，将这N个数字依个位存放入各自的队列之中，然后再按队列0</span><span style="FONT-FAMILY: 宋体">到队列</span><span style="FONT-FAMILY: Calibri">9</span><span style="FONT-FAMILY: 宋体">依次出队。</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">例如，对于上面的数字，依次进队后，结果如下：</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">队列3：53、23　队列4：64　队列5：85　队列7：47　队列8：38</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">将其依次出队后，结果为</span><span style="FONT-FAMILY: Calibri">53,23,64,85,47,38</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">然后，再将方才出队后的队对，依照十位放入各自的队列之中，然后再按队列0到队列9依次出队</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">例如，对于上面刚刚出队的序列</span><span style="FONT-FAMILY: Calibri">53,23,64,85,47,38</span><span style="FONT-FAMILY: 宋体">，将其依次进队，结果如下：</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">队列2：23　队列3：38　队列4：47　队列5：53　队列6：64　队列8：85</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: 宋体">将其依次出队后，结果为</span><span style="FONT-FAMILY: Calibri">23,38,47,53,64,85.因为这组数字最大只是两位数，所以排序结束。</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: Calibri">如果还有更大的数字，那么，接下来就是其百位、千位……（如果位数不够，就补0.比如最大的数字是四位数，那么数字23就当成0023处理）</span></p><p style="MARGIN: 0cm 0cm 0pt" class="MsoNormal"><span style="FONT-FAMILY: Calibri">请根据上述算法，对这些数字进行排序</span></p><p> </p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>分为两行，第一行为一个数字N(1 <= N <= 1000)，表示数字的个数<br />第二行为N个数字（都是非负数），以空格相隔，最大的数字不超过9999</dd>
+		<dt>输出</dt>
+		<dd>输出两个部分<br />第一个部分为第一次进队出队的结果，先显示一行：Step1.<br />之后用Queue0:...表示，共10行，结果用空格分隔，下同<br />之后为第二次进队出队的结果（如果需要第二次进队出队的话），先显示一行：Step2.<br />之后仍然用Queue0:...表示，共10行<br />之后如果需要的话，则分别显示第三次、第四次的进队出队结果<br />第二部分为一行，即将数字排序后的结果（升序排序）</dd>
+		<dt>样例输入</dt>
+		<dd><pre>20
+41 67 34 0 69 24 78 58 62 64 5 45 81 27 61 91 95 42 27 36</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Step1.
+Queue0:0
+Queue1:41 81 61 91
+Queue2:62 42
+Queue3:
+Queue4:34 24 64
+Queue5:5 45 95
+Queue6:36
+Queue7:67 27 27
+Queue8:78 58
+Queue9:69
+Step2.
+Queue0:0 5
+Queue1:
+Queue2:24 27 27
+Queue3:34 36
+Queue4:41 42 45
+Queue5:58
+Queue6:61 62 64 67 69
+Queue7:78
+Queue8:81
+Queue9:91 95
+0 5 24 27 27 34 36 41 42 45 58 61 62 64 67 69 78 81 91 95</pre></dd>
+				<dt>提示</dt>
+		<dd>这道题可以视为用队列进行扑克牌排序那道题的加难版，需要查找最大的数字是几位，同时还需要拆分数字</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/stack/0305/">查看</a></li>
+		<li ><a href="/stack/0305/submit/">提交</a></li>
+				<li ><a href="/stack/0305/statistics/">统计</a></li>
+			
+		<li ><a href="/stack/clarify/0305/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">大家请注意：0301题中的106应为10的6次方，无法直接修改题目内容，抱歉~</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>5469</dd>
+					<dt>添加于</dt>
+			<dd>2013-06-28</dd>
+				<dt>提交次数</dt>
+		<dd>75</dd>
+		<dt>尝试人数</dt>
+	    <dd>52</dd>
+	    <dt>通过人数</dt>
+	    <dd>49</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

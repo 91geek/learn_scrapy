@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 27:Window Pains</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://sdsy.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="9号超级计算机研究所" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://sdsy.openjudge.cn/" title="首页" rel="home">9号超级计算机研究所</a></h2>
+		 <span>/</span>
+		 <h2>3.11图论</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/4/" class="first">题目</a></li>
+            <li ><a href="/4/ranking/">排名</a></li>
+                    <li ><a href="/4/status/">状态</a></li>
+	    			        <li class="last"><a href="/4/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>27:Window Pains</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/4/27/">查看</a></li>
+		<li ><a href="/4/27/submit/">提交</a></li>
+				<li ><a href="/4/27/statistics/">统计</a></li>
+			
+		<li ><a href="/4/clarify/27/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>Boudreaux likes to multitask, especially when it comes to using his computer. Never satisfied with just running one application at a time, he usually runs nine applications, each in its own window. Due to limited screen real estate, he overlaps these windows and brings whatever window he currently needs to work with to the foreground. If his screen were a 4 x 4 grid of squares, each of Boudreaux's windows would be represented by the following 2 x 2 windows: <br /><TABLE width="80%"><TBODY><TR><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>1</TT></TD><TD><TT>1</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>1</TT></TD><TD><TT>1</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>2</TT></TD><TD><TT>2</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>2</TT></TD><TD><TT>2</TT></TD><TD><TT>.</TT></TD><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>3</TT></TD><TD><TT>3</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>3</TT></TD><TD><TT>3</TT></TD><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD></TR><TR><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>4</TT></TD><TD><TT>4</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TR><TD><TT>4</TT></TD><TD><TT>4</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>5</TT></TD><TD><TT>5</TT></TD><TD><TT>.</TT></TD><TR><TD><TT>.</TT></TD><TD><TT>5</TT></TD><TD><TT>5</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>6</TT></TD><TD><TT>6</TT></TD><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>6</TT></TD><TD><TT>6</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD></TR><TR><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TR><TD><TT>7</TT></TD><TD><TT>7</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>7</TT></TD><TD><TT>7</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TR><TD><TT>.</TT></TD><TD><TT>8</TT></TD><TD><TT>8</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>8</TT></TD><TD><TT>8</TT></TD><TD><TT>.</TT></TD></TR></TBODY></TABLE></TD><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>9</TT></TD><TD><TT>9</TT></TD></TR><TR><TD><TT>.</TT></TD><TD><TT>.</TT></TD><TD><TT>9</TT></TD><TD><TT>9</TT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>When  Boudreaux brings a window to the foreground, all of its squares come to  the top, overlapping any squares it shares with other windows. For  example, if window <TT>1</TT><I>and then</I> window <TT>2</TT> were  brought to the foreground, the resulting representation would be:  <TABLE width="80%"><TBODY><TR><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>1</TT></TD><TD><TT>2</TT></TD><TD><TT>2</TT></TD><TD><TT>?</TT></TD></TR><TR><TD><TT>1</TT></TD><TD><TT>2</TT></TD><TD><TT>2</TT></TD><TD><TT>?</TT></TD><TR><TD><TT>?</TT></TD><TD><TT>?</TT></TD><TD><TT>?</TT></TD><TD><TT>?</TT></TD></TR><TR><TD><TT>?</TT></TD><TD><TT>?</TT></TD><TD><TT>?</TT></TD><TD><TT>?</TT></TD></TR></TBODY></TABLE></TD><TD>If window <TT>4</TT> were then brought to the foreground: </TD><TD><TABLE cellPadding=4 border=1><TBODY><TR><TD><TT>1</TT></TD><TD><TT>2</TT></TD><TD><TT>2</TT></TD><TD><TT>?</TT></TD></TR><TR><TD><TT>4</TT></TD><TD><TT>4</TT></TD><TD><TT>2</TT></TD><TD><TT>?</TT></TD><TR><TD><TT>4</TT></TD><TD><TT>4</TT></TD><TD><TT>?</TT></TD><TD><TT>?</TT></TD></TR><TR><TD><TT>?</TT></TD><TD><TT>?</TT></TD><TD><TT>?</TT></TD><TD><TT>?</TT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>. . .  and so on . . . <br />Unfortunately, Boudreaux's computer is very unreliable and crashes often. He could easily tell if a crash occurred by looking at the windows and seeing a graphical representation that should not occur if windows were being brought to the foreground correctly. And this is where you come in . . . </dd>
+				
+				
+				<dt>输入</dt>
+		<dd>Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets. <br /><br />A single data set has 3 components: <br /><ol><li>Start line - A single line: <br />         START<br />      <br /><li>Screen Shot - Four lines that represent the current graphical representation of the windows on Boudreaux's screen. Each position in this 4 x 4 matrix will represent the current piece of window showing in each square. To make input easier, the list of numbers on each line will be delimited by a single space. <br /><li>End line - A single line: <br />         END<br />    </ol>  <br />After the last data set, there will be a single line: <br />   ENDOFINPUT<br /><br />Note that each piece of visible window will appear only in screen areas where the window could appear when brought to the front. For instance, a 1 can only appear in the top left quadrant. </dd>
+		<dt>输出</dt>
+		<dd>For each data set, there will be exactly one line of output. If there exists a sequence of bringing windows to the foreground that would result in the graphical representation of the windows on Boudreaux's screen, the output will be a single line with the statement: <br /><br />   THESE WINDOWS ARE CLEAN<br /><br />Otherwise, the output will be a single line with the statement: <br />   THESE WINDOWS ARE BROKEN<br /><br /></dd>
+		<dt>样例输入</dt>
+		<dd><pre>START
+1 2 3 3
+4 5 6 6
+7 8 9 9
+7 8 9 9
+END
+START
+1 1 3 3
+4 1 3 3
+7 7 9 9
+7 7 9 9
+END
+ENDOFINPUT
+
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>THESE WINDOWS ARE CLEAN
+THESE WINDOWS ARE BROKEN
+
+</pre></dd>
+						<dt>来源</dt>
+		<dd>South Central USA 2003</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/4/27/">查看</a></li>
+		<li ><a href="/4/27/submit/">提交</a></li>
+				<li ><a href="/4/27/statistics/">统计</a></li>
+			
+		<li ><a href="/4/clarify/27/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>1587</dd>
+					<dt>添加于</dt>
+			<dd>2017-04-15</dd>
+				<dt>提交次数</dt>
+		<dd>3</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

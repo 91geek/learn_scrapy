@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - A:A-黑帝君临</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ahut.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/44/logo_small.jpg" alt="安徽工业大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ahut.openjudge.cn/" title="首页" rel="home">安徽工业大学</a></h2>
+		 <span>/</span>
+		 <h2>AHUT2011校赛</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/0001/" class="first">题目</a></li>
+            <li ><a href="/0001/ranking/">排名</a></li>
+                    <li ><a href="/0001/status/">状态</a></li>
+	     
+        <li ><a href="/0001/statistics/">统计</a></li>
+				        <li class="last"><a href="/0001/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>A:A-黑帝君临</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/0001/A/">查看</a></li>
+		<li ><a href="/0001/A/submit/">提交</a></li>
+				<li ><a href="/0001/A/statistics/">统计</a></li>
+			
+		<li ><a href="/0001/clarify/A/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>Description<br /><br />西斯皇帝欺骗了议员，控制了议会。绝地武士传人Dastan为了正义，与西斯决斗。然而，西斯的天眼看出Dastan是个投机主义者。于是，西斯告诉Dastan，如果决斗的话会伤害的无辜的人，不如玩一把showhand，输的人将被流放。<br />ShowHand是一项紧张刺激的赌博游戏（香港赌神、赌侠系列中最常见的赌博方式）。以五张牌的排列、组合决定胜负。游戏开始时，每名玩家会获发一张底牌（此牌只能在最后才翻开）；当派发第二张牌后，便由牌面较佳者决定下注额，其他人有权选择「跟」、「加注」、「放弃」或「晒冷」。当五张牌派发完毕后，各玩家翻开所有底牌来比较。<br />花式说明<br />黑桃♤>红心♥>方片◇>梅花♣<br />牌面说明<br />一共52张牌，23456789TJQKA 13张牌每种花式一套。 （T代表10）<br />A>K>Q>J>T>9>8>7>6>5>4>3>2<br />牌型说明<br />如果没有特殊说明，一般情况下同样的牌型比较最大的那张牌的大小，大小相同则比最大的那张牌的花式。牌型由大到小依次如下（有兴趣的同学可以验证一下概率）。<br />　　No.1同花顺 拥有五张连续性同花色的顺子。以Ａ为首的同花顺（TJQKA）最大。但JQKA2,QKA23,KA234不算顺子。A2345是最小的同花顺。<br />　　No.2铁支 四张相同数字的牌，外加一单张。比数字大小，「Ａ」铁支（AAAA）最大<br />　　No.3葫芦 由「三条」加一个「对子」所组成的牌，若别家也有此牌型，则比三条数字大小<br />　　No.4同花 不构成顺子的五张同花色的牌。先比数字最大的单张，如相同再比第二支、依此类推，如果5张牌大小都相同，那么比它们的花色。<br />　　No.5顺子 五张连续数字的牌组。 以A为首的顺子最大，如果大家都是顺子，比最大的一张牌，如果大小还一样就比这张牌的花式(JQKA2,QKA23,KA234不算顺子).<br />　　No.6三条 牌型由三张相同的牌组成，以A为首的三条（AAA）最大<br />　　No.7二对 牌型中五张牌由两组两张同数字的牌所组成。若遇相同则先比这副牌中最大的一对，如又相同再比第二对，如果还是一样，比大对子中的最大花式<br />　　No.8对子 牌型由两张相同的牌加上三张单张所组成。如果大家都是对子，比对子的大小，如果对子也一样，比这个对子中的最大花色<br />No.9散牌 单一型态的五张散牌所组成，不成对（二对），不成三条，不成顺（同花顺），不成同花，不成葫芦，不成铁支。先比最大一张牌的大小，如果大小一样，比这张牌的花色。</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>Input<br /><br />多组测试数据。每组输入第一行是一个整数T 代表输入组数。每组输入一行，每行描述5张扑克，每个描述由一个字符（2-9,TJQKA）和一个数字（0-4分别代表黑桃，红桃，方片，梅花）组成。每个字符或数字用一个空格隔开。</dd>
+		<dt>输出</dt>
+		<dd>Output<br /><br />每组数据，请输出牌型所对应的编号。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>Sample Input
+
+4
+A 3 Q 3 T 3 K 3 J 3
+K 0 K 1 K 2 K 3 A 0
+T 0 9 1 T 3 9 3 3 3
+K 0 A 1 2 2 3 1 4 1
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Sample Output
+
+1
+2
+7
+9
+</pre></dd>
+				<dt>提示</dt>
+		<dd>Hint<br /><br />最后一组牌为K♤ A♥ 2◇ 3♥ 4♥  不算顺子,输入保证是从一副牌中随机抽出的5张扑克</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/0001/A/">查看</a></li>
+		<li ><a href="/0001/A/submit/">提交</a></li>
+				<li ><a href="/0001/A/statistics/">统计</a></li>
+			
+		<li ><a href="/0001/clarify/A/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3689</dd>
+				<dt>提交次数</dt>
+		<dd>31</dd>
+		<dt>尝试人数</dt>
+	    <dd>12</dd>
+	    <dt>通过人数</dt>
+	    <dd>6</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - A:Web Navigation</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ccutchi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="长春工业大学人文信息学院ACM/ICPC集训队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ccutchi.openjudge.cn/" title="首页" rel="home">长春工业大学人文信息学院ACM/ICPC集训队</a></h2>
+		 <span>/</span>
+		 <h2>2018年acm内部选拔赛</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/20180527/" class="first">题目</a></li>
+            <li ><a href="/20180527/ranking/">排名</a></li>
+                    <li ><a href="/20180527/status/">状态</a></li>
+	     
+        <li ><a href="/20180527/statistics/">统计</a></li>
+				        <li class="last"><a href="/20180527/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>A:Web Navigation</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/20180527/A/">查看</a></li>
+		<li ><a href="/20180527/A/submit/">提交</a></li>
+				<li ><a href="/20180527/A/statistics/">统计</a></li>
+			
+		<li ><a href="/20180527/clarify/A/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>35536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin: 16px 0px; text-align: left; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; word-spacing: 0px; white-space: normal; orphans: 2; background-color: transparent; -webkit-text-stroke-width: 0px;"><span style="color: rgb(0, 0, 0);font-size: 16px;text-decoration: none;background-color: transparent">Standard web browsers contain features to move backward and forward among the pages recently visited. One way to implement these features is to use two stacks to keep track of the pages that can be reached by moving backward and forward. In this problem, you are asked to implement this. 
+</span><br style="text-align: left; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; word-spacing: 0px; white-space: normal; orphans: 2; background-color: transparent; -webkit-text-stroke-width: 0px;" /><span style="color: rgb(0, 0, 0);font-size: 16px;text-decoration: none;background-color: transparent">The following commands need to be supported: 
+</span><br style="text-align: left; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; word-spacing: 0px; white-space: normal; orphans: 2; background-color: transparent; -webkit-text-stroke-width: 0px;" /><span style="color: rgb(0, 0, 0);font-size: 16px;text-decoration: none;background-color: transparent">BACK: Push the current page on the top of the forward stack. Pop the page from the top of the backward stack, making it the new current page. If the backward stack is empty, the command is ignored. 
+</span><br style="text-align: left; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; word-spacing: 0px; white-space: normal; orphans: 2; background-color: transparent; -webkit-text-stroke-width: 0px;" /><span style="color: rgb(0, 0, 0);font-size: 16px;text-decoration: none;background-color: transparent">FORWARD: Push the current page on the top of the backward stack. Pop the page from the top of the forward stack, making it the new current page. If the forward stack is empty, the command is ignored. 
+</span><br style="text-align: left; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; word-spacing: 0px; white-space: normal; orphans: 2; background-color: transparent; -webkit-text-stroke-width: 0px;" /><span style="color: rgb(0, 0, 0);font-size: 16px;text-decoration: none;background-color: transparent">VISIT </span><url style="text-align: left; color: rgb(0, 0, 0); text-transform: none; text-indent: 0px; letter-spacing: normal; font-family: 宋体; font-size: 16px; font-style: normal; font-variant: normal; font-weight: 400; text-decoration: none; word-spacing: 0px; white-space: normal; orphans: 2; background-color: transparent; -webkit-text-stroke-width: 0px;">: Push the current page on the top of the backward stack, and make the URL specified the new current page. The forward stack is emptied. 
+<br style="font-family: 宋体; font-size: 16px;" />QUIT: Quit the browser. 
+<br style="font-family: 宋体; font-size: 16px;" />Assume that the browser initially loads the web page at the URL http://www.acm.org/ </url><br style="font-family: 宋体;" /></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>Input is a sequence of commands. The command keywords BACK, FORWARD, VISIT, and QUIT are all in uppercase. URLs have no whitespace and have at most 70 characters. You may assume that no problem instance requires more than 100 elements in each stack at any time. The end of input is indicated by the QUIT command.</dd>
+		<dt>输出</dt>
+		<dd>For each command other than QUIT, print the URL of the current page after the command is executed if the command is not ignored. Otherwise, print "Ignored". The output for each command should be printed on its own line. No output is produced for the QUIT command.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>VISIT http://acm.ashland.edu/
+VISIT http://acm.baylor.edu/acmicpc/
+BACK
+BACK
+BACK
+FORWARD
+VISIT http://www.ibm.com/
+BACK
+BACK
+FORWARD
+FORWARD
+FORWARD
+QUIT</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>http://acm.ashland.edu/
+http://acm.baylor.edu/acmicpc/
+http://acm.ashland.edu/
+http://www.acm.org/
+Ignored
+http://acm.ashland.edu/
+http://www.ibm.com/
+http://acm.ashland.edu/
+http://www.acm.org/
+http://acm.ashland.edu/
+http://www.ibm.com/
+Ignored</pre></dd>
+						<dt>来源</dt>
+		<dd>East Central North America 2001</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/20180527/A/">查看</a></li>
+		<li ><a href="/20180527/A/submit/">提交</a></li>
+				<li ><a href="/20180527/A/statistics/">统计</a></li>
+			
+		<li ><a href="/20180527/clarify/A/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>17270</dd>
+				<dt>提交次数</dt>
+		<dd>13</dd>
+		<dt>尝试人数</dt>
+	    <dd>7</dd>
+	    <dt>通过人数</dt>
+	    <dd>7</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1027:铁拳</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2017届练习区</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2017/" class="first">题目</a></li>
+            <li ><a href="/2017/ranking/">排名</a></li>
+                    <li ><a href="/2017/status/">状态</a></li>
+	    			        <li class="last"><a href="/2017/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1027:铁拳</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2017/1027/">查看</a></li>
+		<li ><a href="/2017/1027/submit/">提交</a></li>
+				<li ><a href="/2017/1027/statistics/">统计</a></li>
+			
+		<li ><a href="/2017/clarify/1027/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>40000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>4000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">经过了可怕的第三次世界大战后，国家政府崩溃，各大财团趁机夺取掌控世界。长年战争后，八大财团幸存并割据一方，其中最强的当属掌控北美的铁拳。</span></p><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">在铁拳财团所维护的文明区域中，有一项最为光荣、重要的赛事——Iron Fist，也就是铁拳大赛。IF中云集了世界各地各财团鼎力资助的世外高手，只为了赢得IF Champion，得到无上的荣耀，当然还有随之而来的权力。本来一切秩序井然，但一个来自贫民窟的少年风间仁意外地在海选中赢了IF正式选手，获得了决赛资格，从此格局被打乱……</span></p><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">为了应对这突如其来的变数，IF管理层决定先对联盟中所有的选手进行评估，以更好地掌握大局。</span></p><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;"> </span></p><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">已知最近m届比赛出现过的n位选手，背后都有着各自财团的资助，并且签下了合同。由于这是各财团的高度机密，合同的具体细节无从得知，但铁拳财团的间谍们通过各种渠道得知了每个选手的薪金范围（显然薪金是非负数）。</span></p><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">对于最近m届的IF比赛（从1开始编号），每一届联盟都会进行清算，通过国际金融手段准确计算出这一届联盟选手身价总和的变化。每一届中，会有一些新选手加入，也会有部分选手在比赛中丧失了战斗能力，而被踢出联盟，流放到贫民窟。</span></p><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">现在给出联盟中n位选手的身价范围，以及他们 进入联盟的届数（0表示在m+1届以前就已经是联盟选手） 和 离开联盟的届数（0表示是现役选手）。同时给出最近m届中，每一届联盟选手身价总和减去上一届的值。</span></p><p class="p0" style=";margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">请你根据现有信息，尽可能准确地给出每个选手可能的薪金范围。各选手之间的薪金范围可以不同时成立，但对于一位选手的范围中的每一个数，都必须至少存在一种合法方案使该选手能得到相应薪金，而且这个范围跨度要尽可能大。</span></p><p class="p0" style="margin-bottom:0pt;margin-top:0pt"><span style="font-size:10.5000pt;font-family:&#39;宋体&#39;">如果输入信息有误，请输出-1，表示无解。</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行一个正整数m，意义见上（下同）。<br />第二行包含m个整数，第i个表示第i届中 选手身价总和 的变化情况。<br />第三行一个正整数n。<br />接下来n行，每行包含四个整数，分别表示 身价下限 、 身价上限 、 出道届数 、 退役届数，细节请参照上文。<br />保证出道时间严格比退役时间小（0除外）。</dd>
+		<dt>输出</dt>
+		<dd>如果输入信息有误，仅输出一行一个整数“-1”（不含双引号）。<br />否则输出n行，每行两个实数，第i行表示第i个选手实际身价的准确范围。<br />保留两位小数，需要与标准答案完全相同才得分。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>Test 1:
+2
+5 -1
+3
+1 4 1 0
+2 3 1 0
+1 5 1 2
+
+Test 2:
+1
+1
+1
+1 1 0 0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Test 1:
+1.00 2.00
+2.00 3.00
+1.00 1.00
+
+Test 2:
+-1
+</pre></dd>
+				<dt>提示</dt>
+		<dd>【样例说明1】<br />第二届只有3号离开了，可以锁定3号的薪金是1。<br />如此一来，1号和2号薪金之和为4，那么1号最少能拿1，最多能拿2；2号最少能拿到2，最多能拿到3。<br />【样例说明2】<br />没有任何选手变更，第一届不可能收支不平衡。<br /><br />【数据规模】<br />对于10%的数据，m=0；<br />对于20%的数据，薪金的范围形式为[x,x]；<br />对于50%的数据，满足1≤n≤5，m≤5，薪金范围不超过10；<br />对于70%的数据，保证答案是整数。<br />对于100%的数据，n≤200，m≤100，给定薪金范围不超过20000。</dd>
+						<dt>来源</dt>
+		<dd>Mr.Lin</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2017/1027/">查看</a></li>
+		<li ><a href="/2017/1027/submit/">提交</a></li>
+				<li ><a href="/2017/1027/statistics/">统计</a></li>
+			
+		<li ><a href="/2017/clarify/1027/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">yjq naive</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>7451</dd>
+					<dt>添加于</dt>
+			<dd>2014-10-12</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

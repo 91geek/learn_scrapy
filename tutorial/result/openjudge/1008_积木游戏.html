@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1008:积木游戏</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ecjtu.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/59/logo_small.jpg" alt="华东交通大学ACM/ICPC" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ecjtu.openjudge.cn/" title="首页" rel="home">华东交通大学ACM/ICPC</a></h2>
+		 <span>/</span>
+		 <h2>练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/practice3417/" class="first">题目</a></li>
+            <li ><a href="/practice3417/ranking/">排名</a></li>
+                    <li ><a href="/practice3417/status/">状态</a></li>
+	    			        <li class="last"><a href="/practice3417/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1008:积木游戏</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/practice3417/1008/">查看</a></li>
+		<li ><a href="/practice3417/1008/submit/">提交</a></li>
+				<li ><a href="/practice3417/1008/statistics/">统计</a></li>
+			
+		<li ><a href="/practice3417/clarify/1008/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>1000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>Bob非常喜欢玩积木的游戏，他有好多三角形的单位积木如下所示：<br /><left><img src="http://img181.poco.cn/mypoco/myphoto/20110612/12/5862496420110612121325024.jpg"/></left> <br />        F           B          A           E          X <br />               （以上只是部分） <br />          每个单位积木上有一个字母与其对应<br />      他经常利用这些积木来组合成一个大的三角形积木(如下所示):<br /><center><img src="http://img181.poco.cn/mypoco/myphoto/20110612/12/5862496420110612121401032.jpg"/></center> <br />      每个积木的大小为 1。<br />      并且定义如下运算:    add i,j,m;     ( 0<m<100  );<br />      即将第i行第j列的字符加m，并且我们定义字符的加法规则如下<br />      A+1=B, B+1=C,C+1=D…………  Z+1=A<br />      现在Bob堆了一个大三角形积木出来，再进行一次加法操作后，<br />      问在这个改变后的三角形积木中由相同的单位积木构成最大的子三角形积木中有几个单位积木?</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行是一个输入数据T，代表测试的组数 ;<br />        每一个测试组的第一行是一个数N(1<=N<=100) ,代表堆出来的三角形积木的高度,接下来N行，每行2*i-1个字符，代表Bob堆出来的三角形积木,下一行输入i，j，k代表第i行第j列加k。再进行判断看最大的子三角形有多大。</dd>
+		<dt>输出</dt>
+		<dd>对每一个测试组，输出简单的一行”Case %d: The largest block is %d.”<br />         第一个%d代表第几个测试组，第二个%d代表这个三角形中同中单位积木组成的最大的子三角形积木的大小。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+3
+A
+ABA
+AAAAA
+1 1 1
+2
+A
+ABA
+1 1 1
+4         
+A
+BCD
+EFGHI
+JKLMNOP
+1 1 1
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Case 1: The largest block is 4.
+Case 2: The largest block is 1.
+Case 3: The largest block is 1.
+</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/practice3417/1008/">查看</a></li>
+		<li ><a href="/practice3417/1008/submit/">提交</a></li>
+				<li ><a href="/practice3417/1008/statistics/">统计</a></li>
+			
+		<li ><a href="/practice3417/clarify/1008/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3421</dd>
+					<dt>添加于</dt>
+			<dd>2011-06-12</dd>
+				<dt>提交次数</dt>
+		<dd>2</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 15065:树网的核</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hz2hs.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="杭州四中/养正/江南/滨和 信奥平台" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hz2hs.openjudge.cn/" title="首页" rel="home">杭州四中/养正/江南/滨和 信奥平台</a></h2>
+		 <span>/</span>
+		 <h2>挑战历年压轴真题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noip4/" class="first">题目</a></li>
+            <li ><a href="/noip4/ranking/">排名</a></li>
+                    <li ><a href="/noip4/status/">状态</a></li>
+	    			        <li class="last"><a href="/noip4/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>15065:树网的核</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noip4/15065/">查看</a></li>
+		<li ><a href="/noip4/15065/submit/">提交</a></li>
+				<li ><a href="/noip4/15065/statistics/">统计</a></li>
+			
+		<li ><a href="/noip4/clarify/15065/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style=";text-align:left;"><span style="font-size: 9pt">设</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">T=(V, E, W)</span></em></strong><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;"> </span><span style="font-size: 9pt">是一个无圈且连通的无向图（也称为无根树），每条边到有正整数的权，我们称</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">T</span></em></strong><span style="font-size: 9pt">为树网（</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">treebetwork</span></em><span style="font-size: 9pt">），其中</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">V</span></em></strong><span style="font-size: 9pt">，</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">E</span></em></strong><span style="font-size: 9pt">分别表示结点与边的集合，</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">W</span></em></strong><span style="font-size: 9pt">表示各边长度的集合，并设</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">T</span></em></strong><span style="font-size: 9pt">有</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">n</span></em><span style="font-size: 9pt">个结点。</span></p><p class="MsoNormal" style=";text-align:left;"><strong><span style="font-size: 9pt">路径</span></strong><span style="font-size: 9pt">：树网中任何两结点</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">a</span></em></strong><span style="font-size: 9pt">，</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">b</span></em></strong><span style="font-size: 9pt">都存在唯一的一条简单路径，用</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">d(a, b)</span></em></strong><span style="font-size: 9pt">表示以</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">a, b</span></em></strong><span style="font-size: 9pt">为端点的路径的长度，它是该路径上各边长度之和。我们称</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">d(a,b)</span></em></strong><span style="font-size: 9pt">为</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">a, b</span></em></strong><span style="font-size: 9pt">两结点间的距离。</span></p><p class="MsoNormal" style="margin-top:auto;text-align:center;"><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">D(v, P)</span></em></strong><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">=min{<strong><em>d(v,u)</em></strong>, <strong><em>u</em></strong></span><span style="font-size: 9pt">为路径</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">P</span></em></strong><span style="font-size: 9pt">上的结点</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">}</span><span style="font-size: 9pt">。</span></p><p class="MsoNormal" style=";text-align:left;"><strong><span style="font-size: 9pt">树网的直径</span></strong><span style="font-size: 9pt">：树网中最长的路径成为树网的直径。对于给定的树网</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">T</span></em></strong><span style="font-size: 9pt">，直径不一定是唯一的，但可以证明：各直径的中点（不一定恰好是某个结点，可能在某条边的内部）是唯一的，我们称该点为树网的中心。</span></p><p class="MsoNormal" style=";text-align:left;"><strong><span style="font-size: 9pt">偏心距</span></strong><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">ECC(F)</span></em></strong><span style="font-size: 9pt">：树网</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">T</span><span style="font-size: 9pt">中距路径</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">F</span><span style="font-size: 9pt">最远的结点到路径</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">F</span><span style="font-size: 9pt">的距离，即</span></p><p class="MsoNormal" style="margin-top:auto;text-align:center;"><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">ECC(F)</span></em></strong><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">=max{<strong><em>d(v,F)</em></strong></span><span style="font-size: 9pt">，</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">v</span></em></strong><span style="font-size: 9pt">∈</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">V</span></em></strong><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">}</span></p><p class="MsoNormal" style=";text-align:left;"><strong><span style="font-size: 9pt">任务</span></strong><span style="font-size: 9pt">：对于给定的树网</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">T=(V, E, W)</span></em></strong><span style="font-size: 9pt">和非负整数</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">s</span></em><span style="font-size: 9pt">，求一个路径</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">F</span></em></strong><span style="font-size: 9pt">，他是某直径上的一段路径（该路径两端均为树网中的结点），其长度不超过</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">s</span></em><span style="font-size: 9pt">（可以等于</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">s</span></em><span style="font-size: 9pt">），使偏心距</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">ECC(F)</span></em></strong><span style="font-size: 9pt">最小。我们称这个路径为树网</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">T=(V, E, W)</span></em></strong><span style="font-size: 9pt">的核（</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">Core</span></em></strong><span style="font-size: 9pt">）。必要时，</span><strong><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">F</span></em></strong><span style="font-size: 9pt">可以退化为某个结点。一般来说，在上述定义下，核不一定只有一个，但最小偏心距是唯一的。</span></p><p class="MsoNormal" style=";text-align:left;"><span style="font-size: 9pt">下面的图给出了树网的一个实例。图中，</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">A-B</span><span style="font-size: 9pt">与</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">A-C</span><span style="font-size: 9pt">是两条直径，长度均为</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">20</span><span style="font-size: 9pt">。点</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">W</span><span style="font-size: 9pt">是树网的中心，</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">EF</span><span style="font-size: 9pt">边的长度为</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">5</span><span style="font-size: 9pt">。如果指定</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">s</span></em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">=11</span><span style="font-size: 9pt">，则树网的核为路径</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">DEFG</span><span style="font-size: 9pt">（也可以取为路径</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">DEF</span><span style="font-size: 9pt">），偏心距为</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">8</span><span style="font-size: 9pt">。如果指定</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">s</span></em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">=0</span><span style="font-size: 9pt">（或</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">s</span></em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">=1</span><span style="font-size: 9pt">、</span><em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">s</span></em><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">=2</span><span style="font-size: 9pt">），则树网的核为结点</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">F</span><span style="font-size: 9pt">，偏心距为</span><span style="font-size:9.0pt;font-family:&#39;ˎ̥&#39;,&#39;serif&#39;">12</span><span style="font-size: 9pt">。</span></p><p><img src="http://media.openjudge.cn/images/upload/1495181497.png" width="217" height="204" /><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第1行，两个正整数n和s，中间用一个空格隔开。其中n为树网结点的个数，s为树网的核的长度的上界。设结点编号以此为1，2，……，n。<br />从第2行到第n行，每行给出3个用空格隔开的正整数，依次表示每一条边的两个端点编号和长度。例如，“2 4 7”表示连接结点2与4的边的长度为7。<br />所给的数据都是争取的，不必检验。</dd>
+		<dt>输出</dt>
+		<dd>为指定意义下的最小偏心距。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>8 6
+1 3 2
+2 3 2 
+3 4 6
+4 5 3
+4 6 4
+4 7 2
+7 8 3
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>5</pre></dd>
+				<dt>提示</dt>
+		<dd>40%的数据满足：5<=n<=15<br />70%的数据满足：5<=n<=80<br />100%的数据满足：5<=n<=300，0<=s<=1000。边长度为不超过1000的正整数</dd>
+						<dt>来源</dt>
+		<dd>NOIP2007提高组T4</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noip4/15065/">查看</a></li>
+		<li ><a href="/noip4/15065/submit/">提交</a></li>
+				<li ><a href="/noip4/15065/statistics/">统计</a></li>
+			
+		<li ><a href="/noip4/clarify/15065/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>15065</dd>
+					<dt>添加于</dt>
+			<dd>2017-05-23</dd>
+				<dt>提交次数</dt>
+		<dd>4</dd>
+		<dt>尝试人数</dt>
+	    <dd>3</dd>
+	    <dt>通过人数</dt>
+	    <dd>3</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

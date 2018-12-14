@@ -1,0 +1,387 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 0001:线段覆盖提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://nnsznoi.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/29/logo_small.jpg" alt="南宁三中NOI竞赛小组" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://nnsznoi.openjudge.cn/" title="首页" rel="home">南宁三中NOI竞赛小组</a></h2>
+		 <span>/</span>
+		 <h2>贪心法</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/greedy/" class="first">题目</a></li>
+            <li ><a href="/greedy/ranking/">排名</a></li>
+                    <li ><a href="/greedy/status/">状态</a></li>
+	    			        <li class="last"><a href="/greedy/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>0001:线段覆盖</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/greedy/0001/">查看</a></li>
+		<li ><a href="/greedy/0001/submit/">提交</a></li>
+				<li class="current-show"><a href="/greedy/0001/statistics/">统计</a></li>
+			
+		<li ><a href="/greedy/clarify/0001/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+									<td class="result">结果</td>
+					<td>分数</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/136276/in/group-29/">chenshaoqianฏ๎๎๎๎๎๎๎(chenshaoqianฏ๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎๎ฏ๎๎๎๎๎๎๎๎๎๎๎๎๎๎ฏ๎๎๎๎๎)</a></td>
+					
+				<td class="result"><a href="/greedy/solution/6273063/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1252 B</td>
+				<td class="language"><a href="/greedy/solution/6273063/">Pascal</a></td>
+				<td class="date"><abbr title="2016-08-05 18:04:31">16.8.5</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2658907/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">718 B</td>
+				<td class="language"><a href="/greedy/solution/2658907/">G++</a></td>
+				<td class="date"><abbr title="2014-07-22 07:33:39">14.7.22</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2654146/" class="result-wrong">Wrong Answer</a></td>
+								<td>90</td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">662 B</td>
+				<td class="language"><a href="/greedy/solution/2654146/">G++</a></td>
+				<td class="date"><abbr title="2014-07-17 21:43:12">14.7.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2654145/" class="result-wrong">Wrong Answer</a></td>
+								<td>90</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">661 B</td>
+				<td class="language"><a href="/greedy/solution/2654145/">G++</a></td>
+				<td class="date"><abbr title="2014-07-17 21:42:58">14.7.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2654141/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">676 B</td>
+				<td class="language"><a href="/greedy/solution/2654141/">G++</a></td>
+				<td class="date"><abbr title="2014-07-17 21:40:05">14.7.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2654140/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">657 B</td>
+				<td class="language"><a href="/greedy/solution/2654140/">G++</a></td>
+				<td class="date"><abbr title="2014-07-17 21:39:02">14.7.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2654103/" class="result-wrong">Wrong Answer</a></td>
+								<td>50</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">574 B</td>
+				<td class="language"><a href="/greedy/solution/2654103/">G++</a></td>
+				<td class="date"><abbr title="2014-07-17 20:56:29">14.7.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2654096/" class="result-wrong">Wrong Answer</a></td>
+								<td>50</td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">571 B</td>
+				<td class="language"><a href="/greedy/solution/2654096/">G++</a></td>
+				<td class="date"><abbr title="2014-07-17 20:44:52">14.7.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/72582/in/group-29/">重庆大 b boy</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2654089/" class="result-wrong">Wrong Answer</a></td>
+								<td>50</td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">568 B</td>
+				<td class="language"><a href="/greedy/solution/2654089/">G++</a></td>
+				<td class="date"><abbr title="2014-07-17 20:38:24">14.7.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37090/in/group-29/">Carl Curist</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2209870/" class="result-right">Accepted</a></td>
+								<td>100</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1296 B</td>
+				<td class="language"><a href="/greedy/solution/2209870/">G++</a></td>
+				<td class="date"><abbr title="2013-10-29 16:24:33">13.10.29</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37083/in/group-29/">BJ</a></td>
+					
+				<td class="result"><a href="/greedy/solution/2165458/" class="result-wrong">Wrong Answer</a></td>
+								<td>30</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">956 B</td>
+				<td class="language"><a href="/greedy/solution/2165458/">GCC</a></td>
+				<td class="date"><abbr title="2013-10-16 19:41:23">13.10.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37083/in/group-29/">BJ</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1857790/" class="result-wrong">Wrong Answer</a></td>
+								<td>1</td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">901 B</td>
+				<td class="language"><a href="/greedy/solution/1857790/">GCC</a></td>
+				<td class="date"><abbr title="2012-12-17 20:23:37">12.12.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37083/in/group-29/">BJ</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1857687/" class="result-wrong">Wrong Answer</a></td>
+								<td>3</td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">788 B</td>
+				<td class="language"><a href="/greedy/solution/1857687/">GCC</a></td>
+				<td class="date"><abbr title="2012-12-17 20:04:59">12.12.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/28916/in/group-29/">g201120 周玮玲(lynn1995)</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1764975/" class="result-right">Accepted</a></td>
+								<td>10</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">855 B</td>
+				<td class="language"><a href="/greedy/solution/1764975/">G++</a></td>
+				<td class="date"><abbr title="2012-07-05 19:46:38">12.7.5</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/28916/in/group-29/">g201120 周玮玲(lynn1995)</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1764971/" class="result-wrong">Wrong Answer</a></td>
+								<td>5</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">853 B</td>
+				<td class="language"><a href="/greedy/solution/1764971/">G++</a></td>
+				<td class="date"><abbr title="2012-07-05 19:39:05">12.7.5</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37090/in/group-29/">Carl Curist</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1764625/" class="result-wrong">Wrong Answer</a></td>
+								<td>7</td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1378 B</td>
+				<td class="language"><a href="/greedy/solution/1764625/">G++</a></td>
+				<td class="date"><abbr title="2012-07-04 21:00:48">12.7.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37090/in/group-29/">Carl Curist</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1764618/" class="result-wrong">Wrong Answer</a></td>
+								<td>7</td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1903 B</td>
+				<td class="language"><a href="/greedy/solution/1764618/">G++</a></td>
+				<td class="date"><abbr title="2012-07-04 20:55:55">12.7.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37083/in/group-29/">BJ</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1764610/" class="result-wrong">Wrong Answer</a></td>
+								<td>4</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1318 B</td>
+				<td class="language"><a href="/greedy/solution/1764610/">GCC</a></td>
+				<td class="date"><abbr title="2012-07-04 20:41:02">12.7.4</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37090/in/group-29/">Carl Curist</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1764604/" class="result-wrong">Wrong Answer</a></td>
+								<td>6</td>
+								<td class="memory">252kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1590 B</td>
+				<td class="language"><a href="/greedy/solution/1764604/">G++</a></td>
+				<td class="date"><abbr title="2012-07-04 20:35:53">12.7.4</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/37083/in/group-29/">BJ</a></td>
+					
+				<td class="result"><a href="/greedy/solution/1764603/" class="result-wrong">Wrong Answer</a></td>
+								<td>4</td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1370 B</td>
+				<td class="language"><a href="/greedy/solution/1764603/">GCC</a></td>
+				<td class="date"><abbr title="2012-07-04 20:35:02">12.7.4</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+		
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">32</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">7</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Runtime Error</em></td>
+				<td class="count">1</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Time Limit Exceeded</em></td>
+				<td class="count">1</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">1</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

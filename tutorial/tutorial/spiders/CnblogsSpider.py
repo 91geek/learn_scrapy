@@ -18,8 +18,8 @@ class CnblogsSpider(scrapy.Spider):
         for url in urls:
             yield scrapy.FormRequest(url=url,
                                      formdata={
-                                         'blogapp': 'shnoip',  # 这里不能给bool类型的True，requests模块中可以
-                                         'postId': '6143587'  # 这里不能给int类型的1，requests模块中可以
+                                         'blogapp': 'shnoip',
+                                         'postId': '6143587'
                                      },
                                      callback=self.parse)
 
@@ -29,7 +29,7 @@ class CnblogsSpider(scrapy.Spider):
         for next_page in next_pages:
             if next_page is not None:
                 if next_page and next_page.find('html') == -1:
-                    print('#######\n', next_page)
+                    print(next_page)
                 else:
                     yield response.follow(next_page, callback=self.parse2)
 

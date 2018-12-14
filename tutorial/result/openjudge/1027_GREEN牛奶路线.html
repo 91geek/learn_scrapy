@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1027:GREEN牛奶路线</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://sdsy.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="9号超级计算机研究所" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://sdsy.openjudge.cn/" title="首页" rel="home">9号超级计算机研究所</a></h2>
+		 <span>/</span>
+		 <h2>USACO月赛</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/training/" class="first">题目</a></li>
+            <li ><a href="/training/ranking/">排名</a></li>
+                    <li ><a href="/training/status/">状态</a></li>
+	    			        <li class="last"><a href="/training/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1027:GREEN牛奶路线</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/training/1027/">查看</a></li>
+		<li ><a href="/training/1027/submit/">提交</a></li>
+				<li ><a href="/training/1027/statistics/">统计</a></li>
+			
+		<li ><a href="/training/clarify/1027/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>100000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="">每天早上农夫约翰在他的农场内收集他的<span>N</span>头奶牛（<span>1 &lt;= N &lt;= 100</span>）的牛奶，他拿着一个装着<span>K</span>加仑牛奶的桶（<span>1 &lt;= K &lt;= 500</span>）。每碰到一头牛，他都可以选择把<span>1</span>加仑的奶加入桶内。他的牛有点健忘，这样如果他在离开一头牛又碰到另一头牛之后返回原来的那头牛，该牛又会给他一加仑奶——如果它被要求这么做的话。农夫约翰想把他的桶装满。</p><p class="MsoNormal" style="">他的<span>N</span>头牛呆在一个二维平地上，每头牛有一个坐标（<span>x,y</span>）（<span>0 &lt;= x,y &lt;= 1,000,000</span>）。平地包括<span>F</span>个栅栏（<span>1 &lt;= F &lt;= 200</span>），每个栅栏是一条线段，没有栅栏与其他栅栏和牛相交。每个栅栏都高<span>h</span>（<span>1 &lt;= h &lt;= 1000</span>）。</p><p class="MsoNormal" style="">约翰成功地跨过高度<span>h</span>的栅栏（在沿栅栏的任何点）的成功率等于<span>1/h</span>。如果约翰不能跨过栅栏<span>,</span>他将摔一跤并把他的桶摔坏，这是不能接受的。</p><p class="MsoNormal" style="">约翰总是沿直线从一头牛移向另一头牛（或仓房），而且他必须穿过他碰到的每一个栅栏。当然，如果约翰穿过数个栅栏，总的成功率是每个成功率的乘积。</p><p class="MsoNormal" style="">约翰的挤奶路线从他的仓房开始并结束于仓房，仓房也有一个坐标。他必须从仓房走到第一头牛，再从一头牛走到另一头牛，最后回到仓房。如果栅栏与约翰的路线重合或他的路线经过某个栅栏的端点，他就不必穿过栅栏。</p><p class="MsoNormal" style="">计算可以收集到<span>k</span>加仑牛奶的并且成功返回的成功率最大的路线。</p><p class="MsoNormal">样例：（如图）</p><p class="MsoNormal"><span>B</span>代表仓房&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小写字母代表奶牛</p><p class="MsoNormal">连续数字代表栅栏，数字的值代表栅栏高度&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="MsoNormal">8...4.............</p><p class="MsoNormal">7...4...a.........&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p class="MsoNormal">6...4.............&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="MsoNormal">5...4.............&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p class="MsoNormal">4...4..333.666666.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p class="MsoNormal">3B..4.....2.......&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p class="MsoNormal">2...4...b.2....c..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p><p class="MsoNormal">1...4.....2.......&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p><p class="MsoNormal">01234567890123456</p><p><br /></p><p><br /></p><p class="MsoNormal">最佳路线是<span>B-b-c-b-c-b-a-B</span>或<span>B-a-b-c-b-c-b-B</span>，成功率都是<span>0.00130208333….</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第1行： N,K,F,仓房坐标x,y<br />第2..N+1行：每头牛的坐标x,y<br />第N+2..N+F+1行：  五个整数描绘一个栅栏x1,y1,x2,y2,高度</dd>
+		<dt>输出</dt>
+		<dd>最大的成功率</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 6 4 1 3
+8 2 
+15 2
+8 7 
+4 1 4 8 4
+7 4 9 4 3
+10 1 10 3 2
+11 4 16 4 6
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1.3021e-03</pre></dd>
+						<dt>来源</dt>
+		<dd>USACO_2001_SPRING_GREEN</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/training/1027/">查看</a></li>
+		<li ><a href="/training/1027/submit/">提交</a></li>
+				<li ><a href="/training/1027/statistics/">统计</a></li>
+			
+		<li ><a href="/training/clarify/1027/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>12637</dd>
+					<dt>添加于</dt>
+			<dd>2016-12-30</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

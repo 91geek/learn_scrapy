@@ -1,0 +1,293 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 4044:ASCII Expression</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://pkuteam.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/7/logo_small.jpg" alt="北京大学ACM-ICPC竞赛队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://pkuteam.openjudge.cn/" title="首页" rel="home">北京大学ACM-ICPC竞赛队</a></h2>
+		 <span>/</span>
+		 <h2>ICPC竞技编程练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/icpc/" class="first">题目</a></li>
+            <li ><a href="/icpc/ranking/">排名</a></li>
+                    <li ><a href="/icpc/status/">状态</a></li>
+	    			        <li class="last"><a href="/icpc/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>4044:ASCII Expression</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/icpc/4044/">查看</a></li>
+		<li ><a href="/icpc/4044/submit/">提交</a></li>
+				<li ><a href="/icpc/4044/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4044/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>Mathematical expressions appearing in old papers and old technical articles are printed with typewriter in several lines, where a fixed-width or monospaced font is required to print characters (digits, symbols and spaces). Let us consider the following mathematical expression.</p><p style="text-align: center; "><img src="http://media.openjudge.cn/images/upload/1351876255.gif" height="47" width="158" /></p><p>It is printed in the following four lines:</p><pre style="font-family: &#39;Courier New&#39;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp; 2<br />( 1 - ---- )&nbsp;&nbsp;* - 5 + 6<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3<br /></pre><p>where ``- 5&#39;&#39; indicates unary minus followed by 5. We call such an expression of lines ``ASCII expression&#39;&#39;.</p><p>For helping those who want to evaluate ASCII expressions obtained through optical character recognition (OCR) from old papers, your job is to write a program that recognizes the structure of ASCII expressions and computes their values.</p><p>For the sake of simplicity, you may assume that ASCII expressions are constructed by the following rules. Its syntax is shown in Table 1.</p><ol><li><p>Terminal symbols are `0&#39;, `1&#39;, `2&#39;, `3&#39;, `4&#39;, `5&#39;, `6&#39;, `7&#39;, `8&#39;, `9&#39;, `+&#39;, `-&#39;, `*&#39;, `(&#39;, `)&#39;, and ` &#39;.
+</p></li><li><p>Nonterminal symbols are expr, term, factor, powexpr, primary, fraction and digit. The start symbol is expr.
+</p></li><li><p>A ``cell&#39;&#39; is a rectangular region of characters that corresponds to a terminal or nonterminal symbol (Figure 1). In the cell, there are no redundant rows and columns that consist only of space characters. A cell corresponding to a terminal symbol consists of a single character. A cell corresponding to a nonterminal symbol contains cell(s) corresponding to its descendant(s) but never partially overlaps others.
+</p></li><li><p>Each cell has a base-line, a top-line, and a bottom-line. The base-lines of child cells of the right-hand side of rules I, II, III, and V should be aligned. Their vertical position defines the base-line position of their left-hand side cell.
+</p></li><li><p>powexpr consists of a primary and an optional digit. The digit is placed one line above the base-line of the primary cell. They are horizontally adjacent to each other. The base-line of a powexpr is that of the primary.
+</p></li><li><p>fraction is indicated by three or more consecutive hyphens called ``vinculum&#39;&#39;. Its dividend expr is placed just above the vinculum, and its divisor expr is placed just beneath it. The number of the hyphens of the vinculum, denoted by w<sub>h</sub>, is equal to 2 + max(w<sub>1</sub>, w<sub>2</sub>), where w<sub>1</sub>and w<sub>2</sub>indicate the width of the cell of the dividend and that of the divisor, respectively. These cells are centered, where there are ⌈ (w<sub>h</sub>- w<sub>k</sub>)/2 ⌉ space characters to the left and ⌊ (w<sub>h</sub>- w<sub>k</sub>)/2 ⌋ space characters to the right, (k = 1, 2). The base-line of a fraction is at the position of the vinculum.
+</p></li><li><p>digit consists of one character.
+</p></li></ol><p></p><p style="text-align: center; ">Table 1: Rules for constructing ASCII expressions (similar to Backus-Naur Form)<br />The box indicates the cell of the terminal or nonterminal symbol that corresponds to a rectangular region of characters. Note that each syntactically-needed space character is explicitly indicated by the period character denoted by <img src="http://media.openjudge.cn/images/upload/1351878125.png" height="25" width="16" />, here.<br /><img src="http://media.openjudge.cn/images/upload/1351877910.png" height="478" width="721" /><br />Figure 1: Top, base, bottom lines: expr 1 - 4/3<sup>2</sup>, fraction 4/3<sup>2</sup>, powexpr 3<sup>2</sup>, and digit 3.
+</p><p style="vertical-align:middle;">For example, the negative fraction <img src="http://media.openjudge.cn/images/upload/1351879714.gif" height="37" width="24" /> is represented in three lines:</p><pre style="font-family: &#39;Courier New&#39;">&nbsp;&nbsp; 3<br />- ---<br />&nbsp;&nbsp; 4<br /></pre><p>where the left-most hyphen means a unary minus operator. One space character is required between the unary minus and the vinculum of the fraction.</p><p>The fraction <img src="http://media.openjudge.cn/images/upload/1351879740.gif" height="37" width="86" /> is represented in four lines:</p><pre style="font-family: &#39;Courier New&#39;"> 3 + 4 * - 2<br />-------------<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2<br />&nbsp;&nbsp; - 1 - 2<br /></pre><p>where the widths of the cells of the dividend and divisor are 11 and 8 respectively. Hence the number of hyphens of the vinculum is 2 + max(11, 8) = 13. The divisor is centered by ⌈ (13 - 8)/2 ⌉ = 3 space characters (hyphens) to the left and ⌊ (13 - 8)/2 ⌋ = 2 to the right.</p><p>The powexpr (4<sup>2</sup>)<sup>3</sup> is represented in two lines:</p><pre style="font-family: &#39;Courier New&#39;">&nbsp;&nbsp; 2&nbsp;&nbsp;3<br />( 4&nbsp;&nbsp;)<br /></pre><p>where the cell for 2 is placed one line above the base-line of the cell for 4, and the cell for 3 is placed one line above the base-line of the cell for a primary (4<sup>2</sup>).</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The input consists of multiple datasets, followed by a line containing a zero. Each dataset has the following format.<br /><br />n<br />str<sub>1</sub><br />str<sub>2</sub><br /><img src="http://media.openjudge.cn/images/upload/1351858849.png"><br />str<sub>n</sub><br /><br />n is a positive integer, which indicates the number of the following lines with the same length that represent the cell of an ASCII expression. str<sub>k</sub> is the k-th line of the cell where each space character is replaced with a period.<br /><br />You may assume that n ≤ 20 and that the length of the lines is no more than 80.</dd>
+		<dt>输出</dt>
+		<dd>For each dataset, one line containing a non-negative integer less than 2011 should be output. The integer indicates the value of the ASCII expression in modular arithmetic under modulo 2011. The output should not contain any other characters.<br /><br />There is no fraction with the divisor that is equal to zero or a multiple of 2011.<br /><br />Note that powexpr x<sup>0</sup> is defined as 1, and x<sup>y</sup> (y is a positive integer) is defined as the product x * x * ... * x where the number of x's is equal to y.<br /><br />A fraction x is computed as the multiplication of x and the inverse of y, i.e., x * inv(y), under y modulo 2011. The inverse of y (1 ≤ y < 2011) is uniquely defined as the integer z (1 ≤ z < 2011) that satisfies z * y ≡ 1 ( mod 2011), since 2011 is a prime number.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>4
+........4...2..........
+(.1.-.----.)..*.-.5.+.6
+........2..............
+.......3...............
+3
+...3.
+-.---
+...4.
+4
+.3.+.4.*.-.2.
+-------------
+..........2..
+...-.1.-.2...
+2
+...2..3
+(.4..).
+1
+2.+.3.*.5.-.7.+.9
+1
+(.2.+.3.).*.(.5.-.7.).+.9
+3
+.2....3.
+4..+.---
+......5.
+3
+.2......-.-.3.
+4..-.-.-------
+..........5...
+9
+............1............
+-------------------------
+..............1..........
+.1.+.-------------------.
+................1........
+......1.+.-------------..
+..................1......
+...........1.+.-------...
+................1.+.2....
+15
+.................2......
+................---.....
+.......2.........5....3.
+.(.---------.+.-----.)..
+.....7...........3......
+....---.+.1.............
+.....4..................
+------------------------
+.......2................
+......---...............
+.......5.......2....2...
+...(.-----.+.-----.)....
+.......3.......3........
+..............---.......
+...............4........
+2
+.0....2....
+3..+.4..*.5
+20
+............2............................2......................................
+...........3............................3.......................................
+..........----.........................----.....................................
+............4............................4......................................
+.....2.+.------.+.1...............2.+.------.+.1................................
+............2............................2......................................
+...........2............................2........................2..............
+..........----.........................----.....................3...............
+............2............................2.....................----.............
+...........3............................3........................4..............
+(.(.----------------.+.2.+.3.).*.----------------.+.2.).*.2.+.------.+.1.+.2.*.5
+............2............................2.......................2..............
+...........5............................5.......................2...............
+..........----.........................----....................----.............
+............6............................6.......................2..............
+.........------.......................------....................3...............
+............3............................3......................................
+..........----.........................----.....................................
+............2............................2......................................
+...........7............................7.......................................
+0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>501
+502
+1
+74
+19
+2010
+821
+821
+1646
+148
+81
+1933</pre></dd>
+				<dt>提示</dt>
+		<dd>2011 Asia Fukuoka Regional Contest</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/icpc/4044/">查看</a></li>
+		<li ><a href="/icpc/4044/submit/">提交</a></li>
+				<li ><a href="/icpc/4044/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4044/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>5427</dd>
+					<dt>添加于</dt>
+			<dd>2017-07-25</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

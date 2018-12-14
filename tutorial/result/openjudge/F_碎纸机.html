@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - F:碎纸机</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://shsbnu.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="北京师大二附中" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://shsbnu.openjudge.cn/" title="首页" rel="home">北京师大二附中</a></h2>
+		 <span>/</span>
+		 <h2>2013期末考试2</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2013final2/" class="first">题目</a></li>
+            <li ><a href="/2013final2/ranking/">排名</a></li>
+                    <li ><a href="/2013final2/status/">状态</a></li>
+	     
+        <li ><a href="/2013final2/statistics/">统计</a></li>
+				        <li class="last"><a href="/2013final2/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>F:碎纸机</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2013final2/F/">查看</a></li>
+		<li ><a href="/2013final2/F/submit/">提交</a></li>
+				<li ><a href="/2013final2/F/statistics/">统计</a></li>
+			
+		<li ><a href="/2013final2/clarify/F/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>你现在负责设计一种新式的碎纸机。一般的碎纸机会把纸切成小片，变得难以阅读。而你设计的新式的碎纸机有以下的特点：<br /><br />1.每次切割之前，先要给定碎纸机一个目标数，而且在每张被送入碎纸机的纸片上也需要包含一个数。<br />2.碎纸机切出的每个纸片上都包括一个数。<br />3.要求切出的每个纸片上的数的和要不大于目标数而且与目标数最接近。<br /><br />举一个例子，如下图，假设目标数是50，输入纸片上的数是12346。碎纸机会把纸片切成4块，分别包含1，2，34和6。这样这些数的和是43 (= 1 + 2 + 34 + 6)，这是所有的分割方式中，不超过50，而又最接近50的分割方式。又比如，分割成1，23，4和6是不正确的，因为这样的总和是34 (= 1 + 23 + 4 + 6)，比刚才得到的结果43小。分割成12，34和6也是不正确的，因为这时的总和是52 (= 12 + 34 + 6)，超过了50。<br /><center><img src=http://media.openjudge.cn/images/1416_1.jpg></center><br />还有三个特别的规则：<br />1.如果目标数和输入纸片上的数相同，那么纸片不进行切割。<br />2.如果不论怎样切割，分割得到的纸片上数的和都大于目标数，那么打印机显示错误信息。<br />3.如果有多种不同的切割方式可以得到相同的最优结果。那么打印机显示拒绝服务信息。比如，如果目标数是15，输入纸片上的数是111，那么有两种不同的方式可以得到最优解，分别是切割成1和11或者切割成11和1，在这种情况下，打印机会显示拒绝服务信息。<br /><br /><br />为了设计这样的一个碎纸机，你需要先写一个简单的程序模拟这个打印机的工作。给定两个数，第一个是目标数，第二个是输入纸片上的数，你需要给出碎纸机对纸片的分割方式。</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入包括多组数据，每一组包括一行。每行上包括两个正整数，分别表示目标数和输入纸片上的数。已知输入保证：两个数都不会以0开头，而且两个数至多都只包含6个数字。<br /><br />输入的最后一行包括两个0，这行表示输入的结束。<br /></dd>
+		<dt>输出</dt>
+		<dd>对每一组输入数据，输出相应的输出。有三种不同的输出结果：<br /><br />sum part1 part2 ... <br />rejected <br />error <br /><br />第一种结果表示：<br />1.每一个partj是切割得到的纸片上的一个数。partj的顺序和输入纸片上原始数中数字出现的次序一致。<br />2.sum是切割得到的纸片上的数的和，也就是说：sum = part1 + part2 +...<br />第一种结果中相邻的两个数之间用一个空格隔开。<br /><br />如果不论怎样切割，分割得到的纸片上数的和都大于目标数，那么打印“error”。<br />如果有多种不同的切割方式可以得到相同的最优结果，那么打印“rejected”。 <br /></dd>
+		<dt>样例输入</dt>
+		<dd><pre>50 12346
+376 144139
+927438 927438
+18 3312
+9 3142
+25 1299
+111 33333
+103 862150
+6 1104
+0 0
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>43 1 2 34 6
+283 144 139
+927438 927438
+18 3 3 12
+error
+21 1 2 9 9
+rejected
+103 86 2 15 0
+rejected
+</pre></dd>
+						<dt>来源</dt>
+		<dd>翻译自Japan 2002 Kanazawa的试题</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2013final2/F/">查看</a></li>
+		<li ><a href="/2013final2/F/submit/">提交</a></li>
+				<li ><a href="/2013final2/F/statistics/">统计</a></li>
+			
+		<li ><a href="/2013final2/clarify/F/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>1805</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

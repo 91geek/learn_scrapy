@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - T072:炮姐的任务</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hzoi.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/88/logo_small.jpg" alt="河北省衡水中学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hzoi.openjudge.cn/" title="首页" rel="home">河北省衡水中学</a></h2>
+		 <span>/</span>
+		 <h2>平时测验</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/ceyan/" class="first">题目</a></li>
+            <li ><a href="/ceyan/ranking/">排名</a></li>
+                    <li ><a href="/ceyan/status/">状态</a></li>
+	    			        <li class="last"><a href="/ceyan/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>T072:炮姐的任务</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/ceyan/T072/">查看</a></li>
+		<li ><a href="/ceyan/T072/submit/">提交</a></li>
+				<li ><a href="/ceyan/T072/statistics/">统计</a></li>
+			
+		<li ><a href="/ceyan/clarify/T072/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>50000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>5000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>1024000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family:;" new="" times="">众所周知，</span><span lang="EN-US" style="font-family:;" new="" times="">Level
+5</span><span style="font-family:;" new="" times="">的炮姐在当麻的帮助下打败了妄图成为</span><span lang="EN-US" style="font-family:;" new="" times="">Level
+6</span><span style="font-family:;" new="" times="">的一方，但学院都市并没有放弃制造出</span><span lang="EN-US" style="font-family:;" new="" times="">Level
+6</span><span style="font-family:;" new="" times="">的计划，他们链接了学院都市所有的超级电脑，但是还未计算完成，所有的电脑就突然爆炸，传出来唯一的计算结果：让一方用元质子流轰击超电磁炮本体，就可以制造出</span><span lang="EN-US" style="font-family:;" new="" times="">Level
+6….</span></p><p style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family:;" new="" times="">于是一方携带着长度为</span><span lang="EN-US" style="font-family:;" new="" times="">n(</span><span style="font-family:;" new="" times="">编号为</span><span lang="EN-US" style="font-family:;" new="" times="">0 ~ n-1)</span><span style="font-family:;" new="" times="">的元质子流，去伏击超电磁炮。一方会发出</span><span lang="EN-US" style="font-family:;" new="" times="">m</span><span style="font-family:;" new="" times="">次元质子流，每一次会取出一段元质子流，修改这段元质子流的动量和速度，瞬间加速到</span><span lang="EN-US" style="font-family:;" new="" times="">3</span><span style="font-family:;" new="" times="">倍音速，轰击超电磁炮。这一段元质子在取出后会瞬间被回复，炮姐通过御坂网络的计算，已经得到了一方那长度为</span><span lang="EN-US" style="font-family:;" new="" times="">n</span><span style="font-family:;" new="" times="">的元质子流的质心的编号。炮姐可以通过发出一道强度为</span><span lang="EN-US" style="font-family:;" new="" times="">K</span><span style="font-family:;" new="" times="">的电流，通过电流链接一方射出的元质子流的连续的一部分，然后用电子轰击质心，一定会破坏一段长度为</span><span lang="EN-US" style="font-family:;" new="" times="">K</span><span style="font-family:;" new="" times="">的元质子流的一段连续的元质子。</span></p><p style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family:;" new="" times="">但是元质子流有这样一个性质：一旦质心编号相同的元质子通过电流形成了链接，那么将会引发量子爆炸，会瞬间使所链接的电流的时钟效应的相反方向的一切物质湮灭，直到时钟效应结束。所以，炮姐在破坏元质子流时，必须避免量子爆炸的发生。</span></p><p style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family:;" new="" times="">一方每隔</span><span lang="EN-US" style="font-family:;" new="" times="">1s</span><span style="font-family:;" new="" times="">就会射出一道元质子流，但是炮姐不一定要阻挡所有的元质子流，炮姐会选定一个特殊的时刻开始破坏元质子流，直到某一个时刻才结束。同时御坂网络返回了一个重要的信息：每一次炮姐发出一道强度为</span><span lang="EN-US" style="font-family:;" new="" times="">k</span><span style="font-family:;" new="" times="">的电流时，炮姐就会得到</span><span lang="EN-US" style="font-family:;" new="" times="">k*k</span><span style="font-family:;" new="" times="">的运算提升值。如果炮姐可以使得运算提升值最大化，那么就可以成为</span><span lang="EN-US" style="font-family:;" new="" times="">Level
+6</span><span style="font-family:;" new="" times="">制止一方的疯狂行动。但是由于元质子流的限制，实际的运算提升值是</span><span lang="EN-US" style="font-family:;" new="" times="">k*min，min</span><span style="font-family:;" new="" times="">表示炮姐这一段时间内发出的电流的强度的最小值。</span></p><p style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family:;" new="" times="">现在你的任务是求出炮姐的最大的运算提升值。</span></p><p><span style="font-family:;" new="" times=""><br /></span></p><p><span style="font-family: Times New Roman;">描述二：</span></p><p style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><span style="font-family:;" new="" times="">小</span><span lang="EN-US" style="font-family:;" new="" times="">B</span><span style="font-family:;" new="" times="">有一个长度为</span><span lang="EN-US" style="font-family:;" new="" times="">n</span><span style="font-family:;" new="" times="">的区间，有</span><span lang="EN-US" style="font-family:;" new="" times="">m</span><span style="font-family:;" new="" times="">次询问，每一次询问给出一对</span><span lang="EN-US" style="font-family:;" new="" times="">L</span><span style="font-family:;" new="" times="">，</span><span lang="EN-US" style="font-family:;" new="" times="">R</span><span style="font-family:;" new="" times="">，表示求出</span><span lang="EN-US" style="font-family:;" new="" times="">[L,R]</span><span style="font-family:;" new="" times="">区间内长度最大的子串，使得这个子串包括的元素互不相同。把每一次询问所得到的最大的长度储存下来，</span><span lang="EN-US" style="font-family:;" new="" times="">m</span><span style="font-family:;" new="" times="">次询问过后，小</span><span lang="EN-US" style="font-family:;" new="" times="">B</span><span style="font-family:;" new="" times="">会得到一个长度为</span><span lang="EN-US" style="font-family:;" new="" times="">m</span><span style="font-family:;" new="" times="">的序列，求出一对</span><span lang="EN-US" style="font-family:;" new="" times="">l</span><span style="font-family:;" new="" times="">，</span><span lang="EN-US" style="font-family:;" new="" times="">r</span><span style="font-family:;" new="" times="">使得</span><span lang="EN-US" style="font-family:;" new="" times="">[l</span><span style="font-family:;" new="" times="">，</span><span lang="EN-US" style="font-family:;" new="" times="">r]</span><span style="font-family:;" new="" times="">区间中的最小值</span><span lang="EN-US" style="font-family:;" new="" times=""><img width="87" height="18" src="data:image/png;base64,R0lGODlhVwASAHcAMSH+GlNvZnR3YXJlOiBNaWNyb3NvZnQgT2ZmaWNlACH5BAEAAAAALAAAAQBWABAAhAAAAAAAAAAAOgAAZgA6kABmtjoAADoAZjqQ22YAAGYAOmYAZmY6kGZmOma222a2/5A6AJA6OpA6ZpCQZpCQtpDb25Db/7ZmALb//9uQOtv///+2Zv/bkP//tv//2wECAwX/ICCOZGmeaFpmQesGhKbOtHkVdY52CT5msYygEUDojqMbcglgPUYdhsYDQWyMzKx2Rh1gSp6IZQvYBAos7yXgLZ/daPaXGZWVOAbfKDyu8VpPJCwIVAEPPIEZPoNUWEcdChUUG3o/hiRmMTQdC19Kgj4XRo0iiqWhjkeFlXsQmlumoCKiAKRNi6i1EIZCfSSFhwkOFLEkkL5LeC04fLezo1Wn0gC0HhJfzScZgXUntL9i2gK+G+POJJ/V0dShudbY4U1DRU2BKRuvNdlNMVRB42YMBXzAAiCggQPf1YrX6Eo9FZzm1LrW68S+PwImFNmnRWG2fdtSULEHgMMBDHyUQbkgFA8FxywexVACSbLEmhct+rUEh8zESyYKWRSglMlOyCUpDbxg2bOEGVZAr+2RuqJmjqfa3pDRt8tqq0tbs4QAADs=" v:shapes="_x0000_i1025" /></span><span style="font-family:;" new="" times="">的乘积最大。要求输出这个最大值。</span><br /></p><p style="margin: 0cm 0cm 0pt; text-indent: 21pt;"><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行n m.<br />以下m行，每行两个整数a b表示一方取出[a，b]段的元质子进行攻击</dd>
+		<dt>输出</dt>
+		<dd>一个正整数，表示最大的运算提升值</dd>
+		<dt>样例输入</dt>
+		<dd><pre>10 5
+3 9 9 5 1 1 7 1 9 9
+1 9
+4 7
+2 8
+3 6
+1 9
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>26
+</pre></dd>
+				<dt>提示</dt>
+		<dd>一方发出的元质子流分别是<br />9 9 5 1 1 7 1 9 9<br />1 1 7 1<br />9 5 1 1 7 1 9<br />5 1 1 7<br />9 9 5 1 1 7 1 9 9<br />对于题目中的所有变量，均小于等于2*10^6<br />结果不超过long long<br />后记：炮姐成为了Level 6,超级计算机的计算结果是对的。。。。。。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/ceyan/T072/">查看</a></li>
+		<li ><a href="/ceyan/T072/submit/">提交</a></li>
+				<li ><a href="/ceyan/T072/statistics/">统计</a></li>
+			
+		<li ><a href="/ceyan/clarify/T072/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11517</dd>
+					<dt>添加于</dt>
+			<dd>2016-09-18</dd>
+				<dt>提交次数</dt>
+		<dd>82</dd>
+		<dt>尝试人数</dt>
+	    <dd>24</dd>
+	    <dt>通过人数</dt>
+	    <dd>21</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

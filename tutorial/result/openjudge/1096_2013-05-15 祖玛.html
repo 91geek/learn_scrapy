@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1096:2013-05-15 祖玛</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2014级各种训练题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2014/" class="first">题目</a></li>
+            <li ><a href="/2014/ranking/">排名</a></li>
+                    <li ><a href="/2014/status/">状态</a></li>
+	    			        <li class="last"><a href="/2014/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1096:2013-05-15 祖玛</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2014/1096/">查看</a></li>
+		<li ><a href="/2014/1096/submit/">提交</a></li>
+				<li ><a href="/2014/1096/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1096/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>5120000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="">这是一个流行在<span>Jsoi</span>的游戏，名称为祖玛。</p><p class="MsoNormal" style="">精致细腻的背景，外加神秘的印加音乐衬托，仿佛置身在古老的国度里面，进行一个神秘的游戏——这就是著名的祖玛游戏。祖玛游戏的主角是一只石青蛙，石青蛙会吐出各种颜色的珠子，珠子造型美丽，并且有着神秘的色彩，环绕着石青蛙的是载着珠子的轨道，各种颜色的珠子会沿着轨道往前滑动，石青蛙必需遏止珠子们滚进去轨道终点的洞里头，如何减少珠子呢？就得要靠石青蛙吐出的珠子与轨道上的珠子相结合，颜色相同者即可以消失得分！直到轨道上通通都被清干净为止。</p><p class="MsoNormal" style="">或者你并不了解祖玛游戏。没关系，这里我们介绍一个简单版本的祖玛游戏规则。一条通道中有一些玻璃珠，每个珠子有各自的颜色，如图<span>1</span>所示。玩家可以做的是选择一种颜色的珠子（<span style="color:red">注意</span>：颜色可以任选，这与真实游戏是不同的）射入某个位置。</p><p class="MsoNormal" style=""><span> </span></p><p class="MsoNormal" style=";text-align:center;"><span><img width="636" height="60" src="file:///C:/Users/HAOXI_~1/AppData/Local/Temp/OICE_5C43E3E7-9AC8-4D39-B88A-A67164DD8FC3.0/msohtmlclip1/01/clip_image002.gif" v:shapes="_x0000_i1025" /></span></p><p class="MsoNormal" style=";text-align:center;">（图<span>1</span>）</p><p class="MsoNormal" style="">图<span>2</span>中玩家选择一颗蓝色珠子，射入图示的位置，于是得到一个图<span>3</span>的局面。</p><p class="MsoNormal" style=";text-align:center;"><span><img width="636" height="135" src="file:///C:/Users/HAOXI_~1/AppData/Local/Temp/OICE_5C43E3E7-9AC8-4D39-B88A-A67164DD8FC3.0/msohtmlclip1/01/clip_image004.gif" v:shapes="_x0000_i1026" /></span></p><p class="MsoNormal" style=";text-align:center;">（图<span>2</span>）</p><p class="MsoNormal" style=";text-align:center;"><span><img width="636" height="60" src="file:///C:/Users/HAOXI_~1/AppData/Local/Temp/OICE_5C43E3E7-9AC8-4D39-B88A-A67164DD8FC3.0/msohtmlclip1/01/clip_image006.gif" v:shapes="_x0000_i1027" /></span></p><p class="MsoNormal" style=";text-align:center;">（图<span>3</span>）</p><p class="MsoNormal" style="">当玩家射入一颗珠子后，如果射入的珠子与其他珠子组成了三颗以上连续相同颜色的珠子，这些珠子就会消失。例如，将一颗白色珠子射入图<span>4</span>中的位置，就会产生三颗颜色相同的白色珠子。这三颗珠子就会消失，于是得到图<span>5</span>的局面。</p><p class="MsoNormal" style=";text-align:center;"><span><img width="624" height="133" src="file:///C:/Users/HAOXI_~1/AppData/Local/Temp/OICE_5C43E3E7-9AC8-4D39-B88A-A67164DD8FC3.0/msohtmlclip1/01/clip_image008.gif" v:shapes="_x0000_i1028" /></span></p><p class="MsoNormal" style=";text-align:center;">（图<span>4</span>）</p><p class="MsoNormal" style=";text-align:center;"><span><img width="624" height="56" src="file:///C:/Users/HAOXI_~1/AppData/Local/Temp/OICE_5C43E3E7-9AC8-4D39-B88A-A67164DD8FC3.0/msohtmlclip1/01/clip_image010.gif" v:shapes="_x0000_i1029" /></span></p><p class="MsoNormal" style=";text-align:center;">（图<span>5</span>）</p><p class="MsoNormal" style="">需要注意的一点是，图<span>4</span>中的三颗连续的黄色珠子不会消失，因为并没有珠子射入其中。</p><p class="MsoNormal" style="">珠子的消失还会产生连锁反应。当一串连续相同颜色的珠子消失后，如果消失位置左右的珠子颜色相同，并且长度大于<span>2</span>，则可以继续消失。例如，图<span>6</span>中，射入一颗红色珠子后，产生了三颗连续的红色珠子。当红色珠子消失后，它左右都是白色的珠子，并且一共有四颗，于是白色珠子也消失了。之后，消失位置的左右都是蓝色珠子，共有三颗，于是蓝色珠子也消失。最终得到图<span>7</span>的状态。</p><p class="MsoNormal" style=""><span style="color: red">注意</span>：图<span>7</span>中的三颗黄色珠子不会消失，因为蓝色珠子消失的位置一边是紫色珠子，另一边是黄色珠子，颜色不同。</p><p class="MsoNormal" style=";text-align:center;"><span><img width="636" height="138" src="file:///C:/Users/HAOXI_~1/AppData/Local/Temp/OICE_5C43E3E7-9AC8-4D39-B88A-A67164DD8FC3.0/msohtmlclip1/01/clip_image012.gif" v:shapes="_x0000_i1030" /></span></p><p class="MsoNormal" style=";text-align:center;">（图<span>6</span>）</p><p class="MsoNormal" style=";text-align:center;"><span><img width="636" height="57" src="file:///C:/Users/HAOXI_~1/AppData/Local/Temp/OICE_5C43E3E7-9AC8-4D39-B88A-A67164DD8FC3.0/msohtmlclip1/01/clip_image014.gif" v:shapes="_x0000_i1031" /></span></p><p class="MsoNormal" style=";text-align:center;">（图<span>7</span>）</p><p class="MsoNormal" style="">除了上述的情况，没有其他的方法消去珠子。</p><p class="MsoNormal" style="">现在，我们有一排珠子，需要你消除。对于每一轮，你可以自由选择不同颜色的珠子，射入任意的位置。你的任务是射出最少的珠子，将全部珠子消去。</p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入文件中的第一行一个整数n（n<=500），表示珠子的个数。<br />第二行n个整数（32位整数范围内），用空格分割，每个整数表示一种颜色的珠子。</dd>
+		<dt>输出</dt>
+		<dd>输出文件中为一个整数，表示最少需要射出的珠子个数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>9
+1 1 2 2 3 3 2 1 1
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2014/1096/">查看</a></li>
+		<li ><a href="/2014/1096/submit/">提交</a></li>
+				<li ><a href="/2014/1096/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1096/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">crf is sb<br />
+crf is sd<br />
+crf gg<br />
+crf zb<br />
+crf hsg<br />
+crf 刷霸<br />
+有问题找zhx</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>5921</dd>
+					<dt>添加于</dt>
+			<dd>2013-05-15</dd>
+				<dt>提交次数</dt>
+		<dd>1</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

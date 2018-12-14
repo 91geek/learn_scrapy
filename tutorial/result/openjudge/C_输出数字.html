@@ -1,0 +1,213 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - C:输出数字</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bjutacm.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="北京工业大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bjutacm.openjudge.cn/" title="首页" rel="home">北京工业大学</a></h2>
+		 <span>/</span>
+		 <h2>2018 ACM 国际大学生程序设计竞赛 北京工业大学校内选拔赛 —— 预选赛 I</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2018_bjutacm_qualifying_1/" class="first">题目</a></li>
+            <li ><a href="/2018_bjutacm_qualifying_1/ranking/">排名</a></li>
+                    <li ><a href="/2018_bjutacm_qualifying_1/status/">状态</a></li>
+	     
+        <li ><a href="/2018_bjutacm_qualifying_1/statistics/">统计</a></li>
+				        <li class="last"><a href="/2018_bjutacm_qualifying_1/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>C:输出数字</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2018_bjutacm_qualifying_1/C/">查看</a></li>
+		<li ><a href="/2018_bjutacm_qualifying_1/C/submit/">提交</a></li>
+				<li ><a href="/2018_bjutacm_qualifying_1/C/statistics/">统计</a></li>
+			
+		<li ><a href="/2018_bjutacm_qualifying_1/clarify/C/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>32000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">在实际应用中，常会遇到一些多位整数或者多位小数。为了便于认读那些采用阿拉伯数字书写的多位数，按照国家标准《有关量、单位和符号的一般原则》，对于小数点前或后超过四位的数字，须将数字从小数点起，向左和向右分成每三位一组（即 “节” ），组与组之间空半个阿拉伯数字的位置。不得使用逗号（即 “千分撇” ）。如 1 133 682 501&nbsp;&nbsp;3.141 592 65&nbsp;&nbsp;27 468.455 48。1987 年 1 月 1 日由国家语言文字工作委员会等中央七部门联合颁布的《关于出版物上数字用法的试行规定》采用了这个标准，规定：“4 位和 4 位以上的数字，采用国际通行的三位分节法。节与节之间空半个阿拉伯数字的位置。非科技专业书刊目前可不分节。但用 ‘,’ 号分节的办法不符合国际标准和国家标准，应该废止。” 应当指出，这条规定是正确的。但在贯彻《试行规定》的过程中，新闻出版界反映：用计算机排版，空半个阿拉伯数字的位置，在技术上十分麻烦，建议对非专业性科技出版物应降低要求。<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;"><br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">考虑到实际情况 GB/T15835—1995《出版物上数字用法的规定》作了适当的变通：<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">（一）专业性科技出版物的分节法：从小数点起，向左和向右分成每三位数字一组，组间空四分之一个汉字（二分之一个阿拉伯数字）的位置。不得使用逗号。<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">（二）非专业性科技出版物如排版留四分空有困难，可仍采用传统的以千分撇 “,” 分节的办法。小数部分不分节。四位以内的整数也可不分节。</p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;"><br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">（摘自《实用语文规范知识小词典》，语文出版社 1999 年 1 月第 1 版）<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;"><br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">下面请根据 GB/T15835<span style="font-size: 14px;background-color: rgb(255, 255, 255)">—1995 </span>规定和下列补充规定，按照输入信息，按要求输出数字。<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;"><br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">1. 对整数部分<strong> 进行排版时 </strong>输入的数字整数部分的有效数字 <strong>应不少于 4 位</strong>，若输入的行首字母为 S，则对该输入数字按专业性科技出版物的要求排版再输出；若输入的行首字母为 N，则对该输入数字按非科技出版物的要求排版再输出；否则不对整数部分进行排版，<strong>按要求输出即可</strong>。<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">2. 输入的数字可能含有若干个前导零，输出时应将前导零 <strong>尽可能多地去掉 </strong>。但输出时也要对前导零进行适当保留，甚至添加，以保证 <strong>经过排版后 </strong>输出的数字的整数部分最高位的分节仍有三个数码，<strong>或者 </strong>保证输出的数字不以小数点开头。<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">3. 按专业性科技出版物的要求对数字进行排版输出时，节与节之间输出一个空格字符。<br /></p><p class="MsoNormal" style="font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255); margin: 0cm -0.25pt 0pt 0cm; line-height: 20.1pt;">4. 按非专业性科技出版物的要求对数字进行排版输出时，节与节之间输出一个 “,” 字符。<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行为一个不小于 1 且不大于 9 的十进制整数 t，之后的 t 行，每行开头有一个大写字母 S 或 N<br /><br />每行开头的大写字母后有一个空格，空格之后是一个十进制非负数，其整数位数（包含前导零）不超过 10 位，小数位数不超过 10 位<br /><br />输入非空且保证在小数位数为零时不会输入小数点</dd>
+		<dt>输出</dt>
+		<dd>t 行按要求输出的数字</dd>
+		<dt>样例输入</dt>
+		<dd><pre>8
+S 1234567890.0000000000
+N 1234567890.0000000000
+S 0000001000.0123456789
+N 0000001000.0123456789
+S 0000001000.0000000000
+N 0000001000.0000000000
+S 0000001000
+N 0000001000</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>001 234 567 890.000 000 000 0
+001,234,567,890.0000000000
+001 000.012 345 678 9
+001,000.0123456789
+001 000.000 000 000 0
+001,000.0000000000
+001 000
+001,000</pre></dd>
+						<dt>来源</dt>
+		<dd>Egg_tart</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2018_bjutacm_qualifying_1/C/">查看</a></li>
+		<li ><a href="/2018_bjutacm_qualifying_1/C/submit/">提交</a></li>
+				<li ><a href="/2018_bjutacm_qualifying_1/C/statistics/">统计</a></li>
+			
+		<li ><a href="/2018_bjutacm_qualifying_1/clarify/C/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">题目难度与顺序无关。<br />
+<br />
+C 题题目描述有更新，请仔细审题。</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>16921</dd>
+				<dt>提交次数</dt>
+		<dd>74</dd>
+		<dt>尝试人数</dt>
+	    <dd>18</dd>
+	    <dt>通过人数</dt>
+	    <dd>2</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

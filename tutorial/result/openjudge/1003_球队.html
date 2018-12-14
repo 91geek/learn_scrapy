@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1003:球队</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://tadyz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="泰安一中oi" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://tadyz.openjudge.cn/" title="首页" rel="home">泰安一中oi</a></h2>
+		 <span>/</span>
+		 <h2>noip模拟赛——国庆</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/moni201610/" class="first">题目</a></li>
+            <li ><a href="/moni201610/ranking/">排名</a></li>
+                    <li ><a href="/moni201610/status/">状态</a></li>
+	    			        <li class="last"><a href="/moni201610/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1003:球队</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/moni201610/1003/">查看</a></li>
+		<li ><a href="/moni201610/1003/submit/">提交</a></li>
+				<li ><a href="/moni201610/1003/statistics/">统计</a></li>
+			
+		<li ><a href="/moni201610/clarify/1003/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>256000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>你现在希望组建一支足球队，一支足球队一般来说由11人组成。这11人有四种不同的职业：守门员、后卫、中锋、前锋组成。你在组队的时候必须满足以下规则： <br /></p><p>1、 足球队恰好由11人组成。 <br /></p><p>2、 11人中恰好有一名守门员，3-5 名后卫，2-5 名中锋，1-3 名前锋。 <br /></p><p>3、 你需要从这11人中选出一名队长。 <br /></p><p>4、 你这个足球队的价值是11人的价值之和再加上队长的价值，也就是说队长的价值会被计算两次。 <br /></p><p>现在告诉你球员的总数，每个球员的职业、价值、花费，以及花费的上限，你希望在满足要求的情况下，达到以下目标： <br /></p><p>1、 最大化队伍的价值.</p><p>2、 在最大化队伍的价值的情况下，最小化队伍的花费。</p><p>3、 在满足以上两个要求的情况下，有多少种选择球员的方案。如果有两种方案它们的区别仅仅是队长不一样，那么这两种方案应该被认为是一种方案。 </p><p>你的任务是输出这三个值：价值、花费、方案数。<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行一个正整数N，代表可选的球员个数。<br />接下来N行，每行描述一个球员的信息。每行开始是一个字符串，可能的字符串有Goalkeeper、Defender、Midfielder、Forward，分别代表该球员的职业是守门员、后卫、中锋、前锋。接下来两个数V,C，分别代表该球员的价值和花费。<br />最后一行一个整数，代表花费的上限。<br />数据保证一定存在一种解。</dd>
+		<dt>输出</dt>
+		<dd>一行三个整数，分表代表最大价值、最小花费和方案数。如果方案数超过了〖10〗^9，则直接输出〖10〗^9。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>15
+Defender 23 45
+Midfielder 178 85
+Goalkeeper 57 50
+Goalkeeper 57 50
+Defender 0 45
+Forward 6 60
+Midfielder 20 50
+Goalkeeper 0 50
+Midfielder 64 65
+Midfielder 109 70
+Forward 211 100
+Defender 0 40
+Defender 29 45
+Midfielder 57 60
+Defender 52 45
+600
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>716 600 2</pre></dd>
+				<dt>提示</dt>
+		<dd>选择所有的五名后卫，选择价值为178,20,54,109的中锋和价值为6的前锋，两名守门员任意选择。选择价值为178的中锋作为队长。<br /><br />对于30%的数据，N≤20。<br />对于60%的数据，费用上限足够大。<br />对于100%的数据，1≤N≤500，所有球员的价值和花费以及花费上限均在[0,1000]。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/moni201610/1003/">查看</a></li>
+		<li ><a href="/moni201610/1003/submit/">提交</a></li>
+				<li ><a href="/moni201610/1003/statistics/">统计</a></li>
+			
+		<li ><a href="/moni201610/clarify/1003/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11821</dd>
+					<dt>添加于</dt>
+			<dd>2016-10-07</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

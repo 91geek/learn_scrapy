@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 9551:求出三角形的面积</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hz2hs.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="杭州四中/养正/江南/滨和 信奥平台" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hz2hs.openjudge.cn/" title="首页" rel="home">杭州四中/养正/江南/滨和 信奥平台</a></h2>
+		 <span>/</span>
+		 <h2>语言基础学习1(无循环)</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/c/" class="first">题目</a></li>
+            <li ><a href="/c/ranking/">排名</a></li>
+                    <li ><a href="/c/status/">状态</a></li>
+	    			        <li class="last"><a href="/c/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>9551:求出三角形的面积</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/c/9551/">查看</a></li>
+		<li ><a href="/c/9551/submit/">提交</a></li>
+				<li ><a href="/c/9551/statistics/">统计</a></li>
+			
+		<li ><a href="/c/clarify/9551/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="white-space: normal;"></p><p style="white-space: normal;"></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><img src="http://media.openjudge.cn/images/upload/1457076068.jpg" width="298" height="198" /><br /></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">求三角形的面积，面积就是它所占的区域大小。 </p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">数学课上应该有说，三角形的面积其实就是它所对应的矩形的面积的一半，所以三角形的面积，也就是底边乘以高度，再除以2。 </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">假设用a表示这个三角形的底边，用b表示它底边a上垂直的高度，a和b可能是任意的小数。 </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">无论a和b是什么数值，请用代码求出这个三角形的面积。输出结果保留1位小数。 </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">例如： </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">如果a是4，b是5 </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">输出： </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">10.0 </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif"><br /></span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">如果a是3.6，b是4 </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">输出： </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif">7.2 </span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><span style="font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif"><br /></span></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">//请复制下面代码，并在两排“******”的中间添加代码。<br /></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">#include &ltstdio.h&gt</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">int main() {</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">float a, b;</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">scanf(&quot;%f%f&quot;, &amp;a, &amp;b);</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">//****** 在这里下面添加代码</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><br /></p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">//****** 在这里上面添加代码</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">return 0;</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;">}</p><p style="margin-top: 15px; margin-bottom: 15px; padding: 0px; color: rgb(35, 31, 23); font-family: &#39;Lucida Grande&#39;, Verdana, &#39;Bitstream Vera Sans&#39;, Arial, sans-serif; font-size: 14px; line-height: 21px; white-space: normal;"><stdio.h></stdio.h><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>无</dd>
+		<dt>输出</dt>
+		<dd>三角形的面积。输出结果保留1位小数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3.6 4</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>7.2</pre></dd>
+				<dt>提示</dt>
+		<dd>printf以及算术运算符</dd>
+						<dt>来源</dt>
+		<dd>傲梦青少儿编程</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/c/9551/">查看</a></li>
+		<li ><a href="/c/9551/submit/">提交</a></li>
+				<li ><a href="/c/9551/statistics/">统计</a></li>
+			
+		<li ><a href="/c/clarify/9551/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>9551</dd>
+					<dt>添加于</dt>
+			<dd>2017-03-22</dd>
+				<dt>提交次数</dt>
+		<dd>116</dd>
+		<dt>尝试人数</dt>
+	    <dd>74</dd>
+	    <dt>通过人数</dt>
+	    <dd>66</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

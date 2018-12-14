@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - B:减一减</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ruc.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="中国人民大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ruc.openjudge.cn/" title="首页" rel="home">中国人民大学</a></h2>
+		 <span>/</span>
+		 <h2>ACM程序设计普及大赛</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/acm2017/" class="first">题目</a></li>
+            <li ><a href="/acm2017/ranking/">排名</a></li>
+                    <li ><a href="/acm2017/status/">状态</a></li>
+	     
+        <li ><a href="/acm2017/statistics/">统计</a></li>
+				        <li class="last"><a href="/acm2017/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>B:减一减</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/acm2017/B/">查看</a></li>
+		<li ><a href="/acm2017/B/submit/">提交</a></li>
+				<li ><a href="/acm2017/B/statistics/">统计</a></li>
+			
+		<li ><a href="/acm2017/clarify/B/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>500ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>100ms</dd>
+			<dt>内存限制: </dt>
+		<dd>256000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal"><span style="font-family:SimSun">“可半者半之，不可半者，副置分母、子之数，以少减多，更相减损，求其等也。以等数约之。”</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="font-family:SimSun">——《九章算术》</span></p><p class="MsoNormal"><span style="font-family:SimSun">《九章算术》中给出了一种对分数进行约分的方法，大概可以分为以下三步：</span></p><p class="MsoNormal">1. <span style="font-family:SimSun">如果分子分母都是偶数，就同时除以</span>2<span style="font-family:SimSun">，一直到分子分母不都是偶数为止。</span></p><p class="MsoNormal">2. <span style="font-family:SimSun">先将分子分母备份，再对备份的分子分母进行操作：用较大数减较小数，差代替较大数，不断地减下去，直到两者相等为止。</span></p><p class="MsoNormal">3. <span style="font-family:SimSun">用这个相等的数对分子分母进行约分。</span></p><p class="MsoNormal"><span style="font-family:SimSun">以对</span>60/72<span style="font-family:SimSun">约分为例，过程大致如下：</span></p><p class="MsoNormal">60/72 =&gt; 30/36 =&gt; 15/18</p><p class="MsoNormal">18 – 15 = 3</p><p class="MsoNormal">15 – 3 = 12</p><p class="MsoNormal">12 – 3 = 9</p><p class="MsoNormal">9 – 3 = 6</p><p class="MsoNormal">6 – 3 = 3</p><p class="MsoNormal">15/18 =&gt; 5/6</p><p class="MsoNormal"><span style="font-family:SimSun">对于给定的正整数</span>N<span style="font-family:SimSun">和</span>M<span style="font-family:SimSun">，对</span>N/M<span style="font-family:SimSun">用如上方法进行约分时做了多少次减法？</span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行一个整数N，第二行一个整数M。<br />保证0 < N < M < 10^6</dd>
+		<dt>输出</dt>
+		<dd>仅一行一个整数，表示做减法的次数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>60
+72</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>5</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/acm2017/B/">查看</a></li>
+		<li ><a href="/acm2017/B/submit/">提交</a></li>
+				<li ><a href="/acm2017/B/statistics/">统计</a></li>
+			
+		<li ><a href="/acm2017/clarify/B/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>14317</dd>
+				<dt>提交次数</dt>
+		<dd>81</dd>
+		<dt>尝试人数</dt>
+	    <dd>43</dd>
+	    <dt>通过人数</dt>
+	    <dd>42</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

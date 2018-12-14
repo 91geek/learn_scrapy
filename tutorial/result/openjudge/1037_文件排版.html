@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1037:文件排版</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://tadyz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="泰安一中oi" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://tadyz.openjudge.cn/" title="首页" rel="home">泰安一中oi</a></h2>
+		 <span>/</span>
+		 <h2>动态规划</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/dp/" class="first">题目</a></li>
+            <li ><a href="/dp/ranking/">排名</a></li>
+                    <li ><a href="/dp/status/">状态</a></li>
+	    			        <li class="last"><a href="/dp/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1037:文件排版</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/dp/1037/">查看</a></li>
+		<li ><a href="/dp/1037/submit/">提交</a></li>
+				<li ><a href="/dp/1037/statistics/">统计</a></li>
+			
+		<li ><a href="/dp/clarify/1037/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>128000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoBodyTextIndent" style="">写电子邮件是有趣的，但不幸的是经常写不好看，主要是因为所有的行不一样长，你的上司想要发排版精美的电子邮件，你的任务是为他编写一个电子邮件排版程序。</p><p class="MsoNormal" style="">完成这个任务最简单的办法是在太短的行中的单词之间插入空格，但这并不是最好的方法，考虑如下例子：</p><p class="MsoNormal" style=""><span>****************************</span></p><p class="MsoNormal" style=""><span>This is the exampleyou&nbsp;&nbsp;are</span></p><p class="MsoNormal" style=""><span>actuallyconsidering.</span></p><p class="MsoNormal" style="">假设我们想将第二行变得和第一行一样长，靠简单地插入空格则我们将得到如下结果：</p><p class="MsoNormal" style=""><span>****************************</span></p><p class="MsoNormal" style=""><span>This is the exampleyou&nbsp;&nbsp;are</span></p><p class="MsoNormal" style=""><span>actually&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;considering.</span></p><p class="MsoNormal"><span> </span></p><p class="MsoNormal" style="">但这太难看了，因为在第二行中有一个非常大的空白，如果将第一行的单词“<span>are</span>”移到下一行我们将得到较好的结果：</p><p class="MsoNormal" style=""><span>****************************</span></p><p class="MsoNormal" style=""><span>This&nbsp;&nbsp;is the&nbsp;&nbsp;example&nbsp;&nbsp; you</span></p><p class="MsoNormal" style=""><span>are&nbsp;&nbsp;actually&nbsp;&nbsp;considering.</span></p><p class="MsoNormal"><span> </span></p><p class="MsoNormal" style="">当然，这必须对难看程度进行量化。因此我们必须给出单词之间的空格的难看程度，一个包含<span>N</span>个空格符的空白段，其难看程度值为<span>(n-1)<sup>2</sup></span>，程序的目的是使难看程度的总和最小化。例如，第一个例子的难看程度是<span>1+7*7=50</span>，而第二个例子的难看程度仅为<span>1+1+1+4+1+4=12</span>。</p><p class="MsoNormal" style="">输出时，每一行的开头和结尾处都必须是一个单词，即每行开头和结尾处不能有空白。唯一例外的是该行仅有一个单词组成的情况，对于这种情况你可将单词放在该行开头处输出，此时如果该单词比该行应有的长度短则我们指定它的最坏程度为<span>500</span>，当然在这种情况下，该行的实际长度即为该单词的长度。</p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入文件第一行是一个整数N，表示该段要求达到的宽度，1<=N<=80。该段文章由一个或多个单词组成，单词由ASCII码值为33到126（包含33和126）的字符组成，单词与单词之间用空格隔开（可能超过一个）。单词长度不会超过段落要求达到的宽度。一段文字所有单词的总长度不会超过10000个字符，任何一行都不会超过100个字符，任何一个单词都在同一行内。</dd>
+		<dt>输出</dt>
+		<dd>对于每个段落，找出使其难看程度最小的排版形式并输出句子：“Minimal badness is B.”，B是指按可能的最好排版形式会发生的难看程度值。注意排版后文本行数任意，多余的空格也可删除。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>28
+This is the example you  are
+actually considering.
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Minimal badness is 12.</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/dp/1037/">查看</a></li>
+		<li ><a href="/dp/1037/submit/">提交</a></li>
+				<li ><a href="/dp/1037/statistics/">统计</a></li>
+			
+		<li ><a href="/dp/clarify/1037/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11615</dd>
+					<dt>添加于</dt>
+			<dd>2016-09-25</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

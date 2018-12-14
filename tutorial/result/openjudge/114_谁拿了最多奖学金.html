@@ -1,0 +1,398 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 114:谁拿了最多奖学金提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://nenu.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/37/logo_small.jpg" alt="东北师大算法小组" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://nenu.openjudge.cn/" title="首页" rel="home">东北师大算法小组</a></h2>
+		 <span>/</span>
+		 <h2>练习题库1</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/practice1/" class="first">题目</a></li>
+            <li ><a href="/practice1/ranking/">排名</a></li>
+                    <li ><a href="/practice1/status/">状态</a></li>
+	    			        <li class="last"><a href="/practice1/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>114:谁拿了最多奖学金</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/practice1/114/">查看</a></li>
+		<li ><a href="/practice1/114/submit/">提交</a></li>
+				<li class="current-show"><a href="/practice1/114/statistics/">统计</a></li>
+			
+		<li ><a href="/practice1/clarify/114/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/56099/in/group-37/">小宇宙P_P</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2604034/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1498 B</td>
+				<td class="language"><a href="/practice1/solution/2604034/">G++</a></td>
+				<td class="date"><abbr title="2014-06-07 13:56:47">14.6.7</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52249/in/group-37/">guolp1244</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2071173/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">775 B</td>
+				<td class="language"><a href="/practice1/solution/2071173/">G++</a></td>
+				<td class="date"><abbr title="2013-06-19 21:52:27">13.6.19</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/53002/in/group-37/">刘书含2012012445</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2070057/" class="result-right">Accepted</a></td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">864 B</td>
+				<td class="language"><a href="/practice1/solution/2070057/">G++</a></td>
+				<td class="date"><abbr title="2013-06-19 00:12:55">13.6.19</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/41716/in/group-37/">cs1183</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2070053/" class="result-right">Accepted</a></td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">866 B</td>
+				<td class="language"><a href="/practice1/solution/2070053/">G++</a></td>
+				<td class="date"><abbr title="2013-06-19 00:11:49">13.6.19</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52210/in/group-37/">2012012417</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067456/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">667 B</td>
+				<td class="language"><a href="/practice1/solution/2067456/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 22:17:55">13.6.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52232/in/group-37/">Somnus_RH</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067449/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">935 B</td>
+				<td class="language"><a href="/practice1/solution/2067449/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 22:16:03">13.6.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52232/in/group-37/">Somnus_RH</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067448/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">932 B</td>
+				<td class="language"><a href="/practice1/solution/2067448/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 22:15:14">13.6.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52197/in/group-37/">Iruri_Chen</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067400/" class="result-right">Accepted</a></td>
+								<td class="memory">260kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">864 B</td>
+				<td class="language"><a href="/practice1/solution/2067400/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 21:54:32">13.6.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52222/in/group-37/">zjl--2427</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067333/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1178 B</td>
+				<td class="language"><a href="/practice1/solution/2067333/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 21:25:18">13.6.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52222/in/group-37/">zjl--2427</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067325/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">1365 B</td>
+				<td class="language"><a href="/practice1/solution/2067325/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 21:23:20">13.6.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52252/in/group-37/">2012012426</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067075/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1548 B</td>
+				<td class="language"><a href="/practice1/solution/2067075/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 20:18:33">13.6.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/53448/in/group-37/">彭雨欣(2012012446)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067036/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1718 B</td>
+				<td class="language"><a href="/practice1/solution/2067036/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 20:10:22">13.6.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/53448/in/group-37/">彭雨欣(2012012446)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2067027/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">1703 B</td>
+				<td class="language"><a href="/practice1/solution/2067027/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 20:07:07">13.6.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/53448/in/group-37/">彭雨欣(2012012446)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2066985/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">1703 B</td>
+				<td class="language"><a href="/practice1/solution/2066985/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 19:53:39">13.6.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52241/in/group-37/">2012012414</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2066928/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">966 B</td>
+				<td class="language"><a href="/practice1/solution/2066928/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 19:22:19">13.6.17</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52228/in/group-37/">Qubl-2395</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2066799/" class="result-wrong">Output Limit Exceeded</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">1270ms</td>
+				<td class="code-length">661 B</td>
+				<td class="language"><a href="/practice1/solution/2066799/">G++</a></td>
+				<td class="date"><abbr title="2013-06-17 18:10:27">13.6.17</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/52246/in/group-37/">2012012425</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2064871/" class="result-right">Accepted</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1195 B</td>
+				<td class="language"><a href="/practice1/solution/2064871/">G++</a></td>
+				<td class="date"><abbr title="2013-06-16 19:03:30">13.6.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/53448/in/group-37/">彭雨欣(2012012446)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2063086/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">711 B</td>
+				<td class="language"><a href="/practice1/solution/2063086/">G++</a></td>
+				<td class="date"><abbr title="2013-06-16 11:58:56">13.6.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/53448/in/group-37/">彭雨欣(2012012446)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2063075/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">256kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">1610 B</td>
+				<td class="language"><a href="/practice1/solution/2063075/">G++</a></td>
+				<td class="date"><abbr title="2013-06-16 11:50:42">13.6.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/53448/in/group-37/">彭雨欣(2012012446)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/practice1/solution/2063072/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">1596 B</td>
+				<td class="language"><a href="/practice1/solution/2063072/">G++</a></td>
+				<td class="date"><abbr title="2013-06-16 11:48:43">13.6.16</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+					<a href="?page=4">4</a>
+					<a href="?page=5">5</a>
+		
+					<span>...</span>
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">178</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">171</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">36</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Presentation Error</em></td>
+				<td class="count">20</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Runtime Error</em></td>
+				<td class="count">17</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Runtime Error</em></td>
+				<td class="count">9</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Output Limit Exceeded</em></td>
+				<td class="count">2</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

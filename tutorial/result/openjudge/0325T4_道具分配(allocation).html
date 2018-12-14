@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 0325T4:道具分配(allocation)</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://tic.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="北大附中TIC社团" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://tic.openjudge.cn/" title="首页" rel="home">北大附中TIC社团</a></h2>
+		 <span>/</span>
+		 <h2>寒假集训模拟赛</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2018winter/" class="first">题目</a></li>
+            <li ><a href="/2018winter/ranking/">排名</a></li>
+                    <li ><a href="/2018winter/status/">状态</a></li>
+	    			        <li class="last"><a href="/2018winter/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>0325T4:道具分配(allocation)</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2018winter/0325T4/">查看</a></li>
+		<li ><a href="/2018winter/0325T4/submit/">提交</a></li>
+				<li ><a href="/2018winter/0325T4/statistics/">统计</a></li>
+			
+		<li ><a href="/2018winter/clarify/0325T4/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>524288kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin: 0cm 0cm 0pt;"><span style="color: rgb(51, 51, 51);"><span style="font-family: Consolas;"><span>n </span></span><span style="font-family: 宋体;">名小演员要登上晚会的舞台集体表演一个节目，具体来说，是关于某一种兵器的武术表演。上台前，老师需要把道具仓库中的</span><span style="font-family: Consolas;"><span>m (m&gt;=n) </span></span><span style="font-family: 宋体;">把道具发给ｎ名小演员，这</span><span style="font-family: Consolas;"><span>m </span></span><span style="font-family: 宋体;">把道具种类虽然相同，但长度不同，根据老师的经验，每一名小演员拿到的道具的长度与自己身高的差距越小，则他的表演会发挥得越好。现在，老师希望所有小演员的这种差值和最小，即</span><span style="font-family: Consolas;">:</span></span></p><p style="margin: 0cm 0cm 0pt;"><span style="color: rgb(51, 51, 51);"><span style="font-family: 宋体;">若</span><span style="font-family: Consolas;"><span>n </span></span><span style="font-family: 宋体;">名小演员身高为</span></span><span style="font-family: Consolas;"><span><span style="color: rgb(51, 51, 51);">h<sub>1</sub></span><span style="color: rgb(51, 51, 51);">,h</span><sub><span style="color: rgb(51, 51, 51);">2</span></sub><span style="color: rgb(51, 51, 51);">,…,h</span><sub><span style="color: rgb(51, 51, 51);">n</span></sub></span></span><span style="color: rgb(51, 51, 51);"><span style="font-family: 宋体;">，</span><span style="font-family: Consolas;"><span>m </span></span><span style="font-family: 宋体;">把道具的长度为</span></span><span style="font-family: Consolas;"><span><span style="color: rgb(51, 51, 51);">l<sub>1</sub></span><span style="color: rgb(51, 51, 51);">,l</span><sub><span style="color: rgb(51, 51, 51);">2</span></sub><span style="color: rgb(51, 51, 51);">,…,l</span><sub><span style="color: rgb(51, 51, 51);">m</span></sub></span></span><span style="color: rgb(51, 51, 51);"><span style="font-family: 宋体;">，</span><span style="font-family: Consolas;"><span>1~n </span></span><span style="font-family: 宋体;">号小演员从</span><span style="font-family: Consolas;"><span>1~m </span></span><span style="font-family: 宋体;">号道具中选择了</span><span style="font-family: Consolas;"><span>n </span></span><span style="font-family: 宋体;">把道具进行了某种匹配</span><span style="font-family: Consolas;"><span>M</span></span><span style="font-family: 宋体;">，现在希望找到一种匹配</span><span style="font-family: Consolas;"><span>M</span></span><span style="font-family: 宋体;">，对其中的每一对</span><span style="font-family: Consolas;"><span>(i,j)</span></span><span style="font-family: 宋体;">，道具的长度与身高的差距和<span style="color: rgb(51, 51, 51);"><span style="font-family: 宋体;">最小</span><span style="font-family: Consolas;">.</span></span></span></span></p><p><br /></p><p><font color="#333333"><img src="data:image/png;base64,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" /></font></p><span style="color: rgb(51, 51, 51);"><p><br /></p><span style="font-family: 宋体;"><p><br /></p><p style="margin: 0cm 0cm 0pt;"><br /></p></span></span></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行两个整数 n和m，表示小演员个数以及道具的数目。<br />第二行包含n个整数hi，代表n名小演员的身高。<br />第三行包含m个整数li，代表m把道具的长度。</dd>
+		<dt>输出</dt>
+		<dd>输出1个整数，道具的长度与身高的差距的最小和。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 6
+1 2 3
+1 2 5 7 9 6
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>2</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2018winter/0325T4/">查看</a></li>
+		<li ><a href="/2018winter/0325T4/submit/">提交</a></li>
+				<li ><a href="/2018winter/0325T4/statistics/">统计</a></li>
+			
+		<li ><a href="/2018winter/clarify/0325T4/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>16932</dd>
+					<dt>添加于</dt>
+			<dd>2018-03-25</dd>
+				<dt>提交次数</dt>
+		<dd>38</dd>
+		<dt>尝试人数</dt>
+	    <dd>14</dd>
+	    <dt>通过人数</dt>
+	    <dd>11</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

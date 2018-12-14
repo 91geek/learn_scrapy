@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1006:【2012.05.17】水题</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>校内赛区难度练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/noip/" class="first">题目</a></li>
+            <li ><a href="/noip/ranking/">排名</a></li>
+                    <li ><a href="/noip/status/">状态</a></li>
+	    			        <li class="last"><a href="/noip/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1006:【2012.05.17】水题</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/noip/1006/">查看</a></li>
+		<li ><a href="/noip/1006/submit/">提交</a></li>
+				<li ><a href="/noip/1006/statistics/">统计</a></li>
+			
+		<li ><a href="/noip/clarify/1006/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>1280000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin-left: 1.27cm; text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">时光荏苒，七年过去了，陶陶长高了（以下简称</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">）。</span></p><p style="margin-left: 1.27cm; text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">为了庆祝这过去的七年，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">又来摘苹果了，与七年前不同的是，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">长高了，他的板凳也变高了，当然</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">苹果们也变高了。</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">这次来摘苹果，与七年前想要得到的也不一样了，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">这次想要使得他摘的所有苹果的高度</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">和最大。但是事与愿违，虽然</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">长高了，但是他的板凳却不是那么愿意帮助他了，也就是说，如果</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">的身高小</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">于了他的板凳的高度，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">就不能使用板凳，也就是说此时</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">所能够到的最高高度就是他的身高；而如果</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">能够</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">使用板凳的话，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">所能够到的最高高度就是他的身高加上板凳的高度。</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">虽说</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">的板凳不怎么愿意帮他，但</span><span style="font-family:宋体, SimSun">crf</span><span style="font-family:DejaVu Sans">大神却给了</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">一种可以巨大化的药，使用这种药后，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">将变得无</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">限高，也就是说</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">这个时候可以摘到任何苹果，但是，由于</span><span style="font-family:宋体, SimSun">crf</span><span style="font-family:DejaVu Sans">偷懒，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">使用药后只能摘一个苹果，摘了一个苹</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">果后</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">就又会恢复原来的身高。并且，</span><span style="font-family:宋体, SimSun">crf</span><span style="font-family:DejaVu Sans">只给了</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">一个巨大化的药，也就是说，这种药只能够使用一次，用来</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">摘其中的某一个苹果。（注意，由于</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">觉得</span><span style="font-family:宋体, SimSun">crf</span><span style="font-family:DejaVu Sans">非常</span><span style="font-family:宋体, SimSun">NB</span><span style="font-family:DejaVu Sans">，所以无论如何</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">也会使用一次这种药）</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">现在，</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">站在了这苹果树下，他已经知道了这里的苹果个数、每个苹果的高度、他自己的身高和板凳的</span></p><p style="text-indent: 1.27cm; margin-bottom: 0cm;text-align:LEFT;"><span style="font-family:DejaVu Sans">高度。</span><span style="font-family:宋体, SimSun">tt</span><span style="font-family:DejaVu Sans">现在想请你帮他算算，他究竟能够得到多大的苹果高度和呢？</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入共三行。<br />第一行有一个整数n，表示有n个苹果。<br />第二行有n个整数，表示每个苹果的高度。<br />第三行有两个整数，分别表示tt的身高和板凳的高度。</dd>
+		<dt>输出</dt>
+		<dd>输出文件名为 water.out。<br />输出共 1 行，包含两个整数，第一个数表示在保证最大高度和下tt最多能摘多少个苹果，第二个整数<br />表示tt能得到的最大高度和，两个整数中间用空格隔开。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5
+100 200 300 400 500
+10 90</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1 500</pre></dd>
+				<dt>提示</dt>
+		<dd>对于%40的数据 n<=20。<br />对于%60的数据 n<=1000<br />对于%100的数据 n<=100000，|每个苹果的高度|<=maxlongint，tt的身高和板凳的高度均小于等于<br />maxlongint大于等于0。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/noip/1006/">查看</a></li>
+		<li ><a href="/noip/1006/submit/">提交</a></li>
+				<li ><a href="/noip/1006/statistics/">统计</a></li>
+			
+		<li ><a href="/noip/clarify/1006/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">crf is sb<br />
+crf is er gou dan<br />
+crf is sha diao</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>4825</dd>
+					<dt>添加于</dt>
+			<dd>2012-05-22</dd>
+				<dt>提交次数</dt>
+		<dd>68</dd>
+		<dt>尝试人数</dt>
+	    <dd>15</dd>
+	    <dt>通过人数</dt>
+	    <dd>12</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

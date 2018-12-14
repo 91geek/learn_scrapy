@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 3:连续出现的字符提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://sdau11.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="javastudy" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://sdau11.openjudge.cn/" title="首页" rel="home">javastudy</a></h2>
+		 <span>/</span>
+		 <h2>测试2</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/ceshi2/" class="first">题目</a></li>
+            <li ><a href="/ceshi2/ranking/">排名</a></li>
+                    <li ><a href="/ceshi2/status/">状态</a></li>
+	     
+        <li ><a href="/ceshi2/statistics/">统计</a></li>
+				        <li class="last"><a href="/ceshi2/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>3:连续出现的字符</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/ceshi2/3/">查看</a></li>
+		<li ><a href="/ceshi2/3/submit/">提交</a></li>
+				<li class="current-show"><a href="/ceshi2/3/statistics/">统计</a></li>
+			
+		<li ><a href="/ceshi2/clarify/3/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/835619/in/group-122/">Adamancy@杨干</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626964/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18472kB</td>
+				<td class="spending-time">4586ms</td>
+				<td class="code-length">444 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626964/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:31:02">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/806283/in/group-122/">20172130</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626958/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18164kB</td>
+				<td class="spending-time">4557ms</td>
+				<td class="code-length">667 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626958/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:55">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876688/in/group-122/">20172185王陈</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626956/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">1040 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626956/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:51">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/818176/in/group-122/">20172169孔贺</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626954/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18048kB</td>
+				<td class="spending-time">4019ms</td>
+				<td class="code-length">624 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626954/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:48">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876688/in/group-122/">20172185王陈</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626946/" class="result-right">Accepted</a></td>
+								<td class="memory">18064kB</td>
+				<td class="spending-time">3931ms</td>
+				<td class="code-length">780 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626946/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:34">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/806336/in/group-122/">20172117朱诗琳</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626939/" class="result-right">Accepted</a></td>
+								<td class="memory">18052kB</td>
+				<td class="spending-time">3950ms</td>
+				<td class="code-length">692 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626939/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:20">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/835619/in/group-122/">Adamancy@杨干</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626938/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">17568kB</td>
+				<td class="spending-time">4137ms</td>
+				<td class="code-length">450 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626938/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:18">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876685/in/group-122/">姜茂-20172161</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626937/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">17760kB</td>
+				<td class="spending-time">4134ms</td>
+				<td class="code-length">558 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626937/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:17">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876678/in/group-122/">韩明正20172162(韩明正)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626931/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">512 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626931/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:11">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876678/in/group-122/">韩明正20172162(韩明正)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626929/" class="result-wrong">Runtime Error</a></td>
+								<td class="memory">17996kB</td>
+				<td class="spending-time">4124ms</td>
+				<td class="code-length">384 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626929/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:09">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876693/in/group-122/">路福豪 20172149</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626928/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18284kB</td>
+				<td class="spending-time">4147ms</td>
+				<td class="code-length">721 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626928/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:09">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876715/in/group-122/">20172173刘康辰</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626925/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18204kB</td>
+				<td class="spending-time">4219ms</td>
+				<td class="code-length">562 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626925/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:30:05">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876724/in/group-122/">郑明君20172194(李舜生)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626924/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18292kB</td>
+				<td class="spending-time">3848ms</td>
+				<td class="code-length">452 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626924/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:59">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/806331/in/group-122/">20172118 李安然</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626917/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">671 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626917/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:41">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/838252/in/group-122/">李凯</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626916/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18888kB</td>
+				<td class="spending-time">3831ms</td>
+				<td class="code-length">535 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626916/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:41">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/806280/in/group-122/">20172116</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626914/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18456kB</td>
+				<td class="spending-time">3982ms</td>
+				<td class="code-length">842 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626914/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:36">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876719/in/group-122/">曹凤龙20172175</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626909/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18036kB</td>
+				<td class="spending-time">3848ms</td>
+				<td class="code-length">444 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626909/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:29">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/806294/in/group-122/">孙培帅-20172147</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626908/" class="result-right">Accepted</a></td>
+								<td class="memory">17856kB</td>
+				<td class="spending-time">4074ms</td>
+				<td class="code-length">754 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626908/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:24">17天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/876699/in/group-122/">贺莹莹</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626905/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">18440kB</td>
+				<td class="spending-time">3874ms</td>
+				<td class="code-length">793 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626905/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:23">17天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/855484/in/group-122/">陈雷 20172170(Charlie)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/ceshi2/solution/16626904/" class="result-right">Accepted</a></td>
+								<td class="memory">18436kB</td>
+				<td class="spending-time">4044ms</td>
+				<td class="code-length">575 B</td>
+				<td class="language"><a href="/ceshi2/solution/16626904/">Java</a></td>
+				<td class="date"><abbr title="2018-11-26 11:29:22">17天前</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+					<a href="?page=4">4</a>
+					<a href="?page=5">5</a>
+		
+					<span>...</span>
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">127</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">33</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Runtime Error</em></td>
+				<td class="count">17</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">10</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

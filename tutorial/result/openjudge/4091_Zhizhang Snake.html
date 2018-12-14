@@ -1,0 +1,212 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 4091:Zhizhang Snake</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://pkuteam.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/7/logo_small.jpg" alt="北京大学ACM-ICPC竞赛队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://pkuteam.openjudge.cn/" title="首页" rel="home">北京大学ACM-ICPC竞赛队</a></h2>
+		 <span>/</span>
+		 <h2>ICPC竞技编程练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/icpc/" class="first">题目</a></li>
+            <li ><a href="/icpc/ranking/">排名</a></li>
+                    <li ><a href="/icpc/status/">状态</a></li>
+	    			        <li class="last"><a href="/icpc/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>4091:Zhizhang Snake</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/icpc/4091/">查看</a></li>
+		<li ><a href="/icpc/4091/submit/">提交</a></li>
+				<li ><a href="/icpc/4091/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4091/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>512000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>Zhizhang Snake是一个新型物种，它的身体是由N个点和N-1条线段构成的折线，其中第i个点的坐标为(x<sub>i</sub>, y<sub>i</sub>)，折线不会自交。Zhizhang Snake可以平移或旋转自己的身体，但是在移动过程中，身体形状不能发生任何改变（即构成它身体的每条线段的长度和它们之间的夹角都保持不变），否则它就会挂掉……</p><p>直线y=0是一堵墙，坐标(0,0)处开有一个洞，洞与蛇身的宽度都是一个可以忽略不计的小量。现在Zhizhang Snake完全处于墙的上方（y&gt;0），它想知道它自己的整个身体能否活着穿过墙洞，到达墙的下方（y&lt;0）。&lt; p=&quot;&quot;&gt;<!--0）。<--></p><p style=";text-align:center;"><img src="http://media.openjudge.cn/images/upload/1470788816.PNG" width="320" /></p><p></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>每个测试点包含5组数据，以EOF结尾，对于每组数据：<br /><br />第一行有1个整数N，表示Zhizhang Snake折线顶点的个数。<br /><br />接下来N行每行2个整数(x<sub>i</sub>, y<sub>i</sub>)，描述这条折线。折线不会自交，折线上任意三个顶点都不共线。</dd>
+		<dt>输出</dt>
+		<dd>对于每组数据，输出Possible或Impossible，表示Zhizhang Snake能否到达墙的下方。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>4
+0 1
+1 1
+1 2
+2 2
+11
+63 106
+87 143
+102 132
+115 169
+74 145
+41 177
+56 130
+28 141
+19 124
+0 156
+22 183</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Possible
+Impossible</pre></dd>
+				<dt>提示</dt>
+		<dd>数据范围与约定<br />对于20%的数据，1 ≤ N ≤ 10。<br />对于60%的数据，1 ≤ N ≤ 1000。<br />对于100%的数据，1 ≤ N ≤ 100000, 0 ≤ x<sub>i</sub> ≤10<sup>9</sup>，1 ≤ y<sub>i</sub> ≤10<sup>9</sup> , 折线不会自交，折线上任意三个顶点都不共线。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/icpc/4091/">查看</a></li>
+		<li ><a href="/icpc/4091/submit/">提交</a></li>
+				<li ><a href="/icpc/4091/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4091/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11141</dd>
+					<dt>添加于</dt>
+			<dd>2017-07-26</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

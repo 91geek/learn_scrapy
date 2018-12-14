@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 06:白细胞计数</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://stepbystep.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="程序设计入门与进阶" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://stepbystep.openjudge.cn/" title="首页" rel="home">程序设计入门与进阶</a></h2>
+		 <span>/</span>
+		 <h2>2016春季第一周</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2016w1/" class="first">题目</a></li>
+            <li ><a href="/2016w1/ranking/">排名</a></li>
+                    <li ><a href="/2016w1/status/">状态</a></li>
+	    			        <li class="last"><a href="/2016w1/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>06:白细胞计数</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2016w1/06/">查看</a></li>
+		<li ><a href="/2016w1/06/submit/">提交</a></li>
+				<li ><a href="/2016w1/06/statistics/">统计</a></li>
+			
+		<li ><a href="/2016w1/clarify/06/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>医院采样了某临床病例治疗期间的白细胞数量样本n份，用于分析某种新抗生素对该病例的治疗效果。为了降低分析误差，要先从这n份样本中去除一个数值最大的
+样本和一个数值最小的样本，然后将剩余n-2个有效样本的平均值作为分析指标。同时，为了观察该抗生素的疗效是否稳定，还要给出该平均值的误差，即所有有
+效样本（即不包括已扣除的两个样本）与该平均值之差的绝对值的最大值。
+<br /><br />现在请你编写程序，根据提供的n个样本值，计算出该病例的平均白细胞数量和对应的误差。<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入的第一行是一个正整数n（2 < n <= 300），表明共有n个样本。<br />以下共有n行，每行为一个浮点数，为对应的白细胞数量，其单位为10^9/L。数与数之间以一个空格分开。</dd>
+		<dt>输出</dt>
+		<dd>输出为两个浮点数，中间以一个空格分开。分别为平均白细胞数量和对应的误差，单位也是10^9/L。计算结果需保留到小数点后2位。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5
+12.0
+13.0
+11.0
+9.0
+10.0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>11.00 1.00</pre></dd>
+				<dt>提示</dt>
+		<dd>为避免浮点精度误差过大，请使用double类型。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2016w1/06/">查看</a></li>
+		<li ><a href="/2016w1/06/submit/">提交</a></li>
+				<li ><a href="/2016w1/06/statistics/">统计</a></li>
+			
+		<li ><a href="/2016w1/clarify/06/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">1. 着重练习上学期数据结构课程的知识。列表如下。<br />
+题目名称	题号	题型<br />
+02:找第一个只出现一次的字符	7804	字符串<br />
+基因相关性	7548	字符串<br />
+04:错误探测	7742	多维数组<br />
+07:矩阵归零消减序列和	6245	多维数组<br />
+09:直方图	7596	顺序查找<br />
+07:不与最大数相同的数字之和	6595	顺序查找<br />
+08:白细胞计数	7613	顺序查找<br />
+2991:2011	2991	分治<br />
+7617:输出前k大的数	7617	分治<br />
+6262:流感传染	6262	宽搜<br />
+1760:菲波那契数列(2)	1760	递推<br />
+6264:走出迷宫	6264	宽搜<br />
+1817:城堡问题	1817	深搜<br />
+<br />
+2. 字符串题目尽量用STL的string。<br />
+3. 查找类题目也尽量用STL的set, map或排序算法。<br />
+4. 不要在很有数的题目上花费时间。也不要费大量时间冥思苦想，讨论去。</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>7613</dd>
+					<dt>添加于</dt>
+			<dd>2016-02-22</dd>
+				<dt>提交次数</dt>
+		<dd>67</dd>
+		<dt>尝试人数</dt>
+	    <dd>23</dd>
+	    <dt>通过人数</dt>
+	    <dd>22</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

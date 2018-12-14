@@ -1,0 +1,407 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1175:Starry Night</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.theme.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.dialog.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.resizable.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.core.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-ui-1.8.11.custom.min.js?1467854438.js"></script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://qwsfsx.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/130/logo_small.jpg" alt="趣味算法实习" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://qwsfsx.openjudge.cn/" title="首页" rel="home">趣味算法实习</a></h2>
+		 <span>/</span>
+		 <h2>Level 2</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/level2/" class="first">题目</a></li>
+            <li ><a href="/level2/ranking/">排名</a></li>
+                    <li ><a href="/level2/status/">状态</a></li>
+	    			        <li class="last"><a href="/level2/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1175:Starry Night</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/level2/1175/">查看</a></li>
+		<li ><a href="/level2/1175/submit/">提交</a></li>
+				<li ><a href="/level2/1175/statistics/">统计</a></li>
+			
+		<li ><a href="/level2/clarify/1175/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>High up in the night sky, the shining stars appear in clusters of various shapes. A cluster is a non-empty group of neighbouring stars, adjacent in horizontal, vertical or diagonal direction. A cluster cannot be a part of a larger cluster.<br /><br />Clusters may be similar. Two clusters are similar if they have the same shape and number of stars, irrespective of their orientation. In general, the number of possible orientations for a cluster is eight, as Figure 1 exemplifies.<br /><center><img src=http://media.openjudge.cn/images/g177/1175_1.jpg></center><br />The night sky is represented by a sky map, which is a two-dimensional matrix of 0's and 1's. A cell contains the digit 1 if it has a star, and the digit 0 otherwise.<br /><br />Given a sky map, mark all the clusters with lower case letters. Similar clusters must be marked with the same letter; non-similar clusters must be marked with different letters. You mark a cluster with a lower case letter by replacing every 1 in the cluster by that lower case letter. The order of allocation of letters depends on the first appearance of different clusters, from top to bottom and from left to right.</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>Your program is to read from standard input. The first two lines contain, respectively, the width W and the height H of a sky map. The sky map is given in the following H lines, of W characters each.<br /><br />0 <= W (width of the sky map) <= 100<br />0 <= H (height of the sky map) <= 100<br />0 <= Number of clusters <= 500<br />0 <= Number of non-similar clusters <= 26 (a..z)<br />1 <= Number of stars per cluster <= 160</dd>
+		<dt>输出</dt>
+		<dd>Your program is to write to standard output. The output contains the same map as the input, except that the clusters are marked as described above.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>23
+15
+10001000000000010000000
+01111100011111000101101
+01000000010001000111111
+00000000010101000101111
+00000111010001000000000
+00001001011111000000000
+10000001000000000000000
+00101000000111110010000
+00001000000100010011111
+00000001110101010100010
+00000100110100010000000
+00010001110111110000000
+00100001110000000100000
+00001000100001000100101
+00000001110001000111000</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>a000a0000000000b0000000
+0aaaaa000ccccc000d0dd0d
+0a0000000c000c000dddddd
+000000000c0b0c000d0dddd
+00000eee0c000c000000000
+0000e00e0ccccc000000000
+b000000e000000000000000
+00b0f000000ccccc00a0000
+0000f000000c000c00aaaaa
+0000000ddd0c0b0c0a000a0
+00000b00dd0c000c0000000
+000g000ddd0ccccc0000000
+00g0000ddd0000000e00000
+0000b000d0000f000e00e0b
+0000000ddd000f000eee000</pre></dd>
+				<dt>提示</dt>
+		<dd>Just to make it clearer, notice that this sample input  corresponds to the following picture of the sky.<br /><center><img src=/images/1175_2.jpg></center><br />Notice that this sample output corresponds to the following picture.<br /><center><img src=/images/1175_3.jpg></center></dd>
+						<dt>来源</dt>
+		<dd>IOI 1998</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/level2/1175/">查看</a></li>
+		<li ><a href="/level2/1175/submit/">提交</a></li>
+				<li ><a href="/level2/1175/statistics/">统计</a></li>
+			
+		<li ><a href="/level2/clarify/1175/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>177</dd>
+					<dt>添加于</dt>
+			<dd>2012-05-09</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	<script type="text/javascript">
+
+$(function(){
+    var e={},c={};//e为选中的标签
+    var b=function(h){
+        if(e[h]){
+            c[h]=true;
+            $.each(e[h],function(k,j){
+                $(j).removeClass("gract").addClass("rdact")
+                })
+        }
+    };//打标签css
+    var d=function(h){
+        if(e[h]){
+            delete c[h];
+            $.each(e[h],function(k,j){
+                $(j).removeClass("rdact").addClass("gract")
+                })
+        }
+    };//取消打上的标签css
+
+    var g=function(){
+        var h=$.trim($("#tags_title").attr("value").toLowerCase()).split(" "),i={};
+        $.each(h,function(k,j){
+            if(j!=""){
+                b(j);
+                i[j]=true
+            }
+        });
+        for(t in c){
+            if(!i[t]){
+                d(t);
+            }
+        }
+    };
+
+    $('.tagbtn').each(function(j){
+        var h=$(this).text().toLowerCase();
+        if(e[h]){
+            e[h].push(this);
+        }
+        else{
+            e[h]=[this];
+        }
+    }).click(function(){
+        var h=$(this).text();
+        var k=$.trim($("#tags_title").attr("value")).split(" "),o=false,j=h.toLowerCase(),l;
+        k=$.grep(k,function(value){
+            if(value.toLowerCase()==j){
+                d(j);
+                o=true;
+                return false;
+            }
+            else{
+                return true;
+            }
+        });//遍历k检查k中是否存在所点击的标签如果有则去除
+        if(!o){
+            k.push(h);
+            b(j);
+        }//如果不存在则添加到最后
+        var n=k.join(" ");//用空格连接数组中的标签
+        $("#tags_title").attr("value",(n.length>1)?$.trim(n)+" ":n);
+        $("#tags_title").focus(); //如果数量多于1个标签
+    });
+    $("#tags_title").keyup(g);
+
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	$( "#dialog-form" ).dialog({
+		autoOpen: false,
+		height: 420,
+		width: 550,
+		modal: true,
+		buttons: {
+			"保存": function() {
+				$('#rating_form').submit();
+			},
+			"取消": function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		close: function() {
+		}
+	});
+
+	$( "#create-rating" )
+		.button()
+		.click(function() {
+			$( "#dialog-form" ).dialog( "open" );
+			g();
+		});
+	
+	 var x={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+     i=$("#rate"),
+     y=$("#stars img"),
+     z=function(f){
+       var h=0||i.val();
+       y.each(function(k){
+         var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+         this.src=i;
+       });
+       if(f)
+         $("#rate_description").text(x[f]);
+       else
+         $("#rate_description").text(h!=0?x[h]:"");
+     };
+     y.hover(function(){d(this.id.charAt(4));},function(){z();});
+     if(i.attr("value")){
+       y.click(function(){
+         var f=this.id.charAt(4);
+         i.val(f);
+         z(f);
+         //$('#form_diffculity_rating').submit();
+         //$( "#dialog-form" ).dialog( "open" );
+		//	g();
+       });
+     }
+     z();
+});
+</script>
+
+<div id="dialog-form" title="评价">
+	<form id="rating_form" class="j a_interest_form" method="POST" action="/api/problem/rating" onsubmit="$(this).ajaxSubmit({dataType:'json',success:function(){$('#dialog-form').dialog( 'close' );}});return false;">
+       			<input type="hidden" value="2529" name="app_id">
+   				<input type="hidden" value="1175" name="problem_number">
+   				<input type="hidden" value="177" name="problem_id">
+       		<div class="rating">
+	  您的评价
+   		<span style="margin-left: 10px;" id="stars">
+			<img alt="很水" src="http://static.openjudge.cn/images/nst.gif" id="star1">
+			<img alt="简单" src="http://static.openjudge.cn/images/nst.gif" id="star2">
+			<img alt="一般" src="http://static.openjudge.cn/images/nst.gif" id="star3">
+			<img alt="较难" src="http://static.openjudge.cn/images/nst.gif" id="star4">
+			<img alt="变态" src="http://static.openjudge.cn/images/nst.gif" id="star5">
+		</span>
+		<span class="pl" id="rate_description"></span>
+   		
+	    	<input type="hidden" value="" name="diffculity_rate" id="rate">         
+		
+    </div>
+   				<ul class="interest_form " id="advtags">
+    
+        			<li>标签(多个标签用空格分隔): </li>
+      				<li><input type="text" style="width: 250px;" name="tags" id="tags_title" value=""></li>
+       				       				       				<li class="clearfix" id="populartags">
+       					<dl>
+       						<dt>常用标签:</dt>
+       						<dd>
+       						       							<span class="tagbtn gract">递归</span> &nbsp;
+       						       							<span class="tagbtn gract">动态规划</span> &nbsp;
+       						       							<span class="tagbtn gract">贪心</span> &nbsp;
+       						       							<span class="tagbtn gract">搜索</span> &nbsp;
+       						       							<span class="tagbtn gract">枚举</span> &nbsp;
+       						       							<span class="tagbtn gract">模拟</span> &nbsp;
+       						       							<span class="tagbtn gract">数学</span> &nbsp;
+       						       							<span class="tagbtn gract">字符串处理</span> &nbsp;
+       						       							<span class="tagbtn gract">几何</span> &nbsp;
+       						       							<span class="tagbtn gract">高精度计算</span> &nbsp;
+       						       							<span class="tagbtn gract">图论</span> &nbsp;
+       						       						</dd>
+       					</dl>
+       				</li>
+   				</ul>
+	</form>
+</div>
+	
+	<div>
+						<h4>尚无评分</h4>
+			</div>
+	
+		
+				
+						
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1004:Spiderman</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ccutchi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="长春工业大学人文信息学院ACM/ICPC集训队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ccutchi.openjudge.cn/" title="首页" rel="home">长春工业大学人文信息学院ACM/ICPC集训队</a></h2>
+		 <span>/</span>
+		 <h2>2015集训 每周练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/ttwork/" class="first">题目</a></li>
+            <li ><a href="/ttwork/ranking/">排名</a></li>
+                    <li ><a href="/ttwork/status/">状态</a></li>
+	    			        <li class="last"><a href="/ttwork/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1004:Spiderman</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/ttwork/1004/">查看</a></li>
+		<li ><a href="/ttwork/1004/submit/">提交</a></li>
+				<li ><a href="/ttwork/1004/statistics/">统计</a></li>
+			
+		<li ><a href="/ttwork/clarify/1004/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>5000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>Dr. Octopus kidnapped Spiderman's girlfriend M.J. and kept her in the West Tower. Now the hero, Spiderman, has to reach the tower as soon as he can to rescue her, using his own weapon, the web.<br /><br />From Spiderman's apartment, where he starts, to the tower there is a straight road. Alongside of the road stand many tall buildings, which are definitely taller or equal to his apartment. Spiderman can shoot his web to the top of any building between the tower and himself (including the tower), and then swing to the other side of the building. At the moment he finishes the swing, he can shoot his web to another building and make another swing until he gets to the west tower. Figure-1 shows how Spiderman gets to the tower from the top of his apartment – he swings from A to B, from B to C, and from C to the tower. All the buildings (including the tower) are treated as straight lines, and during his swings he can't hit the ground, which means the length of the web is shorter or equal to the height of the building. Notice that during Spiderman's swings, he can never go backwards.<br /><center><img src=http://media.openjudge.cn/images/g927/1925_1.jpg></center><br />You may assume that each swing takes a unit of time. As in Figure-1, Spiderman used 3 swings to reach the tower, and you can easily find out that there is no better way.</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line of the input contains the number of test cases K (1 <= K <= 20). Each case starts with a line containing a single integer N (2 <= N <= 5000), the number of buildings (including the apartment and the tower).  N lines follow and each line contains two integers Xi, Yi, (0 <= Xi, Yi <= 1000000) the position and height of the building. The first building is always the apartment and the last one is always the tower.  The input is sorted by Xi value in ascending order and no two buildings have the same X value.</dd>
+		<dt>输出</dt>
+		<dd>For each test case, output one line containing the minimum number of swings (if it's possible to reach the tower) or -1 if Spiderman can't reach the tower.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2
+6
+0 3
+3 5
+4 3
+5 5
+7 4
+10 4
+3
+0 3
+3 4
+10 4
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>3
+-1
+</pre></dd>
+						<dt>来源</dt>
+		<dd>Beijing 2004 Preliminary@POJ</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/ttwork/1004/">查看</a></li>
+		<li ><a href="/ttwork/1004/submit/">提交</a></li>
+				<li ><a href="/ttwork/1004/statistics/">统计</a></li>
+			
+		<li ><a href="/ttwork/clarify/1004/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>927</dd>
+					<dt>添加于</dt>
+			<dd>2015-03-20</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

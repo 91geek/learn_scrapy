@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - E:Pizza schedule</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bigbang.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="大本钟编程小组" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bigbang.openjudge.cn/" title="首页" rel="home">大本钟编程小组</a></h2>
+		 <span>/</span>
+		 <h2>训练赛第8场</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/pkucontesti/" class="first">题目</a></li>
+            <li ><a href="/pkucontesti/ranking/">排名</a></li>
+                    <li ><a href="/pkucontesti/status/">状态</a></li>
+	     
+        <li ><a href="/pkucontesti/statistics/">统计</a></li>
+				        <li class="last"><a href="/pkucontesti/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>E:Pizza schedule</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/pkucontesti/E/">查看</a></li>
+		<li ><a href="/pkucontesti/E/submit/">提交</a></li>
+				<li ><a href="/pkucontesti/E/statistics/">统计</a></li>
+			
+		<li ><a href="/pkucontesti/clarify/E/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>PizzaSocks company makes and delivers pizza. Pizza is delivered on regular schedule. A schedule has a period of 1, 2, 3 or 4 weeks. Quantity of pizzas to be delivered is known for each day of the period. First day of a period is always the first day of the week.</p><p>So formally pizza delivery schedule can be described by the following numbers: <i>L</i> — length of the schedule period (from 1 to 4), <i>A</i><sub>1</sub>, <i>A</i><sub>2</sub>, …, <i>A<sub>L</sub></i> &times; 7 — quantity of pizzas to be delivered for each day of the period (<i>A<sub>i</sub></i> ≥ 0).</p><p>Once an absent-minded PizzaSocks manager lost a schedule for one Very Big and Important Client. Only the history of past deliveries was preserved. Your task is to restore the schedule from the history.</p><p>The problem is complicated by the fact that occasionally Very Big and Important Client changed his orders, ordering either more or less pizzas than scheduled, even sometimes cancelling the order competely or placing an unscheduled order.</p><p>So it's often impossible to restore the original schedule exactly. That is why your task is to find an optimal schedule, i. e. to minimize the total number of days when historically ordered quantity is different from the quantity according to that schedule. The days before the first recorded order and after the last recorded one should not be taken into consideration.</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><p>Input file contains the following integer numbers:<br><br><i>N</i> — number of fulfilled orders in the delivery history <i>w</i><sub>1</sub> <i>d</i><sub>1</sub> <i>q</i><sub>1</sub> <i>w</i><sub>2</sub> <i>d</i><sub>2</sub> <i>q</i><sub>2 </sub>...<i> w<sub>N</sub></i> <i>d<sub>N</sub></i> <i>q<sub>N</sub></i> — description of historical orders: week number, day of the week, and quantity of pizzas delivered. For each day there is no more than one record. It's considered that on those days that are not explicitly mentioned in the input file, but fall between the earliest and the latest mentioned days, zero-quantity orders were fulfilled.</p><p><b>Constraints</b></p><p>1 ≤ <i>q<sub>i</sub></i> ≤ 100, 1 ≤ <i>w<sub>i</sub></i> ≤ 52, 1 ≤ <i>d<sub>i</sub></i> ≤ 7</p></dd>
+		<dt>输出</dt>
+		<dd><p>Output periodicity of the optimal schedule — integer number L from 1 to 4. Then output numbers <i>A<sub>i</sub></i> for each <i>i</i> from 1 to <i>L</i> × 7. If several solutions exist, output any of them. However, make sure that the first week of your schedule corresponds to the earliest week mentioned in the input file.</p></dd>
+		<dt>样例输入</dt>
+		<dd><pre><b>Sample input 1</b>
+6
+1 5 3  3 1 3  3 5 3
+5 1 3  5 5 3  7 5 3
+<b>Sample input 2</b>
+15
+1 3 1  1 5 2
+2 3 1  2 5 2
+3 3 1   
+4 3 1  4 5 3
+5 3 1  5 5 2
+6 3 1  6 5 2
+7 3 1  7 5 2
+8 3 1  8 5 2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre><b>Sample output 1</b>
+2
+3 0 0 0 3 0 0
+0 0 0 0 0 0 0
+<b>Sample output 2</b>
+1
+0 0 1 0 2 0 0</pre></dd>
+				<dt>提示</dt>
+		<dd>Bold texts appearing in the sample sections are informative and do not form part of the actual data.</dd>
+						<dt>来源</dt>
+		<dd>Northeastern Europe 2005, Far-Eastern Subregion</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/pkucontesti/E/">查看</a></li>
+		<li ><a href="/pkucontesti/E/submit/">提交</a></li>
+				<li ><a href="/pkucontesti/E/statistics/">统计</a></li>
+			
+		<li ><a href="/pkucontesti/clarify/E/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>2182</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

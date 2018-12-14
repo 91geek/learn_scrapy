@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 40:麻将</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://sdsy.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="9号超级计算机研究所" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://sdsy.openjudge.cn/" title="首页" rel="home">9号超级计算机研究所</a></h2>
+		 <span>/</span>
+		 <h2>3.5搜索</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/11/" class="first">题目</a></li>
+            <li ><a href="/11/ranking/">排名</a></li>
+                    <li ><a href="/11/status/">状态</a></li>
+	    			        <li class="last"><a href="/11/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>40:麻将</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/11/40/">查看</a></li>
+		<li ><a href="/11/40/submit/">提交</a></li>
+				<li ><a href="/11/40/statistics/">统计</a></li>
+			
+		<li ><a href="/11/clarify/40/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>128000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="margin: 0cm 0cm 0pt"><span style="font-size: 14pt;font-family: 宋体">在一种</span><span style="font-size: 14pt;font-family: Times New Roman">&quot;</span><span style="font-size: 14pt;font-family: 宋体">麻将</span><span style="font-size: 14pt;font-family: Times New Roman">&quot;</span><span style="font-size: 14pt;font-family: 宋体">游戏中，游戏是在一个有</span><span style="font-size: 14pt;font-family: Times New Roman">W</span><span style="font-size: 14pt;font-family: 宋体">＊</span><span style="font-size: 14pt;font-family: Times New Roman">H</span><span style="font-size: 14pt;font-family: 宋体">格子的矩形平板上进行的。每个格子可以放置一个麻将牌，也可以不放（如图所示）。玩家的目标是将平板上的所有可通过一条路径相连的两张相同的麻将牌，从平板上移去。最后如果能将所有牌移出平板，则算过关。</span></p><p class="MsoNormal" style="margin: 0cm 0cm 0pt"><span style="font-size: 14pt;font-family: 宋体">　　这个游戏中的一个关键问题是：两张牌之间是否可以被一条路径所连接，该路径满足以下两个特性：</span></p><p class="MsoNormal" style="margin: 0cm 0cm 0pt"><span style="font-size: 14pt;font-family: 宋体">　　</span><span style="font-size: 14pt;font-family: Times New Roman">1. </span><span style="font-size: 14pt;font-family: 宋体">它由若干条线段组成，每条线段要么是水平方向，要么是垂直方向。</span></p><p class="MsoNormal" style="margin: 0cm 0cm 0pt"><span style="font-size: 14pt;font-family: 宋体">　　</span><span style="font-size: 14pt;font-family: Times New Roman">2. </span><span style="font-size: 14pt;font-family: 宋体">这条路径不能横穿任何一个麻将牌</span><span style="font-size: 14pt;font-family: Times New Roman">(</span><span style="font-size: 14pt;font-family: 宋体">但允许路径暂时离开平板</span><span style="font-size: 14pt;font-family: Times New Roman">)</span><span style="font-size: 14pt;font-family: 宋体">。</span></p><p class="MsoNormal" style="margin: 0cm 0cm 0pt"><span style="font-size: 14pt;font-family: 宋体">　　这是一个例子：</span></p><p><img width="410" height="458" src="http://media.openjudge.cn/images/upload/1475485059.jpg" /></p><p><br /></p><p><span style="font-size:24px">在（</span><span style="font-size: 14pt;font-family: Times New Roman">1</span><span style="font-size: 14pt;font-family: 宋体">，</span><span style="font-size: 14pt;font-family: Times New Roman">3</span><span style="font-size: 14pt;font-family: 宋体">）的牌和在</span><span style="font-size: 14pt;font-family: Times New Roman">(4, 4)</span><span style="font-size: 14pt;font-family: 宋体">的牌可以被连接。</span><span style="font-size: 14pt;font-family: Times New Roman">(2, 3)</span><span style="font-size: 14pt;font-family: 宋体">和</span><span style="font-size: 14pt;font-family: Times New Roman">(3, 4)</span><span style="font-size: 14pt;font-family: 宋体">不能被连接。</span></p><p class="MsoNormal" style="margin: 0cm 0cm 0pt"><span style="font-size: 14pt;font-family: 宋体">　　你的任务是编一个程序，检测两张牌是否能被一条符合以上规定的路径所连接。</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入文件的第一行有两个整数w，h （1<=w，h<=75），表示平板的宽和高。接下来h行描述平板信息，每行包含w个字符，如果某格子有一张牌，则这个格子上有个'X'，否则是一个空格。平板上最左上角格子的坐标为（1，1），最右下角格子的坐标为（w,h）。接下来的若干行，每行有四个数x1， y1， x2， y2 ，且满足1<=x1,x2<=w，1<=y1,y2<=h，表示两张牌的坐标（这两张牌的坐标总是不同的）。如果出现连续四个0，则表示输入结束。</dd>
+		<dt>输出</dt>
+		<dd>输出文件中，对于每一对牌输出占一行，为连接这一对牌的路径最少包含的线段数。如果不存在路径则输出0</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 4 
+XXXXX 
+X   X 
+XXX X
+ XXX 
+2 3 5 3 
+1 3 4 4 
+2 3 3 4 
+0 0 0 0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>4
+3
+0</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/11/40/">查看</a></li>
+		<li ><a href="/11/40/submit/">提交</a></li>
+				<li ><a href="/11/40/statistics/">统计</a></li>
+			
+		<li ><a href="/11/clarify/40/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11780</dd>
+					<dt>添加于</dt>
+			<dd>2016-10-03</dd>
+				<dt>提交次数</dt>
+		<dd>2</dd>
+		<dt>尝试人数</dt>
+	    <dd>2</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

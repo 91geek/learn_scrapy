@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1:Senior - NOIP2014 Day1 T2:联合权值</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ordosyz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="鄂尔多斯市第一中学信息学奥林匹克竞赛" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ordosyz.openjudge.cn/" title="首页" rel="home">鄂尔多斯市第一中学信息学奥林匹克竞赛</a></h2>
+		 <span>/</span>
+		 <h2>noip2016模拟考试2</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/moni2/" class="first">题目</a></li>
+            <li ><a href="/moni2/ranking/">排名</a></li>
+                    <li ><a href="/moni2/status/">状态</a></li>
+	    			        <li class="last"><a href="/moni2/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1:Senior - NOIP2014 Day1 T2:联合权值</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/moni2/1/">查看</a></li>
+		<li ><a href="/moni2/1/submit/">提交</a></li>
+				<li ><a href="/moni2/1/statistics/">统计</a></li>
+			
+		<li ><a href="/moni2/clarify/1/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>100000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262143kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p> 无向连通图 G 有 n 个点，n-1 条边。点从 1 到 n 依次编号，编号为 i 的点的权值为 Wi ，<br />每条边的长度均为 1。图上两点(u, v)的距离定义为 u 点到 v 点的最短距离。对于图 G 上的点<br />对(u, v)，若它们的距离为 2，则它们之间会产生Wu×Wv的联合权值。 <br />请问图 G 上所有可产生联合权值的有序点对中，联合权值最大的是多少？所有联合权<br />值之和是多少？</p><p> <img src="http://media.openjudge.cn/images/upload/1457501226.png" width="362" height="324" /></p><p> </p><p>本例输入的图如上所示，距离为 2 的有序点对有(1,3)、(2,4)、(3,1)、(3,5)、(4,2)、(5,3)。 <br />其联合权值分别为 2、15、2、20、15、20。其中最大的是 20，总和为 74。 </p><p> </p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行包含 1 个整数 n。 <br />接下来 n-1 行，每行包含 2 个用空格隔开的正整数 u、v，表示编号为 u 和编号为 v 的点<br />之间有边相连。 <br />最后 1 行，包含 n 个正整数，每两个正整数之间用一个空格隔开，其中第 i 个整数表示<br />图 G 上编号为 i 的点的权值为 Wi。</dd>
+		<dt>输出</dt>
+		<dd>输出共 1 行，包含 2 个整数，之间用一个空格隔开，依次为图 G 上联合权值的最大值<br />和所有联合权值之和。由于所有联合权值之和可能很大，输出它时要对 10007 取余。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 
+1 2 
+2 3 
+3 4 
+4 5 
+1 5 2 3 10 
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>20 74 </pre></dd>
+				<dt>提示</dt>
+		<dd>对于 30%的数据，1 < n ≤ 100； <br />对于 60%的数据，1 < n ≤ 2000； <br />对于 100%的数据，1 < n ≤ 200,000，0 < Wi ≤ 10,000。</dd>
+						<dt>来源</dt>
+		<dd>SZOI</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/moni2/1/">查看</a></li>
+		<li ><a href="/moni2/1/submit/">提交</a></li>
+				<li ><a href="/moni2/1/statistics/">统计</a></li>
+			
+		<li ><a href="/moni2/clarify/1/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>9587</dd>
+					<dt>添加于</dt>
+			<dd>2016-09-13</dd>
+				<dt>提交次数</dt>
+		<dd>13</dd>
+		<dt>尝试人数</dt>
+	    <dd>4</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

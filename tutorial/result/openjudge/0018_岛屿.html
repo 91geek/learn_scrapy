@@ -1,0 +1,209 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 0018:岛屿</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2016届练习区</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2016/" class="first">题目</a></li>
+            <li ><a href="/2016/ranking/">排名</a></li>
+                    <li ><a href="/2016/status/">状态</a></li>
+	    			        <li class="last"><a href="/2016/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>0018:岛屿</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2016/0018/">查看</a></li>
+		<li ><a href="/2016/0018/submit/">提交</a></li>
+				<li ><a href="/2016/0018/statistics/">统计</a></li>
+			
+		<li ><a href="/2016/clarify/0018/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>40000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>4000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>128000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin: 0cm 0cm 0pt 27pt;"><span style="font-family: 宋体;font-size: 14pt">从前有一座岛屿，这座岛屿是一个长方形，被划为</span><span style="font-family: Calibri;font-size: 14pt">N*M</span><span style="font-family: 宋体;font-size: 14pt">的方格区域，每个区域都有一个确定的高度。不幸的是海平面开始上涨，在第</span><span style="font-family: Calibri;font-size: 14pt">i</span><span style="font-family: 宋体;font-size: 14pt">年，海平面的高度为</span><span style="font-family: Calibri;font-size: 14pt">t[i]</span><span style="font-family: 宋体;font-size: 14pt">。如果一个区域的高度小于等于海平面高度，则视为被淹没。那些没有被淹没的连通的区域够成一个连通块。现在问第</span><span style="font-family: Calibri;font-size: 14pt">i</span><span style="font-family: 宋体;font-size: 14pt">年，这样的连通块有多少个。</span></p><p style="margin: 0cm 0cm 0pt;"><span style="font-family: 宋体;font-size: 14pt">&nbsp;&nbsp;&nbsp;&nbsp;例如：第一年海平面高度为</span><span style="font-family: Calibri;font-size: 14pt">1</span><span style="font-family: 宋体;font-size: 14pt">，有</span><span style="font-family: Calibri;font-size: 14pt">2</span><span style="font-family: 宋体;font-size: 14pt">个连通块。</span></p><p style="margin: 0cm 0cm 0pt;"><span style="font-family: Calibri;font-size: 14pt">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: 宋体;font-size: 14pt">第二年海平面高度为</span><span style="font-family: Calibri;font-size: 14pt">2</span><span style="font-family: 宋体;font-size: 14pt">，有</span><span style="font-family: Calibri;font-size: 14pt">3</span><span style="font-family: 宋体;font-size: 14pt">个连通块。</span></p><p style="margin: 0cm 0cm 0pt;"><span style="font-family: 宋体;font-size: 14pt"><span lang="EN-US" style="font-family: 宋体;font-size: 11pt"><img width="553" height="235" src="data:image/png;base64,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" v:shapes="_x0000_i1025" /></span></span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第一行包含两个数N,M。<br />接下来是一个N*M的矩阵，第i行第j列表示这个格子的高度h[i][j]<br />接下来是一个数T，表示有T天，<br />最后一行有T个数，第i个数表示第i天的水位高度。（保证是递增的）</dd>
+		<dt>输出</dt>
+		<dd>输出包含一行T个数，第i个数表示第i天的连通块个数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>4 5
+1 2 3 3 1
+1 3 2 2 1
+2 1 3 4 3
+1 2 2 2 2
+5
+1 2 3 4 5
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>2 3 1 0 0</pre></dd>
+				<dt>提示</dt>
+		<dd>对于50%的数据： 1 <= n*m <= 1000, 1<= T <=3000<br />对于100%的数据：1<= n <= 3000 , 1<= m <= 3000 , 1<=T<=100000 <br />					1<= h[i][j] <=10^9</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2016/0018/">查看</a></li>
+		<li ><a href="/2016/0018/submit/">提交</a></li>
+				<li ><a href="/2016/0018/statistics/">统计</a></li>
+			
+		<li ><a href="/2016/clarify/0018/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">You shall not black others.<br />
+//sro MHY orz<br />
+//let's warmly welcome our new admin mhy12345<br />
+wormly...<br />
+//hja's English is taught by hj</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>6651</dd>
+					<dt>添加于</dt>
+			<dd>2013-12-16</dd>
+				<dt>提交次数</dt>
+		<dd>12</dd>
+		<dt>尝试人数</dt>
+	    <dd>7</dd>
+	    <dt>通过人数</dt>
+	    <dd>4</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 6:Manhattan Wiring</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://wyu.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/30/logo_small.jpg" alt="五邑大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://wyu.openjudge.cn/" title="首页" rel="home">五邑大学</a></h2>
+		 <span>/</span>
+		 <h2>2016年ACM程序设计大赛校内选拔赛</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/20160416/" class="first">题目</a></li>
+            <li ><a href="/20160416/ranking/">排名</a></li>
+                    <li ><a href="/20160416/status/">状态</a></li>
+	     
+        <li ><a href="/20160416/statistics/">统计</a></li>
+				        <li class="last"><a href="/20160416/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>6:Manhattan Wiring</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/20160416/6/">查看</a></li>
+		<li ><a href="/20160416/6/submit/">提交</a></li>
+				<li ><a href="/20160416/6/statistics/">统计</a></li>
+			
+		<li ><a href="/20160416/clarify/6/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>5000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><span lang="en-us"><p>There is a rectangular area containing <i>n</i> &times; <i>m</i> cells. Two cells are marked with &ldquo;2&rdquo;, and another two with &ldquo;3&rdquo;. Some cells are occupied by obstacles. You should connect the two &ldquo;2&rdquo;s and also the two &ldquo;3&rdquo;s with non-intersecting lines. Lines can run only vertically or horizontally connecting centers of cells without obstacles.</p><p>Lines cannot run on a cell with an obstacle. Only one line can run on a cell at most once. Hence, a line cannot intersect with the other line, nor with itself. Under these constraints, the total length of the two lines should be minimized. The length of a line is defined as the number of cell borders it passes. In particular, a line connecting cells sharing their border has length 1.</p><p>Fig. 1(a) shows an example setting. Fig. 1(b) shows two lines satisfying the constraints above with minimum total length 18.</p><div align="center"><img src=http://media.openjudge.cn/images/3796_1.png></div><p align="center">Figure 1: An example of setting and its solution</p></span></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><span lang="en-us"><p>The input consists of multiple datasets, each in the following format.</p><blockquote><table border="0" width="50"><tr><td width="50%"><i>n</i></td><td width="50%"><i>m</i></td></tr><tr><td colspan="2">row<sub>1</sub></td></tr><tr><td colspan="2">&hellip;</td></tr><tr><td colspan="2">row<i><sub>n</sub></i></td></tr></table></blockquote><p><i>n</i> is the number of rows which satisfies 2 &le; <i>n</i> &le; 9. m is the number of columns which satisfies 2 &le; <i>m</i> &le; 9. Each row<sub><i>i</i></sub> is a sequence of <i>m</i> digits separated by a space. The digits mean the following.</p><blockquote><p><code>0:</code> Empty</p><p><code>1:</code> Occupied by an obstacle</p><p><code>2:</code> Marked with &ldquo;2&rdquo;</p><p><code>3:</code> Marked with &ldquo;3&rdquo;</p></blockquote><p>The end of the input is indicated with a line containing two zeros separated by a space.</p></span></dd>
+		<dt>输出</dt>
+		<dd><span lang="en-us"><p>For each dataset, one line containing the minimum total length of the two lines should be output. If there is no pair of lines satisfying the requirement, answer &ldquo;<code>0</code>&rdquo; instead. No other characters should be contained in the output.</p></span></dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 5
+0 0 0 0 0
+0 0 0 3 0
+2 0 2 0 0
+1 0 1 1 1
+0 0 0 0 3
+2 3
+2 2 0
+0 3 3
+6 5
+2 0 0 0 0
+0 3 0 0 0
+0 0 0 0 0
+1 1 1 0 0
+0 0 0 0 0
+0 0 2 3 0
+5 9
+0 0 0 0 0 0 0 0 0
+0 0 0 0 3 0 0 0 0
+0 2 0 0 0 0 0 2 0
+0 0 0 0 3 0 0 0 0
+0 0 0 0 0 0 0 0 0
+9 9
+3 0 0 0 0 0 0 0 2
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+2 0 0 0 0 0 0 0 3
+9 9
+0 0 0 1 0 0 0 0 0
+0 2 0 1 0 0 0 0 3
+0 0 0 1 0 0 0 0 2
+0 0 0 1 0 0 0 0 3
+0 0 0 1 1 1 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+9 9
+0 0 0 0 0 0 0 0 0
+0 3 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 2 3 2
+0 0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>18
+2
+17
+12
+0
+52
+43</pre></dd>
+						<dt>来源</dt>
+		<dd>Japan 2006</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/20160416/6/">查看</a></li>
+		<li ><a href="/20160416/6/submit/">提交</a></li>
+				<li ><a href="/20160416/6/statistics/">统计</a></li>
+			
+		<li ><a href="/20160416/clarify/6/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>2797</dd>
+				<dt>提交次数</dt>
+		<dd>4</dd>
+		<dt>尝试人数</dt>
+	    <dd>3</dd>
+	    <dt>通过人数</dt>
+	    <dd>2</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

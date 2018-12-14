@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - H:Ecosystem</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://zjut.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/45/logo_small.jpg" alt="浙江工业大学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://zjut.openjudge.cn/" title="首页" rel="home">浙江工业大学</a></h2>
+		 <span>/</span>
+		 <h2>2011暑期训练赛第二场</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/20110707/" class="first">题目</a></li>
+            <li ><a href="/20110707/ranking/">排名</a></li>
+                    <li ><a href="/20110707/status/">状态</a></li>
+	     
+        <li ><a href="/20110707/statistics/">统计</a></li>
+				        <li class="last"><a href="/20110707/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>H:Ecosystem</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/20110707/H/">查看</a></li>
+		<li ><a href="/20110707/H/submit/">提交</a></li>
+				<li ><a href="/20110707/H/statistics/">统计</a></li>
+			
+		<li ><a href="/20110707/clarify/H/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65535kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>When you read about environmental disasters such as the gulf oil spill, you frequently see mention of the damage to the “ecosystem” in the region (in the case of the Gulf of Mexico often with the adjective “fragile” in front of it). One can associate a number of different things with this term, but one dimension is that many different animals and plants depend on each other for survival (or population control), and introducing oil into the food chain could have all kinds of side effects. For instance, even if it didn’t affect Seymour directly, it might kill a lot of zooplankton, so the herrings wouldn’t have enough to eat, and in turn, there wouldn’t be enough food for Seymour. In turn, the squids might like this, because fewer seals means fewer predators. Here, you are to calculate the overall effect on the ecosystem.<br />We model this as follows: there are n species. Each species only eats species lower on the food chain, which means species with lower numbers. For each species, you will be given the initial number of members remaining after some of them have died directly because of the oil. Furthermore, you will be given their diet: how many members of each of the other species one member needs to eat to survive. That is supposed to describe a “balanced diet”: for instance, if we determine that a seal needs to eat a herring and a squid per day, then substituting two herrings and half a squid, or 10 squids, is not sufficient. If the supply of one or more of the food sources is already depleted, then the remaining members of the higher species starve and die (much to the delight of their other prey). For the purpose of this problem, to avoid complication, you will process the species in increasing order. For instance, if both seals (e.g., species 5) and dolphins (e.g., species 12)<br />need herring in their diet, and the seals have eaten all the remaining herrings, then all the dolphins will die.<br />You are to output the number of surviving members of the species.</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line contains the number K of data sets. This is followed by K data sets, each of the following form:<br />The first line contains an integer 1 <= n <= 100, the number of species.<br />This is followed by n lines, with line i describing species i, by giving i integer numbers. The first number is the current population of species i. This is followed by i − 1 integers, giving the number of members of species 1, 2, . . . , i − 1 which a member of species i needs to eat to survive.</dd>
+		<dt>输出</dt>
+		<dd>For each data set, output “Data Set x:” on a line by itself, where x is its number. Then output the number of members<br />of the species (one per line) which survive after one unit of time compared to the starting configuration. Each data set<br />should be followed by a blank line.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>1
+6
+200
+30 2
+1000 0 5
+300 1 0 1
+20 2 0 0 0
+10 1 0 0 0 1</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Data Set 1:
+84
+0
+0
+6
+10
+10
+</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/20110707/H/">查看</a></li>
+		<li ><a href="/20110707/H/submit/">提交</a></li>
+				<li ><a href="/20110707/H/statistics/">统计</a></li>
+			
+		<li ><a href="/20110707/clarify/H/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3560</dd>
+				<dt>提交次数</dt>
+		<dd>11</dd>
+		<dt>尝试人数</dt>
+	    <dd>8</dd>
+	    <dt>通过人数</dt>
+	    <dd>8</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

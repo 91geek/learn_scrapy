@@ -1,0 +1,393 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 6:匹配统计(填空)提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://dsa.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/89/logo_small.jpg" alt="数据结构与算法A" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://dsa.openjudge.cn/" title="首页" rel="home">数据结构与算法A</a></h2>
+		 <span>/</span>
+		 <h2>数据结构与算法A宋老师班模拟考试</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/songexam/" class="first">题目</a></li>
+            <li ><a href="/songexam/ranking/">排名</a></li>
+                    <li ><a href="/songexam/status/">状态</a></li>
+	    			        <li class="last"><a href="/songexam/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>6:匹配统计(填空)</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/songexam/6/">查看</a></li>
+		<li ><a href="/songexam/6/submit/">提交</a></li>
+				<li class="current-show"><a href="/songexam/6/statistics/">统计</a></li>
+			
+		<li ><a href="/songexam/clarify/6/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td>分数</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/756137/in/group-89/">1600012857</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835620/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">39ms</td>
+				<td class="code-length">1100 B</td>
+				<td class="language"><a href="/songexam/solution/11835620/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 22:09:29">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/720309/in/group-89/">1500012636</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835546/" class="result-wrong">Wrong Answer</a></td>
+								<td>3</td>
+								<td class="memory">3208kB</td>
+				<td class="spending-time">37ms</td>
+				<td class="code-length">699 B</td>
+				<td class="language"><a href="/songexam/solution/11835546/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 22:04:51">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835444/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">40ms</td>
+				<td class="code-length">876 B</td>
+				<td class="language"><a href="/songexam/solution/11835444/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 22:00:19">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/793977/in/group-89/">1500011100</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835380/" class="result-wrong">Time Limit Exceeded</a></td>
+								<td>1</td>
+								<td class="memory">2476kB</td>
+				<td class="spending-time">1633ms</td>
+				<td class="code-length">527 B</td>
+				<td class="language"><a href="/songexam/solution/11835380/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:56:55">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835277/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4360kB</td>
+				<td class="spending-time">1038ms</td>
+				<td class="code-length">686 B</td>
+				<td class="language"><a href="/songexam/solution/11835277/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:50:51">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835221/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4480kB</td>
+				<td class="spending-time">84ms</td>
+				<td class="code-length">658 B</td>
+				<td class="language"><a href="/songexam/solution/11835221/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:48:11">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/720309/in/group-89/">1500012636</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835177/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">3200kB</td>
+				<td class="spending-time">36ms</td>
+				<td class="code-length">741 B</td>
+				<td class="language"><a href="/songexam/solution/11835177/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:45:46">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/755503/in/group-89/">1600012823</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11835028/" class="result-wrong">Wrong Answer</a></td>
+								<td>1</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">35ms</td>
+				<td class="code-length">961 B</td>
+				<td class="language"><a href="/songexam/solution/11835028/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:36:50">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/755503/in/group-89/">1600012823</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11834954/" class="result-wrong">Wrong Answer</a></td>
+								<td>1</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">38ms</td>
+				<td class="code-length">950 B</td>
+				<td class="language"><a href="/songexam/solution/11834954/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:34:13">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/755503/in/group-89/">1600012823</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11834942/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">953 B</td>
+				<td class="language"><a href="/songexam/solution/11834942/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:33:31">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/756465/in/group-89/">1600012726</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11834744/" class="result-right">Accepted</a></td>
+								<td>10</td>
+								<td class="memory">2688kB</td>
+				<td class="spending-time">43ms</td>
+				<td class="code-length">793 B</td>
+				<td class="language"><a href="/songexam/solution/11834744/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:25:43">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/756465/in/group-89/">1600012726</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11834739/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">793 B</td>
+				<td class="language"><a href="/songexam/solution/11834739/">Pascal</a></td>
+				<td class="date"><abbr title="2017-12-16 21:25:29">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/756465/in/group-89/">1600012726</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11834718/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">799 B</td>
+				<td class="language"><a href="/songexam/solution/11834718/">Pascal</a></td>
+				<td class="date"><abbr title="2017-12-16 21:24:45">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11834295/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">39ms</td>
+				<td class="code-length">980 B</td>
+				<td class="language"><a href="/songexam/solution/11834295/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 21:06:37">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11834111/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">42ms</td>
+				<td class="code-length">962 B</td>
+				<td class="language"><a href="/songexam/solution/11834111/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 20:58:49">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11833723/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">36ms</td>
+				<td class="code-length">942 B</td>
+				<td class="language"><a href="/songexam/solution/11833723/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 20:44:22">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11833691/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">36ms</td>
+				<td class="code-length">948 B</td>
+				<td class="language"><a href="/songexam/solution/11833691/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 20:43:30">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11833664/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">39ms</td>
+				<td class="code-length">950 B</td>
+				<td class="language"><a href="/songexam/solution/11833664/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 20:42:38">17.12.16</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11833470/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">42ms</td>
+				<td class="code-length">950 B</td>
+				<td class="language"><a href="/songexam/solution/11833470/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 20:36:20">17.12.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/728370/in/group-89/">1600012987(lyutyuh)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/songexam/solution/11833429/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">4608kB</td>
+				<td class="spending-time">35ms</td>
+				<td class="code-length">950 B</td>
+				<td class="language"><a href="/songexam/solution/11833429/">G++</a></td>
+				<td class="date"><abbr title="2017-12-16 20:34:48">17.12.16</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+			</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">15</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">3</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">1</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Time Limit Exceeded</em></td>
+				<td class="count">1</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1:选题1：地下党行动小组（一）[双向链表]</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://sydsb.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="数学学院开设数据结构与算法" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://sydsb.openjudge.cn/" title="首页" rel="home">数学学院开设数据结构与算法</a></h2>
+		 <span>/</span>
+		 <h2>2018-练习2（链表）</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2018lianxi2/" class="first">题目</a></li>
+            <li ><a href="/2018lianxi2/ranking/">排名</a></li>
+                    <li ><a href="/2018lianxi2/status/">状态</a></li>
+	    			        <li class="last"><a href="/2018lianxi2/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1:选题1：地下党行动小组（一）[双向链表]</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2018lianxi2/1/">查看</a></li>
+		<li ><a href="/2018lianxi2/1/submit/">提交</a></li>
+				<li ><a href="/2018lianxi2/1/statistics/">统计</a></li>
+			
+		<li ><a href="/2018lianxi2/clarify/1/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65535kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>某地区有两个地下党行动小组，分别为小组A与小组B。</p><p>每个小组有一个以上的成员，构成上下线关系。每一位成员都有自己的代号与等级。地下党基本上都是采取的单线联系，所以接触到的人只有一个或者两个，一个是上线一个是下线。级别较小的为上线。<br /></p><p><span style="white-space: nowrap;">例如地下党行动小组A的成员有：<br /></span></p><p></p><table width="500" height="100" bordercolor="#000" border="1" cellspacing="0" cellpadding="0"><tbody><tr><td width="83" style="text-align: center;">狐狸</td><td width="83" style="text-align: center;">独狼</td><td width="83" style="text-align: center;">云雀</td><td width="83" style="text-align: center;">鼹鼠</td><td width="83" style="text-align: center;">飞鹰</td><td width="83" style="text-align: center;">杜鹃</td></tr><tr><td width="83" style="text-align: center;">1</td><td width="83" style="text-align: center;">3</td><td width="83" style="text-align: center;">7</td><td width="83" style="text-align: center;">9</td><td width="83" style="text-align: center;">10</td><td width="83" style="text-align: center;">11</td></tr></tbody></table><p>另一个地下党行动小组B的成员有：<br /></p><p></p><table width="500" height="100" bordercolor="#000" border="1" cellspacing="0" cellpadding="0"><tbody><tr><td width="100" style="text-align: center;">雪松</td><td width="100" style="text-align: center;">郁金香</td><td width="100" style="text-align: center;">茉莉</td><td width="100" style="text-align: center;">冷杉</td><td width="100" style="text-align: center;">丁香</td></tr><tr><td width="100" style="text-align: center;">2</td><td width="100" style="text-align: center;">4</td><td width="100" style="text-align: center;">5</td><td width="100" style="text-align: center;">6</td><td width="100" style="text-align: center;">8</td></tr></tbody></table><p><span style="white-space: nowrap;">那么杜鹃是飞鹰的下线、飞鹰是杜鹃的上线。但是鼹鼠和杜鹃有可能互不认识。因此鼹鼠的下线只有飞鹰。<br /></span></p><p><span style="white-space: nowrap;">给定成员的代号与等级，用 <strong>尾插法</strong>建立两个地下党行动小组的 <strong>双向链表</strong>。</span><br /></p><p><span style="white-space: nowrap;">要求给定一个组，一个成员名，可以输出该成员的下线。</span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>第1行是两个整数numA、numB,分别表示每个小组含有的成员个数；<br />接下来的2*numA行由等级从低到高（从上线到下线）的顺序依次输入A小组每个成员的代号（字符串）与等级（整数）；<br />接下来的2*numB行由等级从低到高（从上线到下线）的顺序依次输入B小组每个成员的代号（字符串）与等级（整数）；<br />接下来的1行输入一个字符c，c可以为'A'或'B'，代表要检索哪个小组；<br />接下来的1行输入该小组成员的代号name，代表要检索该小组的哪个成员。<br /><br />/*******************************************************<br />如果写程序输入有困难的同学，可以直接将上表中的数据写进程序中，而不必通过外部进行数据输入。注意OJ平台不能识别程序输出的中文，如果把数据写进代码的话，请将所有中文改为拼音字母。<br />*******************************************************/</dd>
+		<dt>输出</dt>
+		<dd>输出结果有1行，分别为一个字符串+空格+整数值，字符串代表所要检索的成员下线的代号，数值代表该下线成员的等级。<br /><br />/*******************************************************<br />如果写程序输入有困难的同学，请通过查询A小队的双链表，以样例输出的格式输出云雀的下线的名字与等级。<br />*******************************************************/</dd>
+		<dt>样例输入</dt>
+		<dd><pre>6 5
+狐狸
+1
+独狼
+2
+云雀
+7
+鼹鼠
+9
+飞鹰
+10
+杜鹃
+11
+雪松
+2
+郁金香
+4
+茉莉
+5
+冷杉
+6
+丁香
+8
+A
+云雀</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>鼹鼠 9</pre></dd>
+				<dt>提示</dt>
+		<dd>①在该题目中，我们要检索的成员一定存在，并且其一定有下线。但大家在编程实现时应注意检测要搜索的成员是否存在，且其是否有下线。如果其不存在，或其等级最高没有下线的话，请输出“没有人”三个汉字，不用输出空格与等级值。<br /><br />②每个成员的代号字符串长度不会超过20个字符。<br /><br />③有的C/C++编译器不支持中文字符串的输入。不用惊慌，用于检测代码的数据集中，每个成员的代号全部为英文字符：）</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2018lianxi2/1/">查看</a></li>
+		<li ><a href="/2018lianxi2/1/submit/">提交</a></li>
+				<li ><a href="/2018lianxi2/1/statistics/">统计</a></li>
+			
+		<li ><a href="/2018lianxi2/clarify/1/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>9626</dd>
+					<dt>添加于</dt>
+			<dd>2018-09-27</dd>
+				<dt>提交次数</dt>
+		<dd>371</dd>
+		<dt>尝试人数</dt>
+	    <dd>105</dd>
+	    <dt>通过人数</dt>
+	    <dd>102</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

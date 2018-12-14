@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 0024:发明家小明</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2016届练习区</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2016/" class="first">题目</a></li>
+            <li ><a href="/2016/ranking/">排名</a></li>
+                    <li ><a href="/2016/status/">状态</a></li>
+	    			        <li class="last"><a href="/2016/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>0024:发明家小明</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2016/0024/">查看</a></li>
+		<li ><a href="/2016/0024/submit/">提交</a></li>
+				<li ><a href="/2016/0024/statistics/">统计</a></li>
+			
+		<li ><a href="/2016/clarify/0024/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>256000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: " times="" new="">传说中，有一个十分厉害的角色，他叫小明，是生活在一个两边都无限长的一维空间中，不妨把小明家的位置标为</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">0</span></span><span style="FONT-FAMILY: " times="" new="">（即看作是原点），其中一个方向看作正方向（相反的即为反方向或负方向），已知在小明家正方向距离为</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">X</span></span><span style="FONT-FAMILY: " times="" new="">（</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">X&gt;=0</span></span><span style="FONT-FAMILY: " times="" new="">）的位置有一个游乐场，小明每天都要开着他自己发明的豪华飞车去游乐场玩，而小明有</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">4</span></span><span style="FONT-FAMILY: " times="" new="">种类型的车，每天都会选择七中的一种前往目的地，而且这些车子很特别，并不是像地球上的车子一样是连续的开过去的，而是瞬移到当前位置前方或后方某一段距离，下面是这</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">4</span></span><span style="FONT-FAMILY: " times="" new="">种类型车的情况：</span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman" lang="EN-US"> </span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">1</span></span><span style="FONT-FAMILY: " times="" new="">号车：每次能像正方向或反方向移动</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">x</span></span><span style="FONT-FAMILY: " times="" new="">或</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">y</span></span><span style="FONT-FAMILY: " times="" new="">的整数倍的距离；</span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman" lang="EN-US"> </span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">2</span></span><span style="FONT-FAMILY: " times="" new="">号车：每次能向正方向移动</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">x</span></span><span style="FONT-FAMILY: " times="" new="">的正整数倍的距离，或是向反方向移动</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">y</span></span><span style="FONT-FAMILY: " times="" new="">的正整数倍的距离；</span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman" lang="EN-US"> </span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">3</span></span><span style="FONT-FAMILY: " times="" new="">号车：每次能向左或右移动</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">x</span></span><span style="FONT-FAMILY: " times="" new="">的距离，或向左或右移动</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">y</span></span><span style="FONT-FAMILY: " times="" new="">的距离；</span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman" lang="EN-US"> </span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">4</span></span><span style="FONT-FAMILY: " times="" new="">号车：每次能向正方向移动</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">kx+y</span></span><span style="FONT-FAMILY: " times="" new="">（若值为负，即相当于向反方向运动）的距离（</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">k</span></span><span style="FONT-FAMILY: " times="" new="">为整数）；</span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman" lang="EN-US"> </span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">5</span></span><span style="FONT-FAMILY: " times="" new="">号车：每次能向左或右移动的距离为</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">x</span></span><span style="FONT-FAMILY: " times="" new="">，</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">y</span></span><span style="FONT-FAMILY: " times="" new="">，</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">x+y</span></span><span style="FONT-FAMILY: " times="" new="">，</span><span style="FONT-FAMILY: Times New Roman"><span lang="EN-US">x-y</span></span><span style="FONT-FAMILY: " times="" new="">；</span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: Times New Roman" lang="EN-US"> </span></p><p style="MARGIN: 0cm 0cm 0pt"><span style="FONT-FAMILY: " times="" new="">小明最少要多少次移动后能到达目的地？</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>一共10组数据，每组开头给出X>=0，k(k=1,2,3,4,5) ，分别表示游乐场的位置和小明选择的车的类型；接下来一行给出题中相应的x，y。</dd>
+		<dt>输出</dt>
+		<dd>若使用该车无法到达，则输出”That's terrible!!”（不包括引号）,否则输出一个数字，表示最少需要的次数.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>10 3
+2 3
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>4</pre></dd>
+				<dt>提示</dt>
+		<dd>0<=X<=10^7,k=1,2,3,4,5;<br />1<=x,y<=10^5;<br />每种车的数据均有两组,前两种车数据范围比较小。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2016/0024/">查看</a></li>
+		<li ><a href="/2016/0024/submit/">提交</a></li>
+				<li ><a href="/2016/0024/statistics/">统计</a></li>
+			
+		<li ><a href="/2016/clarify/0024/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">You shall not black others.<br />
+//sro MHY orz<br />
+//let's warmly welcome our new admin mhy12345<br />
+wormly...<br />
+//hja's English is taught by hj</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>6701</dd>
+					<dt>添加于</dt>
+			<dd>2013-12-27</dd>
+				<dt>提交次数</dt>
+		<dd>16</dd>
+		<dt>尝试人数</dt>
+	    <dd>16</dd>
+	    <dt>通过人数</dt>
+	    <dd>16</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

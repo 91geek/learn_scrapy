@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 20:Date bugs</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hustunique.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/155/logo_small.jpg" alt="Unique_ALG" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hustunique.openjudge.cn/" title="首页" rel="home">Unique_ALG</a></h2>
+		 <span>/</span>
+		 <h2>每日一题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/day/" class="first">题目</a></li>
+            <li ><a href="/day/ranking/">排名</a></li>
+                    <li ><a href="/day/status/">状态</a></li>
+	    			        <li class="last"><a href="/day/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>20:Date bugs</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/day/20/">查看</a></li>
+		<li ><a href="/day/20/submit/">提交</a></li>
+				<li ><a href="/day/20/statistics/">统计</a></li>
+			
+		<li ><a href="/day/clarify/20/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>There are rumors that there are a lot of computers having a problem with the year 2000. As they use only two digits to represent the year, the date will suddenly turn from 1999 to 1900. In fact, there are also many other, similar problems. On some systems, a 32-bit integer is used to store the number of seconds that have elapsed since a certain fixed date. In this <br />way, when 2^32 seconds (about 136 Years) have elapsed, the date will jump back to whatever the fixed date is. <br />Now, what can you do about all that mess? Imagine you have two computers C1 and C  with two different bugs: One with the ordinary Y2K-Bug (i. e. switching to a1 := 1900 instead of b1 := 2000) and one switching to a2 := 1904 instead of b2 := 2040. Imagine that the C1 displays the year y1 := 1941 and C2 the year y2 := 2005. Then you know the following (assuming that there are no other bugs): the real year can't be 1941, since, then, both computers would show the (same) right date. If the year would be 2005, y1 would be 1905, so this is impossible, too. Looking only at C1 , we know that the real year is one of the following: 1941, 2041, 2141, etc. We now can calculate what C2 would display in these years: 1941, 1905, 2005, etc. So in fact, it is possible that the actual year is 2141. <br />To calculate all this manually is a lot of work. (And you don't really want to do it each time you forgot the actual year.) So, your task is to write a program which does the calculation for you: find the first possible real year, knowing what some other computers say (yi) and knowing their bugs (switching to ai instead of bi ). Note that the year ai is definitely not after the year the computer was built. Since the actual year can't be before the year the computers were built, the year your program is looking for can't be before any ai . </dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The input file contains several test cases, in which the actual year has to be calculated. The description of each case starts with a line containing an integer n (1 <= n <= 20), the number of computers. Then, there is one line containing three integers yi,ai,bi for each computer (0 <= ai <= yi < bi < 10000). yi is the year the computer displays, bi is the year in which the bug happens (i. e. the first year which can't be displayed by this computer) and ai is the year that the computer displays instead of bi . <br />The input is terminated by a test case with n = 0. It should not be processed. </dd>
+		<dt>输出</dt>
+		<dd>For each test case, output output the line "Case #k:", where k is the number of the situation. Then, output the line "The actual year is z.", where z is the smallest possible year (satisfying all computers and being greater or equal to u). If there is no such year less than 10000, output "Unkown bugs detected.". Output a blank line after each case. </dd>
+		<dt>样例输入</dt>
+		<dd><pre>2 
+1941 1900 2000 
+2005 1904 2040 
+2 
+1998 1900 2000 
+1999 1900 2000 
+0 </pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Case #1: 
+The actual year is 2141. 
+
+Case #2: 
+Unknown bugs detected. 
+</pre></dd>
+						<dt>来源</dt>
+		<dd>Mid-Central European Regional Contest 1999</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/day/20/">查看</a></li>
+		<li ><a href="/day/20/submit/">提交</a></li>
+				<li ><a href="/day/20/statistics/">统计</a></li>
+			
+		<li ><a href="/day/clarify/20/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>46</dd>
+					<dt>添加于</dt>
+			<dd>2012-12-30</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

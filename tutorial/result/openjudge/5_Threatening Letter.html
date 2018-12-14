@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 5:Threatening Letter</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://dsa.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/89/logo_small.jpg" alt="数据结构与算法A" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://dsa.openjudge.cn/" title="首页" rel="home">数据结构与算法A</a></h2>
+		 <span>/</span>
+		 <h2>2017年《数据结构与算法A（实验班）》期末考试</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/final2017ht/" class="first">题目</a></li>
+            <li ><a href="/final2017ht/ranking/">排名</a></li>
+                    <li ><a href="/final2017ht/status/">状态</a></li>
+	    			        <li class="last"><a href="/final2017ht/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>5:Threatening Letter</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/final2017ht/5/">查看</a></li>
+		<li ><a href="/final2017ht/5/submit/">提交</a></li>
+				<li ><a href="/final2017ht/5/statistics/">统计</a></li>
+			
+		<li ><a href="/final2017ht/clarify/5/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">FJ has had a terrible fight with his neighbor and wants to send him a nasty letter, but wants to remain anonymous. As so many before him have done, he plans to cut out printed letters and paste them onto a sheet of paper. He has an infinite number of the most recent issue of the Moo York Times that has <var style="box-sizing: inherit;">N</var>(1 ≤ <var style="box-sizing: inherit;">N</var> ≤ 50,000) uppercase letters laid out in a long string (though read in as a series of shorter strings). Likewise, he has a message he&#39;d like to compose that is a single long string of letters but that is read in as a set of shorter strings.</p><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">Being lazy, he wants to make the smallest possible number of cuts. FJ has a really great set of scissors that enables him to remove any single-line snippet from the Moo York Times with one cut. He notices that he can cut entire words or phrases with a single cut, thus reducing his total number of cuts.</p><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">What is the minimum amount of cuts he has to make to construct his letter of <var style="box-sizing: inherit;">M</var> (1 ≤ <var style="box-sizing: inherit;">M</var> ≤ 50,000) letters?</p><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">It is guaranteed that it is possible for FJ to complete his task.</p><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">Consider a 38 letter Moo York Times:</p><blockquote style="box-sizing: inherit; margin: 0px 0px 0.6rem 0.8rem; border: 1px solid lightgrey; padding: 0.3rem 0.7rem; background-color: rgb(240, 255, 240); color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="">THEQUICKBROWNFOXDO GJUMPSOVERTHELAZYDOG</blockquote><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">from which FJ wants to construct a 9 letter message:</p><blockquote style="box-sizing: inherit; margin: 0px 0px 0.6rem 0.8rem; border: 1px solid lightgrey; padding: 0.3rem 0.7rem; background-color: rgb(240, 255, 240); color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="">FOXDOG DOG</blockquote><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">These input lines represent a pair of strings:</p><blockquote style="box-sizing: inherit; margin: 0px 0px 0.6rem 0.8rem; border: 1px solid lightgrey; padding: 0.3rem 0.7rem; background-color: rgb(240, 255, 240); color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="">THEQUICKBROWNFOXDOGJUMPSOVERTHELAZYDOG FOXDOGDOG</blockquote><p style="box-sizing: inherit; margin-top: 0em; margin-right: 0em; margin-left: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="" margin-bottom:="" 0.7rem="">Since &quot;FOXDOG&quot; exists in the newspaper, FJ can cut this piece out and then get the last &quot;DOG&quot; by cutting out either instance of the word &quot;DOG&quot;.</p><p style="box-sizing: inherit; margin: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:="">Thus, he requires but two cuts.</p><p style="box-sizing: inherit; margin: 0em; line-height: 1.4285em; color: rgba(0, 0, 0, 0.87); font-family: Lato, " helvetica="" white-space:="" background-color:=""><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>Line 1: Two space-separated integers: N and M<br />Lines 2..?: N letters laid out on several input lines; this is the text of the one copy of the Moo York Times. Each line will have no more than 80 characters.<br />Lines ?..?: M letters that are the text of FJ's letter. Each line will have no more than 80 characters.</dd>
+		<dt>输出</dt>
+		<dd>Line 1: The minimum number of cuts FJ has to make to create his message.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>38 9
+THEQUICKBROWNFOXDO
+GJUMPSOVERTHELAZYDOG
+FOXDOG
+DOG</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>2</pre></dd>
+						<dt>来源</dt>
+		<dd>USACO 2010 December Gold</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/final2017ht/5/">查看</a></li>
+		<li ><a href="/final2017ht/5/submit/">提交</a></li>
+				<li ><a href="/final2017ht/5/statistics/">统计</a></li>
+			
+		<li ><a href="/final2017ht/clarify/5/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>16507</dd>
+				<dt>提交次数</dt>
+		<dd>29</dd>
+		<dt>尝试人数</dt>
+	    <dd>16</dd>
+	    <dt>通过人数</dt>
+	    <dd>2</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

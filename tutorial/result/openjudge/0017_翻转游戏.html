@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 0017:翻转游戏</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2016届练习区</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2016/" class="first">题目</a></li>
+            <li ><a href="/2016/ranking/">排名</a></li>
+                    <li ><a href="/2016/status/">状态</a></li>
+	    			        <li class="last"><a href="/2016/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>0017:翻转游戏</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2016/0017/">查看</a></li>
+		<li ><a href="/2016/0017/submit/">提交</a></li>
+				<li ><a href="/2016/0017/statistics/">统计</a></li>
+			
+		<li ><a href="/2016/clarify/0017/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>128000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="margin: 0cm 0cm 0pt;"><br /></p><p style="margin: 0cm 0cm 0pt 27pt;"><span><img width="320" height="284" src="data:image/png;base64,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" v:shapes="_x0000_i1025" /></span></p><p style="margin: 0cm 0cm 0pt 27pt;"><span style="font-family: 宋体; font-size: 14pt;">如图，有这样一个</span><span style="font-family: Calibri; font-size: 14pt;">4*4</span><span style="font-family: 宋体; font-size: 14pt;">的棋盘。每次可以操作一个棋子，这个棋子本身及其周围四个方向的棋子（如果存在）都会被翻转，翻转即由黑变白由白变黑。问最少需要多少步能够使所有棋子都变成同种颜色。</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输如一个4*4的矩阵，w表示白色，b表示黑色，不会出现其他字符。</dd>
+		<dt>输出</dt>
+		<dd>输出只有一行，包含所求的最小步数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>bwwb
+bbwb
+bwwb
+bwww
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>4</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2016/0017/">查看</a></li>
+		<li ><a href="/2016/0017/submit/">提交</a></li>
+				<li ><a href="/2016/0017/statistics/">统计</a></li>
+			
+		<li ><a href="/2016/clarify/0017/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">You shall not black others.<br />
+//sro MHY orz<br />
+//let's warmly welcome our new admin mhy12345<br />
+wormly...<br />
+//hja's English is taught by hj</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>6650</dd>
+					<dt>添加于</dt>
+			<dd>2013-12-16</dd>
+				<dt>提交次数</dt>
+		<dd>9</dd>
+		<dt>尝试人数</dt>
+	    <dd>6</dd>
+	    <dt>通过人数</dt>
+	    <dd>4</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

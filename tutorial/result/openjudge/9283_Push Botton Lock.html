@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 9283:Push Botton Lock</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://noi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="NOI(题库正在建设中，做题纪录有可能会被删除，请注意)" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://noi.openjudge.cn/" title="首页" rel="home">NOI(题库正在建设中，做题纪录有可能会被删除，请注意)</a></h2>
+		 <span>/</span>
+		 <h2>2.6基本算法之动态规划</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/ch0206/" class="first">题目</a></li>
+            <li ><a href="/ch0206/ranking/">排名</a></li>
+                    <li ><a href="/ch0206/status/">状态</a></li>
+	    			        <li class="last"><a href="/ch0206/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>9283:Push Botton Lock</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/ch0206/9283/">查看</a></li>
+		<li ><a href="/ch0206/9283/submit/">提交</a></li>
+				<li ><a href="/ch0206/9283/statistics/">统计</a></li>
+			
+		<li ><a href="/ch0206/clarify/9283/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>5000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>131072kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><span style="font-size: medium;">The Frobozz Magic Lock Company is in the business of manufacturing push button style combination door locks. A push button door lock consists of a number of push buttons B, (1 &le; B &le; 11), labeled &ldquo;1&rdquo; through &ldquo;B&rdquo;. The lock is opened by pressing the correct sequence of button combinations and then turning the doorknob. If the sequence of presses is correct, the door magically opens. <br />
+<br />
+A combination consists of 1 or more buttons being pressed simultaneously. A sequence consists of a series of combinations. A sequence must have at least one combination. Once a button has been used in a combination, it may not be used again in the same sequence. In addition, it is not necessary to use all the buttons in a sequence. For example, for B = 8: <br />
+<br />
+(1-2-3)(4)(7-8) <br />
+<br />
+is a valid sequence with 3 combinations (1-2-3), (4), and (7-8). Note that buttons 5 and 6 are not used in this sequence. <br />
+<br />
+(1-2-3)(2-4)(5-6) <br />
+<br />
+is not a valid sequence, since button 2 appears in 2 combinations (1-2-3) and (2-4). <br />
+The CEO of Frobozz, J. Pierpont Flathead, wants you to write a program that determines the number of valid sequences possible for given values of B. The program must be able to process a list of lock orders (datasets) from customers and generate a report showing the order number, the value of B, and the number of valid sequences possible. This list will always contain at least one dataset, but no more than 100 datasets. <br />
+<br />
+N个不同的数字，放到一些不同的BOX里面，数字你不必用完，Box的个数也是可变的.比如三个球，你可以只放一个BOX，也可以放二个或者三个，但是四个BOX那就不可能了.每个数字只能放到一个BOX里，问有多少种放法.<br />
+</span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><p><span style="font-size: medium;">The first line of input contains a  single integer N, (1 &le; N &le; 100), representing the number of datasets  that follow. Each dataset consists of a single line of data containing a  single integer B, which is the number of buttons for the lock. </span></p></dd>
+		<dt>输出</dt>
+		<dd><p><span style="font-size: medium;">&nbsp;For each dataset, display the dataset number, a blank, the value B, a blank, and the number of valid sequences. <br /><br />先输出是第几组数据，再输出这个数据的输入，再给出你的答案</span></p></dd>
+		<dt>样例输入</dt>
+		<dd><pre>3
+3
+4
+3</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1 3 25
+2 4 149
+3 3 25</pre></dd>
+				<dt>提示</dt>
+		<dd><p><span style="font-size: medium;">当有三个数字时，总有以下25种放法.<br /><br />1:当使用一个数字时，那么最多只能用一个BOX，因而有[1],[2],[3]这三种放法.<br /><br />2：当使用二个数字时，那么可以使用数字1,2，当只有一个BOX时有[1,2]这种放法，当使用二个时有[1],[2]<br /><br />或者[2],[1]这种放法；当然你也可以使用数字1,3或者2,3因而共有9种放法.<br /><br />3:当使用三个数字时，我就不推了，共有13种放法.<br /><br />综上，共有3+9+13=25种！<br /><br /></span></p></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/ch0206/9283/">查看</a></li>
+		<li ><a href="/ch0206/9283/submit/">提交</a></li>
+				<li ><a href="/ch0206/9283/statistics/">统计</a></li>
+			
+		<li ><a href="/ch0206/clarify/9283/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>9283</dd>
+					<dt>添加于</dt>
+			<dd>2016-06-16</dd>
+				<dt>提交次数</dt>
+		<dd>121</dd>
+		<dt>尝试人数</dt>
+	    <dd>47</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

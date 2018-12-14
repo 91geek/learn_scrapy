@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1099:2013-05-20 nanae的新欢</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2014级各种训练题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2014/" class="first">题目</a></li>
+            <li ><a href="/2014/ranking/">排名</a></li>
+                    <li ><a href="/2014/status/">状态</a></li>
+	    			        <li class="last"><a href="/2014/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1099:2013-05-20 nanae的新欢</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2014/1099/">查看</a></li>
+		<li ><a href="/2014/1099/submit/">提交</a></li>
+				<li ><a href="/2014/1099/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1099/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>30000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>512000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style=""><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>和她心爱的爱酱分手了<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">…</span>因为适妞是其中的小三。适妞跟<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>在一起的时候，特别爱吃醋，不想让<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>提及一点儿关于爱酱的事情。</p><p class="MsoNormal" style="">适妞要求<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae </span>换一个<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>，因为<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>的这个<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>已经跟<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">cxlove</span>紧紧地联系在了一起。</p><p class="MsoNormal" style=""><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae </span>挑选<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>是很挑剔的，她不想让适妞看见他的<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>里面有一丝跟爱酱有关的词。<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;"> </span>这些词被称作<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">“</span>敏感词<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">”</span>。</p><p class="MsoNormal" style="">适妞也不能让<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>瞎选<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>，他也希望<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>选择的单词和自己有关的。同时他希望<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>的长度与原来<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>的长度相同，于是适妞规定了<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>的新<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>的上下区间（也就是字典序必须介于这两个字符串之间，包含两端）</p><p class="MsoNormal" style=""><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae</span>想问你，他现在有多少种选择能满足适妞的要求。</p><p class="MsoNormal" style="">因为<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">nanae </span>智力有限，他只能算到<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">2013*2013</span>。所以，你只要输出答案对于<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">(2013*2013) </span>取模的值即可。</p><p class="MsoNormal" style=""><span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">P.S: nanae</span>的<span style="font-family:&#39;Times New Roman&#39;,&#39;serif&#39;">ID</span>仅由小写字母组成。</p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入数据的前两行是两个长度相等的由小写字母组成的字符串，S，T。 代表nanae ID 的上下界。<br />下面一行是一个整数 N，代表有N个敏感词，是nanae新的ID里不能出现的。<br />接下来 N 行，每行一个字符串 P，代表不能出现的敏感词。<br />下面一行是一个整数 M，代表有M个适妞希望出现在 nanae 新 ID 里面的词，每个单词至少需要出现一次。<br />接下来M行每行一个字符串 Q，代表适妞想出现在nanae 新 ID 里的词。</dd>
+		<dt>输出</dt>
+		<dd>输出一个整数，代表nanae 可以选择的ID个数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>ilovecxlove
+iloveshiniu
+1
+cxlove
+1
+shiniu
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1</pre></dd>
+				<dt>提示</dt>
+		<dd>对于所有的数据，S的字典序在T之前，它们的长度<=2013。<br />N<=10，M<=3<br />字符串P和Q的长度均不超过10</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2014/1099/">查看</a></li>
+		<li ><a href="/2014/1099/submit/">提交</a></li>
+				<li ><a href="/2014/1099/statistics/">统计</a></li>
+			
+		<li ><a href="/2014/clarify/1099/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">crf is sb<br />
+crf is sd<br />
+crf gg<br />
+crf zb<br />
+crf hsg<br />
+crf 刷霸<br />
+有问题找zhx</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>5946</dd>
+					<dt>添加于</dt>
+			<dd>2013-05-21</dd>
+				<dt>提交次数</dt>
+		<dd>11</dd>
+		<dt>尝试人数</dt>
+	    <dd>5</dd>
+	    <dt>通过人数</dt>
+	    <dd>4</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

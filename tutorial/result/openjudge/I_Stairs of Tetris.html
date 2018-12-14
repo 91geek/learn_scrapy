@@ -1,0 +1,230 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - I:Stairs of Tetris</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://poj.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/2/logo_small.jpg" alt="PKU Online Judge" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://poj.openjudge.cn/" title="首页" rel="home">PKU Online Judge</a></h2>
+		 <span>/</span>
+		 <h2>PKU Campus 2017</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/campus2017/" class="first">题目</a></li>
+            <li ><a href="/campus2017/ranking/">排名</a></li>
+                    <li ><a href="/campus2017/status/">状态</a></li>
+	     
+        <li ><a href="/campus2017/statistics/">统计</a></li>
+		 
+        <li ><a href="/campus2017/print/">打印</a></li>
+			        <li class="last"><a href="/campus2017/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>I:Stairs of Tetris</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/campus2017/I/">查看</a></li>
+		<li ><a href="/campus2017/I/submit/">提交</a></li>
+				<li ><a href="/campus2017/I/statistics/">统计</a></li>
+			
+		<li ><a href="/campus2017/clarify/I/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="text-align: left;">Can a man build a staircase with tetrominoes? Maybe he can, maybe he cannot, or maybe he would be confused by what the question means. Let me make this clear. The world in which we are living is submerged in chaos -- it has no rules, no regular patterns, and even if you insist it does, you must admit that clearly it is not tidy at all. But the world of Tetris is different. The whole world can be constructed by only 7 kinds of tetrominoes. You get a piece of tetromino, rotate it, move it, then place it somewhere, and if you luckily filled an entire row,&quot;whew!&quot;, that row is eliminated – and this is the only rule applied to this world. It is rather easy to construct a staircase in such a regular, tidy world -- well, maybe it is.
+</p><p>If you still don&#39;t understand what you should do (probably you don&#39;t), follow the instructions below carefully -- we are going to examine this problem seriously from now on.</p><p>Consider a staircase we have been talking about with length N as a staircase-shaped grid with N rows and N columns, and for the i-th row, it has i grids in it. To clarify this, a staircase with length 4 would look like this:</p><p style="text-align: center;"><img width="150" height="150" src="http://media.openjudge.cn/images/upload/1495305722.jpg" /></p><p>Tetrominoes refers to a set of blocks originated from the game Tetris, which includes 7 kinds of blocks and each of them occupies exactly 4 grids. Figure below shows the shapes of these tetrominoes.</p><p style="text-align: center;"><img width="682" height="228" src="http://media.openjudge.cn/images/upload/1495305784.jpg" /></p><p>Given an integer N, you should cover the staircase-shaped grid (or staircase for short) with tetrominoes. For each piece of tetromino you use, you can rotate it by 0, 90, 180 or 270 degrees, then place it somewhere aligned with grid lines in the staircase. The tetrominoes you place should not overlap with each other, or outreach the staircase. Every grid in the staircase should be covered by a tetromino. The tetrominoes you place will never be eliminated, since this is not a real Tetris game.</p><p>You can use any amount of each kind of tetrominoes you want to build the staircase. However, there is one restriction: you should use as many kinds of tetrominoes as possible. That is, if there exists a solution that uses up all 7 kinds of tetrominoes, your answer which uses only 6 kinds of tetrominoes will be not acceptable.</p><p style="margin: 0px; text-indent: 0px; -qt-block-indent: 0;"></p><p style="margin: 0px; text-indent: 0px; -qt-block-indent: 0;">Since there might be multiple solutions for a given N, you may output any one of them. To output your solution, you should assign a block number (ranging from 0 to 2<sup>31</sup>-1) to each grid in the staircase to specify which tetromino covers this grid. Two consecutive grids (sharing a common edge) with the same block number will be considered as covered by the same tetromino. The block numbers do not need to be unique among all the tetrominoes, as long as any two tetrominoes with the same block number are not adjacent (sharing at least one common edge).</p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line contains an integer T (1 <= T <= 10), indicating the number of test cases.<br />			<br />			For each test case:<br />			<br />			One line contains an integer N (1 <= N <= 300), indicating the length of the staircase you need to build.</dd>
+		<dt>输出</dt>
+		<dd>For each test case:<br />			<br />			If the solution does not exist, output a single line containing an integer -1;<br />			<br />			If there exists several solutions, output any one of them. Output N lines (N is the length of the staircase in this test case), the i-th line contains i integers (ranging from 0 to 2^31-1) separated by spaces, indicating the block number you assigned to each grid in the i-th row.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2
+15
+2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1
+1 1
+2 1 3
+2 3 3 1
+2 3 1 1 1
+2 4 4 2 2 1
+1 4 4 2 1 1 1
+1 1 1 2 3 3 3 3
+2 2 2 1 1 2 2 2 4
+2 1 3 2 1 2 3 3 4 4
+1 1 3 2 1 4 3 3 4 3 3
+1 3 3 2 3 4 4 1 1 1 3 3
+4 4 4 2 3 3 4 1 3 3 2 2 1
+3 4 1 1 3 2 2 2 3 3 2 1 1 4
+3 3 3 1 1 2 1 1 1 1 2 1 4 4 4
+-1</pre></dd>
+				<dt>提示</dt>
+		<dd>In the first test case, the length of the staircase is 15. The solution uses up all 7 kinds of tetrominoes. Note that you can use as many block numbers as you want while the sample output only uses four block numbers.</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/campus2017/I/">查看</a></li>
+		<li ><a href="/campus2017/I/submit/">提交</a></li>
+				<li ><a href="/campus2017/I/statistics/">统计</a></li>
+			
+		<li ><a href="/campus2017/clarify/I/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">Sulutions of Problem C has been rejudged (due to Special Judge errors)<br />
+<br />
+Balloon Color<br />
+ A - Red<br />
+ B - Light Green<br />
+ C - Green<br />
+ D - Purple<br />
+ E - Rose<br />
+ F - Light Blue<br />
+ G - Blue<br />
+ H - Smile<br />
+ I - Pink<br />
+ J - Yellow<br />
+ K - Orange</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>15054</dd>
+				<dt>提交次数</dt>
+		<dd>70</dd>
+		<dt>尝试人数</dt>
+	    <dd>24</dd>
+	    <dt>通过人数</dt>
+	    <dd>17</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li><a href="http://poj.openjudge.cn//history.html" rel="nofollow">历届出题人名单</a></li>
+						<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

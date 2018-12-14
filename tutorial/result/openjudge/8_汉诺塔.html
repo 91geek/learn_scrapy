@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 8:汉诺塔</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hxjsgl.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="化学学院计算概论" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hxjsgl.openjudge.cn/" title="首页" rel="home">化学学院计算概论</a></h2>
+		 <span>/</span>
+		 <h2>模拟考试</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/mockexam/" class="first">题目</a></li>
+            <li ><a href="/mockexam/ranking/">排名</a></li>
+                    <li ><a href="/mockexam/status/">状态</a></li>
+	     
+        <li ><a href="/mockexam/statistics/">统计</a></li>
+				        <li class="last"><a href="/mockexam/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>8:汉诺塔</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/mockexam/8/">查看</a></li>
+		<li ><a href="/mockexam/8/submit/">提交</a></li>
+				<li ><a href="/mockexam/8/statistics/">统计</a></li>
+			
+		<li ><a href="/mockexam/clarify/8/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>256000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><div align="left"><span>汉诺（Hanoi）塔问题：古代有一个梵塔，塔内有三个座A、B、C，A座上有n个盘子，盘子大小不等，大的在下，小的在上（如图）。有一个和尚想把这n个盘子从A座移到C座，但每次只能允许移动一个盘子，并且在移动过程中，3个座上的盘子始终保持大盘在下，小盘在上。在移动过程中可以利用B、C座，要求打印移动的步骤（前100步）和共需步数。</span></div><p><img src="http://media.openjudge.cn/images/upload/1336881595.gif" width="514" height="195" /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入只有一行，为一正整数n，n在0和25之间。</dd>
+		<dt>输出</dt>
+		<dd>若移动步数为n，则：<br />若n>100，输出前100步。<br />若n<=100，输出所有步。<br />最后一行输出n。<br />每一步的格式：a b c d，a为步序数，b为移动的盘子序号，c d表示从c移到d。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1 1 A C
+2 2 A B
+3 1 C B
+4 3 A C
+5 1 B A
+6 2 B C
+7 1 A C
+8 4 A B
+9 1 C B
+10 2 C A
+11 1 B A
+12 3 C B
+13 1 A C
+14 2 A B
+15 1 C B
+16 5 A C
+17 1 B A
+18 2 B C
+19 1 A C
+20 3 B A
+21 1 C B
+22 2 C A
+23 1 B A
+24 4 B C
+25 1 A C
+26 2 A B
+27 1 C B
+28 3 A C
+29 1 B A
+30 2 B C
+31 1 A C
+31</pre></dd>
+				<dt>提示</dt>
+		<dd>使用递归。<br />步数step可以定义在main()函数之外，在hanoi()函数内修改step。<br />不要忘记最后换行\n！</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/mockexam/8/">查看</a></li>
+		<li ><a href="/mockexam/8/submit/">提交</a></li>
+				<li ><a href="/mockexam/8/statistics/">统计</a></li>
+			
+		<li ><a href="/mockexam/clarify/8/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>4759</dd>
+				<dt>提交次数</dt>
+		<dd>145</dd>
+		<dt>尝试人数</dt>
+	    <dd>54</dd>
+	    <dt>通过人数</dt>
+	    <dd>44</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

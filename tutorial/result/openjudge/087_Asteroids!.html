@@ -1,0 +1,245 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 087:Asteroids!</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://jshzoi.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="江苏省泗洪中学信息学" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://jshzoi.openjudge.cn/" title="首页" rel="home">江苏省泗洪中学信息学</a></h2>
+		 <span>/</span>
+		 <h2>数据结构随课习题</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/datastuct/" class="first">题目</a></li>
+            <li ><a href="/datastuct/ranking/">排名</a></li>
+                    <li ><a href="/datastuct/status/">状态</a></li>
+	    			        <li class="last"><a href="/datastuct/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>087:Asteroids!</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/datastuct/087/">查看</a></li>
+		<li ><a href="/datastuct/087/submit/">提交</a></li>
+				<li ><a href="/datastuct/087/statistics/">统计</a></li>
+			
+		<li ><a href="/datastuct/clarify/087/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>You're in space.<br />You want to get home.<br />There are asteroids.<br />You don't want to hit them. </dd>
+				
+				
+				<dt>输入</dt>
+		<dd>Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets. <br /><br />A single data set has 5 components: <br /><ol><li>Start line - A single line, "START N", where 1 <= N <= 10. <br /><li>Slice list - A series of N slices. Each slice is an N x N matrix representing a horizontal slice through the asteroid field. Each position in the matrix will be one of two values: <br /><ul>'O' - (the letter "oh") Empty space<br />'X' - (upper-case) Asteroid present </ul><br /><li>Starting Position - A single line, "A B C", denoting the [A,B,C] coordinates of your craft's starting position. The coordinate values will be integers separated by individual spaces. <br /><li>Target Position - A single line, "D E F", denoting the [D,E,F] coordinates of your target's position. The coordinate values will be integers separated by individual spaces. <br /><li>End line - A single line, "END" </ol><br />The origin of the coordinate system is [0,0,0]. Therefore, each component of each coordinate vector will be an integer between 0 and N-1, inclusive. <br /><br />The first coordinate in a set indicates the column. Left column = 0.<br />The second coordinate in a set indicates the row. Top row = 0.<br />The third coordinate in a set indicates the slice. First slice = 0. <br /><br />Both the Starting Position and the Target Position will be in empty space. <br /><br /></dd>
+		<dt>输出</dt>
+		<dd>For each data set, there will be exactly one output set, and there will be no blank lines separating output sets. <br /><br />A single output set consists of a single line. If a route exists, the line will be in the format "X Y", where X is the same as N from the corresponding input data set and Y is the least number of moves necessary to get your ship from the starting position to the target position. If there is no route from the starting position to the target position, the line will be "NO ROUTE" instead. <br /><br />A move can only be in one of the six basic directions: up, down, left, right, forward, back. Phrased more precisely, a move will either increment or decrement a single component of your current position vector by 1. <br /></dd>
+		<dt>样例输入</dt>
+		<dd><pre>START 1
+O
+0 0 0
+0 0 0
+END
+START 3
+XXX
+XXX
+XXX
+OOO
+OOO
+OOO
+XXX
+XXX
+XXX
+0 0 1
+2 2 1
+END
+START 5
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+XXXXX
+XXXXX
+XXXXX
+XXXXX
+XXXXX
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+0 0 0
+4 4 4
+END
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1 0
+3 4
+NO ROUTE
+</pre></dd>
+						<dt>来源</dt>
+		<dd>South Central USA 2001</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/datastuct/087/">查看</a></li>
+		<li ><a href="/datastuct/087/submit/">提交</a></li>
+				<li ><a href="/datastuct/087/statistics/">统计</a></li>
+			
+		<li ><a href="/datastuct/clarify/087/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>1227</dd>
+					<dt>添加于</dt>
+			<dd>2017-06-19</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

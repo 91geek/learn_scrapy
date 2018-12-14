@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1024:[Nescafé II] 防线</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://tadyz.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="泰安一中oi" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://tadyz.openjudge.cn/" title="首页" rel="home">泰安一中oi</a></h2>
+		 <span>/</span>
+		 <h2>分治/二分</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/fz/" class="first">题目</a></li>
+            <li ><a href="/fz/ranking/">排名</a></li>
+                    <li ><a href="/fz/status/">状态</a></li>
+	    			        <li class="last"><a href="/fz/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1024:[Nescafé II] 防线</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/fz/1024/">查看</a></li>
+		<li ><a href="/fz/1024/submit/">提交</a></li>
+				<li ><a href="/fz/1024/statistics/">统计</a></li>
+			
+		<li ><a href="/fz/clarify/1024/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>128000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p><span style="font-size: medium;font-family: &#39;WenQuanYi Micro Hei Mono&#39;, &#39;WenQuanYi Micro Hei&#39;, &#39;Microsoft Yahei Mono&#39;, &#39;Microsoft Yahei&#39;, sans-serif;background-color: rgb(240, 255, 255)">lsp学习数学竞赛的时候受尽了同仁们的鄙视，终于有一天……受尽屈辱的lsp黑化成为了黑暗英雄Lord lsp。就如同中二漫画的情节一样，Lord lsp打算毁掉这个世界。数学竞赛界的精英lqr打算阻止Lord lsp的阴谋，于是她集合了一支由数学竞赛选手组成的超级行动队。由于队员们个个都智商超群，很快，行动队便来到了Lord lsp的黑暗城堡的下方。</span><br style="font-family: Simsun; font-size: medium; white-space: normal;" /><span style="font-size: medium;font-family: &#39;WenQuanYi Micro Hei Mono&#39;, &#39;WenQuanYi Micro Hei&#39;, &#39;Microsoft Yahei Mono&#39;, &#39;Microsoft Yahei&#39;, sans-serif;background-color: rgb(240, 255, 255)">但是，同样强大的 Lord lsp 在城堡周围布置了一条“不可越过”的坚固防线。防线由很多防具组成，这些防具分成了 N 组。我们可以认为防线是一维的，那么每一组防具都分布在防线的某一段上，并且同一组防具是等距离排列的。也就是说，我们可以用三个整数 S，E和D来描述一组防具，即这一组防具布置在防线的 S，S+D，S+2D，...，S+KD（K∈Z，S+KD≤E，S+(K+1)D＞E）位置上。</span><br style="font-family: Simsun; font-size: medium; white-space: normal;" /><span style="font-size: medium;font-family: &#39;WenQuanYi Micro Hei Mono&#39;, &#39;WenQuanYi Micro Hei&#39;, &#39;Microsoft Yahei Mono&#39;, &#39;Microsoft Yahei&#39;, sans-serif;background-color: rgb(240, 255, 255)">黑化的 Lord lsp 设计的防线极其精良。如果防线的某个位置有偶数个防具，那么这个位置就是毫无破绽的（包括这个位置一个防具也没有的情况，因为 0 也是偶数） 。只有有奇数个防具的位置有破绽，但是整条防线上也最多只有一个位置有奇数个防具。作为行动队的队长，lqr要找到防线的破绽以策划下一步的行动。但是，由于防具的数量太多，她实在是不能看出哪里有破绽。作为lqr可以信任的学弟学妹们，你们要帮助她解决这个问题。</span><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入文件的第一行是一个整数T，表示有T组互相独立的测试数据。 <br />每组数据的第一行是一个整数N。 <br />之后N行，每行三个整数Si，Ei，Di，代表第i组防具的三个参数。</dd>
+		<dt>输出</dt>
+		<dd>对于每组测试数据，如果防线没有破绽，即所有的位置都有偶数个防具，输出一行<br />“There's no weakness.” （不包含引号） <br />否则在一行内输出两个空格分隔的整数P和C，表示在位置P有C个防具。当然C应该是一个奇数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 
+2 
+1 10 1 
+2 10 1 
+2 
+1 10 1 
+1 10 1 
+4 
+1 10 1 
+4 4 1 
+1 5 1 
+6 10 1 </pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>1 1 
+There’s no weakness. 
+4 3 </pre></dd>
+				<dt>提示</dt>
+		<dd>限制<br /><br />对于 30% 的数据，满足防具总数不多于 107。<br />对于 100% 的数据，满足防具总数不多于 108，Si≤Ei，1≤T≤5，N≤200000，0≤Si，<br />Ei，Di≤231-1。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/fz/1024/">查看</a></li>
+		<li ><a href="/fz/1024/submit/">提交</a></li>
+				<li ><a href="/fz/1024/statistics/">统计</a></li>
+			
+		<li ><a href="/fz/clarify/1024/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>11708</dd>
+					<dt>添加于</dt>
+			<dd>2016-09-26</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

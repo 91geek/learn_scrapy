@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 2036:拱猪计分</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ccnu.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/16/logo_small.jpg" alt="编程 Java/c/c++帝国" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ccnu.openjudge.cn/" title="首页" rel="home">编程 Java/c/c++帝国</a></h2>
+		 <span>/</span>
+		 <h2>练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/practice/" class="first">题目</a></li>
+            <li ><a href="/practice/ranking/">排名</a></li>
+                    <li ><a href="/practice/status/">状态</a></li>
+	    			        <li class="last"><a href="/practice/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>2036:拱猪计分</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/practice/2036/">查看</a></li>
+		<li ><a href="/practice/2036/submit/">提交</a></li>
+				<li ><a href="/practice/2036/statistics/">统计</a></li>
+			
+		<li ><a href="/practice/clarify/2036/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>64kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>拱猪是一种很有趣的扑克牌游戏。 即使你不知道它的玩法，你也可以由它的计分方式来了解它的趣味性。 假设在此我们仅考虑四个人的拱猪牌局，本题要求你根据下面的计分规则，在牌局结束时计算四位玩家所得分数。<br />1.	我们分别以 S、H、D 及 C 来代表黑桃，红心，方块及梅花，并以数字 1 至 13 来代表 A、2、…、Q、K 等牌点，例如︰ H1 为红心 A，S13 为黑桃 K。<br />2.	牌局结束时，由各玩家持有的有关计分的牌(计分牌)仅有 S12 (猪)，所有红心牌，D11 (羊)及 C10 (加倍)等16张牌。其它牌均弃置不计。若未持有这 16 张牌之任一张则以得零分计算。 <br />3.	若持有 C10 的玩家只有该张牌而没有任何其它牌则得 +50 分，若除了 C10 还有其它计分牌，则将其它计分牌所得分数加倍计算。 <br />4.	若红心牌不在同一家，则 H1 至 H13 等 13 张牌均以负分计，其数值为 -50，-2，-3，-4，-5，-6，-7，-8，-9，-10，-20，-30，-40。而且 S12 与 D11 分别以 -100 及 +100 分计算。 <br />5.	若红心牌 H1 至H13 均在同一家，有下列情形︰ <br />o	所有红心牌以+200分计算。 <br />o	若 S12、D11 皆在吃下所有红心牌之一家，则此玩家得 +500 分。 <br />o	而 C10 还是以前面所述原则计算之。 <br />例一：若各玩家持有计分牌如下：(每列代表一玩家所持有之牌) <br />       S12   H3   H5   H13<br />       D11   H8   H9<br />       C10   H1   H2   H4   H6    H7<br />       H10   H11  H12 <br />则各家之得分依序为：-148、+83、-138 及 -60。 <br />例二：若各玩家持有计分牌如下：(第四家未持有任何计分牌) <br />       H1  H2  H3  H4  H5  H6  H7  H8  H9  H10  H11  H12  H13  <br />       S12  C10<br />       D11<br />则各家之得分依序为：+200、-200、+100 及 0。 <br />例三：若有一玩家持有所有 16 张计分牌，则得 +1000 分。其余三家均得零分。</dd>
+				
+				
+				<dt>输入</dt>
+		<dd>每个输入由多组测试数据构成，每组测试数据有四行，每一行第一个数为该玩家所持有计分牌总数，而后列出其所持有之所有计分牌，牌数与各计分牌均以一个以上的空格分开。相邻两组测试数据之间不会有空白行，读到四家持牌数都为 0 表示文件结束。</dd>
+		<dt>输出</dt>
+		<dd>每一行输出一组测试数据对应的结果，依次输出各家所得分数，共四个整数(含正负号，0 除外)，相邻两个整数之间以一个空格分开，符号和数字间不可以有空格。每组输出间不需要有空白行。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>4  S12  H3  H5  H13
+3  D11  H8  H9
+6  C10  H1  H2  H4  H6  H7
+3  H10  H11 H12
+13 H1  H2  H3  H4  H5  H6  H7  H8  H9  H10  H11  H12  H13  
+2  S12  C10
+1  D11
+0
+0
+0
+0
+0
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>-148 +83 -138 -60
++200 -200 +100 0
+</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/practice/2036/">查看</a></li>
+		<li ><a href="/practice/2036/submit/">提交</a></li>
+				<li ><a href="/practice/2036/statistics/">统计</a></li>
+			
+		<li ><a href="/practice/clarify/2036/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">语言选择GCC提交</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>3108</dd>
+					<dt>添加于</dt>
+			<dd>2011-01-12</dd>
+				<dt>提交次数</dt>
+		<dd>1</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

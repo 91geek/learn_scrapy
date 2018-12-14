@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - A:Butterfly</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://algorithm.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/237/logo_small.jpg" alt="算法分析和复杂性理论" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://algorithm.openjudge.cn/" title="首页" rel="home">算法分析和复杂性理论</a></h2>
+		 <span>/</span>
+		 <h2>2017算法课第二次作业-2018练习</h2>
+		<span style="font-size:14px;">正在进行中</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/algorithmb/" class="first">题目</a></li>
+            <li ><a href="/algorithmb/ranking/">排名</a></li>
+                    <li ><a href="/algorithmb/status/">状态</a></li>
+	     
+        <li ><a href="/algorithmb/statistics/">统计</a></li>
+				        <li class="last"><a href="/algorithmb/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>A:Butterfly</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/algorithmb/A/">查看</a></li>
+		<li ><a href="/algorithmb/A/submit/">提交</a></li>
+				<li ><a href="/algorithmb/A/statistics/">统计</a></li>
+			
+		<li ><a href="/algorithmb/clarify/A/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>100ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>有一群旅行爱好者，有一天，他们带回了n只蝴蝶回来。他们相信每一只都属于两个不同种类中的一种，为了讨论方便，我们称它们为A与B。他们想把n只标本分成两组——一些属于A且一些属于B——但是直接标记任何一个标本对于他们是非常困难，因此他们决定采用下面的方法。<br /></p><p>对每对标本i和j，他们细心地把它们放到一起研究。如果他们以自己的判断足以确信，那么他们把这对蝴蝶标记为“相同”（这意味着他们相信这两只来自同一类）或者是“不同”（这意味着他们相信这两只来自不同的类）。他们也可以对某些标本判断不出来而弃权，在这种情况下，我们称这对标本是不明确的。</p><p>现在他们有n只标本的集合，还有对那些没有弃权的标本对的m个判断的集合（“相同”或者“不同”）。他们想知道这个数据与每只蝴蝶来自A和B中的一个类的想法是否一致。更具体地说，如果对每对蝴蝶按照下述方式标记A或B是可能的，即对每个标为“相同”的（i，j）对，就是i与j有相同标记的情况；对每个标为“不同”的（i，j）对，就是i与j有不同标记的情况。那么我们可以说这m个判断是一致的。他们正在冥思苦想自己的判断是否是一致的。请你帮他们设计合理的算法解决该问题。<br /><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入包含多组数据，以文件结束符为终止。<br /><br />每组数据第一行为两个整数，分别是n和m：<br />n为蝴蝶的数量，编号从0到n-1<br />m为关系的数量<br /><br />接下来是m组关系数据，每组数据占一行，为三个整数，前两个整数表示蝴蝶的编号，第三个整数为关系的种类（相同或者不同）：<br />0为相同，1为不同<br /><br />1 < n <= 1000<br />1 < m <= 100000</dd>
+		<dt>输出</dt>
+		<dd>合理就输出YES<br />不合理就输出NO</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 3
+0 1 0
+1 2 1
+0 2 1
+3 3
+0 1 0
+1 2 1
+0 2 0</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>YES
+NO</pre></dd>
+				<dt>提示</dt>
+		<dd>注意输出的大写和回车</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/algorithmb/A/">查看</a></li>
+		<li ><a href="/algorithmb/A/submit/">提交</a></li>
+				<li ><a href="/algorithmb/A/statistics/">统计</a></li>
+			
+		<li ><a href="/algorithmb/clarify/A/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>8594</dd>
+				<dt>提交次数</dt>
+		<dd>926</dd>
+		<dt>尝试人数</dt>
+	    <dd>194</dd>
+	    <dt>通过人数</dt>
+	    <dd>193</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

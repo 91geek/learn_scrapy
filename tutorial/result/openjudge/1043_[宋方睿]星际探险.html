@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1043:[宋方睿]星际探险</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>2011集训队互测</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2011nt/" class="first">题目</a></li>
+            <li ><a href="/2011nt/ranking/">排名</a></li>
+                    <li ><a href="/2011nt/status/">状态</a></li>
+	    			        <li class="last"><a href="/2011nt/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1043:[宋方睿]星际探险</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2011nt/1043/">查看</a></li>
+		<li ><a href="/2011nt/1043/submit/">提交</a></li>
+				<li ><a href="/2011nt/1043/statistics/">统计</a></li>
+			
+		<li ><a href="/2011nt/clarify/1043/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>10000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p>&nbsp;&nbsp;&nbsp;&nbsp;众所周知，新世纪的科学很发达，于是Ray 和Raven 开始了星际探险，他们在宇宙中开辟了一片空间，建造了N 个空间站。这N 个空间站由一些单向的时空隧道连接，这些时空隧道都有一个穿越指数，穿过这些时空隧道，你可以走到未来或者回到过去，当然，这些都是由穿越指数决定的。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;有一天，Ray 和Raven 开始了一场比赛。他们要从一个空间站S 出发去另一个空间站T，先到的人获胜。Raven 一定会选一条能最快到达T 的路线。他希望Ray 输给他，所以事先在Ray 的飞船上设定了飞行路径，使得Ray 从S 到T 只能走一条特定的路径。但是，Ray 有对策，他有一台能够操纵时空隧道的机器，这台机器每次可以把某一条时空隧道的穿越指数增加或减少1，但是因为操纵机器很累，所以Ray 希望尽可能少改动，当然，如果改动后从某个空间站经过一系列的穿越可以在从这个空间站出发之前回到这个空间站，那么这样的改动是不允许的。修改之后，Raven 依然会走能最快到达终点的路线，所以Ray 是不可能赢的。但他请你帮助他确定改动时空隧道的方案，使得他能和Raven 同时到达T。<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入的第一行包含两个整数N 和M，代表空间站的数目和时空隧道的数目。<br />接下来M 行，每行三个整数u、v 和w，代表从空间站u 到空间站 v 有一条时空隧道，它的穿越指数是w。0 <= w <= 2000。空间站的编号是0 : : :N − 1。<br />第M + 2 行包含一个整数p，代表Raven 在Ray 的飞船上设定的那条路径的空间站数。p <= N。<br />第M + 3 行包含p 个互不相同的数，表示那条路径上的空间站的编号，第一个数是S，最后一个数是T。</dd>
+		<dt>输出</dt>
+		<dd>输出的第一行包含一个整数，表示Ray 走那条路径并且能够赢得比赛的情况下操纵时间机器的最小次数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3 3
+0 1 1
+1 2 2
+0 2 1
+30
+1 2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>2</pre></dd>
+				<dt>提示</dt>
+		<dd>一共有10 个数据，对于第i (1 <= i <= 10) 个数据， N = i * 500， M = i * 5000。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2011nt/1043/">查看</a></li>
+		<li ><a href="/2011nt/1043/submit/">提交</a></li>
+				<li ><a href="/2011nt/1043/statistics/">统计</a></li>
+			
+		<li ><a href="/2011nt/clarify/1043/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>4805</dd>
+					<dt>添加于</dt>
+			<dd>2012-05-20</dd>
+				<dt>提交次数</dt>
+		<dd>9</dd>
+		<dt>尝试人数</dt>
+	    <dd>1</dd>
+	    <dt>通过人数</dt>
+	    <dd>1</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

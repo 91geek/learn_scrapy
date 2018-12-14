@@ -1,0 +1,388 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1:判断闰年提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://ic.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="thinkcs" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://ic.openjudge.cn/" title="首页" rel="home">thinkcs</a></h2>
+		 <span>/</span>
+		 <h2>Lab4</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2018lab4/" class="first">题目</a></li>
+            <li ><a href="/2018lab4/ranking/">排名</a></li>
+                    <li ><a href="/2018lab4/status/">状态</a></li>
+	     
+        <li ><a href="/2018lab4/statistics/">统计</a></li>
+				        <li class="last"><a href="/2018lab4/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>1:判断闰年</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/2018lab4/1/">查看</a></li>
+		<li ><a href="/2018lab4/1/submit/">提交</a></li>
+				<li class="current-show"><a href="/2018lab4/1/statistics/">统计</a></li>
+			
+		<li ><a href="/2018lab4/clarify/1/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/903266/in/group-407/">1800011721</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16505297/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">85ms</td>
+				<td class="code-length">124 B</td>
+				<td class="language"><a href="/2018lab4/solution/16505297/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-19 19:32:49">24天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/903253/in/group-407/">1800011827</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16501789/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">102ms</td>
+				<td class="code-length">172 B</td>
+				<td class="language"><a href="/2018lab4/solution/16501789/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-19 16:26:05">24天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899707/in/group-407/">1800017771</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16494834/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">104ms</td>
+				<td class="code-length">167 B</td>
+				<td class="language"><a href="/2018lab4/solution/16494834/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 23:37:34">24天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/906120/in/group-407/">1800011767</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16494722/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">105ms</td>
+				<td class="code-length">157 B</td>
+				<td class="language"><a href="/2018lab4/solution/16494722/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 23:27:41">24天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/901870/in/group-407/">xzyxzy869</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16494707/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">105ms</td>
+				<td class="code-length">76 B</td>
+				<td class="language"><a href="/2018lab4/solution/16494707/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 23:26:34">24天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899792/in/group-407/">1800011802</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16494610/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">101ms</td>
+				<td class="code-length">151 B</td>
+				<td class="language"><a href="/2018lab4/solution/16494610/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 23:18:46">24天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/903186/in/group-407/">1800011776</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16493872/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">79ms</td>
+				<td class="code-length">195 B</td>
+				<td class="language"><a href="/2018lab4/solution/16493872/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 22:30:18">24天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899685/in/group-407/">1800011745</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16493785/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">96ms</td>
+				<td class="code-length">99 B</td>
+				<td class="language"><a href="/2018lab4/solution/16493785/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 22:24:46">24天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/905251/in/group-407/">1800011742</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16486658/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">71ms</td>
+				<td class="code-length">172 B</td>
+				<td class="language"><a href="/2018lab4/solution/16486658/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 18:06:14">25天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899757/in/group-407/">1800011843(Hulihulu)</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16478667/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">77ms</td>
+				<td class="code-length">113 B</td>
+				<td class="language"><a href="/2018lab4/solution/16478667/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 12:53:44">25天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899702/in/group-407/">1800011837</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16477412/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">89ms</td>
+				<td class="code-length">195 B</td>
+				<td class="language"><a href="/2018lab4/solution/16477412/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 11:33:09">25天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/904694/in/group-407/">1800011758</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16476417/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">73ms</td>
+				<td class="code-length">115 B</td>
+				<td class="language"><a href="/2018lab4/solution/16476417/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 10:56:50">25天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/904694/in/group-407/">1800011758</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16476243/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">97ms</td>
+				<td class="code-length">63 B</td>
+				<td class="language"><a href="/2018lab4/solution/16476243/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-18 10:49:32">25天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/903256/in/group-407/">1800011809</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16470370/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">90ms</td>
+				<td class="code-length">171 B</td>
+				<td class="language"><a href="/2018lab4/solution/16470370/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-17 21:02:30">26天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/903256/in/group-407/">1800011809</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16470346/#compile-error" class="result-ce">Compile Error</a></td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">170 B</td>
+				<td class="language"><a href="/2018lab4/solution/16470346/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-17 21:01:36">26天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899710/in/group-407/">1800011737</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16467258/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">74ms</td>
+				<td class="code-length">236 B</td>
+				<td class="language"><a href="/2018lab4/solution/16467258/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-17 18:45:39">26天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899733/in/group-407/">1800011830</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16458746/" class="result-right">Accepted</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">111ms</td>
+				<td class="code-length">92 B</td>
+				<td class="language"><a href="/2018lab4/solution/16458746/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-17 12:37:48">26天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899733/in/group-407/">1800011830</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16458694/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">103ms</td>
+				<td class="code-length">98 B</td>
+				<td class="language"><a href="/2018lab4/solution/16458694/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-17 12:33:22">26天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899733/in/group-407/">1800011830</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16458663/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">93ms</td>
+				<td class="code-length">73 B</td>
+				<td class="language"><a href="/2018lab4/solution/16458663/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-17 12:30:28">26天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899733/in/group-407/">1800011830</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/2018lab4/solution/16458643/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">6772kB</td>
+				<td class="spending-time">99ms</td>
+				<td class="code-length">61 B</td>
+				<td class="language"><a href="/2018lab4/solution/16458643/">Python3</a></td>
+				<td class="date"><abbr title="2018-11-17 12:27:51">26天前</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+					<a href="?page=4">4</a>
+					<a href="?page=5">5</a>
+		
+					<span>...</span>
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">100</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">48</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">3</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Runtime Error</em></td>
+				<td class="count">2</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

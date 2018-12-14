@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 4066:Guard Towers</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://pkuteam.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/7/logo_small.jpg" alt="北京大学ACM-ICPC竞赛队" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://pkuteam.openjudge.cn/" title="首页" rel="home">北京大学ACM-ICPC竞赛队</a></h2>
+		 <span>/</span>
+		 <h2>ICPC竞技编程练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/icpc/" class="first">题目</a></li>
+            <li ><a href="/icpc/ranking/">排名</a></li>
+                    <li ><a href="/icpc/status/">状态</a></li>
+	    			        <li class="last"><a href="/icpc/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>4066:Guard Towers</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/icpc/4066/">查看</a></li>
+		<li ><a href="/icpc/4066/submit/">提交</a></li>
+				<li ><a href="/icpc/4066/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4066/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>49500ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>1500ms</dd>
+			<dt>内存限制: </dt>
+		<dd>256000kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p style="text-align: justify;">In a far away kingdom lives a very greedy king. To defend his land, he built n guard towers. Apart from the towers the kingdom has two armies, each headed by a tyrannical and narcissistic general. The generals can&#39;t stand each other, specifically, they will never let soldiers of two armies be present in one tower.<br /><br />During defence operations to manage a guard tower a general has to send part of his army to that tower. Each general asks some fee from the king for managing towers. As they live in a really far away kingdom, each general evaluates his fee in the following weird manner: he finds two remotest (the most distant) towers, where the soldiers of his army are situated and asks for the fee equal to the distance. Each tower is represented by a point on the plane with coordinates (x, y), and the distance between two points with coordinates (x<sub>1</sub>, y<sub>1</sub>) and (x<sub>2</sub>, y<sub>2</sub>) is determined in this kingdom as |x<sub>1</sub> - x<sub>2</sub>| + |y<sub>1</sub> - y<sub>2</sub>|.<br /><br />The greedy king was not exactly satisfied with such a requirement from the generals, that&#39;s why he only agreed to pay one fee for two generals, equal to the maximum of two demanded fees. However, the king is still green with greed, and among all the ways to arrange towers between armies, he wants to find the cheapest one. Each tower should be occupied by soldiers of exactly one army.<br /><br />He hired you for that. You should find the minimum amount of money that will be enough to pay the fees. And as the king is also very scrupulous, you should also count the number of arrangements that will cost the same amount of money. As their number can be quite large, it is enough for the king to know it as a remainder from dividing by 10<sup>9</sup> + 7.<br /><br />Two arrangements are distinct if the sets of towers occupied by soldiers of the first general are distinct.<br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line contains an integer n (2 ≤ n ≤ 5000), n is the number of guard towers. Then follow n lines, each of which contains two integers x, y — the coordinates of the i-th tower (0 ≤ x, y ≤ 5000). No two towers are present at one point.<br /><br />Pretest 6 is one of the maximal tests for this problem.</dd>
+		<dt>输出</dt>
+		<dd>Print on the first line the smallest possible amount of money that will be enough to pay fees to the generals.<br /><br />Print on the second line the number of arrangements that can be carried out using the smallest possible fee. This number should be calculated modulo 1000000007 (10<sup>9</sup> + 7).</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2
+0 0
+1 1</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>0
+2</pre></dd>
+				<dt>提示</dt>
+		<dd>Note: In the first example there are only two towers, the distance between which is equal to 2. If we give both towers to one general, then we well have to pay 2 units of money. If each general receives a tower to manage, to fee will be equal to 0. That is the smallest possible fee. As you can easily see, we can obtain it in two ways.<br /><br /><b>Sample Input (2)</b><br /><pre>4<br />0 0<br />0 1<br />1 0<br />1 1</pre><br /><b>Sample Output (2)</b><br /><pre>1<br />4</pre><br /><br /><b>Sample Input (3)</b><br /><pre>3<br />0 0<br />1000 1000<br />5000 5000</pre><br /><b>Sample Output (3)</b><br /><pre>2000<br />2</pre><br /><br /><span style="color:red">WARNING: this problem from <a href="http://codeforces.com">codeforces.com</a> is for Summer 2013 Practice Sessions at PKU only.</span><br />Codeforces materials usage license (v. 0.1)<br /><ol><br /><li>You may publish the texts of Codeforces problems in any open sources, but you must preserve a direct link to the site <a href="http://codeforces.ru">http://codeforces.ru</a> (<a href="http://codeforces.com">http://codeforces.com</a> for English statements) and indicate Codeforces as the problem source. These data should be located in the close proximity to the statement, be easily noticeable and readable. It is forbidden to publish Codeforces problems in open sources supporting automatic testing (such as online judges or similar resources).<br /><li>You must not use tests and other materials of the problems (generators, checkers, validators) to publish tasks in open sources supporting automatic testing (such as online judges or similar resources) even provided the original problem conditions has been changed.<br /><li>You may use the provided material: tests, generators, checkers, validators and others for individual training or to organize short-term teaching and training activities with the participants present on-site. Task conditions should contain the data from paragraph 1 of this license. The secondary (subsequent) distribution of the tasks should contain this license and comply fully with the license’s rules.<br /></ol></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/icpc/4066/">查看</a></li>
+		<li ><a href="/icpc/4066/submit/">提交</a></li>
+				<li ><a href="/icpc/4066/statistics/">统计</a></li>
+			
+		<li ><a href="/icpc/clarify/4066/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>6074</dd>
+					<dt>添加于</dt>
+			<dd>2017-07-26</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

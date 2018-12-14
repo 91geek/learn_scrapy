@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 14752:2-1-6星期查询小系统</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://hz2hs.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="杭州四中/养正/江南/滨和 信奥平台" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://hz2hs.openjudge.cn/" title="首页" rel="home">杭州四中/养正/江南/滨和 信奥平台</a></h2>
+		 <span>/</span>
+		 <h2>语言基础学习1(无循环)</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/c/" class="first">题目</a></li>
+            <li ><a href="/c/ranking/">排名</a></li>
+                    <li ><a href="/c/status/">状态</a></li>
+	    			        <li class="last"><a href="/c/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>14752:2-1-6星期查询小系统</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/c/14752/">查看</a></li>
+		<li ><a href="/c/14752/submit/">提交</a></li>
+				<li ><a href="/c/14752/statistics/">统计</a></li>
+			
+		<li ><a href="/c/clarify/14752/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><strong><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">C</span></strong><strong><span style="font-size: 16pt">语言</span></strong><strong><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">-</span></strong><strong><span style="font-size: 16pt">基础课程</span></strong></p><p class="MsoNormal" style=";;background:white;text-align:center;"><strong><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">2</span></strong><strong><span style="font-size: 16pt">、</span></strong><strong><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">C</span></strong><strong><span style="font-size: 16pt">语言分支和循环</span></strong></p><p class="MsoNormal" style=";;background:white;text-align:right;"><strong><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">2.1 C</span></strong><strong><span style="font-size: 16pt">语言会做比较和判断</span></strong></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><strong><span style="font-size:22.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;;color:#0070C0">2-1-6</span></strong><strong><span style="font-size: 22pt;color: rgb(0, 112, 192)">星期查询小系统</span></strong></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;"> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">我们已经学习了</span><code><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">if</span></code><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">和</span><code><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">else</span></code><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">的嵌套使用，当多层的嵌套使用时出错的可能性就增加了。</span><span style="font-size:12.0pt;font-family:&#39;Georgia&#39;,&#39;serif&#39;;color:#444443;background-color:white">C</span><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">语言中还有一种新的语句能解决这个问题，我一直叫它开关语句：</span><code><strong><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">switch</span></strong></code><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">，下面我们来讲一下怎么使用</span><code><strong><span style="font-size:12.0pt;font-family:Consolas;color:red;background-color:#F9F2F4">switch</span></strong></code><strong><span style="font-size: 12pt;color: red;background-color: white">语句</span></strong><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">：</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;"> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><strong><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">switch</span></strong><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">(weekday)</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">{</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>case 1:</strong></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;Today is Monday\n&quot;);</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>break;</strong> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;"> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>case 2:</strong></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;Today is Tuesday\n&quot;);</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>break;</strong></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>case 7:</strong></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;Today is Sunday\n&quot;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red">//case</span></span><span style="font-size: 12pt;color: red">这一句结束了才有分号哟</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>break;</strong> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;"> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>default:</strong></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;printf(&quot;You write number is wrong!&quot;);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red">//default</span></span><span style="font-size: 12pt;color: red">这一句结束了才有分号哟</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;<strong>break;&nbsp;&nbsp;&nbsp;&nbsp; </strong><span style="color:#0070C0">//</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(0, 112, 192)">每个</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#0070C0">case</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(0, 112, 192)">和</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#0070C0">default</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(0, 112, 192)">语句</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(0, 112, 192)">后面都必须有一个</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#0070C0">break</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(0, 112, 192)">，是跳出的意思</span></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">}</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;"> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;"> </span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">上面的代码就是</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">switch</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">的使用方法，</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">switch</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">后面的括号（</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:&#39;Georgia&#39;,&#39;serif&#39;;color:#444443"> </span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">）里是一个变量，上面的例子中</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">weekday</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">就是个变量，用来存数字的，我们希望这个数字是</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:&#39;Georgia&#39;,&#39;serif&#39;;color:#444443">1-7</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">之间的整数。</span></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;</span><code><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">case</span></code><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">后面跟着的数字就是用来跟</span><code><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">weekday</span></code><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">进行匹配的，如果是</span><code><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">weekday</span></code><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">中存</span><span style="font-size:12.0pt;font-family:&#39;Georgia&#39;,&#39;serif&#39;;color:#444443;background-color:white">1</span><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">，就进入</span><code><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">case 1</span></code><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">中，进行相应的处理，否则就不会进去。</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">case</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">后面可以写数字，也可以是一个字母，但不能是变量，每个</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">case</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">后面跟的不能重复。</span></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">default</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">是用来处理异常的，比如</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">weekday</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">中存的不是</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:&#39;Georgia&#39;,&#39;serif&#39;;color:#444443">1-7</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">的数字而是别的，这时就会进入到</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">default</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">这个语句中进行相应的处理</span></span><span style="font-size: 12pt;color: rgb(68, 68, 67);background-color: white">。</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size:12.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">每个</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">case</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">后面必须有一个</span></span><span class="annotator-hl"><span style="font-size:12.0pt;font-family:Consolas;color:#C7254E;background-color:#F9F2F4">break</span></span><span class="annotator-hl"><span style="font-size: 12pt;color: rgb(68, 68, 67)">，是跳出的意思。</span></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span class="annotator-hl"><span style="font-size:12.0pt;font-family:&#39;Georgia&#39;,&#39;serif&#39;;color:#444443"> </span></span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><strong><span style="font-size: 16pt;color: rgb(0, 112, 192);background-color: white">课堂作业：</span></strong><span style="font-size: 16pt;color: rgb(0, 112, 192);background-color: white">输入一个</span><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;;color:#0070C0;background-color:white">0-7</span><span style="font-size: 16pt;color: rgb(0, 112, 192);background-color: white">的整数，判断它是星期几。</span></p><p class="MsoNormal" style="background-color: white;background-position: initial initial;background-repeat: initial initial;text-align:left;"><span style="font-size: 16pt;color: rgb(0, 112, 192);background-color: white">参考</span><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;;color:#0070C0;background-color:white">2-1-6</span><span style="font-size: 16pt;color: rgb(0, 112, 192);background-color: white">视频教程最后的代码进行修改，提交到</span><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;;color:#0070C0;background-color:white">openjudge11</span><span style="font-size: 16pt;color: rgb(0, 112, 192);background-color: white">中题库。此代码可使用</span><strong><span style="font-size:16.0pt;font-family:&#39;Helvetica&#39;,&#39;sans-serif&#39;;color:red;background-color:white">switch</span></strong><strong><span style="font-size: 16pt;color: red;background-color: white">语句</span></strong><span style="font-size: 16pt;background-color: white">。</span></p><p><br /></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入一个整数类型的变量Weekday</dd>
+		<dt>输出</dt>
+		<dd>Weekday=1，输出"Today is Monday"<br />Weekday=2，输出"Today is Tuesday"<br />Weekday=3，输出"Today is Wednesday"<br />Weekday=4，输出"Today is Thursday"<br />Weekday=5，输出"Today is Friday"<br />Weekday=6，输出"Today is Saturday"<br />Weekday=7，输出"Today is Sunday"<br />Weekday不是1-7的数字，输出"You write number is wrong!"</dd>
+		<dt>样例输入</dt>
+		<dd><pre>3</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Today is Wednesday</pre></dd>
+				<dt>提示</dt>
+		<dd>提示：题目要求输出的英文单词可以复制哦，免得自己输错</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/c/14752/">查看</a></li>
+		<li ><a href="/c/14752/submit/">提交</a></li>
+				<li ><a href="/c/14752/statistics/">统计</a></li>
+			
+		<li ><a href="/c/clarify/14752/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>14752</dd>
+					<dt>添加于</dt>
+			<dd>2017-05-04</dd>
+				<dt>提交次数</dt>
+		<dd>86</dd>
+		<dt>尝试人数</dt>
+	    <dd>52</dd>
+	    <dt>通过人数</dt>
+	    <dd>50</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1022:Sanguo</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://poj.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/2/logo_small.jpg" alt="PKU Online Judge" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://poj.openjudge.cn/" title="首页" rel="home">PKU Online Judge</a></h2>
+		 <span>/</span>
+		 <h2>练习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/practice/" class="first">题目</a></li>
+            <li ><a href="/practice/ranking/">排名</a></li>
+                    <li ><a href="/practice/status/">状态</a></li>
+	    			        <li class="last"><a href="/practice/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1022:Sanguo</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/practice/1022/">查看</a></li>
+		<li ><a href="/practice/1022/submit/">提交</a></li>
+				<li ><a href="/practice/1022/statistics/">统计</a></li>
+			
+		<li ><a href="/practice/clarify/1022/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><div><p>After East Han dynasty, China was divided into several states. Wei, Wu, and Shu are the greatest three states among them. This was the era of Sanguo. During this period, wars frequently happened between states. Zhuge Liang, the commander and strategist of Shu, wanted to enlarge Shu's power. He was considering conquering <i>N</i> cities. However, these cities must be defeated in a specified order. <i>City-X</i> could be defeated only after <i>City-1</i>, <i>City-2</i>, <i>City-3</i> ... <i>City-(X-1)</i> had been defeated. However, passing through the cities that had not been defeated was eligible. Zhuge wanted to use three generals, Guan Yu, Zhang Fei, and Zhao yun, each of whom should lead an army. The three armies, started from Yizhou, which was numbered with <i>City-0</i>. After conquered all the <i>N</i> cities (each cities must be conquered at least by one army), they had to return to Yizhou.</p><p>The <i>N</i> cities and Yizhou were connected by <i>M</i> bi-directed roads. To travel from city to city was a very boring and expensive thing. So Zhuge wanted to minimize the total length of the three armies' traveling. You were hired to help him to compute the minimum total length of the traveling.</p></div></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><p>Line1: two integers <i>N</i> and <i>M</i>. <i>N</i> is the number of cities Zhuge wanted to conquer, and <i>M</i> is the number of roads between the <i>N</i> + 1 cities.<br>Line2...Line(<i>M</i>+1): each line contain 3 integers, <i>X</i>, <i>Y</i>, <i>Len</i>, indicating a road between <i>City-X</i> and <i>City-Y</i>, with the length of <i>Len</i>.<br>You can suppose that all the <i>N </i>+ 1 cities are connected.<br><i>N</i> ≤ 500,<i> M</i> ≤ 20000, <i>Len</i> ≤ 1000</p></dd>
+		<dt>输出</dt>
+		<dd><p>Line1: an integer, which is the minimum total length of the three armies' traveling.</p></dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 15
+5 5 48
+1 4 658
+4 0 843
+1 4 41
+1 4 330
+5 2 864
+4 2 115
+4 0 303
+2 3 685
+0 0 879
+1 5 649
+2 4 942
+4 0 379
+5 2 769
+5 1 856
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>3668</pre></dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/practice/1022/">查看</a></li>
+		<li ><a href="/practice/1022/submit/">提交</a></li>
+				<li ><a href="/practice/1022/statistics/">统计</a></li>
+			
+		<li ><a href="/practice/clarify/1022/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>3368</dd>
+					<dt>添加于</dt>
+			<dd>2011-05-08</dd>
+				<dt>提交次数</dt>
+		<dd>247</dd>
+		<dt>尝试人数</dt>
+	    <dd>51</dd>
+	    <dt>通过人数</dt>
+	    <dd>36</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li><a href="http://poj.openjudge.cn//history.html" rel="nofollow">历届出题人名单</a></li>
+						<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

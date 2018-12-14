@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1056:[CDQZ20120424]智者的考验</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cdqz.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/132/logo_small.jpg" alt="成都磨子桥技工学校" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cdqz.openjudge.cn/" title="首页" rel="home">成都磨子桥技工学校</a></h2>
+		 <span>/</span>
+		 <h2>校内省选难度练习(2012)</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/province1/" class="first">题目</a></li>
+            <li ><a href="/province1/ranking/">排名</a></li>
+                    <li ><a href="/province1/status/">状态</a></li>
+	    			        <li class="last"><a href="/province1/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1056:[CDQZ20120424]智者的考验</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/province1/1056/">查看</a></li>
+		<li ><a href="/province1/1056/submit/">提交</a></li>
+				<li ><a href="/province1/1056/statistics/">统计</a></li>
+			
+		<li ><a href="/province1/clarify/1056/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>30000ms</dd>
+			<dt>单个测试点时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>262144kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="p0" style="text-indent:21.0000pt; margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 10.5pt">公元1371年，太祖下令在</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">北极阁上大建庙宇</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">，短短几年，</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">鸡笼山上</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">便</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">建</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">成了</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">帝王庙、关公庙、真武庙、功臣庙、蒋王庙、都城隍庙、卞壶庙、忠烈庙、刘越王庙、曹武惠王庙共十座庙宇</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">，</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">统称为“十庙”</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">。</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)"><o:p></o:p></span></p><p class="p0" style="text-indent:21.0000pt; margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">后来，为了方便人们来鸡笼山进香礼佛，</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">太祖</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">下令疏通了鸡笼山下已淤塞多年的潮沟。</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">于是，便有了</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">“进香河”。</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)"><o:p></o:p></span></p><p class="p0" style="text-indent:21.0000pt; margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">然而并不是所有人都可以来鸡笼山的，太祖在进香河上修建了一座石桥，中间悬挂了一块高Rx宽Ry的机关格图（如下图所示）。所有格子都是活动可翻转的，一面是白色，一面是黑色，这里我们用0表示白色，用1表示黑色。初始情况下，所有格子都是白色面朝前的。有Rx+Ry个机关按钮，对应Rx行和Ry列。一个按钮一旦触发，就会引发对应的一行或一列的格子同时翻转。</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)"><o:p></o:p></span></p><p class="p0" style="text-indent:21.0000pt; margin-bottom:0pt; margin-top:0pt; text-align:center; "><img width="undefined" height="undefined" src="http://www.mftp.info/20120504/f8b23cbb0fec824ecb1457818f2fb130.png" /><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)"><o:p></o:p></span></p><p class="p0" style="text-indent:21.0000pt; margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">同时，善于识天象的谋臣刘基给出了一种黑白状态，称之为“厄运星”。每一位过往前去鸡笼山的人都需要触发且只触发一个按钮，触发后，如果来访者呈“厄运星”形状，则不允许通过。</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)"><o:p></o:p></span></p><p class="p0" style="text-indent:21.0000pt; margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">每一天要来鸡笼山的人数N是事先就知道的，同时天朝神威浩荡，每一位来者一开始总是有很大概率触发编号为1的按钮，我们不妨用数列A</span><span style="font-size: 7.5pt;background-color: rgb(255, 252, 246)">1</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">,A</span><span style="font-size: 7.5pt;background-color: rgb(255, 252, 246)">2</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">,</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">…</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">,A</span><span style="font-size: 8pt;background-color: rgb(255, 252, 246)">N</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">来表示，</span><span style="text-decoration: underline;font-size: 10.5pt;background-color: rgb(255, 252, 246)">问题保证了初始时候的A数列全为1</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">。同时在整个问题中，A</span><span style="font-size: 7.5pt;background-color: rgb(255, 252, 246)">i</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">满足1&lt;=a&lt; span=&quot;&quot;&gt;<span style="font-size: 7.5pt;background-color: rgb(255, 252, 246)">i</span><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">&lt;=rx+ry。太祖很关心那些不允许去鸡笼山的人数。于是他时不时就会询问关于“某一段时间内会有多少人不能通过“厄运星”的考验”。然而那些前来鸡笼山的文人墨客并不愿意如此单一的操作。来访者有可能会突然决定修改自己的触发按钮。更麻烦的情况，结伴而来的连续若干人会突然决定修改触发按钮并且都去触发同一个按钮。&lt; span=&quot;&quot;&gt;<span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)"><o:p></o:p></span><!--=rx+ry。太祖很关心那些不允许去鸡笼山的人数。于是他时不时就会询问关于“某一段时间内会有多少人不能通过“厄运星”的考验”。然而那些前来鸡笼山的文人墨客并不愿意如此单一的操作。来访者有可能会突然决定修改自己的触发按钮。更麻烦的情况，结伴而来的连续若干人会突然决定修改触发按钮并且都去触发同一个按钮。<--></span><!--=a<--></span></p><p class="p0" style="text-indent:21.0000pt; margin-bottom:0pt; margin-top:0pt; "><span style="font-size: 10.5pt;background-color: rgb(255, 252, 246)">现在这麻烦的问题交给了你。</span></p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>输入文件第一行有2个数字Rx和Ry表示机关格图的高和宽（如图所示）。之后Rx行每一行Ry个数字，描述了“厄运星”形状，每一个数字都满足非0即1.<br />之后一行有两个数字，分别为N和M，表示人数和询问修改的次数。<br />之后M行，对应M次询问或修改。每一行先有一个数字t：<br />    若t为0：之后有2个数字d和x，表明将Ad修改为x。<br />    若t为1：之后有2个数字l和r，表明询问第l个人到第r个人中有多少人触发按钮后会出现“厄运星”形状，从而无法通过。<br />    若t为2：之后有3个数字l,r和x，表面将Al,Al+1,…,Ar-1,Ar都修改为x。</dd>
+		<dt>输出</dt>
+		<dd>对于每一次询问(即t为1的情况)，输出单独一行，一个整数描述了在区间[l,r]中满足要求的人数。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2 3
+0 0 1
+1 1 0
+7 4
+1 1 7
+0 2 3
+0 3 4	
+1 1 7</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>0
+3</pre></dd>
+				<dt>提示</dt>
+		<dd>对于40%的数据，N<=5000,M<=10000。<br />存在70%的数据，N<=130000,M<=30000。	<br />对于100%的数据，N<=1000000，M<=120000，Rx<=2，Ry<=3。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/province1/1056/">查看</a></li>
+		<li ><a href="/province1/1056/submit/">提交</a></li>
+				<li ><a href="/province1/1056/statistics/">统计</a></li>
+			
+		<li ><a href="/province1/clarify/1056/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>4857</dd>
+					<dt>添加于</dt>
+			<dd>2012-05-22</dd>
+				<dt>提交次数</dt>
+		<dd>4</dd>
+		<dt>尝试人数</dt>
+	    <dd>4</dd>
+	    <dt>通过人数</dt>
+	    <dd>4</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - B10:游览规划</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://cxsjsx.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/9/logo_small.jpg" alt="程序设计实习" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://cxsjsx.openjudge.cn/" title="首页" rel="home">程序设计实习</a></h2>
+		 <span>/</span>
+		 <h2>2018 期末上机汇总</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/2018ftall/" class="first">题目</a></li>
+            <li ><a href="/2018ftall/ranking/">排名</a></li>
+                    <li ><a href="/2018ftall/status/">状态</a></li>
+	     
+        <li ><a href="/2018ftall/statistics/">统计</a></li>
+				        <li class="last"><a href="/2018ftall/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>B10:游览规划</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/2018ftall/B10/">查看</a></li>
+		<li ><a href="/2018ftall/B10/submit/">提交</a></li>
+				<li ><a href="/2018ftall/B10/statistics/">统计</a></li>
+			
+		<li ><a href="/2018ftall/clarify/B10/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>3000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><p class="MsoNormal">一年一度的暴雪嘉年华（<span>BlizzCon</span>’<span>16</span>）即将盛大开幕，作为贪玩的助教小<span>J</span>，自然翘掉了程设期末前往参加。本届嘉年华为期<span>m</span>天，在这<span>24*m</span>小时的时间里，观众买券入场后方可体验各种免费及付费的游戏项目。参加本届嘉年华，首先需要在现场购买入场券，现场可以购买的入场券有三种，允许叠加购买使用：</p><ol style="list-style-type: decimal;"><li><p class="MsoNormal">单日券：售价<span>100</span>美金，购买后可以进入会场游玩<span>24</span>小时；</p></li><li><p class="MsoNormal">双日券：售价<span>150</span>美金，购买后可以进入会场游玩<span>48</span>小时；</p></li><li><p class="MsoNormal">三日券：售价<span>200</span>美金，购买后可以进入会场游玩<span>72</span>小时。</p></li></ol><p class="MsoNormal">买券进入会场后，就可以在规定时间内体验各种游戏项目了，会场内总共有<span>n</span>个游戏项目。对于小<span>J</span>来说，每个游戏项目<span>i</span>都有个乐趣值<span>H_i</span>，每体验一次该游戏项目，他就能获得这么多的乐趣。体验游戏项目可能要额外付费，每体验一次游戏项目<span>i</span>，就收费<span>C_i</span>美金；如果是免费项目，<span>C_i</span>＝<span>0</span>。每个游戏项目都有其固定的体验时间，每体验一次游戏项目<span>i</span>所花费的时间是<span>T_i</span>个小时。此外，某些游戏项目会限制玩家全程只能体验一次（即使它是收费项目），但其它游戏项目则允许玩家无限次体验。</p><p class="MsoNormal">一开始在入场之前，小<span>J</span>有<span>s</span>美元的现金，这些钱既要用来购买入场券，又可用于体验收费游戏项目。现在请你替小<span>J</span>购买合适的入场券组合，并选取需要体验的游戏项目，使得小<span>J</span>利用不超过<span>s</span>美元体验游戏所获得的乐趣值之和最大，输出该最大的乐趣值之和。</p><p class="MsoNormal">题目中忽略体验游戏之外的时间花费，游戏项目允许跨天进行体验（小<span>J</span>在体验游戏时，从来不需要休息、吃饭或上厕所）。</p></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>程序输入的第一行是三个正整数m, n, s，表示嘉年华举办天数、游戏项目数及小J一开始的美元现金。<br />接下来n行，每行包括三个非负整数H_i, C_i, T_i和一个单词用于描述第i个游戏项目，如果单词是limited，则表示游戏项目仅允许体验一次；如果单词是unlimited，则表示游戏项目允许无限次体验。<br />对于所有的数据，有：<br />1<=m, n<=100<br />1<=s, T_i<=1000<br />0<=H_i, C_i<=1000 (i<=n)。</dd>
+		<dt>输出</dt>
+		<dd>程序输出仅包含一个非负整数，表示小J在限定条件下所能获取的最大的乐趣值之和。</dd>
+		<dt>样例输入</dt>
+		<dd><pre>5 5 312
+150 0 24 limited
+200 1 48 limited
+900 0 97 limited
+3 3 3 unlimited
+50 50 1 unlimited
+</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>359</pre></dd>
+				<dt>提示</dt>
+		<dd>样例说明：<br />在5天的活动当中，小J购买了一张单日券和一张三日券（或者两张双日券），得到了96个小时的入场游玩时间。在5个游戏项目当中，他体验了游戏1、游戏2、并重复体验了3遍游戏4，总花费为100+200+0+1+3*3=310美元，实际游玩24+48+3*3=81小时，获得的乐趣值之和为150+200+3*3=359。</dd>
+						</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/2018ftall/B10/">查看</a></li>
+		<li ><a href="/2018ftall/B10/submit/">提交</a></li>
+				<li ><a href="/2018ftall/B10/statistics/">统计</a></li>
+			
+		<li ><a href="/2018ftall/clarify/B10/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>10719</dd>
+				<dt>提交次数</dt>
+		<dd>190</dd>
+		<dt>尝试人数</dt>
+	    <dd>74</dd>
+	    <dt>通过人数</dt>
+	    <dd>69</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

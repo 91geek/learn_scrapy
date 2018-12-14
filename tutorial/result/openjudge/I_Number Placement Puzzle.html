@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - I:Number Placement Puzzle</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://poj.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/2/logo_small.jpg" alt="PKU Online Judge" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://poj.openjudge.cn/" title="首页" rel="home">PKU Online Judge</a></h2>
+		 <span>/</span>
+		 <h2>PKU Campus 2018</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/campus2018/" class="first">题目</a></li>
+            <li ><a href="/campus2018/ranking/">排名</a></li>
+                    <li ><a href="/campus2018/status/">状态</a></li>
+	     
+        <li ><a href="/campus2018/statistics/">统计</a></li>
+		 
+        <li ><a href="/campus2018/print/">打印</a></li>
+			        <li class="last"><a href="/campus2018/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>I:Number Placement Puzzle</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/campus2018/I/">查看</a></li>
+		<li ><a href="/campus2018/I/submit/">提交</a></li>
+				<li ><a href="/campus2018/I/statistics/">统计</a></li>
+			
+		<li ><a href="/campus2018/clarify/I/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd><div style="visibility: hidden; overflow: hidden; position: absolute; top: 0px; height: 1px; width: auto; padding: 0px; border: 0px; margin: 0px; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal;"><div id="MathJax_SVG_Hidden"></div><svg><defs id="MathJax_SVG_glyphs"><path id="MJMATHI-4E" stroke-width="1" d="M234 637Q231 637 226 637Q201 637 196 638T191 649Q191 676 202 682Q204 683 299 683Q376 683 387 683T401 677Q612 181 616 168L670 381Q723 592 723 606Q723 633 659 637Q635 637 635 648Q635 650 637 660Q641 676 643 679T653 683Q656 683 684 682T767 680Q817 680 843 681T873 682Q888 682 888 672Q888 650 880 642Q878 637 858 637Q787 633 769 597L620 7Q618 0 599 0Q585 0 582 2Q579 5 453 305L326 604L261 344Q196 88 196 79Q201 46 268 46H278Q284 41 284 38T282 19Q278 6 272 0H259Q228 2 151 2Q123 2 100 2T63 2T46 1Q31 1 31 10Q31 14 34 26T39 40Q41 46 62 46Q130 49 150 85Q154 91 221 362L289 634Q287 635 234 637Z"></path><path id="MJMAIN-35" stroke-width="1" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z"></path><path id="MJMAIN-30" stroke-width="1" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path id="MJMAIN-34" stroke-width="1" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path id="MJMAIN-36" stroke-width="1" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path><path id="MJMATHI-54" stroke-width="1" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJMAIN-20" stroke-width="1"></path><path id="MJMAIN-28" stroke-width="1" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJMAIN-31" stroke-width="1" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJMAIN-2264" stroke-width="1" d="M674 636Q682 636 688 630T694 615T687 601Q686 600 417 472L151 346L399 228Q687 92 691 87Q694 81 694 76Q694 58 676 56H670L382 192Q92 329 90 331Q83 336 83 348Q84 359 96 365Q104 369 382 500T665 634Q669 636 674 636ZM84 -118Q84 -108 99 -98H678Q694 -104 694 -118Q694 -130 679 -138H98Q84 -131 84 -118Z"></path><path id="MJMAIN-32" stroke-width="1" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJMAIN-29" stroke-width="1" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJMATHI-53" stroke-width="1" d="M308 24Q367 24 416 76T466 197Q466 260 414 284Q308 311 278 321T236 341Q176 383 176 462Q176 523 208 573T273 648Q302 673 343 688T407 704H418H425Q521 704 564 640Q565 640 577 653T603 682T623 704Q624 704 627 704T632 705Q645 705 645 698T617 577T585 459T569 456Q549 456 549 465Q549 471 550 475Q550 478 551 494T553 520Q553 554 544 579T526 616T501 641Q465 662 419 662Q362 662 313 616T263 510Q263 480 278 458T319 427Q323 425 389 408T456 390Q490 379 522 342T554 242Q554 216 546 186Q541 164 528 137T492 78T426 18T332 -20Q320 -22 298 -22Q199 -22 144 33L134 44L106 13Q83 -14 78 -18T65 -22Q52 -22 52 -14Q52 -11 110 221Q112 227 130 227H143Q149 221 149 216Q149 214 148 207T144 186T142 153Q144 114 160 87T203 47T255 29T308 24Z"></path><path id="MJMATHI-69" stroke-width="1" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path><path id="MJMAIN-2C" stroke-width="1" d="M78 35T78 60T94 103T137 121Q165 121 187 96T210 8Q210 -27 201 -60T180 -117T154 -158T130 -185T117 -194Q113 -194 104 -185T95 -172Q95 -168 106 -156T131 -126T157 -76T173 -3V9L172 8Q170 7 167 6T161 3T152 1T140 0Q113 0 96 17Z"></path><path id="MJMAIN-39" stroke-width="1" d="M352 287Q304 211 232 211Q154 211 104 270T44 396Q42 412 42 436V444Q42 537 111 606Q171 666 243 666Q245 666 249 666T257 665H261Q273 665 286 663T323 651T370 619T413 560Q456 472 456 334Q456 194 396 97Q361 41 312 10T208 -22Q147 -22 108 7T68 93T121 149Q143 149 158 135T173 96Q173 78 164 65T148 49T135 44L131 43Q131 41 138 37T164 27T206 22H212Q272 22 313 86Q352 142 352 280V287ZM244 248Q292 248 321 297T351 430Q351 508 343 542Q341 552 337 562T323 588T293 615T246 625Q208 625 181 598Q160 576 154 546T147 441Q147 358 152 329T172 282Q197 248 244 248Z"></path><path id="MJMAIN-2B" stroke-width="1" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJMAIN-37" stroke-width="1" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z"></path><path id="MJMAIN-33" stroke-width="1" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z"></path><path id="MJMATHI-6A" stroke-width="1" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path><path id="MJMAIN-D7" stroke-width="1" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path><path id="MJMATHI-4B" stroke-width="1" d="M285 628Q285 635 228 637Q205 637 198 638T191 647Q191 649 193 661Q199 681 203 682Q205 683 214 683H219Q260 681 355 681Q389 681 418 681T463 682T483 682Q500 682 500 674Q500 669 497 660Q496 658 496 654T495 648T493 644T490 641T486 639T479 638T470 637T456 637Q416 636 405 634T387 623L306 305Q307 305 490 449T678 597Q692 611 692 620Q692 635 667 637Q651 637 651 648Q651 650 654 662T659 677Q662 682 676 682Q680 682 711 681T791 680Q814 680 839 681T869 682Q889 682 889 672Q889 650 881 642Q878 637 862 637Q787 632 726 586Q710 576 656 534T556 455L509 418L518 396Q527 374 546 329T581 244Q656 67 661 61Q663 59 666 57Q680 47 717 46H738Q744 38 744 37T741 19Q737 6 731 0H720Q680 3 625 3Q503 3 488 0H478Q472 6 472 9T474 27Q478 40 480 43T491 46H494Q544 46 544 71Q544 75 517 141T485 216L427 354L359 301L291 248L268 155Q245 63 245 58Q245 51 253 49T303 46H334Q340 37 340 35Q340 19 333 5Q328 0 317 0Q314 0 280 1T180 2Q118 2 85 2T49 1Q31 1 31 11Q31 13 34 25Q38 41 42 43T65 46Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Z"></path></defs></svg></div><div id="wmd-preview" class="wmd-preview"><div class="md-section-divider"></div><p data-anchor-id="3lhf">The objective of the Number Placement Puzzle is to fill a <span class="MathJax_SVG" id="MathJax-Element-91-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 2999.9444444444443 725.103370696049" style="width: 6.95ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use><use xlink:href="#MJMAIN-D7" x="1110" y="0"></use><use xlink:href="#MJMATHI-4E" x="2111" y="0"></use></g></svg></span> grid with integers from <span class="MathJax_SVG" id="MathJax-Element-92-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -687.0516853480245 500.5 730.103370696049" style="width: 1.158ex; height: 1.737ex; vertical-align: -0.232ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-30"></use></g></svg></span> to <span class="MathJax_SVG" id="MathJax-Element-93-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 889.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4B"></use></g></svg></span> so that the following conditions hold: <br /></p><p data-anchor-id="7olt">1. All integers on the main diagonal, which runs from top left to bottom right, are zero.&nbsp;&nbsp;<br />2. All integers except those on the main diagonal are positive. <br />3. If there is an integer <strong>X </strong>at the cross grid of the <span class="MathJax_SVG" id="MathJax-Element-94-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span>-th row and the <span class="MathJax_SVG" id="MathJax-Element-95-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="-11.5 -682.0516853480245 424 907.103370696049" style="width: 1.042ex; height: 2.085ex; vertical-align: -0.579ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-6A"></use></g></svg></span>-th column (<span class="MathJax_SVG" id="MathJax-Element-96-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span> is not equal to <span class="MathJax_SVG" id="MathJax-Element-97-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="-11.5 -682.0516853480245 424 907.103370696049" style="width: 1.042ex; height: 2.085ex; vertical-align: -0.579ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-6A"></use></g></svg></span>), integer <strong>X </strong>does not appear in the <span class="MathJax_SVG" id="MathJax-Element-98-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="-11.5 -682.0516853480245 424 907.103370696049" style="width: 1.042ex; height: 2.085ex; vertical-align: -0.579ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-6A"></use></g></svg></span>-th row or the <span class="MathJax_SVG" id="MathJax-Element-99-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span>-th column.</p><p data-anchor-id="ejfy">Sometimes <span class="MathJax_SVG" id="MathJax-Element-104-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 889.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4B"></use></g></svg></span> is too small to solve the puzzle. Given <span class="MathJax_SVG" id="MathJax-Element-105-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 888.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use></g></svg></span>, please find a solution with minimized <span class="MathJax_SVG" id="MathJax-Element-106-Frame" role="textbox" aria-readonly="true" style="font-size: 100%"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 -704.0516853480245 889.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4B"></use></g></svg></span>. Since there might be multiple solutions, you may output any one of them.</p><p data-anchor-id="i0lm">Please refer to the sample output for better understanding.</p><div class="md-section-divider"></div></div></dd>
+				
+				
+				<dt>输入</dt>
+		<dd><p data-anchor-id="hjk2">The first line contains an integer, indicating the number of test cases, which is no more than <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-107-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -698.0516853480245 1001 741.103370696049" style="width: 2.317ex; height: 1.737ex; vertical-align: -0.232ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMAIN-34"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-107">40</script>.</p><p data-anchor-id="100e">Each test case consists of a single line, and each line contains an integer <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-143-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -771.0516853480245 7476.61111111111 1042.103370696049" style="width: 17.375ex; height: 2.432ex; vertical-align: -0.695ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use><use xlink:href="#MJMAIN-20" x="888" y="0"></use><use xlink:href="#MJMAIN-28" x="1139" y="0"></use><use xlink:href="#MJMAIN-32" x="1528" y="0"></use><use xlink:href="#MJMAIN-2264" x="2306" y="0"></use><use xlink:href="#MJMATHI-4E" x="3363" y="0"></use><use xlink:href="#MJMAIN-2264" x="4529" y="0"></use><g transform="translate(5585,0)"><use xlink:href="#MJMAIN-35"></use><use xlink:href="#MJMAIN-30" x="500" y="0"></use><use xlink:href="#MJMAIN-30" x="1001" y="0"></use></g><use xlink:href="#MJMAIN-29" x="7087" y="0"></use></g></svg></span><script type="math/tex" id="MathJax-Element-143">N\ (2 \leq N \leq 500)</script>, indicating the size of the grid.</p><div class="md-section-divider"></div></dd>
+		<dt>输出</dt>
+		<dd><p data-anchor-id="6d7v">For each test case:</p><p data-anchor-id="xf5h">If no such solution exists, output the emoticon "QaQ" (without quotations) in a single line. Otherwise, output <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-135-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -704.0516853480245 888.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use></g></svg></span><script type="math/tex" id="MathJax-Element-135">N</script> lines, each line contains <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-136-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -704.0516853480245 888.5 725.103370696049" style="width: 2.085ex; height: 1.737ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-4E"></use></g></svg></span><script type="math/tex" id="MathJax-Element-136">N</script> integers separated by spaces. The <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-137-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-11.5 -682.0516853480245 424 907.103370696049" style="width: 1.042ex; height: 2.085ex; vertical-align: -0.579ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-6A"></use></g></svg></span><script type="math/tex" id="MathJax-Element-137">j</script>-th integer in the <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-138-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span><script type="math/tex" id="MathJax-Element-138">i</script>-th line indicates the integer you assigned to the cross grid of the <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-139-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 -682.0516853480245 345.5 714.103370696049" style="width: 0.811ex; height: 1.622ex; vertical-align: -0.116ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-69"></use></g></svg></span><script type="math/tex" id="MathJax-Element-139">i</script>-th row and the <span class="MathJax_Preview"></span><span class="MathJax_SVG" id="MathJax-Element-140-Frame" role="textbox" aria-readonly="true" style="font-size: 100%; display: inline-block;"><svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-11.5 -682.0516853480245 424 907.103370696049" style="width: 1.042ex; height: 2.085ex; vertical-align: -0.579ex; margin: 1px 0px;"><g stroke="black" fill="black" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><use xlink:href="#MJMATHI-6A"></use></g></svg></span><script type="math/tex" id="MathJax-Element-140">j</script>-th column.</p><div class="md-section-divider"></div></dd>
+		<dt>样例输入</dt>
+		<dd><pre>2
+5
+2</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>0 3 3 4 4
+2 0 2 4 2
+1 1 0 1 4
+2 3 3 0 2
+1 1 3 1 0
+0 1
+2 0</pre></dd>
+						<dt>来源</dt>
+		<dd>PKU Campus 2018</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/campus2018/I/">查看</a></li>
+		<li ><a href="/campus2018/I/submit/">提交</a></li>
+				<li ><a href="/campus2018/I/statistics/">统计</a></li>
+			
+		<li ><a href="/campus2018/clarify/I/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       	<p class="notification">1.I题数据已更新，已重测@10：26<br />
+2.北大赛区14:00结束，北航赛区14:15结束<br />
+<br />
+北大区气球颜色：<br />
+A 红色<br />
+B 粉色<br />
+C 深绿色<br />
+D 黄色<br />
+E 鹅黄绿色<br />
+F 紫色<br />
+G 罗兰紫色<br />
+H 白色<br />
+I 橙色<br />
+J 浅蓝色<br />
+K 深蓝色</p>
+			<dl>
+		<dt>全局题号</dt>
+		<dd>17163</dd>
+				<dt>提交次数</dt>
+		<dd>75</dd>
+		<dt>尝试人数</dt>
+	    <dd>29</dd>
+	    <dt>通过人数</dt>
+	    <dd>6</dd>
+	</dl>
+		
+		
+					
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li><a href="http://poj.openjudge.cn//history.html" rel="nofollow">历届出题人名单</a></li>
+						<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - T5:画T形提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://tic.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="北大附中TIC社团" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://tic.openjudge.cn/" title="首页" rel="home">北大附中TIC社团</a></h2>
+		 <span>/</span>
+		 <h2>20181102信息常规小测</h2>
+		<span style="font-size:14px;">已经结束</span>	</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/20181102/" class="first">题目</a></li>
+            <li ><a href="/20181102/ranking/">排名</a></li>
+                    <li ><a href="/20181102/status/">状态</a></li>
+	    			        <li class="last"><a href="/20181102/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>T5:画T形</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/20181102/T5/">查看</a></li>
+		<li ><a href="/20181102/T5/submit/">提交</a></li>
+				<li class="current-show"><a href="/20181102/T5/statistics/">统计</a></li>
+			
+		<li ><a href="/20181102/clarify/T5/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td>分数</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877682/in/group-213/">金秉乐</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16211095/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">176 B</td>
+				<td class="language"><a href="/20181102/solution/16211095/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:54:19">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877682/in/group-213/">金秉乐</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16210859/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">223 B</td>
+				<td class="language"><a href="/20181102/solution/16210859/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:47:52">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877682/in/group-213/">金秉乐</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16210763/" class="result-wrong">Wrong Answer</a></td>
+								<td>0</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">4ms</td>
+				<td class="code-length">204 B</td>
+				<td class="language"><a href="/20181102/solution/16210763/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:45:17">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877682/in/group-213/">金秉乐</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16210718/#compile-error" class="result-ce">Compile Error</a></td>
+								<td>0</td>
+								<td class="memory"></td>
+				<td class="spending-time"></td>
+				<td class="code-length">200 B</td>
+				<td class="language"><a href="/20181102/solution/16210718/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:43:32">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877667/in/group-213/">李鹿鸣</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16210553/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">250 B</td>
+				<td class="language"><a href="/20181102/solution/16210553/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:39:12">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877669/in/group-213/">孙熠</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16210490/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">281 B</td>
+				<td class="language"><a href="/20181102/solution/16210490/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:37:12">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/878787/in/group-213/">宁晓桃</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209937/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">342 B</td>
+				<td class="language"><a href="/20181102/solution/16209937/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:22:19">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877677/in/group-213/">刘佳年</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209876/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">2ms</td>
+				<td class="code-length">251 B</td>
+				<td class="language"><a href="/20181102/solution/16209876/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:20:33">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877671/in/group-213/">温佳民</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209871/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">2ms</td>
+				<td class="code-length">344 B</td>
+				<td class="language"><a href="/20181102/solution/16209871/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:20:26">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877673/in/group-213/">陈博铭</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/20181102/solution/16209693/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">388 B</td>
+				<td class="language"><a href="/20181102/solution/16209693/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:15:24">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877684/in/group-213/">郑天承</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209675/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">2ms</td>
+				<td class="code-length">343 B</td>
+				<td class="language"><a href="/20181102/solution/16209675/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:14:58">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877662/in/group-213/">曹锦辉</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209633/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">310 B</td>
+				<td class="language"><a href="/20181102/solution/16209633/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:13:57">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877673/in/group-213/">陈博铭</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/20181102/solution/16209605/" class="result-wrong">Presentation Error</a></td>
+								<td>33</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">407 B</td>
+				<td class="language"><a href="/20181102/solution/16209605/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:12:59">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877681/in/group-213/">代乾潜</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209571/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">4ms</td>
+				<td class="code-length">343 B</td>
+				<td class="language"><a href="/20181102/solution/16209571/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:11:32">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877668/in/group-213/">王 若 峰</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209325/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">261 B</td>
+				<td class="language"><a href="/20181102/solution/16209325/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:02:25">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877675/in/group-213/">黎丹宁</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209301/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">275 B</td>
+				<td class="language"><a href="/20181102/solution/16209301/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 16:01:28">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877665/in/group-213/">张渝飞</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209154/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">544 B</td>
+				<td class="language"><a href="/20181102/solution/16209154/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 15:56:23">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877685/in/group-213/">王宇瑭</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209068/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">392 B</td>
+				<td class="language"><a href="/20181102/solution/16209068/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 15:53:48">18.11.2</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877669/in/group-213/">孙熠</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209043/" class="result-wrong">Presentation Error</a></td>
+								<td>33</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">406 B</td>
+				<td class="language"><a href="/20181102/solution/16209043/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 15:53:10">18.11.2</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/877674/in/group-213/">吴思悦</a></td>
+								<td class="className">2018红校服衔接班信息常规</td>
+					
+				<td class="result"><a href="/20181102/solution/16209041/" class="result-right">Accepted</a></td>
+								<td>99</td>
+								<td class="memory">144kB</td>
+				<td class="spending-time">4ms</td>
+				<td class="code-length">298 B</td>
+				<td class="language"><a href="/20181102/solution/16209041/">G++</a></td>
+				<td class="date"><abbr title="2018-11-02 15:53:06">18.11.2</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+		
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">25</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">15</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Presentation Error</em></td>
+				<td class="count">2</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">2</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

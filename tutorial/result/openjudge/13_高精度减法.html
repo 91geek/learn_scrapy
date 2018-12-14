@@ -1,0 +1,390 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 13:高精度减法提交状态</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://bigbang.openjudge.cn/"><img class="group-logo" src="http://static.openjudge.cn/images/default_logo_small.png" alt="大本钟编程小组" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://bigbang.openjudge.cn/" title="首页" rel="home">大本钟编程小组</a></h2>
+		 <span>/</span>
+		 <h2>学习算法前的巩固复习</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/fuxi/" class="first">题目</a></li>
+            <li ><a href="/fuxi/ranking/">排名</a></li>
+                    <li ><a href="/fuxi/status/">状态</a></li>
+	    			        <li class="last"><a href="/fuxi/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<div id="pageTitle"><h2>13:高精度减法</h2></div>
+<div id="topMenu">
+	<ul>
+		<li ><a href="/fuxi/13/">查看</a></li>
+		<li ><a href="/fuxi/13/submit/">提交</a></li>
+				<li class="current-show"><a href="/fuxi/13/statistics/">统计</a></li>
+			
+		<li ><a href="/fuxi/clarify/13/">提问</a></li>
+			
+	</ul>
+</div><div id="main" class="problem-status col-9">
+	<table>
+	<thead>
+		<tr>
+							<td class="submit-user">提交人</td>
+							<td class="class">班级</td>
+							<td class="result">结果</td>
+					<td class="memory">内存</td>
+			<td class="spending-time">时间</td>
+			<td class="code-length">代码长度</td>
+			<td class="language">语言</td>
+			<td class="date">提交时间			</td>
+		</tr>
+	</thead>
+	<tbody>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/912608/in/group-378/">C2022万珉延</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/16909552/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">7ms</td>
+				<td class="code-length">145 B</td>
+				<td class="language"><a href="/fuxi/solution/16909552/">G++</a></td>
+				<td class="date"><abbr title="2018-12-10 22:21:02">前天</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/898893/in/group-378/">C20210354熊乙禧</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/16699088/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">657 B</td>
+				<td class="language"><a href="/fuxi/solution/16699088/">G++</a></td>
+				<td class="date"><abbr title="2018-11-30 13:46:53">13天前</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/906716/in/group-378/">C20210350母丹睿</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/16499281/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">10ms</td>
+				<td class="code-length">830 B</td>
+				<td class="language"><a href="/fuxi/solution/16499281/">G++</a></td>
+				<td class="date"><abbr title="2018-11-19 13:36:04">24天前</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/899251/in/group-378/">C20212109姜予卓</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/16186185/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">780 B</td>
+				<td class="language"><a href="/fuxi/solution/16186185/">G++</a></td>
+				<td class="date"><abbr title="2018-11-01 13:46:32">18.11.1</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/882910/in/group-378/">C20210315雷钧森账号2</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/16162124/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">7ms</td>
+				<td class="code-length">881 B</td>
+				<td class="language"><a href="/fuxi/solution/16162124/">G++</a></td>
+				<td class="date"><abbr title="2018-10-31 12:59:08">18.10.31</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/849495/in/group-378/">C20201018王博</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/15431873/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">2ms</td>
+				<td class="code-length">759 B</td>
+				<td class="language"><a href="/fuxi/solution/15431873/">G++</a></td>
+				<td class="date"><abbr title="2018-09-26 13:54:51">18.9.26</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/828474/in/group-378/">C2021柏竣文</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/15431307/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">690 B</td>
+				<td class="language"><a href="/fuxi/solution/15431307/">G++</a></td>
+				<td class="date"><abbr title="2018-09-26 13:17:43">18.9.26</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/828474/in/group-378/">C2021柏竣文</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/15431284/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">10ms</td>
+				<td class="code-length">690 B</td>
+				<td class="language"><a href="/fuxi/solution/15431284/">G++</a></td>
+				<td class="date"><abbr title="2018-09-26 13:16:47">18.9.26</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/828474/in/group-378/">C2021柏竣文</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/15431270/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">10ms</td>
+				<td class="code-length">678 B</td>
+				<td class="language"><a href="/fuxi/solution/15431270/">G++</a></td>
+				<td class="date"><abbr title="2018-09-26 13:16:10">18.9.26</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/830399/in/group-378/">C2021邓俊逸</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/15046546/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">3ms</td>
+				<td class="code-length">670 B</td>
+				<td class="language"><a href="/fuxi/solution/15046546/">G++</a></td>
+				<td class="date"><abbr title="2018-08-23 14:01:54">18.8.23</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/830399/in/group-378/">C2021邓俊逸</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/15046463/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">685 B</td>
+				<td class="language"><a href="/fuxi/solution/15046463/">G++</a></td>
+				<td class="date"><abbr title="2018-08-23 13:57:59">18.8.23</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/799256/in/group-378/">C20203132向恩泽</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14880732/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">10ms</td>
+				<td class="code-length">798 B</td>
+				<td class="language"><a href="/fuxi/solution/14880732/">G++</a></td>
+				<td class="date"><abbr title="2018-08-14 15:52:47">18.8.14</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/799256/in/group-378/">C20203132向恩泽</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14880692/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">6ms</td>
+				<td class="code-length">784 B</td>
+				<td class="language"><a href="/fuxi/solution/14880692/">G++</a></td>
+				<td class="date"><abbr title="2018-08-14 15:51:24">18.8.14</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/832114/in/group-378/">BBC</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14713400/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">10ms</td>
+				<td class="code-length">777 B</td>
+				<td class="language"><a href="/fuxi/solution/14713400/">G++</a></td>
+				<td class="date"><abbr title="2018-08-05 11:39:45">18.8.5</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/829228/in/group-378/">C2021蒋林瀚</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14434824/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">728 B</td>
+				<td class="language"><a href="/fuxi/solution/14434824/">G++</a></td>
+				<td class="date"><abbr title="2018-07-19 20:53:10">18.7.19</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/829228/in/group-378/">C2021蒋林瀚</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14392885/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">5ms</td>
+				<td class="code-length">728 B</td>
+				<td class="language"><a href="/fuxi/solution/14392885/">G++</a></td>
+				<td class="date"><abbr title="2018-07-18 09:12:30">18.7.18</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/838046/in/group-378/">C20200454杨喆涵</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14346078/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">1ms</td>
+				<td class="code-length">709 B</td>
+				<td class="language"><a href="/fuxi/solution/14346078/">G++</a></td>
+				<td class="date"><abbr title="2018-07-16 10:21:42">18.7.16</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/828484/in/group-378/">C20210325彭治力</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14255922/" class="result-right">Accepted</a></td>
+								<td class="memory">200kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">741 B</td>
+				<td class="language"><a href="/fuxi/solution/14255922/">G++</a></td>
+				<td class="date"><abbr title="2018-07-11 20:14:10">18.7.11</abbr></td>
+					</tr>
+			<tr>
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/828484/in/group-378/">C20210325彭治力</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14255297/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">196kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">611 B</td>
+				<td class="language"><a href="/fuxi/solution/14255297/">G++</a></td>
+				<td class="date"><abbr title="2018-07-11 19:59:40">18.7.11</abbr></td>
+					</tr>
+			<tr class="alt">
+											<td class="submit-user"><a class="user-anchor" href="http://openjudge.cn/user/828484/in/group-378/">C20210325彭治力</a></td>
+								<td class="className"></td>
+					
+				<td class="result"><a href="/fuxi/solution/14255234/" class="result-wrong">Wrong Answer</a></td>
+								<td class="memory">196kB</td>
+				<td class="spending-time">0ms</td>
+				<td class="code-length">599 B</td>
+				<td class="language"><a href="/fuxi/solution/14255234/">G++</a></td>
+				<td class="date"><abbr title="2018-07-11 19:58:08">18.7.11</abbr></td>
+					</tr>
+		</tbody>
+</table>
+	<div id="problem-status" class="page-bar">
+		<span class="pages">
+				
+		
+			<span class="current">1</span>
+			
+					<a href="?page=2">2</a>
+					<a href="?page=3">3</a>
+					<a href="?page=4">4</a>
+					<a href="?page=5">5</a>
+		
+					<span>...</span>
+				
+					<a href="?page=2" class="nextprev" rel="next">下一页</a>
+	</span>
+	</div>
+</div>
+
+<div id="side" class="problem-my-statistics col-3">
+	<h4>统计</h4>
+	<table>
+		<thead>
+			<tr>
+				<td class="result">结果</td>
+				<td class="count">提交次数</td>
+			</tr>
+		</thead>
+		<tbody>
+						<tr>
+				<td class="result"><em class="result-right">Accepted</em></td>
+				<td class="count">228</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Wrong Answer</em></td>
+				<td class="count">89</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-ce">Compile Error</em></td>
+				<td class="count">16</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Runtime Error</em></td>
+				<td class="count">9</td>
+			</tr>
+						<tr>
+				<td class="result"><em class="result-wrong">Time Limit Exceeded</em></td>
+				<td class="count">2</td>
+			</tr>
+					</tbody>
+	</table>
+</div>		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>

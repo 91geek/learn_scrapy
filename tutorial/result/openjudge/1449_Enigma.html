@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>OpenJudge - 1449:Enigma</title>
+
+<link href="http://static.openjudge.cn/styles/global.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/styles.css?1470100812.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/group.css?1468143560.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/contest.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/favicon.ico?1467854438.ico" rel="shortcut icon" type="image/x-icon" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.theme.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.dialog.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.resizable.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="http://static.openjudge.cn/styles/jquery.ui.core.css?1467854438.css" media="screen" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+   <script type="text/javascript" src="http://static.openjudge.cn/scripts/html5.js?1467854438.js"></script>
+<![endif]-->
+<!--[if lt IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie6-deprecated.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 7]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie7.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<!--[if IE 8]>
+	<link type="text/css" href="http://static.openjudge.cn/styles/ie8.css?1467854438.css" rel="stylesheet" />
+<![endif]-->
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-1.4.3.min.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery.form.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/base-nc.js?1467854438.js"></script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/api.js?1467854438.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+var web_root = '/',
+	static_root = 'http://static.openjudge.cn/',
+	script_root = 'http://static.openjudge.cn/scripts',
+	style_root = 'http://static.openjudge.cn/styles';
+    //]]>
+</script>
+<script type="text/javascript" src="http://static.openjudge.cn/scripts/jquery-ui-1.8.11.custom.min.js?1467854438.js"></script></head>
+<body>
+	<div id="headerTop">
+  <div class="wrapper">
+    <h1 class="logo"><a href="http://openjudge.cn/" title="首页" rel="home">OpenJudge</a></h1>
+    <ul id="userToolbar">
+            <li><a class="link" href="/auth/login/">登入</a></li>
+      <li><a class="link" href="/register/">注册</a></li>
+          </ul>
+    <div class="practice-search">
+		 <form class="search-form" action="/search/" method="get">
+	        <input name="q" type="text" value="题目ID, 标题, 描述" onclick="this.select()">
+	        <button type="submit"></button>
+	     </form>	
+	</div>
+    <div style="clear:both;"></div>
+  </div>
+</div>
+	
+	<div id="header">
+  <div class="wrapper">
+  	<div id="groupSmallLog">
+  		<a href="http://qwsfsx.openjudge.cn/"><img class="group-logo" src="http://media.openjudge.cn/groups/130/logo_small.jpg" alt="趣味算法实习" width="50" height="50" /></a>    </div>
+	<div class="contest-title-tab">
+		 <h2><a href="http://qwsfsx.openjudge.cn/" title="首页" rel="home">趣味算法实习</a></h2>
+		 <span>/</span>
+		 <h2>Level 5</h2>
+			</div>
+    <ul id="mainNav">
+        <li  class="current"><a href="/level5/" class="first">题目</a></li>
+            <li ><a href="/level5/ranking/">排名</a></li>
+                    <li ><a href="/level5/status/">状态</a></li>
+	    			        <li class="last"><a href="/level5/clarify/" class="last">提问</a></li>
+        </ul>	 
+    <div style="clear:both;"></div>
+  </div>
+</div>	
+	<div id="pagebody">
+		<div class="wrapper">
+			<script type="text/javascript">
+$(function(e){
+  var b={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+      g=$("#rate"),
+      c=$("#stars img"),
+      d=function(f){
+        var h=0||g.val();
+        c.each(function(k){
+          var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+          this.src=i;
+        });
+        if(f)
+          $("#rate_description").text(b[f]);
+        else
+          $("#rate_description").text(h!=0?b[h]:"");
+      };
+      c.hover(function(){d(this.id.charAt(4));},function(){d();});
+      if(g.attr("value")){
+        c.click(function(){
+          var f=this.id.charAt(4);
+          g.val(f);
+          d(f);
+          //$('#form_diffculity_rating').submit();
+          $( "#dialog-form" ).dialog( "open" );
+			g();
+        });
+      }
+      d();
+  });
+$(document).ready(
+		function(){
+			$('#problem-tags').hide();
+			$('#tag-display').toggle(function() {
+											$('#problem-tags').show();
+											this.value = '隐藏标签';
+										}, function(){
+											$('#problem-tags').hide();
+											this.value = '显示标签';
+										}
+									);
+			});
+</script>
+
+<div id="pageTitle"><h2>1449:Enigma</h2></div>
+<div id="topMenu">
+	<ul>
+		<li class="current-show"><a href="/level5/1449/">查看</a></li>
+		<li ><a href="/level5/1449/submit/">提交</a></li>
+				<li ><a href="/level5/1449/statistics/">统计</a></li>
+			
+		<li ><a href="/level5/clarify/1449/">提问</a></li>
+			
+	</ul>
+</div><div class="problem-page col-9">
+	<dl class="problem-params">
+		<dt>总时间限制: </dt>
+		<dd>1000ms</dd>
+			<dt>内存限制: </dt>
+		<dd>65536kB</dd>
+	</dl>
+	<dl class="problem-content">
+		<dt>描述</dt>
+		<dd>During the Second World War, the German military forces mainly used one special machine to secure their communication: the Enigma (see Figure 4). Breaking the Enigma cipher is one of the main success stories of Allied cryptanalysis and the triumph was mainly attributed to the emergence of digital computation and the genius of the people working at Bletchley Park, the secret cryptanalysis headquarters in England. The reason for this is that, while Enigma is certainly secure against pen and paper attacks, it is quite easily breakable using digital computers. <br /><br /><center><img src=http://media.openjudge.cn/images/1449_1.jpg> <br />Figure 4: An Enigma machine (picture source: http://www.nsa.gov/museum/enigma.html).</center><br />The Enigma was a rotor machine, a cipher method which was popular at that time. A rotor is an insulated disk on which electrical contacts, one for each letter of the alphabet, are placed uniformly around the periphery and on each side. An internal conduction path through the insulating material connects contacts in pairs, one on each side of the disk. An electric current entering on one side travels on an internal path through the rotor cross-section, emerging at one of the contacts on the other side (see Figure 5 for a 3D visualisation of two rotors). Figure 6 shows a schematic side view of the complete rotor system. It shows that the Enigma has three rotors π0, π2 plus an additional reflecting rotor πR. <br /><center><img src=http://media.openjudge.cn/images/1449_2.jpg></center><br />The input to Enigma is a stream of alphabetic characters without blanks. Every character is subject to the following steps:<br /><br />1. The plaintext is subject to an initial permutation IP which is implemented by a plugboard.<br /><br />2. The character resulting from step 1 is sent through the three rotors π0, π2.<br /><br />3. The resulting character is then sent through the reflecting rotor πR.<br /><br />4. The character from step 3 is passed back through the rotors π2, π0 (i.e., in the opposite direction).<br /><br />5. The character from step 4 is subject to the inverse IP<sup>-1</sup> of the initial permutation IP.<br /><br />The interesting point about the use of rotors is that after processing each character, every rotor might be rotated by a certain angle (i.e., a certain amount of letters) before processing the next character. With the Enigma, rotor π0 is rotated by one in anti-clockwise direction with every new character. When π0 has finished one round (i.e., after processing 26 characters), rotor π1 moves by one character. Similarly, rotor π2 is rotated by one character when π1 has finished one revolution, and the reflecting rotor πR moves when π2 has finished its rotation. Obviously, πR is the slowest of the four rotors.<br /><br />The process described above can be used both for encryption and decryption, provided that the permutation πR implemented by the reflecting rotor is an involution. That means πR = πR<sup>-1</sup>, or, equivalently, ξ=πR(ζ) whenever ζ=πR(ξ). You may assume that this condition holds.<br /><br />The secret key of the Enigma consists of (1) the rotors π0, π2, and πR, (2) the plugboard permutation IP, and (3) the initial rotational displacements k0, k1, k2, kR of π0, π2, and πR (see below). The rotors were changed infrequently and were selected from a set of four possible rotors in the Wehrmacht model. <br /><br />Problem<br /><br />You are time-warped to Bletchley Park together with your laptop and should help to decipher some messages which have been intercepted over the day. You are given the entire ciphertext, parts of the plaintext, and parts of the Enigma key. Your task is to determine the correct key and finally complete the plaintext by decoding the ciphertext.<br /><br /></dd>
+				
+				
+				<dt>输入</dt>
+		<dd>The first line contains the number of scenarios.<br /><br />Each scenario begins with the secret key of the Enigma. The secret key is specified by 6 lines. The first four lines contain a specification of the rotors π0, π2 and πR as a sequence of lowercase alphabetic characters. Character i (1<=i<=26) gives the mapping of the i-th character of the alphabet (e.g., "bha..." means that "a" is mapped to "b", "b" is mapped to "h", "c" is mapped to "a" etc.). Physically, the sequence of characters is given in clockwise direction looking from the front of the rotor stack π0, . . . , πR. After the rotors follows a similar line giving the plugboard permutation IP. Finally, the sixth line of the key gives the initial displacement k0, k1, k2, kR of the four rotors π0, π2, and πR as a string of four characters where "a" means that the rotor is in its original position (as defined by the rotor specification above), "b" means that it is rotated by one position in the usual way etc. For example, "dgaa" means that rotor π0 has initial displacement 3, π1 has 6, and π2, πR are both in their original position.<br /><br />After the key follow two lines, each containing at least 1 and at most 80 lowercase letters, and no other characters. The first line contains the plaintext while the second line contains the ciphertext. The plaintext and any part of the key may be incomplete, i.e., some positions in the strings may be question marks "?". The number of question marks in the input will be at most 3.</dd>
+		<dt>输出</dt>
+		<dd>The output for each scenario begins with a line containing "Scenario #i:", where i is the number of the scenario starting at 1. In the next line you are to output the completed, decrypted plaintext. You can assume that a solution exists and that it is unique. Terminate the output for each scenario with a blank line.</dd>
+		<dt>样例输入</dt>
+		<dd><pre>2
+wfbtiznuvcqejpokshxgmadyrl
+hmrgnqpkjcaivwluebfzsyxtdo
+druahlbfzvgmwckxpiqysontje
+owtvskypjifmluahrqecndbzgx
+?bcdefghijklmnopqrstuvwxyz
+aaaa
+manyorganizationsrelyoncom??ters
+grsuztldsznkwnerdpfbovvqnobkyiqn
+oqzunvhtxwryfebicmjpklsgda
+zupogrskynxtwdfqvbliejcmha
+kzvlyjuodmscewxtfbphriqgna
+gbcnylaztwkfmdspqvoiurjxeh
+rfyhkxbuvplgtqmdiewjosznca
+dmeo
+???
+ave</pre></dd>
+		<dt>样例输出</dt>
+		<dd><pre>Scenario #1:
+manyorganizationsrelyoncomputers
+
+Scenario #2:
+acm</pre></dd>
+						<dt>来源</dt>
+		<dd>Northwestern Europe 2001</dd>
+				</dl>
+	<ul class="bottomMenu">
+		<li class="current-show"><a href="/level5/1449/">查看</a></li>
+		<li ><a href="/level5/1449/submit/">提交</a></li>
+				<li ><a href="/level5/1449/statistics/">统计</a></li>
+			
+		<li ><a href="/level5/clarify/1449/">提问</a></li>
+			</ul>
+</div>
+
+<div class="problem-statistics col-3">
+       		<dl>
+		<dt>全局题号</dt>
+		<dd>451</dd>
+					<dt>添加于</dt>
+			<dd>2012-04-13</dd>
+				<dt>提交次数</dt>
+		<dd>0</dd>
+		<dt>尝试人数</dt>
+	    <dd>0</dd>
+	    <dt>通过人数</dt>
+	    <dd>0</dd>
+	</dl>
+		
+		
+					
+	<script type="text/javascript">
+
+$(function(){
+    var e={},c={};//e为选中的标签
+    var b=function(h){
+        if(e[h]){
+            c[h]=true;
+            $.each(e[h],function(k,j){
+                $(j).removeClass("gract").addClass("rdact")
+                })
+        }
+    };//打标签css
+    var d=function(h){
+        if(e[h]){
+            delete c[h];
+            $.each(e[h],function(k,j){
+                $(j).removeClass("rdact").addClass("gract")
+                })
+        }
+    };//取消打上的标签css
+
+    var g=function(){
+        var h=$.trim($("#tags_title").attr("value").toLowerCase()).split(" "),i={};
+        $.each(h,function(k,j){
+            if(j!=""){
+                b(j);
+                i[j]=true
+            }
+        });
+        for(t in c){
+            if(!i[t]){
+                d(t);
+            }
+        }
+    };
+
+    $('.tagbtn').each(function(j){
+        var h=$(this).text().toLowerCase();
+        if(e[h]){
+            e[h].push(this);
+        }
+        else{
+            e[h]=[this];
+        }
+    }).click(function(){
+        var h=$(this).text();
+        var k=$.trim($("#tags_title").attr("value")).split(" "),o=false,j=h.toLowerCase(),l;
+        k=$.grep(k,function(value){
+            if(value.toLowerCase()==j){
+                d(j);
+                o=true;
+                return false;
+            }
+            else{
+                return true;
+            }
+        });//遍历k检查k中是否存在所点击的标签如果有则去除
+        if(!o){
+            k.push(h);
+            b(j);
+        }//如果不存在则添加到最后
+        var n=k.join(" ");//用空格连接数组中的标签
+        $("#tags_title").attr("value",(n.length>1)?$.trim(n)+" ":n);
+        $("#tags_title").focus(); //如果数量多于1个标签
+    });
+    $("#tags_title").keyup(g);
+
+	// a workaround for a flaw in the demo system (http://dev.jqueryui.com/ticket/4375), ignore!
+	$( "#dialog:ui-dialog" ).dialog( "destroy" );
+	
+	$( "#dialog-form" ).dialog({
+		autoOpen: false,
+		height: 420,
+		width: 550,
+		modal: true,
+		buttons: {
+			"保存": function() {
+				$('#rating_form').submit();
+			},
+			"取消": function() {
+				$( this ).dialog( "close" );
+			}
+		},
+		close: function() {
+		}
+	});
+
+	$( "#create-rating" )
+		.button()
+		.click(function() {
+			$( "#dialog-form" ).dialog( "open" );
+			g();
+		});
+	
+	 var x={1:"很水",2:"简单",3:"普通",4:"较难",5:"变态"},
+     i=$("#rate"),
+     y=$("#stars img"),
+     z=function(f){
+       var h=0||i.val();
+       y.each(function(k){
+         var i=this.src.replace(/\w*\.gif$/,((k<f)?"sth":((k<h)?"st":"nst"))+".gif");
+         this.src=i;
+       });
+       if(f)
+         $("#rate_description").text(x[f]);
+       else
+         $("#rate_description").text(h!=0?x[h]:"");
+     };
+     y.hover(function(){d(this.id.charAt(4));},function(){z();});
+     if(i.attr("value")){
+       y.click(function(){
+         var f=this.id.charAt(4);
+         i.val(f);
+         z(f);
+         //$('#form_diffculity_rating').submit();
+         //$( "#dialog-form" ).dialog( "open" );
+		//	g();
+       });
+     }
+     z();
+});
+</script>
+
+<div id="dialog-form" title="评价">
+	<form id="rating_form" class="j a_interest_form" method="POST" action="/api/problem/rating" onsubmit="$(this).ajaxSubmit({dataType:'json',success:function(){$('#dialog-form').dialog( 'close' );}});return false;">
+       			<input type="hidden" value="2532" name="app_id">
+   				<input type="hidden" value="1449" name="problem_number">
+   				<input type="hidden" value="451" name="problem_id">
+       		<div class="rating">
+	  您的评价
+   		<span style="margin-left: 10px;" id="stars">
+			<img alt="很水" src="http://static.openjudge.cn/images/nst.gif" id="star1">
+			<img alt="简单" src="http://static.openjudge.cn/images/nst.gif" id="star2">
+			<img alt="一般" src="http://static.openjudge.cn/images/nst.gif" id="star3">
+			<img alt="较难" src="http://static.openjudge.cn/images/nst.gif" id="star4">
+			<img alt="变态" src="http://static.openjudge.cn/images/nst.gif" id="star5">
+		</span>
+		<span class="pl" id="rate_description"></span>
+   		
+	    	<input type="hidden" value="" name="diffculity_rate" id="rate">         
+		
+    </div>
+   				<ul class="interest_form " id="advtags">
+    
+        			<li>标签(多个标签用空格分隔): </li>
+      				<li><input type="text" style="width: 250px;" name="tags" id="tags_title" value=""></li>
+       				       				       				<li class="clearfix" id="populartags">
+       					<dl>
+       						<dt>常用标签:</dt>
+       						<dd>
+       						       							<span class="tagbtn gract">递归</span> &nbsp;
+       						       							<span class="tagbtn gract">动态规划</span> &nbsp;
+       						       							<span class="tagbtn gract">贪心</span> &nbsp;
+       						       							<span class="tagbtn gract">搜索</span> &nbsp;
+       						       							<span class="tagbtn gract">枚举</span> &nbsp;
+       						       							<span class="tagbtn gract">模拟</span> &nbsp;
+       						       							<span class="tagbtn gract">数学</span> &nbsp;
+       						       							<span class="tagbtn gract">字符串处理</span> &nbsp;
+       						       							<span class="tagbtn gract">几何</span> &nbsp;
+       						       							<span class="tagbtn gract">高精度计算</span> &nbsp;
+       						       							<span class="tagbtn gract">图论</span> &nbsp;
+       						       						</dd>
+       					</dl>
+       				</li>
+   				</ul>
+	</form>
+</div>
+	
+	<div>
+						<h4>尚无评分</h4>
+			</div>
+	
+		
+				
+						
+	</div>
+		</div>
+	</div>
+	<div id="footer">
+	<div class="wrapper">
+		<ul class="oj-info">
+			<li>&copy;2002-2013 POJ 沪ICP备12005590号-3</li>
+		</ul>
+		<ul class="debug-info">
+									<li>
+				<a style="color:red" href="javascript:void(0);" onclick="api.switchLanguage('en_US');">English</a></li>
+						<li><a href="http://openjudge.cn/help.html" rel="nofollow">帮助</a></li>
+			<li><a href="http://openjudge.cn/about.html" rel="nofollow">关于</a></li>
+		</ul>
+		<div style="clear:both;"></div>
+	</div>
+</div>
+
+	
+	</body>
+</html>
