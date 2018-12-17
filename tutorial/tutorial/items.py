@@ -8,6 +8,13 @@
 import scrapy
 
 
-class NoiNewsItem(scrapy.Item):
-    id = scrapy.Field()
+class JaadeeItem(scrapy.Item):
+    url = scrapy.Field()
+    html = scrapy.Field()
     title = scrapy.Field()
+    remarks = scrapy.Field()
+    imgs = scrapy.Field()
+    code = scrapy.Field()
+    price = scrapy.Field()
+    market_price = scrapy.Field()
+    video = scrapy.Field()
