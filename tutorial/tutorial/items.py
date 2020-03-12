@@ -18,3 +18,10 @@ class JaadeeItem(scrapy.Item):
     price = scrapy.Field()
     market_price = scrapy.Field()
     video = scrapy.Field()
+
+class NewsItem(scrapy.Item):
+    url = scrapy.Field()
+    title = scrapy.Field()
+    date = scrapy.Field()
+    detail = scrapy.Field()
+
