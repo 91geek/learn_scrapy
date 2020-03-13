@@ -1,0 +1,1193 @@
+
+
+
+
+
+
+
+
+<div class="top"></div>
+
+
+
+
+	
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="GBK">
+    <meta http-equiv="X-UA-Compatible" content="IE=8">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>云南省政府采购系统</title>
+    
+
+
+
+
+
+
+<script type="text/javascript">
+	var webAppPath = "";
+</script>
+    <link href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/plugins/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/plugins/bootstrap/css/base.css" rel="stylesheet">
+    <link href="/plugins/bootstrap/css/jquery-ui.css" rel="stylesheet">
+    <link href="/plugins/bootstrap/css/bootstrap-dialog.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/plugins/bootstrap/js/html5shiv.min.js"></script>
+    <script src="/plugins/bootstrap/js/ie8-responsive-file-warning.js"></script>
+    <script src="/plugins/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+    <!--
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <script src="js/ie-emulation-modes-warning.js"></script>-->
+    
+			<!-- 样式引入区 -->
+		<link href="/plugins/bootstrap/css/bootstrap-grid.css" rel="stylesheet">
+			<!-- 表单验证 -->
+		<link href="/plugins/bootstrap/css/scojs.css" rel="stylesheet">
+			<!-- 时间控件 -->
+		<link href="/plugins/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+			<!-- 下拉选择控件 -->
+		<link href="/plugins/bootstrap/css/bootstrap-select.css" rel="stylesheet">
+			<!-- 树形控件 -->
+		<link href="/plugins/bootstrap/css/bootstrap-treeview.css" rel="stylesheet">
+		<link href="/plugins/bootstrap/css/jquery.fileupload.css" rel="stylesheet">
+    	<!-- top -->
+		<link rel="stylesheet" type="text/css" href="/index/css/top.css" />
+		<!--导航结束-->
+		<link rel="stylesheet" type="text/css" href="/index/css/bottom.css" />
+		<style>
+		/* 自定义样式,写在这 */
+		.search-group-tab1 {
+			height: 30px;
+		}
+		</style>
+	
+</head>
+<body>
+
+<div class="container" role="main" style="width:1110px;">
+	
+	<div class="row">
+		<div class="col-xs-12" style="min-height: 400px">
+			
+	<div class="panel panel-default">
+		<div class="panel-heading-blue hidden">
+				<div class="panel-title-blue">
+			    	<span class="glyphicon glyphicon-export"></span>
+			        	公告查看
+			    </div>
+			</div>
+		<div class="tab-content">
+			<form id="NewBulletinFB" name="NewBulletinFB" class="tab-pane active" enctype="multipart/form-data">
+			<input type="hidden" id=ftpToken value="VfeqPcbPd3ZhJ9xZcnVp5w==">
+			<input type="hidden" id="mtck_word1" name="mtck_word1" value="请选择一条数据">
+			<input type="hidden" id="mtck_word2" name="mtck_word2" value="确定">
+			<input type="hidden" id="mtck_word3" name="mtck_word3" value="取消">
+			<input type="hidden" id="mtck_word4" name="mtck_word4" value="采购计划编号列表">
+			<input type="hidden" id="mtck_word5" name="mtck_word5" value="原公告项目名称列表">
+			<input type="hidden" id="contentstyle" name="contentstyle" prompt="公告内容样式" />
+			<input type="hidden" id="bulletinclassdetail" name="bulletinclassdetail" value="0"/>
+			<input type="hidden" id="cur_personid" name="cur_personid" value="">
+			<input type="hidden" id="completeurl" name="completeurl" value="" />
+			<input type="hidden" id="attachFileName" name="attachFileName" value="" />
+			<input type='hidden' name='org.apache.struts.action.TOKEN'
+			id=' org.apache.struts.action.TOKEN'
+			value='null' />
+
+			<html:hidden property="filecontent" name="form" styleId="filecontent" />
+			<html:hidden property="attachFileID" name="form" styleId="attachFileID" />
+		    <html:hidden property="contentstyle" name="form" />
+			<div class="panel-body form-horizontal search-body" id="searchPanel">
+				<div class="page-header">
+					<div class="row">
+			          <div class="col-xs-4">
+			              <h4><strong>公告概要</strong></h4>
+			          </div>
+					</div>
+				</div>
+				<div class="form-group" id="bt_be">
+						<label class="col-xs-3  control-label">
+							公告标题：
+						</label>
+						<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入收费金额：(必填)">
+							盈江县中医院公务用车采购项目 竞争性谈判公告
+						</div>	
+				</div>
+				<div class="form-group" id="">
+						<label class="col-xs-3  control-label">
+							更正公告：
+						</label>
+						<div class="col-xs-8 control-label-text"  data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="" id="laterbulletin_div">
+							
+						</div>	
+				</div>
+				 <div class="form-group" id="gglx_div">
+				 	<label class="col-xs-3  control-label">
+				 		公告类型：
+				 	</label>
+					<div class="col-xs-3" data-placement="top" data-toggle="popover" data-trigger="focus" data-content="">
+						<select class="selectpicker" id="bulletinclass" name="bulletinclass" title="请选择" disabled defaultshow="bxlx001,bxlx002,bxlx003,bxlx005,bxlx006,bxlx007,bxlx008,bxlx009,bxlx010,bxlx015,bxlx016">
+<option value="bxlx001" >公开招标公告</option><option value="bxlx006" >邀请招标公告</option><option value="bxlx003" selected=true  >竞争性谈判公告</option><option value="bxlx015" >竞争性磋商公告</option><option value="bxlx016" >单一来源公告</option><option value="bxlx002" >询价采购公告</option><option value="bxlx005" >资格预审公告</option><option value="bxlx008" >更正公告</option><option value="bxlx009" >其他公告</option><option value="bxlx007" >采购结果公告</option></select>
+					</div>
+				</div>
+				<div class="form-group" id="hiddenJggg">
+							<label class="col-xs-3  control-label">
+								结果公告类型：
+							</label>
+							<div class="col-xs-8 control-label-text" id="jggglx">
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="jggglx"  value="0"  checked />
+									中标公告
+								</label>
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="jggglx"  value="1" />
+									成交公告
+								</label>
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="jggglx"  value="2"  />
+									终止公告
+								</label>
+							</div>
+				</div>
+				
+				
+				<div class="form-group" id="sfbz">
+				<label class="col-xs-3  control-label">
+					收费标准：
+				</label>
+				<div class="col-xs-8 control-label-text">
+					
+				</div>
+			</div>
+		
+			<div class="form-group" id="sfje">
+				<label class="col-xs-3  control-label">
+				收费金额(万元)：
+				</label>
+				<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+						data-trigger="focus" data-content="请输入收费金额：(必填)">
+				
+				</div>
+				<div class="col-xs-1-sm control-label text-red pull-left"></div>	
+		   	</div>
+            <div class="form-group" id="">
+				<label class="col-xs-3  control-label">
+					发布日期：
+				</label>
+				<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+					data-trigger="focus" data-content="请输入收费金额：(必填)">
+					2020-03-12
+				</div>	
+			</div>
+			<div class="form-group" id="bt_be_2">
+            	<label class="col-xs-3  control-label">公告有效时间：</label>
+
+               <div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入公告有效时间：(必填)">
+                     <div class="form-inline">
+                     2020-03-13至2020-03-17
+                           <div  data-date=""
+                                     data-date-format="YYYY-MM-DD">
+                                </div>
+                                <span class="control-label valid-message"></span>
+                                <div  data-date=""
+                                     data-date-format="YYYY-MM-DD">
+                                </div>                     
+                            </div>
+                        </div>
+                    </div>
+				
+				<div class="form-group" id="pn_pn">
+					<label class="col-xs-3  control-label">
+					机构项目编号：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入机构项目编号：(必填)">
+					YJCG(竞)2020-033号
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+				<div class="form-group" id="pn_pn_2">
+					<label class="col-xs-3  control-label">
+					项目名称：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入项目名称：(必填)">
+					盈江县中医院公务用车采购项目
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+				<div class="form-group" id="pcn_pcp">
+					<label class="col-xs-3  control-label">
+					项目联系人：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入项目联系人：(必填)">
+					李女士
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+				<div class="form-group" id="pcn_pcp_2">
+					<label class="col-xs-3  control-label">
+					项目联系电话：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入项目联系电话：(必填)">
+					13578222098
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+				<div class="form-group" id="hiddenCgr">
+					<label class="col-xs-3  control-label">
+					采购人单位名称：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入采购人单位名称：(必填)">
+					盈江县中医院
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+				<div class="form-group" id="hiddenCgr_2">
+					<label class="col-xs-3  control-label">
+					采购人地址：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入采购人地址：(必填)">
+					盈江县平原镇勐腊路408号
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+				<div class="form-group" id="bc_an">
+					<label class="col-xs-3  control-label">
+					采购人联系方式：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover">
+					13578222098
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+			 	<div class="form-group" id="bc_an_2">
+					<label class="col-xs-3  control-label">
+					代理机构：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入代理机构：(必填)">
+					盈江县政府采购和出让中心
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+			  
+			 	<div class="form-group" id="aa_ac">
+					<label class="col-xs-3  control-label">
+					代理机构地址：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入代理机构地址：：(必填)">
+					盈江县平原镇目瑙纵歌路119号
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+				
+				<div class="form-group" id="bc_an">
+					<label class="col-xs-3  control-label">
+					代理机构联系方式：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入代理机构联系方式：(必填)">
+					0692-8108442
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+			
+				
+				<div class="form-group" id="bfp">
+					<label class="col-xs-3   control-label">
+						本项目招标公告日期：
+					</label>
+					<div class="col-xs-8 control-label-text">
+						<div class=""
+							data-date-format="YYYY-MM-DD">
+							
+						</div>
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				</div>
+				
+				<div class="form-group" id="bst">
+					<label class="col-xs-3   control-label">
+						开标时间：
+					</label>
+					<div class="col-xs-8 control-label-text">
+						
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				</div>
+				
+				<div class="form-group" id="bcd">
+					<label class="col-xs-3   control-label">
+						中标日期/成交日期/废标、流标日期：
+					</label>
+					<div class="col-xs-8 control-label-text">
+						
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				</div>
+				
+				<div class="form-group" id="fp">
+					<label class="col-xs-3  control-label">
+					入围价格：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入入围价格：(必填)">
+					
+					</div>
+				
+		   		</div>
+		   		
+		   		<div class="form-group" id="fr">
+					<label class="col-xs-3  control-label">
+					价格调整规则：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入价格调整规则：(必填)">
+					
+					</div>
+				
+		   		</div>
+		   		
+		   		<div class="form-group" id="ft">
+					<label class="col-xs-3  control-label">
+					优惠条件：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover">
+					
+					</div>
+		   		</div>
+				
+				<div class="form-group" id="bj">
+					<label class="col-xs-3  control-label">
+					评标委员会/谈判小组、询价小组成员名单/单一来源采购人员名单：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入评标委员会/谈判小组、询价小组成员名单/单一来源采购人员名单：(必填)">
+					
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+		   		
+		   		
+				
+				<div class="form-group" id="pad">
+					<label class="col-xs-3   control-label">
+						资格审查日期：
+					</label>
+					<div class="col-xs-8 control-label-text">
+						
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				</div>
+				
+				<div class="form-group" id="psa">
+					<label class="col-xs-3  control-label">
+					资格审查地点：
+					</label>
+					<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+							data-trigger="focus" data-content="请输入资格审查地点：(必填)">
+				
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+		   		</div>
+		   		
+		   		<div class="form-group" id="ped">
+					<label class="col-xs-3   control-label">
+						提交资格申请及证明材料的截止时间：
+					</label>
+					<div class="col-xs-8 control-label-text">
+						<div class="input-group date form_datetime_hms"
+							data-date-format="yyyy-mm-dd hh:ii:ss">
+						
+						</div>
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				</div>
+				
+				<div class="form-group" id="bcsq">
+					<label class="col-xs-3  control-label">
+						供应商（或投标人）的资格要求简要说明：
+					</label>
+					<div class="col-xs-8 control-label-text " data-toggle="popover" data-trigger="focus"
+						data-content="请输入供应商（或投标人）的资格要求简要说明：(必填)">
+						二、供应商资格条件
+1.参加本项目谈判的供应商应符合《中华人民共和国政府采购法》第二十二条的相关规定：
+（1）具有独立承担民事责任的能力；
+（2）具有良好的商业信誉和健全的财务会计制度；
+（3）具有履行合同所必需的设备和专业技术能力；
+（4）有依法缴纳税收和社会保障资金的良好记录；
+（5）参加本次政府采购活动近三年内，在经营活动中没有重大违法记录；
+（6）法律、行政法规规定的其他条件；
+2.营业执照：提供有效的三证合一或五证合一《营业执照》 ；
+3.财务情况：提供2018年或2019年经第三方会计师事务所审计的企业财务报告，财务报告包括但不限于资产负债表、现金流量表、利润及利润分配表(损益表) ；（新成立公司提供成立以后的财务报表）；
+4.税收要求：提供2019年1月至本项目谈判报价书响应文件提交截止时间前任意3个月缴纳税收的证明材料，依法免税的，应提供依法免税的相关证明文件；
+5.社保要求：提供2019年1月至本项目谈判报价书投标文件提交截止时间前任意3个月缴纳社会保障资金的证明材料，依法免缴的，应提供依法免缴的相关证明文件；
+6.无重大违法记录声明：参加政府采购活动前3年内在经营活动中没有重大违法记录的书面声明（重大违法记录，是指供应商因违法经营受到刑事处罚或者责令停产停业、吊销许可证或者执照、较大数额罚款等行政处罚）；
+7.信誉要求：供应商在①“信用中国”下载的信用报告中没有处罚或惩戒等不良信息；②“国家税务总局官网”中未被列入：重大税收违法案件；③“中国政府采购网”中未被列入：政府采购严重违法失信行为；④“中国执行信息公开网”中未被列入：综合查询被执行人、失信被执行人。（注：以上网站均由采购人或采购代理机构在开标时查询，若供应商有失信行为，视为不满足资格要求，为无效投标。）
+8.此项目不接受联合体谈判。
+9.投标人所投货物应符合国家有关部门规定的相应技术、节能、安全和环保标准；如国家有关部门对投标人或其投标货物有强制性规定或要求的，则投标人及投标产品必须符合相应规定或要求。
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				</div>
+			
+				<div class="form-group" id="e">
+					<label class="col-xs-3  control-label">
+						招标项目基本概况、用途、采购需求、数量、简要技术要求：
+					</label>
+					<div class="col-xs-8 control-label-text " data-toggle="popover" data-trigger="focus"
+						data-content="请输入招标项目基本概况、用途、采购需求、数量、简要技术要求：(必填)">
+						公务用车	1	辆【详细技术参数见《竞争性谈判文件》第四章采购内容及要求。】
+					</div>
+					<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				</div>
+				<div class="form-group" id="bcb">
+							<label class="col-xs-3  control-label">
+							采购项目预算金额(万元)：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入采购项目预算金额：(必填)">
+							24.9
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				  </div>
+				  <div class="form-group" id="bcct">
+							<label class="col-xs-3   control-label">
+							投标截止时间/谈判响应文件递交截止时间/询价公告审查资质的时间：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									2020-03-23 15:00:16		
+									
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>	
+					<div class="form-group" id="bcot">
+							<label class="col-xs-3   control-label">
+								开标时间/谈判时间/响应文件开启时间：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									2020-03-23 15:00:16
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>
+			
+					<div class="form-group" id="bcab">
+							<label class="col-xs-3   control-label">
+								谈判文件起售时间/获取询价文件的开始时间：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									2020-03-13 08:30:16
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>
+					
+					<div class="form-group" id="bcae">
+							<label class="col-xs-3   control-label">
+								谈判文件止售时间/获取询价文件的截止时间：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div 
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									2020-03-17 17:30:16
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>
+			
+					<div class="form-group" id="bcaa">
+							<label class="col-xs-3  control-label">
+							谈判响应文件递交地点/获取询价文件地点：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入谈判响应文件递交地点/获取询价文件地点：：(必填)">
+							https://jyzx.dh.gov.cn
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				    </div>
+		  
+					<div class="form-group" id="bcrot">
+						<label class="col-xs-3   control-label">
+									谈判响应文件开启时间：
+						</label>
+						<div class="col-xs-8 control-label-text">
+							<div
+								data-date-format="yyyy-mm-dd hh:ii:ss">
+								2020-03-23 15:00:16	
+							</div>
+						</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+						</div>
+			
+					<div class="form-group" id="e3">
+						<label class="col-xs-3  control-label">
+							采购项目需要落实的政府采购政策/采用单一来源采购方式的原因及相关说明/更正事项、内容：
+						</label>
+						<div class="col-xs-8 control-label-text " data-toggle="popover" data-trigger="focus"
+							data-content="请输入采购项目需要落实的政府采购政策/采用单一来源采购方式的原因及相关说明/更正事项、内容：(必填)">
+							盈江县中医院委托,并经政府采购监督管理部门批复，盈江县政府采购和出让中心根据《中华人民共和国政府采购法》、《中华人民共和国政府采购法实施条例》、《政府采购非招标采购方式管理办法》规定，对其需求的盈江县中医院公务用车采购项目按竞争性谈判方式组织集中采购，欢迎符合条件的供应商进入指定网站报名，参与公平、公正、公开竞争。
+						</div>
+						<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				    </div>
+		    
+				    <div class="form-group" id="bpi">
+							<label class="col-xs-3  control-label">
+							审查标准、方法或者项目的名称、用途、数量、简要技术要求或招标项目的性质：
+							</label>
+							<div class="col-xs-8 control-label-text " data-toggle="popover" data-trigger="focus"
+								data-content="请输入审查标准、方法或者项目的名称、用途、数量、简要技术要求或招标项目的性质：(必填)">
+								null
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   	</div>
+		   	
+				   	<div class="form-group" id="brfot">
+							<label class="col-xs-3   control-label">
+								响应文件递交开始时间：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div 
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>
+			
+					<div class="form-group" id="brfct">
+							<label class="col-xs-3   control-label">
+								响应文件递交结束时间：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div 
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>
+					
+					<div class="form-group" id="brfa">
+							<label class="col-xs-3  control-label">
+							谈判响应文件开启地点：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入谈判响应文件开启地点：(必填)">
+							盈江县公共资源交易中心二楼竞争性谈判室（盈江县平原镇目瑙纵歌路119号）
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				    </div>
+		    
+				    <div class="form-group" id="bra">
+							<label class="col-xs-3  control-label">
+							响应文件递交地点：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入响应文件递交地点：(必填)">
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				    </div>
+		    
+				    <div class="form-group" id="bctb">
+							<label class="col-xs-3   control-label">
+							获取资格预审文件/招标文件/谈判文件/磋商文件开始时间或者询价公告报名开始时间：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div 
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									2020-03-13 08:30:17
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>	
+			
+					<div class="form-group" id="bcte">
+							<label class="col-xs-3   control-label">
+							获取资格预审文件/招标文件/谈判文件/磋商文件结束时间或者询价公告报名结束时间:
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div
+									data-date-format="yyyy-mm-dd hh:ii:ss">
+									2020-03-17 17:30:17
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					 </div>	
+			 
+					 <div class="form-group" id="bcta">
+							<label class="col-xs-3  control-label">
+							获取资格预审文件/招标文件/磋商文件或者询价公告审查资质的地点：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入获取资格预审文件/招标文件/磋商文件或者询价公告审查资质的地点：(必填)">
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+		   		
+				   		<div class="form-group" id="bcw">
+							<label class="col-xs-3  control-label">
+							获取资格预审文件/招标文件/谈判文件/磋商文件/询价文件的方式：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入获取资格预审文件/招标文件/谈判文件/磋商文件/询价文件的方式：(必填)">
+							网上获取
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>	
+		   		
+				   		<div class="form-group" id="bctp">
+							<label class="col-xs-3  control-label">
+							招标文件/谈判文件/磋商文件/询价文件售价(元)：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入招标文件/谈判文件/磋商文件/询价文件售价：(必填)">
+							0
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				  		</div>
+		  		
+				  		<div class="form-group" id="bcoa">
+							<label class="col-xs-3  control-label">
+							开标地点/获取谈判文件地点/竞争性磋商响应文件开启地点/拟定的唯一供应商名称及其地址/报名地点：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入开标地点/获取谈判文件地点/竞争性磋商响应文件开启地点/拟定的唯一供应商名称及其地址/报名地点：(必填)">
+							https://jyzx.dh.gov.cn
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+		   		
+				   		<div class="form-group" id="e2">
+							<label class="col-xs-3  control-label">
+								拟采购的货物或者服务的说明/废标、流标的原因：
+							</label>
+							<div class="col-xs-8 control-label-text " data-toggle="popover" data-trigger="focus"
+								data-content="请输入拟采购的货物或者服务的说明/废标、流标的原因：(必填)">
+								null
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		 </div>
+		   		
+				   		<div class="form-group" id="cfp">
+							<label class="col-xs-3   control-label">
+								首次公告日期：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div
+									data-date-format="dd MM yyyy">
+									
+									
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+						</div>
+				   		
+				   		<div class="form-group" id="cd">
+							<label class="col-xs-3   control-label">
+								更正日期：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<div 
+									data-date-format="dd MM yyyy">
+									
+									
+								</div>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+						</div>
+						
+						<div class="form-group" id="obn" data-msg-direction="d">
+									<div class="td">
+										<label class="col-xs-3  control-label">
+											原公告项目名称：
+										</label>
+										<div class="col-xs-8 control-label-text" data-toggle="popover" data-trigger="focus"
+											data-content="请选择原公告项目名称：(必填)">
+											<font length="17" style="cursor:hand;color:blue" onmouseover="this.style.color='black'"  
+												oldBidAddr =""
+												onmouseout="this.style.color='blue'" onclick="viewbulletin('')" >
+											 	
+											</font>
+										</div>
+										
+									</div>
+						</div>
+						
+				
+						
+						<div class="form-group hidden" id="oba" >
+							<label class="col-xs-3  control-label">
+							原公告地址：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入原公告地址：(必填)">
+								
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				  		</div>
+				  		
+				  		
+				   		
+				   		<div class="form-group" id="pin" data-msg-direction="r">
+									<div class="td">
+										<label class="col-xs-3  control-label">
+											采购品目名称：
+										</label>
+										<div class="col-xs-8 control-label-text" data-toggle="popover" data-trigger="focus"
+											data-content="请选择采购品目名称：(必填)">
+											商务车;
+											<input type="hidden"  name="purchaseitem" id="purchaseitem" value="" />
+										</div>
+										<span class="control-label text-red"></span>
+									</div>
+								</div>
+				   		
+				   		<div class="form-group" id="bic" data-msg-direction="d">
+									<div class="td">
+										<label class="col-xs-3  control-label">
+											行业划分：
+										</label>
+										<div class="col-xs-8 control-label-text" data-toggle="popover" data-trigger="focus"
+											data-content="请选择行业划分：(必填)">
+											制造业
+											<input type="hidden"  name="bidindustrycode" id="bidindustrycode" value="" />
+		
+										</div>
+										<span class="control-label text-red"></span>
+									</div>
+								</div>
+				   		<div class="form-group" id="e4">
+							<label class="col-xs-3  control-label">
+								其它补充事宜：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								无
+							</div>
+						</div>
+						
+						<div class="form-group" id="tn">
+							<label class="col-xs-3  control-label">
+							招标文件编号：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入招标文件编号：(必填)">
+							
+							<!-- <font color="red">最多32个字符。</font> -->
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+						
+						<div class="form-group" id="e7">
+							<label class="col-xs-3  control-label">
+							采购人和评审专家的推荐意见：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入采购人和评审专家的推荐意见：(必填)">
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+						
+				   		<div class="form-group" id="dist">
+							<label class="col-xs-3   control-label">
+								行政区域：
+							</label>
+							<div class="col-xs-3 control-label-text">
+								<select class="selectpicker" id="districtcode" name="districtcode" title="请选择" disabled>
+<option prompt="test" value="">请选择</option><option value="530000" >省级</option><option value="530100" >昆明市</option><option value="530300" >曲靖市</option><option value="530400" >玉溪市</option><option value="530500" >保山市</option><option value="530600" >昭通市</option><option value="530700" >丽江市</option><option value="530800" >普洱市</option><option value="530900" >临沧市</option><option value="532300" >楚雄州</option><option value="532500" >红河州</option><option value="532600" >文山州</option><option value="532800" >版纳州</option><option value="532900" >大理州</option><option value="533100" selected=true  >德宏州</option><option value="533300" >怒江州</option><option value="533400" >迪庆州</option><option value="533500" >滇中区</option></select>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				       </div>
+				      
+				   		
+			   		 <div class="form-group" id="hiddenPlan" data-msg-direction="d">
+								<div class="td">
+									<label class="col-xs-3  control-label">
+										采购计划编号：
+									</label>
+									<div class="col-xs-8 control-label-text" data-toggle="popover" data-trigger="focus"
+										data-content="请选择采购计划编号：(必填)">
+										4533123JH202000035
+										<input type="hidden"  name="plan_id" id="plan_id"  maxlength="32" value="" />		
+									</div>
+									
+									<span class="control-label text-red"></span>
+								</div>
+					</div>
+				<br>		
+					
+					<div class="panel panel-default" id="ws_info">
+							<div class="panel-heading-blue">
+								<div class="col-xs-8" style="float:right">
+									<button type="button" data-formatter="commands" style="float:right" 
+										class="btn btn-default btn-sm btn-bottom btn-wide hidden" id="addsupplierinfo">
+										添加供应商
+									</button>
+								</div>
+							</div>
+							<div class="panel-body">
+								<table class="table table-hover" id="filterTable">
+								<thead class="bg-default" id="">
+									<tr>
+										<td height="25" width="25%" class="columnhead" align="center">
+											中标供应/成交供应商名称<font color="red"></font>
+										</td>
+										<td id="tr1" width="35%" class="columnhead" align="center">
+											中标供应商/成交供应商联系地址<font color="red"></font>
+										</td>
+										<td width="20%" class="columnhead" align="center">
+											中标供应商/成交供应商中标金额(万元)
+										</td>
+									</tr>
+									</thead>
+								<tbody id="tbody_gl" style="display:">
+									<tr class="conditionbase">
+										<td width="25%" align="center">
+										    <div class="col-xs-12 td">
+												<div style="display:">
+													<input type="text" id="winSupply" class="form-control" name="winSupply" disabled="disabled"
+														prompt="中标供应/成交供应商名称" maxlength="256" number="0"
+														value="" />
+												</div>
+											</div>
+										</td>
+										<td width="35%" align="center">
+											<div class="col-xs-12 td">
+												<div style="display:">
+													<input type="text" id="winSupplyAddr" class="form-control" name="winSupplyAddr" disabled="disabled"
+														prompt="中标供应商/成交供应商联系地址" maxlength="256" number="0"
+														value=""/>
+												</div>
+											</div>
+										</td>
+										<td width="25%" align="center">
+											<div class="col-xs-12 td">
+												<div style="display:">
+													<input type="text" id="winMoney" class="form-control" name="winMoney" disabled="disabled"
+														prompt="中标供应商/成交供应商中标金额(万元)" maxlength="10" minlength="1" 
+														onkeyup="clearNoNum(this)" onpaste="return false" onblur="" 
+														onKeyPress="if (event.keyCode!=46 && (event.keyCode<48 || event.keyCode>57)) event.returnValue=false"
+														number="0"
+														value=""
+														/>
+													</div>
+											</div>
+										</td>
+										
+									</tr>
+								</tbody>
+								</table>
+							</div>
+					</div>
+					
+					<div class="form-group" id="ba">
+						<label class="col-xs-3  control-label">
+						总中标金额/总成交金额(万元)：
+						</label>
+						<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+								data-trigger="focus" data-content="请输入总中标金额/总成交金额：(必填)">
+						
+						</div>
+						<div class="col-xs-1-sm control-label text-red pull-left"></div>
+			   		</div>
+			   		
+			   		<div class="form-group" id="wi">
+						<label class="col-xs-3  control-label">
+						中标/成交标的名称、规格型号、数量、单价、服务要求：
+						</label>
+						<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+								data-trigger="focus" data-content="请输入中标/成交标的名称、规格型号、数量、单价、服务要求：(必填)">
+						
+						</div>
+						<div class="col-xs-1-sm control-label text-red pull-left"></div>
+			   		</div>
+					
+				
+					<div class="form-group" id="bc_ppp">
+						<label class="col-xs-3  control-label">
+							是否PPP项目社会资本合作者采购：
+						</label>
+						<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+										data-trigger="focus" data-content="请输入是否PPP项目社会资本合作者采购：(必填)">
+							<label class="radio-inline">
+								<input disabled="disabled"  type="radio" name="ppp" id="ppp" value="1" />
+								是
+							</label>
+							<label class="radio-inline">
+								<input disabled="disabled" type="radio" name="ppp" id="ppp0" value="0" checked />
+								否
+							</label>
+						</div>
+						<div class="col-xs-1-sm control-label text-red pull-left"></div>
+					</div>
+		   			<!-- IIIIIIIPPP start -->
+		   			<div class="form-group" id="u_c">
+							<label class="col-xs-3  control-label">
+								  是否允许联合体：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="unite"  value="1"  />
+									是
+								</label>
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="unite"  value="0"  />
+									否
+								</label>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+						</div>
+						
+						<div class="form-group" id="u_c_2">
+							<label class="col-xs-3  control-label">
+								是否限定社会资本数量：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="capital_count"  value="1"  />
+									是
+								</label>
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="capital_count"  value="0"  />
+									否
+								</label>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+						</div>
+				  		
+				  		<div class="form-group" id="pc_e6">
+							<label class="col-xs-3  control-label">
+								是否采购本国货物和服务：
+							</label>
+							<div class="col-xs-8 control-label-text">
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="pur_country"  value="1"  />
+									是
+								</label>
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="pur_country"  value="0"  />
+									否
+								</label>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+						</div>
+				  		
+				  		<div class="form-group" id="pc_e6_2">
+							<label class="col-xs-3  control-label">
+							对社会资本参与采购活动和履约保证的担保要求：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入对社会资本参与采购活动和履约保证的担保要求：(必填)">
+							
+								
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+				   		
+				   		<div class="form-group" id="pu_ou">
+							<label class="col-xs-3  control-label">
+								是否是联合体：
+							</label>
+							<div class="col-xs-8 control-label-text" id="unitezb">
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="unitezb"  value="1"  />
+									是
+								</label>
+								<label class="radio-inline">
+									<input disabled="disabled" type="radio" name="unitezb"  value="0"  />
+									否
+								</label>
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+						</div>
+				  		
+				  		<div class="form-group" id="ou0">
+							<label class="col-xs-3  control-label">
+							组成单位名称：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入组成单位名称：(必填)">
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+				  		
+				  		<div class="form-group" id="cs_e">
+							<label class="col-xs-3  control-label">
+							限定社会资本方法及标准/中标社会资本法人/成交社会资本法人：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入限定社会资本方法及标准/中标社会资本法人/成交社会资本法人：(必填)">
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+				   		
+				   		<div class="form-group" id="cs_e_2">
+							<label class="col-xs-3  control-label">
+							技术引进和转让要求/主要中标条件/主要成交条件：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入技术引进和转让要求/主要中标条件/主要成交条件：(必填)">
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+				   		
+				   		<div class="form-group" id="bpn">
+							<label class="col-xs-3  control-label">
+							项目授权主体名称/牵头单位名称：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入项目授权主体名称/牵头单位名称：(必填)">
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+				   		
+				   		<div class="form-group" id="pl">
+							<label class="col-xs-3  control-label">
+							采购结果确认谈判工作组成员名单：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+									data-trigger="focus" data-content="请输入采购结果确认谈判工作组成员名单：(必填)">
+							
+							
+							</div>
+							<div class="col-xs-1-sm control-label text-red pull-left"></div>
+				   		</div>
+				   		<div class="form-group">
+							<label class="col-xs-3 control-label">附件：</label>
+							<div class="col-xs-8 control-label-text">
+								<div class=input-group" id="filedel_out">
+									<a style="cursor:hand;color:blue" id="filedel" 
+										onmouseover="this.style.color='black'" onmouseout="this.style.color='blue'"
+										value="" href="#">
+										 
+									</a>
+								</div>
+								
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-xs-3  control-label">
+								点击次数：
+							</label>
+							<div class="col-xs-8 control-label-text" data-placement="top" data-toggle="popover"
+								data-trigger="focus" data-content="请输入收费金额：(必填)">
+								124
+							</div>
+						</div>
+				   	<!-- IIIIIIIPPP end -->
+				
+					<br>
+					<div class="page-header">
+						<div class="row">
+				          	<div class="col-xs-4">
+				              <h4><strong>公告正文</strong></h4>
+				          	</div>
+						</div>
+					</div>
+	         		<div class="form-group">
+			           <div class="form-group" name="UserDetails" id="UserDetails">
+			           	<label class="col-xs-1  control-label"></label>
+			   			 <div class="col-xs-10-sm">
+							<p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:18.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">盈江县</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:18.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">中医院公务用车</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:18.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">采购项目</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:18.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:18.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">竞争性谈判公告</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:16.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p align="center" class="MsoNormal" style="text-align:center;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">交易编号：</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">YJCG(竞)20</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">-</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">033</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">号</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">受盈江县</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">中医院</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">委托</font>,并经政府采购监督管理部门批复，盈江县政府采购和出让中心根据《中华人民共和国政府采购法》、《中华人民共和国政府采购法实施条例》、《政府采购非招标采购方式管理办法》规定，对其需求的盈江县</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">中医院公务用车</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">采购项目按竞争性谈判方式组织集中采购，欢迎符合条件的供应商进入指定网站报名，参与公平、公正、公开竞争，现将项目具体采购情况及要求公告如下：</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">一、项目简介</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">1.采购单位:盈江县</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">中医院</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">；</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">2.采购项目：盈江县</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">中医院公务用车</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">采购项目；</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">3.采购编号：YJCG(竞)20</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">-</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">033</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">号；</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">4.采购预算价：</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">249</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">000.00元</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">5.采购内容及要求：</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;background:rgb(0,255,255);mso-highlight:rgb(0,255,255);"><o:p></o:p></span></p><table class="MsoNormalTable" style="border-collapse:collapse;width:414.0000pt;margin-left:5.4000pt;mso-table-layout-alt:fixed;mso-padding-alt:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;">
+<tbody><tr><td style="width:162.0000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid windowtext;mso-border-left-alt:0.5000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;" valign="top" width="216"><p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;">项目品名</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p></td><td style="width:116.6500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;;mso-border-left-alt:none;;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;" valign="top" width="155"><p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;">数量</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p></td><td style="width:135.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;;mso-border-left-alt:none;;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;border-top:1.0000pt solid windowtext;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;" valign="top" width="180"><p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;">计量单位</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p></td></tr><tr><td style="width:162.0000pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:1.0000pt solid windowtext;mso-border-left-alt:0.5000pt solid windowtext;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;border-top:none;;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;" valign="top" width="216"><p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;">公务</span><span style="mso-spacerun:'yes';font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;">用车</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p></td><td style="width:116.6500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;;mso-border-left-alt:none;;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;border-top:none;;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;" valign="top" width="155"><p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;">1</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p></td><td style="width:135.3500pt;padding:0.0000pt 5.4000pt 0.0000pt 5.4000pt ;border-left:none;;mso-border-left-alt:none;;border-right:1.0000pt solid windowtext;mso-border-right-alt:0.5000pt solid windowtext;border-top:none;;mso-border-top-alt:0.5000pt solid windowtext;border-bottom:1.0000pt solid windowtext;mso-border-bottom-alt:0.5000pt solid windowtext;" valign="top" width="180"><p align="center" class="MsoNormal" style="text-align:center;line-height:20.0000pt;mso-line-height-rule:exactly;"><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;">辆</span><span style="font-family:宋体;font-size:12.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p></td></tr>
+</tbody>
+</table><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">【详细技术参数见《竞争性谈判文件》第四章采购内容及要求。】</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">6.交货地点：</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">盈江县中医院</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(255,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">7.交货时间：</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">甲乙双方合同约定；</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;text-align:left;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">8.服务要求：</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">质保期</font>3年10万公里；免费首次保养，并做好售后服务。</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;text-align:left;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">9.付款方式：</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">甲乙双方合同约定；</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">二、供应商资格条件</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">1.参加本项目谈判的供应商应符合《中华人民共和国政府采购法》第二十二条的相关规定：</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（</font>1）具有独立承担民事责任的能力；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（</font>2）具有良好的商业信誉和健全的财务会计制度；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（</font>3）具有履行合同所必需的设备和专业技术能力；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（</font>4）有依法缴纳税收和社会保障资金的良好记录；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（</font>5）参加本次政府采购活动近三年内，在经营活动中没有重大违法记录；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（</font>6）法律、行政法规规定的其他条件；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">2</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">营业执照：提供有效的三证合一或五证合一《营业执照》</font> <font face="宋体">；</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">3</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">财务情况：提供</font>201</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">8</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">年或</font>201</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">9</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">年经第三方会计师事务所审计的企业财务报告，财务报告包括但不限于资产负债表、现金流量表、利润及利润分配表</font>(损益表) ；（新成立公司提供成立以后的财务报表）；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">4</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">税收要求：提供</font>2019年1月至本项目</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">谈判报价书</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">响应文件提交截止时间前任意</font>3个月缴纳税收的证明材料，依法免税的，应提供依法免税的相关证明文件；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">5</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">社保要求：提供</font>2019年1月至本项目</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">谈判报价书</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">投标文件提交截止时间前任意</font>3个月缴纳社会保障资金的证明材料，依法免缴的，应提供依法免缴的相关证明文件；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">6</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">无重大违法记录声明：参加政府采购活动前</font>3年内在经营活动中没有重大违法记录的书面声明（重大违法记录，是指供应商因违法经营受到刑事处罚或者责令停产停业、吊销许可证或者执照、较大数额罚款等行政处罚）；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">7</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">信誉要求：供应商在</font>①&ldquo;信用中国&rdquo;下载的信用报告中没有处罚或惩戒等不良信息；②&ldquo;国家税务总局官网&rdquo;中未被列入：重大税收违法案件；③&ldquo;中国政府采购网&rdquo;中未被列入：政府采购严重违法失信行为；④&ldquo;中国执行信息公开网&rdquo;中未被列入：综合查询被执行人、失信被执行人。（注：以上网站均由采购人或采购代理机构在开标时查询，若供应商有失信行为，视为不满足资格要求，为无效投标。）</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">8.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">此项目不接受联合体谈判。</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><a name="_Toc468805811"></a><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">9.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">投标人所投货物应符合国家有关部门规定的相应技术、节能、安全和环保标准；如国家有关部门对投标人或其投标货物有强制性规定或要求的，则投标人及投标产品必须符合相应规定或要求。</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">三、报名及</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">竞争性谈判</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">文件的领取</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">供应商可</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">于</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">&nbsp;<font face="宋体">年</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">3</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">月</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">13</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">日上午</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">08:30</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">至</font> 20</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">年</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">3</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">月</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">17</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">日下午</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">17:30</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">，</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">登录</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">德宏州公共资源交易电子服务系统</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（网址：</font>http://jyzx.dh.gov.cn），凭企业</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">CA</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">数字证书在网上获取</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">竞争性谈判</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">文件及其它采购资料</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">（此为获取竞争性谈判</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">文件</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">的唯一方式）</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">；未办理企业</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">CA</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">数字证书的</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">供应商</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">请</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">登录上述网站办理</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">企业</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">CA</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">数字证书，并在</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">德宏州公共资源交易电子服务系统自行下载报价</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">文件（电子</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">报价</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">文件，格式为</font>*.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">ZCZBJ</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">）。</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">之前在云南省内其他地州已经向云南龙瑞德耀信息科技有限公司申请办理过</font>CA的用户，若需要在德宏州使用则只需注册登录后提交用户基本信息审核即可，无须重办。</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">四、</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">谈判报价书</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">的递交、谈判截止及谈判时间、谈判地点</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">1.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">本</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">项目</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">采用电子谈判报价，</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">供应商须递交电子</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">谈判报价书</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">(</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">格式为</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.ZCTBJ)</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">。电子谈判报价书须上传至德宏州公共资源交易电子服务系统</font></span><span><a href="http://jyzx.dh.gov.cn"><u><span class="16" style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,255);font-weight:normal;text-decoration:underline;text-underline:single;font-size:14.0000pt;">http://jyzx.dh.gov.cn</span></u></a></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">，</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">电子</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">谈判报价书递交</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">截止时间前未完成</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">谈判报价书</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">传输的，</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">视为撤回谈判报价书</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">。</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">2.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">递交谈判报价书时间截止时间、开标时间及地点：</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">⑴递交谈判报价书截止时间、开标时间：20</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">年</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">3</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">月</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">23</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">日</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">下</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">午</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">15</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">：</font>00；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:微软雅黑;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">⑵</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">递交谈判报价书及开标地点：</font><font face="宋体">盈江县</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">公共资源交易</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">中心二楼</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">竞争性谈判</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">室（盈江县平原镇目瑙纵歌路</font>119号）</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">五、保证金交纳数额、截止时间和交纳形式</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">1．保证金金额：</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">人民币肆仟玖佰</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">元整（</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">&yen;</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">4</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">900</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.00元）；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">2．截止时间：递交响应文件截止时间；</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">3．交纳形式：须从供应商账户以电汇或转账方式汇达以下指定账户（法人单位参与的应从其基本账户或对公账户汇出）。投标保证金请于投标截止时间前（建议投标截止时间前2个工作日内）以电汇、网上银行、转账等非现金形式汇入指定账户：</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">账户名称：盈江县政务服务管理局</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">开户行：云南盈江农村商业银行股份有限公司</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">账号：</font>5700015111538012-</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">0561</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(255,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">财务室联系电话：</font>0692-8108466</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">注：（</font>1）保证金缴纳银行转账方式，具体要求详见&ldquo;德宏州公共资源交易电子服务系统（全国公共资源交易平台（云南省&middot;德宏州））（https://jyzx.dh.gov.cn）学习园地-招投标学习区-云南省统一账户保证金系统操作手册&rdquo;。</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo1;"><!--[if !supportLists]--><span style="font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><span style="mso-list:Ignore;">（2）</span></span><!--[endif]--><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">投标单位需按照招标文件的要求提交投标保证金，并将投标保证金汇款凭据及保证金确认回执单带到开标现场查验。</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:14.0000pt;mso-char-indent-count:1.0000;line-height:23.0000pt;mso-line-height-rule:exactly;mso-list:l0 level1 lfo1;"><!--[if !supportLists]--><span style="font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><span style="mso-list:Ignore;">（3）</span></span><!--[endif]--><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">供应商将保证交纳到指定账号后，要使用数字证书（</font>CA）登陆德宏州公共资源交易电子服务系统（全国公共资源交易平台（云南省.德宏州））在谈判保证金模块找到对应项目进行确认并打印确认回执。</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">六、</font> </span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">公告发布的媒体</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">本公告在德宏州公共资源交易电子服务系统、云南省政府采购网上发布。请各报名供应商在此项目未开标之前密切关注上述信息发布网站，如此项目需发布更正公告或者补充（变更）通知均在以上网站发布，我中心不另行通知，因各供应商未及时上网看到更正公告或者下载补充（变更）通知的后果由供应商自行承担。</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">七、采购单位和政府集采机构的名称、地址和联系方式</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">采购单位</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">：</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">盈江县</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">中医院</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">联系人及联系方式：</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">李</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">女士</font> &nbsp;135782</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">2209</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">8</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">地址：盈江县平原镇</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">勐腊</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">路</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">408</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">号</font> </span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">政府集采机构：盈江县政府采购和出让中心</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">联系人及联系方式：刀女士</font> 0692-8108442</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">地址：盈江县平原镇目瑙纵歌路</font>119号</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">八、注意事项</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">请各报名供应商在此项目未开标之前密切关注上述信息发布网站，如此项目需发布更正公告或者补充（变更）通知均在以上网站发布，我中心不另行通知，因各供应商未及时上网看到更正公告或者下载补充（变更）通知的后果由供应商自行承担。</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">九、技术支持</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">1.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">电子响应文件制作及上传</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">技术支持电话：</font>400-9618-998 </span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">，</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">QQ：4009618998</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">供应商可到云南省公共资源交易电子服务系统网站（</font></span><span><a href="http://www.ynggzyxx.gov.cn"><u><span class="16" style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,255);font-weight:normal;text-decoration:underline;text-underline:single;font-size:14.0000pt;">http://www.ynggzyxx.gov.cn</span></u></a></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">）点击【在线培训】按钮进行</font>&ldquo;电子响应文件制作及上传&rdquo;的学习。</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">2.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">投标人需要办理</font>CA数字证书的，请登录德宏州公共资源交易电子服务系统（</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">http://jyzx.dh.gov.cn</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">）服务指南</font>-数字证书办理中下载《德宏州CA数字证书办理流程》和《德宏州CA数字证书办理注意事宜》按照流程自行办理。</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">数字证书办理技术支持电话：</font>0692-2275609</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">办理证书地址：</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">芒市文蚌街中缅友谊馆二楼（数字证书办理窗口</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">.</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">）</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">联系人：云南龙瑞德耀信息科技有限公司</font> &nbsp;&nbsp;&nbsp;24小时客服热线：0871-65315589</span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face="宋体">盈江县政府采购和出让中心</font></span><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:28.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">20</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">年</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">3</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">月</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;">12</span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><font face="宋体">日</font></span><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:14.0000pt;mso-font-kerning:1.0000pt;"><o:p></o:p></span></p><p class="MsoNormal" style="text-indent:24.0000pt;mso-char-indent-count:2.0000;line-height:23.0000pt;mso-line-height-rule:exactly;"><span style="mso-spacerun:'yes';font-family:宋体;color:rgb(0,0,0);font-weight:normal;font-size:12.0000pt;mso-font-kerning:1.0000pt;"><o:p>&nbsp;</o:p></span></p>
+				        </div>
+				        <div class="col-xs-1-sm"></div>
+			           </div>
+    				</div>
+				</div>		
+            </form>
+		</div>
+	</div>
+<div class="bottom">
+   <!--  <div class="bottom_sign"><img src="/index/images/bottom_sign.png"></div> -->
+    <p>主办单位：云南省财政厅，备案：滇ICP备05004092号 </p>
+	<p>系统操作及业务咨询电话：0871-63956095、18887127413（座机）、18887128494（座机），网站技术支持：东软集团股份有限公司</p>
+	<p>采购人法律及政策咨询电话：0871-63956099（云南省财政厅政府采购管理处），地址：昆明市五华区华山南路130号4006-4009室，邮编：650021</p>
+	<p>本网站建议使用360浏览器（极速模式）、火狐浏览器、谷歌浏览器</p>
+</div>
+
+		</div>
+	</div>
+</div>
+
+<script src="/plugins/bootstrap/js/jquery-1.11.3.min.js"></script>
+<script src="/plugins/bootstrap/js/jquery-ui.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap-dialog.js"></script>
+<script src="/plugins/bootstrap/js/jQuery.formatMoney.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap-common.js"></script>
+
+
+		<script>
+	    var wsList = null;
+	    var laterbulletin = [];
+	    </script>
+		<!-- js引入区-->
+		<script src="/plugins/bootstrap/js/bootstrap-grid.js"></script>
+		<!-- 表单验证 -->
+		<script	src="/plugins/bootstrap/js/jquery.form.min.js"></script>
+		<script src="/plugins/bootstrap/js/sco.valid.js"></script>
+		<!-- CK编辑器 -->
+	   <script src="/plugins/bootstrap/ckeditor/ckeditor.js"></script>
+		<!-- 时间控件 -->
+		<script src="/plugins/bootstrap/js/bootstrap-datetimepicker.js"></script>
+		<!-- 下拉选择控件 -->
+		<script src="/plugins/bootstrap/js/bootstrap-select.min.js"></script>
+		<!-- 树形控件 -->
+		<script src="/plugins/bootstrap/js/bootstrap-treeview.js"></script>
+		<!-- tag -->
+		<script src="/plugins/bootstrap/js/bootstrap-tag.js"></script>	
+	
+		<!-- 引入js -->
+		<script src="/js/adjustIframeSize.js"></script>
+		<script src="/business/pages/agreement/arggoodstype/bulletinnew/bulletin_modifyToView.js"></script>
+		<script src="/plugins/bootstrap/js/bootstrap-filestyle.js"></script>
+		
+	
+</body>
+</html>
+
+

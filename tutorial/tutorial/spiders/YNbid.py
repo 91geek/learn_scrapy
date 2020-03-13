@@ -26,9 +26,10 @@ class DHSpider(scrapy.Spider):
         rs = json.loads(response.text)
         url = 'http://www.yngp.com/bulletin.do?method=moreListQuery'
         totlePageCount = math.ceil(rs["total"] / 200.0)
-        for i in range(1,m):
+        totlePageCount = 2
+        for i in range(1,totlePageCount):
             formdata = {
-                     'current': str(i,totlePageCount),
+                     'current': str(i),
                      'rowCount':'200',
                      'query_sign':'1'
                     }
@@ -38,9 +39,20 @@ class DHSpider(scrapy.Spider):
          rs = json.loads(response.text)
          rows = rs['rows']
          for row in rows:
-             next_page ='http://www.yngp.com/newbulletin_zz.do?method=preinsertgomodify&operator_state=1&flag=view&bulletin_id='+row
+             next_page ='http://www.yngp.com/newbulletin_zz.do?method=preinsertgomodify&operator_state=1&flag=view&bulletin_id='+row['bulletin_id']
              yield response.follow(next_page, callback=self.parse3,dont_filter=True)
-             print(row['bulletin_id'])
+    def parse3(self, response):
+        title = response.xpath('//div[@class= "col-xs-8 control-label-text"]/text()').extract()[0].strip()
+      #  filename = '/Users/wanglei/Documents/python/learn_scrapy/doc/%s.html' % (title)
+      #  with open(filename, 'wb') as f:
+      #      f.write(bytes(response.text, 'utf8'))
+        selected = response.xpath('//div[@id="gglx_div"]/div/select/option[@selected]')
+        typeName = selected.xpath('text()').extract()[0].strip()
+        type = selected.xpath('attribute::value').extract()[0]
+        
+       # print(tt)
+       # type = tt.xpath("string(.)")
+        print(title,typeName)
 
 
 
