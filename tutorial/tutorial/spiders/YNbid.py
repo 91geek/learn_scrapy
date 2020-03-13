@@ -8,7 +8,7 @@ import scrapy
 import json
 import math
 
-#东方航空爬虫
+#云南省政府采购网
 class DHSpider(scrapy.Spider):
     name = "YNBid"
     allowed_domains = ["yngp.com"]
@@ -30,7 +30,7 @@ class DHSpider(scrapy.Spider):
         for i in range(1,totlePageCount):
             formdata = {
                      'current': str(i),
-                     'rowCount':'200',
+                     'rowCount':'4',
                      'query_sign':'1'
                     }
             yield scrapy.FormRequest(url=url,formdata=formdata,callback=self.parse2)
@@ -49,10 +49,23 @@ class DHSpider(scrapy.Spider):
         selected = response.xpath('//div[@id="gglx_div"]/div/select/option[@selected]')
         typeName = selected.xpath('text()').extract()[0].strip()
         type = selected.xpath('attribute::value').extract()[0]
-        
-       # print(tt)
-       # type = tt.xpath("string(.)")
-        print(title,typeName)
+        bt_be_2 = response.xpath('//div[@id="bt_be_2"]/div/div/text()').extract()[0].strip()
+        start_date = bt_be_2.split('至')[0]
+        end_date = bt_be_2.split('至')[1]
+        org = response.xpath('//div[@id="pn_pn"]/div/text()').extract()[0].strip()
+        contact = response.xpath('//div[@id="pcn_pcp"]/div/text()').extract()[0].strip()
+        contect_num = response.xpath('//div[@id="pcn_pcp_2"]/div/text()').extract()[0].strip()
+        unit = response.xpath('//div[@id="hiddenCgr"]/div/text()').extract()[0].strip()
+        address = response.xpath('//div[@id="hiddenCgr_2"]/div/text()').extract()[0].strip()
+        bcsq=response.xpath('//div[@id="bcsq"]/div/text()').extract()[0].strip() #资格要求
+        e=response.xpath('//div[@id="e"]/div/text()').extract()[0].strip() #采购需求、数量、简要技术要求
+        money=response.xpath('//div[@id="bcb"]/div/text()').extract()[0].strip() #预算金额
+        closing_time=response.xpath('//div[@id="bcct"]/div/text()').extract()[0].strip() #投标截止时间/谈判响应文件递交截止时间/询价公告审查资质的时间
+        opening_time =response.xpath('//div[@id="bcot"]/div/text()').extract()[0].strip() #预算金额
+        detail =response.xpath('//div[@id="UserDetails"]/div/p')#详情
+        detail =''.join(detail.xpath('string(.)').extract())
+
+
 
 
 
